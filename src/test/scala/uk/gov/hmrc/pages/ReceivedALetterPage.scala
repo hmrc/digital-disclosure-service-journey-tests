@@ -7,11 +7,8 @@ package uk.gov.hmrc.pages
 
 import org.openqa.selenium.{WebDriver, WebElement}
 import org.openqa.selenium.support.ui.{ExpectedConditions, WebDriverWait}
-import org.scalatest.concurrent.Eventually.eventually
-import org.scalatest.matchers._
-import org.scalatest.matchers.must.Matchers.be
-import org.scalatest.matchers.should.Matchers.convertToAnyShouldWrapper
-import org.scalatestplus.selenium._
+import org.junit.Assert
+import org.openqa.selenium.By.ByXPath
 import uk.gov.hmrc.utils.Configuration
 
 
@@ -26,8 +23,23 @@ trait ReceivedALetterPage extends BasePage {
 
   def radioNo: WebElement = findByID("value-no")
 
+
   def navigateToPage(): Unit = {
     goTo(Configuration.settings.baseUrl)
+    authenticationByPass()
+  }
+
+  def verifyYesNoAreNotSelected(): Unit = {
+    Assert.assertFalse("Verify Yes is not selected" + radioYes.isSelected, false)
+    Assert.assertFalse("Verify No is not selected" + radioNo.isSelected, false)
+  }
+
+  def selectYes(): Unit = {
+    radioYes.click()
+  }
+
+  def selectNo(): Unit = {
+    radioNo.click()
   }
 
 

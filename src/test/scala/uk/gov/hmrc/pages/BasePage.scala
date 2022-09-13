@@ -8,6 +8,7 @@ package uk.gov.hmrc.pages
 import io.cucumber.datatable.DataTable
 import io.cucumber.scala.{EN, ScalaDsl}
 import org.junit.Assert
+import org.openqa.selenium.By.{ById, ByXPath}
 import org.openqa.selenium.support.ui.{ExpectedConditions, WebDriverWait}
 import org.openqa.selenium.{By, Keys, WebElement}
 import org.scalatest.Assertions
@@ -17,6 +18,7 @@ import uk.gov.hmrc.driver.StartUpTearDown
 import uk.gov.hmrc.utils.Configuration
 import uk.gov.hmrc.utils.MessageReader.getElement
 
+import java.lang.Thread
 import scala.jdk.CollectionConverters.asScalaBufferConverter
 
 
@@ -38,6 +40,8 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
   def findByLinkText(linkText: String): WebElement = driver.findElement(By.linkText(linkText))
 
   def findByElement(elementId: String): WebElement = driver.findElement(By.id(getElement(elementId)))
+
+  def findByXPath(xpath: String): WebElement = driver.findElement(By.xpath(getElement(xpath)))
 
   def findByclassName(elementclassName: String): WebElement = driver.findElement(By.className(getElement(elementclassName)))
 
@@ -62,14 +66,36 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
     }
   }
 
+  def verifyPageTitle (title: String): Unit = {
+
+    Assert.assertTrue("Page Title Verified", title == driver.getTitle)
+  }
   def verifyPageQuestion(expectedQHeader: String): Unit = {
-    val actualQHeader = findByclassName("govuk-fieldset__heading").getText()
-    Assert.assertFalse("Text found!", expectedQHeader.equals(actualQHeader))
+    println("Im in verify page question")
+    val question = driver.findElement(By.xpath("//*[@id=\'main-content\']/div/div/form/div/fieldset/legend/h1"))
+    val actualQHeader = question.getText
+    Assert.assertTrue("Page Question Verified", expectedQHeader.toString() == actualQHeader.toString())
+
   }
 
   def saveAndContinue(): Unit = {
-    findByID("continue").click()
+    driver.findElement(By.xpath("//*[@id=\"main-content\"]/div/div/form/button")).click()
   }
+
+  def clickOnBack(): Unit = {
+    driver.findElement(By.xpath("/html/body/div/a")).click()
+  }
+
+  def authenticationByPass(): Unit = {
+    val reDirectUrl = findByID("redirectionUrl")
+    reDirectUrl.clear()
+    reDirectUrl.sendKeys(Configuration.settings.baseUrl)
+
+    findByID("submit-top").click()
+
+    driver.findElement(By.xpath("//*[@id=\"main-content\"]/div/div/a")).click()
+  }
+
 
 }
 
