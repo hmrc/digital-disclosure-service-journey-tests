@@ -5,18 +5,18 @@
 
 package uk.gov.hmrc.utils
 
-case class Configuration(baseUrl: String, SIGN_IN_PAGE: String)
+case class Configuration(baseUrl: String)
 
 object Configuration {
 
   lazy val environment: Environment.Name = {
-    val environmentProperty = Option(System.getProperty("environment")).getOrElse("Local").toLowerCase
+    val environmentProperty = Option(System.getProperty("environment")).getOrElse("Qa").toLowerCase
     environmentProperty match {
       case "local" => Environment.Local
       case "qa" => Environment.Qa
       case "dev" => Environment.Dev
       case "staging" => Environment.Staging
-      case _ => throw new IllegalArgumentException(s"Environment '$environmentProperty' not known")
+      case _ => throw new IllegalArgumentException("Environment '$environmentProperty' not known")
     }
   }
 
@@ -26,27 +26,23 @@ object Configuration {
     environment match {
       case Environment.Local =>
         new Configuration(
-          baseUrl = "https://jira.tools.tax.service.gov.uk/",
-          SIGN_IN_PAGE = "https://jira.tools.tax.service.gov.uk/login.jsp"
+          baseUrl = "http://localhost:15003/digital-disclosure/"
         )
       case Environment.Dev =>
         new Configuration(
-          baseUrl = "https://admin.development.tax.service.gov.uk/",
-          SIGN_IN_PAGE = "https://admin.development.tax.service.gov.uk/check-immigration-status/"
+          baseUrl = "http://localhost:15003/digital-disclosure/"
         )
       case Environment.Qa =>
         new Configuration(
-          baseUrl = "https://admin.qa.tax.service.gov.uk/",
-          SIGN_IN_PAGE = "https://admin.qa.tax.service.gov.uk/check-immigration-status/"
+          baseUrl = "https://www.qa.tax.service.gov.uk/digital-disclosure/"
         )
 
       case Environment.Staging =>
         new Configuration(
-          baseUrl = "https://admin.staging.tax.service.gov.uk/",
-          SIGN_IN_PAGE = "https://admin.staging.tax.service.gov.uk/check-immigration-status/"
+          baseUrl = "https://www.qa.tax.service.gov.uk/"
         )
 
-      case _ => throw new IllegalArgumentException(s"Environment '$environment' not known")
+      case _ => throw new IllegalArgumentException("Environment '$environment' not known")
     }
   }
 }

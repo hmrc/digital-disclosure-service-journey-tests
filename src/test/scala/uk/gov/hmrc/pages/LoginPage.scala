@@ -15,9 +15,8 @@ import org.scalatestplus.selenium._
 import uk.gov.hmrc.utils.Configuration
 
 
-trait LoginPage extends SearchPage {
+trait LoginPage extends BasePage {
 
-  override lazy val url: String = Configuration.settings.SIGN_IN_PAGE
   val currentenvironment: String = Configuration.environment.toString
   private lazy val webdriverWait = new WebDriverWait(driver, 20)
 
@@ -43,7 +42,7 @@ trait LoginPage extends SearchPage {
   def nextbutton: WebElement = findByID("next-button")
 
   def login(): Unit = {
-    goTo(Configuration.settings.SIGN_IN_PAGE)
+    goTo(Configuration.settings.baseUrl)
     if (currentenvironment == "Local") {
       userid.sendKeys("niranjan.vankadaru")
       password.sendKeys("InputPassHere")

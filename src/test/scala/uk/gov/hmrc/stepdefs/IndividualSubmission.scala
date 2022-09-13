@@ -6,12 +6,12 @@
 package uk.gov.hmrc.stepdefs
 import io.cucumber.junit.Cucumber
 import org.junit.runner.RunWith
-import uk.gov.hmrc.pages.{LoginPage, SearchPage}
+import uk.gov.hmrc.pages.{BasePage, LoginPage}
 
 
 
 @RunWith(classOf[Cucumber])
-class IndividualSubmission extends SearchPage with LoginPage {
+class IndividualSubmission extends BasePage with LoginPage {
   Given("""^User login with his government gateway id""") { () =>
     // Write code here that turns the phrase above into concrete actions
     println("Given User login with his government gateway id")
