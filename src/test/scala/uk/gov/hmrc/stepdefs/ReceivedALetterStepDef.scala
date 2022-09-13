@@ -51,7 +51,6 @@ class ReceivedALetterStepDef extends BasePage with ReceivedALetterPage {
     // Write code here that turns the phrase above into concrete actions
     println("click on Save and Continue button")
     saveAndContinue()
-    Thread.sleep(5000)
   }
 
   Then("""user should be able to navigate to the next page""") { () =>

@@ -71,7 +71,6 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
     Assert.assertTrue("Page Title Verified", title == driver.getTitle)
   }
   def verifyPageQuestion(expectedQHeader: String): Unit = {
-    println("Im in verify page question")
     val question = driver.findElement(By.xpath("//*[@id=\'main-content\']/div/div/form/div/fieldset/legend/h1"))
     val actualQHeader = question.getText
     Assert.assertTrue("Page Question Verified", expectedQHeader.toString() == actualQHeader.toString())
