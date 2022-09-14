@@ -78,11 +78,11 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
   }
 
   def saveAndContinue(): Unit = {
-    driver.findElement(By.xpath("//*[@id=\"main-content\"]/div/div/form/button")).click()
+    findByID("continue").click()
   }
 
   def clickOnBack(): Unit = {
-    driver.findElement(By.xpath("/html/body/div/a")).click()
+    driver.findElement(By.className("govuk-back-link")).click()
   }
 
   def authenticationByPass(): Unit = {

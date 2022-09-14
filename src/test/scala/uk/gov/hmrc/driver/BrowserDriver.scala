@@ -30,10 +30,7 @@ object BrowserDriver {
 
   val turnOnProxy: String = Option(System.getProperty("turnOnProxy")).getOrElse("No")
 
-  if (!Option(System.getProperty(ChromeDriverService.CHROME_DRIVER_EXE_PROPERTY)).exists(_.nonEmpty)) {
-    System.setProperty(ChromeDriverService.CHROME_DRIVER_EXE_PROPERTY, "/opt/homebrew/bin/chromedriver")
-    print(System.getProperty(ChromeDriverService.CHROME_DRIVER_EXE_PROPERTY))
-  }
+
 
 
   val webDriver: WebDriver = SingletonDriver.getInstance()

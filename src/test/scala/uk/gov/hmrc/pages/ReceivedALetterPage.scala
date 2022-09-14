@@ -42,5 +42,9 @@ trait ReceivedALetterPage extends BasePage {
     radioNo.click()
   }
 
+  def yesIsSelected(): Unit = {
+    Assert.assertTrue("Verify Yes is not selected" + radioYes.isSelected, true)
+  }
+
 
 }
