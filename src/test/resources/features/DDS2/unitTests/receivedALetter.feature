@@ -11,8 +11,10 @@ Feature: A UK tax payer is able to enter the details and continue on Received A 
     Given user is navigated to Received A Letter Page
     When the user selects Yes radio button
     And click on Save and Continue button
-    Then user is navigated to Received A Letter Page by clicking Back button
-    And Yes radio option is still selected
-    And the user selects No radio button
+    Then user is navigated to the next page with title "What is the disclosure about? - Digital Disclosure Service - GOV.UK"
+    When user click on Back button
+    Then user is navigated back to Received A letter page with title "Are you making this disclosure because you have received a letter from HMRC? - Digital Disclosure Service - GOV.UK"
+    And verify that Yes radio option is still selected
+    When the user selects No radio button
     And click on Save and Continue button
-    And user is navigated to the next page
+    Then user is navigated to the next page with title "What is the disclosure about? - Digital Disclosure Service - GOV.UK"
