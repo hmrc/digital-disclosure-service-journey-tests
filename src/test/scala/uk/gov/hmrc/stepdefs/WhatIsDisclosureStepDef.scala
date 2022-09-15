@@ -32,4 +32,9 @@ class WhatIsDisclosureStepDef extends BasePage with WhatIsDisclosurePage {
     verifyPageTitle(string)
   }
 
+  Then("""the option An Individual is still selected""") { () =>
+    // Write code here that turns the phrase above into concrete actions
+    isIndividualSelected()
+  }
+
 }
