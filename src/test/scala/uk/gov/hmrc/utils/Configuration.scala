@@ -26,12 +26,10 @@ object Configuration {
   private def create(): Configuration = {
     environment match {
       case Environment.Local =>
-        println("Im in Local")
         new Configuration(
           baseUrl = "http://localhost:15003/digital-disclosure/"
         )
       case Environment.Dev =>
-        println("Im in DEV")
         new Configuration(
           baseUrl = "http://localhost:15003/digital-disclosure/"
         )

@@ -95,6 +95,12 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
     driver.findElement(By.xpath("//*[@id=\"main-content\"]/div/div/a")).click()
   }
 
+  def navigateToSpecificPage(specificPage: String): Unit = {
+    val baseUrl = Configuration.settings.baseUrl
+    goTo(baseUrl)
+    authenticationByPass()
+    goTo(baseUrl+specificPage)
+  }
 
 }
 
