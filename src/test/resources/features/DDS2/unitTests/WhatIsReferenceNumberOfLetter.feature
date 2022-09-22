@@ -1,4 +1,4 @@
-@refpage
+@page
 Feature: UI Validation and Navigation  for Screen "What is the reference number of the letter you received from HMRC?"
 
   @id_001
