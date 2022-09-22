@@ -18,7 +18,7 @@ trait DiscloseOffshoreLiabilitiesPage extends BasePage{
   val currentEnvironment: String = Configuration.environment.toString
 
   def verifyPageHeading(expectedQHeader: String): Unit = {
-    val element = driver.findElement(By.xpath("//*[contains(@class,\"govuk-heading\")]"))
+    val element = driver.findElement(By.xpath("//h1[contains(@class,'heading')]"))
     val actualQHeader = element.getText
     Assert.assertTrue("Heading is not Verified", expectedQHeader.toString() == actualQHeader.toString())
   }
@@ -48,6 +48,26 @@ trait DiscloseOffshoreLiabilitiesPage extends BasePage{
     element.click()
   }
 
+  def clickOnRadioButton(expectedQHeader: String, bulletNum: String): Unit = {
+    val elementLabel = driver.findElements(By.xpath("//*[@class='govuk-radios__item']/label[contains(@class,'govuk-radios__label')]"))
+    val value = bulletNum.toInt
+    val actualQHeader = elementLabel.get(value - 1).getText
+    Assert.assertTrue("Radio Text is not Verified", expectedQHeader.toString().trim == actualQHeader.toString().trim)
+
+    val elementInput = driver.findElements(By.xpath("//*[@class='govuk-radios__item']/input[@class='govuk-radios__input']"))
+    elementInput.get(value - 1).click()
+  }
+
+  def verifyFocusOnRadioButton(expectedQHeader: String, bulletNum: String): Unit = {
+    val elementLabel = driver.findElements(By.xpath("//*[@class='govuk-radios__item']/label[contains(@class,'govuk-radios__label')]"))
+    val value = bulletNum.toInt
+    val actualQHeader = elementLabel.get(value - 1).getText
+    Assert.assertTrue("Radio Text is not Verified", expectedQHeader.toString().trim == actualQHeader.toString().trim)
+
+    val elementInput = driver.findElements(By.xpath("//*[@class='govuk-radios__item']/input[@class='govuk-radios__input']"))
+    Assert.assertTrue("Focus is not on Radio Button",elementInput.get(value - 1).equals(driver.switchTo().activeElement()))
+  }
+
   def verifyNewTabUrl(expectedQHeader: String): Unit = {
     val tabs2 = driver.getWindowHandles
     val openedTabs=tabs2.iterator()
@@ -55,6 +75,8 @@ trait DiscloseOffshoreLiabilitiesPage extends BasePage{
     val newTab=openedTabs.next()
     driver.switchTo.window(newTab)
     Assert.assertTrue("link is not opened in new tab", driver.getCurrentUrl.toLowerCase().contains(expectedQHeader.toLowerCase()))
+    driver.close()
+    driver.switchTo.window(currentTab)
   }
 
   def verifyRadioButtonAndText(expectedQHeader: String, bulletNum: String): Unit = {
@@ -67,5 +89,4 @@ trait DiscloseOffshoreLiabilitiesPage extends BasePage{
     val actualQHeader = elementLabel.get(value - 1).getText
     Assert.assertTrue("Radio Text is not Verified", expectedQHeader.toString() == actualQHeader.toString())
   }
-
 }

@@ -12,6 +12,10 @@ class DiscloseOffshoreLiabilitiesStepDef extends BasePage with DiscloseOffshoreL
     navigateToSpecificPage("notification/disclose-offshore-liabilities")
   }
 
+  Given ("""I am on Are you the individual this disclosure relates to Page""") { () =>
+    navigateToSpecificPage("notification/are-you-the-individual")
+  }
+
   Then("""Heading with text {string} is displayed""") { (string: String) =>
     verifyPageHeading(string)
   }
@@ -36,11 +40,23 @@ class DiscloseOffshoreLiabilitiesStepDef extends BasePage with DiscloseOffshoreL
     clickOnHyperlinkText(string)
   }
 
+  When("""I select Radio Button {string} at Position {string}""") { (string: String, positionNum: String) =>
+    clickOnRadioButton(string,positionNum)
+  }
+
   Then("""Page navigates to {string} in new tab""") { (string: String) =>
     verifyNewTabUrl(string)
   }
 
   Then("""Radio Button with text {string} is displayed at position {string}""") { (string: String, positionNum: String) =>
     verifyRadioButtonAndText(string, positionNum)
+  }
+
+  Then("""Page navigates to {string}""") { (string: String) =>
+    verifyPageHeading(string)
+  }
+
+  Then("""I should navigate to Radio button {string} at Position {string}""") { (string: String, positionNum: String) =>
+    verifyFocusOnRadioButton(string,positionNum)
   }
 }
