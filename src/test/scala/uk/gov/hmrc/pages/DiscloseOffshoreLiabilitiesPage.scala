@@ -29,13 +29,6 @@ trait DiscloseOffshoreLiabilitiesPage extends BasePage{
     Assert.assertTrue("Body Text is not Verified", expectedQHeader.toString() == actualQHeader.toString())
   }
 
-  def verifyBulletText(expectedQHeader: String, bulletNum: String): Unit = {
-    val element = driver.findElements(By.xpath("//*[@class='dashed-list-item']"))
-    val value=bulletNum.toInt
-    val actualQHeader = element.get(value-1).getText;
-    Assert.assertTrue("bullet Text is not Verified", expectedQHeader.toString() == actualQHeader.toString())
-  }
-
   def verifyText(expectedQHeader: String): Unit = {
     val element = driver.findElement(By.xpath("//*[contains(@class,\"govuk-body\") and contains(@id,\"second-paragraph\")]"))
     val actualQHeader = element.getText

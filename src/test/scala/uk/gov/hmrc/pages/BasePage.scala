@@ -5,7 +5,6 @@
 
 package uk.gov.hmrc.pages
 
-import io.cucumber.datatable.DataTable
 import io.cucumber.scala.{EN, ScalaDsl}
 import org.junit.Assert
 import org.openqa.selenium.By.{ById, ByXPath}
@@ -18,18 +17,12 @@ import uk.gov.hmrc.driver.StartUpTearDown
 import uk.gov.hmrc.utils.Configuration
 import uk.gov.hmrc.utils.MessageReader.getElement
 
-import java.lang.Thread
-import scala.jdk.CollectionConverters.asScalaBufferConverter
-
-
 trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with ScalaFutures with StartUpTearDown {
 
   lazy val url: String = ""
   private lazy val webdriverWait = new WebDriverWait(driver, 20)
-  //private lazy val envBaseUrl: String = Configuration.settings.baseUrl
   private val port = 10210
 
-  //def baseUrl: String = if (envBaseUrl.startsWith("http://local")) s"$envBaseUrl:$port" else envBaseUrl
 
   def goToPage(): Unit = {
     go to url
@@ -67,14 +60,13 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
   }
 
   def verifyPageTitle (title: String): Unit = {
-
     Assert.assertTrue("Page Title Verified", title == driver.getTitle)
   }
+
   def verifyPageQuestion(expectedQHeader: String): Unit = {
     val question = driver.findElement(By.xpath("//*[@id=\'main-content\']/div/div/form/div/fieldset/legend/h1"))
     val actualQHeader = question.getText
-    Assert.assertTrue("Page Question Verified", expectedQHeader.toString() == actualQHeader.toString())
-
+    Assert.assertTrue("Page Question Verified", expectedQHeader == actualQHeader)
   }
 
   def saveAndContinue(): Unit = {
@@ -89,18 +81,37 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
     val reDirectUrl = findByID("redirectionUrl")
     reDirectUrl.clear()
     reDirectUrl.sendKeys(Configuration.settings.baseUrl)
+    findByID("submit").click()
+  }
 
-    findByID("submit-top").click()
-
-    driver.findElement(By.xpath("//*[@id=\"main-content\"]/div/div/a")).click()
+  def navigateToHomePage(): Unit = {
+    goTo(Configuration.settings.baseUrl)
+    authenticationByPass()
   }
 
   def navigateToSpecificPage(specificPage: String): Unit = {
-    val baseUrl = Configuration.settings.baseUrl
-    goTo(baseUrl)
-    authenticationByPass()
-    goTo(baseUrl+specificPage)
+    navigateToHomePage()
+    findByID("start").click()
+    goTo(Configuration.settings.baseUrl+specificPage)
   }
 
+  def verifyNewTabTitleAndCloseTab(title: String): Unit = {
+    val tabs2 = driver.getWindowHandles
+    val openedTabs=tabs2.iterator()
+    val currentTab=openedTabs.next()
+    val newTab=openedTabs.next()
+    driver.switchTo.window(newTab)
+    Assert.assertTrue("link is not opened in new tab", driver.getTitle.toLowerCase().contains(title.toLowerCase()))
+    driver.switchTo.window(newTab).close()
+    driver.switchTo().window(tabs2.iterator().next())
+    val title2 = driver.getTitle
+  }
+
+  def verifyBulletText(expectedText: String, bulletNum: String): Unit = {
+    val element = driver.findElements(By.xpath("//*[@class='dashed-list-item']"))
+    val value=bulletNum.toInt
+    val actualText = element.get(value-1).getText;
+    Assert.assertTrue("bullet Text is not Verified", expectedText == actualText)
+  }
 }
 

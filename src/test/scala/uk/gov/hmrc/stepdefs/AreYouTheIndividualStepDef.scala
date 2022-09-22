@@ -6,7 +6,6 @@
 package uk.gov.hmrc.stepdefs
 
 import io.cucumber.junit.Cucumber
-import io.cucumber.scala.PendingException
 import org.junit.runner.RunWith
 import uk.gov.hmrc.pages.{AreYouTheIndividualPage, BasePage}
 

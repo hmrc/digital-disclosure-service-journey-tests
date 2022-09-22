@@ -10,7 +10,7 @@ case class Configuration(baseUrl: String)
 object Configuration {
 
   lazy val environment: Environment.Name = {
-    val environmentProperty = Option(System.getProperty("environment")).getOrElse("Qa").toLowerCase
+    val environmentProperty = Option(System.getProperty("environment")).getOrElse("Dev").toLowerCase
 
     environmentProperty match {
       case "local" => Environment.Local
@@ -31,7 +31,7 @@ object Configuration {
         )
       case Environment.Dev =>
         new Configuration(
-          baseUrl = "http://localhost:15003/digital-disclosure/"
+          baseUrl = "http://localhost:9000/digital-disclosure/"
         )
       case Environment.Qa =>
         new Configuration(
