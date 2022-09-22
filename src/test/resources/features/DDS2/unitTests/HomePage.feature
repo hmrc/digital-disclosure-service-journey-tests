@@ -12,10 +12,10 @@ Feature: Validate the Home Page
     And fourth paragraph should be "Read the guidance on making a disclosure (opens in a new tab) before using this online service. This explains how to prepare your disclosure and what to expect."
     And fifth paragraph should be "You can authorise someone else to deal with HMRC for you (opens in a new tab), for example an accountant, friend or relative."
     And third heading should be "What you will need to complete your disclosure"
-    And Bullet Text "figures for the tax, interest and penalty due on any sources of onshore or offshore income. Find help on how to calculate these figures in the guidance on making a voluntary disclosure (opens in a new tab)" is displayed at position "1"
-    And Bullet Text "a disclosure reference number" is displayed at position "2"
-    And Bullet Text "other relevant numbers such as National Insurance number, VAT registration number and Unique Taxpayer Reference number" is displayed at position "3"
-    And Bullet Text "any other reference numbers you might have received from HMRC about unpaid tax" is displayed at position "4"
+    And bullet Text "figures for the tax, interest and penalty due on any sources of onshore or offshore income. Find help on how to calculate these figures in the guidance on making a voluntary disclosure (opens in a new tab)" is displayed at position "1"
+    And bullet Text "a disclosure reference number" is displayed at position "2"
+    And bullet Text "other relevant numbers such as National Insurance number, VAT registration number and Unique Taxpayer Reference number" is displayed at position "3"
+    And bullet Text "any other reference numbers you might have received from HMRC about unpaid tax" is displayed at position "4"
 
   Scenario: Home Page - Hyperlink Navigation Let us know as soon as possible
     Given user is on the Home page

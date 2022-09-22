@@ -22,11 +22,11 @@ class HmrcLetterReferencePageStepDef extends BasePage with HmrcLetterReferencePa
     enterInputInRefNumTextBox("")
   }
 
-  Then("""Error summary popup should be displayed with text {string}""") { (string: String) =>
+  Then("""error summary popup should be displayed with text {string}""") { (string: String) =>
     verifyErrorSummary(string)
   }
 
-  Then("""Error message should be displayed with text {string}""") { (string: String) =>
+  Then("""error message should be displayed with text {string}""") { (string: String) =>
     verifyErrorMessage(string)
   }
 
@@ -42,7 +42,7 @@ class HmrcLetterReferencePageStepDef extends BasePage with HmrcLetterReferencePa
     verifyFocusOnTextbox()
   }
 
-  Then("""Header with text {string} is displayed""") { (string: String) =>
+  Then("""header with text {string} is displayed""") { (string: String) =>
     verifyPageHeader(string)
   }
 
@@ -50,15 +50,15 @@ class HmrcLetterReferencePageStepDef extends BasePage with HmrcLetterReferencePa
     verifyPageHeader(string)
   }
 
-  Then("""Input TextBox is displayed""") { () =>
+  Then("""input TextBox is displayed""") { () =>
     isInputTextBoxDisplayed()
   }
 
-  Then("""Save and Continue Button is displayed""") { () =>
+  Then("""save and Continue Button is displayed""") { () =>
     isSaveAndContinueButtonDisplayed()
   }
 
-  Then("""Back Button Link is displayed""") { () =>
+  Then("""back Button Link is displayed""") { () =>
     isBackButtonDisplayed()
   }
 }

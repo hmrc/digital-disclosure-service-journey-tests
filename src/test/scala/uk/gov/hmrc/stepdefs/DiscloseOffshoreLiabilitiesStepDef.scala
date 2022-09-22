@@ -16,23 +16,23 @@ class DiscloseOffshoreLiabilitiesStepDef extends BasePage with DiscloseOffshoreL
     navigateToSpecificPage("notification/are-you-the-individual")
   }
 
-  Then("""Heading with text {string} is displayed""") { (string: String) =>
+  Then("""heading with text {string} is displayed""") { (string: String) =>
     verifyPageHeading(string)
   }
 
-  Then("""Body Text {string} is displayed""") { (string: String) =>
+  Then("""body Text {string} is displayed""") { (string: String) =>
     verifyBodyText(string)
   }
 
-  Then("""Bullet Text {string} is displayed at position {string}""") { (string: String,positionNum:String) =>
+  Then("""bullet Text {string} is displayed at position {string}""") { (string: String,positionNum:String) =>
     verifyBulletText(string,positionNum)
   }
 
-  Then("""Text {string} is displayed""") { (string: String) =>
+  Then("""text {string} is displayed""") { (string: String) =>
     verifyText(string)
   }
 
-  Then("""Hyperlink with text {string} is displayed""") { (string: String) =>
+  Then("""hyperlink with text {string} is displayed""") { (string: String) =>
     verifyHyperlinkText(string)
   }
 
@@ -44,15 +44,15 @@ class DiscloseOffshoreLiabilitiesStepDef extends BasePage with DiscloseOffshoreL
     clickOnRadioButton(string,positionNum)
   }
 
-  Then("""Page navigates to {string} in new tab""") { (string: String) =>
+  Then("""page navigates to {string} in new tab""") { (string: String) =>
     verifyNewTabUrl(string)
   }
 
-  Then("""Radio Button with text {string} is displayed at position {string}""") { (string: String, positionNum: String) =>
+  Then("""radio Button with text {string} is displayed at position {string}""") { (string: String, positionNum: String) =>
     verifyRadioButtonAndText(string, positionNum)
   }
 
-  Then("""Page navigates to {string}""") { (string: String) =>
+  Then("""page navigates to {string}""") { (string: String) =>
     verifyPageHeading(string)
   }
 
