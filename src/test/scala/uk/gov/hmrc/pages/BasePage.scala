@@ -98,7 +98,6 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
   def verifyNewTabTitleAndCloseTab(title: String): Unit = {
     val tabs2 = driver.getWindowHandles
     val openedTabs=tabs2.iterator()
-    val currentTab=openedTabs.next()
     val newTab=openedTabs.next()
     driver.switchTo.window(newTab)
     Assert.assertTrue("link is not opened in new tab", driver.getTitle.toLowerCase().contains(title.toLowerCase()))
