@@ -8,8 +8,8 @@ import uk.gov.hmrc.pages.{BasePage,WhatIsYourEmailAddressPage}
 
 class WhatIsYourEmailAddressStepDef extends BasePage with WhatIsYourEmailAddressPage {
 
-  Given("""I am What is your email address Page""") { () =>
-    navigateToSpecificPage("notification/your-email-address")
+  Given("""I am on What is your telephone number page""") { () =>
+    navigateToSpecificPage("notification/your-telephone-number")
   }
 
   Then("""hint with text {string} is displayed""") { (string: String) =>

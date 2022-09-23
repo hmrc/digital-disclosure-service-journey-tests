@@ -1,3 +1,8 @@
+/*
+ * Copyright 2022 HM Revenue & Customs
+ *
+ */
+
 package uk.gov.hmrc.stepdefs
 
 import io.cucumber.scala.{EN, PendingException, ScalaDsl}
