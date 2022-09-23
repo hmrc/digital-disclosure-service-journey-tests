@@ -16,6 +16,11 @@ trait WhatIsYourTelephoneNumberPage extends BasePage {
 
   val currentEnvironment: String = Configuration.environment.toString
 
+  def verifyBodyText(expectedText: String): Unit = {
+    val element = driver.findElement(By.xpath("//*[@id=\'main-content\']/div/div/form/div/label"))
+    val actualText = element.getText
+    Assert.assertTrue("Body Text is not Verified", expectedText == actualText)
+  }
   def verifyHintText(expectedQHeader: String): Unit = {
     val element = driver.findElement(By.xpath("//*[@class='govuk-hint']"))
     val actualQHeader = element.getText

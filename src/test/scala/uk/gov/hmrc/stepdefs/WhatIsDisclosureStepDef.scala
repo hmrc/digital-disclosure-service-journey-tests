@@ -12,7 +12,7 @@ import uk.gov.hmrc.pages.{BasePage, WhatIsDisclosurePage}
 
 @RunWith(classOf[Cucumber])
 class WhatIsDisclosureStepDef extends BasePage with WhatIsDisclosurePage {
-  Given("""^user is navigated to What is the disclosure Page""") { () =>
+  Given("""I am navigated to What is the disclosure Page""") { () =>
     // Write code here that turns the phrase above into concrete actions
     navigateToPage()
   }
@@ -22,12 +22,12 @@ class WhatIsDisclosureStepDef extends BasePage with WhatIsDisclosurePage {
     verifyNoRadioSelected()
   }
 
-  When("""user selects An Individual""") { () =>
+  When("""I select radio option An Individual""") { () =>
     // Write code here that turns the phrase above into concrete actions
     selectAnIndividual()
   }
 
-  Then("""user is navigated back to the page with title {string}""") { (string: String) =>
+  Then("""I am navigated back to the page with title {string}""") { (string: String) =>
     // Write code here that turns the phrase above into concrete actions
     verifyPageTitle(string)
   }

@@ -1,8 +1,8 @@
 @page
-Feature: Validate the Home Page
+Feature: A UK tax payer is able to navigate to Home page and continue to the next page
 
   Scenario: Home Page - Validate the static content of the page
-    Given user is on the Home page
+    Given I am on the Home page
     Then the page title should be "Digital Disclosure Service - Digital Disclosure Service - GOV.UK"
     And first heading should be "Digital Disclosure Service"
     And first paragraph should be "You can tell us about undisclosed income you need to pay tax on for any years between the tax years ending 2003 and 2021. However, if you have been sent a tax return for any year from the tax year ending 2019 which is still outstanding, you must complete it as normal – do not include the tax from these tax years in this disclosure."
@@ -18,34 +18,34 @@ Feature: Validate the Home Page
     And bullet Text "any other reference numbers you might have received from HMRC about unpaid tax" is displayed at position "4"
 
   Scenario: Home Page - Hyperlink Navigation Let us know as soon as possible
-    Given user is on the Home page
-    When user clicks on hyperlink with text "let us know as soon as possible and before you send in your disclosure by calling the helpline (opens in a new tab)"
-    Then user is navigated to new tab with page title "How to make a voluntary disclosure to HMRC - GOV.UK"
+    Given I am on the Home page
+    When I click on the hyperlink with text "let us know as soon as possible and before you send in your disclosure by calling the helpline (opens in a new tab)"
+    Then I am navigated to new tab with page title "How to make a voluntary disclosure to HMRC - GOV.UK"
 
   Scenario: Home Page - Hyperlink Navigation Read the guidance
-    Given user is on the Home page
-    When user clicks on hyperlink with text "Read the guidance on making a disclosure (opens in a new tab)"
-    Then user is navigated to new tab with page title "How to make a voluntary disclosure to HMRC - GOV.UK"
+    Given I am on the Home page
+    When I click on the hyperlink with text "Read the guidance on making a disclosure (opens in a new tab)"
+    Then I am navigated to new tab with page title "How to make a voluntary disclosure to HMRC - GOV.UK"
 
   Scenario: Home Page - Hyperlink Navigation authorise someone else
-    Given user is on the Home page
-    When user clicks on hyperlink with text "authorise someone else to deal with HMRC for you (opens in a new tab)"
-    Then user is navigated to new tab with page title "Appoint someone to deal with HMRC on your behalf - GOV.UK"
+    Given I am on the Home page
+    When I click on the hyperlink with text "authorise someone else to deal with HMRC for you (opens in a new tab)"
+    Then I am navigated to new tab with page title "Appoint someone to deal with HMRC on your behalf - GOV.UK"
 
   Scenario: Home Page - Hyperlink Navigation how to calculate
-    Given user is on the Home page
-    When user clicks on hyperlink with text "how to calculate these figures in the guidance on making a voluntary disclosure (opens in a new tab)"
-    Then user is navigated to new tab with page title "How to make a voluntary disclosure to HMRC - GOV.UK"
+    Given I am on the Home page
+    When I click on the hyperlink with text "how to calculate these figures in the guidance on making a voluntary disclosure (opens in a new tab)"
+    Then I am navigated to new tab with page title "How to make a voluntary disclosure to HMRC - GOV.UK"
 
   Scenario: Home Page - Hyperlink Navigation authorise someone else
-    Given user is on the Home page
-    When user clicks on hyperlink with text "authorise someone else to deal with HMRC for you (opens in a new tab)"
-    Then user is navigated to new tab with page title "Appoint someone to deal with HMRC on your behalf - GOV.UK"
+    Given I am on the Home page
+    When I click on the hyperlink with text "authorise someone else to deal with HMRC for you (opens in a new tab)"
+    Then I am navigated to new tab with page title "Appoint someone to deal with HMRC on your behalf - GOV.UK"
 
   Scenario: Home Page - Continue takes to the first question
-    Given user is on the Home page
-    When user clicks on continue button
-    Then user is navigated to page with title "Are you making a disclosure because you have received a letter from HMRC? - Digital Disclosure Service - GOV.UK"
+    Given I am on the Home page
+    When I click on continue button
+    Then I am navigated to page with title "Are you making a disclosure because you have received a letter from HMRC? - Digital Disclosure Service - GOV.UK"
 
 
 

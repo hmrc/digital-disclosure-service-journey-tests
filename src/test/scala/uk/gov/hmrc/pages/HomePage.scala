@@ -36,19 +36,19 @@ trait HomePage extends BasePage {
     navigateToSpecificPage(pageAddress)
   }
   def verifyPageHeaderH1(expectedHeader: String): Unit = {
-    val header = driver.findElement(By.xpath("//*[@id=\'main-content\']/div/div/h1"))
+    val header = driver.findElement(By.xpath("//h1[contains(@class,'heading')]"))
     val actualHeader = header.getText
     Assert.assertTrue("H1 Verified", expectedHeader == actualHeader)
   }
 
   def verifyPageHeaderH2(expectedHeader: String): Unit = {
-    val header = driver.findElement(By.xpath("//*[@id=\'main-content\']/div/div/h2"))
+    val header = driver.findElement(By.xpath("//h2[contains(@class,'heading')]"))
     val actualHeader = header.getText
     Assert.assertTrue("H2 Verified", expectedHeader == actualHeader)
   }
 
   def verifyPageHeaderH3(expectedHeader: String): Unit = {
-    val header = driver.findElement(By.xpath("//*[@id=\'main-content\']/div/div/h3"))
+    val header = driver.findElement(By.xpath("//h3[contains(@class,'heading')]"))
     val actualHeader = header.getText
     Assert.assertTrue("H3 Verified", expectedHeader == actualHeader)
   }

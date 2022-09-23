@@ -13,7 +13,7 @@ import uk.gov.hmrc.pages.{BasePage, HomePage}
 @RunWith(classOf[Cucumber])
 class HomePageStepDef extends BasePage with HomePage {
 
-  Given("""user is on the Home page""") { () =>
+  Given("""I am on the Home page""") { () =>
     // Write code here that turns the phrase above into concrete actions
     navigateToHomePage()
   }
@@ -70,22 +70,22 @@ class HomePageStepDef extends BasePage with HomePage {
     verifyParagraphSix(string)
   }
 
-  When("""user clicks on continue button""") { () =>
+  When("""I click on continue button""") { () =>
     // Write code here that turns the phrase above into concrete actions
     clickOnContinue()
   }
 
-  When("""user clicks on hyperlink with text {string}""") { (string: String) =>
+  When("""I click on the hyperlink with text {string}""") { (string: String) =>
     // Write code here that turns the phrase above into concrete actions
     clickOnLink(string)
   }
 
-  Then("""user is navigated to new tab with page title {string}""") { (string: String) =>
+  Then("""I am navigated to new tab with page title {string}""") { (string: String) =>
     // Write code here that turns the phrase above into concrete actions
     verifyNewTabTitleAndCloseTab(string)
   }
 
-  Then("""user is navigated to page with title {string}""") { (string: String) =>
+  Then("""I am navigated to page with title {string}""") { (string: String) =>
     verifyPageTitle(string)
   }
 }

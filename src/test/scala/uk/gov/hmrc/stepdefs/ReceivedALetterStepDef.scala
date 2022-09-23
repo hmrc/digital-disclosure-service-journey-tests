@@ -12,9 +12,9 @@ import uk.gov.hmrc.pages.{BasePage, ReceivedALetterPage}
 
 @RunWith(classOf[Cucumber])
 class ReceivedALetterStepDef extends BasePage with ReceivedALetterPage {
-  Given("""^user is navigated to Received A Letter Page""") { () =>
+  Given("""^I am navigated to Received A Letter Page""") { () =>
     // Write code here that turns the phrase above into concrete actions
-    navigateToPage()
+    navigateToSpecificPage("")
   }
 
   When("""the page is loaded successfully and verifies the page title is {string}""") { (string: String) =>
@@ -32,7 +32,7 @@ class ReceivedALetterStepDef extends BasePage with ReceivedALetterPage {
     verifyYesNoAreNotSelected()
   }
 
-  When("""the user selects Yes radio button""") { () =>
+  When("""I select Yes radio button""") { () =>
     // Write code here that turns the phrase above into concrete actions
     selectYes()
   }
@@ -42,34 +42,29 @@ class ReceivedALetterStepDef extends BasePage with ReceivedALetterPage {
     saveAndContinue()
   }
 
-  Then("""user is navigated to the next page with title {string}""") { (string: String) =>
+  Then("""I am navigated to the next page with title {string}""") { (string: String) =>
     // Write code here that turns the phrase above into concrete actions
     verifyPageTitle(string)
   }
 
-  When("""^user click on Back button""") { () =>
+  When("""I click on Back button""") { () =>
     // Write code here that turns the phrase above into concrete actions
     clickOnBack()
   }
 
-  Then("""user is navigated back to Received A letter page with title {string}""") { (string: String) =>
+  Then("""I am navigated back to Received A letter page with title {string}""") { (string: String) =>
     // Write code here that turns the phrase above into concrete actions
     verifyPageTitle(string)
   }
 
-  Then("""^verify that Yes radio option is still selected""") { () =>
+  Then("""verify that Yes radio option is still selected""") { () =>
       // Write code here that turns the phrase above into concrete actions
     yesIsSelected()
   }
 
-  Then("""^the user selects No radio button""") { () =>
+  Then("""I select No radio button""") { () =>
     // Write code here that turns the phrase above into concrete actions
     selectNo()
-  }
-
-  Then("""^user is navigated to the next page""") { () =>
-    // Write code here that turns the phrase above into concrete actions
-    println("user should be able to navigate to the next page")
   }
 
 }

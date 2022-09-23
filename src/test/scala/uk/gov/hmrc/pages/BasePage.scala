@@ -64,7 +64,7 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
   }
 
   def verifyPageQuestion(expectedQHeader: String): Unit = {
-    val question = driver.findElement(By.xpath("//*[@id=\'main-content\']/div/div/form/div/fieldset/legend/h1"))
+    val question = driver.findElement(By.xpath("//h1[contains(@class,'heading')]"))
     val actualQHeader = question.getText
     Assert.assertTrue("Page Question Verified", expectedQHeader == actualQHeader)
   }
@@ -92,7 +92,10 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
   def navigateToSpecificPage(specificPage: String): Unit = {
     navigateToHomePage()
     findByID("start").click()
-    goTo(Configuration.settings.baseUrl+specificPage)
+    if (specificPage != "") {
+      goTo(Configuration.settings.baseUrl+specificPage)
+    }
+
   }
 
   def verifyNewTabTitleAndCloseTab(title: String): Unit = {

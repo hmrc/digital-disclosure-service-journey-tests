@@ -9,11 +9,11 @@ import uk.gov.hmrc.pages.{BasePage, WhatIsYourTelephoneNumberPage}
 
 class WhatIsYourTelephoneNumberStepDef extends BasePage with WhatIsYourTelephoneNumberPage {
 
-  Given("""I am on What is your email address Page""") { () =>
-    navigateToSpecificPage("notification/your-email-address")
+  Given("""I am on What is your telephone number page""") { () =>
+    navigateToSpecificPage("notification/your-telephone-number")
+  }
+  Then("""body Text should be {string}""") { (string: String) =>
+    verifyBodyText(string)
   }
 
-  Then("""hint with text {string} is displayed""") { (string: String) =>
-    verifyHintText(string)
-  }
 }

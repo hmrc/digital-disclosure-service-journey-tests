@@ -13,7 +13,7 @@ import uk.gov.hmrc.pages.{AreYouTheIndividualPage, BasePage}
 @RunWith(classOf[Cucumber])
 class AreYouTheIndividualStepDef extends BasePage with AreYouTheIndividualPage {
 
-  Given("""user is navigated to Are you the individual this disclosure relates to Page""") { () =>
+  Given("""I am navigated to Are you the individual this disclosure relates to Page""") { () =>
     // Write code here that turns the phrase above into concrete actions
     navigateToPage()
   }
@@ -23,7 +23,7 @@ class AreYouTheIndividualStepDef extends BasePage with AreYouTheIndividualPage {
     verifyNoRadioSelected()
   }
 
-  When("""user selects {string}""") { (string: String) =>
+  When("""I select {string}""") { (string: String) =>
     // Write code here that turns the phrase above into concrete actions
     selectOption(string)
   }
