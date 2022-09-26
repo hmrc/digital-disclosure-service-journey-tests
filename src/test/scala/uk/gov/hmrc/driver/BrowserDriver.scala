@@ -22,7 +22,6 @@ package uk.gov.hmrc.driver
  */
 
 import org.openqa.selenium.WebDriver
-import org.openqa.selenium.chrome.ChromeDriverService
 import uk.gov.hmrc.webdriver.SingletonDriver
 
 

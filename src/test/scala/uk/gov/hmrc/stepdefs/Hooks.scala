@@ -5,26 +5,22 @@
 
 package uk.gov.hmrc.stepdefs
 
-import io.cucumber.java.{AfterStep, Before, Scenario}
-import org.openqa.selenium.{OutputType, TakesScreenshot, WebDriverException}
-import uk.gov.hmrc.driver.StartUpTearDown
+import io.cucumber.java.{After, AfterAll, AfterStep, Before, BeforeAll, Scenario}
+import org.junit.{AfterClass, BeforeClass}
+import org.openqa.selenium.{OutputType, TakesScreenshot, WebDriver, WebDriverException}
+import uk.gov.hmrc.driver.{BrowserDriver, StartUpTearDown}
 import uk.gov.hmrc.utils.{ApiLogin, Configuration}
 
 class Hooks extends StartUpTearDown{
 
   @Before
   def initialize(): Unit = {
-    driver.manage().deleteAllCookies()
-
-
-    lazy val currentenvironment = "Local"
-    if (currentenvironment == "Local") {
-      driver.manage().deleteAllCookies()
-      driver.navigate.refresh()
-      driver.manage().deleteAllCookies()
-      //ApiLogin.CreateAPIUser()
+    if (driver.getWindowHandles.size() == 0) {
+      implicit val driver: WebDriver = BrowserDriver.webDriver
     }
+    driver.manage().deleteAllCookies()
+    driver.navigate.refresh()
+    driver.manage.window.maximize()
   }
-
 
 }

@@ -82,6 +82,11 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
     reDirectUrl.clear()
     reDirectUrl.sendKeys(Configuration.settings.baseUrl)
     findByID("submit").click()
+    if (driver.findElements( By.xpath("//*[@class='cbanner-govuk-cookie-banner']") ).size() != 0){
+      driver.findElement( By.xpath("//button[contains(text(), 'Accept additional cookies')]")).click()
+      driver.findElement( By.xpath("//button[contains(text(), 'Hide cookies message')]")).click()
+
+    }
   }
 
   def navigateToHomePage(): Unit = {
@@ -95,7 +100,6 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
     if (specificPage != "") {
       goTo(Configuration.settings.baseUrl+specificPage)
     }
-
   }
 
   def verifyNewTabTitleAndCloseTab(title: String): Unit = {
