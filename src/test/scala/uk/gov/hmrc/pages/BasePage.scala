@@ -6,6 +6,7 @@
 package uk.gov.hmrc.pages
 
 import io.cucumber.scala.{EN, ScalaDsl}
+import org.apache.commons.lang3.StringUtils
 import org.junit.Assert
 import org.openqa.selenium.By.{ById, ByXPath}
 import org.openqa.selenium.support.ui.{ExpectedConditions, WebDriverWait}
@@ -112,6 +113,15 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
     val value=bulletNum.toInt
     val actualText = element.get(value-1).getText;
     Assert.assertTrue("bullet Text is not Verified", expectedText == actualText)
+  }
+
+  def enterInputInTextBox(textInput: String): Unit = {
+    driver.findElement(By.xpath("//input[contains(@class,\"govuk-input\")]")).sendKeys(textInput)
+  }
+
+  def enterInputInTextBoxWithMaxLength(length: String): Unit = {
+    val textInput = StringUtils.repeat("*", length.toInt + 1)
+    driver.findElement(By.xpath("//input[contains(@class,\"govuk-input\")]")).sendKeys(textInput)
   }
 }
 
