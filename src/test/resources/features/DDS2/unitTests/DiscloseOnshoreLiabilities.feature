@@ -1,4 +1,4 @@
-@refpage
+@page
 Feature: UI Validation and Navigation  for Screen "Do you also want to disclose onshore liabilities?"
 
   @id_001
