@@ -52,6 +52,10 @@ class DiscloseOffshoreLiabilitiesStepDef extends BasePage with DiscloseOffshoreL
     verifyRadioButtonAndText(string, positionNum)
   }
 
+  Then("""verify that radio options are not selected by default""") { () =>
+    verifyRadioButtonAndTextNotSelected()
+  }
+
   Then("""page navigates to {string}""") { (string: String) =>
     verifyPageHeading(string)
   }

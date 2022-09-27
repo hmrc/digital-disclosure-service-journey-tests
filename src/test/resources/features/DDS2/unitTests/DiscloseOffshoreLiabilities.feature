@@ -14,6 +14,7 @@ Feature: A UK tax payer is able to enter the details and continue on "Do you wan
     And hyperlink with text "Find more information about offshore liabilities (opens in new tab)" is displayed
     And radio Button with text "I want to disclose offshore liabilities" is displayed at position "1"
     And radio Button with text "I do not have offshore liabilities to disclose" is displayed at position "2"
+    And verify that radio options are not selected by default
     And save and Continue Button is displayed
     And back Button Link is displayed
 
