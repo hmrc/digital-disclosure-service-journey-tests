@@ -39,10 +39,10 @@ Feature: A UK tax payer is able to enter the details and continue on "Do you wan
 
   @id_005
   Scenario: Navigation Validation with Back Button
-    Given user is navigated to Are you the individual this disclosure relates to Page
+    Given I am navigated to Are you the individual this disclosure relates to Page
     When I select Radio Button "Yes, I am the individual" at Position "1"
     And click on Save and Continue button
-    And user click on Back button
+    And I click on Back button
     Then page navigates to "Are you the individual this disclosure relates to?"
 
   @id_006
