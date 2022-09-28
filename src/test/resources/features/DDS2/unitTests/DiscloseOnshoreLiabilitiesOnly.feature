@@ -2,7 +2,7 @@
 Feature: UI Validation and Navigation  for Screen "The disclosure is only about onshore liabilities"
 
   @id_001
-  Scenario: UI Validation
+  Scenario: Disclose onshore liabilities Only - UI Validation
     Given I am on The disclosure is only about onshore liabilities page
     Then heading with text "The disclosure is only about onshore liabilities" is displayed
     And body Text "As you have no offshore liabilities to disclose, the disclosure is only about onshore liabilities. You have onshore liabilities if you are classed as a resident (opens in a new tab) in the UK and:" is displayed
@@ -16,7 +16,23 @@ Feature: UI Validation and Navigation  for Screen "The disclosure is only about 
     And back Button Link is displayed
 
    @id_002
-   Scenario: Hyperlink Navigation
+   Scenario: Disclose onshore liabilities Only -Hyperlink Navigation
      Given I am on The disclosure is only about onshore liabilities page
      When click on Hyperlink "You have onshore liabilities if you are classed as a resident (opens in a new tab)"
      Then page navigates to "https://www.gov.uk/tax-foreign-income/residence" in new tab
+
+  @id_003
+  Scenario: Disclose onshore liabilities Only - Navigation with Back button
+    Given I am on Do you want to disclose offshore liabilities Page
+    When I select Radio Button "I do not have offshore liabilities to disclose" at Position "2"
+    And click on Save and Continue button
+    And I click on Back button
+    Then page navigates to "Do you want to disclose offshore liabilities?"
+
+  @id_004
+  Scenario: Disclose onshore liabilities Only - Navigation with Save and Continue button
+    Given I am on Do you want to disclose offshore liabilities Page
+    When I select Radio Button "I do not have offshore liabilities to disclose" at Position "2"
+    And click on Save and Continue button
+    And click on Save and Continue button
+    Then user is navigated to the page with title "What is your full name?"

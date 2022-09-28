@@ -89,4 +89,10 @@ trait DiscloseOffshoreLiabilitiesPage extends BasePage{
     val actualQHeader = elementLabel.get(value - 1).getText
     Assert.assertTrue("Radio Text is not Verified", expectedQHeader.toString() == actualQHeader.toString())
   }
+
+  def verifyRadioButtonAndTextNotSelected(): Unit = {
+    val elementInput = driver.findElements(By.xpath("//*[@class='govuk-radios__item']/input[@class='govuk-radios__input']"))
+    val value = elementInput.size()
+    Assert.assertTrue("Radio Button is selected", !elementInput.get(value - 1).isSelected)
+  }
 }

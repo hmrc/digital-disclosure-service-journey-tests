@@ -14,6 +14,7 @@ Feature: UI Validation and Navigation  for Screen "Do you also want to disclose 
     And hyperlink with text "if you are classed as a resident (opens in a new tab)" is displayed
     And radio Button with text "I want to disclose onshore liabilities" is displayed at position "1"
     And radio Button with text "I do not have onshore liabilities to disclose" is displayed at position "2"
+    And verify that radio options are not selected by default
     And save and Continue Button is displayed
     And back Button Link is displayed
 
@@ -25,7 +26,7 @@ Feature: UI Validation and Navigation  for Screen "Do you also want to disclose 
 
     @id_003
   Scenario: Disclose onshore liabilities- Navigation with option "I want to disclose onshore liabilities"
-      Given user is navigated to Are you the individual this disclosure relates to Page
+      Given I am navigated to Are you the individual this disclosure relates to Page
       When I select Radio Button "Yes, I am the individual" at Position "1"
       And click on Save and Continue button
       When I select Radio Button "I want to disclose offshore liabilities" at Position "1"
@@ -36,7 +37,7 @@ Feature: UI Validation and Navigation  for Screen "Do you also want to disclose 
 
   @id_004
   Scenario: Disclose onshore liabilities -Navigation with option "I do not have onshore liabilities to disclose"
-    Given user is navigated to Are you the individual this disclosure relates to Page
+    Given I am navigated to Are you the individual this disclosure relates to Page
     When I select Radio Button "Yes, I am the individual" at Position "1"
     And click on Save and Continue button
     And I select Radio Button "I want to disclose offshore liabilities" at Position "1"
@@ -50,7 +51,7 @@ Feature: UI Validation and Navigation  for Screen "Do you also want to disclose 
     Given I am on Do you also want to disclose onshore liabilities page
     And I select Radio Button "I do not have onshore liabilities to disclose" at Position "2"
     And click on Save and Continue button
-    And user click on Back button
+    And I click on Back button
     Then page navigates to "Do you also want to disclose onshore liabilities?"
 
   @id_006
