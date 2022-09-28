@@ -13,7 +13,7 @@ class WhatIsYourMainOccupationStepDef extends BasePage with WhatIsYourMainOccupa
     navigateToSpecificPage("notification/your-main-occupation")
   }
 
-  Then("""I enter {string} on TextBox field""") { (string: String) =>
+  Then("""I enter {string} in the TextBox field""") { (string: String) =>
     enterInputInTextBox(string)
   }
 
