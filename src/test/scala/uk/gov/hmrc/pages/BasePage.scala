@@ -130,5 +130,9 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
     val textInput = StringUtils.repeat("*", length.toInt + 1)
     driver.findElement(By.xpath("//input[contains(@class,\"govuk-input\")]")).sendKeys(textInput)
   }
+
+  def verifyFocusOnTextbox(): Unit = {
+    driver.findElement(By.xpath("//input[contains(@class,\"govuk-input\")]")).equals(driver.switchTo().activeElement())
+  }
 }
 

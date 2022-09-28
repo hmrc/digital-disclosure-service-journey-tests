@@ -39,10 +39,6 @@ trait HmrcLetterReferencePage extends BasePage {
     driver.findElement(By.xpath("//input[contains(@class,\"govuk-input\")]")).sendKeys(textInput)
   }
 
-  def verifyFocusOnTextbox(): Unit = {
-    driver.findElement(By.xpath("//input[contains(@class,\"govuk-input\")]")).equals(driver.switchTo().activeElement())
-  }
-
   def verifyPageHeader(expectedQHeader:String): Unit = {
     val question = driver.findElement(By.xpath("//div[@class=\"govuk-form-group\"]//h1"))
     val actualQHeader = question.getText

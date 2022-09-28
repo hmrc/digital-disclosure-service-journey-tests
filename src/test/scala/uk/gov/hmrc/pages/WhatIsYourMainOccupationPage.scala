@@ -22,9 +22,4 @@ trait WhatIsYourMainOccupationPage extends BasePage {
   def enterInputBox(data: String): Unit = {
     mainOccupation.sendKeys(data)
   }
-
-  def verifyFocusOnTextbox(): Unit = {
-    driver.findElement(By.xpath("//input[contains(@class,\"govuk-input\")]")).equals(driver.switchTo().activeElement())
-  }
-
 }
