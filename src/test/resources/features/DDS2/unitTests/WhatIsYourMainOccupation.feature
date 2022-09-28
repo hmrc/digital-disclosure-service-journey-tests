@@ -5,6 +5,7 @@ Feature: A UK tax payer is able to enter the details and continue on What is you
     Given I am on What is your main occupation page
     Then the page title should be "What is your main occupation? - Digital Disclosure Service - GOV.UK"
     And verify the question should be "What is your main occupation?"
+    And hint with text "For example, plumber or dentist." is displayed
     And save and Continue Button is displayed
     And back Button Link is displayed
 

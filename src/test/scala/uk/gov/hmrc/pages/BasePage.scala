@@ -61,13 +61,13 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
   }
 
   def verifyPageTitle (title: String): Unit = {
-    Assert.assertTrue("Page Title Verified", title == driver.getTitle)
+    Assert.assertTrue("Page Title not Verified", title == driver.getTitle)
   }
 
   def verifyPageQuestion(expectedQHeader: String): Unit = {
-    val question = driver.findElement(By.xpath("//h1[contains(@class,'heading')]"))
+    val question = driver.findElement(By.xpath("//h1"))
     val actualQHeader = question.getText
-    Assert.assertTrue("Page Question Verified", expectedQHeader == actualQHeader)
+    Assert.assertTrue("Page Question not Verified", expectedQHeader == actualQHeader)
   }
 
   def saveAndContinue(): Unit = {
