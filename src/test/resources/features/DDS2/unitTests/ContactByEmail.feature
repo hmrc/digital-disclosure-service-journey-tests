@@ -40,7 +40,7 @@ Feature: A UK tax payer is able to enter the details and continue on "Do you hav
   @id_006
   Scenario: Contact By Email-Navigation with back button
     Given I am on What is your telephone number page
-    And I enter "01642 123456" on TextBox field
+    And I enter "01642 123456" in the TextBox field
     And click on Save and Continue button
     And I click on Back button
     Then page navigates to "What is your telephone number?"

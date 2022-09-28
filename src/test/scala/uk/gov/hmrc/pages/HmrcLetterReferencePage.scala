@@ -52,13 +52,13 @@ trait HmrcLetterReferencePage extends BasePage {
   def verifyErrorSummary(expectedQHeader: String): Unit = {
     val question = driver.findElement(By.xpath("//*[@class=\"govuk-error-summary__title\"]"))
     val actualQHeader = question.getText
-    Assert.assertTrue("Error Summary is not Verified", expectedQHeader.toString() == actualQHeader.toString())
+    Assert.assertTrue("Error Summary is not Verified.  Expected: " + expectedQHeader + "Actual: " + actualQHeader, expectedQHeader.toString() == actualQHeader.toString())
   }
 
   def verifyErrorMessage(expectedQHeader: String): Unit = {
     val question = driver.findElement(By.xpath("//*[@class=\"govuk-error-summary__body\"]"))
     val actualQHeader = question.getText
-    Assert.assertTrue("Error Message is not Verified", expectedQHeader.toString() == actualQHeader.toString())
+    Assert.assertTrue("Error Message is not Verified. Expected: " + expectedQHeader + "Actual: " + actualQHeader, expectedQHeader.toString() == actualQHeader.toString())
   }
 
   def clickErrorMessage(expectedQHeader: String): Unit = {
