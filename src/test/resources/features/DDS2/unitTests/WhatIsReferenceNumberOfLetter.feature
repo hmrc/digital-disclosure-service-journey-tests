@@ -45,4 +45,4 @@ Feature: UI Validation and Navigation  for Screen "What is the reference number 
     Given I am on What is the reference number of the letter you received from HMRC Page
     When I enter anything in reference number TextBox field
     And I click on Back button
-    Then user is navigated to the page with title "Are you making this disclosure because you have received a letter from HMRC?"
+    Then user is navigated to the page with title "Are you making a disclosure because you have received a letter from HMRC?"
