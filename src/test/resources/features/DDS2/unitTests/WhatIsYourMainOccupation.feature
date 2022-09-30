@@ -18,5 +18,18 @@ Feature: A UK tax payer is able to enter the details and continue on What is you
     And I click on problem message "Enter your main occupation"
     Then I should navigate to TextBox field
 
+  Scenario: What is your main occupation? - Minimum characters - Less than 4 characters not allowed
+    Given I am on What is your main occupation page
+    When I enter "mat" in the TextBox field
+    And click on Save and Continue button
+    Then error summary popup should be displayed with text "There is a problem"
+    And error message should be displayed with text "Your main occupation should have at least 4 characters"
+    And I click on problem message "Your main occupation should have at least 4 characters"
+    Then I should navigate to TextBox field
 
-
+  Scenario: What is your main occupation? - Maximum characters - More than 30 characters not allowed
+    Given I am on What is your main occupation page
+    When I enter "this is a very long main occupation" in the TextBox field
+    And click on Save and Continue button
+    Then error summary popup should be displayed with text "There is a problem"
+    And error message should be displayed with text "Your main occupation should have no more than 30 characters."
