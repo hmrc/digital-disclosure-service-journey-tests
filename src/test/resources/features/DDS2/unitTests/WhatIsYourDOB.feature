@@ -43,4 +43,3 @@ Feature: A UK tax payer is able to enter the details and continue on What is you
       |    "" |   "10" |    "1980" | "The date of birth must include day"    |
       |    "31" |   "06" |    "1980" | "Enter a real date of birth"    |
       |    "29" |   "02" |    "1981" | "Enter a real date of birth"    |
-

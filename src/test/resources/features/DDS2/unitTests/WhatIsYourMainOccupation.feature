@@ -13,6 +13,8 @@ Feature: A UK tax payer is able to enter the details and continue on What is you
     Given I am on What is your main occupation page
     When I enter "" in the TextBox field
     And click on Save and Continue button
+    Then error summary popup should be displayed with text "There is a problem"
+    And error message should be displayed with text "Enter your main occupation"
     And I click on problem message "Enter your main occupation"
     Then I should navigate to TextBox field
 
