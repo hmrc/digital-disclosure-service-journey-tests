@@ -17,6 +17,10 @@ class WhatIsYourNationalInsuranceNumStepDef extends BasePage{
     enterInputInTextBox("")
   }
 
+  When("""I enter anything in NI Number TextBox field""") { () =>
+    enterInputInTextBox("QQ123456A")
+  }
+
   When("""I enter data with max length of {string} in NI Number TextBox field""") { (string: String) =>
     enterInputInTextBoxWithMaxLength(string)
   }
