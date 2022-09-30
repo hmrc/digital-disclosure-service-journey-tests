@@ -60,14 +60,15 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
     }
   }
 
-  def verifyPageTitle (title: String): Unit = {
-    Assert.assertTrue("Page Title not Verified", title == driver.getTitle)
+  def verifyPageTitle (expectedTitle: String): Unit = {
+    val actualTitle = driver.getTitle
+    Assert.assertTrue("Page Title not Verified. Expected: " + expectedTitle + "--- Actual: " + actualTitle, expectedTitle == actualTitle)
   }
 
   def verifyPageQuestion(expectedQHeader: String): Unit = {
     val question = driver.findElement(By.xpath("//h1"))
     val actualQHeader = question.getText
-    Assert.assertTrue("Page Question not Verified", expectedQHeader == actualQHeader)
+    Assert.assertTrue("Page Question not Verified " + expectedQHeader +  "--- Actual:  " + actualQHeader, expectedQHeader == actualQHeader)
   }
 
   def saveAndContinue(): Unit = {
@@ -119,7 +120,7 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
     val element = driver.findElements(By.xpath("//*[@class='dashed-list-item']"))
     val value=bulletNum.toInt
     val actualText = element.get(value-1).getText;
-    Assert.assertTrue("bullet Text is not Verified", expectedText == actualText)
+    Assert.assertTrue("bullet Text is not Verified " + expectedText +  "--- Actual:  " + actualText, expectedText == actualText)
   }
 
   def enterInputInTextBox(textInput: String): Unit = {

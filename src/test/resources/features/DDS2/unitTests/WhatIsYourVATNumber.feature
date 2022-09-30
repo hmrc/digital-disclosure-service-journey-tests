@@ -10,3 +10,11 @@ Feature: A UK tax payer is able to enter the details and continue on What is you
     And input TextBox is displayed
     And save and Continue Button is displayed
     And back Button Link is displayed
+
+  Scenario: What is your VAT registration number?  - Enter VAT number, continue to the next page and navigate back
+    Given I am on What is your VAT registration number page
+    When I enter "123569878" in the TextBox field
+    And click on Save and Continue button
+    Then I am navigated to the next page with title "Are you registered for Self Assessment? - Digital Disclosure Service - GOV.UK"
+    When I click on Back button
+    Then I am navigated back to the page with title "What is your VAT registration number? - Digital Disclosure Service - GOV.UK"
