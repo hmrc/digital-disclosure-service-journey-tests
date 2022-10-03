@@ -79,3 +79,10 @@ Feature: A UK tax payer is able to enter the details and continue on "What is yo
     When I enter "AZ 12 345 6   D" NI Number TextBox field
     And click on Save and Continue button
     Then error message should be displayed with text "Enter a valid National Insurance number"
+
+  @id_0010
+  Scenario: What is your National Insurance number? - Enter Invalid input with less than 9 character
+    Given I am on What is your National Insurance number Page
+    When I enter "AZ123456" NI Number TextBox field
+    And click on Save and Continue button
+    Then error message should be displayed with text "Enter a valid National Insurance number"
