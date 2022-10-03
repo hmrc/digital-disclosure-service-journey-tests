@@ -135,5 +135,22 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
   def verifyFocusOnTextbox(): Unit = {
     driver.findElement(By.xpath("//input[contains(@class,\"govuk-input\")]")).equals(driver.switchTo().activeElement())
   }
+
+  def verifyRadioButtonAndText(expectedText: String, bulletNum: String): Unit = {
+    val elementInput = driver.findElements(By.xpath("//*[@class='govuk-radios__item']/input[@class='govuk-radios__input']"))
+    val value = bulletNum.toInt
+    val buttontype = elementInput.get(value - 1).getAttribute("type");
+    Assert.assertTrue("Button type is not radio", buttontype.toString() == "radio")
+
+    val elementLabel = driver.findElements(By.xpath("//*[@class='govuk-radios__item']/label[contains(@class,'govuk-radios__label')]"))
+    val actualText = elementLabel.get(value - 1).getText
+    Assert.assertTrue("Radio Text is not Verified" + expectedText +  "--- Actual:  " + actualText, expectedText == actualText)
+  }
+
+  def verifyRadioButtonAndTextNotSelected(): Unit = {
+    val elementInput = driver.findElements(By.xpath("//*[@class='govuk-radios__item']/input[@class='govuk-radios__input']"))
+    val value = elementInput.size()
+    Assert.assertTrue("Radio Button is selected", !elementInput.get(value - 1).isSelected)
+  }
 }
 
