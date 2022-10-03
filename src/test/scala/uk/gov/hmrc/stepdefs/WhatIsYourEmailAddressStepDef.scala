@@ -15,4 +15,20 @@ class WhatIsYourEmailAddressStepDef extends BasePage with WhatIsYourEmailAddress
   Then("""hint with text {string} is displayed""") { (string: String) =>
     verifyHintText(string)
   }
+
+  When("""I enter valid email TextBox field""") { () =>
+    enterInputInTextBox("name@example.com")
+  }
+
+  When("""I enter no data in email TextBox field""") { () =>
+    enterInputInTextBox("")
+  }
+
+  When("""I enter invalid email TextBox field""") { () =>
+    enterInputInTextBox("name@example.comname@example.com")
+  }
+
+  Then("""I should navigate to email TextBox field""") { () =>
+    verifyFocusOnTextbox()
+  }
 }
