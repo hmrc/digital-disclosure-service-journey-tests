@@ -22,18 +22,43 @@ Feature: A UK tax payer is able to enter the details and continue on What is you
     When I enter "" in the TextBox field
     And click on Save and Continue button
     Then error summary popup should be displayed with text "There is a problem"
-    And error message should be displayed with text "Enter a valid telephone number."
+    And error message should be displayed with text "Enter a valid telephone number"
 
-  Scenario: What is your telephone number? - Validation with more than max length in TextBox field
+  Scenario: What is your telephone number? - Validation with more than max length i.e. 19 characters in TextBox field
     Given I am on What is your telephone number page
     When I enter "004495522222235545641" in the TextBox field
     And click on Save and Continue button
     Then error summary popup should be displayed with text "There is a problem"
-    And error message should be displayed with text "Enter a valid telephone number."
+    And error message should be displayed with text "Enter a valid telephone number"
+
+  Scenario: What is your telephone number? - Validation with 19 digits in TextBox field - ignore space
+    Given I am on What is your telephone number page
+    When I enter "+123456 7 8 96 3 2 5 89658 7" in the TextBox field
+    And click on Save and Continue button
+    Then page navigates to "Do you have an email address that you are happy to be contacted on by HMRC?"
+
+  Scenario: What is your telephone number? - Validation with + and 19 digits in TextBox field - ignore space
+    Given I am on What is your telephone number page
+    When I enter "009112345678963258967" in the TextBox field
+    And click on Save and Continue button
+    Then page navigates to "Do you have an email address that you are happy to be contacted on by HMRC?"
+
+  Scenario: What is your telephone number? - Validation UK number with 9 or 10 digits allowed
+    Given I am on What is your telephone number page
+    When I enter "07777 777777" in the TextBox field
+    And click on Save and Continue button
+    Then page navigates to "Do you have an email address that you are happy to be contacted on by HMRC?"
+
+  Scenario: What is your telephone number? - Validation UK number more than 10 digits not allowed
+    Given I am on What is your telephone number page
+    When I enter "077555588853" in the TextBox field
+    And click on Save and Continue button
+    Then error summary popup should be displayed with text "There is a problem"
+    And error message should be displayed with text "Enter a valid telephone number"
 
   Scenario: What is your telephone number? - Validation on invalid characters and Navigation of on Error message on top popup
     Given I am on What is your telephone number page
     When I enter ",," in the TextBox field
     And click on Save and Continue button
     Then error summary popup should be displayed with text "There is a problem"
-    And error message should be displayed with text "Enter a valid telephone number."
+    And error message should be displayed with text "Enter a valid telephone number"
