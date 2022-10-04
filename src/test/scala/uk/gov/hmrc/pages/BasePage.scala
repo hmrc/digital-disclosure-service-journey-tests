@@ -152,5 +152,12 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
     val value = elementInput.size()
     Assert.assertTrue("Radio Button is selected", !elementInput.get(value - 1).isSelected)
   }
+
+  def verifyPageHeading(expectedQHeader: String): Unit = {
+    val element = driver.findElement(By.xpath("//h1"))
+    val actualQHeader = element.getText
+    Assert.assertTrue("Heading is not Verified "+ expectedQHeader +  "--- Actual:  " + actualQHeader, expectedQHeader == actualQHeader)
+
+  }
 }
 

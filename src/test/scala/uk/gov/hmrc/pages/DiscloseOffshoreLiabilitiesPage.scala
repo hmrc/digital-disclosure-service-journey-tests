@@ -17,12 +17,6 @@ trait DiscloseOffshoreLiabilitiesPage extends BasePage{
 
   val currentEnvironment: String = Configuration.environment.toString
 
-  def verifyPageHeading(expectedQHeader: String): Unit = {
-    val element = driver.findElement(By.xpath("//h1"))
-    val actualQHeader = element.getText
-    Assert.assertTrue("Heading is not Verified", expectedQHeader.toString() == actualQHeader.toString())
-  }
-
   def verifyBodyText(expectedQHeader: String): Unit = {
     val element = driver.findElement(By.xpath("//*[contains(@class,\"govuk-body\") and contains(@id,\"first-paragraph\")]"))
     val actualQHeader = element.getText

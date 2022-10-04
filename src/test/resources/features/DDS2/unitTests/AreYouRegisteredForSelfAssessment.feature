@@ -14,7 +14,7 @@ Feature: A UK tax payer is able to enter the details and continue on Are you reg
     Given I am on Are you registered for Self Assessment Page
     When I select Radio Button "Yes, and I know my Unique Taxpayer Reference (UTR)" at Position "1"
     And click on Save and Continue button
-    Then page navigates to " 'What is your Unique Tax Reference?"
+    Then page navigates to "What is your Unique Tax Reference?"
 
   Scenario: Are you registered for Self Assessment? - Navigation with option 2
     Given I am on Are you registered for Self Assessment Page
