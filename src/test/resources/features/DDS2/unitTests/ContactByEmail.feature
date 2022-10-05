@@ -14,13 +14,13 @@ Feature: A UK tax payer is able to enter the details and continue on "Do you hav
     Given I am on Do you have an email address that you are happy to be contacted on by HMRC Page
     When click on Save and Continue button
     Then error summary popup should be displayed with text "There is a problem"
-    And error message should be displayed with text "Select yes if you have an email address that HMRC can contact you with."
+    And error message should be displayed with text "Select yes if you have an email address that HMRC can contact you with"
 
   @id_003
   Scenario: Contact By Email-Navigation of Error message on top popup
     Given I am on Do you have an email address that you are happy to be contacted on by HMRC Page
     And click on Save and Continue button
-    When I click on problem message "Select yes if you have an email address that HMRC can contact you with."
+    When I click on problem message "Select yes if you have an email address that HMRC can contact you with"
     Then I should navigate to Radio button "Yes" at Position "1"
 
   @id_004

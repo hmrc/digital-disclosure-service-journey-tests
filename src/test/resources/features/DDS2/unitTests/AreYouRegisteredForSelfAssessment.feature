@@ -32,7 +32,7 @@ Feature: A UK tax payer is able to enter the details and continue on Are you reg
     Given I am on Are you registered for Self Assessment Page
     When click on Save and Continue button
     Then error summary popup should be displayed with text "There is a problem"
-    And error message should be displayed with text "Select yes if you are registered for Self Assessment."
+    And error message should be displayed with text "Select yes if you are registered for Self Assessment"
 
   Scenario: Are you registered for Self Assessment? - Navigation of on Error message on top popup
     Given I am on Are you registered for Self Assessment Page

@@ -18,3 +18,9 @@ Feature: A UK tax payer is able to enter the details and continue on Received A 
     When I select No radio button
     And click on Save and Continue button
     Then I am navigated to the next page with title "What is the disclosure about? - Digital Disclosure Service - GOV.UK"
+
+  Scenario: Received a letter page - Validation with no selection of Radio Button
+    Given I am navigated to Received A Letter Page
+    When click on Save and Continue button
+    Then error summary popup should be displayed with text "There is a problem"
+    And error message should be displayed with text "Select yes if you are making this disclosure because you have received a letter from HMRC"

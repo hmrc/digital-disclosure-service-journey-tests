@@ -32,7 +32,7 @@ Feature: A UK tax payer is able to enter the details and continue on What is you
     When I enter "this is a very long main occupation" in the TextBox field
     And click on Save and Continue button
     Then error summary popup should be displayed with text "There is a problem"
-    And error message should be displayed with text "Your main occupation should have no more than 30 characters."
+    And error message should be displayed with text "Your main occupation should have no more than 30 characters"
 
   Scenario: What is your main occupation? - Enter occupation, continue to the next page and navigated back
     Given I am on What is your main occupation page

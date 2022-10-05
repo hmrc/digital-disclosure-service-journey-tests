@@ -55,7 +55,7 @@ Feature: A UK tax payer is able to enter the details and continue on "What is yo
     And click on Save and Continue button
     Then error message should be displayed with text "Enter a valid National Insurance number"
     Examples:
-      |Invalid Format| Valid Format Deescription|
+      |Invalid Format| Valid Format Description|
       |"99ABCDEFE"|Two alpha characters, followed by 6 numeric digits, followed by 1 alpha character|
       |"DD123456A"|The first & Second alpha character must be between A and Z, but CANNOT be D, F, I, Q, U, V and|
       |"FF123456A"|The first & Second alpha character must be between A and Z, but CANNOT be D, F, I, Q, U, V and|

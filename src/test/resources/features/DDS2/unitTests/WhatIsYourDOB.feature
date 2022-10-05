@@ -5,7 +5,7 @@ Feature: A UK tax payer is able to enter the details and continue on What is you
     Given I am on What is your date of birth page
     Then the page title should be "What is your date of birth? - Digital Disclosure Service - GOV.UK"
     And verify the question should be "What is your date of birth?"
-    And hint with text "For example, 20 3 1976" is displayed
+    And hint with text "For example, 20 3 1976." is displayed
     And input TextBox with value "Day" is displayed
     And input TextBox with value "Month" is displayed
     And input TextBox with value "Year" is displayed
@@ -33,7 +33,7 @@ Feature: A UK tax payer is able to enter the details and continue on What is you
 
     Examples:
       | Day | Month | Year | Error |
-      |    "" |   "" |    "" | "Enter a valid date of birth, like 20 3 1976."    |
+      |    "" |   "" |    "" | "Enter a valid date of birth, like 20 3 1976"    |
       |  "10" |  "tt"  | "45"   | "Enter a real date of birth"    |
       |    "10" |   "" |    "" | "The date of birth must include month and year"    |
       |    "" |   "10" |    "" | "The date of birth must include day and year"    |

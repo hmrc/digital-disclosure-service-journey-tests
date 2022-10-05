@@ -22,7 +22,7 @@ Feature: A UK tax payer is able to enter the details and continue on What is you
     When I enter no data in email TextBox field
     And click on Save and Continue button
     Then error summary popup should be displayed with text "There is a problem"
-    And error message should be displayed with text "Enter a valid email address, like name@example.com."
+    And error message should be displayed with text "Enter a valid email address, like name@example.com"
 
   @id_004
   Scenario: What is your email address? - Leave blank input field
@@ -30,14 +30,14 @@ Feature: A UK tax payer is able to enter the details and continue on What is you
     When I enter invalid email TextBox field
     And click on Save and Continue button
     Then error summary popup should be displayed with text "There is a problem"
-    And error message should be displayed with text "Enter a valid email address, like name@example.com."
+    And error message should be displayed with text "Enter a valid email address, like name@example.com"
 
   @id_005
   Scenario: What is your email address? - Navigation of on Error message on top popup
     Given I am What is your email address Page
     When I enter no data in email TextBox field
     And click on Save and Continue button
-    And I click on problem message "Enter a valid email address, like name@example.com."
+    And I click on problem message "Enter a valid email address, like name@example.com"
     Then I should navigate to email TextBox field
 
   @id_006

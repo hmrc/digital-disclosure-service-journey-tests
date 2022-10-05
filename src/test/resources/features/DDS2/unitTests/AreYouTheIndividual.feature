@@ -19,3 +19,8 @@ Feature: A UK tax payer is able to enter the details and continue on Are you the
     And click on Save and Continue button
     Then I am navigated to the next page with title "Do you want to disclose offshore liabilities? - Digital Disclosure Service - GOV.UK"
 
+  Scenario: Are you the individual this disclosure relates to? - Validation with no selection of Radio Button
+    Given I am navigated to Are you the individual this disclosure relates to Page
+    When click on Save and Continue button
+    Then error summary popup should be displayed with text "There is a problem"
+    And error message should be displayed with text "Select yes if you are the individual"

@@ -32,12 +32,12 @@ Feature: A UK tax payer is able to enter the details and continue on Are you reg
     Given I am on Are you registered for VAT Page
     When click on Save and Continue button
     Then error summary popup should be displayed with text "There is a problem"
-    And error message should be displayed with text "Select yes if you are registered for VAT."
+    And error message should be displayed with text "Select yes if you are registered for VAT"
 
   Scenario: Are you registered for VAT? - Navigation of on Error message on top popup
     Given I am on Are you registered for VAT Page
     And click on Save and Continue button
-    When I click on problem message "Select yes if you are registered for VAT."
+    When I click on problem message "Select yes if you are registered for VAT"
     Then I should navigate to Radio button "Yes, and I know my VAT registration number" at Position "1"
 
 

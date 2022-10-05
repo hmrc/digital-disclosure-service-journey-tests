@@ -45,13 +45,13 @@ Feature: A UK tax payer is able to enter the details and continue on Do you have
     Given I am on Do you have a National Insurance number Page
     When click on Save and Continue button
     Then error summary popup should be displayed with text "There is a problem"
-    And error message should be displayed with text "Select yes if you have a National Insurance number."
+    And error message should be displayed with text "Select yes if you have a National Insurance number"
 
   @id_007
   Scenario: Do you have a National Insurance number? -Navigation of on Error message on top popup
     Given I am on Do you have a National Insurance number Page
     And click on Save and Continue button
-    When I click on problem message "Select yes if you have a National Insurance number."
+    When I click on problem message "Select yes if you have a National Insurance number"
     Then I should navigate to Radio button "Yes, and I know my National Insurance number" at Position "1"
 
 

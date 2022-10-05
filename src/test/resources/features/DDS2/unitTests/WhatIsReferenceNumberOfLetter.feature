@@ -22,7 +22,7 @@ Feature: UI Validation and Navigation  for Screen "What is the reference number 
     When I enter no data in reference number TextBox field
     And click on Save and Continue button
     Then error summary popup should be displayed with text "There is a problem"
-    And error message should be displayed with text "Enter the letter’s reference number."
+    And error message should be displayed with text "Enter the letter’s reference number"
 
   @id_004
   Scenario: Validation with  more than max length reference number in TextBox field
@@ -37,7 +37,7 @@ Feature: UI Validation and Navigation  for Screen "What is the reference number 
     Given I am on What is the reference number of the letter you received from HMRC Page
     When I enter no data in reference number TextBox field
     And click on Save and Continue button
-    And I click on problem message "Enter the letter’s reference number."
+    And I click on problem message "Enter the letter’s reference number"
     Then I should navigate to reference number TextBox field
 
   @id_006

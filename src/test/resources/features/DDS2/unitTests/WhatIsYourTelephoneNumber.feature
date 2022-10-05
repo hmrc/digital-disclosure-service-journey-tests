@@ -1,5 +1,5 @@
 @page
-Feature: A UK tax payer is able to enter the details and continue on What is your telephone number page?
+Feature: A UK tax payer is able to enter the details and continue on What is your telephone number page
 
   Scenario: What is your telephone number? - UI validation
     Given I am on What is your telephone number page
