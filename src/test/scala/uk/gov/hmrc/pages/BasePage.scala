@@ -96,6 +96,10 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
     authenticationByPass()
   }
 
+  def navigateToSpecificURL(specificPage: String): Unit = {
+    goTo(specificPage)
+  }
+
   def navigateToSpecificPage(specificPage: String): Unit = {
     navigateToHomePage()
     findByID("start").click()
@@ -124,7 +128,15 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
   }
 
   def enterInputInTextBox(textInput: String): Unit = {
-    driver.findElement(By.xpath("//input[contains(@class,\"govuk-input\")]")).sendKeys(textInput)
+    try
+    {
+      driver.findElement(By.xpath("//input[contains(@class,\"govuk-input\")]")).sendKeys(textInput)
+    }
+    catch
+    {
+      case e=>
+      driver.findElement(By.id("countryCode")).sendKeys(textInput)
+    }
   }
 
   def enterInputInTextBoxWithMaxLength(length: String): Unit = {
