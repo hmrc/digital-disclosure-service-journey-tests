@@ -26,7 +26,7 @@ Feature: A UK tax payer is able to enter the details and continue on What is you
 
   Scenario: What is your telephone number? - Validation with more than max length i.e. 19 characters in TextBox field
     Given I am on What is your telephone number page
-    When I enter "004495522222235545641" in the TextBox field
+    When I enter "0044955222222355456412" in the TextBox field
     And click on Save and Continue button
     Then error summary popup should be displayed with text "There is a problem"
     And error message should be displayed with text "Enter a valid telephone number"

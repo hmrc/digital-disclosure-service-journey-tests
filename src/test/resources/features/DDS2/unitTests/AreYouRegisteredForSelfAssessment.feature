@@ -37,7 +37,7 @@ Feature: A UK tax payer is able to enter the details and continue on Are you reg
   Scenario: Are you registered for Self Assessment? - Navigation of on Error message on top popup
     Given I am on Are you registered for Self Assessment Page
     And click on Save and Continue button
-    When I click on problem message "Select yes if you are registered for Self Assessment."
+    When I click on problem message "Select yes if you are registered for Self Assessment"
     Then I should navigate to Radio button "Yes, and I know my Unique Taxpayer Reference (UTR)" at Position "1"
 
 
