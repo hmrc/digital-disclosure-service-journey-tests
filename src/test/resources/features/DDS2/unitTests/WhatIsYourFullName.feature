@@ -26,10 +26,10 @@ Feature: A UK tax payer is able to enter the details and continue on What is you
   @id_004
   Scenario: What is your full name? - Validation with  more than max length in TextBox field
     Given I am What is your full name Page
-    When I enter data with max length of "50" in Full Name TextBox field
+    When I enter data with max length of "30" in Full Name TextBox field
     And click on Save and Continue button
     Then error summary popup should be displayed with text "There is a problem"
-    And error message should be displayed with text "Your full name must be 50 characters or less"
+    And error message should be displayed with text "Full name must be between 1 and 30 characters"
 
   @id_005
   Scenario: What is your full name? - Navigation of on Error message on top popup
