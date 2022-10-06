@@ -171,5 +171,37 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
     Assert.assertTrue("Heading is not Verified "+ expectedQHeader +  "--- Actual:  " + actualQHeader, expectedQHeader == actualQHeader)
 
   }
+
+
+  def clickOnRadioButton(expectedText: String, bulletNum: String): Unit = {
+    val elementLabel = driver.findElements(By.xpath("//*[@class='govuk-radios__item']/label[contains(@class,'govuk-radios__label')]"))
+    val value = bulletNum.toInt
+    val actualText = elementLabel.get(value - 1).getText
+    Assert.assertTrue("Radio Text is not Verified" + expectedText +  "--- Actual:  " + actualText, expectedText.trim == actualText.trim)
+
+    val elementInput = driver.findElements(By.xpath("//*[@class='govuk-radios__item']/input[@class='govuk-radios__input']"))
+    elementInput.get(value - 1).click()
+  }
+
+  def verifyFocusOnRadioButton(expectedText: String, bulletNum: String): Unit = {
+    val elementLabel = driver.findElements(By.xpath("//*[@class='govuk-radios__item']/label[contains(@class,'govuk-radios__label')]"))
+    val value = bulletNum.toInt
+    val actualText = elementLabel.get(value - 1).getText
+    Assert.assertTrue("Radio Text is not Verified" + expectedText +  "--- Actual:  " + actualText, expectedText.trim == actualText.trim)
+
+    val elementInput = driver.findElements(By.xpath("//*[@class='govuk-radios__item']/input[@class='govuk-radios__input']"))
+    Assert.assertTrue("Focus is not on Radio Button",elementInput.get(value - 1).equals(driver.switchTo().activeElement()))
+  }
+
+  def verifyNewTabUrl(expectedQHeader: String): Unit = {
+    val tabs2 = driver.getWindowHandles
+    val openedTabs=tabs2.iterator()
+    val currentTab=openedTabs.next()
+    val newTab=openedTabs.next()
+    driver.switchTo.window(newTab)
+    Assert.assertTrue("link is not opened in new tab", driver.getCurrentUrl.toLowerCase().contains(expectedQHeader.toLowerCase()))
+    driver.close()
+    driver.switchTo.window(currentTab)
+  }
 }
 
