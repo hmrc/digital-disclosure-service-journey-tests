@@ -36,12 +36,19 @@ trait DiscloseOffshoreLiabilitiesPage extends BasePage{
   }
 
   def clickOnHyperlinkText(expectedQHeader: String): Unit = {
-    val element = driver.findElement(By.xpath("//a[contains(@class,\"govuk-link\") and contains(@id,'guidance-link')]"))
-    val actualQHeader = element.getText
-    Assert.assertTrue("Body Text is not Verified", expectedQHeader.toString() == actualQHeader.toString())
-    element.click()
+    try{
+      val element = driver.findElement(By.xpath("//a[contains(@class,\"govuk-link\") and contains(@id,'guidance-link')]"))
+      val actualQHeader = element.getText
+      Assert.assertTrue("Body Text is not Verified", expectedQHeader.toString() == actualQHeader.toString())
+      element.click()
+    }
+    catch
+    {
+      case e=>
+        val element = driver.findElement(By.xpath("//a[contains(@class,\"govuk-link\") and contains(@id,'differentAddress')]"))
+        val actualQHeader = element.getText
+        Assert.assertTrue("Body Text is not Verified", expectedQHeader.toString() == actualQHeader.toString())
+        element.click()
+    }
   }
-
-
-
 }

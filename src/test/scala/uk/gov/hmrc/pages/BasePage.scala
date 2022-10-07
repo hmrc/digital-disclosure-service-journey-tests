@@ -136,7 +136,13 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
     {
       case e=>
       driver.findElement(By.id("countryCode")).sendKeys(textInput)
+      case e =>
+        driver.findElement(By.id("postcode")).sendKeys(textInput)
     }
+  }
+
+  def enterPropertyInput(textInput: String): Unit = {
+      driver.findElement(By.id("filter")).sendKeys(textInput)
   }
 
   def enterInputInTextBoxWithMaxLength(length: String): Unit = {
@@ -145,7 +151,16 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
   }
 
   def verifyFocusOnTextbox(): Unit = {
-    driver.findElement(By.xpath("//input[contains(@class,\"govuk-input\")]")).equals(driver.switchTo().activeElement())
+    try{
+      driver.findElement(By.xpath("//input[contains(@class,\"govuk-input\")]")).equals(driver.switchTo().activeElement())
+    }
+    catch
+    {
+      case e=>
+        driver.findElement(By.id("countryCode")).equals(driver.switchTo().activeElement())
+      case e=>
+        driver.findElement(By.id("postcode")).equals(driver.switchTo().activeElement())
+     }
   }
 
   def verifyRadioButtonAndText(expectedText: String, bulletNum: String): Unit = {
@@ -233,6 +248,18 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
     driver.findElement(By.xpath("//*[@class=\"govuk-error-summary__body\"]//a[@href]")).click()
   }
 
+  def verifyAddress(position: String,expectedQHeader: String): Unit = {
+    val element = driver.findElements(By.xpath("//div[@id='address']/span[@class=\"govuk-body-l\"]"))
+    val actualQHeader = element.get(position.toInt-1).getText
+    Assert.assertTrue("Address is not Verified " + expectedQHeader + "--- Actual:  " + actualQHeader,expectedQHeader==actualQHeader)
+  }
 
+  def isSaveAndContinueButtonDisplayed(): Unit = {
+    Assert.assertTrue("Save and Continue Button is not displayed", findByID("continue").isDisplayed.==(true))
+  }
+
+  def verifyMessage(message:String): Unit = {
+    Assert.assertTrue("Message is not displayed", findByID("no-results").getText== message)
+  }
 }
 

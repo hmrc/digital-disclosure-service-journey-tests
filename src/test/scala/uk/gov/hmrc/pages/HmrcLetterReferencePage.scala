@@ -21,11 +21,6 @@ trait HmrcLetterReferencePage extends BasePage {
   def isInputTextBoxDisplayed(): Unit = {
     Assert.assertTrue("Input Text Box is not displayed",driver.findElement(By.xpath("//input[contains(@class,\"govuk-input\")]")).isDisplayed.==(true))
   }
-
-  def isSaveAndContinueButtonDisplayed(): Unit = {
-    Assert.assertTrue("Save and Continue Button is not displayed", findByID("continue").isDisplayed.==(true))
-  }
-
   def isBackButtonDisplayed(): Unit = {
     Assert.assertTrue("Back Button is not displayed", driver.findElement(By.className("govuk-back-link")).isDisplayed.==(true))
   }
