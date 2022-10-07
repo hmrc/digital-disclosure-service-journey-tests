@@ -12,8 +12,9 @@ class WhatIsYourTelephoneNumberStepDef extends BasePage with WhatIsYourTelephone
   Given("""I am on What is your telephone number page""") { () =>
     navigateToSpecificPage("notification/your-telephone-number")
   }
-  Then("""body Text should be {string}""") { (string: String) =>
-    verifyBodyText(string)
+
+  Then("""body text should be {string}""") { (string: String) =>
+    verifyBodyLabel(string)
   }
 
 }

@@ -210,11 +210,16 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
     Assert.assertTrue("Error Summary is not Verified.  Expected: " + expectedError + "--- Actual: " + actualError, expectedError == actualError)
   }
   def verifyPageHeader(expectedQHeader:String): Unit = {
-    val question = driver.findElement(By.xpath("//div[@class=\"govuk-form-group\"]//h1"))
+    val question = driver.findElement(By.xpath("//h1"))
     val actualQHeader = question.getText
     Assert.assertTrue("Heading is not Verified. Expected:  "+ expectedQHeader +  "--- Actual:  " + actualQHeader, expectedQHeader == actualQHeader)
   }
 
+  def verifyBody(expectedText: String): Unit = {
+    val element = driver.findElement(By.xpath("//*[@class='govuk-body']"))
+    val actualText = element.getText
+    Assert.assertTrue("Body Text is not Verified. Expected: " + expectedText + "--- Actual: " + actualText, expectedText == actualText)
+  }
   def verifyErrorMessage(expectedError: String): Unit = {
     val question = driver.findElement(By.xpath("//*[@class=\"govuk-error-summary__body\"]"))
     val actualError = question.getText
