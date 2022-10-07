@@ -39,28 +39,5 @@ trait HmrcLetterReferencePage extends BasePage {
     driver.findElement(By.xpath("//input[contains(@class,\"govuk-input\")]")).sendKeys(textInput)
   }
 
-  def verifyPageHeader(expectedQHeader:String): Unit = {
-    val question = driver.findElement(By.xpath("//div[@class=\"govuk-form-group\"]//h1"))
-    val actualQHeader = question.getText
-    Assert.assertTrue("Page Header is not Verified", expectedQHeader.toString() == actualQHeader.toString())
-  }
 
-  def verifyErrorSummary(expectedQHeader: String): Unit = {
-    val question = driver.findElement(By.xpath("//*[@class=\"govuk-error-summary__title\"]"))
-    val actualQHeader = question.getText
-    Assert.assertTrue("Error Summary is not Verified.  Expected: " + expectedQHeader + "Actual: " + actualQHeader, expectedQHeader.toString() == actualQHeader.toString())
-  }
-
-  def verifyErrorMessage(expectedQHeader: String): Unit = {
-    val question = driver.findElement(By.xpath("//*[@class=\"govuk-error-summary__body\"]"))
-    val actualQHeader = question.getText
-    Assert.assertTrue("Error Message is not Verified. Expected: " + expectedQHeader + "Actual: " + actualQHeader, expectedQHeader.toString() == actualQHeader.toString())
-  }
-
-  def clickErrorMessage(expectedQHeader: String): Unit = {
-    val question = driver.findElement(By.xpath("//*[@class=\"govuk-error-summary__body\"]"))
-    val actualQHeader = question.getText
-    Assert.assertTrue("Error Message is not Verified", expectedQHeader.toString() == actualQHeader.toString())
-    driver.findElement(By.xpath("//*[@class=\"govuk-error-summary__body\"]//a[@href]")).click()
-  }
 }

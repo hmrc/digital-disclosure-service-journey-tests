@@ -68,7 +68,7 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
   def verifyPageQuestion(expectedQHeader: String): Unit = {
     val question = driver.findElement(By.xpath("//h1"))
     val actualQHeader = question.getText
-    Assert.assertTrue("Page Question not Verified " + expectedQHeader +  "--- Actual:  " + actualQHeader, expectedQHeader == actualQHeader)
+    Assert.assertTrue("Page Question not Verified. Expected:  " + expectedQHeader +  "--- Actual:  " + actualQHeader, expectedQHeader == actualQHeader)
   }
 
   def saveAndContinue(): Unit = {
@@ -124,7 +124,7 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
     val element = driver.findElements(By.xpath("//*[@class='dashed-list-item']"))
     val value=bulletNum.toInt
     val actualText = element.get(value-1).getText;
-    Assert.assertTrue("bullet Text is not Verified " + expectedText +  "--- Actual:  " + actualText, expectedText == actualText)
+    Assert.assertTrue("bullet Text is not Verified. Expected:  " + expectedText +  "--- Actual:  " + actualText, expectedText == actualText)
   }
 
   def enterInputInTextBox(textInput: String): Unit = {
@@ -156,7 +156,7 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
 
     val elementLabel = driver.findElements(By.xpath("//*[@class='govuk-radios__item']/label[contains(@class,'govuk-radios__label')]"))
     val actualText = elementLabel.get(value - 1).getText
-    Assert.assertTrue("Radio Text is not Verified" + expectedText +  "--- Actual:  " + actualText, expectedText == actualText)
+    Assert.assertTrue("Radio Text is not Verified. Expected: " + expectedText +  "--- Actual:  " + actualText, expectedText == actualText)
   }
 
   def verifyRadioButtonAndTextNotSelected(): Unit = {
@@ -168,7 +168,7 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
   def verifyPageHeading(expectedQHeader: String): Unit = {
     val element = driver.findElement(By.xpath("//h1"))
     val actualQHeader = element.getText
-    Assert.assertTrue("Heading is not Verified "+ expectedQHeader +  "--- Actual:  " + actualQHeader, expectedQHeader == actualQHeader)
+    Assert.assertTrue("Heading is not Verified. Expected:  "+ expectedQHeader +  "--- Actual:  " + actualQHeader, expectedQHeader == actualQHeader)
 
   }
 
@@ -177,7 +177,7 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
     val elementLabel = driver.findElements(By.xpath("//*[@class='govuk-radios__item']/label[contains(@class,'govuk-radios__label')]"))
     val value = bulletNum.toInt
     val actualText = elementLabel.get(value - 1).getText
-    Assert.assertTrue("Radio Text is not Verified" + expectedText +  "--- Actual:  " + actualText, expectedText.trim == actualText.trim)
+    Assert.assertTrue("Radio Text is not Verified. Expected: " + expectedText +  "--- Actual:  " + actualText, expectedText.trim == actualText.trim)
 
     val elementInput = driver.findElements(By.xpath("//*[@class='govuk-radios__item']/input[@class='govuk-radios__input']"))
     elementInput.get(value - 1).click()
@@ -187,7 +187,7 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
     val elementLabel = driver.findElements(By.xpath("//*[@class='govuk-radios__item']/label[contains(@class,'govuk-radios__label')]"))
     val value = bulletNum.toInt
     val actualText = elementLabel.get(value - 1).getText
-    Assert.assertTrue("Radio Text is not Verified" + expectedText +  "--- Actual:  " + actualText, expectedText.trim == actualText.trim)
+    Assert.assertTrue("Radio Text is not Verified. Expected: " + expectedText +  "--- Actual:  " + actualText, expectedText.trim == actualText.trim)
 
     val elementInput = driver.findElements(By.xpath("//*[@class='govuk-radios__item']/input[@class='govuk-radios__input']"))
     Assert.assertTrue("Focus is not on Radio Button",elementInput.get(value - 1).equals(driver.switchTo().activeElement()))
@@ -203,5 +203,31 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
     driver.close()
     driver.switchTo.window(currentTab)
   }
+
+  def verifyErrorSummary(expectedError: String): Unit = {
+    val question = driver.findElement(By.xpath("//*[@class=\"govuk-error-summary__title\"]"))
+    val actualError = question.getText
+    Assert.assertTrue("Error Summary is not Verified.  Expected: " + expectedError + "--- Actual: " + actualError, expectedError == actualError)
+  }
+  def verifyPageHeader(expectedQHeader:String): Unit = {
+    val question = driver.findElement(By.xpath("//div[@class=\"govuk-form-group\"]//h1"))
+    val actualQHeader = question.getText
+    Assert.assertTrue("Heading is not Verified. Expected:  "+ expectedQHeader +  "--- Actual:  " + actualQHeader, expectedQHeader == actualQHeader)
+  }
+
+  def verifyErrorMessage(expectedError: String): Unit = {
+    val question = driver.findElement(By.xpath("//*[@class=\"govuk-error-summary__body\"]"))
+    val actualError = question.getText
+    Assert.assertTrue("Error Message is not Verified. Expected: " + expectedError + "--- Actual: " + actualError, expectedError == actualError)
+  }
+
+  def clickErrorMessage(expectedError: String): Unit = {
+    val question = driver.findElement(By.xpath("//*[@class=\"govuk-error-summary__body\"]"))
+    val actualError = question.getText
+    Assert.assertTrue("Error Message is not Verified. Expected: " + expectedError + "--- Actual: " + actualError, expectedError == actualError)
+    driver.findElement(By.xpath("//*[@class=\"govuk-error-summary__body\"]//a[@href]")).click()
+  }
+
+
 }
 
