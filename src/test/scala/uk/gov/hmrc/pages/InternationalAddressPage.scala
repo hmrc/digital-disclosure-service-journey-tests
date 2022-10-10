@@ -17,7 +17,7 @@ trait InternationalAddressPage extends BasePage with WhatIsTheCountryOfAddressPa
   //locators for the page
   def organisation: WebElement = findByID("organisation")
   def addressLineOne: WebElement = findByID("line1")
-  def addressLineTwo: WebElement = findByID("line3")
+  def addressLineTwo: WebElement = findByID("line2")
   def addressLineThree: WebElement = findByID("line3")
   def town: WebElement = findByID("town")
   def postcode: WebElement = findByID("postcode")
@@ -25,16 +25,21 @@ trait InternationalAddressPage extends BasePage with WhatIsTheCountryOfAddressPa
 
   def enterInputInManualAddressPage(text: String, textBoxName: String): Unit = {
     if (textBoxName == "Organisation") {
+      organisation.clear()
       organisation.sendKeys(text)
     } else if (textBoxName == "Address line 1") {
+      addressLineOne.clear()
       addressLineOne.sendKeys(text)
     } else if (textBoxName == "Address line 2") {
+      addressLineTwo.clear()
       addressLineTwo.sendKeys(text)
     } else if (textBoxName == "Address line 3") {
       addressLineThree.sendKeys(text)
     } else if (textBoxName == "Town or city") {
+      town.clear()
       town.sendKeys(text)
     } else if (textBoxName == "Postcode") {
+      postcode.clear()
       postcode.sendKeys(text)
     } else {
       Assert.assertTrue("Invalid text field name: " + textBoxName, false)

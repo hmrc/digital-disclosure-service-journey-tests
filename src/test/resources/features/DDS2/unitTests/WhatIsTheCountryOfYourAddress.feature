@@ -135,8 +135,105 @@ Feature: A UK tax payer is able to enter the details and continue on "What is th
     When I click on problem message "Select an address"
     Then I should navigate to Radio button "1 Testing Lane, Royal Madeuptown, ZZ9Z 9TT" at Position "1"
 
+  Scenario: What is the country of your address? - UK - Enter address manually error validation
+    Given I am on What is the country of your address Page
+    When enter country name "United Kingdom",select country "United Kingdom"
+    And click on continue button
+    Then page navigates to "What is the postcode and property name or number of your address?"
+    When I click on the hyperlink with text "Enter the address manually"
+    Then page navigates to "What is your address?"
+    And click on Save and Continue button
+    Then error summary popup should be displayed with text "There is a problem"
+    And error message should be displayed with text "Enter at least one address line or a town"
 
+  Scenario: What is the country of your address? - UK - Enter address manually in all fields on What is your postcode page, and edit the address in the confirm page
+    Given I am on What is the country of your address Page
+    When enter country name "United Kingdom",select country "United Kingdom"
+    And click on continue button
+    Then page navigates to "What is the postcode and property name or number of your address?"
+    When I click on the hyperlink with text "Enter the address manually"
+    Then page navigates to "What is your address?"
+    When I enter "My ABC Ltd" in the "Organisation" field
+    And I enter "Berry lane" in the "Address line 1" field
+    And I enter "Subline 2" in the "Address line 2" field
+    And I enter "Another line 3" in the "Address line 3" field
+    And I enter "Aylesbury" in the "Town or city" field
+    And I enter "HP19 9AA" in the "Postcode" field
+    And click on Save and Continue button
+    Then page navigates to "Is this the correct address?"
+    And address at line "1" is "My ABC Ltd"
+    And address at line "2" is "Berry lane"
+    And address at line "3" is "Subline 2"
+    And address at line "4" is "Another line 3"
+    And address at line "5" is "Aylesbury"
+    And address at line "6" is "HP19 9AA"
+    And address at line "7" is "United Kingdom"
+    When I click on the hyperlink with text "Edit address"
+    Then page navigates to "What is your address?"
+    When I enter "My Services Ltd" in the "Organisation" field
+    And I enter "HP19 9AT" in the "Postcode" field
+    And click on Save and Continue button
+    Then page navigates to "Is this the correct address?"
+    And address at line "1" is "My Services Ltd"
+    And address at line "6" is "HP19 9AT"
 
+  Scenario: What is the country of your address? - UK - Enter address manually on incorrect postcode page, then verify in the confirm page
+    Given I am on What is the country of your address Page
+    When enter country name "United Kingdom",select country "United Kingdom"
+    And click on continue button
+    Then page navigates to "What is the postcode and property name or number of your address?"
+    When enter postcode "AA1 1AA"
+    And click on continue button
+    Then page navigates to "We cannot find any addresses for AA1 1AA"
+     When I click on the hyperlink with text "Enter the address manually"
+    Then page navigates to "What is your address?"
+    And I enter "Aylesbury" in the "Town or city" field
+    And click on Save and Continue button
+    Then page navigates to "Is this the correct address?"
+    And address at line "1" is "Aylesbury"
+    And address at line "2" is "United Kingdom"
+    When I click on the hyperlink with text "Edit address"
+    Then page navigates to "What is your address?"
+    When I enter "My Services Ltd" in the "Organisation" field
+    And I enter "HP19 9AT" in the "Postcode" field
+    And click on Save and Continue button
+    Then page navigates to "Is this the correct address?"
+    When I click on the hyperlink with text "Edit address"
+    Then page navigates to "What is your address?"
+    When I enter "My ABC Ltd" in the "Organisation" field
+    And I enter "Berry lane" in the "Address line 1" field
+    And I enter "Subline 2" in the "Address line 2" field
+    And I enter "Another line 3" in the "Address line 3" field
+    And I enter "Aylesbury" in the "Town or city" field
+    And I enter "HP19 9AA" in the "Postcode" field
+    And click on Save and Continue button
+    Then page navigates to "Is this the correct address?"
+    And address at line "1" is "My ABC Ltd"
+    And address at line "2" is "Berry lane"
+    And address at line "3" is "Subline 2"
+    And address at line "4" is "Another line 3"
+    And address at line "5" is "Aylesbury"
+    And address at line "6" is "HP19 9AA"
+    And address at line "7" is "United Kingdom"
+
+  Scenario: What is the country of your address? - UK - Enter address manually on choose address page and then verify the confirm page
+    Given I am on What is the country of your address Page
+    When enter country name "United Kingdom",select country "United Kingdom"
+    And click on continue button
+    Then page navigates to "What is the postcode and property name or number of your address?"
+    When enter postcode "ZZ9Z 9TT"
+    And click on continue button
+    Then page navigates to "Choose your address"
+    When I click on the hyperlink with text "Enter your address manually"
+    Then page navigates to "What is your address?"
+    And I enter "Berry lane" in the "Address line 1" field
+    And I enter "Another line 3" in the "Address line 3" field
+    And click on Save and Continue button
+    Then page navigates to "Is this the correct address?"
+    And address at line "1" is "Berry lane"
+    And address at line "2" is "Another line 3"
+    And address at line "3" is "ZZ9Z 9TT"
+    And address at line "4" is "United Kingdom"
 
 
 

@@ -248,10 +248,10 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
     driver.findElement(By.xpath("//*[@class=\"govuk-error-summary__body\"]//a[@href]")).click()
   }
 
-  def verifyAddress(position: String,expectedQHeader: String): Unit = {
+  def verifyAddress(position: String, expectedText: String): Unit = {
     val element = driver.findElements(By.xpath("//div[@id='address']/span[@class=\"govuk-body-l\"]"))
-    val actualQHeader = element.get(position.toInt-1).getText
-    Assert.assertTrue("Address is not Verified " + expectedQHeader + "--- Actual:  " + actualQHeader,expectedQHeader==actualQHeader)
+    val actualText = element.get(position.toInt-1).getText
+    Assert.assertTrue("Address is not Verified " + expectedText + " --- Actual:  " + actualText, expectedText==actualText)
   }
 
   def isSaveAndContinueButtonDisplayed(): Unit = {
