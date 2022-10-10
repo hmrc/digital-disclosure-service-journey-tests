@@ -34,13 +34,15 @@ Feature: A UK tax payer is able to enter the details and continue on What is you
     Examples:
       | Day | Month | Year | Error |
       |    "" |   "" |    "" | "Enter a valid date of birth, like 20 3 1976"    |
-      |  "10" |  "tt"  | "45"   | "Enter a real date of birth"    |
-      |    "10" |   "" |    "" | "Your date of birth must include month and year"    |
-      |    "" |   "10" |    "" | "Your date of birth must include day and year"    |
-      |    "" |   "" |    "1980" | "Your date of birth must include day and month"    |
-      |    "10" |   "10" |    "" | "Your date of birth must include year"    |
-      |    "10" |   "" |    "1980" | "Your date of birth must include month"    |
-      |    "" |   "10" |    "1980" | "Your date of birth must include day"    |
-      |    "31" |   "06" |    "1980" | "Enter a real date of birth"    |
-      |    "29" |   "02" |    "1981" | "Enter a real date of birth"    |
+      |  "10" |  "tt"  | "45"   | "Enter your date of birth"    |
+      |    "10" |   "" |    "" | "Your date of birth must include a month and a year"    |
+      |    "" |   "10" |    "" | "Your date of birth must include a day and a year"    |
+      |    "" |   "" |    "1980" | "Your date of birth must include a day and a month"    |
+      |    "10" |   "10" |    "" | "Your date of birth must include a year"    |
+      |    "10" |   "" |    "1980" | "Your date of birth must include a month"    |
+      |    "" |   "10" |    "1980" | "Your date of birth must include a day"    |
+      |    "31" |   "06" |    "1980" | "Enter your date of birth"    |
+      |    "50" |   "12" |    "1980" | "Enter a real date of birth - a month can have up to 31 days"    |
+      |    "12" |   "15" |    "1980" | "Enter a real date of birth - there are only 12 months in a year"    |
+      |    "29" |   "02" |    "1981" | "Enter your date of birth"    |
       |    "07" |   "10" |    "2025" | "Date of birth must be in the past"    |
