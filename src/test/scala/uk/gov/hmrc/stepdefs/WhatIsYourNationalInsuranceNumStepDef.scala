@@ -13,6 +13,10 @@ class WhatIsYourNationalInsuranceNumStepDef extends BasePage{
     navigateToSpecificPage("notification/your-national-insurance-number")
   }
 
+  Given("""I am on What is individual National Insurance number Page""") { () =>
+    navigateToSpecificPage("notification/individual-national-insurance-number")
+  }
+
   When("""I enter no data in NI Number TextBox field""") { () =>
     enterInputInTextBox("")
   }
