@@ -4,7 +4,7 @@ Feature: A UK tax payer is able to enter the details and continue on What is the
   Scenario: What is the individual's full name? - UI validation
     Given I am What is your full name page for "Individual" tax payer
     Then header with text "What is the individual's full name?" is displayed
-    And body should be "This should be as it's written on official documents such as their passport or driving license."
+    And body should be "This should be as it's written on official documents such as their passport or driving licence."
     And save and Continue Button is displayed
     And back Button Link is displayed
 
