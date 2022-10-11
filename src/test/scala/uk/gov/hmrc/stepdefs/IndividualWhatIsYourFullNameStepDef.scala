@@ -9,7 +9,7 @@ import uk.gov.hmrc.pages.{BasePage, WhatIsYourFullNamePage}
 
 class IndividualWhatIsYourFullNameStepDef extends BasePage {
 
-  Given("""I am What is your full name page for {string} tax payer""") { (string: String) =>
+  Given("""I am on What is your full name page for {string} tax payer""") { (string: String) =>
     if (string == "Individual"){
       navigateToSpecificPage("notification/individual-full-name")
     } else {
