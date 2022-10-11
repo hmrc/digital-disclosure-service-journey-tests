@@ -1,4 +1,4 @@
-@refpage
+@page
 Feature: A UK tax payer is able to enter the details and continue on "What is your Unique Tax Reference?"
 
   @id001
