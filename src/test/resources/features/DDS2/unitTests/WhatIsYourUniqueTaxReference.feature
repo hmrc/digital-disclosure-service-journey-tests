@@ -1,4 +1,4 @@
-@page
+@refpage
 Feature: A UK tax payer is able to enter the details and continue on "What is your Unique Tax Reference?"
 
   @id001
@@ -22,14 +22,14 @@ Feature: A UK tax payer is able to enter the details and continue on "What is yo
     When I enter "" in the TextBox field
     And click on Save and Continue button
     Then error summary popup should be displayed with text "There is a problem"
-    And error message should be displayed with text "Enter a valid Unique Tax Reference, like 1234567890"
+    And error message should be displayed with text "Enter a Unique Tax Reference in the correct format"
 
   @id_004
   Scenario: What is your Unique Tax Reference?  - Navigation of on Error message on top popup
     Given I am on What is your Unique Tax Reference Page
     When I enter "" in the TextBox field
     And click on Save and Continue button
-    And I click on problem message "Enter a valid Unique Tax Reference, like 1234567890"
+    And I click on problem message "Enter a Unique Tax Reference in the correct format"
     Then I should navigate to UTR number TextBox field
 
   @id_005
