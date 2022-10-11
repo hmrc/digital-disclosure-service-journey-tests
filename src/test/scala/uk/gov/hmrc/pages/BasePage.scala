@@ -238,7 +238,7 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
   def verifyErrorMessage(expectedError: String): Unit = {
     val question = driver.findElement(By.xpath("//*[@class=\"govuk-error-summary__body\"]//a[@href]"))
     val actualError = question.getText
-    Assert.assertTrue("Error Message is not Verified. Expected: " + expectedError + "--- Actual: " + actualError+"end", expectedError.trim == actualError.trim)
+    Assert.assertTrue("Error Message is not Verified. Expected: " + expectedError + "--- Actual: " + actualError, expectedError == actualError)
   }
 
   def clickErrorMessage(expectedError: String): Unit = {

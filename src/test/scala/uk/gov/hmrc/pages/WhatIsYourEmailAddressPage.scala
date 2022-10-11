@@ -31,8 +31,6 @@ trait WhatIsYourEmailAddressPage extends BasePage {
 
   def enterEmailInTextBoxWithMaxLength(length: String): Unit = {
     val textInput = StringUtils.repeat("a",length.toInt + 1)
-    val email=textInput+"example.com"
-    Console.println(email)
-    driver.findElement(By.xpath("//input[contains(@class,\"govuk-input\")]")).sendKeys(email)
+    driver.findElement(By.xpath("//input[contains(@class,\"govuk-input\")]")).sendKeys(textInput+"example.com")
   }
 }
