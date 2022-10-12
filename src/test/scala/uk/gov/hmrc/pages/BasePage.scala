@@ -146,7 +146,7 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
   }
 
   def enterInputInTextBoxWithMaxLength(length: String): Unit = {
-    val textInput = StringUtils.repeat("*", length.toInt + 1)
+    val textInput = StringUtils.repeat("a", length.toInt + 1)
     driver.findElement(By.xpath("//input[contains(@class,\"govuk-input\")]")).sendKeys(textInput)
   }
 
@@ -236,7 +236,7 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
     Assert.assertTrue("Body Text is not Verified. Expected: " + expectedText + "--- Actual: " + actualText, expectedText == actualText)
   }
   def verifyErrorMessage(expectedError: String): Unit = {
-    val question = driver.findElement(By.xpath("//*[@class=\"govuk-error-summary__body\"]"))
+    val question = driver.findElement(By.xpath("//*[@class=\"govuk-error-summary__body\"]//a[@href]"))
     val actualError = question.getText
     Assert.assertTrue("Error Message is not Verified. Expected: " + expectedError + "--- Actual: " + actualError, expectedError == actualError)
   }

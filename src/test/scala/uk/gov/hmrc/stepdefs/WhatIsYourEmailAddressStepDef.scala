@@ -16,8 +16,12 @@ class WhatIsYourEmailAddressStepDef extends BasePage with WhatIsYourEmailAddress
     verifyHintText(string)
   }
 
-  When("""I enter valid email TextBox field""") { () =>
-    enterInputInTextBox("name@example.com")
+  When("""I enter {string} email TextBox field""") { (string:String) =>
+    enterInputInTextBox(string)
+  }
+
+  When("""I enter data with max length of {string} in Email TextBox field""") { (string: String) =>
+    enterEmailInTextBoxWithMaxLength(string)
   }
 
   When("""I enter no data in email TextBox field""") { () =>

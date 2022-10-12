@@ -4,14 +4,13 @@
  */
 
 package uk.gov.hmrc.pages
+import org.apache.commons.lang3.StringUtils
 import org.junit.Assert
-import org.openqa.selenium.{By, WebElement}
+import org.openqa.selenium.{By}
 import org.openqa.selenium.support.ui.WebDriverWait
 import uk.gov.hmrc.utils.Configuration
 
 trait WhatIsYourEmailAddressPage extends BasePage {
-
-  private lazy val webdriverWait = new WebDriverWait(driver, 20)
 
   val currentEnvironment: String = Configuration.environment.toString
 
@@ -28,5 +27,10 @@ trait WhatIsYourEmailAddressPage extends BasePage {
         actualQHeader = element.getText
     }
     Assert.assertTrue("Hint text is not Verified", expectedQHeader.toString() == actualQHeader.toString())
+  }
+
+  def enterEmailInTextBoxWithMaxLength(length: String): Unit = {
+    val textInput = StringUtils.repeat("a",length.toInt + 1)
+    driver.findElement(By.xpath("//input[contains(@class,\"govuk-input\")]")).sendKeys(textInput+"example.com")
   }
 }
