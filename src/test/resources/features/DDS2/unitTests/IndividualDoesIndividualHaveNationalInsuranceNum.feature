@@ -1,4 +1,4 @@
-@refpage
+@page
 Feature: A UK tax payer is able to enter the details and continue on Does the individual have a National Insurance number?
 
   @id:001
