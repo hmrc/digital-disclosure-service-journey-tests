@@ -1,4 +1,4 @@
-@page
+@refpage
 Feature: A UK tax payer is able to enter the details and continue on Does the individual have a National Insurance number?
 
   @id:001
@@ -23,14 +23,14 @@ Feature: A UK tax payer is able to enter the details and continue on Does the in
     Given I am on Does the individual have a National Insurance number Page
     When I select Radio Button "Yes, but I do not know their National Insurance number" at Position "2"
     And click on Save and Continue button
-    Then page navigates to "Is the individual registered for VAT, as far as you're aware?"
+    Then page navigates to "Is the individual registered for VAT, as far you're aware?"
 
   @id_004
   Scenario: Does the individual have a National Insurance number? - Navigation with option 3
     Given I am on Does the individual have a National Insurance number Page
     When I select Radio Button "No" at Position "3"
     And click on Save and Continue button
-    Then page navigates to "Is the individual registered for VAT, as far as you're aware?"
+    Then page navigates to "Is the individual registered for VAT, as far you're aware?"
 
   @id_005
   Scenario: Does the individual have a National Insurance number? - Navigation with Back button
