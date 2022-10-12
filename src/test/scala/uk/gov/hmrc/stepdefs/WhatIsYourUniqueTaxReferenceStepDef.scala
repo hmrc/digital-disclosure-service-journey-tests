@@ -13,6 +13,10 @@ class WhatIsYourUniqueTaxReferenceStepDef extends BasePage{
     navigateToSpecificPage("notification/your-utr")
   }
 
+  Given("""I am on What is the individual Unique Tax Reference Page""") { () =>
+    navigateToSpecificPage("notification/individual-utr")
+  }
+
   Then("""I should navigate to UTR number TextBox field""") { () =>
     verifyFocusOnTextbox()
   }
