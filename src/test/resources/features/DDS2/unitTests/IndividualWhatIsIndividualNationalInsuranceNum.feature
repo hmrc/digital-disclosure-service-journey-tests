@@ -23,7 +23,7 @@ Feature: A UK tax payer is able to enter the details and continue on "What is in
     When I enter no data in NI Number TextBox field
     And click on Save and Continue button
     Then error summary popup should be displayed with text "There is a problem"
-    And error message should be displayed with text "Enter a valid National Insurance number"
+    And error message should be displayed with text "Enter the individual's National Insurance number"
 
   @id_004
   Scenario: What is individual's National Insurance number? - Invalid NI
@@ -38,7 +38,7 @@ Feature: A UK tax payer is able to enter the details and continue on "What is in
     Given I am on What is individual National Insurance number Page
     When I enter no data in NI Number TextBox field
     And click on Save and Continue button
-    And I click on problem message "Enter a valid National Insurance number"
+    And I click on problem message "Enter the individual's National Insurance number
     Then I should navigate to NI number TextBox field
 
   @id_006
