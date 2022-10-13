@@ -9,7 +9,7 @@ import uk.gov.hmrc.pages.{BasePage, WhatIsYourDOBPage}
 
 class IndividualAreYouRegisteredForSelfAssessmentStepDef extends BasePage with WhatIsYourDOBPage {
 
-  Given("""I am on Is the individual registered for Self Assessment, as far as you are aware page as {string} tax payer""") { (string: String) =>
+  Given("""I am on Is the individual registered for Self Assessment, as far as you're aware page as {string} tax payer""") { (string: String) =>
     if (string == "Individual"){
       navigateToSpecificPage("notification/individual-self-assessment")
     } else {
