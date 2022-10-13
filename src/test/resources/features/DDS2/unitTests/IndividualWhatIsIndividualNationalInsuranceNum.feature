@@ -38,7 +38,7 @@ Feature: A UK tax payer is able to enter the details and continue on "What is in
     Given I am on What is individual National Insurance number Page
     When I enter no data in NI Number TextBox field
     And click on Save and Continue button
-    And I click on problem message "Enter the individual's National Insurance number
+    And I click on problem message "Enter the individual's National Insurance number"
     Then I should navigate to NI number TextBox field
 
   @id_006
