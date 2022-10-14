@@ -51,6 +51,10 @@ class WhatIsTheCountryOfYourAddressStepDef extends BasePage with WhatIsTheCountr
     saveAndContinue()
   }
 
+  When("""click on confirm button""") { () =>
+    saveAndContinue()
+  }
+
   Then("""Continue Button displayed""") { () =>
     isSaveAndContinueButtonDisplayed()
   }
