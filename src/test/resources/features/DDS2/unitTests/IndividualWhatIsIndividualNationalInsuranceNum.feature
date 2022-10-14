@@ -15,7 +15,7 @@ Feature: A UK tax payer is able to enter the details and continue on "What is in
     Given I am on What is individual National Insurance number Page
     When I enter valid NI Number TextBox field
     And click on Save and Continue button
-    Then page navigates to "Is the individual registered for VAT, as far you're aware?"
+    Then page navigates to "Is the individual registered for VAT, as far as you’re aware?"
 
   @id_003
   Scenario: What is individual's National Insurance number? - Blank Input
@@ -72,7 +72,7 @@ Feature: A UK tax payer is able to enter the details and continue on "What is in
     Given I am on What is individual National Insurance number Page
     When I enter "AZ 12 34 56 D" NI Number TextBox field
     And click on Save and Continue button
-    Then page navigates to "Is the individual registered for VAT, as far you're aware?"
+    Then page navigates to "Is the individual registered for VAT, as far as you’re aware?"
 
   @id_009
   Scenario: What is individual's National Insurance number? - Enter Invalid input with Invalid Space format
