@@ -13,6 +13,10 @@ class WhatIsTheCountryOfYourAddressStepDef extends BasePage with WhatIsTheCountr
     navigateToSpecificPage("notification/your-address/lookup")
   }
 
+  Given("""I am on What is the country of the individual address Page""") { () =>
+    navigateToSpecificPage("notification/individual-address/lookup")
+  }
+
   When("""enter country name {string},dropdown is displayed""") { (string:String) =>
     enterInputInTextBox(string)
     verifyDropdownDisplayed()
