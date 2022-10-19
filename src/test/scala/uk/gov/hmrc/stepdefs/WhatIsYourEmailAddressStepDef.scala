@@ -16,6 +16,10 @@ class WhatIsYourEmailAddressStepDef extends BasePage with WhatIsYourEmailAddress
     verifyHintText(string)
   }
 
+  Then("""hint with text {string} is not displayed""") { (string: String) =>
+    verifyHintTextNotDisplayed(string)
+  }
+
   When("""I enter {string} email TextBox field""") { (string:String) =>
     enterInputInTextBox(string)
   }
