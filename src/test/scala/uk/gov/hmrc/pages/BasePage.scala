@@ -7,6 +7,7 @@ package uk.gov.hmrc.pages
 
 import io.cucumber.scala.{EN, ScalaDsl}
 import org.apache.commons.lang3.StringUtils
+import org.junit
 import org.junit.Assert
 import org.openqa.selenium.By.{ById, ByXPath}
 import org.openqa.selenium.support.ui.{ExpectedConditions, WebDriverWait}
@@ -184,9 +185,17 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
     val element = driver.findElement(By.xpath("//h1"))
     val actualQHeader = element.getText
     Assert.assertTrue("Heading is not Verified. Expected:  "+ expectedQHeader +  "--- Actual:  " + actualQHeader, expectedQHeader == actualQHeader)
-
   }
 
+  def verifyH2Header(expectedHeader: String): Unit = {
+    var actualHeader = ""
+    val elements = driver.findElements(By.xpath("//h2"))
+    elements.forEach(e =>
+      if (e.getText == expectedHeader) {
+        actualHeader = e.getText
+      })
+    Assert.assertTrue("H2 Header is not Verified. Expected:  "+ expectedHeader +  "--- Actual:  " + actualHeader, expectedHeader == actualHeader)
+  }
 
   def clickOnRadioButton(expectedText: String, bulletNum: String): Unit = {
     val elementLabel = driver.findElements(By.xpath("//*[@class='govuk-radios__item']/label[contains(@class,'govuk-radios__label')]"))
