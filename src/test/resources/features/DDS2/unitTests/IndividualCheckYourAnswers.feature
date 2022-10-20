@@ -1,7 +1,7 @@
-@page
+@refpage
 Feature: An individual UK tax payer is able to check their answers before submitting page
 
-  Scenario: For On Behalf of Individual -Navigation to Check you answer page
+  Background:
     Given I am navigated to Received A Letter Page
     When I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
@@ -48,8 +48,10 @@ Feature: An individual UK tax payer is able to check their answers before submit
     And I select Radio Button "2 Testing Lane, Royal Madeuptown, ZZ9Z 9TT" at Position "2"
     And click on continue button
     And click on confirm button
-    Then page navigates to "Check Your Answers"
-    And answers page should have h2 header "About you"
+
+  Scenario: For Individual - About You Section Verification
+    Given I am on "Check Your Answers" page
+    Then answers page should have h2 header "About you"
     And line "1" should have a label "Your full name" an answer with "my full name" and change URL ends with "your-full-name/change"
     And line "2" should have a label "Your telephone number" an answer with "07777 777777" and change URL ends with "your-telephone-number/change"
     And line "3" should have a label "Do you have an email address that you are happy to be contacted on by HMRC?" an answer with "Yes" and change URL ends with "contact-by-email/change"
@@ -63,3 +65,40 @@ Feature: An individual UK tax payer is able to check their answers before submit
     And line "11" should have a label "Your VAT registration number" an answer with "123456789" and change URL ends with "your-vat-registration/change"
     And line "12" should have a label "Are you registered for Self Assessment?" an answer with "Yes, and I know my Unique Taxpayer Reference (UTR)" and change URL ends with "registered-for-self-assessment/change"
     And line "13" should have a label "Your Unique Tax Reference" an answer with "1234567890" and change URL ends with "your-utr/change"
+
+  Scenario: For Individual -About You - Change Route validation -With No Change
+    Given I am on "Check Your Answers" page
+    Then answers page should have h2 header "About you"
+    And clicking on change button navigates as following:
+      |Label|ExpectedPage|
+      |Your full name|What is your full name?|
+      |Your telephone number|What is your telephone number?|
+      |Your email address|What is your email address?|
+      |Your date of birth|What is your date of birth?|
+      |Your main occupation|What is your main occupation?|
+      |Your National Insurance number|What is your National Insurance number?|
+      |Your VAT registration number|What is your VAT registration number?|
+      |Your Unique Tax Reference|What is your Unique Tax Reference?|
+
+  Scenario: For Individual -About You - Change Route validation -By Changing Value
+    Given I am on "Check Your Answers" page
+    Then answers page should have h2 header "About you"
+    And clicking on change button navigates as following:
+      |Label|ExpectedPage|ChangedValue|
+      |Your full name|What is your full name?| Changed Name|
+      |Your telephone number|What is your telephone number?|07777 777788|
+      |Your email address|What is your email address?|changed@exmaple.com|
+      |Your main occupation|What is your main occupation?|changedOccupation|
+      |Your National Insurance number|What is your National Insurance number?|AZ 12 34 56 A|
+      |Your VAT registration number|What is your VAT registration number?|123456798|
+      |Your Unique Tax Reference|What is your Unique Tax Reference?|1234567809|
+
+  Scenario: For Individual -About You - Change Route validation -By Changing Value of Date of birth
+    Given I am on "Check Your Answers" page
+    When I click on change button for "Your date of birth"
+    And I enter "02" in the "Day" text box field
+    And I enter "02" in the "Month" text box field
+    And I enter "1990" in the "Year" text box field
+    And click on Save and Continue button
+    Then answers page should have h2 header "About you"
+    And line "6" should have a label "Your date of birth" an answer with "2 February 1990" and change URL ends with "your-date-of-birth/change"

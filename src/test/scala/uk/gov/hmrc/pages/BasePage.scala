@@ -131,13 +131,16 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
   def enterInputInTextBox(textInput: String): Unit = {
     try
     {
+      driver.findElement(By.xpath("//input[contains(@class,\"govuk-input\")]")).clear()
       driver.findElement(By.xpath("//input[contains(@class,\"govuk-input\")]")).sendKeys(textInput)
     }
     catch
     {
       case e=>
-      driver.findElement(By.id("countryCode")).sendKeys(textInput)
+        driver.findElement(By.id("countryCode")).clear()
+        driver.findElement(By.id("countryCode")).sendKeys(textInput)
       case e =>
+        driver.findElement(By.id("postcode")).clear()
         driver.findElement(By.id("postcode")).sendKeys(textInput)
     }
   }

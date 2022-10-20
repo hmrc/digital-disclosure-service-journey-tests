@@ -12,6 +12,8 @@ import org.openqa.selenium.{By, WebElement}
 import org.openqa.selenium.support.ui.WebDriverWait
 import uk.gov.hmrc.utils.Configuration
 
+import scala.util.control.Breaks
+
 trait CheckYourAnswersPage extends BasePage {
 
   private lazy val webdriverWait = new WebDriverWait(driver, 20)
@@ -58,10 +60,60 @@ trait CheckYourAnswersPage extends BasePage {
   }
 
   def clickOnChangeButton(expectedText: String): Unit = {
-    val elementLabel = driver.findElements(By.xpath("//*[@class=\"govuk-summary-list__key\"]"))
+    val elementLabel = driver.findElements(By.xpath("//dl[@id='about-you-list']/div[@class='govuk-summary-list__row']/dt[@class='govuk-summary-list__key']"))
+    var line=1
+    val outloop = new Breaks;
+    outloop.breakable{
     elementLabel.forEach(e =>
-      if (e.getText == expectedText) {
-       e.findElement(By.xpath("//dd[@class='govuk-summary-list__actions']")).click()
-      })
+      if (e.getText.trim == expectedText.trim) {
+        driver.findElement(By.xpath("(//dl[@id='about-you-list']/div[@class='govuk-summary-list__row']//a[@class='govuk-link'])["+line+"]")).click()
+        outloop.break()
+      }
+      else {
+      line=line+1
+    })}
+  }
+
+  def verifyChangeButtonNavigation(dataTable: DataTable): Unit = {
+
+    dataTable.asScalaMaps[String, String] // Seq[Map[String, Option[String]]]
+      .map { row =>
+        val label = row("Label").getOrElse("")
+        val expectedPage = row("ExpectedPage").getOrElse("")
+        clickOnChangeButton(label)
+        verifyPageHeading(expectedPage)
+        saveAndContinue()
+      }
+  }
+
+  def validateChangedValue(dataTable: DataTable): Unit = {
+
+    dataTable.asScalaMaps[String, String] // Seq[Map[String, Option[String]]]
+      .map { row =>
+        val label = row("Label").getOrElse("")
+        val expectedPage = row("ExpectedPage").getOrElse("")
+        val changedValue = row("ChangedValue").getOrElse("")
+        clickOnChangeButton(label)
+        verifyPageHeading(expectedPage)
+        enterInputInTextBox(changedValue)
+        saveAndContinue()
+
+        val elementLabel = driver.findElements(By.xpath("//dl[@id='about-you-list']/div[@class='govuk-summary-list__row']/dd[@class='govuk-summary-list__value']"))
+        var line = 1
+        val outloop = new Breaks;
+        outloop.breakable {
+          elementLabel.forEach(e =>
+            if (e.getText.trim == changedValue.trim) {
+              line=line
+              outloop.break()
+            }
+            else {
+              line = line + 1
+            })
+        }
+
+        val actualAnswer = driver.findElement(By.xpath("//dl[@id='background-list']/div[@class='govuk-summary-list__row'][" + line + "]/dd[@class='govuk-summary-list__value']")).getText
+        Assert.assertTrue("Check your answers - Background - Answer not verified. Expected: " + changedValue + "--- Actual: " + actualAnswer, changedValue == actualAnswer)
+      }
   }
 }

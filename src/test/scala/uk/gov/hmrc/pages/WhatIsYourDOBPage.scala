@@ -35,10 +35,13 @@ trait WhatIsYourDOBPage extends BasePage {
 
   def enterInputInDOBPage(text: String, textBoxName: String): Unit = {
     if (textBoxName == "Day") {
+      day.clear()
       day.sendKeys(text)
     } else if (textBoxName == "Month") {
+      month.clear()
       month.sendKeys(text)
     } else if (textBoxName == "Year") {
+      year.clear()
       year.sendKeys(text)
     } else {
       Assert.assertTrue("Invalid text box name", false)

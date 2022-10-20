@@ -22,4 +22,15 @@ class CheckYourAnswersStepDef extends BasePage with CheckYourAnswersPage {
     verifyBackgroundAnswers(dataTable)
   }
 
+  Then("""clicking on change button navigates as following:""") { (dataTable: DataTable) =>
+    verifyChangeButtonNavigation(dataTable)
+  }
+
+  Given("""I am on {string} page""") { (string: String) =>
+    verifyPageHeading(string)
+  }
+
+  When("""I click on change button for {string}""") { (string: String) =>
+    clickOnChangeButton(string)
+  }
 }
