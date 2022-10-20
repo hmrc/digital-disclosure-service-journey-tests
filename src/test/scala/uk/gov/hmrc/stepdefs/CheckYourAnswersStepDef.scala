@@ -5,6 +5,7 @@
 
 package uk.gov.hmrc.stepdefs
 
+import io.cucumber.datatable.DataTable
 import uk.gov.hmrc.pages.{BasePage, CheckYourAnswersPage}
 
 class CheckYourAnswersStepDef extends BasePage with CheckYourAnswersPage {
@@ -15,6 +16,10 @@ class CheckYourAnswersStepDef extends BasePage with CheckYourAnswersPage {
 
   Then("""line {string} should have a label {string} an answer with {string} and change URL ends with {string}""") { (string: String, string2: String, string3: String, string4: String) =>
     verifyAboutYouAnswers(string, string2, string3, string4)
+  }
+
+  Then("""Background section has following""") { (dataTable: DataTable) =>
+    verifyBackgroundAnswers(dataTable)
   }
 
 }
