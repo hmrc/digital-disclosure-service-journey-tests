@@ -1,10 +1,10 @@
-@page
+@refpage
 Feature: A UK tax payer is able to enter the details and continue on "What is individual's National Insurance number?"
 
   @id001
   Scenario: What is individual's National Insurance number?- UI validation
     Given I am on What is individual National Insurance number Page
-    Then verify the question should be "What is individual's National Insurance number?"
+    Then verify the question should be "What is the individual’s National Insurance number?"
     And hint with text "For example, ‘QQ123456A’." is displayed
     And save and Continue Button is displayed
     And back Button Link is displayed
@@ -23,7 +23,7 @@ Feature: A UK tax payer is able to enter the details and continue on "What is in
     When I enter no data in NI Number TextBox field
     And click on Save and Continue button
     Then error summary popup should be displayed with text "There is a problem"
-    And error message should be displayed with text "Enter the individual's National Insurance number"
+    And error message should be displayed with text "Enter the individual’s National Insurance number"
 
   @id_004
   Scenario: What is individual's National Insurance number? - Invalid NI
@@ -38,7 +38,7 @@ Feature: A UK tax payer is able to enter the details and continue on "What is in
     Given I am on What is individual National Insurance number Page
     When I enter no data in NI Number TextBox field
     And click on Save and Continue button
-    And I click on problem message "Enter the individual's National Insurance number"
+    And I click on problem message "Enter the individual’s National Insurance number"
     Then I should navigate to NI number TextBox field
 
   @id_006
@@ -47,7 +47,7 @@ Feature: A UK tax payer is able to enter the details and continue on "What is in
     When I select Radio Button "Yes, and I know their National Insurance number" at Position "1"
     And click on Save and Continue button
     And I click on Back button
-    Then page navigates to "Does the individual have a National Insurance number, as far as you're aware?"
+    Then page navigates to "Does the individual have a National Insurance number, as far as you’re aware?"
 
   @id_007
   Scenario Outline: What is individual's National Insurance number? - Format Validation

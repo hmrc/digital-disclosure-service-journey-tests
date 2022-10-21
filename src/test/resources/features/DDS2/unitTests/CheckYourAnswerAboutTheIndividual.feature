@@ -66,7 +66,7 @@ Feature: An individual UK tax payer is able to check their answers for About the
       |Individual’s full name|What is the individual’s full name?|
       |Individual’s date of birth|What is the individual’s date of birth?|
       |Individual’s main occupation|What is the individual’s main occupation?|
-      |Individual’s National Insurance number|What is individual’s National Insurance number?|
+      |Individual’s National Insurance number|What is the individual’s National Insurance number?|
       |Individual’s VAT registration number|What is the individual’s VAT registration number?|
       |Individual’s Unique Taxpayer Reference|What is the individual’s Unique Tax Reference?|
 
@@ -77,7 +77,7 @@ Feature: An individual UK tax payer is able to check their answers for About the
       |Label|ExpectedPage|ChangedValue|
       |Individual’s full name|What is the individual’s full name?| Changed Name|
       |Individual’s main occupation|What is the individual’s main occupation?|changedOccupation|
-      |Individual’s National Insurance number|What is individual’s National Insurance number?|AZ 12 34 56 A|
+      |Individual’s National Insurance number|What is the individual’s National Insurance number?|AZ 12 34 56 A|
       |Individual’s VAT registration number|What is the individual’s VAT registration number?|123456798|
       |Individual’s Unique Taxpayer Reference|What is the individual’s Unique Tax Reference?|1234567809|
 
