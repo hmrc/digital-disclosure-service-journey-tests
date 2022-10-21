@@ -1,5 +1,5 @@
 @page
-Feature: An individual UK tax payer is able to check their answers before submitting page
+Feature: An individual UK tax payer is able to check their answers for background section before submitting page
 
   Scenario: For Individual -Background Section Verification -When user selects "Yes" for offshore liabilities
     Given I am navigated to Received A Letter Page

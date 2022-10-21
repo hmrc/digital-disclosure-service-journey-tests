@@ -1,5 +1,5 @@
-@refpage
-Feature: An individual UK tax payer is able to check their answers before submitting page
+@page
+Feature: An individual UK tax payer is able to check their answers for About you section before submitting page
 
   Background:
     Given I am navigated to Received A Letter Page
