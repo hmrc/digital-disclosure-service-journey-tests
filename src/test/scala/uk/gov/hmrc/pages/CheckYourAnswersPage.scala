@@ -38,6 +38,17 @@ trait CheckYourAnswersPage extends BasePage {
     Assert.assertTrue("Check your answers - About You - Change URL not verified. Expected: " + expectedChangeURL + "--- Actual: " + getChangeURL, getChangeURL.contains(expectedChangeURL))
   }
 
+  def verifyAboutTheIndividualAnswers(expectedLabel: String,lineNo: String, expectedAnswer: String, expectedChangeURL: String): Unit = {
+    val actualLabel = driver.findElement(By.xpath("//dl[@id='about-the-individual-list']/div[@class='govuk-summary-list__row'][" + lineNo + "]/dt[@class='govuk-summary-list__key']")).getText.trim
+    Assert.assertTrue("Check your answers - About You - Label not verified. Expected: " + expectedLabel + "--- Actual: " + actualLabel, expectedLabel == actualLabel)
+
+    val actualAnswer = driver.findElement(By.xpath("//dl[@id='about-the-individual-list']/div[@class='govuk-summary-list__row'][" + lineNo + "]/dd[@class='govuk-summary-list__value']")).getText.trim
+    Assert.assertTrue("Check your answers - About You - Answer not verified. Expected: " + expectedAnswer + "--- Actual: " + actualAnswer, expectedAnswer == actualAnswer)
+
+    val getChangeURL = driver.findElement(By.xpath("//dl[@id='about-the-individual-list']/div[@class='govuk-summary-list__row'][" + lineNo + "]/dd[@class='govuk-summary-list__actions']/a[@class='govuk-link']")).getAttribute("href")
+    Assert.assertTrue("Check your answers - About You - Change URL not verified. Expected: " + expectedChangeURL + "--- Actual: " + getChangeURL, getChangeURL.contains(expectedChangeURL))
+  }
+
   def verifyBackgroundAnswers(dataTable: DataTable): Unit = {
 
     dataTable.asScalaMaps[String, String] // Seq[Map[String, Option[String]]]
@@ -60,13 +71,13 @@ trait CheckYourAnswersPage extends BasePage {
   }
 
   def clickOnChangeButton(expectedText: String): Unit = {
-    val elementLabel = driver.findElements(By.xpath("//dl[@id='about-you-list']/div[@class='govuk-summary-list__row']/dt[@class='govuk-summary-list__key']"))
+    val elementLabel = driver.findElements(By.xpath("//div[@class='govuk-summary-list__row']/dt[@class='govuk-summary-list__key']"))
     var line=1
     val outloop = new Breaks;
     outloop.breakable{
     elementLabel.forEach(e =>
       if (e.getText.trim == expectedText.trim) {
-        driver.findElement(By.xpath("(//dl[@id='about-you-list']/div[@class='govuk-summary-list__row']//a[@class='govuk-link'])["+line+"]")).click()
+        driver.findElement(By.xpath("(//div[@class='govuk-summary-list__row']//a[@class='govuk-link'])["+line+"]")).click()
         outloop.break()
       }
       else {
