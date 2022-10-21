@@ -116,4 +116,9 @@ trait CheckYourAnswersPage extends BasePage {
         Assert.assertTrue("Check your answers - Background - Answer not verified. Expected: " + changedValue + "--- Actual: " + actualAnswer, changedValue == actualAnswer)
       }
   }
+
+  def verifyDropdownTextBoxIsEmpty(): Unit = {
+    val element = driver.findElement(By.xpath("//input[@id='countryCode']"))
+    Assert.assertTrue("Dropdown Textbox is empty", element.getText.isEmpty)
+  }
 }

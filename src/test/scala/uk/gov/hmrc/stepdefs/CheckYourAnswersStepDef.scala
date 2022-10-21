@@ -33,4 +33,9 @@ class CheckYourAnswersStepDef extends BasePage with CheckYourAnswersPage {
   When("""I click on change button for {string}""") { (string: String) =>
     clickOnChangeButton(string)
   }
+
+  Then("""country dropdown is empty""") { () =>
+    verifyDropdownTextBoxIsEmpty()
+  }
+
 }

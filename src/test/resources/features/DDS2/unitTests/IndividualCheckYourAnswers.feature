@@ -100,5 +100,27 @@ Feature: An individual UK tax payer is able to check their answers before submit
     And I enter "02" in the "Month" text box field
     And I enter "1990" in the "Year" text box field
     And click on Save and Continue button
-    Then answers page should have h2 header "About you"
+    Then page navigates to "Check Your Answers"
+    And answers page should have h2 header "About you"
     And line "6" should have a label "Your date of birth" an answer with "2 February 1990" and change URL ends with "your-date-of-birth/change"
+
+  Scenario: For Individual -About You - Change Route validation -Address Validation-No data population
+    Given I am on "Check Your Answers" page
+    When I click on change button for "Your address"
+    Then page navigates to "What is the country of your address?"
+    And country dropdown is empty
+    When click on Save and Continue button
+    Then error message should be displayed with text "Enter country of the address"
+
+  Scenario: For Individual -About You - Change Route validation -Address Validation- Needs to complete new address Journey
+    Given I am on "Check Your Answers" page
+    When I click on change button for "Your address"
+    And enter country name "United Kingdom",select country "United Kingdom"
+    And click on continue button
+    And enter postcode "ZZ9Z 9TT"
+    And click on continue button
+    And I select Radio Button "3 Testing Lane, Royal Madeuptown, ZZ9Z 9TT" at Position "3"
+    And click on continue button
+    And click on confirm button
+    Then page navigates to "Check Your Answers"
+    And line "5" should have a label "Your address" an answer with "3 Testing Lane,Royal Madeuptown,ZZ9Z 9TT,United Kingdom" and change URL ends with "your-address/lookup/change"
