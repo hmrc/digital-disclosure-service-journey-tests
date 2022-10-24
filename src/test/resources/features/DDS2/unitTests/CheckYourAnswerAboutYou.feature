@@ -64,7 +64,7 @@ Feature: An individual UK tax payer is able to check their answers for About you
     And line "10" should have a label "Are you registered for VAT?" an answer with "Yes, and I know my VAT registration number" and change URL ends with "registered-for-vat/change"
     And line "11" should have a label "Your VAT registration number" an answer with "123456789" and change URL ends with "your-vat-registration/change"
     And line "12" should have a label "Are you registered for Self Assessment?" an answer with "Yes, and I know my Unique Taxpayer Reference (UTR)" and change URL ends with "registered-for-self-assessment/change"
-    And line "13" should have a label "Your Unique Tax Reference" an answer with "1234567890" and change URL ends with "your-utr/change"
+    And line "13" should have a label "Your Unique Taxpayer Reference" an answer with "1234567890" and change URL ends with "your-utr/change"
 
   Scenario: For Individual -About You - Change Route validation -With No Change
     Given I am on "Check Your Answers" page
@@ -78,7 +78,7 @@ Feature: An individual UK tax payer is able to check their answers for About you
       |Your main occupation|What is your main occupation?|
       |Your National Insurance number|What is your National Insurance number?|
       |Your VAT registration number|What is your VAT registration number?|
-      |Your Unique Tax Reference|What is your Unique Tax Reference?|
+      |Your Unique Taxpayer Reference|What is your Unique Tax Reference?|
 
   Scenario: For Individual -About You - Change Route validation -By Changing Value
     Given I am on "Check Your Answers" page
@@ -91,7 +91,7 @@ Feature: An individual UK tax payer is able to check their answers for About you
       |Your main occupation|What is your main occupation?|changedOccupation|
       |Your National Insurance number|What is your National Insurance number?|AZ 12 34 56 A|
       |Your VAT registration number|What is your VAT registration number?|123456798|
-      |Your Unique Tax Reference|What is your Unique Tax Reference?|1234567809|
+      |Your Unique Taxpayer Reference|What is your Unique Tax Reference?|1234567809|
 
   Scenario: For Individual -About You - Change Route validation -By Changing Value of Date of birth
     Given I am on "Check Your Answers" page
