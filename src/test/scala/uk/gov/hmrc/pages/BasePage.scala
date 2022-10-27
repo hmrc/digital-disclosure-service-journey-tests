@@ -273,5 +273,20 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
   def verifyMessage(message:String): Unit = {
     Assert.assertTrue("Message is not displayed", findByID("no-results").getText== message)
   }
+
+  def verifyHintText(expectedText: String): Unit = {
+    var actualText=""
+    try{
+      val element = driver.findElement(By.xpath("//*[@class='govuk-hint' or @class='govuk-hint govuk-radios__hint']"))
+      actualText = element.getText
+    }
+    catch
+    {
+      case e =>
+        val element = driver.findElement(By.xpath("//label[@class=\"govuk-label\"]"))
+        actualText = element.getText
+    }
+    Assert.assertTrue("Hint text is not Verified", expectedText == actualText)
+  }
 }
 

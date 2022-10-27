@@ -21,9 +21,5 @@ trait WhatIsYourTelephoneNumberPage extends BasePage {
     val actualText = element.getText
     Assert.assertTrue("Body Text is not Verified", expectedText == actualText)
   }
-  def verifyHintText(expectedQHeader: String): Unit = {
-    val element = driver.findElement(By.xpath("//*[@class='govuk-hint']"))
-    val actualQHeader = element.getText
-    Assert.assertTrue("Hint text is not Verified", expectedQHeader.toString() == actualQHeader.toString())
-  }
+
 }
