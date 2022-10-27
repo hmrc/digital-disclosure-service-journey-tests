@@ -30,6 +30,10 @@ class CheckYourAnswersStepDef extends BasePage with CheckYourAnswersPage {
     verifyChangeButtonNavigation(dataTable)
   }
 
+  Then("""clicking on change button to validate changed value as following:""") { (dataTable: DataTable) =>
+    validateChangedValue(dataTable)
+  }
+
   Given("""I am on {string} page""") { (string: String) =>
     verifyPageHeading(string)
   }
