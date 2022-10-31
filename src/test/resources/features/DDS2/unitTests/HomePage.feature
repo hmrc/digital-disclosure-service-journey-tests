@@ -6,7 +6,7 @@ Feature: A UK tax payer is able to navigate to Home page and continue to the nex
     Then the page title should be "Digital Disclosure Service - Digital Disclosure Service - GOV.UK"
     And first heading should be "Digital Disclosure Service"
     And first paragraph should be "You can tell us about undisclosed income you need to pay tax on for any years between the tax years ending 2003 and 2021. However, if you have been sent a tax return for any year from the tax year ending 2019 which is still outstanding, you must complete it as normal – do not include the tax from these tax years in this disclosure."
-    And second paragraph should be "You'll first need to tell (notify) us that you're going to pay HMRC the tax, interest and penalties you owe (make a disclosure). We will then write to you with specific reference numbers which are needed for making your full disclosure by using this service again."
+    And second paragraph should be "You’ll first need to tell (notify) us that you’re going to pay HMRC the tax, interest and penalties you owe (make a disclosure). We will then write to you with specific reference numbers which are needed for making your full disclosure by using this service again."
     And third paragraph should be "You will also be asked to pay the full amount due at the same time as making your disclosure. If you cannot pay the full amount, let us know as soon as possible and before you send in your disclosure by calling the helpline (opens in a new tab)"
     And second heading should be "Before you start"
     And fourth paragraph should be "Read the guidance on making a disclosure (opens in a new tab) before using this online service. This explains how to prepare your disclosure and what to expect."

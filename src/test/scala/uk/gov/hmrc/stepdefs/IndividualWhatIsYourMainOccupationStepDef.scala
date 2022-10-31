@@ -9,7 +9,7 @@ import uk.gov.hmrc.pages.BasePage
 
 class IndividualWhatIsYourMainOccupationStepDef extends BasePage {
 
-  Given("""I am on What is the individual's main occupation as {string} tax payer""") { (string: String) =>
+  Given("""I am on What is the individual’s main occupation as {string} tax payer""") { (string: String) =>
     if (string == "Individual"){
       navigateToSpecificPage("notification/individual-main-occupation")
     } else {

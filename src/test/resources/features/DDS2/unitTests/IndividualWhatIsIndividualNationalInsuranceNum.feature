@@ -1,8 +1,8 @@
 @page
-Feature: A UK tax payer is able to enter the details and continue on "What is individual's National Insurance number?"
+Feature: A UK tax payer is able to enter the details and continue on "What is individual’s National Insurance number?"
 
   @id001
-  Scenario: What is individual's National Insurance number?- UI validation
+  Scenario: What is individual’s National Insurance number?- UI validation
     Given I am on What is individual National Insurance number Page
     Then verify the question should be "What is the individual’s National Insurance number?"
     And hint with text "For example, ‘QQ123456A’." is displayed
@@ -11,14 +11,14 @@ Feature: A UK tax payer is able to enter the details and continue on "What is in
 
 
   @id_002
-  Scenario: What is individual's National Insurance number? - Enter valid input field
+  Scenario: What is individual’s National Insurance number? - Enter valid input field
     Given I am on What is individual National Insurance number Page
     When I enter valid NI Number TextBox field
     And click on Save and Continue button
     Then page navigates to "Is the individual registered for VAT, as far as you’re aware?"
 
   @id_003
-  Scenario: What is individual's National Insurance number? - Blank Input
+  Scenario: What is individual’s National Insurance number? - Blank Input
     Given I am on What is individual National Insurance number Page
     When I enter no data in NI Number TextBox field
     And click on Save and Continue button
@@ -26,7 +26,7 @@ Feature: A UK tax payer is able to enter the details and continue on "What is in
     And error message should be displayed with text "Enter the individual’s National Insurance number"
 
   @id_004
-  Scenario: What is individual's National Insurance number? - Invalid NI
+  Scenario: What is individual’s National Insurance number? - Invalid NI
     Given I am on What is individual National Insurance number Page
     When I enter invalid NI Number TextBox field
     And click on Save and Continue button
@@ -34,7 +34,7 @@ Feature: A UK tax payer is able to enter the details and continue on "What is in
     And error message should be displayed with text "Enter a valid National Insurance number"
 
   @id_005
-  Scenario: What is individual's National Insurance number? - Navigation of on Error message on top popup
+  Scenario: What is individual’s National Insurance number? - Navigation of on Error message on top popup
     Given I am on What is individual National Insurance number Page
     When I enter no data in NI Number TextBox field
     And click on Save and Continue button
@@ -42,7 +42,7 @@ Feature: A UK tax payer is able to enter the details and continue on "What is in
     Then I should navigate to NI number TextBox field
 
   @id_006
-  Scenario: What is individual's National Insurance number? - Navigation with Back button
+  Scenario: What is individual’s National Insurance number? - Navigation with Back button
     Given I am on Does the individual have a National Insurance number Page
     When I select Radio Button "Yes, and I know their National Insurance number" at Position "1"
     And click on Save and Continue button
@@ -50,7 +50,7 @@ Feature: A UK tax payer is able to enter the details and continue on "What is in
     Then page navigates to "Does the individual have a National Insurance number, as far as you’re aware?"
 
   @id_007
-  Scenario Outline: What is individual's National Insurance number? - Format Validation
+  Scenario Outline: What is individual’s National Insurance number? - Format Validation
     Given I am on What is individual National Insurance number Page
     When I enter <Invalid Format> NI Number TextBox field
     And click on Save and Continue button
@@ -68,21 +68,21 @@ Feature: A UK tax payer is able to enter the details and continue on "What is in
       |"AA123456E"|The final alpha character must be between A and D|
 
   @id_008
-  Scenario: What is individual's National Insurance number? - Enter Valid input with Space
+  Scenario: What is individual’s National Insurance number? - Enter Valid input with Space
     Given I am on What is individual National Insurance number Page
     When I enter "AZ 12 34 56 D" NI Number TextBox field
     And click on Save and Continue button
     Then page navigates to "Is the individual registered for VAT, as far as you’re aware?"
 
   @id_009
-  Scenario: What is individual's National Insurance number? - Enter Invalid input with Invalid Space format
+  Scenario: What is individual’s National Insurance number? - Enter Invalid input with Invalid Space format
     Given I am on What is individual National Insurance number Page
     When I enter "AZ 12 345 6   D" NI Number TextBox field
     And click on Save and Continue button
     Then error message should be displayed with text "Enter a valid National Insurance number"
 
   @id_0010
-  Scenario: What is individual's National Insurance number? - Enter Invalid input with less than 9 character
+  Scenario: What is individual’s National Insurance number? - Enter Invalid input with less than 9 character
     Given I am on What is individual National Insurance number Page
     When I enter "AZ123456" NI Number TextBox field
     And click on Save and Continue button

@@ -34,7 +34,7 @@ Feature: A UK tax payer is able to enter the details and continue on Does the in
 
   @id_005
   Scenario: Does the individual have a National Insurance number? - Navigation with Back button
-    Given I am on What is the individual's main occupation as "Individual" tax payer
+    Given I am on What is the individual’s main occupation as "Individual" tax payer
     When I enter "plumber" in the TextBox field
     And click on Save and Continue button
     And I click on Back button

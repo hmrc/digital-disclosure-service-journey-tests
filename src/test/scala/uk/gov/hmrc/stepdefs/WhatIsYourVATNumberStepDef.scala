@@ -13,7 +13,7 @@ class WhatIsYourVATNumberStepDef extends BasePage with WhatIsYourVATNumberPage {
     navigateToSpecificPage("notification/your-vat-registration")
   }
 
-  Given("""I am on What is the individual's VAT registration number page""") { () =>
+  Given("""I am on What is the individual’s VAT registration number page""") { () =>
     navigateToSpecificPage("notification/individual-vat-registration")
   }
 }

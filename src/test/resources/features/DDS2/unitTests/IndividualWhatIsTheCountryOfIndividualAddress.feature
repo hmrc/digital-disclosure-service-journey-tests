@@ -1,8 +1,8 @@
 @page
-Feature: A UK tax payer is able to enter the details and continue on "What is the country of the individual's address?"
+Feature: A UK tax payer is able to enter the details and continue on "What is the country of the individual’s address?"
 
   @id001
-  Scenario: What is the country of the individual's address? - UI validation
+  Scenario: What is the country of the individual’s address? - UI validation
     Given I am on What is the country of the individual address Page
     Then verify the question should be "What is the country of the individual’s address?"
     And hint with text "For example, United Kingdom." is displayed
@@ -11,7 +11,7 @@ Feature: A UK tax payer is able to enter the details and continue on "What is th
     And back Button Link is displayed
 
   @id002
-  Scenario: What is the country of the individual's address? - UK address via valid postcode search
+  Scenario: What is the country of the individual’s address? - UK address via valid postcode search
     Given I am on What is the country of the individual address Page
     When enter country name "United Kingdom",select country "United Kingdom"
     And click on continue button
@@ -29,7 +29,7 @@ Feature: A UK tax payer is able to enter the details and continue on "What is th
     And address at line "4" is "United Kingdom"
 
   @id003
-  Scenario: What is the country of the individual's address? - UK search invalid postcode and try with valid one
+  Scenario: What is the country of the individual’s address? - UK search invalid postcode and try with valid one
     Given I am on What is the country of the individual address Page
     When enter country name "United Kingdom",select country "United Kingdom"
     And click on continue button
@@ -49,7 +49,7 @@ Feature: A UK tax payer is able to enter the details and continue on "What is th
     And address at line "4" is "United Kingdom"
 
   @id004
-  Scenario: What is the country of the individual's address? - UK address via valid Property name
+  Scenario: What is the country of the individual’s address? - UK address via valid Property name
     Given I am on What is the country of the individual address Page
     When enter country name "United Kingdom",select country "United Kingdom"
     And click on continue button
@@ -64,7 +64,7 @@ Feature: A UK tax payer is able to enter the details and continue on "What is th
     And address at line "4" is "United Kingdom"
 
   @id005
-  Scenario: What is the country of the individual's address? - UK address via invalid Property name
+  Scenario: What is the country of the individual’s address? - UK address via invalid Property name
     Given I am on What is the country of the individual address Page
     When enter country name "United Kingdom",select country "United Kingdom"
     And click on continue button
@@ -73,7 +73,7 @@ Feature: A UK tax payer is able to enter the details and continue on "What is th
     And enter Property name as "The Farmhouse"
     And click on continue button
     Then page navigates to "Showing all results for ZZ9Z 9TT"
-    And shows message "We could not find a match with 'The Farmhouse'."
+    And shows message "We could not find a match with ’The Farmhouse’."
     And hyperlink of "Try a different name or number" is displayed
     And hyperlink of "Enter your address manually" is displayed
     And list of matching option is displayed
@@ -81,7 +81,7 @@ Feature: A UK tax payer is able to enter the details and continue on "What is th
     Then page navigates to "What is the postcode and property name or number of the individual’s address?"
 
   @id006
-  Scenario: What is the country of the individual's address? - UK address via valid Property number
+  Scenario: What is the country of the individual’s address? - UK address via valid Property number
     Given I am on What is the country of the individual address Page
     When enter country name "United Kingdom",select country "United Kingdom"
     And click on continue button
@@ -97,7 +97,7 @@ Feature: A UK tax payer is able to enter the details and continue on "What is th
 
 
   @id007
-  Scenario: What is the country of the individual's address? - UK address via invalid Property number
+  Scenario: What is the country of the individual’s address? - UK address via invalid Property number
     Given I am on What is the country of the individual address Page
     When enter country name "United Kingdom",select country "United Kingdom"
     And click on continue button
@@ -106,7 +106,7 @@ Feature: A UK tax payer is able to enter the details and continue on "What is th
     And enter Property number as "15"
     And click on continue button
     Then page navigates to "Showing all results for ZZ9Z 9TT"
-    And shows message "We could not find a match with '15'."
+    And shows message "We could not find a match with ’15’."
     And hyperlink of "Try a different name or number" is displayed
     And hyperlink of "Enter your address manually" is displayed
     And list of matching option is displayed
@@ -114,7 +114,7 @@ Feature: A UK tax payer is able to enter the details and continue on "What is th
     Then page navigates to "What is the postcode and property name or number of the individual’s address?"
 
   @id008
-  Scenario: What is the country of the individual's address? - Error Validation
+  Scenario: What is the country of the individual’s address? - Error Validation
     Given I am on What is the country of the individual address Page
     And click on continue button
     Then error message should be displayed with text "Enter country of the address"
@@ -136,7 +136,7 @@ Feature: A UK tax payer is able to enter the details and continue on "What is th
     Then I should navigate to Radio button "1 Testing Lane, Royal Madeuptown, ZZ9Z 9TT" at Position "1"
 
   @id009
-  Scenario: What is the country of the individual's address? - UK - Enter address manually error validation
+  Scenario: What is the country of the individual’s address? - UK - Enter address manually error validation
     Given I am on What is the country of the individual address Page
     When enter country name "United Kingdom",select country "United Kingdom"
     And click on continue button
@@ -148,7 +148,7 @@ Feature: A UK tax payer is able to enter the details and continue on "What is th
     And error message should be displayed with text "Enter at least one address line or a town"
 
   @id010
-  Scenario: What is the country of the individual's address? - UK - Enter address manually in all fields on What is your postcode page, and edit the address in the confirm page
+  Scenario: What is the country of the individual’s address? - UK - Enter address manually in all fields on What is your postcode page, and edit the address in the confirm page
     Given I am on What is the country of the individual address Page
     When enter country name "United Kingdom",select country "United Kingdom"
     And click on continue button
@@ -180,7 +180,7 @@ Feature: A UK tax payer is able to enter the details and continue on "What is th
     And address at line "6" is "HP19 9AT"
 
   @id011
-  Scenario: What is the country of the individual's address? - UK - Enter address manually on incorrect postcode page, then verify in the confirm page
+  Scenario: What is the country of the individual’s address? - UK - Enter address manually on incorrect postcode page, then verify in the confirm page
     Given I am on What is the country of the individual address Page
     When enter country name "United Kingdom",select country "United Kingdom"
     And click on continue button
@@ -220,7 +220,7 @@ Feature: A UK tax payer is able to enter the details and continue on "What is th
     And address at line "7" is "United Kingdom"
 
   @id012
-  Scenario: What is the country of the individual's address? - UK - Enter address manually on choose address page and then verify the confirm page
+  Scenario: What is the country of the individual’s address? - UK - Enter address manually on choose address page and then verify the confirm page
     Given I am on What is the country of the individual address Page
     When enter country name "United Kingdom",select country "United Kingdom"
     And click on continue button
@@ -240,7 +240,7 @@ Feature: A UK tax payer is able to enter the details and continue on "What is th
     And address at line "4" is "United Kingdom"
 
   @id013
-  Scenario: What is the country of the individual's address? - Is this the correct address? Navigation
+  Scenario: What is the country of the individual’s address? - Is this the correct address? Navigation
     Given I am on What is the country of the individual address Page
     When enter country name "United Kingdom",select country "United Kingdom"
     And click on continue button

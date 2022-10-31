@@ -73,7 +73,7 @@ Feature: A UK tax payer is able to enter the details and continue on "What is th
     And enter Property name as "The Farmhouse"
     And click on continue button
     Then page navigates to "Showing all results for ZZ9Z 9TT"
-    And shows message "We could not find a match with 'The Farmhouse'."
+    And shows message "We could not find a match with ’The Farmhouse’."
     And hyperlink of "Try a different name or number" is displayed
     And hyperlink of "Enter your address manually" is displayed
     And list of matching option is displayed
@@ -106,7 +106,7 @@ Feature: A UK tax payer is able to enter the details and continue on "What is th
     And enter Property number as "15"
     And click on continue button
     Then page navigates to "Showing all results for ZZ9Z 9TT"
-    And shows message "We could not find a match with '15'."
+    And shows message "We could not find a match with ’15’."
     And hyperlink of "Try a different name or number" is displayed
     And hyperlink of "Enter your address manually" is displayed
     And list of matching option is displayed
