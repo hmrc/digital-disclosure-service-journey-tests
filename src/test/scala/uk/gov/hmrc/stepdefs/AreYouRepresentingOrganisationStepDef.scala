@@ -18,4 +18,12 @@ class AreYouRepresentingOrganisationStepDef extends BasePage {
     navigateToSpecificPage("notification/"+string)
   }
 
+  Then("""I should navigate to Organisation Name TextBox field""") { () =>
+    verifyFocusOnTextbox()
+  }
+
+  When("""I enter data with max length of {string} in Organisation Name TextBox field""") { (string: String) =>
+    enterInputInTextBoxWithMaxLength(string)
+  }
+
 }
