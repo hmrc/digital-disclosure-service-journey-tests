@@ -73,7 +73,7 @@ Feature: An individual UK tax payer is able to check their answers for About the
   Scenario: On behalf of Individual -About The Individual - Change Route validation -By Changing Value
     Given I am on "Check Your Answers" page
     Then answers page should have h2 header "About the individual"
-    And clicking on change button navigates as following:
+    And clicking on change button to validate changed value as following:
       |Label|ExpectedPage|ChangedValue|
       |Individual’s full name|What is the individual’s full name?| Changed Name|
       |Individual’s main occupation|What is the individual’s main occupation?|changedOccupation|

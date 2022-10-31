@@ -12,6 +12,7 @@ import org.openqa.selenium.{By, WebElement}
 import org.openqa.selenium.support.ui.WebDriverWait
 import uk.gov.hmrc.utils.Configuration
 
+import scala.Console.println
 import scala.util.control.Breaks
 
 trait CheckYourAnswersPage extends BasePage {
@@ -98,34 +99,37 @@ trait CheckYourAnswersPage extends BasePage {
   }
 
   def validateChangedValue(dataTable: DataTable): Unit = {
+    val outloop = new Breaks;
+    val inloop = new Breaks;
+    outloop.breakable {
+      dataTable.asScalaMaps[String, String]
+        .map { row =>
+          val label = row("Label").getOrElse("")
+          val expectedPage = row("ExpectedPage").getOrElse("")
+          val changedValue = row("ChangedValue").getOrElse("")
+          clickOnChangeButton(label)
+          verifyPageHeading(expectedPage)
+          enterInputInTextBox(changedValue)
+          saveAndContinue()
 
-    dataTable.asScalaMaps[String, String] // Seq[Map[String, Option[String]]]
-      .map { row =>
-        val label = row("Label").getOrElse("")
-        val expectedPage = row("ExpectedPage").getOrElse("")
-        val changedValue = row("ChangedValue").getOrElse("")
-        clickOnChangeButton(label)
-        verifyPageHeading(expectedPage)
-        enterInputInTextBox(changedValue)
-        saveAndContinue()
+          val elementLabel = driver.findElements(By.xpath("//div[@class='govuk-summary-list__row']/dt[@class='govuk-summary-list__key']"))
+          var line = 1
+          inloop.breakable {
+            elementLabel.forEach(e =>
+              if (e.getText.trim == label.trim) {
+                Console.println(e.getText + "testing")
+                line = line
+                outloop.break()
+              }
+              else {
+                line = line + 1
+              })
+          }
 
-        val elementLabel = driver.findElements(By.xpath("//dl[@id='about-you-list']/div[@class='govuk-summary-list__row']/dd[@class='govuk-summary-list__value']"))
-        var line = 1
-        val outloop = new Breaks;
-        outloop.breakable {
-          elementLabel.forEach(e =>
-            if (e.getText.trim == changedValue.trim) {
-              line=line
-              outloop.break()
-            }
-            else {
-              line = line + 1
-            })
+          val actualAnswer = driver.findElement(By.xpath("//div[@class='govuk-summary-list__row'][" + line + "]/dd[@class='govuk-summary-list__value']")).getText
+          Assert.assertTrue("Check your answers - Answer not verified. Expected: " + changedValue + "--- Actual: " + actualAnswer, changedValue == actualAnswer)
         }
-
-        val actualAnswer = driver.findElement(By.xpath("//dl[@id='background-list']/div[@class='govuk-summary-list__row'][" + line + "]/dd[@class='govuk-summary-list__value']")).getText
-        Assert.assertTrue("Check your answers - Background - Answer not verified. Expected: " + changedValue + "--- Actual: " + actualAnswer, changedValue == actualAnswer)
-      }
+    }
   }
 
   def verifyDropdownTextBoxIsEmpty(): Unit = {

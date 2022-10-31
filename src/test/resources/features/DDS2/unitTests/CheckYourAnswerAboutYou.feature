@@ -83,7 +83,7 @@ Feature: An individual UK tax payer is able to check their answers for About you
   Scenario: For Individual -About You - Change Route validation -By Changing Value
     Given I am on "Check Your Answers" page
     Then answers page should have h2 header "About you"
-    And clicking on change button navigates as following:
+    And clicking on change button to validate changed value as following:
       |Label|ExpectedPage|ChangedValue|
       |Your full name|What is your full name?| Changed Name|
       |Your telephone number|What is your telephone number?|07777 777788|
