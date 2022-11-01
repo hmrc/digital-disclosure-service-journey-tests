@@ -1,4 +1,4 @@
-@page
+@refpage
 Feature: An individual UK tax payer is able to check their answers for About you section before submitting page
 
   Background:
@@ -49,6 +49,7 @@ Feature: An individual UK tax payer is able to check their answers for About you
     And click on continue button
     And click on confirm button
 
+  @id001
   Scenario: For Individual - About You Section Verification
     Given I am on "Check Your Answers" page
     Then answers page should have h2 header "About you"
@@ -66,6 +67,7 @@ Feature: An individual UK tax payer is able to check their answers for About you
     And line "12" should have a label "Are you registered for Self Assessment?" an answer with "Yes, and I know my Unique Taxpayer Reference (UTR)" and change URL ends with "registered-for-self-assessment/change"
     And line "13" should have a label "Your Unique Taxpayer Reference" an answer with "1234567890" and change URL ends with "your-utr/change"
 
+  @id002
   Scenario: For Individual -About You - Change Route validation -With No Change
     Given I am on "Check Your Answers" page
     Then answers page should have h2 header "About you"
@@ -80,6 +82,7 @@ Feature: An individual UK tax payer is able to check their answers for About you
       |Your VAT registration number|What is your VAT registration number?|
       |Your Unique Taxpayer Reference|What is your Unique Tax Reference?|
 
+  @id003
   Scenario: For Individual -About You - Change Route validation -By Changing Value
     Given I am on "Check Your Answers" page
     Then answers page should have h2 header "About you"
@@ -93,6 +96,7 @@ Feature: An individual UK tax payer is able to check their answers for About you
       |Your VAT registration number|What is your VAT registration number?|123456798|
       |Your Unique Taxpayer Reference|What is your Unique Tax Reference?|1234567809|
 
+  @id004
   Scenario: For Individual -About You - Change Route validation -By Changing Value of Date of birth
     Given I am on "Check Your Answers" page
     When I click on change button for "Your date of birth"
@@ -104,6 +108,7 @@ Feature: An individual UK tax payer is able to check their answers for About you
     And answers page should have h2 header "About you"
     And line "6" should have a label "Your date of birth" an answer with "2 February 1990" and change URL ends with "your-date-of-birth/change"
 
+  @id005
   Scenario: For Individual -About You - Change Route validation -Address Validation-No data population
     Given I am on "Check Your Answers" page
     When I click on change button for "Your address"
@@ -112,6 +117,7 @@ Feature: An individual UK tax payer is able to check their answers for About you
     When click on Save and Continue button
     Then error message should be displayed with text "Enter country of the address"
 
+  @id006
   Scenario: For Individual -About You - Change Route validation -Address Validation- Needs to complete new address Journey
     Given I am on "Check Your Answers" page
     When I click on change button for "Your address"
@@ -124,3 +130,41 @@ Feature: An individual UK tax payer is able to check their answers for About you
     And click on confirm button
     Then page navigates to "Check Your Answers"
     And line "5" should have a label "Your address" an answer with "3 Testing Lane,Royal Madeuptown,ZZ9Z 9TT,United Kingdom" and change URL ends with "your-address/lookup/change"
+
+
+  @id007
+  Scenario: For Individual -About You - Do you have an email address that you are happy to be contacted on by HMRC?- Yes to No
+    Given I am on "Check Your Answers" page
+    When I click on change button for "Do you have an email address that you are happy to be contacted on by HMRC?"
+    And I select Radio Button "No" at Position "2"
+    And click on Save and Continue button
+    Then page navigates to "Check Your Answers"
+    And line "3" should have a label "Do you have an email address that you are happy to be contacted on by HMRC?" an answer with "No" and change URL ends with "contact-by-email/change"
+    And label "Your email address" is not displayed on check your answer page
+
+  @id008
+  Scenario: For Individual -About You - Do you have an email address that you are happy to be contacted on by HMRC?- No to Yes
+    Given I am on "Check Your Answers" page
+    When I click on change button for "Do you have an email address that you are happy to be contacted on by HMRC?"
+    And I select Radio Button "No" at Position "2"
+    And click on Save and Continue button
+    Then page navigates to "Check Your Answers"
+    And line "3" should have a label "Do you have an email address that you are happy to be contacted on by HMRC?" an answer with "No" and change URL ends with "contact-by-email/change"
+    And label "Your email address" is not displayed on check your answer page
+    When I click on change button for "Do you have an email address that you are happy to be contacted on by HMRC?"
+    And I select Radio Button "Yes" at Position "1"
+    And click on Save and Continue button
+    Then page navigates to "What is your email address?"
+    When I enter "abcd@abcd.com" in the TextBox field
+    And click on Save and Continue button
+    And line "3" should have a label "Do you have an email address that you are happy to be contacted on by HMRC?" an answer with "Yes" and change URL ends with "contact-by-email/change"
+    And line "4" should have a label "Your email address" an answer with "abcd@abcd.com" and change URL ends with "your-email-address/change"
+
+  @id008
+  Scenario: For Individual -About You - Do you have an email address that you are happy to be contacted on by HMRC?- No change
+    Given I am on "Check Your Answers" page
+    When I click on change button for "Do you have an email address that you are happy to be contacted on by HMRC?"
+    And click on Save and Continue button
+    Then page navigates to "Check Your Answers"
+    And line "3" should have a label "Do you have an email address that you are happy to be contacted on by HMRC?" an answer with "Yes" and change URL ends with "contact-by-email/change"
+    And line "4" should have a label "Your email address" an answer with "abc@abc.com" and change URL ends with "your-email-address/change"
