@@ -39,6 +39,25 @@ trait CheckYourAnswersPage extends BasePage {
     Assert.assertTrue("Check your answers - About You - Change URL not verified. Expected: " + expectedChangeURL + "--- Actual: " + getChangeURL, getChangeURL.contains(expectedChangeURL))
   }
 
+  def labelIsNotDisplayed(expectedLabel: String): Unit = {
+
+    val elementLabel = driver.findElements(By.xpath("//div[@class='govuk-summary-list__row']/dt[@class='govuk-summary-list__key']"))
+    var flag=false;
+    val outloop = new Breaks;
+    outloop.breakable {
+      elementLabel.forEach(e =>
+        if (e.getText.trim == expectedLabel.trim) {
+          flag=false;
+          outloop.break()
+        }
+      else
+      {
+        flag=true;
+      })
+    }
+    Assert.assertTrue("Label is displayed",flag)
+  }
+
   def verifyAboutTheIndividualAnswers(expectedLabel: String,lineNo: String, expectedAnswer: String, expectedChangeURL: String): Unit = {
     val actualLabel = driver.findElement(By.xpath("//dl[@id='about-the-individual-list']/div[@class='govuk-summary-list__row'][" + lineNo + "]/dt[@class='govuk-summary-list__key']")).getText.trim
     Assert.assertTrue("Check your answers - About You - Label not verified. Expected: " + expectedLabel + "--- Actual: " + actualLabel, expectedLabel == actualLabel)

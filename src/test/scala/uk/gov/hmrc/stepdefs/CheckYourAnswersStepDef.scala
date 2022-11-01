@@ -18,6 +18,10 @@ class CheckYourAnswersStepDef extends BasePage with CheckYourAnswersPage {
     verifyAboutYouAnswers(string, string2, string3, string4)
   }
 
+  Then("""label {string} is not displayed on check your answer page""") { (string: String) =>
+    labelIsNotDisplayed(string)
+  }
+
   Then("""About The Individual section should have a label {string} at line {string} an answer with {string} and change URL ends with {string}""") { (string: String, string2: String, string3: String, string4: String) =>
     verifyAboutTheIndividualAnswers(string, string2, string3, string4)
   }
