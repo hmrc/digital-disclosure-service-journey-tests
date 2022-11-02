@@ -160,7 +160,7 @@ Feature: An individual UK tax payer is able to check their answers for About you
     And line "3" should have a label "Do you have an email address that you are happy to be contacted on by HMRC?" an answer with "Yes" and change URL ends with "contact-by-email/change"
     And line "4" should have a label "Your email address" an answer with "abcd@abcd.com" and change URL ends with "your-email-address/change"
 
-  @id008
+  @id009
   Scenario: For Individual -About You - Do you have an email address that you are happy to be contacted on by HMRC?- No change
     Given I am on "Check Your Answers" page
     When I click on change button for "Do you have an email address that you are happy to be contacted on by HMRC?"
@@ -168,3 +168,97 @@ Feature: An individual UK tax payer is able to check their answers for About you
     Then page navigates to "Check Your Answers"
     And line "3" should have a label "Do you have an email address that you are happy to be contacted on by HMRC?" an answer with "Yes" and change URL ends with "contact-by-email/change"
     And line "4" should have a label "Your email address" an answer with "abc@abc.com" and change URL ends with "your-email-address/change"
+
+  @id010
+  Scenario: For Individual -About You -Do you have a National Insurance number?- Yes-No change
+    Given I am on "Check Your Answers" page
+    When I click on change button for "Do you have a National Insurance number?"
+    And click on Save and Continue button
+    Then page navigates to "Check Your Answers"
+    And line "8" should have a label "Do you have a National Insurance number?" an answer with "Yes, and I know my National Insurance number" and change URL ends with "have-national-insurance-number/change"
+    And line "9" should have a label "Your National Insurance number" an answer with "AZ 12 34 56 D" and change URL ends with "your-national-insurance-number/change"
+
+  @id011
+  Scenario: For Individual -About You -Do you have a National Insurance number?- Yes to Yes, but I do not know
+    Given I am on "Check Your Answers" page
+    When I click on change button for "Do you have a National Insurance number?"
+    And I select Radio Button "Yes, but I do not know my National Insurance number" at Position "2"
+    And click on Save and Continue button
+    Then page navigates to "Check Your Answers"
+    And line "8" should have a label "Do you have a National Insurance number?" an answer with "Yes, but I do not know my National Insurance number" and change URL ends with "have-national-insurance-number/change"
+    And label "Your National Insurance number" is not displayed on check your answer page
+
+  @id012
+  Scenario: For Individual -About You -Do you have a National Insurance number?- Yes to No
+    Given I am on "Check Your Answers" page
+    When I click on change button for "Do you have a National Insurance number?"
+    And I select Radio Button "No" at Position "3"
+    And click on Save and Continue button
+    Then page navigates to "Check Your Answers"
+    And line "8" should have a label "Do you have a National Insurance number?" an answer with "No" and change URL ends with "have-national-insurance-number/change"
+    And label "Your National Insurance number" is not displayed on check your answer page
+
+  @id013
+  Scenario: For Individual -About You -Do you have a National Insurance number?- Yes, but I do not know to Yes, and I know
+    Given I am on "Check Your Answers" page
+    When I click on change button for "Do you have a National Insurance number?"
+    And I select Radio Button "Yes, but I do not know my National Insurance number" at Position "2"
+    And click on Save and Continue button
+    And line "8" should have a label "Do you have a National Insurance number?" an answer with "Yes, but I do not know my National Insurance number" and change URL ends with "have-national-insurance-number/change"
+    And label "Your National Insurance number" is not displayed on check your answer page
+    And I click on change button for "Do you have a National Insurance number?"
+    And I select Radio Button "Yes, and I know my National Insurance number" at Position "1"
+    And click on Save and Continue button
+    Then page navigates to "What is your National Insurance number?"
+    When I enter "AA 12 34 56 D" in the TextBox field
+    And click on Save and Continue button
+    Then line "8" should have a label "Do you have a National Insurance number?" an answer with "Yes, and I know my National Insurance number" and change URL ends with "have-national-insurance-number/change"
+    And line "9" should have a label "Your National Insurance number" an answer with "AA 12 34 56 D" and change URL ends with "your-national-insurance-number/change"
+
+
+  @id014
+  Scenario: For Individual -About You -Do you have a National Insurance number?- Yes, but I do not know to No
+    Given I am on "Check Your Answers" page
+    When I click on change button for "Do you have a National Insurance number?"
+    And I select Radio Button "Yes, but I do not know my National Insurance number" at Position "2"
+    And click on Save and Continue button
+    Then line "8" should have a label "Do you have a National Insurance number?" an answer with "Yes, but I do not know my National Insurance number" and change URL ends with "have-national-insurance-number/change"
+    And label "Your National Insurance number" is not displayed on check your answer page
+    And I click on change button for "Do you have a National Insurance number?"
+    And I select Radio Button "No" at Position "3"
+    And click on Save and Continue button
+    Then page navigates to "Check Your Answers"
+    And line "8" should have a label "Do you have a National Insurance number?" an answer with "No" and change URL ends with "have-national-insurance-number/change"
+    And label "Your National Insurance number" is not displayed on check your answer page
+
+  @id015
+  Scenario: For Individual -About You -Do you have a National Insurance number?- No to Yes, and I know
+    Given I am on "Check Your Answers" page
+    When I click on change button for "Do you have a National Insurance number?"
+    And I select Radio Button "No" at Position "3"
+    And click on Save and Continue button
+    And line "8" should have a label "Do you have a National Insurance number?" an answer with "No" and change URL ends with "have-national-insurance-number/change"
+    And label "Your National Insurance number" is not displayed on check your answer page
+    And I click on change button for "Do you have a National Insurance number?"
+    And I select Radio Button "Yes, and I know my National Insurance number" at Position "1"
+    And click on Save and Continue button
+    Then page navigates to "What is your National Insurance number?"
+    When I enter "AA 12 34 56 A" in the TextBox field
+    And click on Save and Continue button
+    And line "8" should have a label "Do you have a National Insurance number?" an answer with "Yes, and I know my National Insurance number" and change URL ends with "have-national-insurance-number/change"
+    And line "9" should have a label "Your National Insurance number" an answer with "AA 12 34 56 A" and change URL ends with "your-national-insurance-number/change"
+
+  @id016
+  Scenario: For Individual -About You -Do you have a National Insurance number?- No to Yes, and I know
+    Given I am on "Check Your Answers" page
+    When I click on change button for "Do you have a National Insurance number?"
+    And I select Radio Button "No" at Position "3"
+    And click on Save and Continue button
+    And line "8" should have a label "Do you have a National Insurance number?" an answer with "No" and change URL ends with "have-national-insurance-number/change"
+    And label "Your National Insurance number" is not displayed on check your answer page
+    And I click on change button for "Do you have a National Insurance number?"
+    And I select Radio Button "Yes, but I do not know my National Insurance number" at Position "2"
+    And click on Save and Continue button
+    Then page navigates to "Check Your Answers"
+    And line "8" should have a label "Do you have a National Insurance number?" an answer with "Yes, but I do not know my National Insurance number" and change URL ends with "have-national-insurance-number/change"
+    And label "Your National Insurance number" is not displayed on check your answer page
