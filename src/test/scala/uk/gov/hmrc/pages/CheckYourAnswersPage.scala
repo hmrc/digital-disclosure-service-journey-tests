@@ -27,9 +27,7 @@ trait CheckYourAnswersPage extends BasePage {
   def year: WebElement = findByID("value.year")
 
   def verifyAboutYouAnswers(lineNo: String, expectedLabel: String, expectedAnswer: String, expectedChangeURL: String): Unit = {
-    //val answerRow = driver.findElement(By.xpath("xpath"))
-    //val actualLabel = driver.findElement(By.xpath("//dl[@id='about-you-list']/div[@class='govuk-summary-list__row'][lineNo]/dt[@class='govuk-summary-list__key']"))
-    val actualLabel = driver.findElement(By.xpath("//dl[@id='about-you-list']/div[@class='govuk-summary-list__row'][" + lineNo + "]/dt[@class='govuk-summary-list__key']")).getText.trim
+   val actualLabel = driver.findElement(By.xpath("//dl[@id='about-you-list']/div[@class='govuk-summary-list__row'][" + lineNo + "]/dt[@class='govuk-summary-list__key']")).getText.trim
     Assert.assertTrue("Check your answers - About You - Label not verified. Expected: " + expectedLabel + "--- Actual: " + actualLabel, expectedLabel == actualLabel)
 
     val actualAnswer = driver.findElement(By.xpath("//dl[@id='about-you-list']/div[@class='govuk-summary-list__row'][" + lineNo + "]/dd[@class='govuk-summary-list__value']")).getText.trim

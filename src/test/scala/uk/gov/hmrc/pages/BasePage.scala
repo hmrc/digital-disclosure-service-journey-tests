@@ -200,6 +200,16 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
     Assert.assertTrue("H2 Header is not Verified. Expected:  "+ expectedHeader +  "--- Actual:  " + actualHeader, expectedHeader == actualHeader)
   }
 
+  def verifyH2HeaderNotDisplayed(expectedHeader: String): Unit = {
+    var actualHeader = ""
+    val elements = driver.findElements(By.xpath("//h2"))
+    elements.forEach(e =>
+      if (e.getText == expectedHeader) {
+        actualHeader = e.getText
+      })
+    Assert.assertTrue("H2 Header is displayed. Expected:  "+ expectedHeader +  " should not be displayed --- Actual:  Header displayed", actualHeader.equals(""))
+  }
+
   def clickOnRadioButton(expectedText: String, bulletNum: String): Unit = {
     val elementLabel = driver.findElements(By.xpath("//*[@class='govuk-radios__item']/label[contains(@class,'govuk-radios__label')]"))
     val value = bulletNum.toInt

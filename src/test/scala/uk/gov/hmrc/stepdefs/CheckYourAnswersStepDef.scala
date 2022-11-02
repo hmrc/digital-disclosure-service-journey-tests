@@ -14,6 +14,9 @@ class CheckYourAnswersStepDef extends BasePage with CheckYourAnswersPage {
     verifyH2Header(string)
   }
 
+  Then("""answers page should not have h2 header {string}""") { (string: String) =>
+    verifyH2HeaderNotDisplayed(string)
+  }
   Then("""line {string} should have a label {string} an answer with {string} and change URL ends with {string}""") { (string: String, string2: String, string3: String, string4: String) =>
     verifyAboutYouAnswers(string, string2, string3, string4)
   }
