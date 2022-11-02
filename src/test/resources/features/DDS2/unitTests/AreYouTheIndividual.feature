@@ -5,17 +5,19 @@ Feature: A UK tax payer is able to enter the details and continue on Are you the
     Given I am navigated to Are you the individual this disclosure relates to Page
     When the page is loaded successfully and verifies the page title is "Are you the individual this disclosure relates to? - Digital Disclosure Service - GOV.UK"
     Then verify the question should be "Are you the individual this disclosure relates to?"
-    And radio Button with text "Yes, I am the individual" is displayed at position "1"
-    And radio Button with text "No, I am disclosing on behalf of the individual" is displayed at position "2"
-    And hint with text "We may ask for additional evidence that you’re authorised to act for them, such as a 64-8 form." is displayed
+    And verify that Yes and No radio options are selected by default
 
   Scenario: Are you the individual this disclosure relates to? - User selects Yes or No and continues to the next page. And navigated back to Are you the individual this disclosure relates to?
     Given I am navigated to Are you the individual this disclosure relates to Page
-    When I select Radio Button "Yes, I am the individual" at Position "1"
+    When I select "Yes"
     And click on Save and Continue button
     Then I am navigated to the next page with title "Offshore liabilities - Digital Disclosure Service - GOV.UK"
     When I click on Back button
     Then I am navigated to the next page with title "Are you the individual this disclosure relates to? - Digital Disclosure Service - GOV.UK"
+    And option still selected is "Yes"
+    When I select "No"
+    And click on Save and Continue button
+    Then I am navigated to the next page with title "Offshore liabilities - Digital Disclosure Service - GOV.UK"
 
   Scenario: Are you the individual this disclosure relates to? - Validation with no selection of Radio Button
     Given I am navigated to Are you the individual this disclosure relates to Page
