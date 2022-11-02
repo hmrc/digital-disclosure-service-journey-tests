@@ -61,6 +61,15 @@ Feature: An individual UK tax payer is able to check their answers for About the
   Scenario: On behalf of Individual -About The Individual - Change Route validation -With No Change
     Given I am on "Check Your Answers" page
     Then answers page should have h2 header "About the individual"
+    And About The Individual section should have a label "Individual’s full name" at line "1" an answer with "Individual full name" and change URL ends with "individual-full-name/change"
+    And About The Individual section should have a label "Individual’s date of birth" at line "2" an answer with "1 January 1980" and change URL ends with "individual-date-of-birth/change"
+    And About The Individual section should have a label "Individual’s main occupation" at line "3" an answer with "Dentist" and change URL ends with "individual-main-occupation/change"
+    And About The Individual section should have a label "Does the individual have a National Insurance number, as far as you’re aware?" at line "4" an answer with "Yes, and I know their National Insurance number" and change URL ends with "individual-have-national-insurance-number/change"
+    And About The Individual section should have a label "Individual’s National Insurance number" at line "5" an answer with "AZ 12 34 56 D" and change URL ends with "individual-national-insurance-number/change"
+    And About The Individual section should have a label "Is the individual registered for VAT, as far you’re aware?" at line "6" an answer with "Yes, and I know their VAT registration number" and change URL ends with "individual-registered-for-vat/change"
+    And About The Individual section should have a label "Individual’s VAT registration number" at line "7" an answer with "123456789" and change URL ends with "individual-vat-registration/change"
+    And About The Individual section should have a label "Is the individual registered for Self Assessment, as far as you’re aware?" at line "8" an answer with "Yes, and I know their Unique Taxpayer Reference (UTR)" and change URL ends with "individual-self-assessment/change"
+    And About The Individual section should have a label "Individual’s Unique Taxpayer Reference" at line "9" an answer with "1234567890" and change URL ends with "individual-utr/change"
     And clicking on change button navigates as following:
       |Label|ExpectedPage|
       |Individual’s full name|What is the individual’s full name?|
@@ -112,3 +121,22 @@ Feature: An individual UK tax payer is able to check their answers for About the
     And click on confirm button
     Then page navigates to "Check Your Answers"
     And About The Individual section should have a label "Individual’s address" at line "10" an answer with "3 Testing Lane,Royal Madeuptown,ZZ9Z 9TT,United Kingdom" and change URL ends with "individual-address/lookup/change"
+
+  Scenario: On behalf of Individual -About The Individual - No change to - Are you the individual this disclosure relates to? - With No Change
+    Given I am on "Check Your Answers" page
+    When I click on change button for "Are you the individual this disclosure relates to?"
+    And I select Radio Button "No, I am disclosing on behalf of the individual" at Position "2"
+    And click on Save and Continue button
+    Then page navigates to "Check Your Answers"
+    Then answers page should have h2 header "About the individual"
+    And answers page should have h2 header "Background"
+    And answers page should have h2 header "About you"
+    And About The Individual section should have a label "Individual’s full name" at line "1" an answer with "Individual full name" and change URL ends with "individual-full-name/change"
+    And About The Individual section should have a label "Individual’s date of birth" at line "2" an answer with "1 January 1980" and change URL ends with "individual-date-of-birth/change"
+    And About The Individual section should have a label "Individual’s main occupation" at line "3" an answer with "Dentist" and change URL ends with "individual-main-occupation/change"
+    And About The Individual section should have a label "Does the individual have a National Insurance number, as far as you’re aware?" at line "4" an answer with "Yes, and I know their National Insurance number" and change URL ends with "individual-have-national-insurance-number/change"
+    And About The Individual section should have a label "Individual’s National Insurance number" at line "5" an answer with "AZ 12 34 56 D" and change URL ends with "individual-national-insurance-number/change"
+    And About The Individual section should have a label "Is the individual registered for VAT, as far you’re aware?" at line "6" an answer with "Yes, and I know their VAT registration number" and change URL ends with "individual-registered-for-vat/change"
+    And About The Individual section should have a label "Individual’s VAT registration number" at line "7" an answer with "123456789" and change URL ends with "individual-vat-registration/change"
+    And About The Individual section should have a label "Is the individual registered for Self Assessment, as far as you’re aware?" at line "8" an answer with "Yes, and I know their Unique Taxpayer Reference (UTR)" and change URL ends with "individual-self-assessment/change"
+    And About The Individual section should have a label "Individual’s Unique Taxpayer Reference" at line "9" an answer with "1234567890" and change URL ends with "individual-utr/change"

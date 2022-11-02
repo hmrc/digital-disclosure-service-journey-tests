@@ -58,13 +58,13 @@ trait CheckYourAnswersPage extends BasePage {
 
   def verifyAboutTheIndividualAnswers(expectedLabel: String,lineNo: String, expectedAnswer: String, expectedChangeURL: String): Unit = {
     val actualLabel = driver.findElement(By.xpath("//dl[@id='about-the-individual-list']/div[@class='govuk-summary-list__row'][" + lineNo + "]/dt[@class='govuk-summary-list__key']")).getText.trim
-    Assert.assertTrue("Check your answers - About You - Label not verified. Expected: " + expectedLabel + "--- Actual: " + actualLabel, expectedLabel == actualLabel)
+    Assert.assertTrue("Check your answers - About the individual - Label not verified. Expected: " + expectedLabel + "--- Actual: " + actualLabel, expectedLabel == actualLabel)
 
     val actualAnswer = driver.findElement(By.xpath("//dl[@id='about-the-individual-list']/div[@class='govuk-summary-list__row'][" + lineNo + "]/dd[@class='govuk-summary-list__value']")).getText.trim
-    Assert.assertTrue("Check your answers - About You - Answer not verified. Expected: " + expectedAnswer + "--- Actual: " + actualAnswer, expectedAnswer == actualAnswer)
+    Assert.assertTrue("Check your answers - About the individual - Answer not verified. Expected: " + expectedAnswer + "--- Actual: " + actualAnswer, expectedAnswer == actualAnswer)
 
     val getChangeURL = driver.findElement(By.xpath("//dl[@id='about-the-individual-list']/div[@class='govuk-summary-list__row'][" + lineNo + "]/dd[@class='govuk-summary-list__actions']/a[@class='govuk-link']")).getAttribute("href")
-    Assert.assertTrue("Check your answers - About You - Change URL not verified. Expected: " + expectedChangeURL + "--- Actual: " + getChangeURL, getChangeURL.contains(expectedChangeURL))
+    Assert.assertTrue("Check your answers - About the individual - Change URL not verified. Expected: " + expectedChangeURL + "--- Actual: " + getChangeURL, getChangeURL.contains(expectedChangeURL))
   }
 
   def verifyBackgroundAnswers(dataTable: DataTable): Unit = {
