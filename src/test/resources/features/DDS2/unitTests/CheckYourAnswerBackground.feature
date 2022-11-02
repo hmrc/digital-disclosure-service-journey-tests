@@ -12,7 +12,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     And click on Save and Continue button
     And I select Radio Button "Yes, I am the individual" at Position "1"
     And click on Save and Continue button
-    And I select Radio Button "I want to disclose offshore liabilities" at Position "1"
+    And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
     And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
@@ -129,7 +129,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     And click on Save and Continue button
     And I select Radio Button "Yes, I am the individual" at Position "1"
     And click on Save and Continue button
-    And I select Radio Button "I want to disclose offshore liabilities" at Position "1"
+    And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
     And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
@@ -361,6 +361,186 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
       |Line|Label|Answer|URL|
       |1|Will you be making a disclosure because you received a letter from HMRC?|No|letter-from-hmrc/change|
 
+<<<<<<< HEAD
+=======
+  @id004
+  Scenario: For Individual -About You - Change Route -Will you be making a disclosure because you received a letter from HMRC - Yes to No
+    Given I am navigated to Received A Letter Page
+    When I select Radio Button "Yes" at Position "1"
+    And click on Save and Continue button
+    And I enter "TESTREF1" in the TextBox field
+    And click on Save and Continue button
+    And I select Radio Button "An individual" at Position "1"
+    And click on Save and Continue button
+    And I select Radio Button "Yes, I am the individual" at Position "1"
+    And click on Save and Continue button
+    And I select Radio Button "Yes" at Position "1"
+    And click on Save and Continue button
+    And I select Radio Button "I want to disclose onshore liabilities" at Position "1"
+    And click on Save and Continue button
+    And I enter "my full name" in the TextBox field
+    And click on Save and Continue button
+    And I enter "07777 777777" in the TextBox field
+    And click on Save and Continue button
+    And I select Radio Button "Yes" at Position "1"
+    And click on Save and Continue button
+    And I enter "abc@abc.com" in the TextBox field
+    And click on Save and Continue button
+    And I enter "01" in the "Day" text box field
+    And I enter "01" in the "Month" text box field
+    And I enter "1980" in the "Year" text box field
+    And click on Save and Continue button
+    And I enter "Dentist" in the TextBox field
+    And click on Save and Continue button
+    And I select Radio Button "Yes, and I know my National Insurance number" at Position "1"
+    And click on Save and Continue button
+    And I enter "AZ 12 34 56 D" in the TextBox field
+    And click on Save and Continue button
+    And I select Radio Button "Yes, and I know my VAT registration number" at Position "1"
+    And click on Save and Continue button
+    And I enter "123456789" in the TextBox field
+    And click on Save and Continue button
+    And I select Radio Button "Yes, and I know my Unique Taxpayer Reference (UTR)" at Position "1"
+    And click on Save and Continue button
+    And I enter "1234567890" in the TextBox field
+    And click on Save and Continue button
+    And enter country name "United Kingdom",select country "United Kingdom"
+    And click on continue button
+    And enter postcode "ZZ9Z 9TT"
+    And click on continue button
+    And I select Radio Button "2 Testing Lane, Royal Madeuptown, ZZ9Z 9TT" at Position "2"
+    And click on continue button
+    And click on confirm button
+    And I click on change button for "Will you be making a disclosure because you received a letter from HMRC?"
+    And I select Radio Button "No" at Position "2"
+    And click on Save and Continue button
+    Then page navigates to "Check Your Answers"
+    And Background section has following
+      |Line|Label|Answer|URL|
+      |1|Will you be making a disclosure because you received a letter from HMRC?|No|letter-from-hmrc/change|
+    And label "Letter reference number" is not displayed on check your answer page
+
+  @id005
+  Scenario: For Individual -About You - Change Route -Will you be making a disclosure because you received a letter from HMRC - No to Yes
+    Given I am navigated to Received A Letter Page
+    When I select Radio Button "No" at Position "2"
+    And click on Save and Continue button
+    And I select Radio Button "An individual" at Position "1"
+    And click on Save and Continue button
+    And I select Radio Button "Yes, I am the individual" at Position "1"
+    And click on Save and Continue button
+    And I select Radio Button "Yes" at Position "1"
+    And click on Save and Continue button
+    And I select Radio Button "I want to disclose onshore liabilities" at Position "1"
+    And click on Save and Continue button
+    And I enter "my full name" in the TextBox field
+    And click on Save and Continue button
+    And I enter "07777 777777" in the TextBox field
+    And click on Save and Continue button
+    And I select Radio Button "Yes" at Position "1"
+    And click on Save and Continue button
+    And I enter "abc@abc.com" in the TextBox field
+    And click on Save and Continue button
+    And I enter "01" in the "Day" text box field
+    And I enter "01" in the "Month" text box field
+    And I enter "1980" in the "Year" text box field
+    And click on Save and Continue button
+    And I enter "Dentist" in the TextBox field
+    And click on Save and Continue button
+    And I select Radio Button "Yes, and I know my National Insurance number" at Position "1"
+    And click on Save and Continue button
+    And I enter "AZ 12 34 56 D" in the TextBox field
+    And click on Save and Continue button
+    And I select Radio Button "Yes, and I know my VAT registration number" at Position "1"
+    And click on Save and Continue button
+    And I enter "123456789" in the TextBox field
+    And click on Save and Continue button
+    And I select Radio Button "Yes, and I know my Unique Taxpayer Reference (UTR)" at Position "1"
+    And click on Save and Continue button
+    And I enter "1234567890" in the TextBox field
+    And click on Save and Continue button
+    And enter country name "United Kingdom",select country "United Kingdom"
+    And click on continue button
+    And enter postcode "ZZ9Z 9TT"
+    And click on continue button
+    And I select Radio Button "2 Testing Lane, Royal Madeuptown, ZZ9Z 9TT" at Position "2"
+    And click on continue button
+    And click on confirm button
+    Then page navigates to "Check Your Answers"
+    And Background section has following
+      |Line|Label|Answer|URL|
+      |1|Will you be making a disclosure because you received a letter from HMRC?|No|letter-from-hmrc/change|
+    And label "Letter reference number" is not displayed on check your answer page
+    When I click on change button for "Will you be making a disclosure because you received a letter from HMRC?"
+    And I select Radio Button "Yes" at Position "1"
+    And click on Save and Continue button
+    Then page navigates to "What is the reference number of the letter you received from HMRC?"
+    When I enter "TESTREF1" in the TextBox field
+    And click on Save and Continue button
+    And Background section has following
+      |Line|Label|Answer|URL|
+      |1|Will you be making a disclosure because you received a letter from HMRC?|Yes|letter-from-hmrc/change|
+      |2|Letter reference number|TESTREF1|hmrc-letter-reference/change|
+
+  @id006
+  Scenario: For Individual -About You - Change Route -Will you be making a disclosure because you received a letter from HMRC - No change
+    Given I am navigated to Received A Letter Page
+    When I select Radio Button "No" at Position "2"
+    And click on Save and Continue button
+    And I select Radio Button "An individual" at Position "1"
+    And click on Save and Continue button
+    And I select Radio Button "Yes, I am the individual" at Position "1"
+    And click on Save and Continue button
+    And I select Radio Button "Yes" at Position "1"
+    And click on Save and Continue button
+    And I select Radio Button "I want to disclose onshore liabilities" at Position "1"
+    And click on Save and Continue button
+    And I enter "my full name" in the TextBox field
+    And click on Save and Continue button
+    And I enter "07777 777777" in the TextBox field
+    And click on Save and Continue button
+    And I select Radio Button "Yes" at Position "1"
+    And click on Save and Continue button
+    And I enter "abc@abc.com" in the TextBox field
+    And click on Save and Continue button
+    And I enter "01" in the "Day" text box field
+    And I enter "01" in the "Month" text box field
+    And I enter "1980" in the "Year" text box field
+    And click on Save and Continue button
+    And I enter "Dentist" in the TextBox field
+    And click on Save and Continue button
+    And I select Radio Button "Yes, and I know my National Insurance number" at Position "1"
+    And click on Save and Continue button
+    And I enter "AZ 12 34 56 D" in the TextBox field
+    And click on Save and Continue button
+    And I select Radio Button "Yes, and I know my VAT registration number" at Position "1"
+    And click on Save and Continue button
+    And I enter "123456789" in the TextBox field
+    And click on Save and Continue button
+    And I select Radio Button "Yes, and I know my Unique Taxpayer Reference (UTR)" at Position "1"
+    And click on Save and Continue button
+    And I enter "1234567890" in the TextBox field
+    And click on Save and Continue button
+    And enter country name "United Kingdom",select country "United Kingdom"
+    And click on continue button
+    And enter postcode "ZZ9Z 9TT"
+    And click on continue button
+    And I select Radio Button "2 Testing Lane, Royal Madeuptown, ZZ9Z 9TT" at Position "2"
+    And click on continue button
+    And click on confirm button
+    Then page navigates to "Check Your Answers"
+    And Background section has following
+      |Line|Label|Answer|URL|
+      |1|Will you be making a disclosure because you received a letter from HMRC?|No|letter-from-hmrc/change|
+    And label "Letter reference number" is not displayed on check your answer page
+    When I click on change button for "Will you be making a disclosure because you received a letter from HMRC?"
+    And click on Save and Continue button
+    Then page navigates to "Check Your Answers"
+    And Background section has following
+      |Line|Label|Answer|URL|
+      |1|Will you be making a disclosure because you received a letter from HMRC?|No|letter-from-hmrc/change|
+
+>>>>>>> 407030b (DDS2-917 Automation completed)
   Scenario: On behalf of Individual - Change Route validation -  From No to Yes I am the Individual - Are you the individual this disclosure relates to?
     Given I am navigated to Received A Letter Page
     When I select Radio Button "Yes" at Position "1"
@@ -371,7 +551,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     And click on Save and Continue button
     And I select Radio Button "No, I am disclosing on behalf of the individual" at Position "2"
     And click on Save and Continue button
-    And I select Radio Button "I want to disclose offshore liabilities" at Position "1"
+    And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
     And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
@@ -420,7 +600,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     When I click on change button for "Are you the individual this disclosure relates to?"
     And I select Radio Button "Yes, I am the individual" at Position "1"
     And click on Save and Continue button
-    And I select Radio Button "I want to disclose offshore liabilities" at Position "1"
+    And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
     And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
@@ -492,7 +672,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     And click on Save and Continue button
     And I select Radio Button "Yes, I am the individual" at Position "1"
     And click on Save and Continue button
-    And I select Radio Button "I want to disclose offshore liabilities" at Position "1"
+    And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
     And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
@@ -536,7 +716,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     When I click on change button for "Are you the individual this disclosure relates to?"
     And I select Radio Button "No, I am disclosing on behalf of the individual" at Position "2"
     And click on Save and Continue button
-    And I select Radio Button "I want to disclose offshore liabilities" at Position "1"
+    And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
     And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
