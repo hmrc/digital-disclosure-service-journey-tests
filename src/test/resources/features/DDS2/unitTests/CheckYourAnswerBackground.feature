@@ -14,7 +14,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     And click on Save and Continue button
     And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
-    And I select Radio Button "I want to disclose onshore liabilities" at Position "1"
+    And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
     And I enter "my full name" in the TextBox field
     And click on Save and Continue button
@@ -57,8 +57,8 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
       |2|Letter reference number|TESTREF1|hmrc-letter-reference/change|
       |3|Who this disclosure is for?|An individual|what-is-this-disclosure-about/change|
       |4|Are you the individual this disclosure relates to?|Yes, I am the individual|are-you-the-individual/change|
-      |5|Will the disclosure be about offshore liabilities?|I want to disclose offshore liabilities|disclose-offshore-liabilities/change|
-      |6|Will the disclosure also be about onshore liabilities?|I want to disclose onshore liabilities|disclose-onshore-liabilities/change|
+      |5|Will the disclosure be about offshore liabilities?|Yes|disclose-offshore-liabilities/change|
+      |6|Will the disclosure also be about onshore liabilities?|Yes|disclose-onshore-liabilities/change|
 
   @id002
   Scenario: For Individual -Background Section Verification -When user selects "No" for offshore liabilities
@@ -71,7 +71,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     And click on Save and Continue button
     And I select Radio Button "Yes, I am the individual" at Position "1"
     And click on Save and Continue button
-    And I select Radio Button "I do not have offshore liabilities to disclose" at Position "2"
+    And I select Radio Button "No" at Position "2"
     And click on Save and Continue button
     And click on Save and Continue button
     And I enter "my full name" in the TextBox field
@@ -115,8 +115,8 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
       |2|Letter reference number|TESTREF1|hmrc-letter-reference/change|
       |3|Who this disclosure is for?|An individual|what-is-this-disclosure-about/change|
       |4|Are you the individual this disclosure relates to?|Yes, I am the individual|are-you-the-individual/change|
-      |5|Will the disclosure be about offshore liabilities?|I do not have offshore liabilities to disclose|disclose-offshore-liabilities/change|
-      |6|Will the disclosure be about onshore liabilities?|I want to disclose onshore liabilities|disclose-offshore-liabilities/change|
+      |5|Will the disclosure be about offshore liabilities?|No|disclose-offshore-liabilities/change|
+      |6|Will the disclosure be about onshore liabilities?|Yes|disclose-offshore-liabilities/change|
 
   @id003
   Scenario: For Individual -Background - Change Route validation -With Change
@@ -131,7 +131,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     And click on Save and Continue button
     And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
-    And I select Radio Button "I want to disclose onshore liabilities" at Position "1"
+    And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
     And I enter "my full name" in the TextBox field
     And click on Save and Continue button
@@ -172,17 +172,17 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
       |Label|ExpectedPage|ChangedValue|
       |Letter reference number|What is the reference number of the letter you received from HMRC?|ChangedRefNum|
     When I click on change button for "Will the disclosure also be about onshore liabilities?"
-    And I select Radio Button "I do not have onshore liabilities to disclose" at Position "2"
+    And I select Radio Button "No" at Position "2"
     And click on Save and Continue button
     And Background section has following
       |Line|Label|Answer|URL|
-      |6|Will the disclosure also be about onshore liabilities?|I do not have onshore liabilities to disclose|disclose-onshore-liabilities/change|
+      |6|Will the disclosure also be about onshore liabilities?|No|disclose-onshore-liabilities/change|
     When I click on change button for "Will the disclosure be about offshore liabilities?"
-    And I select Radio Button "I do not have offshore liabilities to disclose" at Position "2"
+    And I select Radio Button "No" at Position "2"
     And click on Save and Continue button
     And Background section has following
       |Line|Label|Answer|URL|
-      |5|Will the disclosure be about offshore liabilities?|I do not have offshore liabilities to disclose|disclose-offshore-liabilities/change|
+      |5|Will the disclosure be about offshore liabilities?|No|disclose-offshore-liabilities/change|
 
   @id004
   Scenario: For Individual -About You - Change Route -Will you be making a disclosure because you received a letter from HMRC - Yes to No
@@ -376,7 +376,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     And click on Save and Continue button
     And I select Radio Button "I want to disclose offshore liabilities" at Position "1"
     And click on Save and Continue button
-    And I select Radio Button "I want to disclose onshore liabilities" at Position "1"
+    And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
     And I enter "my full name" in the TextBox field
     And click on Save and Continue button
@@ -431,7 +431,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     And click on Save and Continue button
     And I select Radio Button "I want to disclose offshore liabilities" at Position "1"
     And click on Save and Continue button
-    And I select Radio Button "I want to disclose onshore liabilities" at Position "1"
+    And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
     And I enter "my full name" in the TextBox field
     And click on Save and Continue button
@@ -493,7 +493,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     And click on Save and Continue button
     And I select Radio Button "I want to disclose offshore liabilities" at Position "1"
     And click on Save and Continue button
-    And I select Radio Button "I want to disclose onshore liabilities" at Position "1"
+    And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
     And I enter "my full name" in the TextBox field
     And click on Save and Continue button
@@ -553,7 +553,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     And click on Save and Continue button
     And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
-    And I select Radio Button "I want to disclose onshore liabilities" at Position "1"
+    And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
     And I enter "Individual full name" in the TextBox field
     And click on Save and Continue button
@@ -602,7 +602,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     And click on Save and Continue button
     And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
-    And I select Radio Button "I want to disclose onshore liabilities" at Position "1"
+    And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
     And I enter "My full name" in the TextBox field
     And click on Save and Continue button
@@ -644,8 +644,8 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
       |2|Letter reference number|TESTREF1|hmrc-letter-reference/change|
       |3|Who this disclosure is for?|An individual|what-is-this-disclosure-about/change|
       |4|Are you the individual this disclosure relates to?|Yes, I am the individual|are-you-the-individual/change|
-      |5|Will the disclosure be about offshore liabilities?|I want to disclose offshore liabilities|disclose-offshore-liabilities/change|
-      |6|Will the disclosure also be about onshore liabilities?|I want to disclose onshore liabilities|disclose-onshore-liabilities/change|
+      |5|Will the disclosure be about offshore liabilities?|Yes|disclose-offshore-liabilities/change|
+      |6|Will the disclosure also be about onshore liabilities?|Yes|disclose-onshore-liabilities/change|
     And answers page should have h2 header "About you"
     And line "1" should have a label "Your full name" an answer with "My full name" and change URL ends with "your-full-name/change"
     And line "2" should have a label "Your telephone number" an answer with "07777 777778" and change URL ends with "your-telephone-number/change"
@@ -674,7 +674,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     And click on Save and Continue button
     And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
-    And I select Radio Button "I want to disclose onshore liabilities" at Position "1"
+    And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
     And I enter "My full name" in the TextBox field
     And click on Save and Continue button
@@ -718,7 +718,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     And click on Save and Continue button
     And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
-    And I select Radio Button "I want to disclose onshore liabilities" at Position "1"
+    And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
     And I enter "Individual full name" in the TextBox field
     And click on Save and Continue button
@@ -770,8 +770,8 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
       |2|Letter reference number|TESTREF1|hmrc-letter-reference/change|
       |3|Who this disclosure is for?|An individual|what-is-this-disclosure-about/change|
       |4|Are you the individual this disclosure relates to?|No, I am disclosing on behalf of the individual|are-you-the-individual/change|
-      |5|Will the disclosure be about offshore liabilities?|I want to disclose offshore liabilities|disclose-offshore-liabilities/change|
-      |6|Will the disclosure also be about onshore liabilities?|I want to disclose onshore liabilities|disclose-onshore-liabilities/change|
+      |5|Will the disclosure be about offshore liabilities?|Yes|disclose-offshore-liabilities/change|
+      |6|Will the disclosure also be about onshore liabilities?|Yes|disclose-onshore-liabilities/change|
     And answers page should have h2 header "About you"
     And line "1" should have a label "Your full name" an answer with "Individual full name" and change URL ends with "your-full-name/change"
     And line "2" should have a label "Your telephone number" an answer with "07777 777777" and change URL ends with "your-telephone-number/change"
