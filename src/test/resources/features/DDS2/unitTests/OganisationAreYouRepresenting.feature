@@ -32,4 +32,4 @@ Feature: A UK tax payer is able to enter the details and continue on Are you rep
     Given I navigate to "representing-organisation" page
     And I select Radio Button "No" at Position "2"
     And click on Save and Continue button
-    Then user is navigated to the page with title "Do you want to disclose offshore liabilities?"
+    Then user is navigated to the page with title "Offshore liabilities"

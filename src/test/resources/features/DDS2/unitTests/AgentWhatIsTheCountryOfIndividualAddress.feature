@@ -6,7 +6,7 @@ Feature: A UK tax payer is able to enter the details and continue on "What is th
     Given I am navigated to Are you the individual this disclosure relates to Page
     When I select Radio Button "No, I am disclosing on behalf of the individual" at Position "2"
     And click on Save and Continue button
-    And I select Radio Button "I do not have offshore liabilities to disclose" at Position "2"
+    And I select Radio Button "No" at Position "2"
     And click on Save and Continue button
     And click on Save and Continue button
     And I enter "Individual Full Name" in the TextBox field
@@ -63,7 +63,7 @@ Feature: A UK tax payer is able to enter the details and continue on "What is th
     Given I am navigated to Are you the individual this disclosure relates to Page
     When I select Radio Button "No, I am disclosing on behalf of the individual" at Position "2"
     And click on Save and Continue button
-    And I select Radio Button "I do not have offshore liabilities to disclose" at Position "2"
+    And I select Radio Button "No" at Position "2"
     And click on Save and Continue button
     And click on Save and Continue button
     And I enter "Individual Full Name" in the TextBox field

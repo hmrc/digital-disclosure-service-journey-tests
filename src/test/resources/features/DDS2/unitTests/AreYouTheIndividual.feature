@@ -11,13 +11,13 @@ Feature: A UK tax payer is able to enter the details and continue on Are you the
     Given I am navigated to Are you the individual this disclosure relates to Page
     When I select "Yes"
     And click on Save and Continue button
-    Then I am navigated to the next page with title "Do you want to disclose offshore liabilities? - Digital Disclosure Service - GOV.UK"
+    Then I am navigated to the next page with title "Offshore liabilities - Digital Disclosure Service - GOV.UK"
     When I click on Back button
     Then I am navigated to the next page with title "Are you the individual this disclosure relates to? - Digital Disclosure Service - GOV.UK"
     And option still selected is "Yes"
     When I select "No"
     And click on Save and Continue button
-    Then I am navigated to the next page with title "Do you want to disclose offshore liabilities? - Digital Disclosure Service - GOV.UK"
+    Then I am navigated to the next page with title "Offshore liabilities - Digital Disclosure Service - GOV.UK"
 
   Scenario: Are you the individual this disclosure relates to? - Validation with no selection of Radio Button
     Given I am navigated to Are you the individual this disclosure relates to Page
@@ -31,7 +31,7 @@ Feature: A UK tax payer is able to enter the details and continue on Are you the
     And click on Save and Continue button
     And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
-    And I select Radio Button "I want to disclose onshore liabilities" at Position "1"
+    And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
     Then I am navigated to the next page with title "What is the individual’s full name? - Digital Disclosure Service - GOV.UK"
 
@@ -41,7 +41,7 @@ Feature: A UK tax payer is able to enter the details and continue on Are you the
     And click on Save and Continue button
     And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
-    And I select Radio Button "I do not have onshore liabilities to disclose" at Position "2"
+    And I select Radio Button "No" at Position "2"
     And click on Save and Continue button
     Then I am navigated to the next page with title "What is the individual’s full name? - Digital Disclosure Service - GOV.UK"
 
@@ -49,7 +49,7 @@ Feature: A UK tax payer is able to enter the details and continue on Are you the
     Given I am navigated to Are you the individual this disclosure relates to Page
     When I select Radio Button "No, I am disclosing on behalf of the individual" at Position "2"
     And click on Save and Continue button
-    And I select Radio Button "I do not have offshore liabilities to disclose" at Position "2"
+    And I select Radio Button "No" at Position "2"
     And click on Save and Continue button
     And click on Save and Continue button
     Then I am navigated to the next page with title "What is the individual’s full name? - Digital Disclosure Service - GOV.UK"
@@ -58,7 +58,7 @@ Feature: A UK tax payer is able to enter the details and continue on Are you the
     Given I am navigated to Are you the individual this disclosure relates to Page
     When I select Radio Button "No, I am disclosing on behalf of the individual" at Position "2"
     And click on Save and Continue button
-    And I select Radio Button "I do not have offshore liabilities to disclose" at Position "2"
+    And I select Radio Button "No" at Position "2"
     And click on Save and Continue button
     And click on Save and Continue button
     And I enter "Individual Full Name" in the TextBox field
@@ -94,7 +94,7 @@ Feature: A UK tax payer is able to enter the details and continue on Are you the
     Given I am navigated to Are you the individual this disclosure relates to Page
     When I select Radio Button "No, I am disclosing on behalf of the individual" at Position "2"
     And click on Save and Continue button
-    And I select Radio Button "I do not have offshore liabilities to disclose" at Position "2"
+    And I select Radio Button "No" at Position "2"
     And click on Save and Continue button
     And click on Save and Continue button
     And I enter "Individual Full Name" in the TextBox field
@@ -130,7 +130,7 @@ Feature: A UK tax payer is able to enter the details and continue on Are you the
     Given I am navigated to Are you the individual this disclosure relates to Page
     When I select Radio Button "No, I am disclosing on behalf of the individual" at Position "2"
     And click on Save and Continue button
-    And I select Radio Button "I do not have offshore liabilities to disclose" at Position "2"
+    And I select Radio Button "No" at Position "2"
     And click on Save and Continue button
     And click on Save and Continue button
     And I enter "Individual Full Name" in the TextBox field

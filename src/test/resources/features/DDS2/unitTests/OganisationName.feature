@@ -13,7 +13,7 @@ Feature: A UK tax payer is able to enter the details and continue on What is the
     Given I navigate to "representing-organisation-name" page
     When I enter "Name of organisation" in the TextBox field
     And  click on Save and Continue button
-    Then page navigates to "Do you want to disclose offshore liabilities?"
+    Then page navigates to "Offshore liabilities"
 
   @id_003
   Scenario: What is the name of the organisation you represent? - Navigation with blank data

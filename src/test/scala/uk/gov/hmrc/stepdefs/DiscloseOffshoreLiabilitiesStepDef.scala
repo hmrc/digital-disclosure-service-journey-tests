@@ -32,9 +32,13 @@ class DiscloseOffshoreLiabilitiesStepDef extends BasePage with DiscloseOffshoreL
     verifyText(string)
   }
 
+  Then("""bullet text hyperlink with text {string} is displayed""") { (string: String) =>
+    verifyBulletListHyperlinkText(string)
+  }
   Then("""hyperlink with text {string} is displayed""") { (string: String) =>
     verifyHyperlinkText(string)
   }
+
 
   When("""click on Hyperlink {string}""") { (string: String) =>
     clickOnHyperlinkText(string)

@@ -13,7 +13,7 @@ Feature: An individual UK tax payer is able to check their answers for About the
     And click on Save and Continue button
     And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
-    And I select Radio Button "I want to disclose onshore liabilities" at Position "1"
+    And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
     And I enter "Individual full name" in the TextBox field
     And click on Save and Continue button

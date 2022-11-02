@@ -26,7 +26,7 @@ Feature: A UK tax payer is able to enter the details and continue on Are you an 
     Given I navigate to "are-you-an-officer" page
     And I select Radio Button "Yes, I am an officer of the company" at Position "1"
     And click on Save and Continue button
-    Then user is navigated to the page with title "Do you want to disclose offshore liabilities?"
+    Then user is navigated to the page with title "Offshore liabilities"
 
   Scenario: Are you an officer of the company that the disclosure will be about?-Navigation with second radio button
     Given I navigate to "are-you-an-officer" page
