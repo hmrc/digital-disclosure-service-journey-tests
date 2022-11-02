@@ -27,7 +27,7 @@ Feature: A UK tax payer is able to enter the details and continue on "Do you wan
   @id_003
   Scenario: Navigation Validation with First Radio Button
     Given I am on Do you want to disclose offshore liabilities Page
-    When I select Radio Button "I want to disclose offshore liabilities" at Position "1"
+    When I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
     Then page navigates to "Do you also want to disclose onshore liabilities?"
 
@@ -58,4 +58,4 @@ Feature: A UK tax payer is able to enter the details and continue on "Do you wan
     Given I am on Do you want to disclose offshore liabilities Page
     And click on Save and Continue button
     When I click on problem message "Select if you want to disclose offshore liabilities or not"
-    Then I should navigate to Radio button "I want to disclose offshore liabilities" at Position "1"
+    Then I should navigate to Radio button "Yes" at Position "1"

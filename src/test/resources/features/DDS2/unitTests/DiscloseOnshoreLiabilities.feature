@@ -29,7 +29,7 @@ Feature: UI Validation and Navigation  for Screen "Do you also want to disclose 
       Given I am navigated to Are you the individual this disclosure relates to Page
       When I select Radio Button "Yes, I am the individual" at Position "1"
       And click on Save and Continue button
-      When I select Radio Button "I want to disclose offshore liabilities" at Position "1"
+      When I select Radio Button "Yes" at Position "1"
       And click on Save and Continue button
       And I select Radio Button "I want to disclose onshore liabilities" at Position "1"
       And click on Save and Continue button
@@ -40,7 +40,7 @@ Feature: UI Validation and Navigation  for Screen "Do you also want to disclose 
     Given I am navigated to Are you the individual this disclosure relates to Page
     When I select Radio Button "Yes, I am the individual" at Position "1"
     And click on Save and Continue button
-    And I select Radio Button "I want to disclose offshore liabilities" at Position "1"
+    And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
     And I select Radio Button "I do not have onshore liabilities to disclose" at Position "2"
     And click on Save and Continue button
@@ -66,7 +66,7 @@ Feature: UI Validation and Navigation  for Screen "Do you also want to disclose 
     Given I am on Do you want to disclose offshore liabilities Page
     And click on Save and Continue button
     When I click on problem message "Select if you want to disclose offshore liabilities or not"
-    Then I should navigate to Radio button "I want to disclose offshore liabilities" at Position "1"
+    Then I should navigate to Radio button "Yes" at Position "1"
 
 
 

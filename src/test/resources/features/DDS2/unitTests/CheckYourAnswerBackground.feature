@@ -12,7 +12,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     And click on Save and Continue button
     And I select Radio Button "Yes, I am the individual" at Position "1"
     And click on Save and Continue button
-    And I select Radio Button "I want to disclose offshore liabilities" at Position "1"
+    And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
     And I select Radio Button "I want to disclose onshore liabilities" at Position "1"
     And click on Save and Continue button
@@ -129,7 +129,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     And click on Save and Continue button
     And I select Radio Button "Yes, I am the individual" at Position "1"
     And click on Save and Continue button
-    And I select Radio Button "I want to disclose offshore liabilities" at Position "1"
+    And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
     And I select Radio Button "I want to disclose onshore liabilities" at Position "1"
     And click on Save and Continue button
@@ -195,7 +195,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     And click on Save and Continue button
     And I select Radio Button "Yes, I am the individual" at Position "1"
     And click on Save and Continue button
-    And I select Radio Button "I want to disclose offshore liabilities" at Position "1"
+    And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
     And I select Radio Button "I want to disclose onshore liabilities" at Position "1"
     And click on Save and Continue button
@@ -250,7 +250,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     And click on Save and Continue button
     And I select Radio Button "Yes, I am the individual" at Position "1"
     And click on Save and Continue button
-    And I select Radio Button "I want to disclose offshore liabilities" at Position "1"
+    And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
     And I select Radio Button "I want to disclose onshore liabilities" at Position "1"
     And click on Save and Continue button
@@ -312,7 +312,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     And click on Save and Continue button
     And I select Radio Button "Yes, I am the individual" at Position "1"
     And click on Save and Continue button
-    And I select Radio Button "I want to disclose offshore liabilities" at Position "1"
+    And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
     And I select Radio Button "I want to disclose onshore liabilities" at Position "1"
     And click on Save and Continue button
@@ -371,7 +371,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     And click on Save and Continue button
     And I select Radio Button "No, I am disclosing on behalf of the individual" at Position "2"
     And click on Save and Continue button
-    And I select Radio Button "I want to disclose offshore liabilities" at Position "1"
+    And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
     And I select Radio Button "I want to disclose onshore liabilities" at Position "1"
     And click on Save and Continue button
@@ -420,7 +420,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     When I click on change button for "Are you the individual this disclosure relates to?"
     And I select Radio Button "Yes, I am the individual" at Position "1"
     And click on Save and Continue button
-    And I select Radio Button "I want to disclose offshore liabilities" at Position "1"
+    And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
     And I select Radio Button "I want to disclose onshore liabilities" at Position "1"
     And click on Save and Continue button
@@ -492,7 +492,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     And click on Save and Continue button
     And I select Radio Button "Yes, I am the individual" at Position "1"
     And click on Save and Continue button
-    And I select Radio Button "I want to disclose offshore liabilities" at Position "1"
+    And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
     And I select Radio Button "I want to disclose onshore liabilities" at Position "1"
     And click on Save and Continue button
@@ -536,7 +536,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     When I click on change button for "Are you the individual this disclosure relates to?"
     And I select Radio Button "No, I am disclosing on behalf of the individual" at Position "2"
     And click on Save and Continue button
-    And I select Radio Button "I want to disclose offshore liabilities" at Position "1"
+    And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
     And I select Radio Button "I want to disclose onshore liabilities" at Position "1"
     And click on Save and Continue button

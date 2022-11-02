@@ -29,7 +29,7 @@ Feature: A UK tax payer is able to enter the details and continue on Are you the
     Given I am navigated to Are you the individual this disclosure relates to Page
     When I select Radio Button "No, I am disclosing on behalf of the individual" at Position "2"
     And click on Save and Continue button
-    And I select Radio Button "I want to disclose offshore liabilities" at Position "1"
+    And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
     And I select Radio Button "I want to disclose onshore liabilities" at Position "1"
     And click on Save and Continue button
@@ -39,7 +39,7 @@ Feature: A UK tax payer is able to enter the details and continue on Are you the
     Given I am navigated to Are you the individual this disclosure relates to Page
     When I select Radio Button "No, I am disclosing on behalf of the individual" at Position "2"
     And click on Save and Continue button
-    And I select Radio Button "I want to disclose offshore liabilities" at Position "1"
+    And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
     And I select Radio Button "I do not have onshore liabilities to disclose" at Position "2"
     And click on Save and Continue button

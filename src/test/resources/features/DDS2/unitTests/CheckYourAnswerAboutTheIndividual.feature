@@ -11,7 +11,7 @@ Feature: An individual UK tax payer is able to check their answers for About the
     And click on Save and Continue button
     And I select Radio Button "No, I am disclosing on behalf of the individual" at Position "2"
     And click on Save and Continue button
-    And I select Radio Button "I want to disclose offshore liabilities" at Position "1"
+    And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
     And I select Radio Button "I want to disclose onshore liabilities" at Position "1"
     And click on Save and Continue button
@@ -122,7 +122,7 @@ Feature: An individual UK tax payer is able to check their answers for About the
     Then page navigates to "Check Your Answers"
     And About The Individual section should have a label "Individual’s address" at line "10" an answer with "3 Testing Lane,Royal Madeuptown,ZZ9Z 9TT,United Kingdom" and change URL ends with "individual-address/lookup/change"
 
-  Scenario: On behalf of Individual -About The Individual - No change to - Are you the individual this disclosure relates to? - With No Change
+  Scenario: On behalf of Individual -About The Individual - No change route to - Are you the individual this disclosure relates to?
     Given I am on "Check Your Answers" page
     When I click on change button for "Are you the individual this disclosure relates to?"
     And I select Radio Button "No, I am disclosing on behalf of the individual" at Position "2"
@@ -140,3 +140,107 @@ Feature: An individual UK tax payer is able to check their answers for About the
     And About The Individual section should have a label "Individual’s VAT registration number" at line "7" an answer with "123456789" and change URL ends with "individual-vat-registration/change"
     And About The Individual section should have a label "Is the individual registered for Self Assessment, as far as you’re aware?" at line "8" an answer with "Yes, and I know their Unique Taxpayer Reference (UTR)" and change URL ends with "individual-self-assessment/change"
     And About The Individual section should have a label "Individual’s Unique Taxpayer Reference" at line "9" an answer with "1234567890" and change URL ends with "individual-utr/change"
+
+  Scenario: On behalf of Individual -About The Individual - change route to - Are you registered for VAT - No change
+    Given I am on "Check Your Answers" page
+    When I click on change button for "Is the individual registered for VAT, as far you’re aware?"
+    And I select Radio Button "Yes, and I know their VAT registration number" at Position "1"
+    And click on Save and Continue button
+    Then page navigates to "Check Your Answers"
+    Then answers page should have h2 header "About the individual"
+    And answers page should have h2 header "Background"
+    And answers page should have h2 header "About you"
+    And About The Individual section should have a label "Is the individual registered for VAT, as far you’re aware?" at line "6" an answer with "Yes, and I know their VAT registration number" and change URL ends with "individual-registered-for-vat/change"
+    And About The Individual section should have a label "Individual’s VAT registration number" at line "7" an answer with "123456789" and change URL ends with "individual-vat-registration/change"
+    And About The Individual section should have a label "Is the individual registered for Self Assessment, as far as you’re aware?" at line "8" an answer with "Yes, and I know their Unique Taxpayer Reference (UTR)" and change URL ends with "individual-self-assessment/change"
+
+  Scenario: On behalf of Individual -About The Individual - change route to - VAT from Yes to No
+    Given I am on "Check Your Answers" page
+    When I click on change button for "Is the individual registered for VAT, as far you’re aware?"
+    And I select Radio Button "No" at Position "3"
+    And click on Save and Continue button
+    Then page navigates to "Check Your Answers"
+    Then answers page should have h2 header "About the individual"
+    And answers page should have h2 header "Background"
+    And answers page should have h2 header "About you"
+    And About The Individual section should have a label "Is the individual registered for VAT, as far you’re aware?" at line "6" an answer with "No" and change URL ends with "individual-registered-for-vat/change"
+    And About The Individual section should have a label "Is the individual registered for Self Assessment, as far as you’re aware?" at line "7" an answer with "Yes, and I know their Unique Taxpayer Reference (UTR)" and change URL ends with "individual-self-assessment/change"
+
+  Scenario: On behalf of Individual -About The Individual - change route to - VAT from Yes to I do not know
+    Given I am on "Check Your Answers" page
+    When I click on change button for "Is the individual registered for VAT, as far you’re aware?"
+    And I select Radio Button "Yes, but I do not know their VAT registration number" at Position "2"
+    And click on Save and Continue button
+    Then page navigates to "Check Your Answers"
+    Then answers page should have h2 header "About the individual"
+    And answers page should have h2 header "Background"
+    And answers page should have h2 header "About you"
+    And About The Individual section should have a label "Is the individual registered for VAT, as far you’re aware?" at line "6" an answer with "Yes, but I do not know their VAT registration number" and change URL ends with "individual-registered-for-vat/change"
+    And About The Individual section should have a label "Is the individual registered for Self Assessment, as far as you’re aware?" at line "7" an answer with "Yes, and I know their Unique Taxpayer Reference (UTR)" and change URL ends with "individual-self-assessment/change"
+
+  Scenario: On behalf of Individual -About The Individual - change route to - VAT from No to Yes
+    Given I am on "Check Your Answers" page
+    When I click on change button for "Is the individual registered for VAT, as far you’re aware?"
+    And I select Radio Button "No" at Position "3"
+    And click on Save and Continue button
+    When I click on change button for "Is the individual registered for VAT, as far you’re aware?"
+    And I select Radio Button "Yes, and I know their VAT registration number" at Position "1"
+    And click on Save and Continue button
+    And I enter "123455555" in the TextBox field
+    And click on Save and Continue button
+    Then page navigates to "Check Your Answers"
+    Then answers page should have h2 header "About the individual"
+    And answers page should have h2 header "Background"
+    And answers page should have h2 header "About you"
+    And About The Individual section should have a label "Is the individual registered for VAT, as far you’re aware?" at line "6" an answer with "Yes, and I know their VAT registration number" and change URL ends with "individual-registered-for-vat/change"
+    And About The Individual section should have a label "Individual’s VAT registration number" at line "7" an answer with "123455555" and change URL ends with "individual-vat-registration/change"
+    And About The Individual section should have a label "Is the individual registered for Self Assessment, as far as you’re aware?" at line "8" an answer with "Yes, and I know their Unique Taxpayer Reference (UTR)" and change URL ends with "individual-self-assessment/change"
+
+  Scenario: On behalf of Individual -About The Individual - change route to - VAT from No to I do not know
+    Given I am on "Check Your Answers" page
+    When I click on change button for "Is the individual registered for VAT, as far you’re aware?"
+    And I select Radio Button "No" at Position "3"
+    And click on Save and Continue button
+    When I click on change button for "Is the individual registered for VAT, as far you’re aware?"
+    And I select Radio Button "Yes, but I do not know their VAT registration number" at Position "2"
+    And click on Save and Continue button
+    Then page navigates to "Check Your Answers"
+    Then answers page should have h2 header "About the individual"
+    And answers page should have h2 header "Background"
+    And answers page should have h2 header "About you"
+    And About The Individual section should have a label "Is the individual registered for VAT, as far you’re aware?" at line "6" an answer with "Yes, but I do not know their VAT registration number" and change URL ends with "individual-registered-for-vat/change"
+    And About The Individual section should have a label "Is the individual registered for Self Assessment, as far as you’re aware?" at line "7" an answer with "Yes, and I know their Unique Taxpayer Reference (UTR)" and change URL ends with "individual-self-assessment/change"
+
+  Scenario: On behalf of Individual -About The Individual - change route to - VAT from I do not know to Yes
+    Given I am on "Check Your Answers" page
+    When I click on change button for "Is the individual registered for VAT, as far you’re aware?"
+    And I select Radio Button "Yes, but I do not know their VAT registration number" at Position "2"
+    And click on Save and Continue button
+    When I click on change button for "Is the individual registered for VAT, as far you’re aware?"
+    And I select Radio Button "Yes, and I know their VAT registration number" at Position "1"
+    And click on Save and Continue button
+    And I enter "123450000" in the TextBox field
+    And click on Save and Continue button
+    Then page navigates to "Check Your Answers"
+    Then answers page should have h2 header "About the individual"
+    And answers page should have h2 header "Background"
+    And answers page should have h2 header "About you"
+    And About The Individual section should have a label "Is the individual registered for VAT, as far you’re aware?" at line "6" an answer with "Yes, and I know their VAT registration number" and change URL ends with "individual-registered-for-vat/change"
+    And About The Individual section should have a label "Individual’s VAT registration number" at line "7" an answer with "123450000" and change URL ends with "individual-vat-registration/change"
+    And About The Individual section should have a label "Is the individual registered for Self Assessment, as far as you’re aware?" at line "8" an answer with "Yes, and I know their Unique Taxpayer Reference (UTR)" and change URL ends with "individual-self-assessment/change"
+
+  Scenario: On behalf of Individual -About The Individual - change route to - VAT from I do not know to No
+    Given I am on "Check Your Answers" page
+    When I click on change button for "Is the individual registered for VAT, as far you’re aware?"
+    And I select Radio Button "Yes, but I do not know their VAT registration number" at Position "2"
+    And click on Save and Continue button
+    When I click on change button for "Is the individual registered for VAT, as far you’re aware?"
+    And I select Radio Button "No" at Position "3"
+    And click on Save and Continue button
+    Then page navigates to "Check Your Answers"
+    Then answers page should have h2 header "About the individual"
+    And answers page should have h2 header "Background"
+    And answers page should have h2 header "About you"
+    And About The Individual section should have a label "Is the individual registered for VAT, as far you’re aware?" at line "6" an answer with "No" and change URL ends with "individual-registered-for-vat/change"
+    And About The Individual section should have a label "Is the individual registered for Self Assessment, as far as you’re aware?" at line "7" an answer with "Yes, and I know their Unique Taxpayer Reference (UTR)" and change URL ends with "individual-self-assessment/change"
+
