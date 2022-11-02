@@ -58,6 +58,7 @@ Feature: An individual UK tax payer is able to check their answers for About the
     And click on continue button
     And click on confirm button
 
+  @id001
   Scenario: On behalf of Individual -About The Individual - Change Route validation -With No Change
     Given I am on "Check Your Answers" page
     Then answers page should have h2 header "About the individual"
@@ -79,6 +80,7 @@ Feature: An individual UK tax payer is able to check their answers for About the
       |Individual’s VAT registration number|What is the individual’s VAT registration number?|
       |Individual’s Unique Taxpayer Reference|What is the individual’s Unique Tax Reference?|
 
+  @id002
   Scenario: On behalf of Individual -About The Individual - Change Route validation -By Changing Value
     Given I am on "Check Your Answers" page
     Then answers page should have h2 header "About the individual"
@@ -90,6 +92,7 @@ Feature: An individual UK tax payer is able to check their answers for About the
       |Individual’s VAT registration number|What is the individual’s VAT registration number?|123456798|
       |Individual’s Unique Taxpayer Reference|What is the individual’s Unique Tax Reference?|1234567809|
 
+  @id003
   Scenario: On behalf of Individual -About The Individual- Change Route validation -By Changing Value of Date of birth
     Given I am on "Check Your Answers" page
     When I click on change button for "Individual’s date of birth"
@@ -101,6 +104,7 @@ Feature: An individual UK tax payer is able to check their answers for About the
     And answers page should have h2 header "About the individual"
     And About The Individual section should have a label "Individual’s date of birth" at line "2" an answer with "2 February 1990" and change URL ends with "individual-date-of-birth/change"
 
+  @id004
   Scenario: On behalf of Individual -About The Individual - Change Route validation -Address Validation-No data population
     Given I am on "Check Your Answers" page
     When I click on change button for "Individual’s address"
@@ -109,6 +113,7 @@ Feature: An individual UK tax payer is able to check their answers for About the
     When click on Save and Continue button
     Then error message should be displayed with text "Enter country of the address"
 
+  @id005
   Scenario: On behalf of Individual -About The Individual - Change Route validation -Address Validation- Needs to complete new address Journey
     Given I am on "Check Your Answers" page
     When I click on change button for "Individual’s address"
@@ -122,6 +127,7 @@ Feature: An individual UK tax payer is able to check their answers for About the
     Then page navigates to "Check Your Answers"
     And About The Individual section should have a label "Individual’s address" at line "10" an answer with "3 Testing Lane,Royal Madeuptown,ZZ9Z 9TT,United Kingdom" and change URL ends with "individual-address/lookup/change"
 
+  @id006
   Scenario: On behalf of Individual -About The Individual - No change route to - Are you the individual this disclosure relates to?
     Given I am on "Check Your Answers" page
     When I click on change button for "Are you the individual this disclosure relates to?"
@@ -141,6 +147,7 @@ Feature: An individual UK tax payer is able to check their answers for About the
     And About The Individual section should have a label "Is the individual registered for Self Assessment, as far as you’re aware?" at line "8" an answer with "Yes, and I know their Unique Taxpayer Reference (UTR)" and change URL ends with "individual-self-assessment/change"
     And About The Individual section should have a label "Individual’s Unique Taxpayer Reference" at line "9" an answer with "1234567890" and change URL ends with "individual-utr/change"
 
+  @id007
   Scenario: On behalf of Individual -About The Individual - change route to - Are you registered for VAT - No change
     Given I am on "Check Your Answers" page
     When I click on change button for "Is the individual registered for VAT, as far you’re aware?"
@@ -154,6 +161,7 @@ Feature: An individual UK tax payer is able to check their answers for About the
     And About The Individual section should have a label "Individual’s VAT registration number" at line "7" an answer with "123456789" and change URL ends with "individual-vat-registration/change"
     And About The Individual section should have a label "Is the individual registered for Self Assessment, as far as you’re aware?" at line "8" an answer with "Yes, and I know their Unique Taxpayer Reference (UTR)" and change URL ends with "individual-self-assessment/change"
 
+  @id008
   Scenario: On behalf of Individual -About The Individual - change route to - VAT from Yes to No
     Given I am on "Check Your Answers" page
     When I click on change button for "Is the individual registered for VAT, as far you’re aware?"
@@ -166,6 +174,7 @@ Feature: An individual UK tax payer is able to check their answers for About the
     And About The Individual section should have a label "Is the individual registered for VAT, as far you’re aware?" at line "6" an answer with "No" and change URL ends with "individual-registered-for-vat/change"
     And About The Individual section should have a label "Is the individual registered for Self Assessment, as far as you’re aware?" at line "7" an answer with "Yes, and I know their Unique Taxpayer Reference (UTR)" and change URL ends with "individual-self-assessment/change"
 
+  @id009
   Scenario: On behalf of Individual -About The Individual - change route to - VAT from Yes to I do not know
     Given I am on "Check Your Answers" page
     When I click on change button for "Is the individual registered for VAT, as far you’re aware?"
@@ -178,6 +187,7 @@ Feature: An individual UK tax payer is able to check their answers for About the
     And About The Individual section should have a label "Is the individual registered for VAT, as far you’re aware?" at line "6" an answer with "Yes, but I do not know their VAT registration number" and change URL ends with "individual-registered-for-vat/change"
     And About The Individual section should have a label "Is the individual registered for Self Assessment, as far as you’re aware?" at line "7" an answer with "Yes, and I know their Unique Taxpayer Reference (UTR)" and change URL ends with "individual-self-assessment/change"
 
+  @id010
   Scenario: On behalf of Individual -About The Individual - change route to - VAT from No to Yes
     Given I am on "Check Your Answers" page
     When I click on change button for "Is the individual registered for VAT, as far you’re aware?"
@@ -196,6 +206,7 @@ Feature: An individual UK tax payer is able to check their answers for About the
     And About The Individual section should have a label "Individual’s VAT registration number" at line "7" an answer with "123455555" and change URL ends with "individual-vat-registration/change"
     And About The Individual section should have a label "Is the individual registered for Self Assessment, as far as you’re aware?" at line "8" an answer with "Yes, and I know their Unique Taxpayer Reference (UTR)" and change URL ends with "individual-self-assessment/change"
 
+  @id011
   Scenario: On behalf of Individual -About The Individual - change route to - VAT from No to I do not know
     Given I am on "Check Your Answers" page
     When I click on change button for "Is the individual registered for VAT, as far you’re aware?"
@@ -211,6 +222,7 @@ Feature: An individual UK tax payer is able to check their answers for About the
     And About The Individual section should have a label "Is the individual registered for VAT, as far you’re aware?" at line "6" an answer with "Yes, but I do not know their VAT registration number" and change URL ends with "individual-registered-for-vat/change"
     And About The Individual section should have a label "Is the individual registered for Self Assessment, as far as you’re aware?" at line "7" an answer with "Yes, and I know their Unique Taxpayer Reference (UTR)" and change URL ends with "individual-self-assessment/change"
 
+  @id012
   Scenario: On behalf of Individual -About The Individual - change route to - VAT from I do not know to Yes
     Given I am on "Check Your Answers" page
     When I click on change button for "Is the individual registered for VAT, as far you’re aware?"
@@ -229,6 +241,7 @@ Feature: An individual UK tax payer is able to check their answers for About the
     And About The Individual section should have a label "Individual’s VAT registration number" at line "7" an answer with "123450000" and change URL ends with "individual-vat-registration/change"
     And About The Individual section should have a label "Is the individual registered for Self Assessment, as far as you’re aware?" at line "8" an answer with "Yes, and I know their Unique Taxpayer Reference (UTR)" and change URL ends with "individual-self-assessment/change"
 
+  @id013
   Scenario: On behalf of Individual -About The Individual - change route to - VAT from I do not know to No
     Given I am on "Check Your Answers" page
     When I click on change button for "Is the individual registered for VAT, as far you’re aware?"
@@ -244,3 +257,97 @@ Feature: An individual UK tax payer is able to check their answers for About the
     And About The Individual section should have a label "Is the individual registered for VAT, as far you’re aware?" at line "6" an answer with "No" and change URL ends with "individual-registered-for-vat/change"
     And About The Individual section should have a label "Is the individual registered for Self Assessment, as far as you’re aware?" at line "7" an answer with "Yes, and I know their Unique Taxpayer Reference (UTR)" and change URL ends with "individual-self-assessment/change"
 
+  @id014
+  Scenario: On behalf of Individual -About The Individual -Does the individual have a National Insurance number, as far as you’re aware?- Yes-No change
+    Given I am on "Check Your Answers" page
+    When I click on change button for "Does the individual have a National Insurance number, as far as you’re aware?"
+    And click on Save and Continue button
+    Then page navigates to "Check Your Answers"
+    And About The Individual section should have a label "Does the individual have a National Insurance number, as far as you’re aware?" at line "4" an answer with "Yes, and I know their National Insurance number" and change URL ends with "individual-have-national-insurance-number/change"
+    And About The Individual section should have a label "Individual’s National Insurance number" at line "5" an answer with "AZ 12 34 56 D" and change URL ends with "individual-national-insurance-number/change"
+
+  @id015
+  Scenario: On behalf of Individual -About The Individual -Does the individual have a National Insurance number, as far as you’re aware?- Yes to Yes, but I do not know
+    Given I am on "Check Your Answers" page
+    When I click on change button for "Does the individual have a National Insurance number, as far as you’re aware?"
+    And I select Radio Button "Yes, but I do not know their National Insurance number" at Position "2"
+    And click on Save and Continue button
+    Then page navigates to "Check Your Answers"
+    And About The Individual section should have a label "Does the individual have a National Insurance number, as far as you’re aware?" at line "4" an answer with "Yes, but I do not know their National Insurance number" and change URL ends with "individual-have-national-insurance-number/change"
+    And label "Individual’s National Insurance number" is not displayed on check your answer page
+
+  @id016
+  Scenario: On behalf of Individual -About The Individual -Does the individual have a National Insurance number, as far as you’re aware?- Yes to No
+    Given I am on "Check Your Answers" page
+    When I click on change button for "Does the individual have a National Insurance number, as far as you’re aware?"
+    And I select Radio Button "No" at Position "3"
+    And click on Save and Continue button
+    Then page navigates to "Check Your Answers"
+    And About The Individual section should have a label "Does the individual have a National Insurance number, as far as you’re aware?" at line "4" an answer with "No" and change URL ends with "individual-have-national-insurance-number/change"
+    And label "Individual’s National Insurance number" is not displayed on check your answer page
+
+  @id017
+  Scenario: On behalf of Individual -About The Individual -Does the individual have a National Insurance number, as far as you’re aware?- Yes, but I do not know to Yes, and I know
+    Given I am on "Check Your Answers" page
+    When I click on change button for "Does the individual have a National Insurance number, as far as you’re aware?"
+    And I select Radio Button "Yes, but I do not know their National Insurance number" at Position "2"
+    And click on Save and Continue button
+    And About The Individual section should have a label "Does the individual have a National Insurance number, as far as you’re aware?" at line "4" an answer with "Yes, but I do not know their National Insurance number" and change URL ends with "individual-have-national-insurance-number/change"
+    And label "Individual’s National Insurance number" is not displayed on check your answer page
+    And I click on change button for "Does the individual have a National Insurance number, as far as you’re aware?"
+    And I select Radio Button "Yes, and I know their National Insurance number" at Position "1"
+    And click on Save and Continue button
+    And page navigates to "What is the individual’s National Insurance number?"
+    And I enter "AA 12 34 56 D" in the TextBox field
+    And click on Save and Continue button
+    Then page navigates to "Check Your Answers"
+    And About The Individual section should have a label "Does the individual have a National Insurance number, as far as you’re aware?" at line "4" an answer with "Yes, and I know their National Insurance number" and change URL ends with "individual-have-national-insurance-number/change"
+    And About The Individual section should have a label "Individual’s National Insurance number" at line "5" an answer with "AA 12 34 56 D" and change URL ends with "individual-national-insurance-number/change"
+
+  @id018
+  Scenario: On behalf of Individual -About The Individual -Does the individual have a National Insurance number, as far as you’re aware?- Yes, but I do not know to No
+    Given I am on "Check Your Answers" page
+    When I click on change button for "Does the individual have a National Insurance number, as far as you’re aware?"
+    And I select Radio Button "Yes, but I do not know their National Insurance number" at Position "2"
+    And click on Save and Continue button
+    And About The Individual section should have a label "Does the individual have a National Insurance number, as far as you’re aware?" at line "4" an answer with "Yes, but I do not know their National Insurance number" and change URL ends with "individual-have-national-insurance-number/change"
+    And label "Individual’s National Insurance number" is not displayed on check your answer page
+    And I click on change button for "Does the individual have a National Insurance number, as far as you’re aware?"
+    And I select Radio Button "No" at Position "3"
+    And click on Save and Continue button
+    Then page navigates to "Check Your Answers"
+    And About The Individual section should have a label "Does the individual have a National Insurance number, as far as you’re aware?" at line "4" an answer with "No" and change URL ends with "individual-have-national-insurance-number/change"
+    And label "Individual’s National Insurance number" is not displayed on check your answer page
+
+  @id019
+  Scenario: On behalf of Individual -About The Individual -Does the individual have a National Insurance number, as far as you’re aware?- No to Yes, and I know
+    Given I am on "Check Your Answers" page
+    When I click on change button for "Does the individual have a National Insurance number, as far as you’re aware?"
+    And I select Radio Button "No" at Position "3"
+    And click on Save and Continue button
+    And About The Individual section should have a label "Does the individual have a National Insurance number, as far as you’re aware?" at line "4" an answer with "No" and change URL ends with "individual-have-national-insurance-number/change"
+    And label "Individual’s National Insurance number" is not displayed on check your answer page
+    And I click on change button for "Does the individual have a National Insurance number, as far as you’re aware?"
+    And I select Radio Button "Yes, and I know their National Insurance number" at Position "1"
+    And click on Save and Continue button
+    And page navigates to "What is the individual’s National Insurance number?"
+    And I enter "AA 12 34 56 A" in the TextBox field
+    And click on Save and Continue button
+    Then page navigates to "Check Your Answers"
+    And About The Individual section should have a label "Does the individual have a National Insurance number, as far as you’re aware?" at line "4" an answer with "Yes, and I know their National Insurance number" and change URL ends with "individual-have-national-insurance-number/change"
+    And About The Individual section should have a label "Individual’s National Insurance number" at line "5" an answer with "AA 12 34 56 A" and change URL ends with "individual-national-insurance-number/change"
+
+  @id020
+  Scenario: On behalf of Individual -About The Individual -Does the individual have a National Insurance number, as far as you’re aware?- No to Yes, and I know
+    Given I am on "Check Your Answers" page
+    When I click on change button for "Does the individual have a National Insurance number, as far as you’re aware?"
+    And I select Radio Button "No" at Position "3"
+    And click on Save and Continue button
+    And About The Individual section should have a label "Does the individual have a National Insurance number, as far as you’re aware?" at line "4" an answer with "No" and change URL ends with "individual-have-national-insurance-number/change"
+    And label "Individual’s National Insurance number" is not displayed on check your answer page
+    And I click on change button for "Does the individual have a National Insurance number, as far as you’re aware?"
+    And I select Radio Button "Yes, but I do not know their National Insurance number" at Position "2"
+    And click on Save and Continue button
+    Then page navigates to "Check Your Answers"
+    And About The Individual section should have a label "Does the individual have a National Insurance number, as far as you’re aware?" at line "4" an answer with "Yes, but I do not know their National Insurance number" and change URL ends with "individual-have-national-insurance-number/change"
+    And label "Individual’s National Insurance number" is not displayed on check your answer page

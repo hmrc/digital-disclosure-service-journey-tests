@@ -1,4 +1,4 @@
-@refpage
+@page
 Feature: An individual UK tax payer is able to check their answers for About you section before submitting page
 
   Background:
