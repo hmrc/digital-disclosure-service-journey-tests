@@ -249,7 +249,7 @@ Feature: An individual UK tax payer is able to check their answers for About you
     And line "9" should have a label "Your National Insurance number" an answer with "AA 12 34 56 A" and change URL ends with "your-national-insurance-number/change"
 
   @id016
-  Scenario: For Individual -About You -Do you have a National Insurance number?- No to Yes, and I know
+  Scenario: For Individual -About You -Do you have a National Insurance number?- No to Yes, but I do not know
     Given I am on "Check Your Answers" page
     When I click on change button for "Do you have a National Insurance number?"
     And I select Radio Button "No" at Position "3"
@@ -262,3 +262,97 @@ Feature: An individual UK tax payer is able to check their answers for About you
     Then page navigates to "Check Your Answers"
     And line "8" should have a label "Do you have a National Insurance number?" an answer with "Yes, but I do not know my National Insurance number" and change URL ends with "have-national-insurance-number/change"
     And label "Your National Insurance number" is not displayed on check your answer page
+
+  @id017
+  Scenario: For Individual -Are you registered for Self Assessment?- Yes-No change
+    Given I am on "Check Your Answers" page
+    When I click on change button for "Are you registered for Self Assessment?"
+    And click on Save and Continue button
+    Then page navigates to "Check Your Answers"
+    And line "12" should have a label "Are you registered for Self Assessment?" an answer with "Yes, and I know my Unique Taxpayer Reference (UTR)" and change URL ends with "registered-for-self-assessment/change"
+    And line "13" should have a label "Your Unique Taxpayer Reference" an answer with "1234567890" and change URL ends with "your-utr/change"
+
+  @id018
+  Scenario: For Individual -About You -Are you registered for Self Assessment?- Yes to Yes, but I do not know
+    Given I am on "Check Your Answers" page
+    When I click on change button for "Are you registered for Self Assessment?"
+    And I select Radio Button "Yes, but I do not know my Unique Taxpayer Reference (UTR)" at Position "2"
+    And click on Save and Continue button
+    Then page navigates to "Check Your Answers"
+    And line "12" should have a label "Are you registered for Self Assessment?" an answer with "Yes, but I do not know my Unique Taxpayer Reference (UTR)" and change URL ends with "registered-for-self-assessment/change"
+    And label "Your Unique Taxpayer Reference" is not displayed on check your answer page
+
+  @id019
+  Scenario: For Individual -About You -Are you registered for Self Assessment?- Yes to No
+    Given I am on "Check Your Answers" page
+    When I click on change button for "Are you registered for Self Assessment?"
+    And I select Radio Button "No" at Position "3"
+    And click on Save and Continue button
+    Then page navigates to "Check Your Answers"
+    And line "12" should have a label "Are you registered for Self Assessment?" an answer with "No" and change URL ends with "registered-for-self-assessment/change"
+    And label "Your Unique Taxpayer Reference" is not displayed on check your answer page
+
+  @id020
+  Scenario: For Individual -About You -Do you have a National Insurance number?- Yes, but I do not know to Yes, and I know
+    Given I am on "Check Your Answers" page
+    When I click on change button for "Are you registered for Self Assessment?"
+    And I select Radio Button "Yes, but I do not know my Unique Taxpayer Reference (UTR)" at Position "2"
+    And click on Save and Continue button
+    And line "12" should have a label "Are you registered for Self Assessment?" an answer with "Yes, but I do not know my Unique Taxpayer Reference (UTR)" and change URL ends with "registered-for-self-assessment/change"
+    And label "Your Unique Taxpayer Reference" is not displayed on check your answer page
+    And I click on change button for "Are you registered for Self Assessment?"
+    And I select Radio Button "Yes, and I know my Unique Taxpayer Reference (UTR)" at Position "1"
+    And click on Save and Continue button
+    Then page navigates to "What is your Unique Tax Reference?"
+    When I enter "9876543210" in the TextBox field
+    And click on Save and Continue button
+    And line "12" should have a label "Are you registered for Self Assessment?" an answer with "Yes, and I know my Unique Taxpayer Reference (UTR)" and change URL ends with "registered-for-self-assessment/change"
+    And line "13" should have a label "Your Unique Taxpayer Reference" an answer with "9876543210" and change URL ends with "your-utr/change"
+
+
+  @id021
+  Scenario: For Individual -About You -Do you have a National Insurance number?- Yes, but I do not know to No
+    Given I am on "Check Your Answers" page
+    When I click on change button for "Are you registered for Self Assessment?"
+    And I select Radio Button "Yes, but I do not know my Unique Taxpayer Reference (UTR)" at Position "2"
+    And click on Save and Continue button
+    And line "12" should have a label "Are you registered for Self Assessment?" an answer with "Yes, but I do not know my Unique Taxpayer Reference (UTR)" and change URL ends with "registered-for-self-assessment/change"
+    And label "Your Unique Taxpayer Reference" is not displayed on check your answer page
+    And I click on change button for "Are you registered for Self Assessment?"
+    And I select Radio Button "No" at Position "3"
+    And click on Save and Continue button
+    Then page navigates to "Check Your Answers"
+    And line "12" should have a label "Are you registered for Self Assessment?" an answer with "No" and change URL ends with "registered-for-self-assessment/change"
+    And label "Your Unique Taxpayer Reference" is not displayed on check your answer page
+
+  @id022
+  Scenario: For Individual -About You -Do you have a National Insurance number?- No to Yes, and I know
+    Given I am on "Check Your Answers" page
+    When I click on change button for "Are you registered for Self Assessment?"
+    And I select Radio Button "No" at Position "3"
+    And click on Save and Continue button
+    And line "12" should have a label "Are you registered for Self Assessment?" an answer with "No" and change URL ends with "registered-for-self-assessment/change"
+    And label "Your Unique Taxpayer Reference" is not displayed on check your answer page
+    And I click on change button for "Are you registered for Self Assessment?"
+    And I select Radio Button "Yes, and I know my Unique Taxpayer Reference (UTR)" at Position "1"
+    And click on Save and Continue button
+    Then page navigates to "What is your Unique Tax Reference?"
+    When I enter "9876543210" in the TextBox field
+    And click on Save and Continue button
+    And line "12" should have a label "Are you registered for Self Assessment?" an answer with "Yes, and I know my Unique Taxpayer Reference (UTR)" and change URL ends with "registered-for-self-assessment/change"
+    And line "13" should have a label "Your Unique Taxpayer Reference" an answer with "9876543210" and change URL ends with "your-utr/change"
+
+  @id023
+  Scenario: For Individual -About You -Do you have a National Insurance number?- No to Yes, but I do not know
+    Given I am on "Check Your Answers" page
+    When I click on change button for "Are you registered for Self Assessment?"
+    And I select Radio Button "No" at Position "3"
+    And click on Save and Continue button
+    And line "12" should have a label "Are you registered for Self Assessment?" an answer with "No" and change URL ends with "registered-for-self-assessment/change"
+    And label "Your Unique Taxpayer Reference" is not displayed on check your answer page
+    And I click on change button for "Are you registered for Self Assessment?"
+    And I select Radio Button "Yes, but I do not know my Unique Taxpayer Reference (UTR)" at Position "2"
+    And click on Save and Continue button
+    Then page navigates to "Check Your Answers"
+    And line "12" should have a label "Are you registered for Self Assessment?" an answer with "Yes, but I do not know my Unique Taxpayer Reference (UTR)" and change URL ends with "registered-for-self-assessment/change"
+    And label "Your Unique Taxpayer Reference" is not displayed on check your answer page
