@@ -338,7 +338,7 @@ Feature: An individual UK tax payer is able to check their answers for About the
     And About The Individual section should have a label "Individual’s National Insurance number" at line "5" an answer with "AA 12 34 56 A" and change URL ends with "individual-national-insurance-number/change"
 
   @id020
-  Scenario: On behalf of Individual -About The Individual -Does the individual have a National Insurance number, as far as you’re aware?- No to Yes, and I know
+  Scenario: On behalf of Individual -About The Individual -Does the individual have a National Insurance number, as far as you’re aware?- No to Yes, but I do not know
     Given I am on "Check Your Answers" page
     When I click on change button for "Does the individual have a National Insurance number, as far as you’re aware?"
     And I select Radio Button "No" at Position "3"
@@ -351,3 +351,98 @@ Feature: An individual UK tax payer is able to check their answers for About the
     Then page navigates to "Check Your Answers"
     And About The Individual section should have a label "Does the individual have a National Insurance number, as far as you’re aware?" at line "4" an answer with "Yes, but I do not know their National Insurance number" and change URL ends with "individual-have-national-insurance-number/change"
     And label "Individual’s National Insurance number" is not displayed on check your answer page
+
+  @id021
+  Scenario: On behalf of Individual -About The Individual -Is the individual registered for Self Assessment, as far as you’re aware?- Yes-No change
+    Given I am on "Check Your Answers" page
+    When I click on change button for "Is the individual registered for Self Assessment, as far as you’re aware?"
+    And click on Save and Continue button
+    Then page navigates to "Check Your Answers"
+    And About The Individual section should have a label "Is the individual registered for Self Assessment, as far as you’re aware?" at line "8" an answer with "Yes, and I know their Unique Taxpayer Reference (UTR)" and change URL ends with "individual-self-assessment/change"
+    And About The Individual section should have a label "Individual’s Unique Taxpayer Reference" at line "9" an answer with "1234567890" and change URL ends with "individual-utr/change"
+
+  @id022
+  Scenario: On behalf of Individual -About The Individual -Is the individual registered for Self Assessment, as far as you’re aware?- Yes to Yes, but I do not know
+    Given I am on "Check Your Answers" page
+    When I click on change button for "Is the individual registered for Self Assessment, as far as you’re aware?"
+    And I select Radio Button "Yes, but I do not know their Unique Taxpayer Reference (UTR)" at Position "2"
+    And click on Save and Continue button
+    Then page navigates to "Check Your Answers"
+    And About The Individual section should have a label "Is the individual registered for Self Assessment, as far as you’re aware?" at line "8" an answer with "Yes, but I do not know their Unique Taxpayer Reference (UTR)" and change URL ends with "individual-self-assessment/change"
+    And label "Individual’s Unique Taxpayer Reference" is not displayed on check your answer page
+
+  @id023
+  Scenario: On behalf of Individual -About The Individual -Is the individual registered for Self Assessment, as far as you’re aware?- Yes to No
+    Given I am on "Check Your Answers" page
+    When I click on change button for "Is the individual registered for Self Assessment, as far as you’re aware?"
+    And I select Radio Button "No" at Position "3"
+    And click on Save and Continue button
+    Then page navigates to "Check Your Answers"
+    And About The Individual section should have a label "Is the individual registered for Self Assessment, as far as you’re aware?" at line "8" an answer with "No" and change URL ends with "individual-self-assessment/change"
+    And label "Individual’s Unique Taxpayer Reference" is not displayed on check your answer page
+
+  @id024
+  Scenario: On behalf of Individual -About The Individual -Is the individual registered for Self Assessment, as far as you’re aware?- Yes, but I do not know to Yes, and I know
+    Given I am on "Check Your Answers" page
+    When I click on change button for "Is the individual registered for Self Assessment, as far as you’re aware?"
+    And I select Radio Button "Yes, but I do not know their Unique Taxpayer Reference (UTR)" at Position "2"
+    And click on Save and Continue button
+    And About The Individual section should have a label "Is the individual registered for Self Assessment, as far as you’re aware?" at line "8" an answer with "Yes, but I do not know their Unique Taxpayer Reference (UTR)" and change URL ends with "individual-self-assessment/change"
+    And label "Individual’s Unique Taxpayer Reference" is not displayed on check your answer page
+    And I click on change button for "Is the individual registered for Self Assessment, as far as you’re aware?"
+    And I select Radio Button "Yes, and I know their Unique Taxpayer Reference (UTR)" at Position "1"
+    And click on Save and Continue button
+    And page navigates to "What is the individual’s Unique Tax Reference?"
+    And I enter "9876543210" in the TextBox field
+    And click on Save and Continue button
+    Then page navigates to "Check Your Answers"
+    And About The Individual section should have a label "Is the individual registered for Self Assessment, as far as you’re aware?" at line "8" an answer with "Yes, and I know their Unique Taxpayer Reference (UTR)" and change URL ends with "individual-self-assessment/change"
+    And About The Individual section should have a label "Individual’s Unique Taxpayer Reference" at line "9" an answer with "9876543210" and change URL ends with "individual-utr/change"
+
+  @id025
+  Scenario: On behalf of Individual -About The Individual -Is the individual registered for Self Assessment, as far as you’re aware?- Yes, but I do not know to No
+    Given I am on "Check Your Answers" page
+    When I click on change button for "Is the individual registered for Self Assessment, as far as you’re aware?"
+    And I select Radio Button "Yes, but I do not know their Unique Taxpayer Reference (UTR)" at Position "2"
+    And click on Save and Continue button
+    And About The Individual section should have a label "Is the individual registered for Self Assessment, as far as you’re aware?" at line "8" an answer with "Yes, but I do not know their Unique Taxpayer Reference (UTR)" and change URL ends with "individual-self-assessment/change"
+    And label "Individual’s Unique Taxpayer Reference" is not displayed on check your answer page
+    And I click on change button for "Is the individual registered for Self Assessment, as far as you’re aware?"
+    And I select Radio Button "No" at Position "3"
+    And click on Save and Continue button
+    Then page navigates to "Check Your Answers"
+    And About The Individual section should have a label "Is the individual registered for Self Assessment, as far as you’re aware?" at line "8" an answer with "No" and change URL ends with "individual-self-assessment/change"
+    And label "Individual’s Unique Taxpayer Reference" is not displayed on check your answer page
+
+  @id026
+  Scenario: On behalf of Individual -About The Individual -Is the individual registered for Self Assessment, as far as you’re aware?- No to Yes, and I know
+    Given I am on "Check Your Answers" page
+    When I click on change button for "Is the individual registered for Self Assessment, as far as you’re aware?"
+    And I select Radio Button "No" at Position "3"
+    And click on Save and Continue button
+    And About The Individual section should have a label "Is the individual registered for Self Assessment, as far as you’re aware?" at line "8" an answer with "No" and change URL ends with "individual-self-assessment/change"
+    And label "Individual’s Unique Taxpayer Reference" is not displayed on check your answer page
+    And I click on change button for "Is the individual registered for Self Assessment, as far as you’re aware?"
+    And I select Radio Button "Yes, and I know their Unique Taxpayer Reference (UTR)" at Position "1"
+    And click on Save and Continue button
+    And page navigates to "What is the individual’s Unique Tax Reference?"
+    And I enter "9876543210" in the TextBox field
+    And click on Save and Continue button
+    Then page navigates to "Check Your Answers"
+    And About The Individual section should have a label "Is the individual registered for Self Assessment, as far as you’re aware?" at line "8" an answer with "Yes, and I know their Unique Taxpayer Reference (UTR)" and change URL ends with "individual-self-assessment/change"
+    And About The Individual section should have a label "Individual’s Unique Taxpayer Reference" at line "9" an answer with "9876543210" and change URL ends with "individual-utr/change"
+
+  @id027
+  Scenario: On behalf of Individual -About The Individual -Is the individual registered for Self Assessment, as far as you’re aware?- No to Yes, but I do not know
+    Given I am on "Check Your Answers" page
+    When I click on change button for "Is the individual registered for Self Assessment, as far as you’re aware?"
+    And I select Radio Button "No" at Position "3"
+    And click on Save and Continue button
+    And About The Individual section should have a label "Is the individual registered for Self Assessment, as far as you’re aware?" at line "8" an answer with "No" and change URL ends with "individual-self-assessment/change"
+    And label "Individual’s Unique Taxpayer Reference" is not displayed on check your answer page
+    When I click on change button for "Is the individual registered for Self Assessment, as far as you’re aware?"
+    And I select Radio Button "Yes, but I do not know their Unique Taxpayer Reference (UTR)" at Position "2"
+    And click on Save and Continue button
+    Then page navigates to "Check Your Answers"
+    And About The Individual section should have a label "Is the individual registered for Self Assessment, as far as you’re aware?" at line "8" an answer with "Yes, but I do not know their Unique Taxpayer Reference (UTR)" and change URL ends with "individual-self-assessment/change"
+    And label "Individual’s Unique Taxpayer Reference" is not displayed on check your answer page

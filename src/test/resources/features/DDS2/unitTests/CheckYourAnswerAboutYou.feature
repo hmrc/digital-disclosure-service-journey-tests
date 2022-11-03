@@ -293,7 +293,7 @@ Feature: An individual UK tax payer is able to check their answers for About you
     And label "Your Unique Taxpayer Reference" is not displayed on check your answer page
 
   @id020
-  Scenario: For Individual -About You -Do you have a National Insurance number?- Yes, but I do not know to Yes, and I know
+  Scenario: For Individual -About You -Are you registered for Self Assessment?- Yes, but I do not know to Yes, and I know
     Given I am on "Check Your Answers" page
     When I click on change button for "Are you registered for Self Assessment?"
     And I select Radio Button "Yes, but I do not know my Unique Taxpayer Reference (UTR)" at Position "2"
@@ -311,7 +311,7 @@ Feature: An individual UK tax payer is able to check their answers for About you
 
 
   @id021
-  Scenario: For Individual -About You -Do you have a National Insurance number?- Yes, but I do not know to No
+  Scenario: For Individual -About You -Are you registered for Self Assessment?- Yes, but I do not know to No
     Given I am on "Check Your Answers" page
     When I click on change button for "Are you registered for Self Assessment?"
     And I select Radio Button "Yes, but I do not know my Unique Taxpayer Reference (UTR)" at Position "2"
@@ -326,7 +326,7 @@ Feature: An individual UK tax payer is able to check their answers for About you
     And label "Your Unique Taxpayer Reference" is not displayed on check your answer page
 
   @id022
-  Scenario: For Individual -About You -Do you have a National Insurance number?- No to Yes, and I know
+  Scenario: For Individual -About You -Are you registered for Self Assessment?- No to Yes, and I know
     Given I am on "Check Your Answers" page
     When I click on change button for "Are you registered for Self Assessment?"
     And I select Radio Button "No" at Position "3"
@@ -343,7 +343,7 @@ Feature: An individual UK tax payer is able to check their answers for About you
     And line "13" should have a label "Your Unique Taxpayer Reference" an answer with "9876543210" and change URL ends with "your-utr/change"
 
   @id023
-  Scenario: For Individual -About You -Do you have a National Insurance number?- No to Yes, but I do not know
+  Scenario: For Individual -About You -Are you registered for Self Assessment?- No to Yes, but I do not know
     Given I am on "Check Your Answers" page
     When I click on change button for "Are you registered for Self Assessment?"
     And I select Radio Button "No" at Position "3"
