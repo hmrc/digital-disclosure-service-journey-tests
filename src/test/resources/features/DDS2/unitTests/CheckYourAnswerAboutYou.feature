@@ -68,7 +68,7 @@ Feature: An individual UK tax payer is able to check their answers for About you
     And line "13" should have a label "Your Unique Taxpayer Reference" an answer with "1234567890" and change URL ends with "your-utr/change"
 
   @id002
-  Scenario: For Individual -About You - Change Route validation -With No Change
+  Scenario: For Individual - About You  - Change Route validation -With No Change
     Given I am on "Check Your Answers" page
     Then answers page should have h2 header "About you"
     And clicking on change button navigates as following:
@@ -83,7 +83,7 @@ Feature: An individual UK tax payer is able to check their answers for About you
       |Your Unique Taxpayer Reference|What is your Unique Tax Reference?|
 
   @id003
-  Scenario: For Individual -About You - Change Route validation -By Changing Value
+  Scenario: For Individual - About You  - Change Route validation -By Changing Value
     Given I am on "Check Your Answers" page
     Then answers page should have h2 header "About you"
     And clicking on change button to validate changed value as following:
@@ -97,7 +97,7 @@ Feature: An individual UK tax payer is able to check their answers for About you
       |Your Unique Taxpayer Reference|What is your Unique Tax Reference?|1234567809|
 
   @id004
-  Scenario: For Individual -About You - Change Route validation -By Changing Value of Date of birth
+  Scenario: For Individual - About You  - Change Route validation -By Changing Value of Date of birth
     Given I am on "Check Your Answers" page
     When I click on change button for "Your date of birth"
     And I enter "02" in the "Day" text box field
@@ -109,7 +109,7 @@ Feature: An individual UK tax payer is able to check their answers for About you
     And line "6" should have a label "Your date of birth" an answer with "2 February 1990" and change URL ends with "your-date-of-birth/change"
 
   @id005
-  Scenario: For Individual -About You - Change Route validation -Address Validation-No data population
+  Scenario: For Individual - About You  - Change Route validation -Address Validation-No data population
     Given I am on "Check Your Answers" page
     When I click on change button for "Your address"
     Then page navigates to "What is the country of your address?"
@@ -118,7 +118,7 @@ Feature: An individual UK tax payer is able to check their answers for About you
     Then error message should be displayed with text "Enter country of the address"
 
   @id006
-  Scenario: For Individual -About You - Change Route validation -Address Validation- Needs to complete new address Journey
+  Scenario: For Individual - About You  - Change Route validation -Address Validation- Needs to complete new address Journey
     Given I am on "Check Your Answers" page
     When I click on change button for "Your address"
     And enter country name "United Kingdom",select country "United Kingdom"
@@ -133,7 +133,7 @@ Feature: An individual UK tax payer is able to check their answers for About you
 
 
   @id007
-  Scenario: For Individual -About You - Do you have an email address that you are happy to be contacted on by HMRC?- Yes to No
+  Scenario: For Individual - About You  - Do you have an email address that you are happy to be contacted on by HMRC?- Yes to No
     Given I am on "Check Your Answers" page
     When I click on change button for "Do you have an email address that you are happy to be contacted on by HMRC?"
     And I select Radio Button "No" at Position "2"
@@ -143,7 +143,7 @@ Feature: An individual UK tax payer is able to check their answers for About you
     And label "Your email address" is not displayed on check your answer page
 
   @id008
-  Scenario: For Individual -About You - Do you have an email address that you are happy to be contacted on by HMRC?- No to Yes
+  Scenario: For Individual - About You  - Do you have an email address that you are happy to be contacted on by HMRC?- No to Yes
     Given I am on "Check Your Answers" page
     When I click on change button for "Do you have an email address that you are happy to be contacted on by HMRC?"
     And I select Radio Button "No" at Position "2"
@@ -161,7 +161,7 @@ Feature: An individual UK tax payer is able to check their answers for About you
     And line "4" should have a label "Your email address" an answer with "abcd@abcd.com" and change URL ends with "your-email-address/change"
 
   @id009
-  Scenario: For Individual -About You - Do you have an email address that you are happy to be contacted on by HMRC?- No change
+  Scenario: For Individual - About You  - Do you have an email address that you are happy to be contacted on by HMRC?- No change
     Given I am on "Check Your Answers" page
     When I click on change button for "Do you have an email address that you are happy to be contacted on by HMRC?"
     And click on Save and Continue button
@@ -170,7 +170,7 @@ Feature: An individual UK tax payer is able to check their answers for About you
     And line "4" should have a label "Your email address" an answer with "abc@abc.com" and change URL ends with "your-email-address/change"
 
   @id010
-  Scenario: For Individual -About You -Do you have a National Insurance number?- Yes-No change
+  Scenario: For Individual - About You  -Do you have a National Insurance number?- Yes-No change
     Given I am on "Check Your Answers" page
     When I click on change button for "Do you have a National Insurance number?"
     And click on Save and Continue button
@@ -179,7 +179,7 @@ Feature: An individual UK tax payer is able to check their answers for About you
     And line "9" should have a label "Your National Insurance number" an answer with "AZ 12 34 56 D" and change URL ends with "your-national-insurance-number/change"
 
   @id011
-  Scenario: For Individual -About You -Do you have a National Insurance number?- Yes to Yes, but I do not know
+  Scenario: For Individual - About You  -Do you have a National Insurance number?- Yes to Yes, but I do not know
     Given I am on "Check Your Answers" page
     When I click on change button for "Do you have a National Insurance number?"
     And I select Radio Button "Yes, but I do not know my National Insurance number" at Position "2"
@@ -189,7 +189,7 @@ Feature: An individual UK tax payer is able to check their answers for About you
     And label "Your National Insurance number" is not displayed on check your answer page
 
   @id012
-  Scenario: For Individual -About You -Do you have a National Insurance number?- Yes to No
+  Scenario: For Individual - About You  -Do you have a National Insurance number?- Yes to No
     Given I am on "Check Your Answers" page
     When I click on change button for "Do you have a National Insurance number?"
     And I select Radio Button "No" at Position "3"
@@ -199,7 +199,7 @@ Feature: An individual UK tax payer is able to check their answers for About you
     And label "Your National Insurance number" is not displayed on check your answer page
 
   @id013
-  Scenario: For Individual -About You -Do you have a National Insurance number?- Yes, but I do not know to Yes, and I know
+  Scenario: For Individual - About You  -Do you have a National Insurance number?- Yes, but I do not know to Yes, and I know
     Given I am on "Check Your Answers" page
     When I click on change button for "Do you have a National Insurance number?"
     And I select Radio Button "Yes, but I do not know my National Insurance number" at Position "2"
@@ -217,7 +217,7 @@ Feature: An individual UK tax payer is able to check their answers for About you
 
 
   @id014
-  Scenario: For Individual -About You -Do you have a National Insurance number?- Yes, but I do not know to No
+  Scenario: For Individual - About You  -Do you have a National Insurance number?- Yes, but I do not know to No
     Given I am on "Check Your Answers" page
     When I click on change button for "Do you have a National Insurance number?"
     And I select Radio Button "Yes, but I do not know my National Insurance number" at Position "2"
@@ -232,7 +232,7 @@ Feature: An individual UK tax payer is able to check their answers for About you
     And label "Your National Insurance number" is not displayed on check your answer page
 
   @id015
-  Scenario: For Individual -About You -Do you have a National Insurance number?- No to Yes, and I know
+  Scenario: For Individual - About You  -Do you have a National Insurance number?- No to Yes, and I know
     Given I am on "Check Your Answers" page
     When I click on change button for "Do you have a National Insurance number?"
     And I select Radio Button "No" at Position "3"
@@ -249,7 +249,7 @@ Feature: An individual UK tax payer is able to check their answers for About you
     And line "9" should have a label "Your National Insurance number" an answer with "AA 12 34 56 A" and change URL ends with "your-national-insurance-number/change"
 
   @id016
-  Scenario: For Individual -About You -Do you have a National Insurance number?- No to Yes, but I do not know
+  Scenario: For Individual - About You  -Do you have a National Insurance number?- No to Yes, but I do not know
     Given I am on "Check Your Answers" page
     When I click on change button for "Do you have a National Insurance number?"
     And I select Radio Button "No" at Position "3"
@@ -264,7 +264,7 @@ Feature: An individual UK tax payer is able to check their answers for About you
     And label "Your National Insurance number" is not displayed on check your answer page
 
   @id017
-  Scenario: For Individual -Are you registered for Self Assessment?- Yes-No change
+  Scenario: For Individual - Are you registered for Self Assessment?- Yes-No change
     Given I am on "Check Your Answers" page
     When I click on change button for "Are you registered for Self Assessment?"
     And click on Save and Continue button
@@ -273,7 +273,7 @@ Feature: An individual UK tax payer is able to check their answers for About you
     And line "13" should have a label "Your Unique Taxpayer Reference" an answer with "1234567890" and change URL ends with "your-utr/change"
 
   @id018
-  Scenario: For Individual -About You -Are you registered for Self Assessment?- Yes to Yes, but I do not know
+  Scenario: For Individual - About You  -Are you registered for Self Assessment?- Yes to Yes, but I do not know
     Given I am on "Check Your Answers" page
     When I click on change button for "Are you registered for Self Assessment?"
     And I select Radio Button "Yes, but I do not know my Unique Taxpayer Reference (UTR)" at Position "2"
@@ -283,7 +283,7 @@ Feature: An individual UK tax payer is able to check their answers for About you
     And label "Your Unique Taxpayer Reference" is not displayed on check your answer page
 
   @id019
-  Scenario: For Individual -About You -Are you registered for Self Assessment?- Yes to No
+  Scenario: For Individual - About You  -Are you registered for Self Assessment?- Yes to No
     Given I am on "Check Your Answers" page
     When I click on change button for "Are you registered for Self Assessment?"
     And I select Radio Button "No" at Position "3"
@@ -293,7 +293,7 @@ Feature: An individual UK tax payer is able to check their answers for About you
     And label "Your Unique Taxpayer Reference" is not displayed on check your answer page
 
   @id020
-  Scenario: For Individual -About You -Are you registered for Self Assessment?- Yes, but I do not know to Yes, and I know
+  Scenario: For Individual - About You  -Are you registered for Self Assessment?- Yes, but I do not know to Yes, and I know
     Given I am on "Check Your Answers" page
     When I click on change button for "Are you registered for Self Assessment?"
     And I select Radio Button "Yes, but I do not know my Unique Taxpayer Reference (UTR)" at Position "2"
@@ -311,7 +311,7 @@ Feature: An individual UK tax payer is able to check their answers for About you
 
 
   @id021
-  Scenario: For Individual -About You -Are you registered for Self Assessment?- Yes, but I do not know to No
+  Scenario: For Individual - About You  -Are you registered for Self Assessment?- Yes, but I do not know to No
     Given I am on "Check Your Answers" page
     When I click on change button for "Are you registered for Self Assessment?"
     And I select Radio Button "Yes, but I do not know my Unique Taxpayer Reference (UTR)" at Position "2"
@@ -326,7 +326,7 @@ Feature: An individual UK tax payer is able to check their answers for About you
     And label "Your Unique Taxpayer Reference" is not displayed on check your answer page
 
   @id022
-  Scenario: For Individual -About You -Are you registered for Self Assessment?- No to Yes, and I know
+  Scenario: For Individual - About You  -Are you registered for Self Assessment?- No to Yes, and I know
     Given I am on "Check Your Answers" page
     When I click on change button for "Are you registered for Self Assessment?"
     And I select Radio Button "No" at Position "3"
@@ -343,7 +343,7 @@ Feature: An individual UK tax payer is able to check their answers for About you
     And line "13" should have a label "Your Unique Taxpayer Reference" an answer with "9876543210" and change URL ends with "your-utr/change"
 
   @id023
-  Scenario: For Individual -About You -Are you registered for Self Assessment?- No to Yes, but I do not know
+  Scenario: For Individual - About You - Are you registered for Self Assessment?- No to Yes, but I do not know
     Given I am on "Check Your Answers" page
     When I click on change button for "Are you registered for Self Assessment?"
     And I select Radio Button "No" at Position "3"
@@ -356,3 +356,98 @@ Feature: An individual UK tax payer is able to check their answers for About you
     Then page navigates to "Check Your Answers"
     And line "12" should have a label "Are you registered for Self Assessment?" an answer with "Yes, but I do not know my Unique Taxpayer Reference (UTR)" and change URL ends with "registered-for-self-assessment/change"
     And label "Your Unique Taxpayer Reference" is not displayed on check your answer page
+
+  Scenario: For Individual - About You - change route to - Are you registered for VAT - No change
+    Given I am on "Check Your Answers" page
+    When I click on change button for "Are you registered for VAT?"
+    And I select Radio Button "Yes, and I know my VAT registration number" at Position "1"
+    And click on Save and Continue button
+    Then page navigates to "Check Your Answers"
+    And answers page should have h2 header "Background"
+    And answers page should have h2 header "About you"
+    And line "10" should have a label "Are you registered for VAT?" an answer with "Yes, and I know my VAT registration number" and change URL ends with "registered-for-vat/change"
+    And line "11" should have a label "Your VAT registration number" an answer with "123456789" and change URL ends with "your-vat-registration/change"
+
+  Scenario: For Individual - About You  - change route to - VAT from Yes to No
+    Given I am on "Check Your Answers" page
+    When I click on change button for "Are you registered for VAT?"
+    And I select Radio Button "No" at Position "3"
+    And click on Save and Continue button
+    Then page navigates to "Check Your Answers"
+    And answers page should have h2 header "Background"
+    And answers page should have h2 header "About you"
+    And line "10" should have a label "Are you registered for VAT?" an answer with "No" and change URL ends with "registered-for-vat/change"
+    And line "11" should have a label "Are you registered for Self Assessment?" an answer with "Yes, and I know my Unique Taxpayer Reference (UTR)" and change URL ends with "registered-for-self-assessment/change"
+
+  Scenario: For Individual - About You  - change route to - VAT from Yes to I do not know
+    Given I am on "Check Your Answers" page
+    When I click on change button for "Are you registered for VAT?"
+    And I select Radio Button "Yes, but I do not know my VAT registration number" at Position "2"
+    And click on Save and Continue button
+    Then page navigates to "Check Your Answers"
+    And answers page should have h2 header "Background"
+    And answers page should have h2 header "About you"
+    And line "10" should have a label "Are you registered for VAT?" an answer with "Yes, but I do not know my VAT registration number" and change URL ends with "registered-for-vat/change"
+    And line "11" should have a label "Are you registered for Self Assessment?" an answer with "Yes, and I know my Unique Taxpayer Reference (UTR)" and change URL ends with "registered-for-self-assessment/change"
+
+  Scenario: For Individual - About You  - change route to - VAT from No to Yes
+    Given I am on "Check Your Answers" page
+    When I click on change button for "Are you registered for VAT?"
+    And I select Radio Button "No" at Position "3"
+    And click on Save and Continue button
+    When I click on change button for "Are you registered for VAT?"
+    And I select Radio Button "Yes, and I know my VAT registration number" at Position "1"
+    And click on Save and Continue button
+    And I enter "123455555" in the TextBox field
+    And click on Save and Continue button
+    Then page navigates to "Check Your Answers"
+    And answers page should have h2 header "Background"
+    And answers page should have h2 header "About you"
+    And line "10" should have a label "Are you registered for VAT?" an answer with "Yes, and I know my VAT registration number" and change URL ends with "registered-for-vat/change"
+    And line "11" should have a label "Your VAT registration number" an answer with "123455555" and change URL ends with "your-vat-registration/change"
+    And line "12" should have a label "Are you registered for Self Assessment?" an answer with "Yes, and I know my Unique Taxpayer Reference (UTR)" and change URL ends with "registered-for-self-assessment/change"
+
+  Scenario: For Individual - About You  - change route to - VAT from No to I do not know
+    Given I am on "Check Your Answers" page
+    When I click on change button for "Are you registered for VAT?"
+    And I select Radio Button "No" at Position "3"
+    And click on Save and Continue button
+    When I click on change button for "Are you registered for VAT?"
+    And I select Radio Button "Yes, but I do not know my VAT registration number" at Position "2"
+    And click on Save and Continue button
+    Then page navigates to "Check Your Answers"
+    And answers page should have h2 header "Background"
+    And answers page should have h2 header "About you"
+    And line "10" should have a label "Are you registered for VAT?" an answer with "Yes, but I do not know my VAT registration number" and change URL ends with "registered-for-vat/change"
+    And line "11" should have a label "Are you registered for Self Assessment?" an answer with "Yes, and I know my Unique Taxpayer Reference (UTR)" and change URL ends with "registered-for-self-assessment/change"
+
+  Scenario: For Individual - About You  - change route to - VAT from I do not know to Yes
+    Given I am on "Check Your Answers" page
+    When I click on change button for "Are you registered for VAT?"
+    And I select Radio Button "Yes, but I do not know my VAT registration number" at Position "2"
+    And click on Save and Continue button
+    When I click on change button for "Are you registered for VAT?"
+    And I select Radio Button "Yes, and I know my VAT registration number" at Position "1"
+    And click on Save and Continue button
+    And I enter "123450000" in the TextBox field
+    And click on Save and Continue button
+    Then page navigates to "Check Your Answers"
+    And answers page should have h2 header "Background"
+    And answers page should have h2 header "About you"
+    And line "10" should have a label "Are you registered for VAT?" an answer with "Yes, and I know my VAT registration number" and change URL ends with "registered-for-vat/change"
+    And line "11" should have a label "Your VAT registration number" an answer with "123450000" and change URL ends with "your-vat-registration/change"
+    And line "12" should have a label "Are you registered for Self Assessment?" an answer with "Yes, and I know my Unique Taxpayer Reference (UTR)" and change URL ends with "registered-for-self-assessment/change"
+
+  Scenario: For Individual - About You  - change route to - VAT from I do not know to No
+    Given I am on "Check Your Answers" page
+    When I click on change button for "Are you registered for VAT?"
+    And I select Radio Button "Yes, but I do not know my VAT registration number" at Position "2"
+    And click on Save and Continue button
+    When I click on change button for "Are you registered for VAT?"
+    And I select Radio Button "No" at Position "3"
+    And click on Save and Continue button
+    Then page navigates to "Check Your Answers"
+    And answers page should have h2 header "Background"
+    And answers page should have h2 header "About you"
+    And line "10" should have a label "Are you registered for VAT?" an answer with "No" and change URL ends with "registered-for-vat/change"
+    And line "11" should have a label "Are you registered for Self Assessment?" an answer with "Yes, and I know my Unique Taxpayer Reference (UTR)" and change URL ends with "registered-for-self-assessment/change"
