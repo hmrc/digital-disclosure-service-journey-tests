@@ -259,8 +259,18 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
   }
 
   def verifyBody(expectedText: String): Unit = {
-    val element = driver.findElement(By.xpath("//*[@class='govuk-body']"))
-    val actualText = element.getText
+    var actualText = ""
+    try {
+      val element = driver.findElement(By.xpath("//*[@class='govuk-body']"))
+      actualText = element.getText
+    }
+
+    catch
+    {
+      case e =>
+        val element = driver.findElement(By.xpath("//label[@class=\"govuk-label\"]"))
+        actualText = element.getText
+    }
     Assert.assertTrue("Body Text is not Verified. Expected: " + expectedText + "--- Actual: " + actualText, expectedText == actualText)
   }
   def verifyErrorMessage(expectedError: String): Unit = {

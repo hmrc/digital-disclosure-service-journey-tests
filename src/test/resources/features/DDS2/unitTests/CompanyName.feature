@@ -6,6 +6,7 @@ Feature: A UK tax payer is able to enter the details and continue on What is the
     When the page is loaded successfully and verifies the page title is "What is the name of the company the disclosure will be about? - Digital Disclosure Service - GOV.UK"
     Then verify the question should be "What is the name of the company the disclosure will be about?"
     And input TextBox is displayed
+    And save and Continue Button is displayed
 
   Scenario: What is the name of the company the disclosure will be about?-Validation with no input
     Given I navigate to "company-name" page
