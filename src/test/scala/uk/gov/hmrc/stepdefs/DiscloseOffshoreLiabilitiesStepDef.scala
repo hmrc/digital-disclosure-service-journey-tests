@@ -20,6 +20,10 @@ class DiscloseOffshoreLiabilitiesStepDef extends BasePage with DiscloseOffshoreL
     verifyPageHeading(string)
   }
 
+  Then("""sub heading with text {string} is displayed""") { (string: String) =>
+    verifySubPageHeading(string)
+  }
+
   Then("""body Text {string} is displayed""") { (string: String) =>
     verifyBodyText(string)
   }

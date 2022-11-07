@@ -190,6 +190,12 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
     Assert.assertTrue("Heading is not Verified. Expected:  "+ expectedQHeader +  "--- Actual:  " + actualQHeader, expectedQHeader == actualQHeader)
   }
 
+  def verifySubPageHeading(expectedQHeader: String): Unit = {
+    val element = driver.findElement(By.xpath("//*[@class='govuk-fieldset__legend  govuk-fieldset__legend--m']"))
+    val actualQHeader = element.getText
+    Assert.assertTrue("Heading is not Verified. Expected:  "+ expectedQHeader +  "--- Actual:  " + actualQHeader, expectedQHeader == actualQHeader)
+  }
+
   def verifyH2Header(expectedHeader: String): Unit = {
     var actualHeader = ""
     val elements = driver.findElements(By.xpath("//h2"))
