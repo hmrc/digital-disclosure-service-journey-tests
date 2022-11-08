@@ -26,8 +26,10 @@ Feature: UI Validation and Navigation  for Screen "Onshore liabilities"
 
     @id_003
   Scenario: Disclose onshore liabilities- Navigation with option "Yes"
-      Given I am navigated to Are you the individual this disclosure relates to Page
-      When I select Radio Button "Yes, I am the individual" at Position "1"
+      Given I navigate to "what-is-this-disclosure-about" page
+      When I select Radio Button "An individual" at Position "1"
+      And click on Save and Continue button
+      And I select Radio Button "Yes, I am the individual" at Position "1"
       And click on Save and Continue button
       When I select Radio Button "Yes" at Position "1"
       And click on Save and Continue button
@@ -37,8 +39,10 @@ Feature: UI Validation and Navigation  for Screen "Onshore liabilities"
 
   @id_004
   Scenario: Disclose onshore liabilities -Navigation with option "No"
-    Given I am navigated to Are you the individual this disclosure relates to Page
-    When I select Radio Button "Yes, I am the individual" at Position "1"
+    Given I navigate to "what-is-this-disclosure-about" page
+    When I select Radio Button "An individual" at Position "1"
+    And click on Save and Continue button
+    And I select Radio Button "Yes, I am the individual" at Position "1"
     And click on Save and Continue button
     And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
@@ -56,16 +60,16 @@ Feature: UI Validation and Navigation  for Screen "Onshore liabilities"
 
   @id_006
   Scenario: Disclose onshore liabilities -Validation with no selection of Radio Button
-    Given I am on Do you want to disclose offshore liabilities Page
+    Given I am on Do you also want to disclose onshore liabilities page
     When click on Save and Continue button
     Then error summary popup should be displayed with text "There is a problem"
-    And error message should be displayed with text "Select yes if the disclosure is about onshore liabilitiess"
+    And error message should be displayed with text "Select yes if the disclosure is about onshore liabilities"
 
   @id_007
   Scenario: Disclose onshore liabilities -Navigation of on Error message on top popup
-    Given I am on Do you want to disclose offshore liabilities Page
+    Given I am on Do you also want to disclose onshore liabilities page
     And click on Save and Continue button
-    When I click on problem message "Select yes if the disclosure is about onshore liabilitiess"
+    When I click on problem message "Select yes if the disclosure is about onshore liabilities"
     Then I should navigate to Radio button "Yes" at Position "1"
 
 
