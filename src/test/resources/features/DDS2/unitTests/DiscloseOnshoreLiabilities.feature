@@ -59,13 +59,13 @@ Feature: UI Validation and Navigation  for Screen "Onshore liabilities"
     Given I am on Do you want to disclose offshore liabilities Page
     When click on Save and Continue button
     Then error summary popup should be displayed with text "There is a problem"
-    And error message should be displayed with text "Select if you want to disclose offshore liabilities or not"
+    And error message should be displayed with text "Select yes if the disclosure is about onshore liabilitiess"
 
   @id_007
   Scenario: Disclose onshore liabilities -Navigation of on Error message on top popup
     Given I am on Do you want to disclose offshore liabilities Page
     And click on Save and Continue button
-    When I click on problem message "Select if you want to disclose offshore liabilities or not"
+    When I click on problem message "Select yes if the disclosure is about onshore liabilitiess"
     Then I should navigate to Radio button "Yes" at Position "1"
 
 
