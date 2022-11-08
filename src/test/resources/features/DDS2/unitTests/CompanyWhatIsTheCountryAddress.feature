@@ -49,6 +49,58 @@ Feature: A UK tax payer is able to enter the details and continue on "What is th
     And address at line "6" is "3140"
     And address at line "7" is "Australia"
 
+  Scenario: What is the country of the company’s address? - Yes I am an officer
+    Given I navigate to "what-is-this-disclosure-about" page
+    When I select Radio Button "A company" at Position "3"
+    And click on Save and Continue button
+    And I select Radio Button "Yes, I am an officer of the company" at Position "1"
+    And click on Save and Continue button
+    And I select Radio Button "No" at Position "2"
+    And click on Save and Continue button
+    And click on Save and Continue button
+    And I enter "James Parker" in the TextBox field
+    And click on Save and Continue button
+    And I enter "AB 123456" in the TextBox field
+    And click on Save and Continue button
+    And enter country name "United Kingdom",select country "United Kingdom"
+    And click on continue button
+    Then page navigates to "What is the postcode and property name or number of the company’s address?"
+    And enter postcode "ZZ9Z 9TT"
+    And click on continue button
+    Then page navigates to "Choose the company’s address"
+    When I select Radio Button "2 Testing Lane, Royal Madeuptown, ZZ9Z 9TT" at Position "2"
+    And click on continue button
+    Then page navigates to "Is this the correct address?"
+    And address at line "1" is "2 Testing Lane"
+    And address at line "2" is "Royal Madeuptown"
+    And address at line "3" is "ZZ9Z 9TT"
+    And address at line "4" is "United Kingdom"
 
-
-
+  Scenario: What is the country of the company’s address? - behalf of an officer
+    Given I navigate to "what-is-this-disclosure-about" page
+    When I select Radio Button "A company" at Position "3"
+    And click on Save and Continue button
+    And I select Radio Button "No, I will be making a disclosure on behalf of an officer" at Position "2"
+    And click on Save and Continue button
+    And I select Radio Button "No" at Position "2"
+    And click on Save and Continue button
+    And I select Radio Button "No" at Position "2"
+    And click on Save and Continue button
+    And click on Save and Continue button
+    And I enter "James Parker" in the TextBox field
+    And click on Save and Continue button
+    And I enter "AB 123456" in the TextBox field
+    And click on Save and Continue button
+    And enter country name "United Kingdom",select country "United Kingdom"
+    And click on continue button
+    Then page navigates to "What is the postcode and property name or number of the company’s address?"
+    And enter postcode "ZZ9Z 9TT"
+    And click on continue button
+    Then page navigates to "Choose the company’s address"
+    When I select Radio Button "2 Testing Lane, Royal Madeuptown, ZZ9Z 9TT" at Position "2"
+    And click on continue button
+    Then page navigates to "Is this the correct address?"
+    And address at line "1" is "2 Testing Lane"
+    And address at line "2" is "Royal Madeuptown"
+    And address at line "3" is "ZZ9Z 9TT"
+    And address at line "4" is "United Kingdom"
