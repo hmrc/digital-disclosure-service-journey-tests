@@ -17,7 +17,7 @@ Feature: A UK tax payer is able to enter the details and continue on What is the
     And error message should be displayed with text "Enter the limited liability partnership’s name"
 
   @id_003
-  Scenario Outline: Validate error messages on What is the name of the company the disclosure will be about? page
+  Scenario Outline: Validate error messages on What is the limited liability partnership's name? page
     Given I navigate to "llp-name" page
     When I enter <llpName> in the TextBox field
     And click on Save and Continue button
