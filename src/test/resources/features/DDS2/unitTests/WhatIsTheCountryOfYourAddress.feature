@@ -73,7 +73,7 @@ Feature: A UK tax payer is able to enter the details and continue on "What is th
     And enter Property name as "The Farmhouse"
     And click on continue button
     Then page navigates to "Showing all results for ZZ9Z 9TT"
-    And shows message "We could not find a match with ’The Farmhouse’."
+    And shows message "We could not find a match with 'The Farmhouse'."
     And hyperlink of "Try a different name or number" is displayed
     And hyperlink of "Enter your address manually" is displayed
     And list of matching option is displayed
@@ -106,7 +106,7 @@ Feature: A UK tax payer is able to enter the details and continue on "What is th
     And enter Property number as "15"
     And click on continue button
     Then page navigates to "Showing all results for ZZ9Z 9TT"
-    And shows message "We could not find a match with ’15’."
+    And shows message "We could not find a match with '15'."
     And hyperlink of "Try a different name or number" is displayed
     And hyperlink of "Enter your address manually" is displayed
     And list of matching option is displayed
@@ -251,6 +251,35 @@ Feature: A UK tax payer is able to enter the details and continue on "What is th
     And click on confirm button
     And page navigates to "Check Your Answers"
 
-
-
-
+  @id014
+  Scenario: For On Behalf of LLP - Hint Text should be available on What is the postcode and property name or number of your address? Page
+    Given I navigate to "what-is-this-disclosure-about" page
+    When I select Radio Button "A limited liability partnership" at Position "4"
+    And click on Save and Continue button
+    And I select Radio Button "No, I will be making a disclosure on behalf of a designated member" at Position "2"
+    And click on Save and Continue button
+    And I select Radio Button "No" at Position "2"
+    And click on Save and Continue button
+    And I select Radio Button "No" at Position "2"
+    And click on Save and Continue button
+    And click on Save and Continue button
+    And I enter "What is the limited liability partnership’s name?" in the TextBox field
+    And click on Save and Continue button
+    And enter country name "United Kingdom",select country "United Kingdom"
+    And click on continue button
+    And enter postcode "ZZ9Z 9TT"
+    And click on continue button
+    And I select Radio Button "3 Testing Lane, Royal Madeuptown, ZZ9Z 9TT" at Position "3"
+    And click on continue button
+    And click on confirm button
+    And I enter "Your Full Name" in the TextBox field
+    And click on Save and Continue button
+    And I enter "07777777777" in the TextBox field
+    And click on Save and Continue button
+    And I select Yes radio button
+    And click on Save and Continue button
+    And I enter "youremailaddress@example.com" email TextBox field
+    And click on Save and Continue button
+    And enter country name "United Kingdom",select country "United Kingdom"
+    And click on continue button
+    Then hint with text "If you are representing an organisation on behalf of the limited liability partnership, you can use your organisation’s address." is displayed
