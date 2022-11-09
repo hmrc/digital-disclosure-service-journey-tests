@@ -50,3 +50,15 @@ Feature: A UK tax payer is able to enter the details and continue on "What is th
     And address at line "5" is "Melbourne"
     And address at line "6" is "3140"
     And address at line "7" is "Australia"
+
+  Scenario: What is the country of the limited liability partnership’s address? - Is this the correct address? Navigation
+    Given I navigate to "llp-address/lookup" page
+    When the page is loaded successfully and verifies the page title is "What is the country of the limited liability partnership’s address? - Digital Disclosure Service - GOV.UK"
+    When enter country name "United Kingdom",select country "United Kingdom"
+    And click on continue button
+    And enter postcode "ZZ9Z 9TT"
+    And click on continue button
+    And I select Radio Button "2 Testing Lane, Royal Madeuptown, ZZ9Z 9TT" at Position "2"
+    And click on continue button
+    And click on confirm button
+    Then page navigates to "What is your full name?"
