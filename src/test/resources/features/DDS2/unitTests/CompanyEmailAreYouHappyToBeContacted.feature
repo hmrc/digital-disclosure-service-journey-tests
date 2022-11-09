@@ -1,13 +1,11 @@
 @page
 Feature: A UK company representative is able to enter details and continue on Do you have an email address that you are happy to be contacted on by HMRC?"
 
-  Scenario: What is your email address? - behalf of a officer
+  Scenario: Do you have an email address that you are happy to be contacted on by HMRC? - Yes, I am the officer, Error on no input and Yes to be contacted via email
     Given I navigate to "what-is-this-disclosure-about" page
     When I select Radio Button "A company" at Position "3"
     And click on Save and Continue button
-    And I select Radio Button "No, I will be making a disclosure on behalf of an officer" at Position "2"
-    And click on Save and Continue button
-    And I select Radio Button "No" at Position "2"
+    And I select Radio Button "Yes, I am an officer of the company" at Position "1"
     And click on Save and Continue button
     And I select Radio Button "No" at Position "2"
     And click on Save and Continue button
@@ -38,7 +36,7 @@ Feature: A UK company representative is able to enter details and continue on Do
     And click on Save and Continue button
     Then page navigates to "What is your email address?"
 
-  Scenario: What is the country of your address?' - behalf of a officer
+  Scenario: Do you have an email address that you are happy to be contacted on by HMRC? - No, On behalf and No to email
     Given I navigate to "what-is-this-disclosure-about" page
     When I select Radio Button "A company" at Position "3"
     And click on Save and Continue button
