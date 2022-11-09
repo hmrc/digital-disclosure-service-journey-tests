@@ -28,3 +28,12 @@ Feature: A UK tax payer is able to enter the details and continue on What is the
       | llpName | Error |
       |    "Limited liability partnership name with more than fifty characters with spaces" |  "Limited liability partnership name must be between 1 and 50 characters"    |
       |    "Limited liability partnership name with special characters and/or than fifty-characters with spaces" |  "Limited liability partnership name must be between 1 and 50 characters"    |
+
+  @id_004
+  Scenario: What is the limited liability partnership's name? - Navigation to the next page
+    Given I navigate to "llp-name" page
+    When the page is loaded successfully and verifies the page title is "What is the limited liability partnership’s name? - Digital Disclosure Service - GOV.UK"
+    Then verify the question should be "What is the limited liability partnership’s name?"
+    When I enter "this name is more than thirty characters" in the TextBox field
+    And click on Save and Continue button
+    Then heading with text "What is the country of the limited liability partnership’s address?" is displayed
