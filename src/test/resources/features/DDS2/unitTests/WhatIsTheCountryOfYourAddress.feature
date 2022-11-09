@@ -188,7 +188,7 @@ Feature: A UK tax payer is able to enter the details and continue on "What is th
     When enter postcode "AA1 1AA"
     And click on continue button
     Then page navigates to "We cannot find any addresses for AA1 1AA"
-     When I click on the hyperlink with text "Enter the address manually"
+    When I click on the hyperlink with text "Enter the address manually"
     Then page navigates to "What is your address?"
     And I enter "Aylesbury" in the "Town or city" field
     And click on Save and Continue button
