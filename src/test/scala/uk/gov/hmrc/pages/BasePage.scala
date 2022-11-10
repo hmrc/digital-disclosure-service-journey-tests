@@ -312,7 +312,7 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
         val element = driver.findElement(By.xpath("//label[@class=\"govuk-label\"]"))
         actualText = element.getText
     }
-    Assert.assertTrue("Hint text is not Verified", expectedText == actualText)
+    Assert.assertTrue("Hint text is not Verified" + expectedText + " --- Actual:  " + actualText, expectedText==actualText)
   }
 }
 
