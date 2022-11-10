@@ -65,3 +65,24 @@ Feature: An individual is able to check their answers for About the Company sect
       |Label|ExpectedPage|ChangedValue|
       |Company’s name|What is the name of the company the disclosure will be about?|Changed Company Name|
       |Company registration number| What is the company’s registration number?|87654321|
+
+  Scenario: About the Company - Change Route validation -Address data is cleared
+    Given I am on "Check Your Answers" page
+    When I click on change button for "Company’s address"
+    Then page navigates to "What is the country of the individual’s address?"
+    And country dropdown is empty
+    When click on Save and Continue button
+    Then error message should be displayed with text "Enter country of the address"
+
+  Scenario: About the Company - Change Route validation -Address - Needs to complete new address Journey
+    Given I am on "Check Your Answers" page
+    When I click on change button for "Company’s address"
+    And enter country name "United Kingdom",select country "United Kingdom"
+    And click on continue button
+    And enter postcode "ZZ9Z 9TT"
+    And click on continue button
+    And I select Radio Button "3 Testing Lane, Royal Madeuptown, ZZ9Z 9TT" at Position "3"
+    And click on continue button
+    And click on confirm button
+    Then page navigates to "Check Your Answers"
+    And About The Company section should have a label "Company’s address" at line "3" an answer with "3 Testing Lane,Royal Madeuptown,ZZ9Z 9TT,United Kingdom" and change URL ends with "company-address/lookup/change"
