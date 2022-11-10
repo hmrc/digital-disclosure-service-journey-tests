@@ -129,7 +129,9 @@ Feature: A UK tax payer is able to enter the details and continue on "What is th
     Then page navigates to "Choose the company’s address"
     When I select Radio Button "2 Testing Lane, Royal Madeuptown, ZZ9Z 9TT" at Position "2"
     And click on continue button
-    And click on confirm button
+    Then page navigates to "Is this the correct address?"
+    When click on confirm button
+    Then page navigates to "What is your full name?"
     And I enter "Jhonny Doyle" in the TextBox field
     And click on Save and Continue button
     And I enter "07777 777777" in the TextBox field
