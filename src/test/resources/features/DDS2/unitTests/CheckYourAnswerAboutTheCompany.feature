@@ -83,7 +83,7 @@ Feature: An individual is able to check their answers for About the Company sect
     And page navigates to "What is the name of the organisation you represent?"
     And I enter "Changed Organisation name" in the TextBox field
     And click on Save and Continue button
-    And answers page should have h2 header "Check Your Answers"
+    And page navigates to "Check Your Answers"
     And Background section has following
       |Line|Label|Answer|URL|
       |1|Will you be making a disclosure because you received a letter from HMRC?|Yes|letter-from-hmrc/change|
