@@ -164,3 +164,10 @@ Feature: An individual is able to check their answers for About the Company sect
       |3|Who this disclosure is for?|A company|what-is-this-disclosure-about/change|
       |4|Are you an officer of the company this disclosure relates to?|Yes, I am an officer of the company|are-you-an-officer/change|
 
+  Scenario: About the Company - Change route - No change
+    Given I am on "Check Your Answers" page
+    Then answers page should have h2 header "About the company"
+    And clicking on change button navigates as following:
+      |Label|ExpectedPage|
+      |Company’s name|What is the name of the company the disclosure will be about?|
+      |Company registration number|What is the company’s registration number?|
