@@ -1,7 +1,7 @@
 @page
-Feature: A UK Limited liability partnership representative is able to enter details and continue onto What is your email address? screen
+Feature: A UK Limited liability partnership representative is able to enter details and continue on Do you have an email address that you are happy to be contacted on by HMRC?"
 
-  Scenario: What is your email address? - Yes, I am designated member and Enter the email address and navigate to next page
+  Scenario: Do you have an email address that you are happy to be contacted on by HMRC? - Yes, I am the designated member, Error on no input and Yes to be contacted via email
     Given I navigate to "what-is-this-disclosure-about" page
     When I select Radio Button "A limited liability partnership" at Position "4"
     And click on Save and Continue button
@@ -33,11 +33,8 @@ Feature: A UK Limited liability partnership representative is able to enter deta
     When I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
     Then page navigates to "What is your email address?"
-    When I enter "abc@abc.com" in the TextBox field
-    And click on Save and Continue button
-    Then page navigates to "What is the country of your address?"
 
-  Scenario: What is your email address? - No, on behalf of designated member and Enter the email address and navigate to next page
+  Scenario: Do you have an email address that you are happy to be contacted on by HMRC? - No, On behalf of a designated member and No to email
     Given I navigate to "what-is-this-disclosure-about" page
     When I select Radio Button "A limited liability partnership" at Position "4"
     And click on Save and Continue button
@@ -68,6 +65,3 @@ Feature: A UK Limited liability partnership representative is able to enter deta
     When I select Radio Button "No" at Position "2"
     And click on Save and Continue button
     Then page navigates to "What is the country of your address?"
-
-
-
