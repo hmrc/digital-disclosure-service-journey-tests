@@ -41,3 +41,5 @@ Feature: A UK tax payer is able to enter the details and continue on to What is 
     And click on Save and Continue button
     Then error summary popup should be displayed with text "There is a problem"
     And error message should be displayed with text "Trust name must be between 1 and 50 characters"
+
+
