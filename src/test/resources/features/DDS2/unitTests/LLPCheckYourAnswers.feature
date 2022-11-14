@@ -76,3 +76,14 @@ Feature: An individual is able to check their answers for About the Company sect
     Then answers page should have h2 header "About the limited liability partnership"
     And About The LLP section should have a label "Limited liability partnership name" at line "1" an answer with "LLP name" and change URL ends with "llp-name/change"
     And About The LLP section should have a label "Limited liability partnership’s address" at line "2" an answer with "The Farm,Royal Madeuptown,ZZ9Z 9TT,United Kingdom" and change URL ends with "llp-address/lookup/change"
+
+  Scenario: LLP - About LLP - Change route - LLP Name
+    Given I am on "Check Your Answers" page
+    When I click on change button for "Limited liability partnership name"
+    Then page navigates to "What is the limited liability partnership’s name?"
+    When I enter "New LLP Name" in the TextBox field
+    And click on Save and Continue button
+    Then page navigates to "Check Your Answers"
+    Then answers page should have h2 header "About the limited liability partnership"
+    And About The LLP section should have a label "Limited liability partnership name" at line "1" an answer with "New LLP Name" and change URL ends with "llp-name/change"
+    And About The LLP section should have a label "Limited liability partnership’s address" at line "2" an answer with "The Farm,Royal Madeuptown,ZZ9Z 9TT,United Kingdom" and change URL ends with "llp-address/lookup/change"
