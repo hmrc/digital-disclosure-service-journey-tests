@@ -10,4 +10,4 @@ Feature: UI Validation and Navigation for Screen "The disclosure is only about o
     And I select Radio Button "No" at Position "2"
     And click on Save and Continue button
     And click on Save and Continue button
-    Then I am navigated to the next page with title "What is the name of the person who died? - Digital Disclosure Service - GOV.UK"
+    Then I am navigated to the next page with title "What was the name of the person who died? - Digital Disclosure Service - GOV.UK"
