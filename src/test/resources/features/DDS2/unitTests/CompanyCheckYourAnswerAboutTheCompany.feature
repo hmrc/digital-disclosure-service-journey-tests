@@ -46,7 +46,8 @@ Feature: An individual is able to check their answers for About the Company sect
     And click on continue button
     And click on confirm button
 
-  Scenario: About the company - Change Route validation - With No Change
+  @id001
+  Scenario: On behalf of the Company - About the company - Change Route validation - With No Change
     Given I am on "Check Your Answers" page
     Then answers page should have h2 header "About the company"
     And About The Company section should have a label "Company’s name" at line "1" an answer with "Company name" and change URL ends with "company-name/change"
@@ -58,7 +59,8 @@ Feature: An individual is able to check their answers for About the Company sect
       |Company registration number| What is the company’s registration number?|
       |Company’s address|What is the country of the company’s address?|
 
-  Scenario: About the Company - Change Route validation -By Changing Value
+  @id002
+  Scenario: On behalf of Company - About the Company - Change Route validation -By Changing Value
     Given I am on "Check Your Answers" page
     Then answers page should have h2 header "About the company"
     And clicking on change button to validate changed value as following:
@@ -66,7 +68,8 @@ Feature: An individual is able to check their answers for About the Company sect
       |Company’s name|What is the name of the company the disclosure will be about?|Changed Company Name|
       |Company registration number| What is the company’s registration number?|87654321|
 
-  Scenario: About the Company - Change route to - Are you an officer of the company? from Yes to No
+  @id003
+  Scenario: On behalf of Company - About the Company - Change route to - Are you an officer of the company? from Yes to No
     Given I am on "Check Your Answers" page
     When I click on change button for "Are you an officer of the company this disclosure relates to?"
     And I select Radio Button "Yes, I am an officer of the company" at Position "1"
@@ -90,7 +93,8 @@ Feature: An individual is able to check their answers for About the Company sect
       |5|Are you representing an organisation?|Yes|representing-organisation/change|
       |6|Name of the organisation you represent|Changed Organisation name|representing-organisation-name/change|
 
-  Scenario: About the Company - Change route to - Are you an officer of the company? from Yes to No and No, I will be making a disclosure on behalf of an officer
+  @id004
+  Scenario: On behalf of Company - About the Company - Change route to - Are you an officer of the company? from Yes to No and No, I will be making a disclosure on behalf of an officer
     Given I am on "Check Your Answers" page
     When I click on change button for "Are you an officer of the company this disclosure relates to?"
     And I select Radio Button "Yes, I am an officer of the company" at Position "1"
@@ -110,7 +114,8 @@ Feature: An individual is able to check their answers for About the Company sect
       |4|Are you an officer of the company this disclosure relates to?|No, I will be making a disclosure on behalf of an officer|are-you-an-officer/change|
       |5|Are you representing an organisation?|No|representing-organisation/change|
 
-  Scenario: About the Company - Change route to - Are you an officer of the company? from No to Yes
+  @id005
+  Scenario: On behalf of Company - About the Company - Change route to - Are you an officer of the company? from No to Yes
     Given I am on "Check Your Answers" page
     When I click on change button for "Are you an officer of the company this disclosure relates to?"
     And I select Radio Button "No, I will be making a disclosure on behalf of an officer" at Position "2"
@@ -126,7 +131,8 @@ Feature: An individual is able to check their answers for About the Company sect
       |3|Who this disclosure is for?|A company|what-is-this-disclosure-about/change|
       |4|Are you an officer of the company this disclosure relates to?|Yes, I am an officer of the company|are-you-an-officer/change|
 
-  Scenario: About the Company - Change route to - Do not change: No, I will be making a disclosure on behalf of an officer
+  @id006
+  Scenario: On behalf of Company - About the Company - Change route to - Do not change: No, I will be making a disclosure on behalf of an officer
     Given I am on "Check Your Answers" page
     When I click on change button for "Are you an officer of the company this disclosure relates to?"
     And I select Radio Button "No, I will be making a disclosure on behalf of an officer" at Position "2"
@@ -141,7 +147,8 @@ Feature: An individual is able to check their answers for About the Company sect
       |5|Are you representing an organisation?|Yes|representing-organisation/change|
       |6|Name of the organisation you represent|Organization name|representing-organisation-name/change|
 
-  Scenario: About the Company - Change route to - Do not change: Yes, I am an officer of the company
+  @id007
+  Scenario: On behalf of Company - About the Company - Change route to - Do not change: Yes, I am an officer of the company
     Given I am on "Check Your Answers" page
     When I click on change button for "Are you an officer of the company this disclosure relates to?"
     And I select Radio Button "Yes, I am an officer of the company" at Position "1"
@@ -157,23 +164,3 @@ Feature: An individual is able to check their answers for About the Company sect
       |3|Who this disclosure is for?|A company|what-is-this-disclosure-about/change|
       |4|Are you an officer of the company this disclosure relates to?|Yes, I am an officer of the company|are-you-an-officer/change|
 
-  Scenario: About the Company - Change Route validation - Address data is cleared
-    Given I am on "Check Your Answers" page
-    When I click on change button for "Company’s address"
-    Then page navigates to "What is the country of the company’s address?"
-    And country dropdown is empty
-    When click on Save and Continue button
-    Then error message should be displayed with text "Enter country of the address"
-
-  Scenario: About the Company - Change Route validation -Address - Needs to complete new address Journey
-    Given I am on "Check Your Answers" page
-    When I click on change button for "Company’s address"
-    And enter country name "United Kingdom",select country "United Kingdom"
-    And click on continue button
-    And enter postcode "ZZ9Z 9TT"
-    And click on continue button
-    And I select Radio Button "3 Testing Lane, Royal Madeuptown, ZZ9Z 9TT" at Position "3"
-    And click on continue button
-    And click on confirm button
-    Then page navigates to "Check Your Answers"
-    And About The Company section should have a label "Company’s address" at line "3" an answer with "3 Testing Lane,Royal Madeuptown,ZZ9Z 9TT,United Kingdom" and change URL ends with "company-address/lookup/change"
