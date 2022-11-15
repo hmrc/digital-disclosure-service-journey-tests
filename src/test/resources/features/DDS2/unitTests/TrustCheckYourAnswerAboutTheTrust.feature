@@ -61,7 +61,6 @@ Feature: A trust is able to check their answers for About the Trust section befo
       |Label|ExpectedPage|ChangedValue|
       |Trust Name|What is the trust’s name?|Changed Trust Name|
 
-<<<<<<< HEAD:src/test/resources/features/DDS2/unitTests/TrustCheckYourAnswerAboutTheTrust.feature
   Scenario: About the Trust - Change Route validation - Address data is cleared
     Given I am on "Check Your Answers" page
     When I click on change button for "Trust address"
@@ -82,101 +81,3 @@ Feature: A trust is able to check their answers for About the Trust section befo
     And click on confirm button
     Then page navigates to "Check Your Answers"
     And About The Trust section should have a label "Trust address" at line "2" an answer with "3 Testing Lane,Royal Madeuptown,ZZ9Z 9TT,United Kingdom" and change URL ends with "trust-address/lookup/change"
-=======
-  @id003
-  Scenario: On behalf of Company - About the Company - Change route to - Are you an officer of the company? from Yes to No
-    Given I am on "Check Your Answers" page
-    When I click on change button for "Are you an officer of the company this disclosure relates to?"
-    And I select Radio Button "Yes, I am an officer of the company" at Position "1"
-    And click on Save and Continue button
-    When I click on change button for "Are you an officer of the company this disclosure relates to?"
-    And I select Radio Button "No, I will be making a disclosure on behalf of an officer" at Position "2"
-    And click on Save and Continue button
-    Then page navigates to "Are you representing an organisation?"
-    And I select Radio Button "Yes" at Position "1"
-    And click on Save and Continue button
-    And page navigates to "What is the name of the organisation you represent?"
-    And I enter "Changed Organisation name" in the TextBox field
-    And click on Save and Continue button
-    And page navigates to "Check Your Answers"
-    And Background section has following
-      |Line|Label|Answer|URL|
-      |1|Will you be making a disclosure because you received a letter from HMRC?|Yes|letter-from-hmrc/change|
-      |2|Letter reference number|TESTREF1|hmrc-letter-reference/change|
-      |3|Who this disclosure is for?|A company|what-is-this-disclosure-about/change|
-      |4|Are you an officer of the company this disclosure relates to?|No, I will be making a disclosure on behalf of an officer|are-you-an-officer/change|
-      |5|Are you representing an organisation?|Yes|representing-organisation/change|
-      |6|Name of the organisation you represent|Changed Organisation name|representing-organisation-name/change|
-
-  @id004
-  Scenario: On behalf of Company - About the Company - Change route to - Are you an officer of the company? from Yes to No and No, I will be making a disclosure on behalf of an officer
-    Given I am on "Check Your Answers" page
-    When I click on change button for "Are you an officer of the company this disclosure relates to?"
-    And I select Radio Button "Yes, I am an officer of the company" at Position "1"
-    And click on Save and Continue button
-    When I click on change button for "Are you an officer of the company this disclosure relates to?"
-    And I select Radio Button "No, I will be making a disclosure on behalf of an officer" at Position "2"
-    And click on Save and Continue button
-    When page navigates to "Are you representing an organisation?"
-    And I select Radio Button "No" at Position "2"
-    And click on Save and Continue button
-    Then page navigates to "Check Your Answers"
-    And Background section has following
-      |Line|Label|Answer|URL|
-      |1|Will you be making a disclosure because you received a letter from HMRC?|Yes|letter-from-hmrc/change|
-      |2|Letter reference number|TESTREF1|hmrc-letter-reference/change|
-      |3|Who this disclosure is for?|A company|what-is-this-disclosure-about/change|
-      |4|Are you an officer of the company this disclosure relates to?|No, I will be making a disclosure on behalf of an officer|are-you-an-officer/change|
-      |5|Are you representing an organisation?|No|representing-organisation/change|
-
-  @id005
-  Scenario: On behalf of Company - About the Company - Change route to - Are you an officer of the company? from No to Yes
-    Given I am on "Check Your Answers" page
-    When I click on change button for "Are you an officer of the company this disclosure relates to?"
-    And I select Radio Button "No, I will be making a disclosure on behalf of an officer" at Position "2"
-    And click on Save and Continue button
-    When I click on change button for "Are you an officer of the company this disclosure relates to?"
-    And I select Radio Button "Yes, I am an officer of the company" at Position "1"
-    And click on Save and Continue button
-    Then page navigates to "Check Your Answers"
-    And Background section has following
-      |Line|Label|Answer|URL|
-      |1|Will you be making a disclosure because you received a letter from HMRC?|Yes|letter-from-hmrc/change|
-      |2|Letter reference number|TESTREF1|hmrc-letter-reference/change|
-      |3|Who this disclosure is for?|A company|what-is-this-disclosure-about/change|
-      |4|Are you an officer of the company this disclosure relates to?|Yes, I am an officer of the company|are-you-an-officer/change|
-
-  @id006
-  Scenario: On behalf of Company - About the Company - Change route to - Do not change: No, I will be making a disclosure on behalf of an officer
-    Given I am on "Check Your Answers" page
-    When I click on change button for "Are you an officer of the company this disclosure relates to?"
-    And I select Radio Button "No, I will be making a disclosure on behalf of an officer" at Position "2"
-    And click on Save and Continue button
-    Then page navigates to "Check Your Answers"
-    And Background section has following
-      |Line|Label|Answer|URL|
-      |1|Will you be making a disclosure because you received a letter from HMRC?|Yes|letter-from-hmrc/change|
-      |2|Letter reference number|TESTREF1|hmrc-letter-reference/change|
-      |3|Who this disclosure is for?|A company|what-is-this-disclosure-about/change|
-      |4|Are you an officer of the company this disclosure relates to?|No, I will be making a disclosure on behalf of an officer|are-you-an-officer/change|
-      |5|Are you representing an organisation?|Yes|representing-organisation/change|
-      |6|Name of the organisation you represent|Organization name|representing-organisation-name/change|
-
-  @id007
-  Scenario: On behalf of Company - About the Company - Change route to - Do not change: Yes, I am an officer of the company
-    Given I am on "Check Your Answers" page
-    When I click on change button for "Are you an officer of the company this disclosure relates to?"
-    And I select Radio Button "Yes, I am an officer of the company" at Position "1"
-    And click on Save and Continue button
-    When I click on change button for "Are you an officer of the company this disclosure relates to?"
-    And I select Radio Button "Yes, I am an officer of the company" at Position "1"
-    And click on Save and Continue button
-    Then page navigates to "Check Your Answers"
-    And Background section has following
-      |Line|Label|Answer|URL|
-      |1|Will you be making a disclosure because you received a letter from HMRC?|Yes|letter-from-hmrc/change|
-      |2|Letter reference number|TESTREF1|hmrc-letter-reference/change|
-      |3|Who this disclosure is for?|A company|what-is-this-disclosure-about/change|
-      |4|Are you an officer of the company this disclosure relates to?|Yes, I am an officer of the company|are-you-an-officer/change|
-
->>>>>>> 4eac94b (Fix CheckYourAnswerAboutTheCompany.feature):src/test/resources/features/DDS2/unitTests/CheckYourAnswerAboutTheCompany.feature
