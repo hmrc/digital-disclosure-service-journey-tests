@@ -21,7 +21,7 @@ Feature: As an Estate tax payer is able to enter the details and continue on Did
     Given I navigate to "estates-have-national-insurance-number" page
     When I select Radio Button "Yes, and I know their National Insurance number" at Position "1"
     And click on Save and Continue button
-    Then page navigates to "What is the person’s National Insurance number?"
+    Then page navigates to "What was the person’s National Insurance number?"
 
   Scenario: Did the person have a National Insurance number, as far as you’re aware?  -Validation with no selection of Radio Button
     Given I navigate to "estates-have-national-insurance-number" page
@@ -33,10 +33,10 @@ Feature: As an Estate tax payer is able to enter the details and continue on Did
     Given I navigate to "estates-have-national-insurance-number" page
     When I select Radio Button "Yes, but I do not know their National Insurance number" at Position "2"
     And click on Save and Continue button
-    Then page navigates to "Was the person registered for VAT, as far you’re aware?"
+    Then page navigates to "Was the person registered for VAT, as far as you’re aware?"
 
   Scenario: Did the person have a National Insurance number, as far as you’re aware? - Navigation with option 3
     Given I navigate to "estates-have-national-insurance-number" page
     When I select Radio Button "No" at Position "3"
     And click on Save and Continue button
-    Then page navigates to "Was the person registered for VAT, as far you’re aware?"
+    Then page navigates to "Was the person registered for VAT, as far as you’re aware?"

@@ -13,7 +13,7 @@ Feature: An Estate tax payer is able to enter the details and continue on "What 
     Given I navigate to "estates-individual-national-insurance-number" page
     When I enter valid NI Number TextBox field
     And click on Save and Continue button
-    Then page navigates to "Was the person registered for VAT, as far you're aware?"
+    Then page navigates to "Was the person registered for VAT, as far as you’re aware?"
 
   Scenario: What was the person’s National Insurance number? - Blank Input
     Given I navigate to "estates-individual-national-insurance-number" page
@@ -37,7 +37,7 @@ Feature: An Estate tax payer is able to enter the details and continue on "What 
     Then I should navigate to NI number TextBox field
 
   Scenario: What was the person’s National Insurance number? - Navigation with Back button
-    Given I am on Does the individual have a National Insurance number Page
+    Given I navigate to "estates-have-national-insurance-number" page
     When I select Radio Button "Yes, and I know their National Insurance number" at Position "1"
     And click on Save and Continue button
     And I click on Back button
@@ -64,7 +64,7 @@ Feature: An Estate tax payer is able to enter the details and continue on "What 
     Given I navigate to "estates-individual-national-insurance-number" page
     When I enter "AZ 12 34 56 D" NI Number TextBox field
     And click on Save and Continue button
-    Then page navigates to "Was the person registered for VAT, as far you're aware?"
+    Then page navigates to "Was the person registered for VAT, as far as you’re aware?"
 
   Scenario: What was the person’s National Insurance number? - Enter Invalid input with Invalid Space format
     Given I navigate to "estates-individual-national-insurance-number" page
