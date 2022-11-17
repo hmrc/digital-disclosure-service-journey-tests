@@ -31,11 +31,10 @@ Feature: As Estate UK tax payer is able to enter the details and continue on Wha
     Then error summary popup should be displayed with text "There is a problem"
     And error message should be displayed with text "The person’s main occupation must be between 4 and 30 characters"
 
-    @WIP
   Scenario: What was the person’s main occupation? - Enter valid data and navigate to next page
     Given I navigate to "estates-individual-main-occupation" page
     When I enter "Dentist" in the TextBox field
     And click on Save and Continue button
-    Then page navigates to "Did the person have a National Insurance number, as far as you're aware?"
+    Then page navigates to "Did the person have a National Insurance number, as far as you’re aware?"
     When I click on Back button
     Then page navigates to "What was the person’s main occupation?"
