@@ -27,7 +27,7 @@ Feature: An Estate tax payer is able to enter the details and continue on "What 
     When I enter invalid NI Number TextBox field
     And click on Save and Continue button
     Then error summary popup should be displayed with text "There is a problem"
-    And error message should be displayed with text "Enter the person’s National Insurance number"
+    And error message should be displayed with text "Enter the person’s National Insurance number in the right format"
 
   Scenario: What was the person’s National Insurance number? - Navigation of on Error message on top popup
     Given I navigate to "estates-individual-national-insurance-number" page

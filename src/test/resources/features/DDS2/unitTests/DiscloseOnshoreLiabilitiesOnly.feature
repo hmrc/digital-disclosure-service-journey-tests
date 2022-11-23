@@ -31,8 +31,13 @@ Feature: UI Validation and Navigation  for Screen "The disclosure is only about 
 
   @id_004
   Scenario: Disclose onshore liabilities Only - Navigation with Save and Continue button
-    Given I am on Do you want to disclose offshore liabilities Page
+    Given I am navigated to What is the disclosure Page
+    And I select Radio Button "An individual" at Position "1"
+    And click on Save and Continue button
+    And I select Radio Button "No, I am disclosing on behalf of the individual" at Position "2"
+    And click on Save and Continue button
+    Then page navigates to "Offshore liabilities"
     When I select Radio Button "No" at Position "2"
     And click on Save and Continue button
     And click on Save and Continue button
-    Then user is navigated to the page with title "What is your full name?"
+    Then user is navigated to the page with title "What is the individual’s full name?"

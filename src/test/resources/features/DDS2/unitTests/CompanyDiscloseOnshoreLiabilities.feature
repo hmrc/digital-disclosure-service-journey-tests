@@ -23,12 +23,6 @@ Feature: A UK tax payer is able to enter the details and continue on Onshore lia
     When click on Hyperlink "if you are classed as a resident (opens in a new tab)"
     Then page navigates to "https://www.gov.uk/tax-foreign-income/residence" in new tab
 
-  Scenario: Disclose onshore liabilities - Navigation of on Error message on top popup
-    Given I am on Do you want to disclose offshore liabilities Page
-    And click on Save and Continue button
-    When I click on problem message "Select if you want to disclose offshore liabilities or not"
-    Then I should navigate to Radio button "Yes" at Position "1"
-
   Scenario: Disclose onshore liabilities - Navigation with Save and Continue button - Yes option
     Given I navigate to "what-is-this-disclosure-about" page
     When I select Radio Button "A company" at Position "3"

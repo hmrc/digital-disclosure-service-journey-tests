@@ -60,7 +60,7 @@ trait HomePage extends BasePage {
 
   def verifyParagraphTwo(expectedPara: String): Unit = {
     val actualPara = paragraphTwo.getText
-    Assert.assertTrue("Paragraph Two verified", expectedPara == actualPara)
+    Assert.assertTrue("Paragraph Two verified. ---Expected: "+expectedPara +" ---Actual: "+ actualPara, expectedPara == actualPara)
   }
 
   def verifyParagraphThree(expectedPara: String): Unit = {
