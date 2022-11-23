@@ -15,7 +15,10 @@ class AreYouTheIndividualStepDef extends BasePage with AreYouTheIndividualPage {
 
   Given("""I am navigated to Are you the individual this disclosure relates to Page""") { () =>
     // Write code here that turns the phrase above into concrete actions
-    navigateToPage()
+    navigateToSpecificPage("notification/what-is-this-disclosure-about")
+    clickOnRadioButton("An individual","1")
+    saveAndContinue()
+
   }
 
   Then("""verify that Yes and No radio options are selected by default""") { () =>
