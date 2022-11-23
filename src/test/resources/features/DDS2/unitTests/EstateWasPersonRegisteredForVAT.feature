@@ -31,7 +31,7 @@ Feature: A UK estate individual is able to enter the details and continue on Was
     Then I am navigated to the next page with title "Was the person registered for Self Assessment, as far as you’re aware? - Digital Disclosure Service - GOV.UK"
     And verify the question should be "Was the person registered for Self Assessment, as far as you’re aware?"
 
-  Scenario: WWas the person registered for VAT, as far you're aware?  - No
+  Scenario: Was the person registered for VAT, as far you're aware?  - No
     Given I navigate to "estates-individual-registered-for-vat" page
     When I select Radio Button "No" at Position "3"
     And click on Save and Continue button
