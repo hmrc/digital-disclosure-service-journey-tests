@@ -16,7 +16,6 @@ Feature: As an Estate tax payer is able to enter the details and continue on Did
     When I click on problem message "Select yes if the person had a National Insurance number"
     Then I should navigate to Radio button "Yes, and I know their National Insurance number" at Position "1"
 
-    @WIP
   Scenario: Did the person have a National Insurance number, as far as you’re aware? - Navigation with option 1
     Given I navigate to "estates-have-national-insurance-number" page
     When I select Radio Button "Yes, and I know their National Insurance number" at Position "1"
