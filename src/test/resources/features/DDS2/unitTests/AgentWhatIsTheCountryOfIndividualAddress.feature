@@ -3,7 +3,13 @@ Feature: A UK tax payer is able to enter the details and continue on "What is th
 
   @id001
   Scenario: For On Behalf of Individual - Hint Text should be available on Agent Postcode address Page
-    Given I am navigated to Are you the individual this disclosure relates to Page
+    Given I am navigated to Received A Letter Page
+    When I select Radio Button "Yes" at Position "1"
+    And click on Save and Continue button
+    And I enter "TESTREF1" in the TextBox field
+    And click on Save and Continue button
+    And I select Radio Button "An individual" at Position "1"
+    And click on Save and Continue button
     When I select Radio Button "No, I am disclosing on behalf of the individual" at Position "2"
     And click on Save and Continue button
     And I select Radio Button "No" at Position "2"
@@ -60,7 +66,13 @@ Feature: A UK tax payer is able to enter the details and continue on "What is th
 
   @id004
   Scenario: For On Behalf of Individual -Navigation to Check you answer page
-    Given I am navigated to Are you the individual this disclosure relates to Page
+    Given I am navigated to Received A Letter Page
+    When I select Radio Button "Yes" at Position "1"
+    And click on Save and Continue button
+    And I enter "TESTREF1" in the TextBox field
+    And click on Save and Continue button
+    And I select Radio Button "An individual" at Position "1"
+    And click on Save and Continue button
     When I select Radio Button "No, I am disclosing on behalf of the individual" at Position "2"
     And click on Save and Continue button
     And I select Radio Button "No" at Position "2"
