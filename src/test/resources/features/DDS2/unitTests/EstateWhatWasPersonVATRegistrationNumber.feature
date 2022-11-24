@@ -1,7 +1,7 @@
 @page
 Feature: A UK estate tax payer is able to enter the details and continue on to "What was the person's VAT registration number?" screen
 
-  Scenario: What was the person's Unique Taxpayer Reference? - UI validation
+  Scenario: What was the person's VAT registration number? - UI validation
     Given I navigate to "estates-individual-vat-registration" page
     Then the page title should be "What was the person’s VAT registration number? - Digital Disclosure Service - GOV.UK"
     Then verify the question should be "What was the person’s VAT registration number?"
@@ -12,14 +12,14 @@ Feature: A UK estate tax payer is able to enter the details and continue on to "
     And back Button Link is displayed
 
 
-  Scenario: What was the person's Unique Taxpayer Reference? - Invalid input - blank field
+  Scenario: What was the person's VAT registration number? - Invalid input - blank field
     Given I navigate to "estates-individual-vat-registration" page
     And click on Save and Continue button
     Then error summary popup should be displayed with text "There is a problem"
     And error message should be displayed with text "Enter the person’s VAT registration number"
 
 
-  Scenario Outline: What was the person's Unique Taxpayer Reference?- Invalid input length, char type w/wo spaces
+  Scenario Outline: What was the person's VAT registration number?- Invalid input length, char type w/wo spaces
     Given I navigate to "estates-individual-vat-registration" page
     When I enter <InvalidValue> in the TextBox field
     And click on Save and Continue button
@@ -36,7 +36,7 @@ Feature: A UK estate tax payer is able to enter the details and continue on to "
       |    "@£$%@4"       |
       |   "lasjdahs"      |
 
-  Scenario Outline: What was the person's Unique Taxpayer Reference? - valid Input, GB followed by 9 digits (Ignore spaces), 9 digits without GB at the beginning
+  Scenario Outline: What was the person's VAT registration number - valid Input, GB followed by 9 digits (Ignore spaces), 9 digits without GB at the beginning
     Given I navigate to "estates-individual-vat-registration" page
     When I enter <value> in the TextBox field
     And click on Save and Continue button
