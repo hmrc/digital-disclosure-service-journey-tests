@@ -61,4 +61,13 @@ Feature: A UK tax payer is able to enter the details and continue on "Offshore l
     Given I am on Do you want to disclose offshore liabilities Page
     And click on Save and Continue button
     When I click on problem message "Select if you want to disclose offshore liabilities or not"
+<<<<<<< HEAD
     Then I should navigate to Radio button "I want to disclose offshore liabilities" at Position "1"
+=======
+    Then I should navigate to Radio button "Yes" at Position "1"
+
+  Scenario: bullet Hyperlink Navigation
+    Given I am on Do you want to disclose offshore liabilities Page
+    When I click on the hyperlink with text "the Finance (Number 2) Act 2017"
+    Then page navigates to "https://www.legislation.gov.uk/ukpga/2017/32/schedule/18/enacted" in new tab
+>>>>>>> 5a7cb1b (siging the commtis)
