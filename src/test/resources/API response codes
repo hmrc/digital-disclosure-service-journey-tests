@@ -1,0 +1,8 @@
+Status code	Usage
+200 OK	The request completed successfully
+400 Bad Request 	The request was malformed. The response body will include an error providing further information.
+404 Not Found	No record of the applicant was found in the data sources that the API checked
+409 Conflict	Multiple results for an identity were detected
+422 Un-processable entity	Format of the input parameters are incorrect
+500 Internal Server Error 	A generic error message, given when an unexpected condition was encountered and no more specific message is suitable.
+429 Too Many Requests 	The API or one of it’s dependencies has exeeded it’s capacity to handle requests.
