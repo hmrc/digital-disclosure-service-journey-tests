@@ -10,11 +10,30 @@ Feature: As Estate UK tax payer is able to enter the details and continue on Was
     And save and Continue Button is displayed
     And back Button Link is displayed
 
-
-
   Scenario: Was the person registered for Self Assessment, as far as you're aware? - blank input error message
     Given I navigate to "estates-individual-self-assessment" page
     And click on Save and Continue button
-    Then error summary popup should be displayed with text "There is a problem"
-    And error message should be displayed with text "Select yes if the person was registered for Self Assessment"
+    Then page navigates to "Was the person registered for Self Assessment, as far as you’re aware?"
+
+  Scenario: Was the person registered for Self Assessment, as far as you're aware? - Yes, I know their UTR
+    Given I navigate to "estates-individual-self-assessment" page
+    When I select Radio Button "Yes, and I know their Unique Taxpayer Reference (UTR)" at Position "1"
+    And click on Save and Continue button
+    Then page navigates to "What was the person’s Unique Taxpayer Reference?"
+    And the page title should be "What was the person’s Unique Taxpayer Reference? - Digital Disclosure Service - GOV.UK"
+
+  Scenario: Was the person registered for Self Assessment, as far as you're aware? - Yes, but I do not know their UTR
+    Given I navigate to "estates-individual-self-assessment" page
+    When I select Radio Button "Yes, but I do not know their Unique Taxpayer Reference (UTR)" at Position "2"
+    And click on Save and Continue button
+    Then page navigates to "What was the country of the person’s address?"
+    And the page title should be "What was the country of the person’s address? - Digital Disclosure Service - GOV.UK"
+
+  Scenario: Was the person registered for Self Assessment, as far as you're aware? - No
+    Given I navigate to "estates-individual-self-assessment" page
+    When I select Radio Button "No" at Position "3"
+    And click on Save and Continue button
+    Then page navigates to "What was the country of the person’s address?"
+    And the page title should be "What was the country of the person’s address? - Digital Disclosure Service - GOV.UK"
+
 
