@@ -56,5 +56,7 @@ trait DiscloseOffshoreLiabilitiesPage extends BasePage{
         Assert.assertTrue("Body Text is not Verified", expectedQHeader.toString() == actualQHeader.toString())
         element.click()
     }
+
+
   }
 }
