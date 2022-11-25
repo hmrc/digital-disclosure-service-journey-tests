@@ -14,7 +14,7 @@ Feature: A UK tax payer is able to enter the details and continue on "Offshore l
     And bullet Text "anything else that could be classed as business income, assets or investments" is displayed at position "5"
     And text "or where the funds connected to the UK liability have been transferred to a territory outside the UK." is displayed
     And hyperlink with text "Find more information about offshore liabilities (opens in new tab)" is displayed
-    And second heading should be "Will the disclosure be about offshore liabilities?"
+    And sub heading with text "Will the disclosure be about offshore liabilities?" is displayed
     And radio Button with text "Yes" is displayed at position "1"
     And radio Button with text "No" is displayed at position "2"
     And verify that radio options are not selected by default
@@ -30,9 +30,9 @@ Feature: A UK tax payer is able to enter the details and continue on "Offshore l
   @id_003
   Scenario: Navigation Validation with First Radio Button
     Given I am on Do you want to disclose offshore liabilities Page
-    When I select Radio Button "I want to disclose offshore liabilities" at Position "1"
+    When I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
-    Then page navigates to "Do you also want to disclose onshore liabilities?"
+    Then page navigates to "Onshore liabilities"
 
   @id_004
   Scenario: Navigation Validation with Second Radio Button
@@ -54,20 +54,16 @@ Feature: A UK tax payer is able to enter the details and continue on "Offshore l
     Given I am on Do you want to disclose offshore liabilities Page
     When click on Save and Continue button
     Then error summary popup should be displayed with text "There is a problem"
-    And error message should be displayed with text "Select if you want to disclose offshore liabilities or not"
+    And error message should be displayed with text "Select yes if the disclosure is about offshore liabilities"
 
   @id_007
   Scenario: Navigation of on Error message on top popup
     Given I am on Do you want to disclose offshore liabilities Page
     And click on Save and Continue button
-    When I click on problem message "Select if you want to disclose offshore liabilities or not"
-<<<<<<< HEAD
-    Then I should navigate to Radio button "I want to disclose offshore liabilities" at Position "1"
-=======
+    When I click on problem message "Select yes if the disclosure is about offshore liabilities"
     Then I should navigate to Radio button "Yes" at Position "1"
 
   Scenario: bullet Hyperlink Navigation
     Given I am on Do you want to disclose offshore liabilities Page
     When I click on the hyperlink with text "the Finance (Number 2) Act 2017"
     Then page navigates to "https://www.legislation.gov.uk/ukpga/2017/32/schedule/18/enacted" in new tab
->>>>>>> 5a7cb1b (siging the commtis)
