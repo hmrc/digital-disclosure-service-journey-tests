@@ -5,7 +5,7 @@ Feature: A trust is able to check their answers for About the Trust section befo
     Given I am navigated to Received A Letter Page
     When I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
-    And I enter "TESTREF1" in the TextBox field
+    And I enter "CFSS-1234567" in the TextBox field
     And click on Save and Continue button
     And I select Radio Button "A trust" at Position "5"
     And click on Save and Continue button
@@ -44,6 +44,7 @@ Feature: A trust is able to check their answers for About the Trust section befo
     And click on continue button
     And click on confirm button
 
+  @smoke
   Scenario: About the Trust - Change Route validation - With No Change
     Given I am on "Check Your Answers" page
     Then answers page should have h2 header "About the trust"

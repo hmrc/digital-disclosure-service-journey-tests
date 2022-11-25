@@ -1,12 +1,12 @@
-@page
+@page @regression
 Feature: An individual UK tax payer is able to check their answers for background section before submitting page
 
-  @id001
+  @id001 @smoke @regression
   Scenario: For Individual -Background Section Verification -When user selects "Yes" for offshore liabilities
     Given I am navigated to Received A Letter Page
     When I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
-    And I enter "TESTREF1" in the TextBox field
+    And I enter "CFSS-1234567" in the TextBox field
     And click on Save and Continue button
     And I select Radio Button "An individual" at Position "1"
     And click on Save and Continue button
@@ -54,7 +54,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     And Background section has following
       |Line|Label|Answer|URL|
       |1|Will you be making a disclosure because you received a letter from HMRC?|Yes|letter-from-hmrc/change|
-      |2|Letter reference number|TESTREF1|hmrc-letter-reference/change|
+      |2|Letter reference number|CFSS-1234567|hmrc-letter-reference/change|
       |3|Who this disclosure is for?|An individual|what-is-this-disclosure-about/change|
       |4|Are you the individual this disclosure relates to?|Yes, I am the individual|are-you-the-individual/change|
       |5|Will the disclosure be about offshore liabilities?|Yes|disclose-offshore-liabilities/change|
@@ -65,7 +65,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     Given I am navigated to Received A Letter Page
     When I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
-    And I enter "TESTREF1" in the TextBox field
+    And I enter "CFSS-1234567" in the TextBox field
     And click on Save and Continue button
     And I select Radio Button "An individual" at Position "1"
     And click on Save and Continue button
@@ -112,7 +112,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     And Background section has following
       |Line|Label|Answer|URL|
       |1|Will you be making a disclosure because you received a letter from HMRC?|Yes|letter-from-hmrc/change|
-      |2|Letter reference number|TESTREF1|hmrc-letter-reference/change|
+      |2|Letter reference number|CFSS-1234567|hmrc-letter-reference/change|
       |3|Who this disclosure is for?|An individual|what-is-this-disclosure-about/change|
       |4|Are you the individual this disclosure relates to?|Yes, I am the individual|are-you-the-individual/change|
       |5|Will the disclosure be about offshore liabilities?|No|disclose-offshore-liabilities/change|
@@ -123,7 +123,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     Given I am navigated to Received A Letter Page
     When I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
-    And I enter "TESTREF1" in the TextBox field
+    And I enter "CFSS-1234567" in the TextBox field
     And click on Save and Continue button
     And I select Radio Button "An individual" at Position "1"
     And click on Save and Continue button
@@ -189,7 +189,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     Given I am navigated to Received A Letter Page
     When I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
-    And I enter "TESTREF1" in the TextBox field
+    And I enter "CFSS-1234567" in the TextBox field
     And click on Save and Continue button
     And I select Radio Button "An individual" at Position "1"
     And click on Save and Continue button
@@ -296,12 +296,12 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
     Then page navigates to "What is the reference number of the letter you received from HMRC?"
-    When I enter "TESTREF1" in the TextBox field
+    When I enter "CFSS-1234567" in the TextBox field
     And click on Save and Continue button
     And Background section has following
       |Line|Label|Answer|URL|
       |1|Will you be making a disclosure because you received a letter from HMRC?|Yes|letter-from-hmrc/change|
-      |2|Letter reference number|TESTREF1|hmrc-letter-reference/change|
+      |2|Letter reference number|CFSS-1234567|hmrc-letter-reference/change|
 
   @id006
   Scenario: For Individual -About You - Change Route -Will you be making a disclosure because you received a letter from HMRC - No change
@@ -365,7 +365,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     Given I am navigated to Received A Letter Page
     When I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
-    And I enter "TESTREF1" in the TextBox field
+    And I enter "CFSS-1234567" in the TextBox field
     And click on Save and Continue button
     And I select Radio Button "An individual" at Position "1"
     And click on Save and Continue button
@@ -461,7 +461,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     And Background section has following
       |Line|Label|Answer|URL|
       |1|Will you be making a disclosure because you received a letter from HMRC?|Yes|letter-from-hmrc/change|
-      |2|Letter reference number|TESTREF1|hmrc-letter-reference/change|
+      |2|Letter reference number|CFSS-1234567|hmrc-letter-reference/change|
       |3|Who this disclosure is for?|An individual|what-is-this-disclosure-about/change|
       |4|Are you the individual this disclosure relates to?|Yes, I am the individual|are-you-the-individual/change|
       |5|Will the disclosure be about offshore liabilities?|Yes|disclose-offshore-liabilities/change|
@@ -486,7 +486,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     Given I am navigated to Received A Letter Page
     When I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
-    And I enter "TESTREF1" in the TextBox field
+    And I enter "CFSS-1234567" in the TextBox field
     And click on Save and Continue button
     And I select Radio Button "An individual" at Position "1"
     And click on Save and Continue button
@@ -587,7 +587,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     And Background section has following
       |Line|Label|Answer|URL|
       |1|Will you be making a disclosure because you received a letter from HMRC?|Yes|letter-from-hmrc/change|
-      |2|Letter reference number|TESTREF1|hmrc-letter-reference/change|
+      |2|Letter reference number|CFSS-1234567|hmrc-letter-reference/change|
       |3|Who this disclosure is for?|An individual|what-is-this-disclosure-about/change|
       |4|Are you the individual this disclosure relates to?|No, I am disclosing on behalf of the individual|are-you-the-individual/change|
       |5|Will the disclosure be about offshore liabilities?|Yes|disclose-offshore-liabilities/change|

@@ -1,11 +1,11 @@
-@page
+@page @regression
 Feature: An individual UK tax payer is able to check their answers for About the Individual section before submitting page
 
   Background:
     Given I am navigated to Received A Letter Page
     When I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
-    And I enter "TESTREF1" in the TextBox field
+    And I enter "CFSS-1234567" in the TextBox field
     And click on Save and Continue button
     And I select Radio Button "An individual" at Position "1"
     And click on Save and Continue button
@@ -58,7 +58,7 @@ Feature: An individual UK tax payer is able to check their answers for About the
     And click on continue button
     And click on confirm button
 
-  @id001
+  @id001 @smoke @regression
   Scenario: On behalf of Individual -About The Individual - Change Route validation -With No Change
     Given I am on "Check Your Answers" page
     Then answers page should have h2 header "About the individual"
