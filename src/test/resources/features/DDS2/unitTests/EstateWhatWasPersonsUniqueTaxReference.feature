@@ -43,4 +43,3 @@ Feature: A UK estate tax payer is able to enter the details and continue on to "
       |  "0123456 78901234567890" |
       |    "asdfghj  koi" |
       |    "@test-mes?£%  £^$£%&%&$@@:?<." |
-

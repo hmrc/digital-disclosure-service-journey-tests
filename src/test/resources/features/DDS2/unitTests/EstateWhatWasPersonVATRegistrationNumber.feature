@@ -48,4 +48,3 @@ Feature: A UK estate tax payer is able to enter the details and continue on to "
       | "GB 123456789"   |
       | "123456789"      |
       | "GB2334 54663"    |
-
