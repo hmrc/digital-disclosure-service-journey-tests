@@ -33,7 +33,7 @@ Feature: A UK tax payer is able to enter the details and continue on "What is yo
     And error message should be displayed with text "Enter a valid National Insurance number"
 
   @id_005
-  Scenario: WWhat is your National Insurance number? - Navigation of on Error message on top popup
+  Scenario: What is your National Insurance number? - Navigation of on Error message on top popup
     Given I am on What is your National Insurance number Page
     When I enter no data in NI Number TextBox field
     And click on Save and Continue button
@@ -41,7 +41,7 @@ Feature: A UK tax payer is able to enter the details and continue on "What is yo
     Then I should navigate to NI number TextBox field
 
   @id_006
-  Scenario: WWhat is your National Insurance number? - Navigation with Back button
+  Scenario: What is your National Insurance number? - Navigation with Back button
     Given I am on Do you have a National Insurance number Page
     When I select Radio Button "Yes, and I know my National Insurance number" at Position "1"
     And click on Save and Continue button

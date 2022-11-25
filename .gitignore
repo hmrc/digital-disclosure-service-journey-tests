@@ -36,3 +36,5 @@ tmp
 bin
 screenshots
 *.html
+repository.yaml
+Hooks.scala

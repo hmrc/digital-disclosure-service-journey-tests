@@ -10,7 +10,7 @@ import uk.gov.hmrc.pages.{BasePage, HmrcLetterReferencePage}
 
 class HmrcLetterReferencePageStepDef extends BasePage with HmrcLetterReferencePage{
 
-  Given("""I am on What is the reference number of the letter you received from HMRC Page""") { () =>
+  Given("""I am on What is the case reference number provided on the letter you received from HMRC Page""") { () =>
     navigateToSpecificPage("notification/hmrc-letter-reference")
   }
 
