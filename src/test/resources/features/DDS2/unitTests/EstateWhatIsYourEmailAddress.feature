@@ -2,7 +2,6 @@
 Feature: A UK estate tax payer is able to enter the details on 'What is your email address?' page and navigate to What is the country of your address? screen
 
   Scenario: What is your email address?  - user can navigate to 'What is the country of your address?' screen after entering valid email on 'What is your email address?' screen
-
     Given I navigate to "what-is-this-disclosure-about" page
     And I select Radio Button "An estate" at Position "2"
     And click on Save and Continue button
