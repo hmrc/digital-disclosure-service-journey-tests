@@ -35,7 +35,7 @@ Feature: A UK tax payer is able to enter the details and continue on "Do you hav
     Given I am on Do you have an email address that you are happy to be contacted on by HMRC Page
     And I select Radio Button "No" at Position "2"
     And click on Save and Continue button
-    Then user is navigated to the page with title "What is your date of birth?"
+    Then user is navigated to the page with title "What is the country of your address?"
 
   @id_006
   Scenario: Contact By Email-Navigation with back button
