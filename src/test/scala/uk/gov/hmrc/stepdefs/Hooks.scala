@@ -23,5 +23,9 @@ class Hooks extends StartUpTearDown{
     driver.manage.window.maximize()
   }
 
+  @After
+  def cleanup(): Unit = {
+    sys.addShutdownHook(driver.quit())
+  }
 
 }
