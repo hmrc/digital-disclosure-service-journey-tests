@@ -14,7 +14,7 @@ Feature: A UK tax payer is able to enter the details and continue on What is you
     Given I am What is your email address Page
     When I enter <validEmail> email TextBox field
     And click on Save and Continue button
-    Then page navigates to "What is your date of birth?"
+    Then page navigates to "What is the country of your address?"
 
     Examples:
       | validEmail |
