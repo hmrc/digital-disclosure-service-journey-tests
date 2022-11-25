@@ -1,12 +1,6 @@
 @page
 Feature: A UK estate tax payer is able to enter the details on 'What is your email address?' page and navigate to What is the country of your address? screen
 
-  Scenario: What is your email address?  - Enter valid Email with max length
-    Given I am What is your email address Page
-    When I enter data with max length of "320" in Email TextBox field
-    And click on Save and Continue button
-    Then error message should be displayed with text "Your email address must be 320 characters or less"
-
   Scenario: What is your email address?  - user can navigate to 'What is the country of your address?' screen after entering valid email on 'What is your email address?' screen
 
     Given I navigate to "what-is-this-disclosure-about" page
