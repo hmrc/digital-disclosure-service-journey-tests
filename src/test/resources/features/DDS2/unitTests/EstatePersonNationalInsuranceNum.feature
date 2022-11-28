@@ -12,7 +12,7 @@ Feature: An Estate tax payer is able to enter the details and continue on "What 
     Given I navigate to "estates-individual-national-insurance-number" page
     When I enter valid NI Number TextBox field
     And click on Save and Continue button
-    Then page navigates to "Was the person registered for VAT, as far as you are aware?"
+    Then page navigates to "Was the person registered for VAT, as far as you’re aware?"
 
   Scenario: What was the person’s National Insurance number? - Blank Input
     Given I navigate to "estates-individual-national-insurance-number" page

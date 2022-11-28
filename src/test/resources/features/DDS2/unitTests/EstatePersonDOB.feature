@@ -23,7 +23,7 @@ Feature: An Estate tax payer is able to enter the details and continue on What w
     Then page navigates to "What was the person’s date of birth?"
 
   Scenario Outline: Validate error messages for DOB page
-    Given I am on What is the individual’s date of birth page as "Individual" tax payer
+    Given I navigate to "estates-individual-date-of-birth" page
     When I enter <Day> in the "Day" text box field
     And I enter <Month> in the "Month" text box field
     And I enter <Year> in the "Year" text box field
@@ -33,7 +33,7 @@ Feature: An Estate tax payer is able to enter the details and continue on What w
 
     Examples:
       | Day | Month | Year | Error |
-      |    "" |   "" |    "" | "Enter a valid person’s date of birth, like 20 3 1976"    |
+      |    "" |   "" |    "" | "Enter the person’s date of birth"    |
       |  "10" |  "tt"  | "45"   | "Enter the person’s date of birth"    |
       |    "10" |   "" |    "" | "The person’s date of birth must include a month and a year"    |
       |    "" |   "10" |    "" | "The person’s date of birth must include a day and a year"    |
@@ -42,8 +42,8 @@ Feature: An Estate tax payer is able to enter the details and continue on What w
       |    "10" |   "" |    "1980" | "The person’s date of birth must include a month"    |
       |    "" |   "10" |    "1980" | "The person’s date of birth must include a day"    |
       |    "31" |   "06" |    "1980" | "Enter the person’s date of birth"    |
-      |    "50" |   "12" |    "1980" | "Enter the person’s real date of birth - a month can have up to 31 days"    |
-      |    "12" |   "15" |    "1980" | "Enter the person’s real date of birth - there are only 12 months in a year"    |
+      |    "50" |   "12" |    "1980" | "Enter a real date of birth - a month can have up to 31 days"    |
+      |    "12" |   "15" |    "1980" | "Enter a real date of birth - there are only 12 months in a year"    |
       |    "29" |   "02" |    "1981" | "Enter the person’s date of birth"    |
       |    "07" |   "10" |    "2025" | "The person’s date of birth must be in the past"    |
       |    "07" |   "10" |    "0190" | "The person’s date of birth must be after the year 1849"    |
