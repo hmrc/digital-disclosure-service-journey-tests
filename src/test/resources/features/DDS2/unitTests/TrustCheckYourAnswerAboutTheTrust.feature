@@ -5,7 +5,7 @@ Feature: A trust is able to check their answers for About the Trust section befo
     Given I am navigated to Received A Letter Page
     When I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
-    And I enter "TESTREF1" in the TextBox field
+    And I enter "CFSS-1234567" in the TextBox field
     And click on Save and Continue button
     And I select Radio Button "A trust" at Position "5"
     And click on Save and Continue button

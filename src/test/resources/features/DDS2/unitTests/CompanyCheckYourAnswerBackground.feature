@@ -5,7 +5,7 @@ Feature: An Company tax payer is able to check their answers for background sect
     Given I am navigated to Received A Letter Page
     When I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
-    And I enter "TESTREF1" in the TextBox field
+    And I enter "CFSS-1234567" in the TextBox field
     And click on Save and Continue button
     And I select Radio Button "A company" at Position "3"
     And click on Save and Continue button
@@ -52,7 +52,7 @@ Feature: An Company tax payer is able to check their answers for background sect
     And Background section has following
       |Line|Label|Answer|URL|
       |1|Will you be making a disclosure because you received a letter from HMRC?|Yes|letter-from-hmrc/change|
-      |2|Letter reference number|TESTREF1|hmrc-letter-reference/change|
+      |2|Letter reference number|CFSS-1234567|hmrc-letter-reference/change|
       |3|Who this disclosure is for?|A company|what-is-this-disclosure-about/change|
       |4|Are you an officer of the company this disclosure relates to?|No, I will be making a disclosure on behalf of an officer|are-you-an-officer/change|
       |5|Are you representing an organisation?|Yes|representing-organisation/change|
@@ -78,7 +78,7 @@ Feature: An Company tax payer is able to check their answers for background sect
     And Background section has following
       |Line|Label|Answer|URL|
       |1|Will you be making a disclosure because you received a letter from HMRC?|Yes|letter-from-hmrc/change|
-      |2|Letter reference number|TESTREF1|hmrc-letter-reference/change|
+      |2|Letter reference number|CFSS-1234567|hmrc-letter-reference/change|
       |3|Who this disclosure is for?|A company|what-is-this-disclosure-about/change|
       |4|Are you an officer of the company this disclosure relates to?|No, I will be making a disclosure on behalf of an officer|are-you-an-officer/change|
       |5|Are you representing an organisation?|Yes|representing-organisation/change|
@@ -99,7 +99,7 @@ Feature: An Company tax payer is able to check their answers for background sect
     And Background section has following
       |Line|Label|Answer|URL|
       |1|Will you be making a disclosure because you received a letter from HMRC?|Yes|letter-from-hmrc/change|
-      |2|Letter reference number|TESTREF1|hmrc-letter-reference/change|
+      |2|Letter reference number|CFSS-1234567|hmrc-letter-reference/change|
       |3|Who this disclosure is for?|A company|what-is-this-disclosure-about/change|
       |4|Are you an officer of the company this disclosure relates to?|No, I will be making a disclosure on behalf of an officer|are-you-an-officer/change|
       |5|Are you representing an organisation?|No|representing-organisation/change|
@@ -116,7 +116,7 @@ Feature: An Company tax payer is able to check their answers for background sect
     And Background section has following
       |Line|Label|Answer|URL|
       |1|Will you be making a disclosure because you received a letter from HMRC?|Yes|letter-from-hmrc/change|
-      |2|Letter reference number|TESTREF1|hmrc-letter-reference/change|
+      |2|Letter reference number|CFSS-1234567|hmrc-letter-reference/change|
       |3|Who this disclosure is for?|A company|what-is-this-disclosure-about/change|
       |4|Are you an officer of the company this disclosure relates to?|Yes, I am an officer of the company|are-you-an-officer/change|
 
@@ -129,7 +129,7 @@ Feature: An Company tax payer is able to check their answers for background sect
     And Background section has following
       |Line|Label|Answer|URL|
       |1|Will you be making a disclosure because you received a letter from HMRC?|Yes|letter-from-hmrc/change|
-      |2|Letter reference number|TESTREF1|hmrc-letter-reference/change|
+      |2|Letter reference number|CFSS-1234567|hmrc-letter-reference/change|
       |3|Who this disclosure is for?|A company|what-is-this-disclosure-about/change|
       |4|Are you an officer of the company this disclosure relates to?|No, I will be making a disclosure on behalf of an officer|are-you-an-officer/change|
       |5|Are you representing an organisation?|Yes|representing-organisation/change|
@@ -147,7 +147,7 @@ Feature: An Company tax payer is able to check their answers for background sect
     And Background section has following
       |Line|Label|Answer|URL|
       |1|Will you be making a disclosure because you received a letter from HMRC?|Yes|letter-from-hmrc/change|
-      |2|Letter reference number|TESTREF1|hmrc-letter-reference/change|
+      |2|Letter reference number|CFSS-1234567|hmrc-letter-reference/change|
       |3|Who this disclosure is for?|A company|what-is-this-disclosure-about/change|
       |4|Are you an officer of the company this disclosure relates to?|Yes, I am an officer of the company|are-you-an-officer/change|
 
@@ -161,7 +161,7 @@ Feature: An Company tax payer is able to check their answers for background sect
     And Background section has following
       |Line|Label|Answer|URL|
       |1|Will you be making a disclosure because you received a letter from HMRC?|Yes|letter-from-hmrc/change|
-      |2|Letter reference number|TESTREF1|hmrc-letter-reference/change|
+      |2|Letter reference number|CFSS-1234567|hmrc-letter-reference/change|
       |3|Who this disclosure is for?|A company|what-is-this-disclosure-about/change|
       |4|Are you an officer of the company this disclosure relates to?|No, I will be making a disclosure on behalf of an officer|are-you-an-officer/change|
       |5|Are you representing an organisation?|No|representing-organisation/change|
@@ -183,7 +183,7 @@ Feature: An Company tax payer is able to check their answers for background sect
     And Background section has following
       |Line|Label|Answer|URL|
       |1|Will you be making a disclosure because you received a letter from HMRC?|Yes|letter-from-hmrc/change|
-      |2|Letter reference number|TESTREF1|hmrc-letter-reference/change|
+      |2|Letter reference number|CFSS-1234567|hmrc-letter-reference/change|
       |3|Who this disclosure is for?|A company|what-is-this-disclosure-about/change|
       |4|Are you an officer of the company this disclosure relates to?|No, I will be making a disclosure on behalf of an officer|are-you-an-officer/change|
       |5|Are you representing an organisation?|Yes|representing-organisation/change|
@@ -200,7 +200,7 @@ Feature: An Company tax payer is able to check their answers for background sect
     And Background section has following
       |Line|Label|Answer|URL|
       |1|Will you be making a disclosure because you received a letter from HMRC?|Yes|letter-from-hmrc/change|
-      |2|Letter reference number|TESTREF1|hmrc-letter-reference/change|
+      |2|Letter reference number|CFSS-1234567|hmrc-letter-reference/change|
       |3|Who this disclosure is for?|A company|what-is-this-disclosure-about/change|
       |4|Are you an officer of the company this disclosure relates to?|No, I will be making a disclosure on behalf of an officer|are-you-an-officer/change|
       |5|Are you representing an organisation?|Yes|representing-organisation/change|

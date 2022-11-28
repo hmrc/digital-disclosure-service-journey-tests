@@ -5,7 +5,7 @@ Feature: An individual is able to check their answers for About the Company sect
     Given I am navigated to Received A Letter Page
     When I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
-    And I enter "TESTREF1" in the TextBox field
+    And I enter "CFSS-1234567" in the TextBox field
     And click on Save and Continue button
     And I select Radio Button "A limited liability partnership" at Position "4"
     And click on Save and Continue button

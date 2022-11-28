@@ -65,4 +65,8 @@ class CheckYourAnswersStepDef extends BasePage with CheckYourAnswersPage {
     verifyDropdownTextBoxIsEmpty()
   }
 
+  Then("""About the person who died section should have a label {string} at line {string} an answer with {string} and change URL ends with {string}""") { (string: String, string2: String, string3: String, string4: String) =>
+    verifyAboutThePersonDiedAnswers(string, string2, string3, string4)
+  }
+
 }

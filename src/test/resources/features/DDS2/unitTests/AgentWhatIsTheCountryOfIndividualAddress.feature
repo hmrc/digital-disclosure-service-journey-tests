@@ -6,7 +6,7 @@ Feature: A UK tax payer is able to enter the details and continue on "What is th
     Given I am navigated to Received A Letter Page
     When I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
-    And I enter "TESTREF1" in the TextBox field
+    And I enter "CFSS-1234567" in the TextBox field
     And click on Save and Continue button
     And I select Radio Button "An individual" at Position "1"
     And click on Save and Continue button
@@ -69,7 +69,7 @@ Feature: A UK tax payer is able to enter the details and continue on "What is th
     Given I am navigated to Received A Letter Page
     When I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
-    And I enter "TESTREF1" in the TextBox field
+    And I enter "CFSS-1234567" in the TextBox field
     And click on Save and Continue button
     And I select Radio Button "An individual" at Position "1"
     And click on Save and Continue button
