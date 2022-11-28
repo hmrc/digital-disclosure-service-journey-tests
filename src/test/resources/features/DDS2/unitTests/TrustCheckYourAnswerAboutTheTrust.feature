@@ -44,6 +44,7 @@ Feature: A trust is able to check their answers for About the Trust section befo
     And click on continue button
     And click on confirm button
 
+  @smoke
   Scenario: About the Trust - Change Route validation - With No Change
     Given I am on "Check Your Answers" page
     Then answers page should have h2 header "About the trust"

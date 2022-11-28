@@ -1,4 +1,4 @@
-@page
+@page @regression
 Feature: An individual UK tax payer is able to check their answers for About you section before submitting page
 
   Background:
@@ -49,7 +49,7 @@ Feature: An individual UK tax payer is able to check their answers for About you
     And click on continue button
     And click on confirm button
 
-  @id001
+  @id001 @smoke @regression
   Scenario: For Individual - About You Section Verification
     Given I am on "Check Your Answers" page
     Then answers page should have h2 header "About you"

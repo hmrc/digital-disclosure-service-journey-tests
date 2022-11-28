@@ -1,4 +1,4 @@
-@page
+@page @regression
 Feature: A trust is able to check their answers for About the Trust section before submitting page
 
   Background:
@@ -44,6 +44,7 @@ Feature: A trust is able to check their answers for About the Trust section befo
     And click on continue button
     And click on confirm button
 
+  @smoke
   Scenario: Trust - Check your answers page - Background
     Given I am on "Check Your Answers" page
     And answers page should have h2 header "Background"

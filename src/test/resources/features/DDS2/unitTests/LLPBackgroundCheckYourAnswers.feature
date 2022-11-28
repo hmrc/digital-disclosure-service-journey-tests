@@ -44,7 +44,7 @@ Feature: An individual is able to check their answers for About the Company sect
     And click on continue button
     And click on confirm button
 
-    @smoke
+  @smoke
   Scenario: LLP - Check your answers page - Background
     Given I am on "Check Your Answers" page
     And answers page should have h2 header "Background"

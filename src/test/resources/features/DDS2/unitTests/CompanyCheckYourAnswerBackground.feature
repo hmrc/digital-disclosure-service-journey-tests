@@ -1,4 +1,4 @@
-@page
+@page @regression
 Feature: An Company tax payer is able to check their answers for background section before submitting page
 
   Background:
@@ -46,6 +46,7 @@ Feature: An Company tax payer is able to check their answers for background sect
     And click on continue button
     And click on confirm button
 
+  @smoke
   Scenario: Company - Check your answers page - Background
     Given I am on "Check Your Answers" page
     And answers page should have h2 header "Background"

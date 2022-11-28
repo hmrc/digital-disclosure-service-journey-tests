@@ -1,4 +1,4 @@
-@page
+@page @regression
 Feature: An individual is able to check their answers for About the Company section before submitting page
 
   Background:
@@ -46,6 +46,7 @@ Feature: An individual is able to check their answers for About the Company sect
     And click on continue button
     And click on confirm button
 
+  @smoke @regression
   Scenario: About the company - Change Route validation - With No Change
     Given I am on "Check Your Answers" page
     Then answers page should have h2 header "About the company"
