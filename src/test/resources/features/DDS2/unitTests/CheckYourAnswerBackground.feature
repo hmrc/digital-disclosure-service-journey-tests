@@ -1,12 +1,12 @@
-@page
+@page @regression
 Feature: An individual UK tax payer is able to check their answers for background section before submitting page
 
-  @id001
+  @id001 @smoke @regression
   Scenario: For Individual -Background Section Verification -When user selects "Yes" for offshore liabilities
     Given I am navigated to Received A Letter Page
     When I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
-    And I enter "TESTREF1" in the TextBox field
+    And I enter "CFSS-1234567" in the TextBox field
     And click on Save and Continue button
     And I select Radio Button "An individual" at Position "1"
     And click on Save and Continue button
@@ -54,7 +54,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     And Background section has following
       |Line|Label|Answer|URL|
       |1|Will you be making a disclosure because you received a letter from HMRC?|Yes|letter-from-hmrc/change|
-      |2|Letter reference number|TESTREF1|hmrc-letter-reference/change|
+      |2|Letter reference number|CFSS-1234567|hmrc-letter-reference/change|
       |3|Who this disclosure is for?|An individual|what-is-this-disclosure-about/change|
       |4|Are you the individual this disclosure relates to?|Yes, I am the individual|are-you-the-individual/change|
       |5|Will the disclosure be about offshore liabilities?|Yes|disclose-offshore-liabilities/change|
@@ -65,7 +65,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     Given I am navigated to Received A Letter Page
     When I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
-    And I enter "TESTREF1" in the TextBox field
+    And I enter "CFSS-1234567" in the TextBox field
     And click on Save and Continue button
     And I select Radio Button "An individual" at Position "1"
     And click on Save and Continue button
@@ -112,7 +112,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     And Background section has following
       |Line|Label|Answer|URL|
       |1|Will you be making a disclosure because you received a letter from HMRC?|Yes|letter-from-hmrc/change|
-      |2|Letter reference number|TESTREF1|hmrc-letter-reference/change|
+      |2|Letter reference number|CFSS-1234567|hmrc-letter-reference/change|
       |3|Who this disclosure is for?|An individual|what-is-this-disclosure-about/change|
       |4|Are you the individual this disclosure relates to?|Yes, I am the individual|are-you-the-individual/change|
       |5|Will the disclosure be about offshore liabilities?|No|disclose-offshore-liabilities/change|
@@ -123,7 +123,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     Given I am navigated to Received A Letter Page
     When I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
-    And I enter "TESTREF1" in the TextBox field
+    And I enter "CFSS-1234568" in the TextBox field
     And click on Save and Continue button
     And I select Radio Button "An individual" at Position "1"
     And click on Save and Continue button
@@ -170,7 +170,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     And answers page should have h2 header "Background"
     And clicking on change button to validate changed value as following:
       |Label|ExpectedPage|ChangedValue|
-      |Letter reference number|What is the reference number of the letter you received from HMRC?|ChangedRefNum|
+      |Letter reference number|What is the case reference number provided on the letter you received from HMRC?|CFSS-1234568|
     When I click on change button for "Will the disclosure also be about onshore liabilities?"
     And I select Radio Button "No" at Position "2"
     And click on Save and Continue button
@@ -189,7 +189,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     Given I am navigated to Received A Letter Page
     When I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
-    And I enter "TESTREF1" in the TextBox field
+    And I enter "CFSS-1234567" in the TextBox field
     And click on Save and Continue button
     And I select Radio Button "An individual" at Position "1"
     And click on Save and Continue button
@@ -295,13 +295,13 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     When I click on change button for "Will you be making a disclosure because you received a letter from HMRC?"
     And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
-    Then page navigates to "What is the reference number of the letter you received from HMRC?"
-    When I enter "TESTREF1" in the TextBox field
+    Then page navigates to "What is the case reference number provided on the letter you received from HMRC?"
+    When I enter "CFSS-1234567" in the TextBox field
     And click on Save and Continue button
     And Background section has following
       |Line|Label|Answer|URL|
       |1|Will you be making a disclosure because you received a letter from HMRC?|Yes|letter-from-hmrc/change|
-      |2|Letter reference number|TESTREF1|hmrc-letter-reference/change|
+      |2|Letter reference number|CFSS-1234567|hmrc-letter-reference/change|
 
   @id006
   Scenario: For Individual -About You - Change Route -Will you be making a disclosure because you received a letter from HMRC - No change
@@ -365,11 +365,15 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     Given I am navigated to Received A Letter Page
     When I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
-    And I enter "TESTREF1" in the TextBox field
+    And I enter "CFSS-1234567" in the TextBox field
     And click on Save and Continue button
     And I select Radio Button "An individual" at Position "1"
     And click on Save and Continue button
     And I select Radio Button "No, I am disclosing on behalf of the individual" at Position "2"
+    And click on Save and Continue button
+    And I select Radio Button "Yes" at Position "1"
+    And click on Save and Continue button
+    And I enter "represent org" in the TextBox field
     And click on Save and Continue button
     And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
@@ -461,7 +465,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     And Background section has following
       |Line|Label|Answer|URL|
       |1|Will you be making a disclosure because you received a letter from HMRC?|Yes|letter-from-hmrc/change|
-      |2|Letter reference number|TESTREF1|hmrc-letter-reference/change|
+      |2|Letter reference number|CFSS-1234567|hmrc-letter-reference/change|
       |3|Who this disclosure is for?|An individual|what-is-this-disclosure-about/change|
       |4|Are you the individual this disclosure relates to?|Yes, I am the individual|are-you-the-individual/change|
       |5|Will the disclosure be about offshore liabilities?|Yes|disclose-offshore-liabilities/change|
@@ -482,11 +486,12 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     And line "13" should have a label "Your Unique Taxpayer Reference" an answer with "1234567810" and change URL ends with "your-utr/change"
     And answers page should not have h2 header "About the individual"
 
+    @smoke
   Scenario: On behalf of Individual - Change Route validation -  From Yes to No on behalf of the individual - Are you the individual this disclosure relates to?
     Given I am navigated to Received A Letter Page
     When I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
-    And I enter "TESTREF1" in the TextBox field
+    And I enter "CFSS-1234567" in the TextBox field
     And click on Save and Continue button
     And I select Radio Button "An individual" at Position "1"
     And click on Save and Continue button
@@ -535,6 +540,10 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     And answers page should not have h2 header "About the individual"
     When I click on change button for "Are you the individual this disclosure relates to?"
     And I select Radio Button "No, I am disclosing on behalf of the individual" at Position "2"
+    And click on Save and Continue button
+    And I select Radio Button "Yes" at Position "1"
+    And click on Save and Continue button
+    And I enter "represent org" in the TextBox field
     And click on Save and Continue button
     And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
@@ -587,11 +596,13 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     And Background section has following
       |Line|Label|Answer|URL|
       |1|Will you be making a disclosure because you received a letter from HMRC?|Yes|letter-from-hmrc/change|
-      |2|Letter reference number|TESTREF1|hmrc-letter-reference/change|
+      |2|Letter reference number|CFSS-1234567|hmrc-letter-reference/change|
       |3|Who this disclosure is for?|An individual|what-is-this-disclosure-about/change|
       |4|Are you the individual this disclosure relates to?|No, I am disclosing on behalf of the individual|are-you-the-individual/change|
-      |5|Will the disclosure be about offshore liabilities?|Yes|disclose-offshore-liabilities/change|
-      |6|Will the disclosure also be about onshore liabilities?|Yes|disclose-onshore-liabilities/change|
+      |5|Are you representing an organisation?|Yes|representing-organisation/change|
+      |6|Name of the organisation you represent|represent org|representing-organisation-name/change|
+      |7|Will the disclosure be about offshore liabilities?|Yes|disclose-offshore-liabilities/change|
+      |8|Will the disclosure also be about onshore liabilities?|Yes|disclose-onshore-liabilities/change|
     And answers page should have h2 header "About you"
     And line "1" should have a label "Your full name" an answer with "Individual full name" and change URL ends with "your-full-name/change"
     And line "2" should have a label "Your telephone number" an answer with "07777 777777" and change URL ends with "your-telephone-number/change"

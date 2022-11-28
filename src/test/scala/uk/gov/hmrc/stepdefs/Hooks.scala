@@ -27,5 +27,4 @@ class Hooks extends StartUpTearDown{
   def cleanup(): Unit = {
     sys.addShutdownHook(driver.quit())
   }
-
 }

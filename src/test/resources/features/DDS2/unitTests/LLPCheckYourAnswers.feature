@@ -1,11 +1,11 @@
-@page
+@page @regression
 Feature: An individual is able to check their answers for About the Company section before submitting page
 
   Background:
     Given I am navigated to Received A Letter Page
     When I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
-    And I enter "TESTREF1" in the TextBox field
+    And I enter "CFSS-1234567" in the TextBox field
     And click on Save and Continue button
     And I select Radio Button "A limited liability partnership" at Position "4"
     And click on Save and Continue button
@@ -71,6 +71,7 @@ Feature: An individual is able to check their answers for About the Company sect
     Then page navigates to "Check Your Answers"
     And About The LLP section should have a label "Limited liability partnership’s address" at line "2" an answer with "3 Testing Lane,Royal Madeuptown,ZZ9Z 9TT,United Kingdom" and change URL ends with "llp-address/lookup/change"
 
+  @smoke
   Scenario: LLP - About LLP - Check your answers
     Given I am on "Check Your Answers" page
     Then answers page should have h2 header "About the limited liability partnership"

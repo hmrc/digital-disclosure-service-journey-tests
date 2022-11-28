@@ -7,7 +7,7 @@ Feature: A UK tax payer is able to enter the details and continue on Are you the
     Then verify the question should be "Are you the individual this disclosure relates to?"
     And radio Button with text "Yes, I am the individual" is displayed at position "1"
     And radio Button with text "No, I am disclosing on behalf of the individual" is displayed at position "2"
-    And hint with text "We may ask for additional evidence that you’re authorised to act for them, such as a 64-8 form." is displayed
+    And hint with text "We may ask for additional evidence that you’re authorised to act for them, such as the ‘Authorising a tax agent (64-8)’ form." is displayed
 
   Scenario: Are you the individual this disclosure relates to? - User selects Yes or No and continues to the next page. And navigated back to Are you the individual this disclosure relates to?
     Given I am navigated to Are you the individual this disclosure relates to Page
@@ -29,6 +29,10 @@ Feature: A UK tax payer is able to enter the details and continue on Are you the
     And click on Save and Continue button
     And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
+    And I enter "represent org" in the TextBox field
+    And click on Save and Continue button
+    And I select Radio Button "Yes" at Position "1"
+    And click on Save and Continue button
     And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
     Then I am navigated to the next page with title "What is the individual’s full name? - Digital Disclosure Service - GOV.UK"
@@ -39,7 +43,11 @@ Feature: A UK tax payer is able to enter the details and continue on Are you the
     And click on Save and Continue button
     And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
-    And I select Radio Button "No" at Position "2"
+    And I enter "represent org" in the TextBox field
+    And click on Save and Continue button
+    And I select Radio Button "Yes" at Position "1"
+    And click on Save and Continue button
+    And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
     Then I am navigated to the next page with title "What is the individual’s full name? - Digital Disclosure Service - GOV.UK"
 
@@ -49,12 +57,16 @@ Feature: A UK tax payer is able to enter the details and continue on Are you the
     And click on Save and Continue button
     And I select Radio Button "No" at Position "2"
     And click on Save and Continue button
+    And I select Radio Button "No" at Position "2"
+    And click on Save and Continue button
     And click on Save and Continue button
     Then I am navigated to the next page with title "What is the individual’s full name? - Digital Disclosure Service - GOV.UK"
 
   Scenario: Are you the individual this disclosure relates to? - Navigation to "What is your email address?"
     Given I am navigated to Are you the individual this disclosure relates to Page
     When I select Radio Button "No, I am disclosing on behalf of the individual" at Position "2"
+    And click on Save and Continue button
+    And I select Radio Button "No" at Position "2"
     And click on Save and Continue button
     And I select Radio Button "No" at Position "2"
     And click on Save and Continue button
@@ -94,6 +106,8 @@ Feature: A UK tax payer is able to enter the details and continue on Are you the
     And click on Save and Continue button
     And I select Radio Button "No" at Position "2"
     And click on Save and Continue button
+    And I select Radio Button "No" at Position "2"
+    And click on Save and Continue button
     And click on Save and Continue button
     And I enter "Individual Full Name" in the TextBox field
     And click on Save and Continue button
@@ -127,6 +141,8 @@ Feature: A UK tax payer is able to enter the details and continue on Are you the
   Scenario: Are you the individual this disclosure relates to? - Navigation to "What is the country of your address?" Option 2
     Given I am navigated to Are you the individual this disclosure relates to Page
     When I select Radio Button "No, I am disclosing on behalf of the individual" at Position "2"
+    And click on Save and Continue button
+    And I select Radio Button "No" at Position "2"
     And click on Save and Continue button
     And I select Radio Button "No" at Position "2"
     And click on Save and Continue button
