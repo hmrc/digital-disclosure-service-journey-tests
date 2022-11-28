@@ -20,13 +20,13 @@ Feature: An individual UK tax payer is able to enter the details and continue on
     Given I am on Is the individual registered for VAT, as far you’re aware page as "Individual" tax payer
     When I select Radio Button "Yes, but I do not know their VAT registration number" at Position "2"
     And click on Save and Continue button
-    Then page navigates to "Is the individual registered for Self Assessment, as far as you are aware?"
+    Then page navigates to "Is the individual registered for Self Assessment, as far as you’re aware?"
 
   Scenario: Is the individual registered for VAT, as far as you’re aware?- Navigation with option 3
     Given I am on Is the individual registered for VAT, as far you’re aware page as "Individual" tax payer
     When I select Radio Button "No" at Position "3"
     And click on Save and Continue button
-    Then page navigates to "Is the individual registered for Self Assessment, as far as you are aware?"
+    Then page navigates to "Is the individual registered for Self Assessment, as far as you’re aware?"
 
   Scenario: Is the individual registered for VAT, as far as you’re aware?- Validation with no selection of Radio Button
     Given I am on Is the individual registered for VAT, as far you’re aware page as "Individual" tax payer
