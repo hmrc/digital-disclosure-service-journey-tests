@@ -17,10 +17,10 @@ Feature: A UK tax payer is able to enter the details and continue on "What was t
     And hint with text "For example, United Kingdom." is displayed
     When enter country name "United Kingdom",select country "United Kingdom"
     And click on continue button
-    Then page navigates to "What was the postcode and property name or number of the estate’s address?"
+    Then page navigates to "What was the postcode and property name or number of the person’s address?"
     And enter postcode "ZZ9Z 9TT"
     And click on continue button
-    Then page navigates to "Choose the estate’s address"
+    Then page navigates to "Choose the person’s address"
     When I select Radio Button "2 Testing Lane, Royal Madeuptown, ZZ9Z 9TT" at Position "2"
     And click on continue button
     Then page navigates to "Is this the correct address?"
@@ -28,6 +28,8 @@ Feature: A UK tax payer is able to enter the details and continue on "What was t
     And address at line "2" is "Royal Madeuptown"
     And address at line "3" is "ZZ9Z 9TT"
     And address at line "4" is "United Kingdom"
+    And click on confirm button
+    Then page navigates to "What is your full name?"
 
   Scenario: What was the country of the person’s address? - International address - navigate to address confirmation page
   Given I navigate to "estate-address/lookup" page
