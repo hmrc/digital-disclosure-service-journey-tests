@@ -62,6 +62,7 @@ Feature: An Estate is able to check their answers for About the person who died 
     And click on continue button
     And click on confirm button
 
+    @smoke
   Scenario: An Estate - About the person who died - Check your answers and change navigation
     Given I am on "Check Your Answers" page
     Then answers page should have h2 header "About the person who died"
