@@ -84,9 +84,10 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
     val reDirectUrl = findByID("redirectionUrl")
     reDirectUrl.clear()
     reDirectUrl.sendKeys(Configuration.settings.baseUrl)
-    driver.findElements(By.xpath("/html/body/div/main/div/div/form/div[5]/select/option[3]")).get(0).click()
+    val elements = findByID("confidenceLevel").findElements(By.tagName("option"))
+    elements.get(2).click()
     val nino = "AA000000B"
-    driver.findElement(By.xpath("//*[@id='nino']")).sendKeys(nino)
+    findByID("nino").sendKeys(nino)
 
     findByID("submit").click()
     if (driver.findElements( By.xpath("//*[@class='cbanner-govuk-cookie-banner']") ).size() != 0){
