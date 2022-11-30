@@ -36,5 +36,4 @@ tmp
 bin
 screenshots
 *.html
-repository.yaml
-Hooks.scala
+src/test/scala/uk/gov/hmrc/stepdefs/Hooks.scala
