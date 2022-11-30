@@ -16,6 +16,7 @@ import org.scalatest.Assertions
 import org.scalatest.concurrent.ScalaFutures
 import org.scalatestplus.selenium.WebBrowser
 import uk.gov.hmrc.driver.StartUpTearDown
+import uk.gov.hmrc.stepdefs.AlfMock
 import uk.gov.hmrc.utils.Configuration
 import uk.gov.hmrc.utils.MessageReader.getElement
 

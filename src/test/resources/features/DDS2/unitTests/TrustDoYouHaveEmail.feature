@@ -15,13 +15,7 @@ Feature: A UK tax payer is able to enter the details and continue on "Do you hav
     And click on Save and Continue button
     And I enter "What is the trust’s name?" in the TextBox field
     And click on Save and Continue button
-    And enter country name "United Kingdom",select country "United Kingdom"
-    And click on continue button
-    And enter postcode "ZZ9Z 9TT"
-    And click on continue button
-    And I select Radio Button "3 Testing Lane, Royal Madeuptown, ZZ9Z 9TT" at Position "3"
-    And click on continue button
-    And click on confirm button
+
     And I enter "Your Full Name" in the TextBox field
     And click on Save and Continue button
     And I enter "07777777777" in the TextBox field
@@ -45,13 +39,7 @@ Feature: A UK tax payer is able to enter the details and continue on "Do you hav
     And click on Save and Continue button
     And I enter "What is the trust’s name?" in the TextBox field
     And click on Save and Continue button
-    And enter country name "United Kingdom",select country "United Kingdom"
-    And click on continue button
-    And enter postcode "ZZ9Z 9TT"
-    And click on continue button
-    And I select Radio Button "3 Testing Lane, Royal Madeuptown, ZZ9Z 9TT" at Position "3"
-    And click on continue button
-    And click on confirm button
+
     And I enter "Your Full Name" in the TextBox field
     And click on Save and Continue button
     And I enter "07777777777" in the TextBox field

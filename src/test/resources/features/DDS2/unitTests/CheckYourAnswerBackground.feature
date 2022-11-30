@@ -42,13 +42,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     And click on Save and Continue button
     And I enter "1234567890" in the TextBox field
     And click on Save and Continue button
-    And enter country name "United Kingdom",select country "United Kingdom"
-    And click on continue button
-    And enter postcode "ZZ9Z 9TT"
-    And click on continue button
-    And I select Radio Button "2 Testing Lane, Royal Madeuptown, ZZ9Z 9TT" at Position "2"
-    And click on continue button
-    And click on confirm button
+
     Then page navigates to "Check Your Answers"
     And answers page should have h2 header "Background"
     And Background section has following
@@ -100,13 +94,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     And click on Save and Continue button
     And I enter "1234567890" in the TextBox field
     And click on Save and Continue button
-    And enter country name "United Kingdom",select country "United Kingdom"
-    And click on continue button
-    And enter postcode "ZZ9Z 9TT"
-    And click on continue button
-    And I select Radio Button "2 Testing Lane, Royal Madeuptown, ZZ9Z 9TT" at Position "2"
-    And click on continue button
-    And click on confirm button
+
     Then page navigates to "Check Your Answers"
     And answers page should have h2 header "Background"
     And Background section has following
@@ -159,13 +147,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     And click on Save and Continue button
     And I enter "1234567890" in the TextBox field
     And click on Save and Continue button
-    And enter country name "United Kingdom",select country "United Kingdom"
-    And click on continue button
-    And enter postcode "ZZ9Z 9TT"
-    And click on continue button
-    And I select Radio Button "2 Testing Lane, Royal Madeuptown, ZZ9Z 9TT" at Position "2"
-    And click on continue button
-    And click on confirm button
+
     Then page navigates to "Check Your Answers"
     And answers page should have h2 header "Background"
     And clicking on change button to validate changed value as following:
@@ -225,13 +207,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     And click on Save and Continue button
     And I enter "1234567890" in the TextBox field
     And click on Save and Continue button
-    And enter country name "United Kingdom",select country "United Kingdom"
-    And click on continue button
-    And enter postcode "ZZ9Z 9TT"
-    And click on continue button
-    And I select Radio Button "2 Testing Lane, Royal Madeuptown, ZZ9Z 9TT" at Position "2"
-    And click on continue button
-    And click on confirm button
+
     And I click on change button for "Will you be making a disclosure because you received a letter from HMRC?"
     And I select Radio Button "No" at Position "2"
     And click on Save and Continue button
@@ -280,13 +256,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     And click on Save and Continue button
     And I enter "1234567890" in the TextBox field
     And click on Save and Continue button
-    And enter country name "United Kingdom",select country "United Kingdom"
-    And click on continue button
-    And enter postcode "ZZ9Z 9TT"
-    And click on continue button
-    And I select Radio Button "2 Testing Lane, Royal Madeuptown, ZZ9Z 9TT" at Position "2"
-    And click on continue button
-    And click on confirm button
+
     Then page navigates to "Check Your Answers"
     And Background section has following
       |Line|Label|Answer|URL|
@@ -342,13 +312,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     And click on Save and Continue button
     And I enter "1234567890" in the TextBox field
     And click on Save and Continue button
-    And enter country name "United Kingdom",select country "United Kingdom"
-    And click on continue button
-    And enter postcode "ZZ9Z 9TT"
-    And click on continue button
-    And I select Radio Button "2 Testing Lane, Royal Madeuptown, ZZ9Z 9TT" at Position "2"
-    And click on continue button
-    And click on confirm button
+
     Then page navigates to "Check Your Answers"
     And Background section has following
       |Line|Label|Answer|URL|
@@ -399,13 +363,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     And click on Save and Continue button
     And I enter "1234567890" in the TextBox field
     And click on Save and Continue button
-    And enter country name "United Kingdom",select country "United Kingdom"
-    And click on continue button
-    And enter postcode "ZZ9Z 9TT"
-    And click on continue button
-    And I select Radio Button "2 Testing Lane, Royal Madeuptown, ZZ9Z 9TT" at Position "2"
-    And click on continue button
-    And click on confirm button
+
     And I enter "Agent full name" in the TextBox field
     And click on Save and Continue button
     And I enter "07777 777777" in the TextBox field
@@ -414,13 +372,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     And click on Save and Continue button
     And I enter "abc@abc.com" in the TextBox field
     And click on Save and Continue button
-    And enter country name "United Kingdom",select country "United Kingdom"
-    And click on continue button
-    And enter postcode "ZZ9Z 9TT"
-    And click on continue button
-    And I select Radio Button "1 Testing Lane, Royal Madeuptown, ZZ9Z 9TT" at Position "1"
-    And click on continue button
-    And click on confirm button
+
     When I click on change button for "Are you the individual this disclosure relates to?"
     And I select Radio Button "Yes, I am the individual" at Position "1"
     And click on Save and Continue button
@@ -454,13 +406,6 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     And click on Save and Continue button
     And I enter "1234567810" in the TextBox field
     And click on Save and Continue button
-    And enter country name "United Kingdom",select country "United Kingdom"
-    And click on continue button
-    And enter postcode "ZZ9Z 9TT"
-    And click on continue button
-    And I select Radio Button "4 Testing Lane, Royal Madeuptown, ZZ9Z 9TT" at Position "4"
-    And click on continue button
-    And click on confirm button
     Then page navigates to "Check Your Answers"
     And Background section has following
       |Line|Label|Answer|URL|
@@ -475,7 +420,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     And line "2" should have a label "Your telephone number" an answer with "07777 777778" and change URL ends with "your-telephone-number/change"
     And line "3" should have a label "Do you have an email address that you are happy to be contacted on by HMRC?" an answer with "Yes" and change URL ends with "contact-by-email/change"
     And line "4" should have a label "Your email address" an answer with "individual@email.com" and change URL ends with "your-email-address/change"
-    And line "5" should have a label "Your address" an answer with "4 Testing Lane,Royal Madeuptown,ZZ9Z 9TT,United Kingdom" and change URL ends with "your-address/lookup/change"
+    And line "5" should have a label "Your address" an answer with "2 Testing Lane,Royal Madeuptown,ZZ9Z 9TT,United Kingdom" and change URL ends with "your-address/lookup/change"
     And line "6" should have a label "Your date of birth" an answer with "1 January 1981" and change URL ends with "your-date-of-birth/change"
     And line "7" should have a label "Your main occupation" an answer with "Doctor" and change URL ends with "your-main-occupation/change"
     And line "8" should have a label "Do you have a National Insurance number?" an answer with "Yes, and I know my National Insurance number" and change URL ends with "have-national-insurance-number/change"
@@ -527,13 +472,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     And click on Save and Continue button
     And I enter "1234567810" in the TextBox field
     And click on Save and Continue button
-    And enter country name "United Kingdom",select country "United Kingdom"
-    And click on continue button
-    And enter postcode "ZZ9Z 9TT"
-    And click on continue button
-    And I select Radio Button "4 Testing Lane, Royal Madeuptown, ZZ9Z 9TT" at Position "4"
-    And click on continue button
-    And click on confirm button
+
     Then page navigates to "Check Your Answers"
     And answers page should have h2 header "Background"
     And answers page should have h2 header "About you"
@@ -569,13 +508,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     And click on Save and Continue button
     And I enter "1234567890" in the TextBox field
     And click on Save and Continue button
-    And enter country name "United Kingdom",select country "United Kingdom"
-    And click on continue button
-    And enter postcode "ZZ9Z 9TT"
-    And click on continue button
-    And I select Radio Button "2 Testing Lane, Royal Madeuptown, ZZ9Z 9TT" at Position "2"
-    And click on continue button
-    And click on confirm button
+
     And I enter "Individual full name" in the TextBox field
     And click on Save and Continue button
     And I enter "07777 777777" in the TextBox field
@@ -584,13 +517,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     And click on Save and Continue button
     And I enter "abc@abc.com" in the TextBox field
     And click on Save and Continue button
-    And enter country name "United Kingdom",select country "United Kingdom"
-    And click on continue button
-    And enter postcode "ZZ9Z 9TT"
-    And click on continue button
-    And I select Radio Button "1 Testing Lane, Royal Madeuptown, ZZ9Z 9TT" at Position "1"
-    And click on continue button
-    And click on confirm button
+
     Then page navigates to "Check Your Answers"
     And answers page should have h2 header "Background"
     And Background section has following
@@ -608,7 +535,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     And line "2" should have a label "Your telephone number" an answer with "07777 777777" and change URL ends with "your-telephone-number/change"
     And line "3" should have a label "Do you have an email address that you are happy to be contacted on by HMRC?" an answer with "Yes" and change URL ends with "contact-by-email/change"
     And line "4" should have a label "Your email address" an answer with "abc@abc.com" and change URL ends with "your-email-address/change"
-    And line "5" should have a label "Your address" an answer with "1 Testing Lane,Royal Madeuptown,ZZ9Z 9TT,United Kingdom" and change URL ends with "your-address/lookup/change"
+    And line "5" should have a label "Your address" an answer with "2 Testing Lane,Royal Madeuptown,ZZ9Z 9TT,United Kingdom" and change URL ends with "your-address/lookup/change"
     And answers page should have h2 header "About the individual"
     And About The Individual section should have a label "Individual’s full name" at line "1" an answer with "Individual full name" and change URL ends with "individual-full-name/change"
     And About The Individual section should have a label "Individual’s date of birth" at line "2" an answer with "1 January 1980" and change URL ends with "individual-date-of-birth/change"

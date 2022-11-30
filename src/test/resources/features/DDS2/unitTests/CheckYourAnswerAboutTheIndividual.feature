@@ -39,13 +39,7 @@ Feature: An individual UK tax payer is able to check their answers for About the
     And click on Save and Continue button
     And I enter "1234567890" in the TextBox field
     And click on Save and Continue button
-    And enter country name "United Kingdom",select country "United Kingdom"
-    And click on continue button
-    And enter postcode "ZZ9Z 9TT"
-    And click on continue button
-    And I select Radio Button "2 Testing Lane, Royal Madeuptown, ZZ9Z 9TT" at Position "2"
-    And click on continue button
-    And click on confirm button
+
     And I enter "Agent full name" in the TextBox field
     And click on Save and Continue button
     And I enter "07777 777777" in the TextBox field
@@ -54,13 +48,7 @@ Feature: An individual UK tax payer is able to check their answers for About the
     And click on Save and Continue button
     And I enter "abc@abc.com" in the TextBox field
     And click on Save and Continue button
-    And enter country name "United Kingdom",select country "United Kingdom"
-    And click on continue button
-    And enter postcode "ZZ9Z 9TT"
-    And click on continue button
-    And I select Radio Button "1 Testing Lane, Royal Madeuptown, ZZ9Z 9TT" at Position "1"
-    And click on continue button
-    And click on confirm button
+
 
   @id001 @smoke @regression
   Scenario: On behalf of Individual -About The Individual - Change Route validation -With No Change
@@ -121,15 +109,8 @@ Feature: An individual UK tax payer is able to check their answers for About the
   Scenario: On behalf of Individual -About The Individual - Change Route validation -Address Validation- Needs to complete new address Journey
     Given I am on "Check Your Answers" page
     When I click on change button for "Individual’s address"
-    And enter country name "United Kingdom",select country "United Kingdom"
-    And click on continue button
-    And enter postcode "ZZ9Z 9TT"
-    And click on continue button
-    And I select Radio Button "3 Testing Lane, Royal Madeuptown, ZZ9Z 9TT" at Position "3"
-    And click on continue button
-    And click on confirm button
     Then page navigates to "Check Your Answers"
-    And About The Individual section should have a label "Individual’s address" at line "10" an answer with "3 Testing Lane,Royal Madeuptown,ZZ9Z 9TT,United Kingdom" and change URL ends with "individual-address/lookup/change"
+    And About The Individual section should have a label "Individual’s address" at line "10" an answer with "2 Testing Lane,Royal Madeuptown,ZZ9Z 9TT,United Kingdom" and change URL ends with "individual-address/lookup/change"
 
   @id006
   Scenario: On behalf of Individual -About The Individual - No change route to - Are you the individual this disclosure relates to?

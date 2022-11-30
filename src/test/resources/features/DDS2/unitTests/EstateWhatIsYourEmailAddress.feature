@@ -24,13 +24,6 @@ Feature: A UK estate tax payer is able to enter the details on 'What is your ema
     And click on Save and Continue button
     And I select Radio Button "No" at Position "3"
     And click on Save and Continue button
-    And enter country name "United Kingdom",select country "United Kingdom"
-    And click on Save and Continue button
-    And enter postcode "ZZ9Z 9TT"
-    And click on continue button
-    And I select Radio Button "2 Testing Lane, Royal Madeuptown, ZZ9Z 9TT" at Position "2"
-    And click on continue button
-    And click on confirm button
     And I enter "Agent Full Name" in the TextBox field
     And click on Save and Continue button
     And I enter "07777777777" in the TextBox field

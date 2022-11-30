@@ -14,16 +14,6 @@ Feature: A UK company representative is able to enter details and continue on Do
     And click on Save and Continue button
     And I enter "AB 123456" in the TextBox field
     And click on Save and Continue button
-    And enter country name "United Kingdom",select country "United Kingdom"
-    And click on continue button
-    Then page navigates to "What is the postcode and property name or number of the company’s address?"
-    And enter postcode "ZZ9Z 9TT"
-    And click on continue button
-    Then page navigates to "Choose the company’s address"
-    When I select Radio Button "2 Testing Lane, Royal Madeuptown, ZZ9Z 9TT" at Position "2"
-    And click on continue button
-    Then page navigates to "Is this the correct address?"
-    When click on confirm button
     And I enter "Dave" in the TextBox field
     And click on Save and Continue button
     And I enter "0771557382" in the TextBox field
@@ -51,16 +41,7 @@ Feature: A UK company representative is able to enter details and continue on Do
     And click on Save and Continue button
     And I enter "AB 123456" in the TextBox field
     And click on Save and Continue button
-    And enter country name "United Kingdom",select country "United Kingdom"
-    And click on continue button
-    Then page navigates to "What is the postcode and property name or number of the company’s address?"
-    And enter postcode "ZZ9Z 9TT"
-    And click on continue button
-    Then page navigates to "Choose the company’s address"
-    When I select Radio Button "2 Testing Lane, Royal Madeuptown, ZZ9Z 9TT" at Position "2"
-    And click on continue button
-    Then page navigates to "Is this the correct address?"
-    When click on confirm button
+
     And I enter "Dave" in the TextBox field
     And click on Save and Continue button
     And I enter "0771557382" in the TextBox field
@@ -83,16 +64,7 @@ Feature: A UK company representative is able to enter details and continue on Do
     And click on Save and Continue button
     And I enter "AB 123456" in the TextBox field
     And click on Save and Continue button
-    And enter country name "United Kingdom",select country "United Kingdom"
-    And click on continue button
-    Then page navigates to "What is the postcode and property name or number of the company’s address?"
-    And enter postcode "ZZ9Z 9TT"
-    And click on continue button
-    Then page navigates to "Choose the company’s address"
-    When I select Radio Button "2 Testing Lane, Royal Madeuptown, ZZ9Z 9TT" at Position "2"
-    And click on continue button
-    Then page navigates to "Is this the correct address?"
-    When click on confirm button
+
     And I enter "Dave" in the TextBox field
     And click on Save and Continue button
     And I enter "0771557382" in the TextBox field

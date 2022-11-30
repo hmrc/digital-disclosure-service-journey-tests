@@ -41,13 +41,7 @@ Feature: An individual UK tax payer is able to check their answers for About you
     And click on Save and Continue button
     And I enter "1234567890" in the TextBox field
     And click on Save and Continue button
-    And enter country name "United Kingdom",select country "United Kingdom"
-    And click on continue button
-    And enter postcode "ZZ9Z 9TT"
-    And click on continue button
-    And I select Radio Button "2 Testing Lane, Royal Madeuptown, ZZ9Z 9TT" at Position "2"
-    And click on continue button
-    And click on confirm button
+
 
   @id001 @smoke @regression
   Scenario: For Individual - About You Section Verification
@@ -121,15 +115,9 @@ Feature: An individual UK tax payer is able to check their answers for About you
   Scenario: For Individual - About You  - Change Route validation -Address Validation- Needs to complete new address Journey
     Given I am on "Check Your Answers" page
     When I click on change button for "Your address"
-    And enter country name "United Kingdom",select country "United Kingdom"
-    And click on continue button
-    And enter postcode "ZZ9Z 9TT"
-    And click on continue button
-    And I select Radio Button "3 Testing Lane, Royal Madeuptown, ZZ9Z 9TT" at Position "3"
-    And click on continue button
-    And click on confirm button
+
     Then page navigates to "Check Your Answers"
-    And line "5" should have a label "Your address" an answer with "3 Testing Lane,Royal Madeuptown,ZZ9Z 9TT,United Kingdom" and change URL ends with "your-address/lookup/change"
+    And line "5" should have a label "Your address" an answer with "2 Testing Lane,Royal Madeuptown,ZZ9Z 9TT,United Kingdom" and change URL ends with "your-address/lookup/change"
 
 
   @id007

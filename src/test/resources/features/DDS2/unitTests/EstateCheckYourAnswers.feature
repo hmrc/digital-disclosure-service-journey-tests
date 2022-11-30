@@ -39,13 +39,6 @@ Feature: An Estate is able to check their answers for About the person who died 
     And click on Save and Continue button
     And I enter "1234567890" in the TextBox field
     And click on Save and Continue button
-    And enter country name "United Kingdom",select country "United Kingdom"
-    And click on continue button
-    And enter postcode "ZZ9Z 9TT"
-    And click on continue button
-    And I select Radio Button "2 Testing Lane, Royal Madeuptown, ZZ9Z 9TT" at Position "2"
-    And click on continue button
-    And click on confirm button
     And I enter "My full name" in the TextBox field
     And click on Save and Continue button
     And I enter "07777 777777" in the TextBox field
@@ -54,13 +47,6 @@ Feature: An Estate is able to check their answers for About the person who died 
     And click on Save and Continue button
     And I enter "abc@abc.com" in the TextBox field
     And click on Save and Continue button
-    And enter country name "United Kingdom",select country "United Kingdom"
-    And click on continue button
-    And enter postcode "ZZ9Z 9TT"
-    And click on continue button
-    And I select Radio Button "1 Testing Lane, Royal Madeuptown, ZZ9Z 9TT" at Position "1"
-    And click on continue button
-    And click on confirm button
 
   Scenario: An Estate - About the person who died - Check your answers and change navigation
     Given I am on "Check Your Answers" page
