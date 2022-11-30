@@ -314,5 +314,18 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
     }
     Assert.assertTrue("Hint text is not Verified" + expectedText + " --- Actual:  " + actualText, expectedText==actualText)
   }
+
+  def SendNotification(): Unit = {
+    findByID("send-button").click()
+  }
+
+  def clickOnContinue(): Unit = {
+    findByID("start").click()
+  }
+  def verifySubmittedCaseRef(caseRef: String): Unit = {
+    val element = driver.findElement(By.xpath("//*[@class=\"govuk-panel__body\"]"))
+    val actualCaseRef = element.getText
+    Assert.assertTrue("CaseRef is not displayed, --- Expected: "+caseRef + " --- Actual: " + actualCaseRef, actualCaseRef.contains(caseRef))
+  }
 }
 

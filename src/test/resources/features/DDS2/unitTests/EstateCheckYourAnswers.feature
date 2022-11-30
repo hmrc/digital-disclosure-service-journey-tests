@@ -63,7 +63,7 @@ Feature: An Estate is able to check their answers for About the person who died 
     And click on confirm button
 
     @smoke
-  Scenario: An Estate - About the person who died - Check your answers and change navigation
+  Scenario: An Estate - About the person who died - Check your answers and send notification
     Given I am on "Check Your Answers" page
     Then answers page should have h2 header "About the person who died"
     And About the person who died section should have a label "Person’s full name" at line "1" an answer with "Estate Person" and change URL ends with "estates-individual-full-name/change"
@@ -75,7 +75,13 @@ Feature: An Estate is able to check their answers for About the person who died 
     And About the person who died section should have a label "Person’s VAT registration number" at line "7" an answer with "123456789" and change URL ends with "estates-individual-vat-registration/change"
     And About the person who died section should have a label "Was the person registered for Self Assessment, as far as you’re aware?" at line "8" an answer with "Yes, and I know their Unique Taxpayer Reference (UTR)" and change URL ends with "estates-individual-self-assessment/change"
     And About the person who died section should have a label "Person’s Unique Taxpayer Reference" at line "9" an answer with "1234567890" and change URL ends with "estates-individual-utr/change"
-    And About the person who died section should have a label "Person’s address" at line "10" an answer with "2 Testing Lane,Royal Madeuptown,ZZ9Z 9TT,United Kingdom" and change URL ends with "estate-address/lookup/change"
+    When I click on send notification button
+    Then page navigates to "You have sent the notification"
+    And the case reference should be "CFSS-1234567"
+
+  Scenario: An Estate - About the person who died - NO change navigation
+    Given I am on "Check Your Answers" page
+    Then answers page should have h2 header "About the person who died"
     And clicking on change button navigates as following:
       |Label|ExpectedPage|
       |Person’s full name|What was the name of the person who died?|
