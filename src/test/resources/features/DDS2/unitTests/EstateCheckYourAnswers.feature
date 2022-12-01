@@ -367,3 +367,21 @@ Feature: An Estate is able to check their answers for About the person who died 
     And About the person who died section should have a label "Was the person registered for Self Assessment, as far as you’re aware?" at line "8" an answer with "Yes, but I do not know their Unique Taxpayer Reference (UTR)" and change URL ends with "estates-individual-self-assessment/change"
     And label "Person’s Unique Taxpayer Reference" is not displayed on check your answer page
 
+  Scenario: An Estate - Person's Address - Change Route validation -Address Validation-No data population
+    Given I am on "Check Your Answers" page
+    When I click on change button for "Person’s address"
+    Then page navigates to "What was the country of the person’s address?"
+    And country dropdown is empty
+
+  Scenario: An Estate - Person's Address - Change Route validation -Address Validation- Needs to complete new address Journey
+    Given I am on "Check Your Answers" page
+    When I click on change button for "Person’s address"
+    And enter country name "United Kingdom",select country "United Kingdom"
+    And click on continue button
+    And enter postcode "ZZ9Z 9TT"
+    And click on continue button
+    And I select Radio Button "3 Testing Lane, Royal Madeuptown, ZZ9Z 9TT" at Position "3"
+    And click on continue button
+    And click on confirm button
+    Then page navigates to "Check Your Answers"
+    And About the person who died section should have a label "Person’s address" at line "10" an answer with "3 Testing Lane,Royal Madeuptown,ZZ9Z 9TT,United Kingdom" and change URL ends with "estate-address/lookup/change"
