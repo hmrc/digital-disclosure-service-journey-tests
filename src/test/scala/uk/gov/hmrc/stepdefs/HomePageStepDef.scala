@@ -88,4 +88,5 @@ class HomePageStepDef extends BasePage with HomePage {
   Then("""I am navigated to page with title {string}""") { (string: String) =>
     verifyPageTitle(string)
   }
+
 }

@@ -88,8 +88,4 @@ trait HomePage extends BasePage {
     hyperLink.click()
   }
 
-  def clickOnContinue(): Unit = {
-    continue.click()
-  }
-
 }
