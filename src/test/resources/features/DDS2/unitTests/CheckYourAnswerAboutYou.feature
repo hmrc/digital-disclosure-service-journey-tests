@@ -49,9 +49,19 @@ Feature: An individual UK tax payer is able to check their answers for About you
     And click on continue button
     And click on confirm button
 
-  @id001 @smoke @regression
+  @journeytests
   Scenario: For Individual - About You Section Verification
     Given I am on "Check Your Answers" page
+    Then page navigates to "Check Your Answers"
+    And answers page should have h2 header "Background"
+    And Background section has following
+      |Line|Label|Answer|URL|
+      |1|Will you be making a disclosure because you received a letter from HMRC?|Yes|letter-from-hmrc/change|
+      |2|Letter reference number|CFSS-1234567|hmrc-letter-reference/change|
+      |3|Who this disclosure is for?|An individual|what-is-this-disclosure-about/change|
+      |4|Are you the individual this disclosure relates to?|Yes, I am the individual|are-you-the-individual/change|
+      |5|Will the disclosure be about offshore liabilities?|Yes|disclose-offshore-liabilities/change|
+      |6|Will the disclosure also be about onshore liabilities?|Yes|disclose-onshore-liabilities/change|
     Then answers page should have h2 header "About you"
     And line "1" should have a label "Your full name" an answer with "my full name" and change URL ends with "your-full-name/change"
     And line "2" should have a label "Your telephone number" an answer with "07777 777777" and change URL ends with "your-telephone-number/change"
@@ -66,6 +76,9 @@ Feature: An individual UK tax payer is able to check their answers for About you
     And line "11" should have a label "Your VAT registration number" an answer with "123456789" and change URL ends with "your-vat-registration/change"
     And line "12" should have a label "Are you registered for Self Assessment?" an answer with "Yes, and I know my Unique Taxpayer Reference (UTR)" and change URL ends with "registered-for-self-assessment/change"
     And line "13" should have a label "Your Unique Taxpayer Reference" an answer with "1234567890" and change URL ends with "your-utr/change"
+    When I click on send notification button
+    Then page navigates to "You have sent the notification"
+    And the case reference should be "CFSS-1234567"
 
   @id002
   Scenario: For Individual - About You  - Change Route validation -With No Change

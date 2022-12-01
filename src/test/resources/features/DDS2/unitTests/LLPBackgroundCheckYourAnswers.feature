@@ -44,21 +44,6 @@ Feature: An individual is able to check their answers for About the Company sect
     And click on continue button
     And click on confirm button
 
-  @smoke
-  Scenario: LLP - Check your answers page - Background
-    Given I am on "Check Your Answers" page
-    And answers page should have h2 header "Background"
-    And Background section has following
-      |Line|Label|Answer|URL|
-      |1|Will you be making a disclosure because you received a letter from HMRC?|Yes|letter-from-hmrc/change|
-      |2|Letter reference number|CFSS-1234567|hmrc-letter-reference/change|
-      |3|Who this disclosure is for?|A limited liability partnership|what-is-this-disclosure-about/change|
-      |4|Are you a designated member of the limited liability partnership that the disclosure will be about?|No, I will be making a disclosure on behalf of a designated member|are-you-a-designated-member/change|
-      |5|Are you representing an organisation?|Yes|representing-organisation/change|
-      |6|Name of the organisation you represent|Organization name|representing-organisation-name/change|
-      |7|Will the disclosure be about offshore liabilities?|Yes|disclose-offshore-liabilities/change|
-      |8|Will the disclosure also be about onshore liabilities?|Yes|disclose-onshore-liabilities/change|
-
   Scenario: LLP - Background - Change route - Are you a designated member of the limited liability partnership that the disclosure will be about? from Yes to No
     Given I am on "Check Your Answers" page
     When I click on change button for "Are you a designated member of the limited liability partnership that the disclosure will be about?"

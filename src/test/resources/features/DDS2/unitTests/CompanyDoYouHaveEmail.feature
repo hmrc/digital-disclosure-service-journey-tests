@@ -6,7 +6,7 @@ Feature: A UK tax payer is able to enter the details and continue on "Do you hav
     Given I am on Do you have an email address that you are happy to be contacted on by HMRC Page
     Then heading with text "Do you have an email address that you are happy to be contacted on by HMRC?" is displayed
     And verify both the radio buttons are not selected
-    And save and Continue Button is displayed displayed
+    And save and Continue Button is displayed
     And back Button Link is displayed
 
   @id_002
