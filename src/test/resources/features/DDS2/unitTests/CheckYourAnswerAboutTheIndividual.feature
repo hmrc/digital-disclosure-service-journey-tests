@@ -83,6 +83,9 @@ Feature: An individual UK tax payer is able to check their answers for About the
       |Individual’s National Insurance number|What is the individual’s National Insurance number?|
       |Individual’s VAT registration number|What is the individual’s VAT registration number?|
       |Individual’s Unique Taxpayer Reference|What is the individual’s Unique Tax Reference?|
+    When I click on send notification button
+    Then page navigates to "You have sent the notification"
+    And the case reference should be "CFSS-1234567"
 
   @id002
   Scenario: On behalf of Individual -About The Individual - Change Route validation -By Changing Value

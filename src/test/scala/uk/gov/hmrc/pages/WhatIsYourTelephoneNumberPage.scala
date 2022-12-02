@@ -19,7 +19,7 @@ trait WhatIsYourTelephoneNumberPage extends BasePage {
   def verifyBodyLabel(expectedText: String): Unit = {
     val element = driver.findElement(By.xpath("//*[@class='govuk-label']"))
     val actualText = element.getText
-    Assert.assertTrue("Body Text is not Verified", expectedText == actualText)
+    Assert.assertTrue("Body Text is not Verified. Expected: "+expectedText + " ---Actual: " + actualText, expectedText == actualText)
   }
 
 }

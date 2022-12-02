@@ -4,6 +4,7 @@ Feature: An Estate tax payer is able to enter the details and continue on "What 
   Scenario: What was the person’s National Insurance number?- UI validation
     Given I navigate to "estates-individual-national-insurance-number" page
     Then verify the question should be "What was the person’s National Insurance number?"
+    And body text should be "This is on their payslip, P60 or tax return."
     And hint with text "For example, ‘QQ123456A’." is displayed
     And save and Continue Button is displayed
     And back Button Link is displayed
