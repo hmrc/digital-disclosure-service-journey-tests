@@ -1,5 +1,5 @@
 @page @regression
-Feature: An individual is able to check their answers for About the Company section before submitting page
+Feature: LLP is able to check their answers for About the background section before submitting page
 
   Background:
     Given I am navigated to Received A Letter Page
@@ -70,6 +70,7 @@ Feature: An individual is able to check their answers for About the Company sect
       |7|Will the disclosure be about offshore liabilities?|Yes|disclose-offshore-liabilities/change|
       |8|Will the disclosure also be about onshore liabilities?|Yes|disclose-onshore-liabilities/change|
 
+    @journeytests
   Scenario: LLP - Background - Change route - Are you a designated member of the limited liability partnership that the disclosure will be about? from No to Yes
     Given I am on "Check Your Answers" page
     When I click on change button for "Are you a designated member of the limited liability partnership that the disclosure will be about?"
@@ -85,6 +86,18 @@ Feature: An individual is able to check their answers for About the Company sect
       |4|Are you a designated member of the limited liability partnership that the disclosure will be about?|Yes, I am a designated member of the limited liability partnership|are-you-a-designated-member/change|
       |5|Will the disclosure be about offshore liabilities?|Yes|disclose-offshore-liabilities/change|
       |6|Will the disclosure also be about onshore liabilities?|Yes|disclose-onshore-liabilities/change|
+    And answers page should have h2 header "About you"
+    And line "1" should have a label "Your full name" an answer with "Agent full name" and change URL ends with "your-full-name/change"
+    And line "2" should have a label "Your telephone number" an answer with "07777 777777" and change URL ends with "your-telephone-number/change"
+    And line "3" should have a label "Do you have an email address that you are happy to be contacted on by HMRC?" an answer with "Yes" and change URL ends with "contact-by-email/change"
+    And line "4" should have a label "Your email address" an answer with "abc@abc.com" and change URL ends with "your-email-address/change"
+    And line "5" should have a label "Your address" an answer with "1 Testing Lane,Royal Madeuptown,ZZ9Z 9TT,United Kingdom" and change URL ends with "your-address/lookup/change"
+    And answers page should have h2 header "About the limited liability partnership"
+    And About The LLP section should have a label "Limited liability partnership name" at line "1" an answer with "LLP name" and change URL ends with "llp-name/change"
+    And About The LLP section should have a label "Limited liability partnership’s address" at line "2" an answer with "The Farm,Royal Madeuptown,ZZ9Z 9TT,United Kingdom" and change URL ends with "llp-address/lookup/change"
+    When I click on send notification button
+    Then page navigates to "You have sent your notification"
+    And the case reference should be "CFSS-1234567"
 
   Scenario: LLP - Background - Change route - Are you a designated member of the limited liability partnership that the disclosure will be about? - No change
     Given I am on "Check Your Answers" page
