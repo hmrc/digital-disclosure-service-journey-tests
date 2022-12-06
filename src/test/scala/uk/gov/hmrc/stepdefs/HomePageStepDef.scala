@@ -100,4 +100,12 @@ class HomePageStepDef extends BasePage with HomePage {
     verifyPageTitle(string)
   }
 
+  When ("""I select {string} from drop down {string}""") { (valueToSelect: String, dropDownID: String) =>
+    selectValueFromDropdown(valueToSelect, dropDownID)
+  }
+
+  When("""I navigate to authority wizard page""") { () =>
+    navigateToBaseUrl()
+  }
+
 }
