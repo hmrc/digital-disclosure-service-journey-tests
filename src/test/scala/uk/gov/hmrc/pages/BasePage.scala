@@ -21,7 +21,7 @@ import org.apache.commons.lang3.StringUtils
 import org.junit
 import org.junit.Assert
 import org.openqa.selenium.By.{ById, ByXPath}
-import org.openqa.selenium.support.ui.{ExpectedConditions, WebDriverWait}
+import org.openqa.selenium.support.ui.{ExpectedConditions, Select, WebDriverWait}
 import org.openqa.selenium.{By, Keys, WebElement}
 import org.scalatest.Assertions
 import org.scalatest.concurrent.ScalaFutures
@@ -29,6 +29,7 @@ import org.scalatestplus.selenium.WebBrowser
 import uk.gov.hmrc.driver.StartUpTearDown
 import uk.gov.hmrc.utils.Configuration
 import uk.gov.hmrc.utils.MessageReader.getElement
+
 import java.time.Duration
 
 trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with ScalaFutures with StartUpTearDown {
@@ -107,6 +108,10 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
       driver.findElement( By.xpath("//button[contains(text(), 'Hide cookies message')]")).click()
 
     }
+  }
+
+  def navigateToBaseUrl(): Unit = {
+    goTo(Configuration.settings.baseUrl)
   }
 
   def navigateToHomePage(): Unit = {
@@ -339,10 +344,16 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
   def clickOnContinue(): Unit = {
     findByID("start").click()
   }
+
   def verifySubmittedCaseRef(caseRef: String): Unit = {
     val element = driver.findElement(By.xpath("//*[@class=\"govuk-panel__body\"]"))
     val actualCaseRef = element.getText
     Assert.assertTrue("CaseRef is not displayed, --- Expected: "+caseRef + " --- Actual: " + actualCaseRef, actualCaseRef.contains(caseRef))
+  }
+
+  def selectValueFromDropdown(valueToSelect: String, dropDownID: String): Unit = {
+    val element = new Select(driver.findElement(By.xpath("//*[@class='govuk-select' and @id=\"" + dropDownID + "\"]")))
+    element.selectByVisibleText(valueToSelect)
   }
 }
 
