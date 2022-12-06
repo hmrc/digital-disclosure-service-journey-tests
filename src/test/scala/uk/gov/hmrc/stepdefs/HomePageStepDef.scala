@@ -104,8 +104,16 @@ class HomePageStepDef extends BasePage with HomePage {
     selectValueFromDropdown(valueToSelect, dropDownID)
   }
 
-  When("""I navigate to authority wizard page""") { () =>
+  Given("""I navigate to authority wizard page""") { () =>
     navigateToBaseUrl()
   }
 
+  When("""enter NINO {string}""") { (string: String) =>
+    enterNINOInput(string)
+  }
+
+  When("""click on submit button""") { () =>
+    // Write code here that turns the phrase above into concrete actions
+    submit()
+  }
 }
