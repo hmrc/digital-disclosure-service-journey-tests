@@ -22,10 +22,11 @@ import org.junit.Assert
 import org.openqa.selenium.By.ByXPath
 import uk.gov.hmrc.utils.Configuration
 import org.apache.commons.lang3.StringUtils
+import java.time.Duration
 
 trait HmrcLetterReferencePage extends BasePage {
 
-  private lazy val webdriverWait = new WebDriverWait(driver, 20)
+  private lazy val webdriverWait = new WebDriverWait(driver, Duration.ofSeconds(20))
 
   val currentEnvironment: String = Configuration.environment.toString
 

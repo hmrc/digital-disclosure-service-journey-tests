@@ -2,6 +2,7 @@
 
 !.gitignore
 
+/.bsp
 .cache
 /.classpath
 db

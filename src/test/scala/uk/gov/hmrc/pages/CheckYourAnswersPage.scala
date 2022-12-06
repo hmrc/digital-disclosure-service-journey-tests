@@ -22,13 +22,13 @@ import org.junit.Assert
 import org.openqa.selenium.{By, WebElement}
 import org.openqa.selenium.support.ui.WebDriverWait
 import uk.gov.hmrc.utils.Configuration
-
+import java.time.Duration
 import scala.Console.println
 import scala.util.control.Breaks
 
 trait CheckYourAnswersPage extends BasePage {
 
-  private lazy val webdriverWait = new WebDriverWait(driver, 20)
+  private lazy val webdriverWait = new WebDriverWait(driver, Duration.ofSeconds(20))
 
   val currentEnvironment: String = Configuration.environment.toString
 
