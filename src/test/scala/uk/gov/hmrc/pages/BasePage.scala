@@ -29,11 +29,12 @@ import org.scalatestplus.selenium.WebBrowser
 import uk.gov.hmrc.driver.StartUpTearDown
 import uk.gov.hmrc.utils.Configuration
 import uk.gov.hmrc.utils.MessageReader.getElement
+import java.time.Duration
 
 trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with ScalaFutures with StartUpTearDown {
 
   lazy val url: String = ""
-  private lazy val webdriverWait = new WebDriverWait(driver, 20)
+  private lazy val webdriverWait = new WebDriverWait(driver, Duration.ofSeconds(20))
   private val port = 10210
 
 

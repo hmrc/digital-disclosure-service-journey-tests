@@ -21,11 +21,12 @@ import org.openqa.selenium.support.ui.{ExpectedConditions, WebDriverWait}
 import org.junit.Assert
 import org.openqa.selenium.By.ByXPath
 import uk.gov.hmrc.utils.Configuration
+import java.time.Duration
 
 
 trait ReceivedALetterPage extends BasePage {
 
-  private lazy val webdriverWait = new WebDriverWait(driver, 20)
+  private lazy val webdriverWait = new WebDriverWait(driver, Duration.ofSeconds(20))
 
   val currentEnvironment: String = Configuration.environment.toString
 

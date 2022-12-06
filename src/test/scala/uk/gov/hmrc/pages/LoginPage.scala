@@ -24,12 +24,13 @@ import org.scalatest.matchers.must.Matchers.be
 import org.scalatest.matchers.should.Matchers.convertToAnyShouldWrapper
 import org.scalatestplus.selenium._
 import uk.gov.hmrc.utils.Configuration
+import java.time.Duration
 
 
 trait LoginPage extends BasePage {
 
   val currentenvironment: String = Configuration.environment.toString
-  private lazy val webdriverWait = new WebDriverWait(driver, 20)
+  private lazy val webdriverWait = new WebDriverWait(driver, Duration.ofSeconds(20))
 
   //stride login locators for local
   def userid: WebElement = findByID("login-form-username")
