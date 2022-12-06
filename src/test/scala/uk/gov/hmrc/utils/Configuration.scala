@@ -21,7 +21,7 @@ case class Configuration(baseUrl: String)
 object Configuration {
 
   lazy val environment: Environment.Name = {
-    val environmentProperty = Option(System.getProperty("environment")).getOrElse("Dev").toLowerCase
+    val environmentProperty = Option(System.getProperty("environment")).getOrElse("Local").toLowerCase
 
     environmentProperty match {
       case "local" => Environment.Local

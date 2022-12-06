@@ -1,5 +1,5 @@
 @page @regression
-Feature: An individual is able to check their answers for About the Company section before submitting page
+Feature: A company tax payer is able to check their answers for About the Company section before submitting page
 
   Background:
     Given I am navigated to Received A Letter Page

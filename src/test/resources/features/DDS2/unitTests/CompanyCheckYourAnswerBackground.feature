@@ -90,6 +90,7 @@ Feature: An Company tax payer is able to check their answers for background sect
       |4|Are you an officer of the company this disclosure relates to?|No, I will be making a disclosure on behalf of an officer|are-you-an-officer/change|
       |5|Are you representing an organisation?|No|representing-organisation/change|
 
+    @journeytests
   Scenario: Company - Background - Change route to - Are you an officer of the company? from No to Yes
     Given I am on "Check Your Answers" page
     When I click on change button for "Are you an officer of the company this disclosure relates to?"
@@ -105,6 +106,19 @@ Feature: An Company tax payer is able to check their answers for background sect
       |2|Letter reference number|CFSS-1234567|hmrc-letter-reference/change|
       |3|Who this disclosure is for?|A company|what-is-this-disclosure-about/change|
       |4|Are you an officer of the company this disclosure relates to?|Yes, I am an officer of the company|are-you-an-officer/change|
+    And answers page should have h2 header "About you"
+    And line "1" should have a label "Your full name" an answer with "Agent full name" and change URL ends with "your-full-name/change"
+    And line "2" should have a label "Your telephone number" an answer with "07777 777777" and change URL ends with "your-telephone-number/change"
+    And line "3" should have a label "Do you have an email address that you are happy to be contacted on by HMRC?" an answer with "Yes" and change URL ends with "contact-by-email/change"
+    And line "4" should have a label "Your email address" an answer with "abc@abc.com" and change URL ends with "your-email-address/change"
+    And line "5" should have a label "Your address" an answer with "1 Testing Lane,Royal Madeuptown,ZZ9Z 9TT,United Kingdom" and change URL ends with "your-address/lookup/change"
+    Then answers page should have h2 header "About the company"
+    And About The Company section should have a label "Company’s name" at line "1" an answer with "Company name" and change URL ends with "company-name/change"
+    And About The Company section should have a label "Company registration number" at line "2" an answer with "12345678" and change URL ends with "company-registration/change"
+    And About The Company section should have a label "Company’s address" at line "3" an answer with "The Farm,Royal Madeuptown,ZZ9Z 9TT,United Kingdom" and change URL ends with "company-address/lookup/change"
+    When I click on send notification button
+    Then page navigates to "You have sent your notification"
+    And the case reference should be "CFSS-1234567"
 
   Scenario: Company - Background - Change route to - Do not change: No, I will be making a disclosure on behalf of an officer
     Given I am on "Check Your Answers" page

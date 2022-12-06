@@ -76,8 +76,9 @@ Feature: An individual UK tax payer is able to check their answers for About you
     And line "11" should have a label "Your VAT registration number" an answer with "123456789" and change URL ends with "your-vat-registration/change"
     And line "12" should have a label "Are you registered for Self Assessment?" an answer with "Yes, and I know my Unique Taxpayer Reference (UTR)" and change URL ends with "registered-for-self-assessment/change"
     And line "13" should have a label "Your Unique Taxpayer Reference" an answer with "1234567890" and change URL ends with "your-utr/change"
+    And answers page should not have h2 header "About the individual"
     When I click on send notification button
-    Then page navigates to "You have sent the notification"
+    Then page navigates to "You have sent your notification"
     And the case reference should be "CFSS-1234567"
 
   @id002

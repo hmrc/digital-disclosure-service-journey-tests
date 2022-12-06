@@ -1,5 +1,5 @@
 @page @regression
-Feature: An individual is able to check their answers for About the Company section before submitting page
+Feature: LLP is able to check their answers for About the LLP section before submitting page
 
   Background:
     Given I am navigated to Received A Letter Page
@@ -65,6 +65,7 @@ Feature: An individual is able to check their answers for About the Company sect
     And line "4" should have a label "Your email address" an answer with "abc@abc.com" and change URL ends with "your-email-address/change"
     And line "5" should have a label "Your address" an answer with "1 Testing Lane,Royal Madeuptown,ZZ9Z 9TT,United Kingdom" and change URL ends with "your-address/lookup/change"
     And answers page should have h2 header "About the limited liability partnership"
+      And About The LLP section should have a label "Limited liability partnership name" at line "1" an answer with "LLP name" and change URL ends with "llp-name/change"
     And About The LLP section should have a label "Limited liability partnership’s address" at line "2" an answer with "The Farm,Royal Madeuptown,ZZ9Z 9TT,United Kingdom" and change URL ends with "llp-address/lookup/change"
     When I click on send notification button
     Then page navigates to "You have sent the notification"

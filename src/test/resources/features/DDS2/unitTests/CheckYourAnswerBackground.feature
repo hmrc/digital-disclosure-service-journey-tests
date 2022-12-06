@@ -486,7 +486,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     And line "13" should have a label "Your Unique Taxpayer Reference" an answer with "1234567810" and change URL ends with "your-utr/change"
     And answers page should not have h2 header "About the individual"
 
-    @smoke
+    @journeytests
   Scenario: On behalf of Individual - Change Route validation -  From Yes to No on behalf of the individual - Are you the individual this disclosure relates to?
     Given I am navigated to Received A Letter Page
     When I select Radio Button "Yes" at Position "1"
@@ -620,3 +620,6 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     And About The Individual section should have a label "Is the individual registered for Self Assessment, as far as you’re aware?" at line "8" an answer with "Yes, and I know their Unique Taxpayer Reference (UTR)" and change URL ends with "individual-self-assessment/change"
     And About The Individual section should have a label "Individual’s Unique Taxpayer Reference" at line "9" an answer with "1234567890" and change URL ends with "individual-utr/change"
     And About The Individual section should have a label "Individual’s address" at line "10" an answer with "2 Testing Lane,Royal Madeuptown,ZZ9Z 9TT,United Kingdom" and change URL ends with "individual-address/lookup/change"
+    When I click on send notification button
+    Then page navigates to "You have sent the notification"
+    And the case reference should be "CFSS-1234567"
