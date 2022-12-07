@@ -89,6 +89,11 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
     findByID("continue").click()
   }
 
+
+  def submit(): Unit = {
+    findByID("submit").click()
+  }
+
   def clickOnBack(): Unit = {
     driver.findElement(By.className("govuk-back-link")).click()
   }
@@ -354,6 +359,10 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
   def selectValueFromDropdown(valueToSelect: String, dropDownID: String): Unit = {
     val element = new Select(driver.findElement(By.xpath("//*[@class='govuk-select' and @id=\"" + dropDownID + "\"]")))
     element.selectByVisibleText(valueToSelect)
+  }
+
+  def enterNINOInput(textInput: String): Unit = {
+    driver.findElement(By.id("nino")).sendKeys(textInput)
   }
 }
 
