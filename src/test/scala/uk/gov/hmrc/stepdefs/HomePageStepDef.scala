@@ -81,6 +81,10 @@ class HomePageStepDef extends BasePage with HomePage {
     verifyParagraphSix(string)
   }
 
+  Then("""seventh paragraph should be {string}""") { (string: String) =>
+    verifyParagraphSeven(string)
+  }
+
   When("""I click on continue button""") { () =>
     // Write code here that turns the phrase above into concrete actions
     clickOnContinue()

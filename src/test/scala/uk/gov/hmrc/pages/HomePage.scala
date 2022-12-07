@@ -38,7 +38,8 @@ trait HomePage extends BasePage {
   def paragraphThree: WebElement = findByID("third-paragraph")
   def paragraphFour: WebElement = findByID("forth-paragraph")
   def paragraphFive: WebElement = findByID("fifth-paragraph")
-  def paragraphSix: WebElement = findByID("seventh-paragraph")
+  def paragraphSix: WebElement = findByID("sixth-paragraph")
+  def paragraphSeven: WebElement = findByID("seventh-paragraph")
 
   def continue: WebElement = findByID("start")
 
@@ -67,7 +68,7 @@ trait HomePage extends BasePage {
 
   def verifyParagraphOne(expectedPara: String): Unit = {
     val actualPara = paragraphOne.getText
-    Assert.assertTrue("Paragraph One verified", expectedPara == actualPara)
+    Assert.assertTrue("Paragraph One not verified. Expected: "+ expectedPara + "-- Actual: "+actualPara, expectedPara == actualPara)
   }
 
   def verifyParagraphTwo(expectedPara: String): Unit = {
@@ -77,22 +78,27 @@ trait HomePage extends BasePage {
 
   def verifyParagraphThree(expectedPara: String): Unit = {
     val actualPara = paragraphThree.getText
-    Assert.assertTrue("Paragraph Three verified", expectedPara == actualPara)
+    Assert.assertTrue("Paragraph Three not verified. Expected: "+ expectedPara + "-- Actual: "+actualPara, expectedPara == actualPara)
   }
 
   def verifyParagraphFour(expectedPara: String): Unit = {
     val actualPara = paragraphFour.getText
-    Assert.assertTrue("Paragraph Four verified", expectedPara == actualPara)
+    Assert.assertTrue("Paragraph Four not verified. Expected: "+ expectedPara + "-- Actual: "+actualPara, expectedPara == actualPara)
   }
 
   def verifyParagraphFive(expectedPara: String): Unit = {
     val actualPara = paragraphFive.getText
-    Assert.assertTrue("Paragraph Five verified", expectedPara == actualPara)
+    Assert.assertTrue("Paragraph Five not verified. Expected: "+ expectedPara + "-- Actual: "+actualPara, expectedPara == actualPara)
   }
 
   def verifyParagraphSix(expectedPara: String): Unit = {
     val actualPara = paragraphSix.getText
-    Assert.assertTrue("Paragraph Six verified", expectedPara == actualPara)
+    Assert.assertTrue("Paragraph Six not verified. Expected: "+ expectedPara + "-- Actual: "+actualPara, expectedPara == actualPara)
+  }
+
+  def verifyParagraphSeven(expectedPara: String): Unit = {
+    val actualPara = paragraphSeven.getText
+    Assert.assertTrue("Paragraph Seven not verified. Expected: "+ expectedPara + "-- Actual: "+actualPara, expectedPara == actualPara)
   }
 
   def clickOnLink(linkText: String): Unit = {
