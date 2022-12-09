@@ -131,6 +131,10 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
   def navigateToSpecificPage(specificPage: String): Unit = {
     navigateToHomePage()
     findByID("start").click()
+    if (driver.getTitle == "Using this service - Digital Disclosure Service - GOV.UK") {
+      clickOnRadioButton("Make a notification","1")
+      saveAndContinue()
+    }
     if (specificPage != "") {
       goTo(Configuration.settings.baseUrl+specificPage)
     }
