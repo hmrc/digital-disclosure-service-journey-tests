@@ -43,7 +43,7 @@ Feature: A UK tax payer is able to navigate to Home page and continue to the nex
   Scenario: Home Page - Continue takes to the first question
     Given I am on the Home page
     When I click on continue button
-    Then I am navigated to page with title "What do you want to do? - Digital Disclosure Service - GOV.UK"
+    Then I am navigated to page with title "Using this service - Digital Disclosure Service - GOV.UK"
 
 
 
