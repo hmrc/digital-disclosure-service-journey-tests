@@ -50,48 +50,32 @@ Feature: A UK tax payer is able to submit high confidence level & valid NINO to 
       | "200" |
       | "250" |
 
-  Scenario Outline: Home Page - Navigation - Organisation with less than 250 confidence level and valid NINO is redirected to Identity Verification Journey
+  Scenario Outline: Home Page - Navigation - Organisation with 250 confidence level or less and valid NINO is redirected to DDS start page
     Given I navigate to authority wizard page
     When I select <Value> from drop down "confidenceLevel"
     And I select "Organisation" from drop down "affinityGroupSelect"
     And I select "strong" from drop down "credentialStrength"
     And enter NINO "AB123456A"
     And click on submit button
-    Then user is navigated to the page with title "Identity Verification Stub"
-    Then the page title should be "Identity Verification - Stubbed Journey configuration"
+    Then user is navigated to the page with title "Digital Disclosure Service"
+    Then the page title should be "Digital Disclosure Service - Digital Disclosure Service - GOV.UK"
     Examples:
       | Value |
       |  "50" |
       | "200" |
+      | "200" |
 
-  Scenario Outline: Home Page - Navigation - Organisation with less than 250 confidence level and no NINO is redirected to Identity Verification Journey
+  Scenario Outline: Home Page - Navigation - Organisation with 250 confidence level or less and no NINO is redirected to DDS start page
     Given I navigate to authority wizard page
     When I select <Value> from drop down "confidenceLevel"
     And I select "Organisation" from drop down "affinityGroupSelect"
     And I select "strong" from drop down "credentialStrength"
     And click on submit button
-    Then user is navigated to the page with title "Identity Verification Stub"
-    Then the page title should be "Identity Verification - Stubbed Journey configuration"
+    Then user is navigated to the page with title "Digital Disclosure Service"
+    Then the page title should be "Digital Disclosure Service - Digital Disclosure Service - GOV.UK"
     Examples:
       | Value  |
       |   "50" |
       |  "200" |
+      |  "250" |
 
-  Scenario: Home Page - Navigation - Organisation with 250 confidence level and valid NINO is redirected to start page
-    Given I navigate to authority wizard page
-    When I select "250" from drop down "confidenceLevel"
-    And I select "Organisation" from drop down "affinityGroupSelect"
-    And I select "strong" from drop down "credentialStrength"
-    And enter NINO "AB123456A"
-    And click on submit button
-    Then user is navigated to the page with title "Digital Disclosure Service"
-    Then the page title should be "Digital Disclosure Service - Digital Disclosure Service - GOV.UK"
-
-  Scenario: Home Page - Navigation - Organisation with 250 confidence level and no NINO is redirected to DDS start page
-    Given I navigate to authority wizard page
-    When I select "250" from drop down "confidenceLevel"
-    And I select "Organisation" from drop down "affinityGroupSelect"
-    And I select "strong" from drop down "credentialStrength"
-    And click on submit button
-    Then user is navigated to the page with title "Digital Disclosure Service"
-    Then the page title should be "Digital Disclosure Service - Digital Disclosure Service - GOV.UK"
