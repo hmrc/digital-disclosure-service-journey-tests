@@ -21,6 +21,9 @@ import org.junit.{AfterClass, BeforeClass}
 import org.openqa.selenium.{OutputType, TakesScreenshot, WebDriver, WebDriverException}
 import uk.gov.hmrc.driver.{BrowserDriver, StartUpTearDown}
 import uk.gov.hmrc.utils.{ApiLogin, Configuration}
+import uk.gov.hmrc.webdriver.SingletonDriver
+
+import scala.util.Try
 
 class Hooks extends StartUpTearDown{
 
@@ -35,7 +38,9 @@ class Hooks extends StartUpTearDown{
   }
 
   @After
-  def cleanup(): Unit = {
-    sys.addShutdownHook(driver.quit())
-  }
+  def cleanup(): Unit =
+    sys.addShutdownHook {
+      Try(SingletonDriver.closeInstance)
+    }
+
 }
