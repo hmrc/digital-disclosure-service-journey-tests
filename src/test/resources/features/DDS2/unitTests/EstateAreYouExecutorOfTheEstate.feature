@@ -4,7 +4,7 @@
   Scenario: Are you the executor or administrator of the estate that the disclosure will be about? - UI Validation
     Given I navigate to "are-you-the-executor" page
     Then verify the question should be "Are you the executor or administrator of the estate that the disclosure will be about?"
-    And body should be "An executor is a person appointed by the person who has passed away to oversee the managing of their estate. An administrator is responsible for managing the estate when there is no will, the will does not name an executor or the executor has abstained from their role."
+    And body should be "An executor is a person appointed by the person who has died to oversee the managing of their estate. An administrator is responsible for managing the estate when there is no will, the will does not name an executor or the executor has abstained from their role."
     And radio Button with text "Yes, I am the executor or administrator of the estate" is displayed at position "1"
     And radio Button with text "No, I will be making a disclosure on behalf of the executor or administrator of the estate" is displayed at position "2"
     And hint with text "We may ask for additional evidence that you’re authorised to act for them, such as the ‘Authorising a tax agent (64-8)’ form." is displayed

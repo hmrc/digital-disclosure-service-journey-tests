@@ -9,7 +9,7 @@ Feature: A trust is able to check their answers for background section before su
     And click on Save and Continue button
     And I select Radio Button "A trust" at Position "5"
     And click on Save and Continue button
-    And I select Radio Button "No, I am will be making a disclosure on behalf of the trustee" at Position "2"
+    And I select Radio Button "No, I will be making a disclosure on behalf of a trustee" at Position "2"
     And click on Save and Continue button
     And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
@@ -44,14 +44,14 @@ Feature: A trust is able to check their answers for background section before su
     And click on continue button
     And click on confirm button
 
-  Scenario: Trust - Background - Change route - Are you trustee of the trust that the disclosure will be about? from Yes to No
+  Scenario: Trust - Background - Change route - Are you a trustee of the trust that the disclosure will be about? from Yes to No
     Given I am on "Check Your Answers" page
-    When I click on change button for "Are you trustee of the trust that the disclosure will be about?"
-    And I select Radio Button "Yes, I am the trustee of the trust" at Position "1"
+    When I click on change button for "Are you a trustee of the trust that the disclosure will be about?"
+    And I select Radio Button "Yes, I am a trustee of the trust" at Position "1"
     And click on Save and Continue button
     Then page navigates to "Check Your Answers"
-    When I click on change button for "Are you trustee of the trust that the disclosure will be about?"
-    And I select Radio Button "No, I am will be making a disclosure on behalf of the trustee" at Position "2"
+    When I click on change button for "Are you a trustee of the trust that the disclosure will be about?"
+    And I select Radio Button "No, I will be making a disclosure on behalf of a trustee" at Position "2"
     And click on Save and Continue button
     And I select Yes radio button
     And click on Save and Continue button
@@ -64,17 +64,17 @@ Feature: A trust is able to check their answers for background section before su
       |1|Will you be making a disclosure because you received a letter from HMRC?|Yes|letter-from-hmrc/change|
       |2|Letter reference number|CFSS-1234567|hmrc-letter-reference/change|
       |3|Who this disclosure is for?|A trust|what-is-this-disclosure-about/change|
-      |4|Are you trustee of the trust that the disclosure will be about?|No, I am will be making a disclosure on behalf of the trustee|are-you-a-trustee/change|
+      |4|Are you a trustee of the trust that the disclosure will be about?|No, I will be making a disclosure on behalf of a trustee|are-you-a-trustee/change|
       |5|Are you representing an organisation?|Yes|representing-organisation/change|
       |6|Name of the organisation you represent|New Org Name|representing-organisation-name/change|
       |7|Will the disclosure be about offshore liabilities?|Yes|disclose-offshore-liabilities/change|
       |8|Will the disclosure also be about onshore liabilities?|Yes|disclose-onshore-liabilities/change|
 
     @journeytests
-  Scenario: Trust - Background - Change route - Are you trustee of the trust that the disclosure will be about? from No to Yes
+  Scenario: Trust - Background - Change route - Are you a trustee of the trust that the disclosure will be about? from No to Yes
     Given I am on "Check Your Answers" page
-    When I click on change button for "Are you trustee of the trust that the disclosure will be about?"
-    And I select Radio Button "Yes, I am the trustee of the trust" at Position "1"
+    When I click on change button for "Are you a trustee of the trust that the disclosure will be about?"
+    And I select Radio Button "Yes, I am a trustee of the trust" at Position "1"
     And click on Save and Continue button
     Then page navigates to "Check Your Answers"
     And answers page should have h2 header "Background"
@@ -83,7 +83,7 @@ Feature: A trust is able to check their answers for background section before su
       |1|Will you be making a disclosure because you received a letter from HMRC?|Yes|letter-from-hmrc/change|
       |2|Letter reference number|CFSS-1234567|hmrc-letter-reference/change|
       |3|Who this disclosure is for?|A trust|what-is-this-disclosure-about/change|
-      |4|Are you trustee of the trust that the disclosure will be about?|Yes, I am the trustee of the trust|are-you-a-trustee/change|
+      |4|Are you a trustee of the trust that the disclosure will be about?|Yes, I am a trustee of the trust|are-you-a-trustee/change|
       |5|Will the disclosure be about offshore liabilities?|Yes|disclose-offshore-liabilities/change|
       |6|Will the disclosure also be about onshore liabilities?|Yes|disclose-onshore-liabilities/change|
     And answers page should have h2 header "About you"
@@ -99,9 +99,9 @@ Feature: A trust is able to check their answers for background section before su
     Then page navigates to "You have sent your notification"
     And the case reference should be "CFSS-1234567"
 
-  Scenario: Trust - Background - Change route - Are you trustee of the trust that the disclosure will be about? - No change
+  Scenario: Trust - Background - Change route - Are you a trustee of the trust that the disclosure will be about? - No change
     Given I am on "Check Your Answers" page
-    When I click on change button for "Are you trustee of the trust that the disclosure will be about?"
+    When I click on change button for "Are you a trustee of the trust that the disclosure will be about?"
     And click on Save and Continue button
     Then page navigates to "Check Your Answers"
     And answers page should have h2 header "Background"
@@ -110,7 +110,7 @@ Feature: A trust is able to check their answers for background section before su
       |1|Will you be making a disclosure because you received a letter from HMRC?|Yes|letter-from-hmrc/change|
       |2|Letter reference number|CFSS-1234567|hmrc-letter-reference/change|
       |3|Who this disclosure is for?|A trust|what-is-this-disclosure-about/change|
-      |4|Are you trustee of the trust that the disclosure will be about?|No, I am will be making a disclosure on behalf of the trustee|are-you-a-trustee/change|
+      |4|Are you a trustee of the trust that the disclosure will be about?|No, I will be making a disclosure on behalf of a trustee|are-you-a-trustee/change|
       |5|Are you representing an organisation?|Yes|representing-organisation/change|
       |6|Name of the organisation you represent|Organization name|representing-organisation-name/change|
       |7|Will the disclosure be about offshore liabilities?|Yes|disclose-offshore-liabilities/change|

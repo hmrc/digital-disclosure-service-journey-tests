@@ -9,7 +9,7 @@ Feature: A trust is able to check their answers for About the Trust section befo
     And click on Save and Continue button
     And I select Radio Button "A trust" at Position "5"
     And click on Save and Continue button
-    And I select Radio Button "No, I am will be making a disclosure on behalf of the trustee" at Position "2"
+    And I select Radio Button "No, I will be making a disclosure on behalf of a trustee" at Position "2"
     And click on Save and Continue button
     And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
@@ -53,7 +53,7 @@ Feature: A trust is able to check their answers for About the Trust section befo
       |1|Will you be making a disclosure because you received a letter from HMRC?|Yes|letter-from-hmrc/change|
       |2|Letter reference number|CFSS-1234567|hmrc-letter-reference/change|
       |3|Who this disclosure is for?|A trust|what-is-this-disclosure-about/change|
-      |4|Are you trustee of the trust that the disclosure will be about?|No, I am will be making a disclosure on behalf of the trustee|are-you-a-trustee/change|
+      |4|Are you a trustee of the trust that the disclosure will be about?|No, I will be making a disclosure on behalf of a trustee|are-you-a-trustee/change|
       |5|Are you representing an organisation?|Yes|representing-organisation/change|
       |6|Name of the organisation you represent|Organization name|representing-organisation-name/change|
       |7|Will the disclosure be about offshore liabilities?|Yes|disclose-offshore-liabilities/change|

@@ -22,7 +22,7 @@ Feature: A UK tax payer is able to enter the details and continue on "What is yo
     When I enter no data in NI Number TextBox field
     And click on Save and Continue button
     Then error summary popup should be displayed with text "There is a problem"
-    And error message should be displayed with text "Enter a valid National Insurance number"
+    And error message should be displayed with text "Enter your National Insurance number"
 
   @id_004
   Scenario: What is your National Insurance number? - Invalid NI
@@ -30,14 +30,14 @@ Feature: A UK tax payer is able to enter the details and continue on "What is yo
     When I enter invalid NI Number TextBox field
     And click on Save and Continue button
     Then error summary popup should be displayed with text "There is a problem"
-    And error message should be displayed with text "Enter a valid National Insurance number"
+    And error message should be displayed with text "Enter your National Insurance number in the right format"
 
   @id_005
   Scenario: What is your National Insurance number? - Navigation of on Error message on top popup
     Given I am on What is your National Insurance number Page
     When I enter no data in NI Number TextBox field
     And click on Save and Continue button
-    And I click on problem message "Enter a valid National Insurance number"
+    And I click on problem message "Enter your National Insurance number"
     Then I should navigate to NI number TextBox field
 
   @id_006
@@ -53,7 +53,7 @@ Feature: A UK tax payer is able to enter the details and continue on "What is yo
     Given I am on What is your National Insurance number Page
     When I enter <Invalid Format> NI Number TextBox field
     And click on Save and Continue button
-    Then error message should be displayed with text "Enter a valid National Insurance number"
+    Then error message should be displayed with text "Enter your National Insurance number in the right format"
     Examples:
       |Invalid Format| Valid Format Description|
       |"99ABCDEFE"|Two alpha characters, followed by 6 numeric digits, followed by 1 alpha character|
@@ -78,11 +78,11 @@ Feature: A UK tax payer is able to enter the details and continue on "What is yo
     Given I am on What is your National Insurance number Page
     When I enter "AZ 12 345 6   D" NI Number TextBox field
     And click on Save and Continue button
-    Then error message should be displayed with text "Enter a valid National Insurance number"
+    Then error message should be displayed with text "Enter your National Insurance number in the right format"
 
   @id_0010
   Scenario: What is your National Insurance number? - Enter Invalid input with less than 9 character
     Given I am on What is your National Insurance number Page
     When I enter "AZ123456" NI Number TextBox field
     And click on Save and Continue button
-    Then error message should be displayed with text "Enter a valid National Insurance number"
+    Then error message should be displayed with text "Enter your National Insurance number in the right format"
