@@ -289,7 +289,7 @@ Feature: A UK tax payer is able to enter the details and continue on "What is th
     Given I navigate to "what-is-this-disclosure-about" page
     When I select Radio Button "A trust" at Position "5"
     And click on Save and Continue button
-    And I select Radio Button "No, I am will be making a disclosure on behalf of the trustee" at Position "2"
+    And I select Radio Button "No, I will be making a disclosure on behalf of a trustee" at Position "2"
     And click on Save and Continue button
     And I select Radio Button "No" at Position "2"
     And click on Save and Continue button

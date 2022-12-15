@@ -33,7 +33,7 @@ Feature: A UK tax payer is able to enter the details and continue on What is you
 
     Examples:
       | Day | Month | Year | Error |
-      |    "" |   "" |    "" | "Enter a valid date of birth, like 20 3 1976"    |
+      |    "" |   "" |    "" | "Enter your date of birth"    |
       |  "10" |  "tt"  | "45"   | "Enter your date of birth"    |
       |    "10" |   "" |    "" | "Your date of birth must include a month and a year"    |
       |    "" |   "10" |    "" | "Your date of birth must include a day and a year"    |
