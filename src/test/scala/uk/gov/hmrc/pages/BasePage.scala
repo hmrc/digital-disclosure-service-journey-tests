@@ -132,7 +132,7 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
     navigateToHomePage()
     findByID("start").click()
     if (driver.getTitle == "Using this service - Digital Disclosure Service - GOV.UK") {
-      clickOnRadioButton("Make a notification","1")
+      clickOnRadioButton("Make a notification first","1")
       saveAndContinue()
     }
     if (specificPage != "") {
