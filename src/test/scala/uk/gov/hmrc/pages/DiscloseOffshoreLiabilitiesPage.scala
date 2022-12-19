@@ -32,32 +32,32 @@ trait DiscloseOffshoreLiabilitiesPage extends BasePage{
   def verifyBodyText(expectedQHeader: String): Unit = {
     val element = driver.findElement(By.xpath("//*[contains(@class,\"govuk-body\") and contains(@id,\"first-paragraph\")]"))
     val actualQHeader = element.getText
-    Assert.assertTrue("Body Text is not Verified", expectedQHeader.toString() == actualQHeader.toString())
+    Assert.assertTrue("Body Text is not Verified. --- Expected: " + expectedQHeader + "--- Actual: " + actualQHeader, expectedQHeader == actualQHeader)
   }
 
   def verifyText(expectedQHeader: String): Unit = {
     val element = driver.findElement(By.xpath("//*[contains(@class,\"govuk-body\") and contains(@id,\"second-paragraph\")]"))
     val actualQHeader = element.getText
-    Assert.assertTrue("Body Text is not Verified", expectedQHeader.toString() == actualQHeader.toString())
+    Assert.assertTrue("Body Text is not Verified. --- Expected: " + expectedQHeader + "--- Actual: " + actualQHeader, expectedQHeader == actualQHeader)
   }
 
   def verifyHyperlinkText(expectedQHeader: String): Unit = {
     val element = driver.findElement(By.xpath("//a[contains(@class,\"govuk-link\") and contains(@id,'guidance-link')]"))
     val actualQHeader = element.getText
-    Assert.assertTrue("Body Text is not Verified", expectedQHeader.toString() == actualQHeader.toString())
+    Assert.assertTrue("Body Text is not Verified. --- Expected: " + expectedQHeader + "--- Actual: " + actualQHeader, expectedQHeader == actualQHeader)
   }
 
   def verifyBulletListHyperlinkText(expectedQHeader: String): Unit = {
     val element = driver.findElement(By.xpath("//a[contains(@class,\"govuk-link\") and contains(@id,'bullet-list-forth-link')]"))
     val actualQHeader = element.getText
-    Assert.assertTrue("Body Text is not Verified", expectedQHeader.toString() == actualQHeader.toString())
+    Assert.assertTrue("Body Text is not Verified. --- Expected: " + expectedQHeader + "--- Actual: " + actualQHeader, expectedQHeader == actualQHeader)
   }
 
   def clickOnHyperlinkText(expectedQHeader: String): Unit = {
     try{
       val element = driver.findElement(By.xpath("//a[contains(@class,\"govuk-link\") and contains(@id,'guidance-link')]"))
       val actualQHeader = element.getText
-      Assert.assertTrue("Body Text is not Verified", expectedQHeader.toString() == actualQHeader.toString())
+      Assert.assertTrue("Body Text is not Verified. --- Expected: " + expectedQHeader + "--- Actual: " + actualQHeader, expectedQHeader == actualQHeader)
       element.click()
     }
     catch
@@ -65,7 +65,7 @@ trait DiscloseOffshoreLiabilitiesPage extends BasePage{
       case e=>
         val element = driver.findElement(By.xpath("//a[contains(@class,\"govuk-link\") and contains(@id,'differentAddress')]"))
         val actualQHeader = element.getText
-        Assert.assertTrue("Body Text is not Verified", expectedQHeader.toString() == actualQHeader.toString())
+        Assert.assertTrue("Body Text is not Verified. --- Expected: " + expectedQHeader + "--- Actual: " + actualQHeader, expectedQHeader == actualQHeader)
         element.click()
     }
 

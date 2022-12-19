@@ -12,11 +12,11 @@ Feature: A UK tax payer is able to navigate to Home page and continue to the nex
     And bullet Text "use this service to make a ‘notification’, providing a few basic details" is displayed at position "2"
     And second heading should be "Before you start"
     And fourth paragraph should be "You can also use this service to make a disclosure."
-    And fifth paragraph should be "Read the guidance on making a disclosure (opens in a new tab) before using this online service. This explains how to prepare your disclosure and what to expect."
-    And sixth paragraph should be "The guidance will also explain if you need to use a different, more appropriate service instead, for example using the Contractual Disclosure Facility if you have deliberate behaviour to disclose (opens in a new tab)"
-    And seventh paragraph should be "You can authorise someone else to deal with HMRC for you (opens in a new tab), for example an accountant, friend or relative."
+    And fifth paragraph should be "Read the guidance on making a disclosure (opens in new tab) before using this online service. This explains how to prepare your disclosure and what to expect."
+    And sixth paragraph should be "The guidance will also explain if you need to use a different, more appropriate service instead, for example using the Contractual Disclosure Facility if you have deliberate behaviour to disclose (opens in new tab)"
+    And seventh paragraph should be "You can authorise someone else to deal with HMRC for you (opens in new tab), for example an accountant, friend or relative."
     And third heading should be "What you will need to complete your disclosure"
-    And bullet Text "figures for the tax, interest and penalty due on any onshore or offshore income. Find help on how to calculate these figures in the guidance on making a voluntary disclosure (opens in a new tab)" is displayed at position "3"
+    And bullet Text "figures for the tax, interest and penalty due on any onshore or offshore income. Find help on how to calculate these figures in the guidance on making a voluntary disclosure (opens in new tab)" is displayed at position "3"
     And bullet Text "relevant numbers such as National Insurance number, VAT registration number and Unique Taxpayer Reference number" is displayed at position "4"
     And bullet Text "any other reference numbers you might have received from HMRC about unpaid tax, such as a case reference" is displayed at position "5"
 
@@ -27,17 +27,17 @@ Feature: A UK tax payer is able to navigate to Home page and continue to the nex
 
   Scenario: Home Page - Hyperlink Navigation Read the guidance
     Given I am on the Home page
-    When I click on the hyperlink with text "Read the guidance on making a disclosure (opens in a new tab)"
+    When I click on the hyperlink with text "Read the guidance on making a disclosure (opens in new tab)"
     Then I am navigated to new tab with page title "How to make a voluntary disclosure to HMRC - GOV.UK"
 
   Scenario: Home Page - Hyperlink Navigation authorise someone else
     Given I am on the Home page
-    When I click on the hyperlink with text "authorise someone else to deal with HMRC for you (opens in a new tab)"
+    When I click on the hyperlink with text "authorise someone else to deal with HMRC for you (opens in new tab)"
     Then I am navigated to new tab with page title "Appoint someone to deal with HMRC on your behalf - GOV.UK"
 
   Scenario: Home Page - Hyperlink Navigation how to calculate
     Given I am on the Home page
-    When I click on the hyperlink with text "how to calculate these figures in the guidance on making a voluntary disclosure (opens in a new tab)"
+    When I click on the hyperlink with text "how to calculate these figures in the guidance on making a voluntary disclosure (opens in new tab)"
     Then I am navigated to new tab with page title "How to make a voluntary disclosure to HMRC - GOV.UK"
 
   Scenario: Home Page - Continue takes to the first question
