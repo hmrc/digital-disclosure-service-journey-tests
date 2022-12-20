@@ -15,6 +15,7 @@ object Dependencies {
     "com.typesafe"          %   "config"             %  "1.4.2"    %  Test,
     "org.scalaj"            %%  "scalaj-http"        %  "2.4.2"    %  Test,
     "com.typesafe"          %   "config"             %  "1.4.2"    %  Test,
-    "com.typesafe.play"     %%  "play-json"          %  "2.9.2"    %  Test
+    "com.typesafe.play"     %%  "play-json"          %  "2.9.2"    %  Test,
+    "uk.gov.hmrc"           %%  "domain"             %  "8.1.0-play-28"
   )
 }

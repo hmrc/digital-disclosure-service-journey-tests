@@ -29,6 +29,8 @@ import org.scalatestplus.selenium.WebBrowser
 import uk.gov.hmrc.driver.StartUpTearDown
 import uk.gov.hmrc.utils.Configuration
 import uk.gov.hmrc.utils.MessageReader.getElement
+import uk.gov.hmrc.domain.Generator
+import scala.util.Random
 
 import java.time.Duration
 
@@ -104,9 +106,10 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
     reDirectUrl.sendKeys(Configuration.settings.baseUrl)
     val elements = findByID("confidenceLevel").findElements(By.tagName("option"))
     elements.get(2).click()
-    val nino = "AA000000B"
-    findByID("nino").sendKeys(nino)
-
+    //val nino = "AA000000B"
+    val ninoGenerator = new Generator(new Random())
+    def generateNino: String = ninoGenerator.nextNino.nino
+    findByID("nino").sendKeys(generateNino)
     findByID("submit").click()
     if (driver.findElements( By.xpath("//*[@class='cbanner-govuk-cookie-banner']") ).size() != 0){
       driver.findElement( By.xpath("//button[contains(text(), 'Accept additional cookies')]")).click()
@@ -132,7 +135,7 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
     navigateToHomePage()
     findByID("start").click()
     if (driver.getTitle == "Using this service - Digital Disclosure Service - GOV.UK") {
-      clickOnRadioButton("Make a notification","1")
+      clickOnRadioButton("Make a notification first","1")
       saveAndContinue()
     }
     if (specificPage != "") {
