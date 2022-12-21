@@ -32,11 +32,12 @@ Feature: A company tax payer is able to check their answers for About the Compan
     And click on confirm button
     And I enter "Agent full name" in the TextBox field
     And click on Save and Continue button
-    And I enter "07777 777777" in the TextBox field
-    And click on Save and Continue button
-    And I select Radio Button "Yes" at Position "1"
+    And I select Checkbox "Email" at Position "1"
+    And I select Checkbox "Telephone" at Position "2"
     And click on Save and Continue button
     And I enter "abc@abc.com" in the TextBox field
+    And click on Save and Continue button
+    And I enter "07777 777777" in the TextBox field
     And click on Save and Continue button
     And enter country name "United Kingdom",select country "United Kingdom"
     And click on continue button
@@ -62,9 +63,9 @@ Feature: A company tax payer is able to check their answers for About the Compan
       |8|Will the disclosure also be about onshore liabilities?|Yes|disclose-onshore-liabilities/change|
     And answers page should have h2 header "About you"
     And line "1" should have a label "Your full name" an answer with "Agent full name" and change URL ends with "your-full-name/change"
-    And line "2" should have a label "Your telephone number" an answer with "07777 777777" and change URL ends with "your-telephone-number/change"
-    And line "3" should have a label "Do you have an email address that you are happy to be contacted on by HMRC?" an answer with "Yes" and change URL ends with "contact-by-email/change"
-    And line "4" should have a label "Your email address" an answer with "abc@abc.com" and change URL ends with "your-email-address/change"
+    And line "2" should have a label "Your contact preference" an answer with "Email,Telephone" and change URL ends with "contact-preference/change"
+    And line "3" should have a label "Your email address" an answer with "abc@abc.com" and change URL ends with "your-email-address/change"
+    And line "4" should have a label "Your telephone number" an answer with "07777 777777" and change URL ends with "your-telephone-number/change"
     And line "5" should have a label "Your address" an answer with "1 Testing Lane,Royal Madeuptown,ZZ9Z 9TT,United Kingdom" and change URL ends with "your-address/lookup/change"
     Then answers page should have h2 header "About the company"
     And About The Company section should have a label "Company’s name" at line "1" an answer with "Company name" and change URL ends with "company-name/change"
