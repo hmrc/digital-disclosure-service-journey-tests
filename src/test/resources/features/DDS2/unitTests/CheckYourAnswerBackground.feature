@@ -18,11 +18,12 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     And click on Save and Continue button
     And I enter "my full name" in the TextBox field
     And click on Save and Continue button
-    And I enter "07777 777777" in the TextBox field
-    And click on Save and Continue button
-    And I select Radio Button "Yes" at Position "1"
+    And I select Checkbox "Email" at Position "1"
+    And I select Checkbox "Telephone" at Position "2"
     And click on Save and Continue button
     And I enter "abc@abc.com" in the TextBox field
+    And click on Save and Continue button
+    And I enter "07777 777777" in the TextBox field
     And click on Save and Continue button
     And I enter "01" in the "Day" text box field
     And I enter "01" in the "Month" text box field
@@ -503,11 +504,12 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     And click on Save and Continue button
     And I enter "My full name" in the TextBox field
     And click on Save and Continue button
-    And I enter "07777 777778" in the TextBox field
-    And click on Save and Continue button
-    And I select Radio Button "Yes" at Position "1"
+    And I select Checkbox "Email" at Position "1"
+    And I select Checkbox "Telephone" at Position "2"
     And click on Save and Continue button
     And I enter "individual@email.com" in the TextBox field
+    And click on Save and Continue button
+    And I enter "07777 777778" in the TextBox field
     And click on Save and Continue button
     And I enter "01" in the "Day" text box field
     And I enter "01" in the "Month" text box field
@@ -578,11 +580,12 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     And click on confirm button
     And I enter "Individual full name" in the TextBox field
     And click on Save and Continue button
-    And I enter "07777 777777" in the TextBox field
-    And click on Save and Continue button
-    And I select Radio Button "Yes" at Position "1"
+    And I select Checkbox "Email" at Position "1"
+    And I select Checkbox "Telephone" at Position "2"
     And click on Save and Continue button
     And I enter "abc@abc.com" in the TextBox field
+    And click on Save and Continue button
+    And I enter "07777 777777" in the TextBox field
     And click on Save and Continue button
     And enter country name "United Kingdom",select country "United Kingdom"
     And click on continue button
@@ -605,9 +608,9 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
       |8|Will the disclosure also be about onshore liabilities?|Yes|disclose-onshore-liabilities/change|
     And answers page should have h2 header "About you"
     And line "1" should have a label "Your full name" an answer with "Individual full name" and change URL ends with "your-full-name/change"
-    And line "2" should have a label "Your telephone number" an answer with "07777 777777" and change URL ends with "your-telephone-number/change"
-    And line "3" should have a label "Do you have an email address that you are happy to be contacted on by HMRC?" an answer with "Yes" and change URL ends with "contact-by-email/change"
-    And line "4" should have a label "Your email address" an answer with "abc@abc.com" and change URL ends with "your-email-address/change"
+    And line "2" should have a label "Your contact preference" an answer with "Email,Telephone" and change URL ends with "contact-preference/change"
+    And line "3" should have a label "Your email address" an answer with "abc@abc.com" and change URL ends with "your-email-address/change"
+    And line "4" should have a label "Your telephone number" an answer with "07777 777777" and change URL ends with "your-telephone-number/change"
     And line "5" should have a label "Your address" an answer with "1 Testing Lane,Royal Madeuptown,ZZ9Z 9TT,United Kingdom" and change URL ends with "your-address/lookup/change"
     And answers page should have h2 header "About the individual"
     And About The Individual section should have a label "Individual’s full name" at line "1" an answer with "Individual full name" and change URL ends with "individual-full-name/change"
