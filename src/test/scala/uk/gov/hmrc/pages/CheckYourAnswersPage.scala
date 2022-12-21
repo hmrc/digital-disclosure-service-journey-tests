@@ -42,7 +42,11 @@ trait CheckYourAnswersPage extends BasePage {
     Assert.assertTrue("Check your answers - About You - Label not verified. Expected: " + expectedLabel + "--- Actual: " + actualLabel, expectedLabel == actualLabel)
 
     val actualAnswer = driver.findElement(By.xpath("//dl[@id='about-you-list']/div[@class='govuk-summary-list__row'][" + lineNo + "]/dd[@class='govuk-summary-list__value']")).getText.trim
-    Assert.assertTrue("Check your answers - About You - Answer not verified. Expected: " + expectedAnswer + "--- Actual: " + actualAnswer, expectedAnswer == actualAnswer.replace('\n', ','))
+    if (expectedLabel != "Your contact preference") {
+      Assert.assertTrue("Check your answers - About You - Answer not verified. Expected: " + expectedAnswer + "--- Actual: " + actualAnswer, expectedAnswer == actualAnswer.replace('\n', ','))
+    } else {
+      Assert.assertTrue("Check your answers - About You - Answer not verified. Expected: " + expectedAnswer + "--- Actual: " + actualAnswer, expectedAnswer == actualAnswer.replace("\n",""))
+    }
 
     val getChangeURL = driver.findElement(By.xpath("//dl[@id='about-you-list']/div[@class='govuk-summary-list__row'][" + lineNo + "]/dd[@class='govuk-summary-list__actions']/a[@class='govuk-link']")).getAttribute("href")
     Assert.assertTrue("Check your answers - About You - Change URL not verified. Expected: " + expectedChangeURL + "--- Actual: " + getChangeURL, getChangeURL.contains(expectedChangeURL))
