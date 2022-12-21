@@ -63,6 +63,10 @@ class DiscloseOffshoreLiabilitiesStepDef extends BasePage with DiscloseOffshoreL
     clickOnRadioButton(string,positionNum)
   }
 
+  When("""I select Checkbox {string} at Position {string}""") { (string: String, positionNum: String) =>
+    clickOnCheckBox(string, positionNum)
+  }
+
   Then("""page navigates to {string} in new tab""") { (string: String) =>
     verifyNewTabUrl(string)
   }
