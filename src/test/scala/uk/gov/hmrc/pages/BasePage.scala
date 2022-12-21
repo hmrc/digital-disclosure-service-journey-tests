@@ -260,6 +260,16 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
     elementInput.get(value - 1).click()
   }
 
+  def clickOnCheckBox(expectedText: String, bulletNum: String): Unit = {
+    val elementLabel = driver.findElements(By.xpath("//*[@class='govuk-checkboxes__item']/label[contains(@class,'govuk-checkboxes__label')]"))
+    val value = bulletNum.toInt
+    val actualText = elementLabel.get(value - 1).getText
+    Assert.assertTrue("Checkbox Text is not Verified. Expected: " + expectedText + "--- Actual:  " + actualText, expectedText.trim == actualText.trim)
+
+    val elementInput = driver.findElements(By.xpath("//*[@class='govuk-checkboxes__item']/input[@class='govuk-checkboxes__input']"))
+    elementInput.get(value - 1).click()
+  }
+
   def verifyFocusOnRadioButton(expectedText: String, bulletNum: String): Unit = {
     val elementLabel = driver.findElements(By.xpath("//*[@class='govuk-radios__item']/label[contains(@class,'govuk-radios__label')]"))
     val value = bulletNum.toInt
