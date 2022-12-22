@@ -59,7 +59,7 @@ Feature: An individual UK tax payer is able to check their answers for About you
       |Line|Label|Answer|URL|
       |1|Will you be making a disclosure because you received a letter from HMRC?|Yes|letter-from-hmrc/change|
       |2|Letter reference number|CFSS-1234567|hmrc-letter-reference/change|
-      |3|Who this disclosure is for?|An individual|what-is-this-disclosure-about/change|
+      |3|Who this disclosure is for|An individual|what-is-this-disclosure-about/change|
       |4|Are you the individual this disclosure relates to?|Yes, I am the individual|are-you-the-individual/change|
       |5|Will the disclosure be about offshore liabilities?|Yes|disclose-offshore-liabilities/change|
       |6|Will the disclosure also be about onshore liabilities?|Yes|disclose-onshore-liabilities/change|
