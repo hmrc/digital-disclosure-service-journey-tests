@@ -71,7 +71,7 @@ Feature: An Estate is able to check their answers for About the person who died 
       |Line|Label|Answer|URL|
       |1|Will you be making a disclosure because you received a letter from HMRC?|Yes|letter-from-hmrc/change|
       |2|Letter reference number|CFSS-1234567|hmrc-letter-reference/change|
-      |3|Who this disclosure is for?|An estate|what-is-this-disclosure-about/change|
+      |3|Who this disclosure is for|An estate|what-is-this-disclosure-about/change|
       |4|Are you the executor or administrator of the estate that the disclosure will be about?|No, I will be making a disclosure on behalf of the executor or administrator of the estate|are-you-the-executor/change|
       |5|Are you representing an organisation?|Yes|representing-organisation/change|
       |6|Name of the organisation you represent|Organization name|representing-organisation-name/change|
