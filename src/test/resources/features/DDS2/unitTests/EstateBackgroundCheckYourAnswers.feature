@@ -103,8 +103,7 @@ Feature: An Estate is able to check their answers for background submitting page
       |2|Letter reference number|CFSS-1234567|hmrc-letter-reference/change|
       |3|Who this disclosure is for|An estate|what-is-this-disclosure-about/change|
       |4|Are you the executor or administrator of the estate that the disclosure will be about?|Yes, I am the executor or administrator of the estate|are-you-the-executor/change|
-      |5|Will the disclosure be about offshore liabilities?|Yes|disclose-offshore-liabilities/change|
-      |6|Will the disclosure also be about onshore liabilities?|Yes|disclose-onshore-liabilities/change|
+      |5|The disclosure will be about|Offshore and onshore liabilities|disclose-offshore-liabilities/change|
     And answers page should have h2 header "About you"
     And line "1" should have a label "Your full name" an answer with "Estate full name" and change URL ends with "your-full-name/change"
     And line "2" should have a label "Your contact preference" an answer with "Email,Telephone" and change URL ends with "contact-preference/change"
