@@ -598,8 +598,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
       |4|Are you the individual this disclosure relates to?|No, I am disclosing on behalf of the individual|are-you-the-individual/change|
       |5|Are you representing an organisation?|Yes|representing-organisation/change|
       |6|Name of the organisation you represent|represent org|representing-organisation-name/change|
-      |7|Will the disclosure be about offshore liabilities?|Yes|disclose-offshore-liabilities/change|
-      |8|Will the disclosure also be about onshore liabilities?|Yes|disclose-onshore-liabilities/change|
+      |7|The disclosure will be about|Offshore and onshore liabilities|disclose-offshore-liabilities/change|
     And answers page should have h2 header "About you"
     And line "1" should have a label "Your full name" an answer with "Individual full name" and change URL ends with "your-full-name/change"
     And line "2" should have a label "Your contact preference" an answer with "Email,Telephone" and change URL ends with "contact-preference/change"

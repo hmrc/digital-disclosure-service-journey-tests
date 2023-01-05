@@ -85,8 +85,7 @@ Feature: A trust is able to check their answers for background section before su
       |2|Letter reference number|CFSS-1234567|hmrc-letter-reference/change|
       |3|Who this disclosure is for|A trust|what-is-this-disclosure-about/change|
       |4|Are you a trustee of the trust that the disclosure will be about?|Yes, I am a trustee of the trust|are-you-a-trustee/change|
-      |5|Will the disclosure be about offshore liabilities?|Yes|disclose-offshore-liabilities/change|
-      |6|Will the disclosure also be about onshore liabilities?|Yes|disclose-onshore-liabilities/change|
+      |5|The disclosure will be about|Offshore and onshore liabilities|disclose-offshore-liabilities/change|
     And answers page should have h2 header "About you"
     And line "1" should have a label "Your full name" an answer with "Your full name" and change URL ends with "your-full-name/change"
     And line "2" should have a label "Your contact preference" an answer with "Email,Telephone" and change URL ends with "contact-preference/change"

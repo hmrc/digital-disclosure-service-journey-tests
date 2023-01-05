@@ -75,8 +75,7 @@ Feature: An Estate is able to check their answers for About the person who died 
       |4|Are you the executor or administrator of the estate that the disclosure will be about?|No, I will be making a disclosure on behalf of the executor or administrator of the estate|are-you-the-executor/change|
       |5|Are you representing an organisation?|Yes|representing-organisation/change|
       |6|Name of the organisation you represent|Organization name|representing-organisation-name/change|
-      |7|Will the disclosure be about offshore liabilities?|Yes|disclose-offshore-liabilities/change|
-      |8|Will the disclosure also be about onshore liabilities?|Yes|disclose-onshore-liabilities/change|
+      |7|The disclosure will be about|Offshore and onshore liabilities|disclose-offshore-liabilities/change|
     And answers page should have h2 header "About you"
     And line "1" should have a label "Your full name" an answer with "Estate full name" and change URL ends with "your-full-name/change"
     And line "2" should have a label "Your contact preference" an answer with "Email,Telephone" and change URL ends with "contact-preference/change"
