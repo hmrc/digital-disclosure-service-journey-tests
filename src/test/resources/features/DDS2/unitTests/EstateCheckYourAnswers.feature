@@ -87,7 +87,7 @@ Feature: An Estate is able to check their answers for About the person who died 
     And About the person who died section should have a label "Person’s date of birth" at line "2" an answer with "1 January 1980" and change URL ends with "estates-individual-date-of-birth/change"
     And About the person who died section should have a label "Person’s main occupation" at line "3" an answer with "Dentist" and change URL ends with "estates-individual-main-occupation/change"
     And About the person who died section should have a label "Did the person have a National Insurance number, as far as you’re aware?" at line "4" an answer with "Yes, and I know their National Insurance number" and change URL ends with "estates-have-national-insurance-number/change"
-    And About the person who died section should have a label "What was the person’s National Insurance number?" at line "5" an answer with "AZ 12 34 56 D" and change URL ends with "estates-individual-national-insurance-number/change"
+    And About the person who died section should have a label "What was the person’s National Insurance number?" at line "5" an answer with "AZ123456D" and change URL ends with "estates-individual-national-insurance-number/change"
     And About the person who died section should have a label "Was the person registered for VAT, as far as you’re aware?" at line "6" an answer with "Yes, and I know their VAT registration number" and change URL ends with "estates-individual-registered-for-vat/change"
     And About the person who died section should have a label "Person’s VAT registration number" at line "7" an answer with "123456789" and change URL ends with "estates-individual-vat-registration/change"
     And About the person who died section should have a label "Was the person registered for Self Assessment, as far as you’re aware?" at line "8" an answer with "Yes, and I know their Unique Taxpayer Reference (UTR)" and change URL ends with "estates-individual-self-assessment/change"
@@ -220,7 +220,7 @@ Feature: An Estate is able to check their answers for About the person who died 
     And click on Save and Continue button
     Then page navigates to "Check Your Answers"
     And About the person who died section should have a label "Did the person have a National Insurance number, as far as you’re aware?" at line "4" an answer with "Yes, and I know their National Insurance number" and change URL ends with "estates-have-national-insurance-number/change"
-    And About the person who died section should have a label "What was the person’s National Insurance number?" at line "5" an answer with "AZ 12 34 56 D" and change URL ends with "estates-individual-national-insurance-number/change"
+    And About the person who died section should have a label "What was the person’s National Insurance number?" at line "5" an answer with "AZ123456D" and change URL ends with "estates-individual-national-insurance-number/change"
 
   Scenario: An Estate - About the person who died -Did the person have a National Insurance number, as far as you’re aware?- Yes to Yes, but I do not know
     Given I am on "Check Your Answers" page
