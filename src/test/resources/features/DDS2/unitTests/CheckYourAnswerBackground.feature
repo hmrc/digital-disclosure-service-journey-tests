@@ -481,7 +481,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     And line "5" should have a label "Your address" an answer with "4 Testing Lane,Royal Madeuptown,ZZ9Z 9TT,United Kingdom" and change URL ends with "your-address/lookup/change"
     And answers page should not have h2 header "About the individual"
 
-    @journeytestssss
+    @journeytests
   Scenario: On behalf of Individual - Change Route validation -  From Yes to No on behalf of the individual - Are you the individual this disclosure relates to?
     Given I am navigated to Received A Letter Page
     When I select Radio Button "Yes" at Position "1"
