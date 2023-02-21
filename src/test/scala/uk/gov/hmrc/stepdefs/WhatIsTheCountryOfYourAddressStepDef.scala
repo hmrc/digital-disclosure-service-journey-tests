@@ -86,7 +86,4 @@ class WhatIsTheCountryOfYourAddressStepDef extends BasePage with WhatIsTheCountr
     verifyFocusOnTextbox()
   }
 
-  When("""I enter the address manually  {string}""") { (string:String ) =>
-    enterInputInTextBox(string:String)
-  }
 }

@@ -40,7 +40,7 @@ class Hooks extends StartUpTearDown{
   @After
   def cleanup(): Unit =
     sys.addShutdownHook {
-      Try(SingletonDriver.closeInstance)
+      //Try(SingletonDriver.closeInstance)
     }
 
 }

@@ -381,5 +381,9 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
   def enterNINOInput(textInput: String): Unit = {
     driver.findElement(By.id("nino")).sendKeys(textInput)
   }
+
+  def makeADisclosure(): Unit = {
+    findByID("disclosure").click()
+  }
 }
 
