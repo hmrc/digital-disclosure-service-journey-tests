@@ -41,11 +41,12 @@ Feature: An Estate is able to check their answers for background submitting page
     And click on Save and Continue button
     And enter country name "United Kingdom",select country "United Kingdom"
     And click on continue button
-    And enter postcode "ZZ9Z 9TT"
+    And I click on the hyperlink with text "Enter the address manually"
+    And I enter "2 Testing Lane" in the "Address line 1" field
+    And I enter "Royal Madeuptown" in the "Town or city" field
+    And I enter "ZZ9Z 9TT" in the "Postcode" field
+    And click on Save and Continue button
     And click on continue button
-    And I select Radio Button "2 Testing Lane, Royal Madeuptown, ZZ9Z 9TT" at Position "2"
-    And click on continue button
-    And click on confirm button
     And I enter "Estate full name" in the TextBox field
     And click on Save and Continue button
     And I select Checkbox "Email" at Position "1"
@@ -57,11 +58,12 @@ Feature: An Estate is able to check their answers for background submitting page
     And click on Save and Continue button
     And enter country name "United Kingdom",select country "United Kingdom"
     And click on continue button
-    And enter postcode "ZZ9Z 9TT"
+    And I click on the hyperlink with text "Enter the address manually"
+    And I enter "1 Testing Lane" in the "Address line 1" field
+    And I enter "Royal Madeuptown" in the "Town or city" field
+    And I enter "ZZ9Z 9TT" in the "Postcode" field
+    And click on Save and Continue button
     And click on continue button
-    And I select Radio Button "1 Testing Lane, Royal Madeuptown, ZZ9Z 9TT" at Position "1"
-    And click on continue button
-    And click on confirm button
 
    Scenario: An Estate - Background - Change route - "Are you the executor or administrator of the estate that the disclosure will be about? from Yes to No
     Given I am on "Check Your Answers" page
