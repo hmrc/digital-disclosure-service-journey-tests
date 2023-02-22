@@ -55,7 +55,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     And Background section has following
       |Line|Label|Answer|URL|
       |1|Will you be making a disclosure because you received a letter from HMRC?|Yes|letter-from-hmrc/change|
-      |2|Letter reference number|CFSS-1234567|hmrc-letter-reference/change|
+      |2|Case reference|CFSS-1234567|hmrc-letter-reference/change|
       |3|Who this disclosure is for|An individual|what-is-this-disclosure-about/change|
       |4|Are you the individual this disclosure relates to?|Yes, I am the individual|are-you-the-individual/change|
       |5|Will the disclosure be about offshore liabilities?|Yes|disclose-offshore-liabilities/change|
@@ -113,7 +113,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     And Background section has following
       |Line|Label|Answer|URL|
       |1|Will you be making a disclosure because you received a letter from HMRC?|Yes|letter-from-hmrc/change|
-      |2|Letter reference number|CFSS-1234567|hmrc-letter-reference/change|
+      |2|Case reference|CFSS-1234567|hmrc-letter-reference/change|
       |3|Who this disclosure is for|An individual|what-is-this-disclosure-about/change|
       |4|Are you the individual this disclosure relates to?|Yes, I am the individual|are-you-the-individual/change|
       |5|Will the disclosure be about offshore liabilities?|No|disclose-offshore-liabilities/change|
@@ -171,7 +171,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     And answers page should have h2 header "Background"
     And clicking on change button to validate changed value as following:
       |Label|ExpectedPage|ChangedValue|
-      |Letter reference number|What is the case reference number provided on the letter you received from HMRC?|CFSS-1234568|
+      |Case reference|What is the case reference number provided on the letter you received from HMRC?|CFSS-1234568|
     When I click on change button for "Will the disclosure also be about onshore liabilities?"
     And I select Radio Button "No" at Position "2"
     And click on Save and Continue button
@@ -240,7 +240,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     And Background section has following
       |Line|Label|Answer|URL|
       |1|Will you be making a disclosure because you received a letter from HMRC?|No|letter-from-hmrc/change|
-    And label "Letter reference number" is not displayed on check your answer page
+    And label "Case reference" is not displayed on check your answer page
 
   @id005
   Scenario: For Individual -About You - Change Route -Will you be making a disclosure because you received a letter from HMRC - No to Yes
@@ -292,7 +292,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     And Background section has following
       |Line|Label|Answer|URL|
       |1|Will you be making a disclosure because you received a letter from HMRC?|No|letter-from-hmrc/change|
-    And label "Letter reference number" is not displayed on check your answer page
+    And label "Case reference" is not displayed on check your answer page
     When I click on change button for "Will you be making a disclosure because you received a letter from HMRC?"
     And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
@@ -302,7 +302,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     And Background section has following
       |Line|Label|Answer|URL|
       |1|Will you be making a disclosure because you received a letter from HMRC?|Yes|letter-from-hmrc/change|
-      |2|Letter reference number|CFSS-1234567|hmrc-letter-reference/change|
+      |2|Case reference|CFSS-1234567|hmrc-letter-reference/change|
 
   @id006
   Scenario: For Individual -About You - Change Route -Will you be making a disclosure because you received a letter from HMRC - No change
@@ -354,7 +354,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     And Background section has following
       |Line|Label|Answer|URL|
       |1|Will you be making a disclosure because you received a letter from HMRC?|No|letter-from-hmrc/change|
-    And label "Letter reference number" is not displayed on check your answer page
+    And label "Case reference" is not displayed on check your answer page
     When I click on change button for "Will you be making a disclosure because you received a letter from HMRC?"
     And click on Save and Continue button
     Then page navigates to "Check Your Answers"
@@ -468,7 +468,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     And Background section has following
       |Line|Label|Answer|URL|
       |1|Will you be making a disclosure because you received a letter from HMRC?|Yes|letter-from-hmrc/change|
-      |2|Letter reference number|CFSS-1234567|hmrc-letter-reference/change|
+      |2|Case reference|CFSS-1234567|hmrc-letter-reference/change|
       |3|Who this disclosure is for|An individual|what-is-this-disclosure-about/change|
       |4|Are you the individual this disclosure relates to?|Yes, I am the individual|are-you-the-individual/change|
       |5|Will the disclosure be about offshore liabilities?|Yes|disclose-offshore-liabilities/change|
@@ -593,7 +593,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     And Background section has following
       |Line|Label|Answer|URL|
       |1|Will you be making a disclosure because you received a letter from HMRC?|Yes|letter-from-hmrc/change|
-      |2|Letter reference number|CFSS-1234567|hmrc-letter-reference/change|
+      |2|Case reference|CFSS-1234567|hmrc-letter-reference/change|
       |3|Who this disclosure is for|An individual|what-is-this-disclosure-about/change|
       |4|Are you the individual this disclosure relates to?|No, I am disclosing on behalf of the individual|are-you-the-individual/change|
       |5|Are you representing an organisation?|Yes|representing-organisation/change|
