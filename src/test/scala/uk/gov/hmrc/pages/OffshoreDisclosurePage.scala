@@ -15,13 +15,12 @@
  */
 
 package uk.gov.hmrc.pages
-
 import org.junit.Assert
 import org.openqa.selenium.{By, WebElement}
 import org.openqa.selenium.support.ui.WebDriverWait
-import uk.gov.hmrc.utils.Configuration
 
 import java.time.Duration
+import scala.util.control.Breaks
 
 
 trait OffshoreDisclosurePage extends BasePage {
@@ -32,9 +31,14 @@ trait OffshoreDisclosurePage extends BasePage {
   def reasonableCare: WebElement = findByID("reasonableCare")
   def reasonableExcuse: WebElement = findByID("reasonableExcuse")
   def valueTextArea: WebElement = findByID("value")
+  def valueDescriptionTextArea: WebElement = findByID("value")
 
   def enterTextInExcuse(text:String): Unit = {
     excuse.sendKeys(text)
+  }
+
+  def enterTextInDescription(text: String): Unit = {
+    valueDescriptionTextArea.sendKeys(text)
   }
 
   def enterTextInReasonableCare(text:String): Unit = {
@@ -61,4 +65,26 @@ trait OffshoreDisclosurePage extends BasePage {
     element.get(count - 1).click()
   }
 
+  def continueButtonOnSummaryPage(): Unit = {
+    driver.findElement(By.id("govuk-button")).click()
+  }
+
+  def checkTaskStatus(expectedStatus: String,fieldName: String): Unit = {
+    val element = driver.findElements(By.xpath("//span[contains(@class,\"app-task-list__task-name\")]/a[@href]"))
+    val outloop = new Breaks;
+    var count=1;
+    outloop.breakable {
+      element.forEach(e =>
+        if (e.getText == fieldName) {
+          outloop.break()
+        }
+        else
+        {
+          count=count+1
+        }
+      )
+    }
+    val actualStatus = driver.findElement(By.xpath("(//span[contains(@class,\"hmrc-status-tag\")])["+count+"]")).getText
+    Assert.assertTrue("Status is not as expected", actualStatus.equals(expectedStatus))
+  }
 }

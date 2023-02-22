@@ -16,6 +16,7 @@
 
 package uk.gov.hmrc.stepdefs
 
+
 import uk.gov.hmrc.pages.{BasePage, OffshoreDisclosurePage}
 
 class OffshoreDisclosureStepDef extends BasePage with OffshoreDisclosurePage {
@@ -58,6 +59,13 @@ class OffshoreDisclosureStepDef extends BasePage with OffshoreDisclosurePage {
     enterTextInExcuse(string)
   }
 
+  When("""I enter {string} in the can you describe the gift text area""") { (string: String) =>
+    enterTextInDescription(string)
+  }
+
+  When("""I enter {string} in the can you describe what other liability issues text area""") { (string: String) =>
+    enterTextInDescription(string)
+  }
 
   When("""I enter {string} in the reasonable care text area""") { (string: String) =>
     // Write code here that turns the phrase above into concrete actions
@@ -78,5 +86,13 @@ class OffshoreDisclosureStepDef extends BasePage with OffshoreDisclosurePage {
   When("""I enter country or territory {string} and select {string}""") { (inputString: String,stringToSelect: String ) =>
     enterCountry(inputString)
     selectFromCountryDropdown(stringToSelect)
+  }
+
+  When("""click on continue button on summary page""") { () =>
+    continueButtonOnSummaryPage()
+  }
+
+  Then("""status is marked as {string} for field {string}""") { (status: String, fieldName: String) =>
+    checkTaskStatus(status,fieldName)
   }
 }
