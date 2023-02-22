@@ -178,9 +178,6 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
       case e =>
         driver.findElement(By.xpath("//div[@class='hmrc-character-count']//textarea")).clear()
         driver.findElement(By.xpath("//div[@class='hmrc-character-count']//textarea")).sendKeys(textInput)
-      case e =>
-        driver.findElement(By.id("country")).clear()
-        driver.findElement(By.id("country")).sendKeys(textInput)
     }
   }
 

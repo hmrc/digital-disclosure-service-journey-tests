@@ -17,7 +17,7 @@
 package uk.gov.hmrc.pages
 
 import org.junit.Assert
-import org.openqa.selenium.WebElement
+import org.openqa.selenium.{By, WebElement}
 import org.openqa.selenium.support.ui.WebDriverWait
 import uk.gov.hmrc.utils.Configuration
 
@@ -31,7 +31,7 @@ trait OffshoreDisclosurePage extends BasePage {
   def excuse: WebElement = findByID("excuse")
   def reasonableCare: WebElement = findByID("reasonableCare")
   def reasonableExcuse: WebElement = findByID("reasonableExcuse")
-  def includingYear: WebElement = findByID("value")
+  def valueTextArea: WebElement = findByID("value")
 
   def enterTextInExcuse(text:String): Unit = {
     excuse.sendKeys(text)
@@ -45,8 +45,20 @@ trait OffshoreDisclosurePage extends BasePage {
     reasonableExcuse.sendKeys(text)
   }
 
-  def enterTextInIncludingYear(text:String): Unit = {
-    includingYear.sendKeys(text)
+  def enterTextInTextArea(text:String): Unit = {
+    valueTextArea.sendKeys(text)
+  }
+
+  def enterCountry(textInput: String): Unit = {
+    driver.findElement(By.id("country")).clear()
+    driver.findElement(By.id("country")).sendKeys(textInput)
+  }
+
+  def selectFromCountryDropdown(stringtoSelect: String): Unit = {
+    val element = driver.findElements(By.xpath("//li[contains(@id,'country__option')]"))
+    val count = element.size()
+    Assert.assertTrue("Dropdown is displayed", element.get(count - 1).getText.equals(stringtoSelect))
+    element.get(count - 1).click()
   }
 
 }

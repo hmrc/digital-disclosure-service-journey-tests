@@ -70,9 +70,13 @@ class OffshoreDisclosureStepDef extends BasePage with OffshoreDisclosurePage {
     enterTextInReasonableExcuse(string)
   }
 
-  When("""I enter {string} in the reason for including year text area""") { (string: String) =>
+  When("""I enter {string} in the text area""") { (string: String) =>
     // Write code here that turns the phrase above into concrete actions
-    enterTextInIncludingYear(string)
+    enterTextInTextArea(string)
   }
 
+  When("""I enter country or territory {string} and select {string}""") { (inputString: String,stringToSelect: String ) =>
+    enterCountry(inputString)
+    selectFromCountryDropdown(stringToSelect)
+  }
 }

@@ -77,17 +77,17 @@ Feature: A Individual is able to notify and submit offshore disclosure
     And I select Checkbox "6 April 2019 to 5 April 2020" at Position "3"
     And click on Save and Continue button
     Then page navigates to "You have not included the tax year ending 2021"
-    And I enter "Reason for including year in the disclosure" in the reason for including year text area
+    And I enter "Reason for including year in the disclosure" in the text area
     And click on Save and Continue button
-    And enter country name "United Arab Emirates",select country "United Arab Emirates"
+    When I enter country or territory "United Arab Emirates" and select "United Arab Emirates"
     And click on Save and Continue button
     And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
-    And enter country name "Australia",select country "Australia"
+    And I enter country or territory "Australia" and select "Australia"
     And click on Save and Continue button
     And I select Radio Button "No" at Position "2"
     And click on Save and Continue button
-    Then page navigates to "Offshore liabilities - Tax year 6 April 2021 to 5 April 2022"
+    Then page navigates to "Offshore liabilities — Tax year 6 April 2021 to 5 April 2022"
     And I enter "10" in the "income" text box field
     And I enter "20" in the "chargeableTransfers" text box field
     And I enter "30" in the "capitalGains" text box field
@@ -100,7 +100,7 @@ Feature: A Individual is able to notify and submit offshore disclosure
     Then page navigates to "How much foreign tax credit relief have you deducted from your calculations for the tax year ending 2022, in pounds?"
     And I enter "10" in the TextBox field
     And click on Save and Continue button
-    Then page navigates to "Offshore liabilities - Tax year 6 April 2019 to 5 April 2020"
+    Then page navigates to "Offshore liabilities — Tax year 6 April 2019 to 5 April 2020"
     And I enter "70" in the "income" text box field
     And I enter "80" in the "chargeableTransfers" text box field
     And I enter "90" in the "capitalGains" text box field
@@ -114,13 +114,13 @@ Feature: A Individual is able to notify and submit offshore disclosure
     And I select Checkbox "Somewhere else" at Position "7"
     And click on Save and Continue button
     Then page navigates to "Where did the undeclared income or gain come from?"
-    And I enter "undeclared income or gain come from?" in the TextBox field
+    And I enter "undeclared income or gain come from?" in the text area
     And click on Save and Continue button
     Then page navigates to "Your legal interpretation"
     And I select Checkbox "Another issue" at Position "9"
     And click on Save and Continue button
     Then page navigates to "Under what consideration of the law led you to not include some tax in this disclosure?"
-    And I enter "consideration of the law" in the TextBox field
+    And I enter "consideration of the law" in the text area
     And click on Save and Continue button
     Then page navigates to "How much tax has not been included in this disclosure as a result of your interpretation?"
     And I select Radio Button "£10,000 or less" at Position "1"
