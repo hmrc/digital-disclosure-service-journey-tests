@@ -32,6 +32,15 @@ trait WhatIsYourDOBPage extends BasePage {
   def day: WebElement = findByID("value.day")
   def month: WebElement = findByID("value.month")
   def year: WebElement = findByID("value.year")
+  def disclosureYear: WebElement = findByID("years")
+  def taxYear: WebElement = findByID("yearsThisAppliesTo")
+  def income: WebElement = findByID("income")
+  def chargeableTransfers: WebElement = findByID("chargeableTransfers")
+  def capitalGains: WebElement = findByID("capitalGains")
+  def unpaidTax: WebElement = findByID("unpaidTax")
+  def interest: WebElement = findByID("interest")
+  def penaltyRate: WebElement = findByID("penaltyRate")
+  def penaltyRateReason: WebElement = findByID("penaltyRateReason")
 
   def isInputTextBoxDisplayed(textBoxName: String): Unit = {
     if (textBoxName == "Day") {
@@ -55,7 +64,37 @@ trait WhatIsYourDOBPage extends BasePage {
     } else if (textBoxName == "Year") {
       year.clear()
       year.sendKeys(text)
-    } else {
+    }
+    else if (textBoxName == "Which tax years does this apply to?for not notifying HMRC") {
+      disclosureYear.clear()
+      disclosureYear.sendKeys(text)
+    }
+    else if (textBoxName == "Which tax years does this apply to?") {
+      taxYear.clear()
+      taxYear.sendKeys(text)
+    } else if (textBoxName == "income") {
+      income.clear()
+      income.sendKeys(text)
+    } else if (textBoxName == "chargeableTransfers") {
+      chargeableTransfers.clear()
+      chargeableTransfers.sendKeys(text)
+    } else if (textBoxName == "capitalGains") {
+      capitalGains.clear()
+      capitalGains.sendKeys(text)
+    } else if (textBoxName == "unpaidTax") {
+      unpaidTax.clear()
+      unpaidTax.sendKeys(text)
+    } else if (textBoxName == "interest") {
+      interest.clear()
+      interest.sendKeys(text)
+    } else if (textBoxName == "penaltyRate") {
+      penaltyRate.clear()
+      penaltyRate.sendKeys(text)
+    } else if (textBoxName == "penaltyRateReason") {
+      penaltyRateReason.clear()
+      penaltyRateReason.sendKeys(text)
+    }
+    else {
       Assert.assertTrue("Invalid text box name", false)
     }
   }

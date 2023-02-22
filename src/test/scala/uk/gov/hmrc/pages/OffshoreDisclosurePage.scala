@@ -28,4 +28,25 @@ trait OffshoreDisclosurePage extends BasePage {
 
   private lazy val webdriverWait = new WebDriverWait(driver, Duration.ofSeconds(20))
 
+  def excuse: WebElement = findByID("excuse")
+  def reasonableCare: WebElement = findByID("reasonableCare")
+  def reasonableExcuse: WebElement = findByID("reasonableExcuse")
+  def includingYear: WebElement = findByID("value")
+
+  def enterTextInExcuse(text:String): Unit = {
+    excuse.sendKeys(text)
+  }
+
+  def enterTextInReasonableCare(text:String): Unit = {
+    reasonableCare.sendKeys(text)
+  }
+
+  def enterTextInReasonableExcuse(text:String): Unit = {
+    reasonableExcuse.sendKeys(text)
+  }
+
+  def enterTextInIncludingYear(text:String): Unit = {
+    includingYear.sendKeys(text)
+  }
+
 }

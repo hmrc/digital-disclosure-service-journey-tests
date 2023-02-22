@@ -53,26 +53,18 @@ Feature: A Company tax payer is able to notify and submit offshore disclosure
   @journeytests
   Scenario: Company - On Behalf of - complete offshore disclosure journey
     Given I am on "You have sent the notification" page
-    When I navigate to "make-a-disclosure" page
+    When I navigate to "make-a-disclosure" specific page
     Then page navigates to "You sent a notification on"
     When I click on Make a disclosure button
-    And I select Radio Button "Yes, I am an officer of the company" at Position "1"
-    And click on Save and Continue button
-    When I click on change button for "Are you an officer of the company this disclosure relates to?"
-    And I select Radio Button "No, I will be making a disclosure on behalf of an officer" at Position "2"
-    And click on Save and Continue button
-    Then page navigates to "Are you representing an organisation?"
-    And I select Radio Button "Yes" at Position "1"
-    And click on Save and Continue button
-    And page navigates to "What is the name of the organisation you represent?"
-    And I enter "Changed Organisation name" in the TextBox field
-    And click on Save and Continue button
-    Then page navigates to "Check Your Answers"
-    And Background section has following
-      |Line|Label|Answer|URL|
-      |1|Will you be making a disclosure because you received a letter from HMRC?|Yes|letter-from-hmrc/change|
-      |2|Letter reference number|CFSS-1234567|hmrc-letter-reference/change|
-      |3|Who this disclosure is for|A company|what-is-this-disclosure-about/change|
-      |4|Are you an officer of the company this disclosure relates to?|No, I will be making a disclosure on behalf of an officer|are-you-an-officer/change|
-      |5|Are you representing an organisation?|Yes|representing-organisation/change|
-      |6|Name of the organisation you represent|Changed Organisation name|representing-organisation-name/change|
+    Then page navigates to "List of tasks - Tell HMRC about underpaid tax from previous years"
+    When I click on the hyperlink with text "Add offshore liability details"
+    And I select Checkbox "The company did not notify HMRC about a tax liability but this was not deliberate and it has a reasonable excuse." at Position "1"
+    And I select Checkbox "The company submitted an inaccurate return despite taking reasonable care." at Position "2"
+    And I select Checkbox "The company did not notify HMRC about a tax liability but this was not deliberate and it has a reasonable excuse." at Position "3"
+    And I enter <any> in the reasonable excuse field
+    And I enter <any> in the reasonable excuse years field
+    And I enter <any> in the reasonable care field
+    And I enter <any> in the reasonable care years field
+    And I enter <any> in the reasonable excuse not filing field
+    And I enter <any> in the reasonable excuse not filing years field
+

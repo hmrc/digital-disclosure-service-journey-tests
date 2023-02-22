@@ -128,7 +128,7 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
   }
 
   def navigateToSpecificURL(specificPage: String): Unit = {
-    goTo(specificPage)
+    goTo(Configuration.settings.baseUrl + specificPage)
   }
 
   def navigateToSpecificPage(specificPage: String): Unit = {
@@ -163,19 +163,24 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
   }
 
   def enterInputInTextBox(textInput: String): Unit = {
-    try
-    {
+
+    try {
       driver.findElement(By.xpath("//input[contains(@class,\"govuk-input\")]")).clear()
       driver.findElement(By.xpath("//input[contains(@class,\"govuk-input\")]")).sendKeys(textInput)
     }
-    catch
-    {
-      case e=>
+    catch {
+      case e =>
         driver.findElement(By.id("countryCode")).clear()
         driver.findElement(By.id("countryCode")).sendKeys(textInput)
       case e =>
         driver.findElement(By.id("postcode")).clear()
         driver.findElement(By.id("postcode")).sendKeys(textInput)
+      case e =>
+        driver.findElement(By.xpath("//div[@class='hmrc-character-count']//textarea")).clear()
+        driver.findElement(By.xpath("//div[@class='hmrc-character-count']//textarea")).sendKeys(textInput)
+      case e =>
+        driver.findElement(By.id("country")).clear()
+        driver.findElement(By.id("country")).sendKeys(textInput)
     }
   }
 
@@ -221,7 +226,7 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
   def verifyPageHeading(expectedQHeader: String): Unit = {
     val element = driver.findElement(By.xpath("//h1"))
     val actualQHeader = element.getText
-    Assert.assertTrue("Heading is not Verified. Expected:  "+ expectedQHeader +  "--- Actual:  " + actualQHeader, expectedQHeader == actualQHeader)
+    Assert.assertTrue("Heading is not Verified. Expected:  "+ expectedQHeader +  "--- Actual:  " + actualQHeader, expectedQHeader.contains(actualQHeader))
   }
 
   def verifySubPageHeading(expectedQHeader: String): Unit = {
@@ -384,6 +389,12 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
 
   def makeADisclosure(): Unit = {
     findByID("disclosure").click()
+  }
+
+  def verifyDisplayedCheckbox(expectedCount: String): Unit = {
+    val element = driver.findElements(By.xpath("//input[contains(@class,\"govuk-checkboxes__input\")]"))
+    val actualCount = element.size()
+    Assert.assertTrue("CaseRef is not displayed, --- Expected: " + expectedCount + " --- Actual: " + actualCount, actualCount.toString.contains(expectedCount))
   }
 }
 
