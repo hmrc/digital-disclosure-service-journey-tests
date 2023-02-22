@@ -63,7 +63,7 @@ Feature: LLP is able to check their answers for About the background section bef
     And Background section has following
       |Line|Label|Answer|URL|
       |1|Will you be making a disclosure because you received a letter from HMRC?|Yes|letter-from-hmrc/change|
-      |2|Letter reference number|CFSS-1234567|hmrc-letter-reference/change|
+      |2|Case reference|CFSS-1234567|hmrc-letter-reference/change|
       |3|Who this disclosure is for|A limited liability partnership|what-is-this-disclosure-about/change|
       |4|Are you a designated member of the limited liability partnership that the disclosure will be about?|No, I will be making a disclosure on behalf of a designated member|are-you-a-designated-member/change|
       |5|Are you representing an organisation?|Yes|representing-organisation/change|
@@ -82,7 +82,7 @@ Feature: LLP is able to check their answers for About the background section bef
     And Background section has following
       |Line|Label|Answer|URL|
       |1|Will you be making a disclosure because you received a letter from HMRC?|Yes|letter-from-hmrc/change|
-      |2|Letter reference number|CFSS-1234567|hmrc-letter-reference/change|
+      |2|Case reference|CFSS-1234567|hmrc-letter-reference/change|
       |3|Who this disclosure is for|A limited liability partnership|what-is-this-disclosure-about/change|
       |4|Are you a designated member of the limited liability partnership that the disclosure will be about?|Yes, I am a designated member of the limited liability partnership|are-you-a-designated-member/change|
       |5|The disclosure will be about|Offshore and onshore liabilities|disclose-offshore-liabilities/change|
@@ -108,7 +108,7 @@ Feature: LLP is able to check their answers for About the background section bef
     And Background section has following
       |Line|Label|Answer|URL|
       |1|Will you be making a disclosure because you received a letter from HMRC?|Yes|letter-from-hmrc/change|
-      |2|Letter reference number|CFSS-1234567|hmrc-letter-reference/change|
+      |2|Case reference|CFSS-1234567|hmrc-letter-reference/change|
       |3|Who this disclosure is for|A limited liability partnership|what-is-this-disclosure-about/change|
       |4|Are you a designated member of the limited liability partnership that the disclosure will be about?|No, I will be making a disclosure on behalf of a designated member|are-you-a-designated-member/change|
       |5|Are you representing an organisation?|Yes|representing-organisation/change|
