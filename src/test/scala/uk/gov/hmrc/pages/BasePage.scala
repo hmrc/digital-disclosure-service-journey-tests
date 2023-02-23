@@ -388,6 +388,10 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
     findByID("disclosure").click()
   }
 
+  def sendOfferAndDisclosure(): Unit = {
+    findByID("send-disclosure").click()
+  }
+
   def verifyDisplayedCheckbox(expectedCount: String): Unit = {
     val element = driver.findElements(By.xpath("//input[contains(@class,\"govuk-checkboxes__input\")]"))
     val actualCount = element.size()

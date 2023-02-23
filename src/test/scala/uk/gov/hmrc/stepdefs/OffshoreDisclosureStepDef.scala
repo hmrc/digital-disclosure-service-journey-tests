@@ -119,4 +119,8 @@ class OffshoreDisclosureStepDef extends BasePage with OffshoreDisclosurePage {
   Then("""status is marked as {string} for field {string}""") { (status: String, fieldName: String) =>
     checkTaskStatus(status,fieldName)
   }
+
+  When("""I click on Send offer and disclosure button""") { () =>
+    sendOfferAndDisclosure()
+  }
 }
