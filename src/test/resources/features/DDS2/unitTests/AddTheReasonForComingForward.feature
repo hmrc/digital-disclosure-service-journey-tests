@@ -45,7 +45,6 @@ Feature: A Tax payer is able to add reason for coming forward
     And click on confirm button
     And I click on send notification button
 
-  @journeytests
   Scenario: Add a reason -Individual
     Given I am on "You have sent your notification" page
     And I navigate to "make-a-disclosure" specific page
