@@ -1,5 +1,5 @@
 @page @regression
-Feature: A Individual is able to notify and submit offshore disclosure
+Feature: An Individual - On behalf of - is able to notify and submit offshore disclosure
 
   Background:
     Given I am navigated to Received A Letter Page
