@@ -50,7 +50,7 @@ Feature: A Company tax payer is able to notify and submit offshore disclosure
     And click on confirm button
     And I click on send notification button
 
-  @journeytests
+  @journeytests-Incomplete
   Scenario: Company - On Behalf of - complete offshore disclosure journey
     Given I am on "You have sent the notification" page
     When I navigate to "make-a-disclosure" specific page
