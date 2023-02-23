@@ -20,7 +20,9 @@ import org.openqa.selenium.{By, WebDriver, WebElement}
 import org.openqa.selenium.support.ui.{ExpectedConditions, WebDriverWait}
 import org.junit.Assert
 import uk.gov.hmrc.utils.Configuration
+
 import java.time.Duration
+import scala.util.control.Breaks
 
 
 trait DiscloseOffshoreLiabilitiesPage extends BasePage{
@@ -53,6 +55,7 @@ trait DiscloseOffshoreLiabilitiesPage extends BasePage{
     Assert.assertTrue("Body Text is not Verified. --- Expected: " + expectedQHeader + "--- Actual: " + actualQHeader, expectedQHeader == actualQHeader)
   }
 
+
   def clickOnHyperlinkText(expectedQHeader: String): Unit = {
     try{
       val element = driver.findElement(By.xpath("//a[contains(@class,\"govuk-link\") and contains(@id,'guidance-link')]"))
@@ -62,13 +65,25 @@ trait DiscloseOffshoreLiabilitiesPage extends BasePage{
     }
     catch
     {
+      case e =>
+        var actualHeader = ""
+        val element = driver.findElements(By.xpath("//span[contains(@class,\"app-task-list__task-name\")]/a[@href]"))
+        val outloop = new Breaks;
+        outloop.breakable {
+          element.forEach(e =>
+            if (e.getText == expectedQHeader) {
+              actualHeader = e.getText
+              e.click()
+              outloop.break()
+            }
+          )
+        }
+
       case e=>
         val element = driver.findElement(By.xpath("//a[contains(@class,\"govuk-link\") and contains(@id,'differentAddress')]"))
         val actualQHeader = element.getText
         Assert.assertTrue("Body Text is not Verified. --- Expected: " + expectedQHeader + "--- Actual: " + actualQHeader, expectedQHeader == actualQHeader)
         element.click()
     }
-
-
   }
 }

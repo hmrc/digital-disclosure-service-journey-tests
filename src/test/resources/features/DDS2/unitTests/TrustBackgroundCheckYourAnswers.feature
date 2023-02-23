@@ -23,10 +23,11 @@ Feature: A trust is able to check their answers for background section before su
     And click on Save and Continue button
     And enter country name "United Kingdom",select country "United Kingdom"
     And click on continue button
-    And enter postcode "ZZ9Z 9TT"
-    And click on continue button
-    And I select Radio Button "The Farm, Royal Madeuptown, ZZ9Z 9TT" at Position "9"
-    And click on continue button
+    And I click on the hyperlink with text "Enter the address manually"
+    And I enter "The Farm" in the "Address line 1" field
+    And I enter "Royal Madeuptown" in the "Town or city" field
+    And I enter "ZZ9Z 9TT" in the "Postcode" field
+    And click on Save and Continue button
     And click on confirm button
     And I enter "Your full name" in the TextBox field
     And click on Save and Continue button
@@ -39,10 +40,11 @@ Feature: A trust is able to check their answers for background section before su
     And click on Save and Continue button
     And enter country name "United Kingdom",select country "United Kingdom"
     And click on continue button
-    And enter postcode "ZZ9Z 9TT"
-    And click on continue button
-    And I select Radio Button "1 Testing Lane, Royal Madeuptown, ZZ9Z 9TT" at Position "1"
-    And click on continue button
+    And I click on the hyperlink with text "Enter the address manually"
+    And I enter "2 Testing Lane" in the "Address line 1" field
+    And I enter "Royal Madeuptown" in the "Town or city" field
+    And I enter "ZZ9Z 9TT" in the "Postcode" field
+    And click on Save and Continue button
     And click on confirm button
 
   Scenario: Trust - Background - Change route - Are you a trustee of the trust that the disclosure will be about? from Yes to No
@@ -91,7 +93,7 @@ Feature: A trust is able to check their answers for background section before su
     And line "2" should have a label "Your contact preference" an answer with "Email,Telephone" and change URL ends with "contact-preference/change"
     And line "3" should have a label "Your email address" an answer with "abc@abc.com" and change URL ends with "your-email-address/change"
     And line "4" should have a label "Your telephone number" an answer with "07777 777777" and change URL ends with "your-telephone-number/change"
-    And line "5" should have a label "Your address" an answer with "1 Testing Lane,Royal Madeuptown,ZZ9Z 9TT,United Kingdom" and change URL ends with "your-address/lookup/change"
+    And line "5" should have a label "Your address" an answer with "2 Testing Lane,Royal Madeuptown,ZZ9Z 9TT,United Kingdom" and change URL ends with "your-address/lookup/change"
     And answers page should have h2 header "About the trust"
     And About The Trust section should have a label "Trust Name" at line "1" an answer with "Trust name" and change URL ends with "trust-name/change"
     And About The Trust section should have a label "Trust address" at line "2" an answer with "The Farm,Royal Madeuptown,ZZ9Z 9TT,United Kingdom" and change URL ends with "trust-address/lookup/change"

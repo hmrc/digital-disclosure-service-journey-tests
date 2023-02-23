@@ -85,4 +85,5 @@ class WhatIsTheCountryOfYourAddressStepDef extends BasePage with WhatIsTheCountr
   Then("""focus navigates TextBox field""") { () =>
     verifyFocusOnTextbox()
   }
+
 }
