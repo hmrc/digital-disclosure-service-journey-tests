@@ -32,6 +32,9 @@ trait OffshoreDisclosurePage extends BasePage {
   def reasonableExcuse: WebElement = findByID("reasonableExcuse")
   def valueTextArea: WebElement = findByID("value")
   def valueDescriptionTextArea: WebElement = findByID("value")
+  def adviceTextArea: WebElement = findByID("adviceGiven")
+  def adviceMonthTextArea: WebElement = findByID("date.month")
+  def adviceYearTextArea: WebElement = findByID("date.year")
 
   def enterTextInExcuse(text:String): Unit = {
     excuse.sendKeys(text)
@@ -51,6 +54,18 @@ trait OffshoreDisclosurePage extends BasePage {
 
   def enterTextInTextArea(text:String): Unit = {
     valueTextArea.sendKeys(text)
+  }
+
+  def enterTextInAdviceTextArea(text: String): Unit = {
+    adviceTextArea.sendKeys(text)
+  }
+
+  def enterTextInAdviceMonthTextArea(text: String): Unit = {
+    adviceMonthTextArea.sendKeys(text)
+  }
+
+  def enterTextInAdviceYearTextArea(text: String): Unit = {
+    adviceYearTextArea.sendKeys(text)
   }
 
   def enterCountry(textInput: String): Unit = {

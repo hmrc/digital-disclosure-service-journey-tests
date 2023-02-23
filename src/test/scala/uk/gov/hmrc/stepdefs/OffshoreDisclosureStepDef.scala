@@ -78,6 +78,30 @@ class OffshoreDisclosureStepDef extends BasePage with OffshoreDisclosurePage {
     enterTextInReasonableExcuse(string)
   }
 
+  When("""I enter {string} in the advice text area""") { (string: String) =>
+    enterTextInAdviceTextArea(string)
+  }
+
+  When("""I enter {string} in the month text area""") { (string: String) =>
+    enterTextInAdviceMonthTextArea(string)
+  }
+
+  When("""I enter {string} in the year text area""") { (string: String) =>
+    enterTextInAdviceYearTextArea(string)
+  }
+
+  When("""I enter {string} in the reason for making a disclosure now text area""") { (string: String) =>
+    enterTextInTextArea(string)
+  }
+
+  When("""I enter {string} in the why was the disclosure not made before now text area""") { (string: String) =>
+    enterTextInTextArea(string)
+  }
+
+  Then("""verify the radio option at position {string} is {string}""") { (positionNum: String,expectedText: String) =>
+    verifyRadioButtonAndText(expectedText,positionNum)
+  }
+
   When("""I enter {string} in the text area""") { (string: String) =>
     // Write code here that turns the phrase above into concrete actions
     enterTextInTextArea(string)
