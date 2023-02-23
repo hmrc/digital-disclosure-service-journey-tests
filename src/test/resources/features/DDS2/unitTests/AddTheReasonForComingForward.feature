@@ -45,6 +45,7 @@ Feature: A Tax payer is able to add reason for coming forward
     And click on confirm button
     And I click on send notification button
 
+  @journeytests
   Scenario: Add a reason -Individual
     Given I am on "You have sent your notification" page
     And I navigate to "make-a-disclosure" specific page
@@ -111,7 +112,7 @@ Feature: A Tax payer is able to add reason for coming forward
     When I enter "01642 123456" in the TextBox field
     And click on Save and Continue button
     Then page navigates to "Summary"
-    When click on continue button on summary page
+    When click on continue button
     Then page navigates to "List of tasks"
     And status is marked as "Completed" for field "Edit the reason for coming forward now"
 
@@ -181,7 +182,7 @@ Feature: A Tax payer is able to add reason for coming forward
     When I enter "01642 123456" in the TextBox field
     And click on Save and Continue button
     Then page navigates to "Summary"
-    When click on continue button on summary page
+    When click on continue button
     Then page navigates to "List of tasks"
     And status is marked as "Completed" for field "Edit the reason for coming forward now"
 
@@ -251,7 +252,7 @@ Feature: A Tax payer is able to add reason for coming forward
     When I enter "01642 123456" in the TextBox field
     And click on Save and Continue button
     Then page navigates to "Summary"
-    When click on continue button on summary page
+    When click on continue button
     Then page navigates to "List of tasks"
     And status is marked as "Completed" for field "Edit the reason for coming forward now"
 
@@ -321,7 +322,7 @@ Feature: A Tax payer is able to add reason for coming forward
     When I enter "01642 123456" in the TextBox field
     And click on Save and Continue button
     Then page navigates to "Summary"
-    When click on continue button on summary page
+    When click on continue button
     Then page navigates to "List of tasks"
     And status is marked as "Completed" for field "Edit the reason for coming forward now"
 
@@ -391,7 +392,7 @@ Feature: A Tax payer is able to add reason for coming forward
     When I enter "01642 123456" in the TextBox field
     And click on Save and Continue button
     Then page navigates to "Summary"
-    When click on continue button on summary page
+    When click on continue button
     Then page navigates to "List of tasks"
     And status is marked as "Completed" for field "Edit the reason for coming forward now"
 
@@ -461,7 +462,7 @@ Feature: A Tax payer is able to add reason for coming forward
     When I enter "01642 123456" in the TextBox field
     And click on Save and Continue button
     Then page navigates to "Summary"
-    When click on continue button on summary page
+    When click on continue button
     Then page navigates to "List of tasks"
     And status is marked as "Completed" for field "Edit the reason for coming forward now"
 

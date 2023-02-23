@@ -45,6 +45,7 @@ Feature: A Individual is able to notify and submit offshore disclosure
     And click on confirm button
     And I click on send notification button
 
+  @journeytests
   Scenario: other liability issues -Individual
     Given I am on "You have sent your notification" page
     And I navigate to "make-a-disclosure" specific page
@@ -71,7 +72,6 @@ Feature: A Individual is able to notify and submit offshore disclosure
     When click on continue button on summary page
     Then page navigates to "List of tasks"
     And status is marked as "Completed" for field "Edit other liability issues"
-
 
   Scenario: other liability issues -On behalf individual
     Given I am on "You have sent your notification" page
