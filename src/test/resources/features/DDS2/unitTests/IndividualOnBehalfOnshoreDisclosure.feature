@@ -59,7 +59,7 @@ Feature: An Individual - On behalf of - is able to notify and submit onshore dis
     And I click on send notification button
 
 #   Onshore journey works up to summary page only. DDS2-1592 is in backlog to fix status.
-  @journeytest
+  @journeytests
   Scenario: Individual On behalf of - Complete onshore disclosure journey - First 3 selections - Complete flow
     Given I am on "You have sent the notification" page
     And I navigate to "make-a-disclosure" specific page
