@@ -59,7 +59,7 @@ Feature: An Individual - On behalf of - is able to notify and submit onshore dis
     And I click on send notification button
 
 #   Wip tag added ad onshore journey status story still in backlog DDS2-1592
-  @journeytests @wip
+  @wip
   Scenario: Individual On behalf of - Complete onshore disclosure journey - First 3 selections - Complete flow
     Given I am on "You have sent the notification" page
     And I navigate to "make-a-disclosure" specific page
