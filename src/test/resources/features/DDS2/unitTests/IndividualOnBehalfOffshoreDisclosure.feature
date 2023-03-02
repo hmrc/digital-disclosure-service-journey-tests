@@ -15,7 +15,7 @@ Feature: An Individual - On behalf of - is able to notify and submit offshore di
     And click on Save and Continue button
     And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
-    And I select Radio Button "Yes" at Position "1"
+    And I select Radio Button "No" at Position "2"
     And click on Save and Continue button
     And I enter "Individual full name" in the TextBox field
     And click on Save and Continue button
