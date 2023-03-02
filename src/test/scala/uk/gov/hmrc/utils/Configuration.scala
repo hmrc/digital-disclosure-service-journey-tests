@@ -38,7 +38,7 @@ object Configuration {
     environment match {
       case Environment.Local =>
         new Configuration(
-          baseUrl = "http://localhost:15003/digital-disclosure/"
+          baseUrl = "https://www.qa.tax.service.gov.uk/digital-disclosure/"
         )
       case Environment.Dev =>
         new Configuration(

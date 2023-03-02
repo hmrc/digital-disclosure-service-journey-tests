@@ -41,6 +41,8 @@ trait WhatIsYourDOBPage extends BasePage {
   def interest: WebElement = findByID("interest")
   def penaltyRate: WebElement = findByID("penaltyRate")
   def penaltyRateReason: WebElement = findByID("penaltyRateReason")
+  def gains: WebElement = findByID("gains")
+  def niContributions: WebElement = findByID("niContributions")
 
   def isInputTextBoxDisplayed(textBoxName: String): Unit = {
     if (textBoxName == "Day") {
@@ -93,6 +95,12 @@ trait WhatIsYourDOBPage extends BasePage {
     } else if (textBoxName == "penaltyRateReason") {
       penaltyRateReason.clear()
       penaltyRateReason.sendKeys(text)
+    } else if (textBoxName == "gains") {
+      gains.clear()
+      gains.sendKeys(text)
+    } else if (textBoxName == "niContributions") {
+      niContributions.clear()
+      niContributions.sendKeys(text)
     }
     else {
       Assert.assertTrue("Invalid text box name", false)
