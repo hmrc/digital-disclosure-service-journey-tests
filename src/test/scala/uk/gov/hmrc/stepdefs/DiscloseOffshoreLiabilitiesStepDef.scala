@@ -86,4 +86,8 @@ class DiscloseOffshoreLiabilitiesStepDef extends BasePage with DiscloseOffshoreL
   Then("""I should navigate to Radio button {string} at Position {string}""") { (string: String, positionNum: String) =>
     verifyFocusOnRadioButton(string,positionNum)
   }
+
+  When("""click on I confirm button""") { () =>
+    iConfirmButton()
+  }
 }
