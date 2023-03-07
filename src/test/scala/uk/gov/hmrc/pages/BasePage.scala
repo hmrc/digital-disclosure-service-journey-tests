@@ -91,6 +91,9 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
     findByID("continue").click()
   }
 
+  def iConfirmButton(): Unit = {
+    findByID("confirm").click()
+  }
 
   def submit(): Unit = {
     findByID("submit").click()

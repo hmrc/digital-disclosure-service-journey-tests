@@ -63,7 +63,11 @@ Feature: An Individual - On behalf of - is able to notify and submit offshore di
     Given I am on "You have sent the notification" page
     And I navigate to "make-a-disclosure" specific page
     When I click on Make a disclosure button
-    Then status is marked as "Not started" for field "Add offshore liability details"
+    And click on Hyperlink "Make your declaration"
+    And click on I confirm button
+    Then page navigates to "List of tasks"
+    And status is marked as "Completed" for field "Review your declaration"
+    And status is marked as "Not started" for field "Add offshore liability details"
     And click on Hyperlink "Add offshore liability details"
     Then page navigates to "Why are you making this disclosure?"
     And I select Checkbox "The individual did not notify HMRC about a tax liability but this was not deliberate and they have a reasonable excuse." at Position "1"
@@ -231,7 +235,11 @@ Feature: An Individual - On behalf of - is able to notify and submit offshore di
     Given I am on "You have sent the notification" page
     And I navigate to "make-a-disclosure" specific page
     When I click on Make a disclosure button
-    Then status is marked as "Not started" for field "Add offshore liability details"
+    And click on Hyperlink "Make your declaration"
+    And click on I confirm button
+    Then page navigates to "List of tasks"
+    And status is marked as "Completed" for field "Review your declaration"
+    And status is marked as "Not started" for field "Add offshore liability details"
     When click on Hyperlink "Add offshore liability details"
     Then page navigates to "Why are you making this disclosure?"
     When I select Checkbox "The individual submitted an inaccurate return because they did not take reasonable care." at Position "4"
@@ -294,7 +302,11 @@ Feature: An Individual - On behalf of - is able to notify and submit offshore di
     Given I am on "You have sent the notification" page
     And I navigate to "make-a-disclosure" specific page
     When I click on Make a disclosure button
-    Then status is marked as "Not started" for field "Add case reference"
+    And click on Hyperlink "Make your declaration"
+    And click on I confirm button
+    Then page navigates to "List of tasks"
+    And status is marked as "Completed" for field "Review your declaration"
+    And status is marked as "Not started" for field "Add case reference"
     And status is marked as "Not started" for field "Add offshore liability details"
     When click on Hyperlink "Add offshore liability details"
     Then page navigates to "Why are you making this disclosure?"

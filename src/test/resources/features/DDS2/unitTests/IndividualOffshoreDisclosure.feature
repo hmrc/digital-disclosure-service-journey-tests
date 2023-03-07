@@ -51,6 +51,11 @@ Feature: An Individual is able to notify and submit offshore disclosure
     Given I am on "You have sent your notification" page
     And I navigate to "make-a-disclosure" specific page
     When I click on Make a disclosure button
+    And click on Hyperlink "Make your declaration"
+    And click on I confirm button
+    Then page navigates to "List of tasks"
+    And status is marked as "Completed" for field "Review your declaration"
+    And status is marked as "Not started" for field "Add offshore liability details"
     And click on Hyperlink "Add offshore liability details"
     Then page navigates to "Why are you making this disclosure?"
     And I select Checkbox "I did not notify HMRC about a tax liability but this was not deliberate and I have a reasonable excuse." at Position "1"
@@ -133,7 +138,11 @@ Feature: An Individual is able to notify and submit offshore disclosure
     Given I am on "You have sent your notification" page
     And I navigate to "make-a-disclosure" specific page
     When I click on Make a disclosure button
-    Then status is marked as "Not started" for field "Add offshore liability details"
+    And click on Hyperlink "Make your declaration"
+    And click on I confirm button
+    Then page navigates to "List of tasks"
+    And status is marked as "Completed" for field "Review your declaration"
+    And status is marked as "Not started" for field "Add offshore liability details"
     When click on Hyperlink "Add offshore liability details"
     Then page navigates to "Why are you making this disclosure?"
     When I select Checkbox "I have submitted an inaccurate return because I did not take reasonable care." at Position "4"
@@ -217,7 +226,11 @@ Feature: An Individual is able to notify and submit offshore disclosure
     Given I am on "You have sent your notification" page
     And I navigate to "make-a-disclosure" specific page
     When I click on Make a disclosure button
-    Then status is marked as "Completed" for field "Edit case reference"
+    And click on Hyperlink "Make your declaration"
+    And click on I confirm button
+    Then page navigates to "List of tasks"
+    And status is marked as "Completed" for field "Review your declaration"
+    And status is marked as "Completed" for field "Edit case reference"
     And status is marked as "Not started" for field "Add offshore liability details"
     When click on Hyperlink "Add offshore liability details"
     Then page navigates to "Why are you making this disclosure?"
@@ -242,7 +255,11 @@ Feature: An Individual is able to notify and submit offshore disclosure
     Given I am on "You have sent your notification" page
     And I navigate to "make-a-disclosure" specific page
     When I click on Make a disclosure button
-    Then status is marked as "Completed" for field "Edit case reference"
+    And click on Hyperlink "Make your declaration"
+    And click on I confirm button
+    Then page navigates to "List of tasks"
+    And status is marked as "Completed" for field "Review your declaration"
+    And status is marked as "Completed" for field "Edit case reference"
     And status is marked as "Not started" for field "Add offshore liability details"
     When click on Hyperlink "Add offshore liability details"
     Then page navigates to "Why are you making this disclosure?"
@@ -302,7 +319,11 @@ Feature: An Individual is able to notify and submit offshore disclosure
     Given I am on "You have sent your notification" page
     And I navigate to "make-a-disclosure" specific page
     When I click on Make a disclosure button
-    Then status is marked as "Not started" for field "Add offshore liability details"
+    And click on Hyperlink "Make your declaration"
+    And click on I confirm button
+    Then page navigates to "List of tasks"
+    And status is marked as "Completed" for field "Review your declaration"
+    And status is marked as "Not started" for field "Add offshore liability details"
     When click on Hyperlink "Add offshore liability details"
     Then page navigates to "Why are you making this disclosure?"
     When I select Checkbox "I did not notify HMRC of a tax liability but this was not deliberate and I do not have a reasonable excuse." at Position "5"
