@@ -131,10 +131,8 @@ Feature: An Individual - On behalf of - is able to notify and submit offshore di
     And I select Checkbox "Your domicile status for UK tax purposes" at Position "2"
     And I select Checkbox "The remittance basis for taxing income for people not domiciled in the UK" at Position "3"
     And I select Checkbox "How income arising in a trust should be taxed" at Position "4"
-    And I select Checkbox "The Transfer of Assets legislation at sections 714 – 751 ITA 2007. This legislation counteracts avoidance by individuals who use overseas arrangements, companies, trusts or other entities to reduce UK tax liability" at Position "5"
     And I select Checkbox "How income arising in an offshore corporate structure should be taxed" at Position "6"
     And I select Checkbox "Inheritance Tax issues" at Position "7"
-    And I select Checkbox "Whether income should be taxed under the settlements legislation at section 624 onwards of the Income Tax (Trading and Other Income) Act 2005. This legislation applies where an individual gains a tax advantage by making arrangements to divert their income to another person who is liable at a lower rate of tax or is not liable to income tax." at Position "8"
     And click on Save and Continue button
     Then page navigates to "How much tax has not been included in this disclosure as a result of your interpretation?"
     And I select Radio Button "£10,000 or less" at Position "1"
