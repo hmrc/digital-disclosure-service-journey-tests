@@ -1,4 +1,4 @@
-@page @regression
+@page @regression @journeytests
 Feature: A Company - On behalf of - is able to notify and submit onshore disclosure
 
   Background:
@@ -104,7 +104,6 @@ Feature: A Company - On behalf of - is able to notify and submit onshore disclos
     And click on Save and Continue button
     Then page navigates to "Onshore liabilities summary"
 
-  @runMe
   Scenario: Company On behalf of - Complete onshore disclosure journey with 2 corporation tax accounting periods.
     Given I am on "You have sent the notification" page
     And I navigate to "make-a-disclosure" specific page
