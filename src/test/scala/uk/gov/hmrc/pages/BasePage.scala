@@ -184,6 +184,11 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
     }
   }
 
+  def enterInputInTextBox(textInput: String, element: String): Unit = {
+        driver.findElement(By.id(element)).clear()
+        driver.findElement(By.id(element)).sendKeys(textInput)
+  }
+
   def enterPropertyInput(textInput: String): Unit = {
       driver.findElement(By.id("filter")).sendKeys(textInput)
   }
