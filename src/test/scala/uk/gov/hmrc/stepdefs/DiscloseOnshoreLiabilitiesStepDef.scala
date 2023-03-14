@@ -28,4 +28,8 @@ class DiscloseOnshoreLiabilitiesStepDef extends BasePage with DiscloseOnshoreLia
   Then("""text {string} is displayed at Third Paragraph""") { (string: String) =>
     verifyTextAtThirdPara(string)
   }
+
+  When("""I enter {string} into the {string} text field""") { (inputString: String, element: String) =>
+    enterInputInTextBox(inputString, element)
+  }
 }
