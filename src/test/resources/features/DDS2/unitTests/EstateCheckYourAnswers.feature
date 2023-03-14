@@ -19,6 +19,8 @@ Feature: An Estate is able to check their answers for About the person who died 
     And click on Save and Continue button
     And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
+    And I select Checkbox "Let property income" at Position "3"
+    And click on Save and Continue button
     And I enter "Estate Person" in the TextBox field
     And click on Save and Continue button
     And I enter "01" in the "Day" text box field

@@ -15,6 +15,8 @@ Feature: An Individual is able to notify and submit offshore disclosure
     And click on Save and Continue button
     And I select Radio Button "No" at Position "2"
     And click on Save and Continue button
+    And I select Checkbox "Let property income" at Position "3"
+    And click on Save and Continue button
     And I enter "Individual full name" in the TextBox field
     And click on Save and Continue button
     And I select Checkbox "Email" at Position "1"

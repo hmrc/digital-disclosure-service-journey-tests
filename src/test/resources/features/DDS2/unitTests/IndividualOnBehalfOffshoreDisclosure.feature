@@ -17,6 +17,8 @@ Feature: An Individual - On behalf of - is able to notify and submit offshore di
     And click on Save and Continue button
     And I select Radio Button "No" at Position "2"
     And click on Save and Continue button
+    And I select Checkbox "Let property income" at Position "3"
+    And click on Save and Continue button
     And I enter "Individual full name" in the TextBox field
     And click on Save and Continue button
     And I enter "01" in the "Day" text box field
