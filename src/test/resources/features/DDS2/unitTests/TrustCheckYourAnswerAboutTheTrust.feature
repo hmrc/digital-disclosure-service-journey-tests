@@ -19,6 +19,8 @@ Feature: A trust is able to check their answers for About the Trust section befo
     And click on Save and Continue button
     And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
+    And I select Checkbox "Self-employment income" at Position "5"
+    And click on Save and Continue button
     And I enter "Trust name" in the TextBox field
     And click on Save and Continue button
     And enter country name "United Kingdom",select country "United Kingdom"

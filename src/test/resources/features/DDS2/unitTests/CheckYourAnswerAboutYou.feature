@@ -15,6 +15,8 @@ Feature: An individual UK tax payer is able to check their answers for About you
     And click on Save and Continue button
     And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
+    And I select Checkbox "Self-employment income" at Position "5"
+    And click on Save and Continue button
     And I enter "my full name" in the TextBox field
     And click on Save and Continue button
     And I select Checkbox "Email" at Position "1"

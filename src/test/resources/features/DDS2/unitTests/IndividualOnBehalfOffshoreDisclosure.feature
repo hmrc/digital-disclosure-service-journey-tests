@@ -17,6 +17,8 @@ Feature: An Individual - On behalf of - is able to notify and submit offshore di
     And click on Save and Continue button
     And I select Radio Button "No" at Position "2"
     And click on Save and Continue button
+    And I select Checkbox "Let property income" at Position "3"
+    And click on Save and Continue button
     And I enter "Individual full name" in the TextBox field
     And click on Save and Continue button
     And I enter "01" in the "Day" text box field
@@ -117,14 +119,6 @@ Feature: An Individual - On behalf of - is able to notify and submit offshore di
     And I enter "30" in the "penaltyRate" text box field
     And I enter "Penalty Rate Reason for year 2019" in the "penaltyRateReason" text box field
     And I select Radio Button "No" at Position "2"
-    And click on Save and Continue button
-    Then page navigates to "Where did the undeclared income or gain included in this disclosure come from?"
-    And I select Checkbox "Dividends" at Position "1"
-    And I select Checkbox "Interest" at Position "2"
-    And I select Checkbox "Property income" at Position "3"
-    And I select Checkbox "Residential property gain" at Position "4"
-    And I select Checkbox "Self-employment income" at Position "5"
-    And I select Checkbox "Other gains" at Position "6"
     And click on Save and Continue button
     Then page navigates to "Your legal interpretation"
     And I select Checkbox "Your residence status for tax purposes in the UK" at Position "1"
@@ -271,12 +265,6 @@ Feature: An Individual - On behalf of - is able to notify and submit offshore di
     And I enter "50" in the "penaltyRate" text box field
     And I enter "Penalty Rate Reason for year 2021" in the "penaltyRateReason" text box field
     And I select Radio Button "No" at Position "2"
-    And click on Save and Continue button
-    Then page navigates to "Where did the undeclared income or gain included in this disclosure come from?"
-    And I select Checkbox "Somewhere else" at Position "7"
-    And click on Save and Continue button
-    Then page navigates to "Where did the undeclared income or gain come from?"
-    And I enter "undeclared income or gain come from?" in the text area
     And click on Save and Continue button
     Then page navigates to "Your legal interpretation"
     And I select Checkbox "Another issue" at Position "9"

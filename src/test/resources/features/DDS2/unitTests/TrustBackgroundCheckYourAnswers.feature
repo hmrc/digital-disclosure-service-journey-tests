@@ -19,6 +19,8 @@ Feature: A trust is able to check their answers for background section before su
     And click on Save and Continue button
     And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
+    And I select Checkbox "Other capital gains" at Position "6"
+    And click on Save and Continue button
     And I enter "Trust name" in the TextBox field
     And click on Save and Continue button
     And enter country name "United Kingdom",select country "United Kingdom"

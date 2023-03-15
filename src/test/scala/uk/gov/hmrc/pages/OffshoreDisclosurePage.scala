@@ -69,8 +69,13 @@ trait OffshoreDisclosurePage extends BasePage {
   }
 
   def enterCountry(textInput: String): Unit = {
-    driver.findElement(By.id("country")).clear()
-    driver.findElement(By.id("country")).sendKeys(textInput)
+    //driver.findElement(By.id("country")).clear()
+    try {
+      driver.findElement(By.id("country")).sendKeys(textInput)
+    } catch
+    {
+      case e =>driver.findElement(By.id("country")).sendKeys(textInput)
+    }
   }
 
   def selectFromCountryDropdown(stringtoSelect: String): Unit = {

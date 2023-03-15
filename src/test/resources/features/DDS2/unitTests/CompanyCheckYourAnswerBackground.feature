@@ -19,6 +19,8 @@ Feature: An Company tax payer is able to check their answers for background sect
     And click on Save and Continue button
     And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
+    And I select Checkbox "Let property income" at Position "3"
+    And click on Save and Continue button
     And I enter "Company name" in the TextBox field
     And click on Save and Continue button
     And I enter "12345678" in the TextBox field

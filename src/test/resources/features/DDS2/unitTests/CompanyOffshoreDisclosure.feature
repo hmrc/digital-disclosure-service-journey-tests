@@ -19,6 +19,8 @@ Feature: A Company tax payer is able to notify and submit offshore disclosure
     And click on Save and Continue button
     And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
+    And I select Checkbox "Self-employment income" at Position "5"
+    And click on Save and Continue button
     And I enter "Company name" in the TextBox field
     And click on Save and Continue button
     And I enter "12345678" in the TextBox field
