@@ -40,6 +40,8 @@ trait WhatIsYourDOBPage extends BasePage {
   def unpaidTax: WebElement = findByID("unpaidTax")
   def interest: WebElement = findByID("interest")
   def penaltyRate: WebElement = findByID("penaltyRate")
+  def nonBusinessIncome: WebElement = findByID("nonBusinessIncome")
+  def lettingIncome: WebElement = findByID("lettingIncome")
   def penaltyRateReason: WebElement = findByID("penaltyRateReason")
   def gains: WebElement = findByID("gains")
   def niContributions: WebElement = findByID("niContributions")
@@ -74,6 +76,12 @@ trait WhatIsYourDOBPage extends BasePage {
     else if (textBoxName == "Which tax years does this apply to?") {
       taxYear.clear()
       taxYear.sendKeys(text)
+    } else if (textBoxName == "nonBusinessIncome") {
+      nonBusinessIncome.clear()
+      nonBusinessIncome.sendKeys(text)
+    } else if (textBoxName == "lettingIncome") {
+      lettingIncome.clear()
+      lettingIncome.sendKeys(text)
     } else if (textBoxName == "income") {
       income.clear()
       income.sendKeys(text)
