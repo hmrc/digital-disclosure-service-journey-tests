@@ -115,12 +115,6 @@ Feature: An Individual is able to notify and submit offshore disclosure
     And I enter "Penalty Rate Reason for year 2019" in the "penaltyRateReason" text box field
     And I select Radio Button "No" at Position "2"
     And click on Save and Continue button
-    Then page navigates to "Where did the undeclared income or gain included in this disclosure come from?"
-    And I select Checkbox "Somewhere else" at Position "7"
-    And click on Save and Continue button
-    Then page navigates to "Where did the undeclared income or gain come from?"
-    And I enter "undeclared income or gain come from?" in the text area
-    And click on Save and Continue button
     Then page navigates to "Your legal interpretation"
     And I select Checkbox "Another issue" at Position "9"
     And click on Save and Continue button
@@ -199,12 +193,6 @@ Feature: An Individual is able to notify and submit offshore disclosure
     And I enter "30" in the "penaltyRate" text box field
     And I enter "Penalty Rate Reason for year 2019" in the "penaltyRateReason" text box field
     And I select Radio Button "No" at Position "2"
-    And click on Save and Continue button
-    Then page navigates to "Where did the undeclared income or gain included in this disclosure come from?"
-    And I select Checkbox "Somewhere else" at Position "7"
-    And click on Save and Continue button
-    Then page navigates to "Where did the undeclared income or gain come from?"
-    And I enter "undeclared income or gain come from?" in the text area
     And click on Save and Continue button
     Then page navigates to "Your legal interpretation"
     And I select Checkbox "Another issue" at Position "9"
@@ -374,12 +362,6 @@ Feature: An Individual is able to notify and submit offshore disclosure
     And I enter "30" in the "penaltyRate" text box field
     And I enter "Penalty Rate Reason for year 2019" in the "penaltyRateReason" text box field
     And I select Radio Button "No" at Position "2"
-    And click on Save and Continue button
-    Then page navigates to "Where did the undeclared income or gain included in this disclosure come from?"
-    And I select Checkbox "Somewhere else" at Position "7"
-    And click on Save and Continue button
-    Then page navigates to "Where did the undeclared income or gain come from?"
-    And I enter "undeclared income or gain come from?" in the text area
     And click on Save and Continue button
     Then page navigates to "Your legal interpretation"
     And I select Checkbox "Another issue" at Position "9"

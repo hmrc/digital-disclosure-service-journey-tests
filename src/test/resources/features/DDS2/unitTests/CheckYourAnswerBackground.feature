@@ -559,6 +559,8 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     And click on Save and Continue button
     And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
+      And I select Checkbox "Self-employment income" at Position "5"
+      And click on Save and Continue button
     And I enter "Individual full name" in the TextBox field
     And click on Save and Continue button
     And I enter "01" in the "Day" text box field
