@@ -16,8 +16,8 @@
 
 package uk.gov.hmrc.pages
 import org.junit.Assert
-import org.openqa.selenium.{By, WebElement}
-import org.openqa.selenium.support.ui.WebDriverWait
+import org.openqa.selenium.{By, Keys, WebElement}
+import org.openqa.selenium.support.ui.{Select, WebDriverWait}
 
 import java.time.Duration
 import scala.util.control.Breaks
@@ -79,10 +79,21 @@ trait OffshoreDisclosurePage extends BasePage {
   }
 
   def selectFromCountryDropdown(stringtoSelect: String): Unit = {
-    val element = driver.findElements(By.xpath("//li[contains(@id,'country__option')]"))
-    val count = element.size()
-    Assert.assertTrue("Dropdown is displayed", element.get(count - 1).getText.equals(stringtoSelect))
-    element.get(count - 1).click()
+    var count=0;
+    var actualtext=""
+    try{
+      val element = driver.findElements(By.xpath("//li[contains(@id,'country__option')]"))
+      count = element.size()
+      actualtext=element.get(count - 1).getText
+      element.get(count - 1).click()
+    }catch {
+      case e =>
+        val element = driver.findElements(By.xpath("//li[contains(@id,'country__option')]"))
+        count = element.size()
+        actualtext = element.get(count - 1).getText
+        driver.findElement(By.id("country__listbox")).click
+    }
+    Assert.assertTrue("Dropdown is not displayed", actualtext.equals(stringtoSelect))
   }
 
   def continueButtonOnSummaryPage(): Unit = {
