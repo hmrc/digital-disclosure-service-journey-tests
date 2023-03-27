@@ -48,6 +48,7 @@ trait HomePage extends BasePage {
   def navigateToPage(): Unit = {
     navigateToSpecificPage(pageAddress)
   }
+  
   def verifyPageHeaderH1(expectedHeader: String): Unit = {
     val header = driver.findElement(By.xpath("//h1[contains(@class,'heading')]"))
     val actualHeader = header.getText
