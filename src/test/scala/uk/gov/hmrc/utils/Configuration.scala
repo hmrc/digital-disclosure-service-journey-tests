@@ -38,15 +38,15 @@ object Configuration {
     environment match {
       case Environment.Local =>
         new Configuration(
-          baseUrl = "http://localhost:15003/digital-disclosure/"
+          baseUrl = "http://localhost:15003/tell-hmrc-about-underpaid-tax-from-previous-years/"
         )
       case Environment.Dev =>
         new Configuration(
-          baseUrl = "http://localhost:9000/digital-disclosure/"
+          baseUrl = "http://localhost:9000/tell-hmrc-about-underpaid-tax-from-previous-years/"
         )
       case Environment.Qa =>
         new Configuration(
-          baseUrl = "https://www.qa.tax.service.gov.uk/digital-disclosure/"
+          baseUrl = "https://www.qa.tax.service.gov.uk/tell-hmrc-about-underpaid-tax-from-previous-years/"
         )
 
       case Environment.Staging =>

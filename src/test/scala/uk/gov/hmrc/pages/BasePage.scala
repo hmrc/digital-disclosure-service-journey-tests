@@ -71,7 +71,7 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
 
   def pageUrl(url: String): Unit = {
     url match {
-      case "receivedALetter" => checkURL("digital-disclosure/notification/letter-from-hmrc")
+      case "receivedALetter" => checkURL("tell-hmrc-about-underpaid-tax-from-previous-years/notification/letter-from-hmrc")
       case _ => throw new IllegalArgumentException(url + " not found")
     }
   }
