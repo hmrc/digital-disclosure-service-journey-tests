@@ -85,7 +85,7 @@ Feature: A Company - On behalf of - is able to notify and submit onshore disclos
     And click on Save and Continue button
     Then page navigates to "Review onshore director loans account liabilities"
     And click on Save and Continue button
-    Then page navigates to "You have added 1 accounting period"
+    Then page navigates to "You have added 1 accounting period for director loan account liabilities"
     And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
     Then page navigates to "Onshore director’s loan account liabilities 2"
@@ -101,7 +101,7 @@ Feature: A Company - On behalf of - is able to notify and submit onshore disclos
     And click on Save and Continue button
     Then page navigates to "Review onshore director loans account liabilities"
     And click on Save and Continue button
-    Then page navigates to "You have added 2 accounting periods"
+    Then page navigates to "You have added 2 accounting periods for director loan account liabilities"
     And I select Radio Button "No" at Position "2"
     And click on Save and Continue button
     Then page navigates to "Onshore liabilities summary"
@@ -138,7 +138,7 @@ Feature: A Company - On behalf of - is able to notify and submit onshore disclos
     And click on Save and Continue button
     Then page navigates to "Review onshore Corporation Tax liabilities"
     And click on Save and Continue button
-    Then page navigates to "You have added 1 accounting period"
+    Then page navigates to "You have added 1 accounting period for Corporation Tax liabilities"
     And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
     Then page navigates to "Onshore Corporation Tax liability 2"
@@ -153,7 +153,7 @@ Feature: A Company - On behalf of - is able to notify and submit onshore disclos
     And click on Save and Continue button
     Then page navigates to "Review onshore Corporation Tax liabilities"
     And click on Save and Continue button
-    Then page navigates to "You have added 2 accounting periods"
+    Then page navigates to "You have added 2 accounting periods for Corporation Tax liabilities"
     And I select Radio Button "No" at Position "2"
     And click on Save and Continue button
     Then page navigates to "Onshore liabilities summary"
