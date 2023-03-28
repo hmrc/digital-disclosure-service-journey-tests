@@ -47,7 +47,7 @@ Feature: A Company - is able to submit onshore disclosure with CL and DL
     And click on Save and Continue button
     Then page navigates to "Review onshore Corporation Tax liabilities"
     And click on Save and Continue button
-    Then page navigates to "You have added 1 accounting period"
+    Then page navigates to "You have added 1 accounting period for Corporation Tax liabilities"
     And I select Radio Button "No" at Position "2"
     And click on Save and Continue button
     Then page navigates to "Onshore director’s loan account liabilities 1"
@@ -63,7 +63,7 @@ Feature: A Company - is able to submit onshore disclosure with CL and DL
     And click on Save and Continue button
     Then page navigates to "Review onshore director loans account liabilities"
     And click on Save and Continue button
-    Then page navigates to "You have added 1 accounting period"
+    Then page navigates to "You have added 1 accounting period for director loan account liabilities"
     And I select Radio Button "No" at Position "2"
     And click on Save and Continue button
     Then page navigates to "Onshore liabilities summary"
