@@ -21,19 +21,48 @@ import uk.gov.hmrc.pages.CaseManagementPage
 
 class CaseManagementStepDef extends BasePage with CaseManagementPage {
 
-  Given("""As an agent I have navigated to the home page""") { () =>
-    navigateToSpecificPageForAgent("")
+  When("""select {string} from affinityGroup drop down""") { (value: String) =>
+    selectValueFromAffinityGroupDropdown(value)
   }
 
-  Given("""Agent selects the make a disclosure radio button""") { () =>
-    selectMakeADisclosureRadioButton()
+  When("""select {string} from confidenceLevel drop down""") { (value: String) =>
+    selectValueFromConfidenceLevelDropdown(value)
   }
 
-  When("""I select the {string} link""") { (element: String) =>
-    clickLink(element)
+  When("""click on submit on wizard page""") { () =>
+    clickOnSubmitButtonOnWizardPage
   }
 
-  When("""{int} case is shown on the page""") { (numberOfCases: Int) =>
-    verifyNumberCases(numberOfCases)
+  When("""I click on {string} button""") { (string:String) =>
+    selectFormOption(string)
   }
+
+  When("""click on Header Hyperlink""") { () =>
+    clickOnHeader()
+  }
+
+  Then("""reference at position {string} is {string}""") { (position: String ,expectedValue:String ) =>
+    validateReference(position,expectedValue)
+  }
+
+  Then("""type at position {string} is {string}""") { (position: String, expectedValue: String) =>
+    validateType(position, expectedValue)
+  }
+
+  Then("""status at position {string} is {string}""") { (position: String, expectedValue: String) =>
+    validateStatus(position, expectedValue)
+  }
+
+  When("""click on Edit link at position {string}""") { (position: String) =>
+    clickEditCaseLink(position)
+  }
+
+  When("""I click on create a new case""") { () =>
+    clickOnCreateNewCase()
+  }
+
+  When("""I click on case management link""") { () =>
+    clickOnCaseManagementLink()
+  }
+
 }
