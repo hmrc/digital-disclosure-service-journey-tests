@@ -48,7 +48,7 @@ Feature: An Individual is able to notify and submit offshore disclosure
     And click on confirm button
     And I click on send notification button
 
-  @journeytests
+  @journeytests @id:001
   Scenario: Individual - Complete offshore disclosure journey - First 3 selections
     Given I am on "You have sent your notification" page
     And I navigate to "make-a-disclosure" specific page
@@ -78,10 +78,10 @@ Feature: An Individual is able to notify and submit offshore disclosure
     And click on Save and Continue button
     Then page navigates to "Which year does this offshore disclosure relate to?"
     And page should display checkboxes for the "8" tax years before the current tax year
-    And I select Checkbox "6 April 2021 to 5 April 2022" at Position "1"
-    And I select Checkbox "6 April 2019 to 5 April 2020" at Position "3"
+    And I select Checkbox "6 April 2022 to 5 April 2023" at Position "1"
+    And I select Checkbox "6 April 2020 to 5 April 2021" at Position "3"
     And click on Save and Continue button
-    Then page navigates to "You have not included the tax year ending 2021"
+    Then page navigates to "You have not included the tax year ending 2022"
     And I enter "Reason for including year in the disclosure" in the text area
     And click on Save and Continue button
     When I enter country or territory "United Arab Emirates" and select "United Arab Emirates"
@@ -92,27 +92,27 @@ Feature: An Individual is able to notify and submit offshore disclosure
     And click on Save and Continue button
     And I select Radio Button "No" at Position "2"
     And click on Save and Continue button
-    Then page navigates to "Offshore liabilities — Tax year 6 April 2021 to 5 April 2022"
+    Then page navigates to "Offshore liabilities — Tax year 6 April 2022 to 5 April 2023"
     And I enter "10" in the "income" text box field
     And I enter "20" in the "chargeableTransfers" text box field
     And I enter "30" in the "capitalGains" text box field
     And I enter "40" in the "unpaidTax" text box field
     And I enter "50" in the "interest" text box field
     And I enter "50" in the "penaltyRate" text box field
-    And I enter "Penalty Rate Reason for year 2021" in the "penaltyRateReason" text box field
+    And I enter "Penalty Rate Reason for year 2022" in the "penaltyRateReason" text box field
     And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
-    Then page navigates to "How much foreign tax credit relief have you deducted from your calculations for the tax year ending 2022, in pounds?"
+    Then page navigates to "How much foreign tax credit relief have you deducted from your calculations for the tax year ending 2023, in pounds?"
     And I enter "10" in the TextBox field
     And click on Save and Continue button
-    Then page navigates to "Offshore liabilities — Tax year 6 April 2019 to 5 April 2020"
+    Then page navigates to "Offshore liabilities — Tax year 6 April 2020 to 5 April 2021"
     And I enter "70" in the "income" text box field
     And I enter "80" in the "chargeableTransfers" text box field
     And I enter "90" in the "capitalGains" text box field
     And I enter "10" in the "unpaidTax" text box field
     And I enter "20" in the "interest" text box field
     And I enter "30" in the "penaltyRate" text box field
-    And I enter "Penalty Rate Reason for year 2019" in the "penaltyRateReason" text box field
+    And I enter "Penalty Rate Reason for year 2020" in the "penaltyRateReason" text box field
     And I select Radio Button "No" at Position "2"
     And click on Save and Continue button
     Then page navigates to "Your legal interpretation"
@@ -129,7 +129,7 @@ Feature: An Individual is able to notify and submit offshore disclosure
     And click on Save and Continue button
     Then page navigates to "Offshore liabilities summary"
 
-  @journeytests
+  @journeytests @id:002
   Scenario: Individual - Complete offshore disclosure journey - last 5 selections
     Given I am on "You have sent your notification" page
     And I navigate to "make-a-disclosure" specific page
@@ -157,8 +157,8 @@ Feature: An Individual is able to notify and submit offshore disclosure
     And click on Save and Continue button
     Then page navigates to "Which year does this offshore disclosure relate to?"
     And page should display checkboxes for the "20" tax years before the current tax year
-    When I select Checkbox "6 April 2021 to 5 April 2022" at Position "1"
-    And I select Checkbox "6 April 2018 to 5 April 2019" at Position "4"
+    When I select Checkbox "6 April 2022 to 5 April 2023" at Position "1"
+    And I select Checkbox "6 April 2019 to 5 April 2020" at Position "4"
     And click on Save and Continue button
     Then page navigates to "You have not selected certain years"
     And I enter "Reason for including year in the disclosure" in the text area
@@ -171,27 +171,27 @@ Feature: An Individual is able to notify and submit offshore disclosure
     And click on Save and Continue button
     And I select Radio Button "No" at Position "2"
     And click on Save and Continue button
-    Then page navigates to "Offshore liabilities — Tax year 6 April 2021 to 5 April 2022"
+    Then page navigates to "Offshore liabilities — Tax year 6 April 2022 to 5 April 2023"
     And I enter "10" in the "income" text box field
     And I enter "20" in the "chargeableTransfers" text box field
     And I enter "30" in the "capitalGains" text box field
     And I enter "40" in the "unpaidTax" text box field
     And I enter "50" in the "interest" text box field
     And I enter "50" in the "penaltyRate" text box field
-    And I enter "Penalty Rate Reason for year 2021" in the "penaltyRateReason" text box field
+    And I enter "Penalty Rate Reason for year 2022" in the "penaltyRateReason" text box field
     And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
-    Then page navigates to "How much foreign tax credit relief have you deducted from your calculations for the tax year ending 2022, in pounds?"
+    Then page navigates to "How much foreign tax credit relief have you deducted from your calculations for the tax year ending 2023, in pounds?"
     And I enter "10" in the TextBox field
     And click on Save and Continue button
-    Then page navigates to "Offshore liabilities — Tax year 6 April 2018 to 5 April 2019"
+    Then page navigates to "Offshore liabilities — Tax year 6 April 2019 to 5 April 2020"
     And I enter "70" in the "income" text box field
     And I enter "80" in the "chargeableTransfers" text box field
     And I enter "90" in the "capitalGains" text box field
     And I enter "10" in the "unpaidTax" text box field
     And I enter "20" in the "interest" text box field
     And I enter "30" in the "penaltyRate" text box field
-    And I enter "Penalty Rate Reason for year 2019" in the "penaltyRateReason" text box field
+    And I enter "Penalty Rate Reason for year 2020" in the "penaltyRateReason" text box field
     And I select Radio Button "No" at Position "2"
     And click on Save and Continue button
     Then page navigates to "Your legal interpretation"
@@ -211,7 +211,7 @@ Feature: An Individual is able to notify and submit offshore disclosure
     Then page navigates to "List of tasks"
     And status is marked as "Completed" for field "Edit offshore liability details"
 
-  @journeytests
+  @journeytests @id:003
   Scenario: Individual - Complete offshore disclosure journey - Nil disclosure
     Given I am on "You have sent your notification" page
     And I navigate to "make-a-disclosure" specific page
@@ -228,9 +228,9 @@ Feature: An Individual is able to notify and submit offshore disclosure
     And click on Save and Continue button
     Then page navigates to "Which year does this offshore disclosure relate to?"
     And page should display checkboxes for the "10" tax years before the current tax year
-    When I select Checkbox "Any tax year before 6 April 2013" at Position "10"
+    When I select Checkbox "Any tax year before 6 April 2014" at Position "10"
     And click on Save and Continue button
-    Then page navigates to "Can you tell us more about any tax owed before 6 April 2013?"
+    Then page navigates to "Can you tell us more about any tax owed before 6 April 2014?"
     And I enter "Provide the amount, when it was owed, and where the income or gain came from" in the text area
     And click on Save and Continue button
     Then page navigates to "You are making a nil disclosure"
@@ -240,7 +240,7 @@ Feature: An Individual is able to notify and submit offshore disclosure
     Then page navigates to "List of tasks"
     And status is marked as "Completed" for field "Edit offshore liability details"
 
-  @journeytests
+  @journeytests @id:004
   Scenario: Individual - Complete offshore disclosure journey - Complete flow for Nil disclosure
     Given I am on "You have sent your notification" page
     And I navigate to "make-a-disclosure" specific page
@@ -257,9 +257,9 @@ Feature: An Individual is able to notify and submit offshore disclosure
     And click on Save and Continue button
     Then page navigates to "Which year does this offshore disclosure relate to?"
     And page should display checkboxes for the "10" tax years before the current tax year
-    When I select Checkbox "Any tax year before 6 April 2013" at Position "10"
+    When I select Checkbox "Any tax year before 6 April 2014" at Position "10"
     And click on Save and Continue button
-    Then page navigates to "Can you tell us more about any tax owed before 6 April 2013?"
+    Then page navigates to "Can you tell us more about any tax owed before 6 April 2014?"
     And I enter "Provide the amount, when it was owed, and where the income or gain came from" in the text area
     And click on Save and Continue button
     Then page navigates to "You are making a nil disclosure"
@@ -304,7 +304,7 @@ Feature: An Individual is able to notify and submit offshore disclosure
     Then page navigates to "You have sent a nil disclosure"
     And the case reference should be "CFSS-1234567"
 
-  @journeytests
+  @journeytests @id:005
   Scenario: Individual - Complete offshore disclosure journey - last 5 selections - Complete flow
     Given I am on "You have sent your notification" page
     And I navigate to "make-a-disclosure" specific page
@@ -326,8 +326,8 @@ Feature: An Individual is able to notify and submit offshore disclosure
     And click on Save and Continue button
     Then page navigates to "Which year does this offshore disclosure relate to?"
     And page should display checkboxes for the "20" tax years before the current tax year
-    When I select Checkbox "6 April 2021 to 5 April 2022" at Position "1"
-    And I select Checkbox "6 April 2018 to 5 April 2019" at Position "4"
+    When I select Checkbox "6 April 2022 to 5 April 2023" at Position "1"
+    And I select Checkbox "6 April 2019 to 5 April 2020" at Position "4"
     And click on Save and Continue button
     Then page navigates to "You have not selected certain years"
     And I enter "Reason for including year in the disclosure" in the text area
@@ -340,27 +340,27 @@ Feature: An Individual is able to notify and submit offshore disclosure
     And click on Save and Continue button
     And I select Radio Button "No" at Position "2"
     And click on Save and Continue button
-    Then page navigates to "Offshore liabilities — Tax year 6 April 2021 to 5 April 2022"
+    Then page navigates to "Offshore liabilities — Tax year 6 April 2022 to 5 April 2023"
     And I enter "10" in the "income" text box field
     And I enter "20" in the "chargeableTransfers" text box field
     And I enter "30" in the "capitalGains" text box field
     And I enter "40" in the "unpaidTax" text box field
     And I enter "50" in the "interest" text box field
     And I enter "50" in the "penaltyRate" text box field
-    And I enter "Penalty Rate Reason for year 2021" in the "penaltyRateReason" text box field
+    And I enter "Penalty Rate Reason for year 2023" in the "penaltyRateReason" text box field
     And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
-    Then page navigates to "How much foreign tax credit relief have you deducted from your calculations for the tax year ending 2022, in pounds?"
+    Then page navigates to "How much foreign tax credit relief have you deducted from your calculations for the tax year ending 2023, in pounds?"
     And I enter "10" in the TextBox field
     And click on Save and Continue button
-    Then page navigates to "Offshore liabilities — Tax year 6 April 2018 to 5 April 2019"
+    Then page navigates to "Offshore liabilities — Tax year 6 April 2019 to 5 April 2020"
     And I enter "70" in the "income" text box field
     And I enter "80" in the "chargeableTransfers" text box field
     And I enter "90" in the "capitalGains" text box field
     And I enter "10" in the "unpaidTax" text box field
     And I enter "20" in the "interest" text box field
     And I enter "30" in the "penaltyRate" text box field
-    And I enter "Penalty Rate Reason for year 2019" in the "penaltyRateReason" text box field
+    And I enter "Penalty Rate Reason for year 2020" in the "penaltyRateReason" text box field
     And I select Radio Button "No" at Position "2"
     And click on Save and Continue button
     Then page navigates to "Your legal interpretation"
