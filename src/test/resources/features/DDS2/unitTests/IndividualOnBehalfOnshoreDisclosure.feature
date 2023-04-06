@@ -61,7 +61,7 @@ Feature: An Individual - On behalf of - is able to notify and submit onshore dis
     And I click on send notification button
 
 #   Onshore journey works up to summary page only. DDS2-1592 is in backlog to fix status.
-  @journeytests
+  @journeytests @id:001
   Scenario: Individual On behalf of - Complete onshore disclosure journey - First 3 selections - Complete flow
     Given I am on "You have sent the notification" page
     And I navigate to "make-a-disclosure" specific page
@@ -94,23 +94,23 @@ Feature: An Individual - On behalf of - is able to notify and submit onshore dis
     And click on Save and Continue button
     Then page navigates to "Which year does this onshore disclosure relate to?"
     And page should display checkboxes for the "4" tax years before the current tax year
-    And I select Checkbox "6 April 2021 to 5 April 2022" at Position "1"
-    And I select Checkbox "6 April 2020 to 5 April 2021" at Position "2"
+    And I select Checkbox "6 April 2022 to 5 April 2023" at Position "1"
+    And I select Checkbox "6 April 2021 to 5 April 2022" at Position "2"
     And click on Save and Continue button
-    Then page navigates to "Onshore liabilities — Tax year 6 April 2021 to 5 April 2022"
+    Then page navigates to "Onshore liabilities — Tax year 6 April 2022 to 5 April 2023"
     And I enter "10" in the "gains" text box field
     And I enter "20" in the "unpaidTax" text box field
     And I enter "20" in the "niContributions" text box field
     And I enter "50" in the "interest" text box field
     And I enter "50" in the "penaltyRate" text box field
-    And I enter "Penalty Rate Reason for year 2021" in the "penaltyRateReason" text box field
+    And I enter "Penalty Rate Reason for year 2022" in the "penaltyRateReason" text box field
     And click on Save and Continue button
-    Then page navigates to "Onshore liabilities — Tax year 6 April 2020 to 5 April 2021"
+    Then page navigates to "Onshore liabilities — Tax year 6 April 2021 to 5 April 2022"
     And I enter "70" in the "gains" text box field
     And I enter "80" in the "unpaidTax" text box field
     And I enter "90" in the "niContributions" text box field
     And I enter "10" in the "interest" text box field
     And I enter "30" in the "penaltyRate" text box field
-    And I enter "Penalty Rate Reason for year 2019" in the "penaltyRateReason" text box field
+    And I enter "Penalty Rate Reason for year 2020" in the "penaltyRateReason" text box field
     And click on Save and Continue button
     Then page navigates to "Onshore liabilities summary"
