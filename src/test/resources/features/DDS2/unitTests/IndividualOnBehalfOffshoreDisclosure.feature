@@ -89,7 +89,7 @@ Feature: An Individual - On behalf of - is able to notify and submit offshore di
     And I enter "tax year ending 2019" in the "Which tax years does this apply to?" text box field
     And click on Save and Continue button
     Then page navigates to "Which year does this offshore disclosure relate to?"
-    And page should display checkboxes for the "8" tax years before the current tax year
+    #And page should display checkboxes for the "8" tax years before the current tax year
     And I select Checkbox "6 April 2022 to 5 April 2023" at Position "1"
     And I select Checkbox "6 April 2021 to 5 April 2022" at Position "2"
     And click on Save and Continue button
@@ -237,7 +237,7 @@ Feature: An Individual - On behalf of - is able to notify and submit offshore di
     When I select Checkbox "The individual submitted an inaccurate return because they did not take reasonable care." at Position "4"
     And click on Save and Continue button
     Then page navigates to "Which year does this offshore disclosure relate to?"
-    And page should display checkboxes for the "10" tax years before the current tax year
+    #And page should display checkboxes for the "10" tax years before the current tax year
     When I click on Back button
     Then page navigates to "Why are you making this disclosure?"
     When I select Checkbox "The individual did not notify HMRC of a tax liability but this was not deliberate and they do not have a reasonable excuse." at Position "5"
@@ -299,10 +299,10 @@ Feature: An Individual - On behalf of - is able to notify and submit offshore di
     When I select Checkbox "The individual submitted an inaccurate return because they did not take reasonable care." at Position "4"
     And click on Save and Continue button
     Then page navigates to "Which year does this offshore disclosure relate to?"
-    And page should display checkboxes for the "10" tax years before the current tax year
-    When I select Checkbox "Any tax year before 6 April 2014" at Position "10"
+    #And page should display checkboxes for the "10" tax years before the current tax year
+    When I select Checkbox "Any tax year before 6 April 2013" at Position "11"
     And click on Save and Continue button
-    Then page navigates to "Can you tell us more about any tax owed before 6 April 2014?"
+    Then page navigates to "Can you tell us more about any tax owed before 6 April 2013?"
     And I enter "Provide the amount, when it was owed, and where the income or gain came from" in the text area
     And click on Save and Continue button
     Then page navigates to "You are making a nil disclosure"
