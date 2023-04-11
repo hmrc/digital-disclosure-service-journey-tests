@@ -28,10 +28,10 @@ Feature: An Individual is able to make and send nil offshore and onshore disclos
     When I select Checkbox "I have submitted an inaccurate return because I did not take reasonable care." at Position "4"
     And click on Save and Continue button
     Then page navigates to "Which year does this offshore disclosure relate to?"
-    And page should display checkboxes for the "10" tax years before the current tax year
-    When I select Checkbox "Any tax year before 6 April 2014" at Position "10"
+    #And page should display checkboxes for the "10" tax years before the current tax year
+    When I select Checkbox "Any tax year before 6 April 2013" at Position "11"
     And click on Save and Continue button
-    Then page navigates to "Can you tell us more about any tax owed before 6 April 2014?"
+    Then page navigates to "Can you tell us more about any tax owed before 6 April 2013?"
     And I enter "Provide the amount, when it was owed, and where the income or gain came from" in the text area
     And click on Save and Continue button
     Then page navigates to "You are making a nil disclosure"
