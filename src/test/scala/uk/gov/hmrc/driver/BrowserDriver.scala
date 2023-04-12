@@ -34,6 +34,7 @@ package uk.gov.hmrc.driver
 
 import org.openqa.selenium.WebDriver
 import uk.gov.hmrc.webdriver.SingletonDriver
+import org.openqa.selenium.chrome.ChromeOptions
 
 
 object BrowserDriver {
@@ -42,9 +43,15 @@ object BrowserDriver {
 
 
 
-  val webDriver: WebDriver = SingletonDriver.getInstance()
+  
 
     //sys.addShutdownHook(webDriver.quit())
+    val options = new ChromeOptions
+    options.addArguments("--remote-allow-origins=*")
+    implicit lazy val webDriver: WebDriver = SingletonDriver.getInstance(Some(options))
+
+    //val webDriver: WebDriver = SingletonDriver.getInstance()
+
   }
 
 
