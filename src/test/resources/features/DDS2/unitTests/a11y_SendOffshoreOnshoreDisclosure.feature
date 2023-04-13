@@ -93,17 +93,17 @@ Feature: An Individual - On behalf of - is able to notify and submit offshore di
     And click on Save and Continue button
     Then page navigates to "Which year does this offshore disclosure relate to?"
     And page should display checkboxes for the "20" tax years before the current tax year
-    And I select Checkbox "6 April 2022 to 5 April 2023" at Position "1"
-    And I select Checkbox "6 April 2020 to 5 April 2021" at Position "3"
+    And I select Checkbox "6 April 2021 to 5 April 2022" at Position "1"
+    And I select Checkbox "6 April 2019 to 5 April 2020" at Position "3"
     And click on Save and Continue button
-    Then page navigates to "You have not included the tax year ending 2022"
+    Then page navigates to "You have not included the tax year ending 2021"
     And I enter "Reason for including year in the disclosure" in the text area
     And click on Save and Continue button
     When I enter country or territory "United Arab Emirates" and select "United Arab Emirates"
     And click on Save and Continue button
     And I select Radio Button "No" at Position "2"
     And click on Save and Continue button
-    Then page navigates to "Offshore liabilities — Tax year 6 April 2022 to 5 April 2023"
+    Then page navigates to "Offshore liabilities — Tax year 6 April 2021 to 5 April 2022"
     And I enter "10" in the "income" text box field
     And I enter "20" in the "chargeableTransfers" text box field
     And I enter "30" in the "capitalGains" text box field
@@ -113,17 +113,17 @@ Feature: An Individual - On behalf of - is able to notify and submit offshore di
     And I enter "Penalty Rate Reason for year 2022" in the "penaltyRateReason" text box field
     And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
-    Then page navigates to "How much foreign tax credit relief have you deducted from your calculations for the tax year ending 2023, in pounds?"
+    Then page navigates to "How much foreign tax credit relief have you deducted from your calculations for the tax year ending 2022, in pounds?"
     And I enter "10" in the TextBox field
     And click on Save and Continue button
-    Then page navigates to "Offshore liabilities — Tax year 6 April 2020 to 5 April 2021"
+    Then page navigates to "Offshore liabilities — Tax year 6 April 2019 to 5 April 2020"
     And I enter "70" in the "income" text box field
     And I enter "80" in the "chargeableTransfers" text box field
     And I enter "90" in the "capitalGains" text box field
     And I enter "10" in the "unpaidTax" text box field
     And I enter "20" in the "interest" text box field
     And I enter "30" in the "penaltyRate" text box field
-    And I enter "Penalty Rate Reason for year 2020" in the "penaltyRateReason" text box field
+    And I enter "Penalty Rate Reason for year 2019" in the "penaltyRateReason" text box field
     And I select Radio Button "No" at Position "2"
     And click on Save and Continue button
     Then page navigates to "Your legal interpretation"
@@ -169,9 +169,9 @@ Feature: An Individual - On behalf of - is able to notify and submit offshore di
     And click on Save and Continue button
     Then page navigates to "Which year does this onshore disclosure relate to?"
     And page should display checkboxes for the "20" tax years before the current tax year
-    And I select Checkbox "6 April 2022 to 5 April 2023" at Position "1"
-    And I select Checkbox "6 April 2020 to 5 April 2021" at Position "3"
-    And I select Checkbox "6 April 2018 to 5 April 2019" at Position "5"
+    And I select Checkbox "6 April 2021 to 5 April 2022" at Position "1"
+    And I select Checkbox "6 April 2019 to 5 April 2020" at Position "3"
+    And I select Checkbox "6 April 2017 to 5 April 2018" at Position "5"
     And click on Save and Continue button
     Then page navigates to "You have not selected certain years"
     When I enter "Do not want to include" in yearNotSelected text box field
@@ -238,7 +238,7 @@ Feature: An Individual - On behalf of - is able to notify and submit offshore di
     Then page navigates to "How many properties do you currently let out?"
     When I enter "2" in property count text box field
     And click on Save and Continue button
-    Then page navigates to "Onshore liabilities — Tax year 6 April 2022 to 5 April 2023"
+    Then page navigates to "Onshore liabilities — Tax year 6 April 2021 to 5 April 2022"
     And I enter "10" in the "lettingIncome" text box field
     And I enter "20" in the "unpaidTax" text box field
     And I enter "20" in the "niContributions" text box field
@@ -247,10 +247,10 @@ Feature: An Individual - On behalf of - is able to notify and submit offshore di
     And I enter "Penalty Rate Reason for year 2021" in the "penaltyRateReason" text box field
     And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
-    Then page navigates to "How much residential finance costs were used to calculate the tax reduction for the tax year ending 2023, in pounds?"
+    Then page navigates to "How much residential finance costs were used to calculate the tax reduction for the tax year ending 2022, in pounds?"
     And I enter "5" in the TextBox field
     And click on Save and Continue button
-    Then page navigates to "Onshore liabilities — Tax year 6 April 2020 to 5 April 2021"
+    Then page navigates to "Onshore liabilities — Tax year 6 April 2019 to 5 April 2020"
     And I enter "10" in the "lettingIncome" text box field
     And I enter "20" in the "unpaidTax" text box field
     And I enter "20" in the "niContributions" text box field
@@ -259,7 +259,7 @@ Feature: An Individual - On behalf of - is able to notify and submit offshore di
     And I enter "Penalty Rate Reason for year 2022" in the "penaltyRateReason" text box field
     And I select Radio Button "No" at Position "2"
     And click on Save and Continue button
-    Then page navigates to "Onshore liabilities — Tax year 6 April 2018 to 5 April 2019"
+    Then page navigates to "Onshore liabilities — Tax year 6 April 2017 to 5 April 2018"
     And I enter "10" in the "lettingIncome" text box field
     And I enter "20" in the "unpaidTax" text box field
     And I enter "20" in the "niContributions" text box field
