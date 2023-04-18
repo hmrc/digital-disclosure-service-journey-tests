@@ -32,8 +32,8 @@ Feature: A Company - is able to submit onshore disclosure with CL and DL
     And I select Checkbox "The company submitted an inaccurate return because it did not take reasonable care." at Position "4"
     And click on Save and Continue button
     Then page navigates to "What onshore liabilities do you need to disclose?"
-    And I select Checkbox "Corporation Tax liabilities" at Position "3"
-    And I select Checkbox "Director’s loan account liabilities" at Position "4"
+    And I select Checkbox "Corporation Tax liabilities" at Position "4"
+    And I select Checkbox "Director’s loan account liabilities" at Position "5"
     And click on Save and Continue button
     Then page navigates to "Onshore Corporation Tax liability 1"
     And I enter "01" into the "periodEnd.day" text field

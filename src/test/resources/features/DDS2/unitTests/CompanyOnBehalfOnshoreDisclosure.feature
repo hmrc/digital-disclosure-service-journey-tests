@@ -70,7 +70,7 @@ Feature: A Company - On behalf of - is able to notify and submit onshore disclos
     And I enter "tax year ending 2019" in the "Which tax years does this apply to?for not notifying HMRC" text box field
     And click on Save and Continue button
     Then page navigates to "What onshore liabilities do you need to disclose?"
-    And I select Checkbox "Director’s loan account liabilities" at Position "4"
+    And I select Checkbox "Director’s loan account liabilities" at Position "5"
     And click on Save and Continue button
     Then page navigates to "Onshore director’s loan account liabilities 1"
     And I enter "Director Name" into the "name" text field
@@ -124,7 +124,7 @@ Feature: A Company - On behalf of - is able to notify and submit onshore disclos
     And I enter "tax year ending 2019" in the "Which tax years does this apply to?for not notifying HMRC" text box field
     And click on Save and Continue button
     Then page navigates to "What onshore liabilities do you need to disclose?"
-    And I select Checkbox "Corporation Tax liabilities" at Position "3"
+    And I select Checkbox "Corporation Tax liabilities" at Position "4"
     And click on Save and Continue button
     Then page navigates to "Onshore Corporation Tax liability 1"
     And I enter "01" into the "periodEnd.day" text field

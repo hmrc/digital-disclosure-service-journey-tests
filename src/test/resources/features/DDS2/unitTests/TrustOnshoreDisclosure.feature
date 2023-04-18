@@ -67,7 +67,7 @@ Feature: A trust is able to notify and submit onshore disclosure
     And I select Radio Button "Continue using this digital disclosure service" at Position "1"
     And click on Save and Continue button
     Then page navigates to "What onshore liabilities do you need to disclose?"
-    And I select Checkbox "Letting income from residential property or land" at Position "3"
+    And I select Checkbox "Letting income from residential property or land" at Position "1"
     And I select Checkbox "Non-business income liabilities" at Position "4"
     And click on Save and Continue button
     Then page navigates to "Which year does this onshore disclosure relate to?"
