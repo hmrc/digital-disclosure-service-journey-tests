@@ -56,7 +56,7 @@ Feature: An Individual is able to make and send nil offshore and onshore disclos
     Then page navigates to "Why are you making this disclosure?"
     When I select Checkbox "I did not notify HMRC of a tax liability but this was not deliberate and I do not have a reasonable excuse." at Position "5"
     And click on Save and Continue button
-    And I select Checkbox "Business income liabilities" at Position "1"
+    And I select Checkbox "Business income liabilities" at Position "2"
     And click on Save and Continue button
     Then page navigates to "Which year does this onshore disclosure relate to?"
     And page should display checkboxes for the "20" tax years before the current tax year
@@ -154,7 +154,7 @@ Feature: An Individual is able to make and send nil offshore and onshore disclos
     Then page navigates to "Why are you making this disclosure?"
     When I select Checkbox "I have submitted an inaccurate return because I did not take reasonable care." at Position "4"
     And click on Save and Continue button
-    And I select Checkbox "Capital Gains Tax liabilities" at Position "2"
+    And I select Checkbox "Capital Gains Tax liabilities" at Position "3"
     And click on Save and Continue button
     Then page navigates to "Which year does this onshore disclosure relate to?"
     And page should display checkboxes for the "6" tax years before the current tax year

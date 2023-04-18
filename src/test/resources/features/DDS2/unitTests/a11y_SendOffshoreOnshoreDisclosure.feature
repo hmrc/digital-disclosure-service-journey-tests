@@ -165,7 +165,7 @@ Feature: An Individual - On behalf of - is able to notify and submit offshore di
     And I enter "tax year ending 2019" in the "Which tax years does this apply to?" text box field
     And click on Save and Continue button
     Then page navigates to "What onshore liabilities do you need to disclose?"
-    And I select Checkbox "Letting income from residential property or land" at Position "3"
+    And I select Checkbox "Letting income from residential property or land" at Position "1"
     And click on Save and Continue button
     Then page navigates to "Which year does this onshore disclosure relate to?"
     And page should display checkboxes for the "20" tax years before the current tax year
