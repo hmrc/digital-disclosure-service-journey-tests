@@ -237,8 +237,8 @@ Feature: A trust is able to notify and submit onshore disclosure
     And I select Checkbox "The trust submitted an inaccurate return because it did not take reasonable care." at Position "4"
     And click on Save and Continue button
     Then page navigates to "What onshore liabilities do you need to disclose?"
-    And I select Checkbox "Business income liabilities" at Position "1"
-    And I select Checkbox "Capital Gains Tax liabilities" at Position "2"
+    And I select Checkbox "Business income liabilities" at Position "2"
+    And I select Checkbox "Capital Gains Tax liabilities" at Position "3"
     And I select Checkbox "Non-business income liabilities" at Position "4"
     And click on Save and Continue button
     Then page navigates to "Which year does this onshore disclosure relate to?"
