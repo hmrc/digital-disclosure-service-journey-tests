@@ -71,7 +71,7 @@ Feature: An individual UK tax payer is able to check their answers for About you
     And line "3" should have a label "Your email address" an answer with "abc@abc.com" and change URL ends with "your-email-address/change"
     And line "4" should have a label "Your telephone number" an answer with "07777 777777" and change URL ends with "your-telephone-number/change"
     And line "5" should have a label "Your address" an answer with "2 Testing Lane,Royal Madeuptown,ZZ9Z 9TT,United Kingdom" and change URL ends with "your-address/lookup/change"
-    And line "6" should have a label "Your date of birth" an answer with "1 January 1980" and change URL ends with "your-date-of-birth/change"
+    And line "6" should have a label "Your date of birth" an answer with "01 January 1980" and change URL ends with "your-date-of-birth/change"
     And line "7" should have a label "Your main occupation" an answer with "Dentist" and change URL ends with "your-main-occupation/change"
     And line "8" should have a label "Do you have a National Insurance number?" an answer with "Yes, and I know my National Insurance number" and change URL ends with "have-national-insurance-number/change"
     And line "9" should have a label "Your National Insurance number" an answer with "AZ123456D" and change URL ends with "your-national-insurance-number/change"
