@@ -625,7 +625,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     And line "5" should have a label "Your address" an answer with "1 Testing Lane,Royal Madeuptown,ZZ9Z 9TT,United Kingdom" and change URL ends with "your-address/lookup/change"
     And answers page should have h2 header "About the individual"
     And About The Individual section should have a label "Individual’s full name" at line "1" an answer with "Individual full name" and change URL ends with "individual-full-name/change"
-    And About The Individual section should have a label "Individual’s date of birth" at line "2" an answer with "1 January 1980" and change URL ends with "individual-date-of-birth/change"
+    And About The Individual section should have a label "Individual’s date of birth" at line "2" an answer with "01 January 1980" and change URL ends with "individual-date-of-birth/change"
     And About The Individual section should have a label "Individual’s main occupation" at line "3" an answer with "Dentist" and change URL ends with "individual-main-occupation/change"
     And About The Individual section should have a label "Does the individual have a National Insurance number, as far as you’re aware?" at line "4" an answer with "Yes, and I know their National Insurance number" and change URL ends with "individual-have-national-insurance-number/change"
     And About The Individual section should have a label "Individual’s National Insurance number" at line "5" an answer with "AZ123456D" and change URL ends with "individual-national-insurance-number/change"
