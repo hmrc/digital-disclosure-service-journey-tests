@@ -24,7 +24,7 @@ import uk.gov.hmrc.pages.{AreYouTheIndividualPage, BasePage}
 @RunWith(classOf[Cucumber])
 class AreYouTheIndividualStepDef extends BasePage with AreYouTheIndividualPage {
 
-  Given("""I am navigated to Are you the individual this disclosure relates to Page""") { () =>
+  Given("""I am navigated to Are you the individual that the disclosure will be about? Page""") { () =>
     // Write code here that turns the phrase above into concrete actions
     navigateToSpecificPage("notification/what-is-this-disclosure-about")
     clickOnRadioButton("An individual","1")

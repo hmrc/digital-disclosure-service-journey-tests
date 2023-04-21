@@ -60,7 +60,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
       |1|Will you be making a disclosure because you received a letter from HMRC?|Yes|letter-from-hmrc/change|
       |2|Case reference|CFSS-1234567|hmrc-letter-reference/change|
       |3|Who this disclosure is for|An individual|what-is-this-disclosure-about/change|
-      |4|Are you the individual this disclosure relates to?|Yes, I am the individual|are-you-the-individual/change|
+      |4|Are you the individual that the disclosure will be about?|Yes, I am the individual|are-you-the-entity/change|
       |5|Will the disclosure be about offshore liabilities?|Yes|disclose-offshore-liabilities/change|
       |6|Will the disclosure also be about onshore liabilities?|Yes|disclose-onshore-liabilities/change|
 
@@ -119,7 +119,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
       |1|Will you be making a disclosure because you received a letter from HMRC?|Yes|letter-from-hmrc/change|
       |2|Case reference|CFSS-1234567|hmrc-letter-reference/change|
       |3|Who this disclosure is for|An individual|what-is-this-disclosure-about/change|
-      |4|Are you the individual this disclosure relates to?|Yes, I am the individual|are-you-the-individual/change|
+      |4|Are you the individual that the disclosure will be about?|Yes, I am the individual|are-you-the-entity/change|
       |5|Will the disclosure be about offshore liabilities?|No|disclose-offshore-liabilities/change|
       |6|Will the disclosure be about onshore liabilities?|Yes|disclose-offshore-liabilities/change|
 
@@ -370,7 +370,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
       |Line|Label|Answer|URL|
       |1|Will you be making a disclosure because you received a letter from HMRC?|No|letter-from-hmrc/change|
 
-  Scenario: On behalf of Individual - Change Route validation -  From No to Yes I am the Individual - Are you the individual this disclosure relates to?
+  Scenario: On behalf of Individual - Change Route validation -  From No to Yes I am the Individual - Are you the individual that the disclosure will be about?
     Given I am navigated to Received A Letter Page
     When I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
@@ -378,7 +378,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     And click on Save and Continue button
     And I select Radio Button "An individual" at Position "1"
     And click on Save and Continue button
-    And I select Radio Button "No, I am disclosing on behalf of the individual" at Position "2"
+    And I select Radio Button "I am an accountant or tax agent" at Position "2"
     And click on Save and Continue button
     And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
@@ -433,7 +433,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     And I enter "ZZ9Z 9TT" in the "Postcode" field
     And click on Save and Continue button
     And click on confirm button
-    When I click on change button for "Are you the individual this disclosure relates to?"
+    When I click on change button for "Are you the individual that the disclosure will be about?"
     And I select Radio Button "Yes, I am the individual" at Position "1"
     And click on Save and Continue button
     And I select Radio Button "Yes" at Position "1"
@@ -481,7 +481,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
       |1|Will you be making a disclosure because you received a letter from HMRC?|Yes|letter-from-hmrc/change|
       |2|Case reference|CFSS-1234567|hmrc-letter-reference/change|
       |3|Who this disclosure is for|An individual|what-is-this-disclosure-about/change|
-      |4|Are you the individual this disclosure relates to?|Yes, I am the individual|are-you-the-individual/change|
+      |4|Are you the individual that the disclosure will be about?|Yes, I am the individual|are-you-the-entity/change|
       |5|Will the disclosure be about offshore liabilities?|Yes|disclose-offshore-liabilities/change|
       |6|Will the disclosure also be about onshore liabilities?|Yes|disclose-onshore-liabilities/change|
     And answers page should have h2 header "About you"
@@ -493,7 +493,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     And answers page should not have h2 header "About the individual"
 
     @journeytests
-  Scenario: On behalf of Individual - Change Route validation -  From Yes to No on behalf of the individual - Are you the individual this disclosure relates to?
+  Scenario: On behalf of Individual - Change Route validation -  From Yes to No on behalf of the individual - Are you the individual that the disclosure will be about?
     Given I am navigated to Received A Letter Page
     When I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
@@ -548,8 +548,8 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
     And answers page should have h2 header "Background"
     And answers page should have h2 header "About you"
     And answers page should not have h2 header "About the individual"
-    When I click on change button for "Are you the individual this disclosure relates to?"
-    And I select Radio Button "No, I am disclosing on behalf of the individual" at Position "2"
+    When I click on change button for "Are you the individual that the disclosure will be about?"
+    And I select Radio Button "I am an accountant or tax agent" at Position "2"
     And click on Save and Continue button
     And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
@@ -613,7 +613,7 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
       |1|Will you be making a disclosure because you received a letter from HMRC?|Yes|letter-from-hmrc/change|
       |2|Case reference|CFSS-1234567|hmrc-letter-reference/change|
       |3|Who this disclosure is for|An individual|what-is-this-disclosure-about/change|
-      |4|Are you the individual this disclosure relates to?|No, I am disclosing on behalf of the individual|are-you-the-individual/change|
+      |4|Are you the individual that the disclosure will be about?|I am an accountant or tax agent|are-you-the-entity/change|
       |5|Are you representing an organisation?|Yes|representing-organisation/change|
       |6|Name of the organisation you represent|represent org|representing-organisation-name/change|
       |7|The disclosure will be about|Offshore and onshore liabilities|disclose-offshore-liabilities/change|

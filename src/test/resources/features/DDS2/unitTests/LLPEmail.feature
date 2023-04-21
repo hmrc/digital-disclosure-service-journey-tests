@@ -5,7 +5,7 @@ Feature: A UK Limited liability partnership representative is able to enter deta
     Given I navigate to "what-is-this-disclosure-about" page
     When I select Radio Button "A limited liability partnership" at Position "4"
     And click on Save and Continue button
-    And I select Radio Button "Yes, I am a designated member of the limited liability partnership" at Position "1"
+    And I select Radio Button "Yes, I am a designated member" at Position "1"
     And click on Save and Continue button
     And I select Radio Button "No" at Position "2"
     And click on Save and Continue button
@@ -41,7 +41,7 @@ Feature: A UK Limited liability partnership representative is able to enter deta
     Given I navigate to "what-is-this-disclosure-about" page
     When I select Radio Button "A limited liability partnership" at Position "4"
     And click on Save and Continue button
-    And I select Radio Button "No, I will be making a disclosure on behalf of a designated member" at Position "2"
+    And I select Radio Button "I am an accountant or tax agent" at Position "2"
     And click on Save and Continue button
     And I select Radio Button "No" at Position "2"
     And click on Save and Continue button

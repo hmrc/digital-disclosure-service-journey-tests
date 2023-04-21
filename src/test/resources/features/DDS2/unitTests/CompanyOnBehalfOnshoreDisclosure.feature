@@ -9,7 +9,7 @@ Feature: A Company - On behalf of - is able to notify and submit onshore disclos
     And click on Save and Continue button
     And I select Radio Button "A company" at Position "3"
     And click on Save and Continue button
-    And I select Radio Button "No, I will be making a disclosure on behalf of an officer" at Position "2"
+    And I select Radio Button "I am an accountant or tax agent" at Position "2"
     And click on Save and Continue button
     And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button

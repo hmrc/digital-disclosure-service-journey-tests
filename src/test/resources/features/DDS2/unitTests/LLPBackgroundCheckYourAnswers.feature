@@ -9,7 +9,7 @@ Feature: LLP is able to check their answers for About the background section bef
     And click on Save and Continue button
     And I select Radio Button "A limited liability partnership" at Position "4"
     And click on Save and Continue button
-    And I select Radio Button "No, I will be making a disclosure on behalf of a designated member" at Position "2"
+    And I select Radio Button "I am an accountant or tax agent" at Position "2"
     And click on Save and Continue button
     And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
@@ -52,11 +52,11 @@ Feature: LLP is able to check their answers for About the background section bef
   Scenario: LLP - Background - Change route - Are you a designated member of the limited liability partnership that the disclosure will be about? from Yes to No
     Given I am on "Check Your Answers" page
     When I click on change button for "Are you a designated member of the limited liability partnership that the disclosure will be about?"
-    And I select Radio Button "Yes, I am a designated member of the limited liability partnership" at Position "1"
+    And I select Radio Button "Yes, I am a designated member" at Position "1"
     And click on Save and Continue button
     Then page navigates to "Check Your Answers"
     When I click on change button for "Are you a designated member of the limited liability partnership that the disclosure will be about?"
-    And I select Radio Button "No, I will be making a disclosure on behalf of a designated member" at Position "2"
+    And I select Radio Button "I am an accountant or tax agent" at Position "2"
     And click on Save and Continue button
     And I select Yes radio button
     And click on Save and Continue button
@@ -69,7 +69,7 @@ Feature: LLP is able to check their answers for About the background section bef
       |1|Will you be making a disclosure because you received a letter from HMRC?|Yes|letter-from-hmrc/change|
       |2|Case reference|CFSS-1234567|hmrc-letter-reference/change|
       |3|Who this disclosure is for|A limited liability partnership|what-is-this-disclosure-about/change|
-      |4|Are you a designated member of the limited liability partnership that the disclosure will be about?|No, I will be making a disclosure on behalf of a designated member|are-you-a-designated-member/change|
+      |4|Are you a designated member of the limited liability partnership that the disclosure will be about?|I am an accountant or tax agent|are-you-the-entity/change|
       |5|Are you representing an organisation?|Yes|representing-organisation/change|
       |6|Name of the organisation you represent|New Org Name|representing-organisation-name/change|
       |7|Will the disclosure be about offshore liabilities?|Yes|disclose-offshore-liabilities/change|
@@ -79,7 +79,7 @@ Feature: LLP is able to check their answers for About the background section bef
   Scenario: LLP - Background - Change route - Are you a designated member of the limited liability partnership that the disclosure will be about? from No to Yes
     Given I am on "Check Your Answers" page
     When I click on change button for "Are you a designated member of the limited liability partnership that the disclosure will be about?"
-    And I select Radio Button "Yes, I am a designated member of the limited liability partnership" at Position "1"
+    And I select Radio Button "Yes, I am a designated member" at Position "1"
     And click on Save and Continue button
     Then page navigates to "Check Your Answers"
     And answers page should have h2 header "Background"
@@ -88,7 +88,7 @@ Feature: LLP is able to check their answers for About the background section bef
       |1|Will you be making a disclosure because you received a letter from HMRC?|Yes|letter-from-hmrc/change|
       |2|Case reference|CFSS-1234567|hmrc-letter-reference/change|
       |3|Who this disclosure is for|A limited liability partnership|what-is-this-disclosure-about/change|
-      |4|Are you a designated member of the limited liability partnership that the disclosure will be about?|Yes, I am a designated member of the limited liability partnership|are-you-a-designated-member/change|
+      |4|Are you a designated member of the limited liability partnership that the disclosure will be about?|Yes, I am a designated member|are-you-the-entity/change|
       |5|The disclosure will be about|Offshore and onshore liabilities|disclose-offshore-liabilities/change|
     And answers page should have h2 header "About you"
     And line "1" should have a label "Your full name" an answer with "Agent full name" and change URL ends with "your-full-name/change"
@@ -114,7 +114,7 @@ Feature: LLP is able to check their answers for About the background section bef
       |1|Will you be making a disclosure because you received a letter from HMRC?|Yes|letter-from-hmrc/change|
       |2|Case reference|CFSS-1234567|hmrc-letter-reference/change|
       |3|Who this disclosure is for|A limited liability partnership|what-is-this-disclosure-about/change|
-      |4|Are you a designated member of the limited liability partnership that the disclosure will be about?|No, I will be making a disclosure on behalf of a designated member|are-you-a-designated-member/change|
+      |4|Are you a designated member of the limited liability partnership that the disclosure will be about?|I am an accountant or tax agent|are-you-the-entity/change|
       |5|Are you representing an organisation?|Yes|representing-organisation/change|
       |6|Name of the organisation you represent|Organization name|representing-organisation-name/change|
       |7|Will the disclosure be about offshore liabilities?|Yes|disclose-offshore-liabilities/change|

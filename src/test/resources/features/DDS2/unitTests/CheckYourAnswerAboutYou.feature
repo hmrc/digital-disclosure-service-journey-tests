@@ -63,7 +63,7 @@ Feature: An individual UK tax payer is able to check their answers for About you
       |1|Will you be making a disclosure because you received a letter from HMRC?|Yes|letter-from-hmrc/change|
       |2|Case reference|CFSS-1234567|hmrc-letter-reference/change|
       |3|Who this disclosure is for|An individual|what-is-this-disclosure-about/change|
-      |4|Are you the individual this disclosure relates to?|Yes, I am the individual|are-you-the-individual/change|
+      |4|Are you the individual that the disclosure will be about?|Yes, I am the individual|are-you-the-entity/change|
       |5|The disclosure will be about|Offshore and onshore liabilities|disclose-offshore-liabilities/change|
     Then answers page should have h2 header "About you"
     And line "1" should have a label "Your full name" an answer with "my full name" and change URL ends with "your-full-name/change"

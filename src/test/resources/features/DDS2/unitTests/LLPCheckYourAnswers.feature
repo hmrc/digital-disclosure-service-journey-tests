@@ -9,7 +9,7 @@ Feature: LLP is able to check their answers for About the LLP section before sub
     And click on Save and Continue button
     And I select Radio Button "A limited liability partnership" at Position "4"
     And click on Save and Continue button
-    And I select Radio Button "No, I will be making a disclosure on behalf of a designated member" at Position "2"
+    And I select Radio Button "I am an accountant or tax agent" at Position "2"
     And click on Save and Continue button
     And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
@@ -59,7 +59,7 @@ Feature: LLP is able to check their answers for About the LLP section before sub
       |1|Will you be making a disclosure because you received a letter from HMRC?|Yes|letter-from-hmrc/change|
       |2|Case reference|CFSS-1234567|hmrc-letter-reference/change|
       |3|Who this disclosure is for|A limited liability partnership|what-is-this-disclosure-about/change|
-      |4|Are you a designated member of the limited liability partnership that the disclosure will be about?|No, I will be making a disclosure on behalf of a designated member|are-you-a-designated-member/change|
+      |4|Are you a designated member of the limited liability partnership that the disclosure will be about?|I am an accountant or tax agent|are-you-the-entity/change|
       |5|Are you representing an organisation?|Yes|representing-organisation/change|
       |6|Name of the organisation you represent|Organization name|representing-organisation-name/change|
       |7|The disclosure will be about|Offshore and onshore liabilities|disclose-offshore-liabilities/change|

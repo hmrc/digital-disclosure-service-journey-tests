@@ -9,7 +9,7 @@ Feature: An individual UK tax payer is able to check their answers for About the
     And click on Save and Continue button
     And I select Radio Button "An individual" at Position "1"
     And click on Save and Continue button
-    And I select Radio Button "No, I am disclosing on behalf of the individual" at Position "2"
+    And I select Radio Button "I am an accountant or tax agent" at Position "2"
     And click on Save and Continue button
     And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
@@ -135,10 +135,10 @@ Feature: An individual UK tax payer is able to check their answers for About the
     And About The Individual section should have a label "Individual’s address" at line "10" an answer with "3 Testing Lane,Royal Madeuptown,ZZ9Z 9TT,United Kingdom" and change URL ends with "individual-address/lookup/change"
 
   @id006
-  Scenario: On behalf of Individual -About The Individual - No change route to - Are you the individual this disclosure relates to?
+  Scenario: On behalf of Individual -About The Individual - No change route to - Are you the individual that the disclosure will be about?
     Given I am on "Check Your Answers" page
-    When I click on change button for "Are you the individual this disclosure relates to?"
-    And I select Radio Button "No, I am disclosing on behalf of the individual" at Position "2"
+    When I click on change button for "Are you the individual that the disclosure will be about?"
+    And I select Radio Button "I am an accountant or tax agent" at Position "2"
     And click on Save and Continue button
     Then page navigates to "Check Your Answers"
     Then answers page should have h2 header "About the individual"
