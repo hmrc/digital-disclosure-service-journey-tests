@@ -9,7 +9,7 @@ Feature: A trust is able to notify and submit onshore disclosure
     And click on Save and Continue button
     And I select Radio Button "A trust" at Position "5"
     And click on Save and Continue button
-    And I select Radio Button "No, I will be making a disclosure on behalf of a trustee" at Position "2"
+    And I select Radio Button "I am an accountant or tax agent" at Position "2"
     And click on Save and Continue button
     And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button

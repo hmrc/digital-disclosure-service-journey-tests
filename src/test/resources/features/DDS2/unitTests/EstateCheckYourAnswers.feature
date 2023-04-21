@@ -9,7 +9,7 @@ Feature: An Estate is able to check their answers for About the person who died 
     And click on Save and Continue button
     And I select Radio Button "An estate" at Position "2"
     And click on Save and Continue button
-    And I select Radio Button "No, I will be making a disclosure on behalf of the executor or administrator of the estate" at Position "2"
+    And I select Radio Button "I am an accountant or tax agent" at Position "2"
     And click on Save and Continue button
     And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
@@ -76,7 +76,7 @@ Feature: An Estate is able to check their answers for About the person who died 
       |1|Will you be making a disclosure because you received a letter from HMRC?|Yes|letter-from-hmrc/change|
       |2|Case reference|CFSS-1234567|hmrc-letter-reference/change|
       |3|Who this disclosure is for|An estate|what-is-this-disclosure-about/change|
-      |4|Are you the executor or administrator of the estate that the disclosure will be about?|No, I will be making a disclosure on behalf of the executor or administrator of the estate|are-you-the-executor/change|
+      |4|Are you the executor or administrator of the estate that the disclosure will be about?|I am an accountant or tax agent|are-you-the-entity/change|
       |5|Are you representing an organisation?|Yes|representing-organisation/change|
       |6|Name of the organisation you represent|Organization name|representing-organisation-name/change|
       |7|The disclosure will be about|Offshore and onshore liabilities|disclose-offshore-liabilities/change|

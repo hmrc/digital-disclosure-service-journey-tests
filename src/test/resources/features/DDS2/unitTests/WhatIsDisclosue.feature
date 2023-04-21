@@ -11,7 +11,7 @@ Feature: A UK tax payer is able to enter the details and continue on What will t
     Given I am navigated to What is the disclosure Page
     When I select radio option An Individual
     And click on Save and Continue button
-    Then I am navigated to the next page with title "Are you the individual this disclosure relates to? - Digital Disclosure Service - GOV.UK"
+    Then I am navigated to the next page with title "Are you the individual that the disclosure will be about? - Digital Disclosure Service - GOV.UK"
     When I click on Back button
     Then I am navigated back to the page with title "What will the disclosure be about? - Digital Disclosure Service - GOV.UK"
     And the option An Individual is still selected

@@ -5,7 +5,7 @@ Feature: Trust - Navigation  for Screen "The disclosure is only about onshore li
     Given I navigate to "what-is-this-disclosure-about" page
     When I select Radio Button "A trust" at Position "5"
     And click on Save and Continue button
-    And I select Radio Button "Yes, I am a trustee of the trust" at Position "1"
+    And I select Radio Button "Yes, I am a trustee" at Position "1"
     And click on Save and Continue button
     And I select Radio Button "No" at Position "2"
     And click on Save and Continue button

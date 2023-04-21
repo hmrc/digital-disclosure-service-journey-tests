@@ -44,7 +44,7 @@ Feature: An agent is able to edit and create case
     And click on Save and Continue button
     And I select Radio Button "An estate" at Position "2"
     And click on Save and Continue button
-    And I select Radio Button "Yes, I am the executor or administrator of the estate" at Position "1"
+    And I select Radio Button "Yes, I am the executor or administrator" at Position "1"
     And click on Save and Continue button
     And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button

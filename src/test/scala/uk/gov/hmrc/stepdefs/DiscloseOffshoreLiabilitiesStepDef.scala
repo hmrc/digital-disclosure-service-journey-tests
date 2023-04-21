@@ -23,8 +23,8 @@ class DiscloseOffshoreLiabilitiesStepDef extends BasePage with DiscloseOffshoreL
     navigateToSpecificPage("notification/disclose-offshore-liabilities")
   }
 
-  Given ("""I am on Are you the individual this disclosure relates to Page""") { () =>
-    navigateToSpecificPage("notification/are-you-the-individual")
+  Given ("""I am on Are you the individual that the disclosure will be about? Page""") { () =>
+    navigateToSpecificPage("notification/are-you-the-entity")
   }
 
   Then("""heading with text {string} is displayed""") { (string: String) =>

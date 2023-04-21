@@ -1,11 +1,11 @@
 @page
 Feature: A UK trust representative is able to enter details and continue on Do you have an email address that you are happy to be contacted on by HMRC?"
 
-  Scenario: Do you have an email address that you are happy to be contacted on by HMRC? - User select Yes, I am a trustee of the trust" or " No, I will be making a disclosure on behalf of a trustee
+  Scenario: Do you have an email address that you are happy to be contacted on by HMRC? - User select Yes, I am a trustee" or " I am an accountant or tax agent
     Given I navigate to "what-is-this-disclosure-about" page
     When I select Radio Button "A trust" at Position "5"
     And click on Save and Continue button
-    And I select Radio Button "Yes, I am a trustee of the trust" at Position "1"
+    And I select Radio Button "Yes, I am a trustee" at Position "1"
     And click on Save and Continue button
     And I select Radio Button "No" at Position "2"
     And click on Save and Continue button

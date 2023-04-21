@@ -30,7 +30,7 @@ trait AreYouTheIndividualPage extends BasePage {
   val currentEnvironment: String = Configuration.environment.toString
 
 
-  val pageAddress = "notification/are-you-the-individual"
+  val pageAddress = "notification/are-you-the-entity"
 
   //stride login locators for local
   def radioYes: WebElement = findByID("value_0")

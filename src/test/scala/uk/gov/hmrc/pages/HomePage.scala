@@ -30,7 +30,7 @@ trait HomePage extends BasePage {
   val currentEnvironment: String = Configuration.environment.toString
 
 
-  val pageAddress = "notification/are-you-the-individual"
+  val pageAddress = "notification/are-you-the-entity"
 
   //locators for the page
   def paragraphOne: WebElement = findByID("first-paragraph")

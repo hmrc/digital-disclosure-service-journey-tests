@@ -10,7 +10,7 @@ Feature: A UK tax payer is able to enter the details and continue on "What is th
     And click on Save and Continue button
     And I select Radio Button "An individual" at Position "1"
     And click on Save and Continue button
-    When I select Radio Button "No, I am disclosing on behalf of the individual" at Position "2"
+    When I select Radio Button "I am an accountant or tax agent" at Position "2"
     And click on Save and Continue button
     And I select Radio Button "No" at Position "2"
     And click on Save and Continue button
@@ -75,7 +75,7 @@ Feature: A UK tax payer is able to enter the details and continue on "What is th
     And click on Save and Continue button
     And I select Radio Button "An individual" at Position "1"
     And click on Save and Continue button
-    When I select Radio Button "No, I am disclosing on behalf of the individual" at Position "2"
+    When I select Radio Button "I am an accountant or tax agent" at Position "2"
     And click on Save and Continue button
     And I select Radio Button "No" at Position "2"
     And click on Save and Continue button

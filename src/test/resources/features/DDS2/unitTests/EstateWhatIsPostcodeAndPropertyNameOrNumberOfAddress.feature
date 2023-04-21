@@ -5,7 +5,7 @@ Feature: A UK estate tax payer is able to enter the details and continue on "Wha
     Given I navigate to "what-is-this-disclosure-about" page
     When I select Radio Button "An estate" at Position "2"
     And click on Save and Continue button
-    And I select Radio Button "Yes, I am the executor or administrator of the estate" at Position "1"
+    And I select Radio Button "Yes, I am the executor or administrator" at Position "1"
     And click on Save and Continue button
     And I select Radio Button "No" at Position "2"
     And click on Save and Continue button
@@ -52,7 +52,7 @@ Feature: A UK estate tax payer is able to enter the details and continue on "Wha
     Given I navigate to "what-is-this-disclosure-about" page
     When I select Radio Button "An estate" at Position "2"
     And click on Save and Continue button
-    And I select Radio Button "No, I will be making a disclosure on behalf of the executor or administrator of the estate" at Position "2"
+    And I select Radio Button "I am an accountant or tax agent" at Position "2"
     And click on Save and Continue button
     And I select Radio Button "No" at Position "2"
     And click on Save and Continue button
