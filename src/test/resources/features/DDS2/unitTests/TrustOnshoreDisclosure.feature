@@ -184,7 +184,7 @@ Feature: A trust is able to notify and submit onshore disclosure
     Then page navigates to "You have added 2 properties"
     And I select Radio Button "No" at Position "2"
     And click on Save and Continue button
-    Then page navigates to "Are you a member of any landlord associations?"
+    Then page navigates to "Is the trust a member of any landlord associations?"
     And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
     Then page navigates to "Which landlord associations are you a member of?"
