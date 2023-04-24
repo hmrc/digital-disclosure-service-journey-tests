@@ -229,7 +229,7 @@ Feature: An Individual - On behalf of - is able to notify and submit offshore di
     Then page navigates to "You have added 1 property"
     And I select Radio Button "No" at Position "2"
     And click on Save and Continue button
-    Then page navigates to "Are you a member of any landlord associations?"
+    Then page navigates to "Is the individual a member of any landlord associations?"
     And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
     Then page navigates to "Which landlord associations are you a member of?"
