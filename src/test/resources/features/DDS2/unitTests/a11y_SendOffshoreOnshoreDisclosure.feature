@@ -245,6 +245,7 @@ Feature: An Individual - On behalf of - is able to notify and submit offshore di
     And I enter "50" in the "interest" text box field
     And I enter "50" in the "penaltyRate" text box field
     And I enter "Penalty Rate Reason for year 2021" in the "penaltyRateReason" text box field
+    And I enter "undeclared Income Or Gain" in the "undeclaredIncomeOrGain" text box field
     And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
     Then page navigates to "How much residential finance costs were used to calculate the tax reduction for the tax year ending 2022, in pounds?"
@@ -257,6 +258,7 @@ Feature: An Individual - On behalf of - is able to notify and submit offshore di
     And I enter "50" in the "interest" text box field
     And I enter "50" in the "penaltyRate" text box field
     And I enter "Penalty Rate Reason for year 2022" in the "penaltyRateReason" text box field
+    And I enter "undeclared Income Or Gain" in the "undeclaredIncomeOrGain" text box field
     And I select Radio Button "No" at Position "2"
     And click on Save and Continue button
     Then page navigates to "Onshore liabilities — Tax year 6 April 2017 to 5 April 2018"
@@ -266,6 +268,7 @@ Feature: An Individual - On behalf of - is able to notify and submit offshore di
     And I enter "50" in the "interest" text box field
     And I enter "50" in the "penaltyRate" text box field
     And I enter "Penalty Rate Reason for year 2022" in the "penaltyRateReason" text box field
+    And I enter "undeclared Income Or Gain" in the "undeclaredIncomeOrGain" text box field
     And I select Radio Button "No" at Position "2"
     And click on Save and Continue button
     Then page navigates to "Onshore liabilities summary"
