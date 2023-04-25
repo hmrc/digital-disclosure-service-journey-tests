@@ -104,6 +104,7 @@ Feature: An Individual - On behalf of - is able to notify and submit onshore dis
     And I enter "50" in the "interest" text box field
     And I enter "50" in the "penaltyRate" text box field
     And I enter "Penalty Rate Reason for year 2021" in the "penaltyRateReason" text box field
+    And I enter "undeclared Income Or Gain" in the "undeclaredIncomeOrGain" text box field
     And click on Save and Continue button
     Then page navigates to "Onshore liabilities — Tax year 6 April 2020 to 5 April 2021"
     And I enter "70" in the "gains" text box field
@@ -112,5 +113,6 @@ Feature: An Individual - On behalf of - is able to notify and submit onshore dis
     And I enter "10" in the "interest" text box field
     And I enter "30" in the "penaltyRate" text box field
     And I enter "Penalty Rate Reason for year 2019" in the "penaltyRateReason" text box field
+    And I enter "undeclared Income Or Gain" in the "undeclaredIncomeOrGain" text box field
     And click on Save and Continue button
     Then page navigates to "Onshore liabilities summary"
