@@ -99,6 +99,7 @@ Feature: An Individual is able to notify and submit offshore disclosure
     And I enter "40" in the "unpaidTax" text box field
     And I enter "50" in the "interest" text box field
     And I enter "50" in the "penaltyRate" text box field
+    And I enter "undeclaredIncomeOrGain" in the "undeclaredIncomeOrGain" text box field
     And I enter "Penalty Rate Reason for year 2021" in the "penaltyRateReason" text box field
     And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
@@ -112,6 +113,7 @@ Feature: An Individual is able to notify and submit offshore disclosure
     And I enter "10" in the "unpaidTax" text box field
     And I enter "20" in the "interest" text box field
     And I enter "30" in the "penaltyRate" text box field
+    And I enter "undeclaredIncomeOrGain" in the "undeclaredIncomeOrGain" text box field
     And I enter "Penalty Rate Reason for year 2019" in the "penaltyRateReason" text box field
     And I select Radio Button "No" at Position "2"
     And click on Save and Continue button
@@ -178,6 +180,7 @@ Feature: An Individual is able to notify and submit offshore disclosure
     And I enter "40" in the "unpaidTax" text box field
     And I enter "50" in the "interest" text box field
     And I enter "50" in the "penaltyRate" text box field
+    And I enter "undeclaredIncomeOrGain" in the "undeclaredIncomeOrGain" text box field
     And I enter "Penalty Rate Reason for year 2021" in the "penaltyRateReason" text box field
     And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
@@ -191,6 +194,7 @@ Feature: An Individual is able to notify and submit offshore disclosure
     And I enter "10" in the "unpaidTax" text box field
     And I enter "20" in the "interest" text box field
     And I enter "30" in the "penaltyRate" text box field
+    And I enter "undeclaredIncomeOrGain" in the "undeclaredIncomeOrGain" text box field
     And I enter "Penalty Rate Reason for year 2019" in the "penaltyRateReason" text box field
     And I select Radio Button "No" at Position "2"
     And click on Save and Continue button
@@ -347,6 +351,7 @@ Feature: An Individual is able to notify and submit offshore disclosure
     And I enter "40" in the "unpaidTax" text box field
     And I enter "50" in the "interest" text box field
     And I enter "50" in the "penaltyRate" text box field
+    And I enter "undeclaredIncomeOrGain" in the "undeclaredIncomeOrGain" text box field
     And I enter "Penalty Rate Reason for year 2022" in the "penaltyRateReason" text box field
     And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
@@ -360,6 +365,7 @@ Feature: An Individual is able to notify and submit offshore disclosure
     And I enter "10" in the "unpaidTax" text box field
     And I enter "20" in the "interest" text box field
     And I enter "30" in the "penaltyRate" text box field
+    And I enter "undeclaredIncomeOrGain" in the "undeclaredIncomeOrGain" text box field
     And I enter "Penalty Rate Reason for year 2019" in the "penaltyRateReason" text box field
     And I select Radio Button "No" at Position "2"
     And click on Save and Continue button

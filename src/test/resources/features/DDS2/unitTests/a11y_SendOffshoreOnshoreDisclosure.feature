@@ -111,6 +111,7 @@ Feature: An Individual - On behalf of - is able to notify and submit offshore di
     And I enter "50" in the "interest" text box field
     And I enter "50" in the "penaltyRate" text box field
     And I enter "Penalty Rate Reason for year 2022" in the "penaltyRateReason" text box field
+    And I enter "undeclaredIncomeOrGain" in the "undeclaredIncomeOrGain" text box field
     And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
     Then page navigates to "How much foreign tax credit relief have you deducted from your calculations for the tax year ending 2022, in pounds?"
@@ -124,6 +125,7 @@ Feature: An Individual - On behalf of - is able to notify and submit offshore di
     And I enter "20" in the "interest" text box field
     And I enter "30" in the "penaltyRate" text box field
     And I enter "Penalty Rate Reason for year 2019" in the "penaltyRateReason" text box field
+    And I enter "undeclaredIncomeOrGain" in the "undeclaredIncomeOrGain" text box field
     And I select Radio Button "No" at Position "2"
     And click on Save and Continue button
     Then page navigates to "Your legal interpretation"
