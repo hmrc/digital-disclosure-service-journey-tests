@@ -78,7 +78,7 @@ Feature: An Individual is able to make and send nil offshore and onshore disclos
     And click on Save and Continue button
     And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
-    And I select Checkbox "Somewhere else" at Position "7"
+    And I select Checkbox "Something else" at Position "7"
     And click on Save and Continue button
     Then page navigates to "Where did the undeclared income or gain come from?"
     And I enter "undeclared income or gain come from?" in the text area
