@@ -1,9 +1,9 @@
 @page
-Feature: UI Validation and Navigation  for Screen "The disclosure is only about onshore liabilities"
+Feature: UI Validation and Navigation  for Screen "The disclosure will only be about onshore liabilities"
 
   Scenario: Disclose onshore liabilities Only - UI Validation
     Given I navigate to "disclose-onshore-liabilities-only" page
-    Then heading with text "The disclosure is only about onshore liabilities" is displayed
+    Then heading with text "The disclosure will only be about onshore liabilities" is displayed
     And body Text "As you have no offshore liabilities to disclose, the disclosure can only be about onshore liabilities. You have onshore liabilities if you are classed as a resident (opens in new tab) in the UK and:" is displayed
     And bullet Text "rent out property" is displayed at position "1"
     And bullet Text "have income from savings and or investments" is displayed at position "2"
@@ -23,7 +23,7 @@ Feature: UI Validation and Navigation  for Screen "The disclosure is only about 
     Given I navigate to "disclose-offshore-liabilities" page
     When I select Radio Button "No" at Position "2"
     And click on Save and Continue button
-    Then I am navigated to the next page with title "The disclosure is only about onshore liabilities - Digital Disclosure Service - GOV.UK"
+    Then I am navigated to the next page with title "The disclosure will only be about onshore liabilities - Digital Disclosure Service - GOV.UK"
     And I click on Back button
     Then page navigates to "Offshore liabilities"
 

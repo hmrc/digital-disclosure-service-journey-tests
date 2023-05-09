@@ -69,7 +69,7 @@ Feature: A trust is able to check their answers for About the Trust section befo
     And line "4" should have a label "Your telephone number" an answer with "07777 777777" and change URL ends with "your-telephone-number/change"
     And line "5" should have a label "Your address" an answer with "1 Testing Lane,Royal Madeuptown,ZZ9Z 9TT,United Kingdom" and change URL ends with "your-address/lookup/change"
     And answers page should have h2 header "About the trust"
-    And About The Trust section should have a label "Trust Name" at line "1" an answer with "Trust name" and change URL ends with "trust-name/change"
+    And About The Trust section should have a label "Trust’s Name" at line "1" an answer with "Trust name" and change URL ends with "trust-name/change"
     And About The Trust section should have a label "Trust address" at line "2" an answer with "The Farm,Royal Madeuptown,ZZ9Z 9TT,United Kingdom" and change URL ends with "trust-address/lookup/change"
     When I click on send notification button
     Then page navigates to "You have sent the notification"
@@ -80,7 +80,7 @@ Feature: A trust is able to check their answers for About the Trust section befo
     Then answers page should have h2 header "About the trust"
     And clicking on change button navigates as following:
       |Label|ExpectedPage|
-      |Trust Name|What is the trust’s name?|
+      |Trust’s Name|What is the trust’s name?|
       |Trust address|What is the country of the trust’s address?|
 
   Scenario: About the Trust - Change Route validation - By Changing Value
@@ -88,7 +88,7 @@ Feature: A trust is able to check their answers for About the Trust section befo
     Then answers page should have h2 header "About the trust"
     And clicking on change button to validate changed value as following:
       |Label|ExpectedPage|ChangedValue|
-      |Trust Name|What is the trust’s name?|Changed Trust Name|
+      |Trust’s Name|What is the trust’s name?|Changed Trust Name|
 
   Scenario: About the Trust - Change Route validation - Address data is cleared
     Given I am on "Check Your Answers" page

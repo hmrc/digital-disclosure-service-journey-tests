@@ -279,7 +279,7 @@ Feature: An Individual - On behalf of - is able to notify and submit offshore di
     And status is marked as "Completed" for field "Edit onshore liability details"
     Then status is marked as "Not started" for field "Confirm if you have other liability issues or not"
     And click on Hyperlink "Confirm if you have other liability issues or not"
-    Then page navigates to "Do you have any other liability issues to fix?"
+    Then page navigates to "Do you have any other liability issues?"
     When I select Checkbox "No, I do not have any other liability issues" at Position "6"
     And click on Save and Continue button
     Then page navigates to "Did the individual receive tax credits for any of the years covered by this disclosure?"

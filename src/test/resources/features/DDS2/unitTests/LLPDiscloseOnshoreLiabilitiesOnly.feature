@@ -1,5 +1,5 @@
 @page
-Feature: UI Validation and Navigation  for Screen "The disclosure is only about onshore liabilities (for a limited liability partnership)"
+Feature: UI Validation and Navigation  for Screen "The disclosure will only be about onshore liabilities (for a limited liability partnership)"
 
   Scenario: Disclose onshore liabilities Only - Navigation with Save and Continue button
     Given I navigate to "what-is-this-disclosure-about" page

@@ -39,7 +39,7 @@ Feature: A UK tax payer is able to enter the details and continue on "Offshore l
     Given I am on Do you want to disclose offshore liabilities Page
     When I select Radio Button "No" at Position "2"
     And click on Save and Continue button
-    Then page navigates to "The disclosure is only about onshore liabilities"
+    Then page navigates to "TThe disclosure will only be about onshore liabilities"
 
   @id_005
   Scenario: Navigation Validation with Back Button
