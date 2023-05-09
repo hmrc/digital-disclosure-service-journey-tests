@@ -72,8 +72,8 @@ Feature: A trust is able to check their answers for background section before su
       |4|Are you a trustee of the trust that the disclosure will be about?|I am an accountant or tax agent|are-you-the-entity/change|
       |5|Are you representing an organisation?|Yes|representing-organisation/change|
       |6|Name of the organisation you represent|New Org Name|representing-organisation-name/change|
-      |7|Will the disclosure be about offshore liabilities?|Yes|disclose-offshore-liabilities/change|
-      |8|Will the disclosure also be about onshore liabilities?|Yes|disclose-onshore-liabilities/change|
+      |7|The disclosure will be about|Offshore and onshore liabilities|disclose-offshore-liabilities/change|
+      |8|Where the income or gain came from|Other capital gains|where-the-income-came-from/change|
 
     @journeytests
   Scenario: Trust - Background - Change route - Are you a trustee of the trust that the disclosure will be about? from No to Yes
@@ -97,7 +97,7 @@ Feature: A trust is able to check their answers for background section before su
     And line "4" should have a label "Your telephone number" an answer with "07777 777777" and change URL ends with "your-telephone-number/change"
     And line "5" should have a label "Your address" an answer with "2 Testing Lane,Royal Madeuptown,ZZ9Z 9TT,United Kingdom" and change URL ends with "your-address/lookup/change"
     And answers page should have h2 header "About the trust"
-    And About The Trust section should have a label "Trust Name" at line "1" an answer with "Trust name" and change URL ends with "trust-name/change"
+    And About The Trust section should have a label "Trust’s Name" at line "1" an answer with "Trust name" and change URL ends with "trust-name/change"
     And About The Trust section should have a label "Trust address" at line "2" an answer with "The Farm,Royal Madeuptown,ZZ9Z 9TT,United Kingdom" and change URL ends with "trust-address/lookup/change"
     When I click on send notification button
     Then page navigates to "You have sent your notification"
@@ -117,5 +117,5 @@ Feature: A trust is able to check their answers for background section before su
       |4|Are you a trustee of the trust that the disclosure will be about?|I am an accountant or tax agent|are-you-the-entity/change|
       |5|Are you representing an organisation?|Yes|representing-organisation/change|
       |6|Name of the organisation you represent|Organization name|representing-organisation-name/change|
-      |7|Will the disclosure be about offshore liabilities?|Yes|disclose-offshore-liabilities/change|
-      |8|Will the disclosure also be about onshore liabilities?|Yes|disclose-onshore-liabilities/change|
+      |7|The disclosure will be about|Offshore and onshore liabilities|disclose-offshore-liabilities/change|
+      |8|Where the income or gain came from|Other capital gains|where-the-income-came-from/change|

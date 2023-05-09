@@ -1,10 +1,10 @@
 @page
-Feature: UI Validation and Navigation  for Screen "The disclosure is only about onshore liabilities"
+Feature: UI Validation and Navigation  for Screen "The disclosure will only be about onshore liabilities"
 
   @id_001
   Scenario: Disclose onshore liabilities Only - UI Validation
-    Given I am on The disclosure is only about onshore liabilities page
-    Then heading with text "The disclosure is only about onshore liabilities" is displayed
+    Given I am on The disclosure will only be about onshore liabilities page
+    Then heading with text "The disclosure will only be about onshore liabilities" is displayed
     And body Text "As you have no offshore liabilities to disclose, the disclosure can only be about onshore liabilities. You have onshore liabilities if you are classed as a resident (opens in new tab) in the UK and:" is displayed
     And bullet Text "rent out property" is displayed at position "1"
     And bullet Text "have income from savings and or investments" is displayed at position "2"
@@ -17,7 +17,7 @@ Feature: UI Validation and Navigation  for Screen "The disclosure is only about 
 
   @id_002
   Scenario: Disclose onshore liabilities Only -Hyperlink Navigation
-    Given I am on The disclosure is only about onshore liabilities page
+    Given I am on The disclosure will only be about onshore liabilities page
     When click on Hyperlink "if you are classed as a resident (opens in new tab)"
     Then page navigates to "https://www.gov.uk/tax-foreign-income/residence" in new tab
 

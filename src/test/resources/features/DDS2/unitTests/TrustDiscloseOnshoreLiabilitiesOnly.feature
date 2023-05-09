@@ -1,5 +1,5 @@
 @page
-Feature: Trust - Navigation  for Screen "The disclosure is only about onshore liabilities (for a trust)"
+Feature: Trust - Navigation  for Screen "The disclosure will only be about onshore liabilities (for a trust)"
 
   Scenario: Disclose onshore liabilities Only - Navigation with Save and Continue button
     Given I navigate to "what-is-this-disclosure-about" page

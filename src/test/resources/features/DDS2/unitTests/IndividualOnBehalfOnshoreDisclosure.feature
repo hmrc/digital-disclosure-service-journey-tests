@@ -15,7 +15,7 @@ Feature: An Individual - On behalf of - is able to notify and submit onshore dis
     And click on Save and Continue button
     And I select Radio Button "No" at Position "2"
     And click on Save and Continue button
-    And page navigates to "The disclosure is only about onshore liabilities"
+    And page navigates to "The disclosure will only be about onshore liabilities"
     And click on Save and Continue button
     And I select Checkbox "Self-employment income" at Position "5"
     And click on Save and Continue button

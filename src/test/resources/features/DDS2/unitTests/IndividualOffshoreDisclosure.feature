@@ -274,7 +274,7 @@ Feature: An Individual is able to notify and submit offshore disclosure
     And status is marked as "Completed" for field "Edit offshore liability details"
     Then status is marked as "Not started" for field "Confirm if you have other liability issues or not"
     And click on Hyperlink "Confirm if you have other liability issues or not"
-    Then page navigates to "Do you have any other liability issues to fix?"
+    Then page navigates to "Do you have any other liability issues?"
     When I select Checkbox "No, I do not have any other liability issues" at Position "6"
     And click on Save and Continue button
     Then page navigates to "Did you receive tax credits for any of the years covered by your disclosure?"
@@ -387,7 +387,7 @@ Feature: An Individual is able to notify and submit offshore disclosure
     And status is marked as "Completed" for field "Edit offshore liability details"
     Then status is marked as "Not started" for field "Confirm if you have other liability issues or not"
     And click on Hyperlink "Confirm if you have other liability issues or not"
-    Then page navigates to "Do you have any other liability issues to fix?"
+    Then page navigates to "Do you have any other liability issues?"
     When I select Checkbox "Employer liability issues" at Position "1"
     And I select Checkbox "Class 2 National Insurance contributions issues" at Position "2"
     And I select Checkbox "Inheritance Tax issues" at Position "3"
@@ -397,7 +397,7 @@ Feature: An Individual is able to notify and submit offshore disclosure
     Then page navigates to "Can you describe the gift (known as a chargeable transfer) that your issue is about?"
     When I enter "Description for gift/chargeable transfer)" in the can you describe the gift text area
     And click on Save and Continue button
-    Then page navigates to "Can you describe what other liability issues you need to fix?"
+    Then page navigates to "Can you describe what other liability issues you have?"
     When I enter "Description for other liability issues" in the can you describe what other liability issues text area
     And click on Save and Continue button
     Then page navigates to "Did you receive tax credits for any of the years covered by your disclosure?"

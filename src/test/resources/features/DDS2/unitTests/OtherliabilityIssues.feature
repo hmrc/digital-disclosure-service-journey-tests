@@ -51,7 +51,7 @@ Feature: A Individual is able to notify and submit offshore disclosure
     When I click on Make a disclosure button
     Then status is marked as "Not started" for field "Confirm if you have other liability issues or not"
     And click on Hyperlink "Confirm if you have other liability issues or not"
-    Then page navigates to "Do you have any other liability issues to fix?"
+    Then page navigates to "Do you have any other liability issues?"
     When I select Checkbox "Employer liability issues" at Position "1"
     And I select Checkbox "Class 2 National Insurance contributions issues" at Position "2"
     And I select Checkbox "Inheritance Tax issues" at Position "3"
@@ -78,7 +78,7 @@ Feature: A Individual is able to notify and submit offshore disclosure
     When I click on Make a disclosure button
     Then status is marked as "Not started" for field "Confirm if you have other liability issues or not"
     And click on Hyperlink "Confirm if you have other liability issues or not"
-    Then page navigates to "Do you have any other liability issues to fix?"
+    Then page navigates to "Do you have any other liability issues?"
     When I select Checkbox "Employer liability issues" at Position "1"
     And I select Checkbox "Class 2 National Insurance contributions issues" at Position "2"
     And I select Checkbox "Inheritance Tax issues" at Position "3"
@@ -105,7 +105,7 @@ Feature: A Individual is able to notify and submit offshore disclosure
     When I click on Make a disclosure button
     Then status is marked as "Not started" for field "Confirm if you have other liability issues or not"
     And click on Hyperlink "Confirm if you have other liability issues or not"
-    Then page navigates to "Do you have any other liability issues to fix?"
+    Then page navigates to "Do you have any other liability issues?"
     When I select Checkbox "Employer liability issues" at Position "1"
     And I select Checkbox "Class 2 National Insurance contributions issues" at Position "2"
     And I select Checkbox "Inheritance Tax issues" at Position "3"
@@ -132,7 +132,7 @@ Feature: A Individual is able to notify and submit offshore disclosure
     When I click on Make a disclosure button
     Then status is marked as "Not started" for field "Confirm if you have other liability issues or not"
     And click on Hyperlink "Confirm if you have other liability issues or not"
-    Then page navigates to "Do you have any other liability issues to fix?"
+    Then page navigates to "Do you have any other liability issues?"
     When I select Checkbox "Employer liability issues" at Position "1"
     And I select Checkbox "Class 2 National Insurance contributions issues" at Position "2"
     And I select Checkbox "Inheritance Tax issues" at Position "3"
@@ -156,7 +156,7 @@ Feature: A Individual is able to notify and submit offshore disclosure
     When I click on Make a disclosure button
     Then status is marked as "Not started" for field "Confirm if you have other liability issues or not"
     And click on Hyperlink "Confirm if you have other liability issues or not"
-    Then page navigates to "Do you have any other liability issues to fix?"
+    Then page navigates to "Do you have any other liability issues?"
     When I select Checkbox "Employer liability issues" at Position "1"
     And I select Checkbox "Class 2 National Insurance contributions issues" at Position "2"
     And I select Checkbox "Inheritance Tax issues" at Position "3"
@@ -181,7 +181,7 @@ Feature: A Individual is able to notify and submit offshore disclosure
     When I click on Make a disclosure button
     Then status is marked as "Not started" for field "Confirm if you have other liability issues or not"
     And click on Hyperlink "Confirm if you have other liability issues or not"
-    Then page navigates to "Do you have any other liability issues to fix?"
+    Then page navigates to "Do you have any other liability issues?"
     When I select Checkbox "Employer liability issues" at Position "1"
     And I select Checkbox "Class 2 National Insurance contributions issues" at Position "2"
     And I select Checkbox "Inheritance Tax issues" at Position "3"

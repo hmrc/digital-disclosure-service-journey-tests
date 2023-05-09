@@ -18,7 +18,7 @@ package uk.gov.hmrc.stepdefs
 import uk.gov.hmrc.pages.{BasePage}
 class DiscloseOnshoreLiabilitiesOnlyStepDef extends BasePage {
 
-  Given("""I am on The disclosure is only about onshore liabilities page""") { () =>
+  Given("""I am on The disclosure will only be about onshore liabilities page""") { () =>
     navigateToSpecificPage("notification/disclose-onshore-liabilities-only")
   }
 }
