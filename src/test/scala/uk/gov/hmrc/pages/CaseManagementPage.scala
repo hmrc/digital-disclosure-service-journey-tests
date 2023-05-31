@@ -17,7 +17,6 @@
 package uk.gov.hmrc.pages
 
 import org.junit.Assert
-import org.openqa.selenium.support.ui.ISelect
 import org.openqa.selenium.{By, WebElement}
 import uk.gov.hmrc.utils.Configuration
 

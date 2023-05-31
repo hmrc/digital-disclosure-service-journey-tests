@@ -25,10 +25,7 @@ import java.time.Duration
 
 trait HomePage extends BasePage {
 
-  private lazy val webdriverWait = new WebDriverWait(driver, Duration.ofSeconds(20))
-
   val currentEnvironment: String = Configuration.environment.toString
-
 
   val pageAddress = "notification/are-you-the-entity"
 
@@ -42,8 +39,6 @@ trait HomePage extends BasePage {
   def paragraphSeven: WebElement = findByID("seventh-paragraph")
 
   def continue: WebElement = findByID("start")
-
-
 
   def navigateToPage(): Unit = {
     navigateToSpecificPage(pageAddress)

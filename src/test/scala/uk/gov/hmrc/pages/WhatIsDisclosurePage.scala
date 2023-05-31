@@ -25,10 +25,7 @@ import java.time.Duration
 
 trait WhatIsDisclosurePage extends BasePage {
 
-  private lazy val webdriverWait = new WebDriverWait(driver, Duration.ofSeconds(20))
-
   val currentEnvironment: String = Configuration.environment.toString
-
 
   val pageAddress = "notification/what-is-this-disclosure-about"
 

@@ -18,11 +18,9 @@ package uk.gov.hmrc.pages
 
 import io.cucumber.scala.{EN, ScalaDsl}
 import org.apache.commons.lang3.StringUtils
-import org.junit
 import org.junit.Assert
-import org.openqa.selenium.By.{ById, ByXPath}
 import org.openqa.selenium.support.ui.{ExpectedConditions, Select, WebDriverWait}
-import org.openqa.selenium.{By, Keys, WebElement}
+import org.openqa.selenium.{By, WebElement}
 import org.scalatest.Assertions
 import org.scalatest.concurrent.ScalaFutures
 import org.scalatestplus.selenium.WebBrowser
@@ -38,8 +36,6 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
 
   lazy val url: String = ""
   private lazy val webdriverWait = new WebDriverWait(driver, Duration.ofSeconds(20))
-  private val port = 10210
-
 
   def goToPage(): Unit = {
     go to url
@@ -109,7 +105,6 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
     reDirectUrl.sendKeys(Configuration.settings.baseUrl)
     val elements = findByID("confidenceLevel").findElements(By.tagName("option"))
     elements.get(2).click()
-    //val nino = "AA000000B"
     val ninoGenerator = new Generator(new Random())
     def generateNino: String = ninoGenerator.nextNino.nino
     findByID("nino").sendKeys(generateNino)
@@ -149,13 +144,11 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
   def verifyNewTabTitleAndCloseTab(title: String): Unit = {
     val tabs2 = driver.getWindowHandles
     val openedTabs=tabs2.iterator()
-    val currentTab=openedTabs.next()
     val newTab=openedTabs.next()
     driver.switchTo.window(newTab)
     Assert.assertTrue("link is not opened in new tab", driver.getTitle.toLowerCase().contains(title.toLowerCase()))
     driver.switchTo.window(newTab).close()
     driver.switchTo().window(tabs2.iterator().next())
-    val title2 = driver.getTitle
   }
 
   def verifyBulletText(expectedText: String, bulletNum: String): Unit = {
