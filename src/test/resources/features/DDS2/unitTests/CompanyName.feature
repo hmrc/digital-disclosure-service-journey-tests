@@ -1,4 +1,3 @@
-@page
 Feature: A UK tax payer is able to enter the details and continue on What is the name of the company the disclosure will be about?
 
   Scenario: What is the name of the company the disclosure will be about? - UI Validation

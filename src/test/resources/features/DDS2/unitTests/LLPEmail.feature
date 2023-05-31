@@ -1,4 +1,3 @@
-@page
 Feature: A UK Limited liability partnership representative is able to enter details and continue onto What is your email address? screen
 
   Scenario: What is your email address? - Yes, I am designated member and Enter the email address and navigate to next page

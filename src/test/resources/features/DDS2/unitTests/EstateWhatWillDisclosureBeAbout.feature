@@ -1,4 +1,3 @@
-@page
 Feature: A UK tax payer is able to enter the details and continue on to Are you the executor or administrator of the estate that the disclosure will be about?' Screen
 
   Scenario: What will the disclosure be about? - estate user navigates to next screen 'Are you the executor or administrator of the estate that the disclosure will be about?'

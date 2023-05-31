@@ -1,4 +1,3 @@
-@page
 Feature: A UK tax payer is able to enter the details and continue on Are you the individual that the disclosure will be about?
 
   Scenario: Are you the individual that the disclosure will be about? - User navigates to the page and verifies the page elements

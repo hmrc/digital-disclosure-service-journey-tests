@@ -1,4 +1,3 @@
-@page
 Feature: UI Validation and Navigation  for Screen "The disclosure will only be about onshore liabilities"
 
   Scenario: Disclose onshore liabilities Only - UI Validation

@@ -1,7 +1,5 @@
-@INPROGRESS
 Feature: A UK tax payer is able to enter the details and continue on "Do you have an email address that you are happy to be contacted on by HMRC?"
 
-  @id001
   Scenario: Contact By Email - When select Yes to Do you have an email address that you are happy to be contacted on by HMRC? - UI Validation
     Given I navigate to "what-is-this-disclosure-about" page
     When I select Radio Button "A trust" at Position "5"
@@ -31,7 +29,6 @@ Feature: A UK tax payer is able to enter the details and continue on "Do you hav
     And click on Save and Continue button
     Then user is navigated to the page with title "What is your email address?"
 
-  @id001
   Scenario: Contact By Email - When select No to Do you have an email address that you are happy to be contacted on by HMRC? - UI Validation
     Given I navigate to "what-is-this-disclosure-about" page
     When I select Radio Button "A trust" at Position "5"

@@ -1,4 +1,3 @@
-@page
 Feature: LLP UK tax payer is able to navigate from What will the disclosure be about? to next page
 
   Scenario: What will the disclosure be about? - A trust and navigates to next page Are you a trustee of the trust that the disclosure will be about?

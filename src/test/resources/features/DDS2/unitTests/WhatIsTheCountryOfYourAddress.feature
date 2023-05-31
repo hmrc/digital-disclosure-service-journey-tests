@@ -1,7 +1,5 @@
-@page
 Feature: A UK tax payer is able to enter the details and continue on "What is the country of your address?"
 
-  @id001
   Scenario: What is the country of your address? - UI validation
     Given I am on What is the country of your address Page
     Then verify the question should be "What is the country of your address?"
@@ -10,7 +8,6 @@ Feature: A UK tax payer is able to enter the details and continue on "What is th
     And Continue Button displayed
     And back Button Link is displayed
 
-  @id002
   Scenario: What is the country of your address? - UK address via valid postcode search
     Given I am on What is the country of your address Page
     When enter country name "United Kingdom",select country "United Kingdom"
@@ -28,7 +25,6 @@ Feature: A UK tax payer is able to enter the details and continue on "What is th
     And address at line "3" is "ZZ9Z 9TT"
     And address at line "4" is "United Kingdom"
 
-  @id003
   Scenario: What is the country of your address? - UK search invalid postcode and try with valid one
     Given I am on What is the country of your address Page
     When enter country name "United Kingdom",select country "United Kingdom"
@@ -48,7 +44,6 @@ Feature: A UK tax payer is able to enter the details and continue on "What is th
     And address at line "3" is "ZZ9Z 9TT"
     And address at line "4" is "United Kingdom"
 
-  @id004
   Scenario: What is the country of your address? - UK address via valid Property name
     Given I am on What is the country of your address Page
     When enter country name "United Kingdom",select country "United Kingdom"
@@ -63,7 +58,6 @@ Feature: A UK tax payer is able to enter the details and continue on "What is th
     And address at line "3" is "ZZ9Z 9TT"
     And address at line "4" is "United Kingdom"
 
-  @id005
   Scenario: What is the country of your address? - UK address via invalid Property name
     Given I am on What is the country of your address Page
     When enter country name "United Kingdom",select country "United Kingdom"
@@ -80,7 +74,6 @@ Feature: A UK tax payer is able to enter the details and continue on "What is th
     When click on Hyperlink "Try a different name or number"
     Then page navigates to "What is the postcode and property name or number of your address?"
 
-  @id006
   Scenario: What is the country of your address? - UK address via valid Property number
     Given I am on What is the country of your address Page
     When enter country name "United Kingdom",select country "United Kingdom"
@@ -95,8 +88,6 @@ Feature: A UK tax payer is able to enter the details and continue on "What is th
     And address at line "3" is "ZZ9Z 9TT"
     And address at line "4" is "United Kingdom"
 
-
-  @id007
   Scenario: What is the country of your address? - UK address via invalid Property number
     Given I am on What is the country of your address Page
     When enter country name "United Kingdom",select country "United Kingdom"
@@ -113,7 +104,6 @@ Feature: A UK tax payer is able to enter the details and continue on "What is th
     When click on Hyperlink "Try a different name or number"
     Then page navigates to "What is the postcode and property name or number of your address?"
 
-  @id008
   Scenario: What is the country of your address? - Error Validation
     Given I am on What is the country of your address Page
     And click on continue button
@@ -135,7 +125,6 @@ Feature: A UK tax payer is able to enter the details and continue on "What is th
     When I click on problem message "Select an address"
     Then I should navigate to Radio button "1 Testing Lane, Royal Madeuptown, ZZ9Z 9TT" at Position "1"
 
-  @id009
   Scenario: What is the country of your address? - UK - Enter address manually error validation
     Given I am on What is the country of your address Page
     When enter country name "United Kingdom",select country "United Kingdom"
@@ -147,7 +136,6 @@ Feature: A UK tax payer is able to enter the details and continue on "What is th
     Then error summary popup should be displayed with text "There is a problem"
     And error message should be displayed with text "Enter at least one address line or a town"
 
-  @id010
   Scenario: What is the country of your address? - UK - Enter address manually in all fields on What is your postcode page, and edit the address in the confirm page
     Given I am on What is the country of your address Page
     When enter country name "United Kingdom",select country "United Kingdom"
@@ -179,7 +167,6 @@ Feature: A UK tax payer is able to enter the details and continue on "What is th
     And address at line "1" is "My Services Ltd"
     And address at line "6" is "HP19 9AT"
 
-  @id011
   Scenario: What is the country of your address? - UK - Enter address manually on incorrect postcode page, then verify in the confirm page
     Given I am on What is the country of your address Page
     When enter country name "United Kingdom",select country "United Kingdom"
@@ -219,7 +206,6 @@ Feature: A UK tax payer is able to enter the details and continue on "What is th
     And address at line "6" is "HP19 9AA"
     And address at line "7" is "United Kingdom"
 
-  @id012
   Scenario: What is the country of your address? - UK - Enter address manually on choose address page and then verify the confirm page
     Given I am on What is the country of your address Page
     When enter country name "United Kingdom",select country "United Kingdom"
@@ -239,7 +225,6 @@ Feature: A UK tax payer is able to enter the details and continue on "What is th
     And address at line "3" is "ZZ9Z 9TT"
     And address at line "4" is "United Kingdom"
 
-  @id013
   Scenario: What is the country of your address? - UK - Navigation to Check your Answer Page
     Given I am on What is the country of your address Page
     When enter country name "United Kingdom",select country "United Kingdom"
@@ -251,7 +236,6 @@ Feature: A UK tax payer is able to enter the details and continue on "What is th
     And click on confirm button
     And page navigates to "Check Your Answers"
 
-  @id014
   Scenario: For On Behalf of LLP - Hint Text should be available on What is the postcode and property name or number of your address? Page
     Given I navigate to "what-is-this-disclosure-about" page
     When I select Radio Button "A limited liability partnership" at Position "4"
@@ -284,7 +268,6 @@ Feature: A UK tax payer is able to enter the details and continue on "What is th
     And click on continue button
     Then hint with text "If you are representing an organisation on behalf of the limited liability partnership, you can use your organisation’s address." is displayed
 
-  @id015
   Scenario: For On Behalf of A Trust - Hint Text should be available on What is the postcode and property name or number of your address? Page
     Given I navigate to "what-is-this-disclosure-about" page
     When I select Radio Button "A trust" at Position "5"

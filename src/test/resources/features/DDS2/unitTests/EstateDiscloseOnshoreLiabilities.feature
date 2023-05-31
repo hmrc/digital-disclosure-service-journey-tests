@@ -1,4 +1,3 @@
-@page
 Feature: UI Navigation for Screen "Onshore liabilities (For LLP)"
 
   Scenario: Disclose onshore liabilities - Navigation with Save and Continue button - Yes

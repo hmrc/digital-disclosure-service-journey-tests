@@ -1,4 +1,4 @@
-@page @regression @journeytests
+@journeytests
 Feature: A Company - On behalf of - is able to notify and submit onshore disclosure
 
   Background:

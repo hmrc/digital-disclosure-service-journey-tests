@@ -1,4 +1,3 @@
-@page
 Feature: A UK tax payer is able to enter the details and continue on What is your date of birth? page
 
   Scenario: What is your date of birth? - UI validation

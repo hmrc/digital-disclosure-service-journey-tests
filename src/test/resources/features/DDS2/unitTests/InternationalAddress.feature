@@ -1,4 +1,3 @@
-@page
 Feature: A UK tax payer residing abroad is able to enter the details and continue on "What is the country of your address?"
 
   Scenario: What is your address? - International - UI validation

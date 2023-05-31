@@ -1,7 +1,5 @@
-@page
 Feature: A UK tax payer is able to enter the details and continue on "What is your National Insurance number?"
 
-  @id001
   Scenario: What is your National Insurance number? - UI validation
     Given I am on What is your National Insurance number Page
     Then verify the question should be "What is your National Insurance number?"
@@ -9,14 +7,12 @@ Feature: A UK tax payer is able to enter the details and continue on "What is yo
     And save and Continue Button is displayed
     And back Button Link is displayed
 
-  @id_002
   Scenario: What is your National Insurance number? - Enter valid input field
     Given I am on What is your National Insurance number Page
     When I enter valid NI Number TextBox field
     And click on Save and Continue button
     Then page navigates to "Are you registered for VAT?"
 
-  @id_003
   Scenario: What is your National Insurance number? - Blank Input
     Given I am on What is your National Insurance number Page
     When I enter no data in NI Number TextBox field
@@ -24,7 +20,6 @@ Feature: A UK tax payer is able to enter the details and continue on "What is yo
     Then error summary popup should be displayed with text "There is a problem"
     And error message should be displayed with text "Enter your National Insurance number"
 
-  @id_004
   Scenario: What is your National Insurance number? - Invalid NI
     Given I am on What is your National Insurance number Page
     When I enter invalid NI Number TextBox field
@@ -32,7 +27,6 @@ Feature: A UK tax payer is able to enter the details and continue on "What is yo
     Then error summary popup should be displayed with text "There is a problem"
     And error message should be displayed with text "Enter your National Insurance number in the right format"
 
-  @id_005
   Scenario: What is your National Insurance number? - Navigation of on Error message on top popup
     Given I am on What is your National Insurance number Page
     When I enter no data in NI Number TextBox field
@@ -40,7 +34,6 @@ Feature: A UK tax payer is able to enter the details and continue on "What is yo
     And I click on problem message "Enter your National Insurance number"
     Then I should navigate to NI number TextBox field
 
-  @id_006
   Scenario: What is your National Insurance number? - Navigation with Back button
     Given I am on Do you have a National Insurance number Page
     When I select Radio Button "Yes, and I know my National Insurance number" at Position "1"
@@ -48,7 +41,6 @@ Feature: A UK tax payer is able to enter the details and continue on "What is yo
     And I click on Back button
     Then page navigates to "Do you have a National Insurance number?"
 
-  @id_007
   Scenario Outline: What is your National Insurance number? - Format Validation
     Given I am on What is your National Insurance number Page
     When I enter <Invalid Format> NI Number TextBox field
@@ -66,21 +58,18 @@ Feature: A UK tax payer is able to enter the details and continue on "What is yo
       |"AAabcdefA"|Number can be anything from 0 to 9 and|
       |"AA123456E"|The final alpha character must be between A and D|
 
-  @id_008
   Scenario: What is your National Insurance number? - Enter Valid input with Space
     Given I am on What is your National Insurance number Page
     When I enter "AZ 12 34 56 D" NI Number TextBox field
     And click on Save and Continue button
     Then page navigates to "Are you registered for VAT?"
 
-  @id_009
   Scenario: What is your National Insurance number? - Enter Invalid input with Invalid Space format
     Given I am on What is your National Insurance number Page
     When I enter "AZ 12 345 6   D" NI Number TextBox field
     And click on Save and Continue button
     Then error message should be displayed with text "Enter your National Insurance number in the right format"
 
-  @id_0010
   Scenario: What is your National Insurance number? - Enter Invalid input with less than 9 character
     Given I am on What is your National Insurance number Page
     When I enter "AZ123456" NI Number TextBox field

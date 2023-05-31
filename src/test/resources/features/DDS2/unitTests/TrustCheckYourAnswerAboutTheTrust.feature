@@ -1,4 +1,3 @@
-@page
 Feature: A trust is able to check their answers for About the Trust section before submitting page
 
   Background:

@@ -18,7 +18,7 @@ package uk.gov.hmrc.stepdefs
 
 import io.cucumber.junit.Cucumber
 import org.junit.runner.RunWith
-import uk.gov.hmrc.pages.{AreYouTheIndividualPage, BasePage}
+import uk.gov.hmrc.pages.BasePage
 
 
 @RunWith(classOf[Cucumber])

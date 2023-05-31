@@ -1,4 +1,3 @@
-@page
 Feature: A UK tax payer residing abroad is able to enter the details and continue on "What is the country of your address?"
 
   Scenario: What is the individual’s address? - International - UI validation
@@ -38,7 +37,6 @@ Feature: A UK tax payer residing abroad is able to enter the details and continu
     Then page navigates to "Is this the correct address?"
     And address at line "1" is "My Services Ltd"
     And address at line "6" is "3141"
-
 
   Scenario: What is the individual’s address? - International page - Enter valid data in minimum fields, verify on the confirm page and edit the address
     Given I am on What is the country of the individual address Page

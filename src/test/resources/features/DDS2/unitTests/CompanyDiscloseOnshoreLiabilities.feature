@@ -1,4 +1,3 @@
-@page
 Feature: A UK tax payer is able to enter the details and continue on Onshore liabilities page
 
   Scenario: Disclose onshore liabilities - UI Validation

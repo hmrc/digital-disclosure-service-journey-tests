@@ -1,4 +1,3 @@
-@page
 Feature: A UK estate individual is able to enter the details and continue on Was the person registered for VAT, as far you're aware? screen
 
   Scenario: Was the person registered for VAT, as far as you're aware? - Estate individual, UI validation

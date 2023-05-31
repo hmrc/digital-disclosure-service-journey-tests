@@ -1,4 +1,3 @@
-@page
 Feature: A UK tax payer is able to enter the details and continue on Are you registered for VAT?
 
   Scenario: Are you registered for VAT? - UI Validation

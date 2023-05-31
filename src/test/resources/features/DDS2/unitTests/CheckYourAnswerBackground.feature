@@ -1,7 +1,5 @@
-@page @regression
 Feature: An individual UK tax payer is able to check their answers for background section before submitting page
 
-  @id001 @smoke @regression
   Scenario: For Individual -Background Section Verification -When user selects "Yes" for offshore liabilities
     Given I am navigated to Received A Letter Page
     When I select Radio Button "Yes" at Position "1"
@@ -64,7 +62,6 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
       |5|Will the disclosure be about offshore liabilities?|Yes|disclose-offshore-liabilities/change|
       |6|Will the disclosure also be about onshore liabilities?|Yes|disclose-onshore-liabilities/change|
 
-  @id002
   Scenario: For Individual -Background Section Verification -When user selects "No" for offshore liabilities
     Given I am navigated to Received A Letter Page
     When I select Radio Button "Yes" at Position "1"
@@ -123,7 +120,6 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
       |5|Will the disclosure be about offshore liabilities?|No|disclose-offshore-liabilities/change|
       |6|Will the disclosure be about onshore liabilities?|Yes|disclose-offshore-liabilities/change|
 
-  @id003
   Scenario: For Individual -Background - Change Route validation -With Change
     Given I am navigated to Received A Letter Page
     When I select Radio Button "Yes" at Position "1"
@@ -190,7 +186,6 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
       |Line|Label|Answer|URL|
       |5|Will the disclosure be about offshore liabilities?|No|disclose-offshore-liabilities/change|
 
-  @id004
   Scenario: For Individual -About You - Change Route -Will you be making a disclosure because you received a letter from HMRC - Yes to No
     Given I am navigated to Received A Letter Page
     When I select Radio Button "Yes" at Position "1"
@@ -248,7 +243,6 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
       |1|Will you be making a disclosure because you received a letter from HMRC?|No|letter-from-hmrc/change|
     And label "Case reference" is not displayed on check your answer page
 
-  @id005
   Scenario: For Individual -About You - Change Route -Will you be making a disclosure because you received a letter from HMRC - No to Yes
     Given I am navigated to Received A Letter Page
     When I select Radio Button "No" at Position "2"
@@ -311,7 +305,6 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
       |1|Will you be making a disclosure because you received a letter from HMRC?|Yes|letter-from-hmrc/change|
       |2|Case reference|CFSS-1234567|hmrc-letter-reference/change|
 
-  @id006
   Scenario: For Individual -About You - Change Route -Will you be making a disclosure because you received a letter from HMRC - No change
     Given I am navigated to Received A Letter Page
     When I select Radio Button "No" at Position "2"

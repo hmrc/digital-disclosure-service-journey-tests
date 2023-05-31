@@ -1,4 +1,3 @@
-@page
 Feature: A UK tax payer is able to enter the details and continue on Received A Letter from HMRC page
 
   Scenario: Received a letter page - User navigates to page and verifies the page elements

@@ -1,4 +1,3 @@
-@page
 Feature: A UK tax payer is able to enter the details and continue on "What is the country of the company’s address?"
   
   Scenario: What is the country of the company’s address? - Select country and navigate to next page

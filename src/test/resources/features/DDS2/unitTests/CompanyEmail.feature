@@ -1,4 +1,3 @@
-@page
 Feature: A UK company representative is able to enter details and continue on Do you have an email address that you are happy to be contacted on by HMRC?"
 
   Scenario: Do you have an email address that you are happy to be contacted on by HMRC? - Yes, I am the officer, Error on no input and Yes to be contacted via email

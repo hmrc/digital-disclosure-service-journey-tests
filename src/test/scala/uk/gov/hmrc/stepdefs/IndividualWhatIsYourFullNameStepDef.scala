@@ -16,7 +16,7 @@
 
 package uk.gov.hmrc.stepdefs
 
-import uk.gov.hmrc.pages.{BasePage, WhatIsYourFullNamePage}
+import uk.gov.hmrc.pages.BasePage
 
 class IndividualWhatIsYourFullNameStepDef extends BasePage {
 

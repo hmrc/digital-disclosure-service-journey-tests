@@ -1,4 +1,3 @@
-@page
 Feature: As an Estate tax payer is able to enter the details and continue on Did the person have a National Insurance number, as far as you’re aware?
 
   Scenario: Did the person have a National Insurance number, as far as you’re aware? - UI Validation

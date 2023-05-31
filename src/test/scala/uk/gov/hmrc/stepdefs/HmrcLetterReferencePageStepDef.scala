@@ -16,7 +16,6 @@
 
 package uk.gov.hmrc.stepdefs
 
-import io.cucumber.scala.{EN, PendingException, ScalaDsl}
 import uk.gov.hmrc.pages.{BasePage, HmrcLetterReferencePage}
 
 class HmrcLetterReferencePageStepDef extends BasePage with HmrcLetterReferencePage{

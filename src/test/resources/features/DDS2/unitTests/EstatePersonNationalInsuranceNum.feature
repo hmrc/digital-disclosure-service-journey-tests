@@ -1,4 +1,3 @@
-@page
 Feature: An Estate tax payer is able to enter the details and continue on "What was the person’s National Insurance number?"
 
   Scenario: What was the person’s National Insurance number?- UI validation

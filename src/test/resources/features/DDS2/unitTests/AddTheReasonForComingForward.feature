@@ -1,4 +1,3 @@
-@page @regression
 Feature: A Tax payer is able to add reason for coming forward
   Background:
     Given I am navigated to Received A Letter Page

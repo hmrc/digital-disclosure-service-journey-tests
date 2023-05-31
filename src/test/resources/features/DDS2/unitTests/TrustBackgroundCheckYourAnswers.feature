@@ -1,4 +1,3 @@
-@page @regression
 Feature: A trust is able to check their answers for background section before submitting page
 
   Background:

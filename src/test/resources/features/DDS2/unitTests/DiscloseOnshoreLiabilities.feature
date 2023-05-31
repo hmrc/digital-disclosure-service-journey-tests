@@ -1,7 +1,5 @@
-@page
 Feature: UI Validation and Navigation  for Screen "Onshore liabilities"
 
-  @id_001
   Scenario: Disclose onshore liabilities - UI Validation
     Given I am on Do you also want to disclose onshore liabilities page
     Then heading with text "Onshore liabilities" is displayed
@@ -18,13 +16,11 @@ Feature: UI Validation and Navigation  for Screen "Onshore liabilities"
     And save and Continue Button is displayed
     And back Button Link is displayed
 
-  @id_002
   Scenario: Disclose onshore liabilities - Hyperlink Navigation
     Given I am on Do you also want to disclose onshore liabilities page
     When click on Hyperlink "if you are classed as a resident (opens in new tab)"
     Then page navigates to "https://www.gov.uk/tax-foreign-income/residence" in new tab
 
-  @id_003
   Scenario: Disclose onshore liabilities- Navigation with option "Yes"
     Given I navigate to "what-is-this-disclosure-about" page
     When I select Radio Button "An individual" at Position "1"
@@ -37,7 +33,6 @@ Feature: UI Validation and Navigation  for Screen "Onshore liabilities"
     And click on Save and Continue button
     Then user is navigated to the page with title "What is your full name?"
 
-  @id_004
   Scenario: Disclose onshore liabilities -Navigation with option "No"
     Given I navigate to "what-is-this-disclosure-about" page
     When I select Radio Button "An individual" at Position "1"
@@ -50,7 +45,6 @@ Feature: UI Validation and Navigation  for Screen "Onshore liabilities"
     And click on Save and Continue button
     Then user is navigated to the page with title "What is your full name?"
 
-  @id_005
   Scenario: Disclose onshore liabilities - Navigation with Back button
     Given I am on Do you also want to disclose onshore liabilities page
     And I select Radio Button "No" at Position "2"
@@ -58,14 +52,12 @@ Feature: UI Validation and Navigation  for Screen "Onshore liabilities"
     And I click on Back button
     Then page navigates to "Onshore liabilities"
 
-  @id_006
   Scenario: Disclose onshore liabilities -Validation with no selection of Radio Button
     Given I am on Do you also want to disclose onshore liabilities page
     When click on Save and Continue button
     Then error summary popup should be displayed with text "There is a problem"
     And error message should be displayed with text "Select yes if the disclosure is about onshore liabilities"
 
-  @id_007
   Scenario: Disclose onshore liabilities -Navigation of on Error message on top popup
     Given I am on Do you also want to disclose onshore liabilities page
     And click on Save and Continue button

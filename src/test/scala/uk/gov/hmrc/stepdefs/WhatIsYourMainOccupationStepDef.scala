@@ -16,7 +16,7 @@
 
 package uk.gov.hmrc.stepdefs
 
-import uk.gov.hmrc.pages.{BasePage, WhatIsYourDOBPage, WhatIsYourMainOccupationPage}
+import uk.gov.hmrc.pages.{BasePage, WhatIsYourMainOccupationPage}
 
 class WhatIsYourMainOccupationStepDef extends BasePage with WhatIsYourMainOccupationPage {
 

@@ -1,7 +1,5 @@
-@page
 Feature: A UK tax payer is able to enter the details and continue on "Offshore liabilities"
 
-  @id_001
   Scenario: UI Validation
     Given I am on Do you want to disclose offshore liabilities Page
     Then heading with text "Offshore liabilities" is displayed
@@ -21,27 +19,23 @@ Feature: A UK tax payer is able to enter the details and continue on "Offshore l
     And save and Continue Button is displayed
     And back Button Link is displayed
 
-  @id_002
   Scenario: Hyperlink Navigation
     Given I am on Do you want to disclose offshore liabilities Page
     When click on Hyperlink "Find more information about offshore liabilities (opens in new tab)"
     Then page navigates to "https://www.gov.uk/guidance/worldwide-disclosure-facility-make-a-disclosure" in new tab
 
-  @id_003
   Scenario: Navigation Validation with First Radio Button
     Given I am on Do you want to disclose offshore liabilities Page
     When I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
     Then page navigates to "Onshore liabilities"
 
-  @id_004
   Scenario: Navigation Validation with Second Radio Button
     Given I am on Do you want to disclose offshore liabilities Page
     When I select Radio Button "No" at Position "2"
     And click on Save and Continue button
     Then page navigates to "TThe disclosure will only be about onshore liabilities"
 
-  @id_005
   Scenario: Navigation Validation with Back Button
     Given I am navigated to Are you the individual that the disclosure will be about? Page
     When I select Radio Button "Yes, I am the individual" at Position "1"
@@ -49,14 +43,12 @@ Feature: A UK tax payer is able to enter the details and continue on "Offshore l
     And I click on Back button
     Then page navigates to "Are you the individual that the disclosure will be about?"
 
-  @id_006
   Scenario: Validation with no selection of Radio Button
     Given I am on Do you want to disclose offshore liabilities Page
     When click on Save and Continue button
     Then error summary popup should be displayed with text "There is a problem"
     And error message should be displayed with text "Select yes if the disclosure is about offshore liabilities"
 
-  @id_007
   Scenario: Navigation of on Error message on top popup
     Given I am on Do you want to disclose offshore liabilities Page
     And click on Save and Continue button

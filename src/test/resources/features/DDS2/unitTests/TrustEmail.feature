@@ -1,4 +1,3 @@
-@page
 Feature: A UK trust representative is able to enter details and continue on Do you have an email address that you are happy to be contacted on by HMRC?"
 
   Scenario: Do you have an email address that you are happy to be contacted on by HMRC? - User select Yes, I am a trustee" or " I am an accountant or tax agent

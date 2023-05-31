@@ -1,4 +1,3 @@
-@page
 Feature: As Estate UK tax payer is able to enter the details and continue on What your main occupation? page
 
   Scenario: What was the person’s main occupation? - UI validation

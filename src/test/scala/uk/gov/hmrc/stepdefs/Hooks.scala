@@ -16,11 +16,9 @@
 
 package uk.gov.hmrc.stepdefs
 
-import io.cucumber.java.{After, AfterAll, AfterStep, Before, BeforeAll, Scenario}
-import org.junit.{AfterClass, BeforeClass}
-import org.openqa.selenium.{OutputType, TakesScreenshot, WebDriver, WebDriverException}
+import io.cucumber.java.{After, Before}
+import org.openqa.selenium.WebDriver
 import uk.gov.hmrc.driver.{BrowserDriver, StartUpTearDown}
-import uk.gov.hmrc.utils.{ApiLogin, Configuration}
 import uk.gov.hmrc.webdriver.SingletonDriver
 
 import scala.util.Try

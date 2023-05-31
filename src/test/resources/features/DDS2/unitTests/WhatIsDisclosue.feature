@@ -1,4 +1,3 @@
-@page
 Feature: A UK tax payer is able to enter the details and continue on What will the disclosure be about?
 
   Scenario: What will the disclosure be about? - User navigates to the page and verifies the page elements
