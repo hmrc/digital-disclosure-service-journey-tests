@@ -16,7 +16,6 @@
 
 package uk.gov.hmrc.stepdefs
 
-import io.cucumber.scala.{EN, PendingException, ScalaDsl}
 import io.cucumber.junit.Cucumber
 import org.junit.runner.RunWith
 import uk.gov.hmrc.pages.{BasePage, HomePage}

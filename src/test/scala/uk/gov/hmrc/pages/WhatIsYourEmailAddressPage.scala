@@ -17,8 +17,7 @@
 package uk.gov.hmrc.pages
 import org.apache.commons.lang3.StringUtils
 import org.junit.Assert
-import org.openqa.selenium.{By}
-import org.openqa.selenium.support.ui.WebDriverWait
+import org.openqa.selenium.By
 import uk.gov.hmrc.utils.Configuration
 
 trait WhatIsYourEmailAddressPage extends BasePage {

@@ -3,7 +3,7 @@ import sbt._
 object Dependencies {
 
   val test = Seq(
-    "uk.gov.hmrc"           %%  "webdriver-factory"  %  "0.43.0"   %  Test,
+    "uk.gov.hmrc"           %%  "webdriver-factory"  %  "0.44.0"   %  Test,
     "org.scalatest"         %%  "scalatest"          %  "3.2.13"   %  Test,
     "org.scalatestplus"     %%  "selenium-4-2"       %  "3.2.13.0" %  Test,
     "com.vladsch.flexmark"  %   "flexmark-all"       %  "0.62.2"   %  Test,
@@ -16,6 +16,6 @@ object Dependencies {
     "org.scalaj"            %%  "scalaj-http"        %  "2.4.2"    %  Test,
     "com.typesafe"          %   "config"             %  "1.4.2"    %  Test,
     "com.typesafe.play"     %%  "play-json"          %  "2.9.2"    %  Test,
-    "uk.gov.hmrc"           %%  "domain"             %  "8.1.0-play-28"
+    "uk.gov.hmrc"           %%  "domain"             %  "8.3.0-play-28"
   )
 }
