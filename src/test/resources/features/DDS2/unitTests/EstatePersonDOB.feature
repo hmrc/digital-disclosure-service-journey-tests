@@ -1,4 +1,3 @@
-@page
 Feature: An Estate tax payer is able to enter the details and continue on What was the person’s date of birth? page
 
   Scenario: What was the person’s date of birth? - UI validation

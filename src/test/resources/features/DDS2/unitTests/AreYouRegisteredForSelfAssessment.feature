@@ -1,4 +1,3 @@
-@page
 Feature: A UK tax payer is able to enter the details and continue on Are you registered for Self Assessment?
 
   Scenario: Are you registered for Self Assessment? - UI Validation

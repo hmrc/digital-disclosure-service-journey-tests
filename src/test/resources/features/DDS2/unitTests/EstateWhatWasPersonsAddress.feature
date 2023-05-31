@@ -1,4 +1,3 @@
-@WIP
 Feature: As Estate UK tax payer is able to enter the details and continue on to What was the person's address? screen
 
   Scenario: Was the person registered for Self Assessment, as far as you're aware? - UI validation

@@ -1,7 +1,6 @@
 @accessibility
 Feature: An Individual - On behalf of - is able to notify and submit offshore disclosure
 
-  @id:001
   Scenario: Individual -Complete flow - Onshore & offshore - Letting income
     Given I am navigated to Received A Letter Page
     When I select Radio Button "Yes" at Position "1"

@@ -1,4 +1,3 @@
-@page
 Feature: A UK tax payer is able to enter the details and continue on Are you an officer of the company that the disclosure will be about?
 
   Scenario: Are you an officer of the company that the disclosure will be about? - UI Validation

@@ -1,4 +1,3 @@
-@page
 Feature: A UK estate tax payer is able to enter the details on 'What is your email address?' page and navigate to What is the country of your address? screen
 
   Scenario: What is your email address?  - Navigation to 'What is your email address' and 'What is the country of your address?' screen, Yes, I'm executor & have email
@@ -84,7 +83,6 @@ Feature: A UK estate tax payer is able to enter the details on 'What is your ema
     And I select No radio button
     And click on Save and Continue button
     Then page navigates to "What is the country of your address?"
-
 
   Scenario: Do you have an email address that you are happy to be contacted on by HMRC? - blank input error validation
     Given I navigate to "contact-by-email" page

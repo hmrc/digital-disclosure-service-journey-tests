@@ -1,4 +1,3 @@
-@page
 Feature: As an Estate tax payer is able to enter the details and continue on What was the name of the person who died?
 
   Scenario: What was the name of the person who died? - UI validation

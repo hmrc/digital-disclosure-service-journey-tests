@@ -1,4 +1,3 @@
-@page
 Feature: A UK estate tax payer is able to enter the details and continue on to "What was the person's Unique Taxpayer Reference?" screen
 
   Scenario: What was the person's Unique Taxpayer Reference? - UI validation

@@ -1,5 +1,4 @@
-@page
-  Feature: A UK tax payer is able to enter the details and continue on Are you the executor or administrator of the estate that the disclosure will be about? screen
+ Feature: A UK tax payer is able to enter the details and continue on Are you the executor or administrator of the estate that the disclosure will be about? screen
 
   Scenario: Are you the executor or administrator of the estate that the disclosure will be about? - UI Validation
     Given I navigate to "are-you-the-executor" page

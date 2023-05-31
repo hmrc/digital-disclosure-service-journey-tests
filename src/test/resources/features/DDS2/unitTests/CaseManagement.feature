@@ -1,7 +1,6 @@
 @journeytests
 Feature: An agent is able to edit and create case
 
-  @id:001
   Scenario:Case validation - Edit and create a new case
     Given I navigate to authority wizard page
     When select "Agent" from affinityGroup drop down

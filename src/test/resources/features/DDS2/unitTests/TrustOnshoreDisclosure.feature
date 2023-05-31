@@ -1,4 +1,3 @@
-@page @regression
 Feature: A trust is able to notify and submit onshore disclosure
 
   Background:
@@ -50,7 +49,7 @@ Feature: A trust is able to notify and submit onshore disclosure
     And click on confirm button
     And I click on send notification button
 
-  @journeytests @id:001
+  @journeytests
   Scenario: Trust - Onshore Journey- Letting Income
     Given I am on "You have sent the notification" page
     And I navigate to "make-a-disclosure" specific page
@@ -223,8 +222,7 @@ Feature: A trust is able to notify and submit onshore disclosure
     Then page navigates to "List of tasks"
     And status is marked as "Completed" for field "Edit onshore liability details"
 
-
-  @journeytests @id:002
+  @journeytests
   Scenario: Trust - Onshore Journey- There are no onshore liabilities to disclose
     Given I am on "You have sent the notification" page
     And I navigate to "make-a-disclosure" specific page

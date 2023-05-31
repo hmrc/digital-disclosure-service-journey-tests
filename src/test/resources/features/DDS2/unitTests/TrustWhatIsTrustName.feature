@@ -1,4 +1,3 @@
-@page
 Feature: A UK tax payer is able to enter the details and continue on to What is the trust's name? screen
 
   Scenario: What is the trust's name? - UI Validation

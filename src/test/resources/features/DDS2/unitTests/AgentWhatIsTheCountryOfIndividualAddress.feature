@@ -1,7 +1,5 @@
-@page
 Feature: A UK tax payer is able to enter the details and continue on "What is the country of the individual’s address?" for Agent
 
-  @id001
   Scenario: For On Behalf of Individual - Hint Text should be available on Agent Postcode address Page
     Given I am navigated to Received A Letter Page
     When I select Radio Button "Yes" at Position "1"
@@ -50,7 +48,6 @@ Feature: A UK tax payer is able to enter the details and continue on "What is th
     And click on continue button
     Then hint with text "If you are representing an organisation on behalf of the individual, you can use your organisation’s address." is displayed
 
-  @id002
   Scenario: For On Behalf of Individual - Hint Text should not be available on Individual Postcode address Page
     Given I am on What is the country of the individual address Page
     When enter country name "United Kingdom",select country "United Kingdom"
@@ -58,7 +55,6 @@ Feature: A UK tax payer is able to enter the details and continue on "What is th
     And enter postcode "ZZ9Z 9TT"
     Then hint with text "If you are representing an organisation on behalf of the individual, you can use your organisation’s address." is not displayed
 
-  @id03
   Scenario: For Self Declaration - Hint Text should not be available on Postcode address Page
     Given I am on What is the country of your address Page
     When enter country name "United Kingdom",select country "United Kingdom"
@@ -66,7 +62,6 @@ Feature: A UK tax payer is able to enter the details and continue on "What is th
     And enter postcode "ZZ9Z 9TT"
     Then hint with text "If you are representing an organisation on behalf of the individual, you can use your organisation’s address." is not displayed
 
-  @id004
   Scenario: For On Behalf of Individual -Navigation to Check you answer page
     Given I am navigated to Received A Letter Page
     When I select Radio Button "Yes" at Position "1"

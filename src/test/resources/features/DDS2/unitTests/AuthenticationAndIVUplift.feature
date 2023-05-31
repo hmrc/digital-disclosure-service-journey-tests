@@ -1,4 +1,3 @@
-@page
 Feature: A UK tax payer is able to submit high confidence level & valid NINO to navigate to start page
 
   Scenario: Home Page - Navigation - Individual with 250 confidence level and valid NINO is redirected to start page

@@ -1,4 +1,3 @@
-@page @regression
 Feature: LLP is able to check their answers for About the background section before submitting page
 
   Background:

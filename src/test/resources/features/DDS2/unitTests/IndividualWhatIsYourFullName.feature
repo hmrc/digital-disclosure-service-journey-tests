@@ -1,4 +1,3 @@
-@page
 Feature: A UK tax payer is able to enter the details and continue on What is the individual’s full name?
 
   Scenario: What is the individual’s full name? - UI validation

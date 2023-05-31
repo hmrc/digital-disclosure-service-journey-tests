@@ -1,4 +1,3 @@
-@page
 Feature: A UK tax payer is able to enter the details and continue on "What was the country of the person’s address?"
 
   Scenario: What was the country of the person’s address? - Select country and navigate to next page

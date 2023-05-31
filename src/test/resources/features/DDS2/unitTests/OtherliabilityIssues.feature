@@ -1,4 +1,3 @@
-@page @regression
 Feature: A Individual is able to notify and submit offshore disclosure
   Background:
     Given I am navigated to Received A Letter Page
@@ -173,7 +172,6 @@ Feature: A Individual is able to notify and submit offshore disclosure
     When click on continue button on summary page
     Then page navigates to "List of tasks"
     And status is marked as "Completed" for field "Edit other liability issues"
-
 
   Scenario: other liability issues -Trust
     Given I am on "You have sent your notification" page

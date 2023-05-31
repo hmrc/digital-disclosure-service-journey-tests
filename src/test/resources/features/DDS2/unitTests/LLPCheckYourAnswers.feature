@@ -1,4 +1,3 @@
-@page @regression
 Feature: LLP is able to check their answers for About the LLP section before submitting page
 
   Background:
@@ -97,7 +96,6 @@ Feature: LLP is able to check their answers for About the LLP section before sub
     Then page navigates to "Check Your Answers"
     And About The LLP section should have a label "Limited liability partnership’s address" at line "2" an answer with "3 Testing Lane,Royal Madeuptown,ZZ9Z 9TT,United Kingdom" and change URL ends with "llp-address/lookup/change"
 
-  @smoke
   Scenario: LLP - About LLP - Check your answers
     Given I am on "Check Your Answers" page
     Then answers page should have h2 header "About the limited liability partnership"

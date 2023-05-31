@@ -1,4 +1,3 @@
-@page
 Feature: UI Validation and Navigation  for Screen "The disclosure will only be about onshore liabilities (for a limited liability partnership)"
 
   Scenario: Disclose onshore liabilities Only - Navigation with Save and Continue button

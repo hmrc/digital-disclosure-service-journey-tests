@@ -1,4 +1,3 @@
-@page
 Feature: A UK tax payer is able to enter the details and continue on Are you representing an organisation?
 
   Scenario: Are you representing an organisation? - UI Validation

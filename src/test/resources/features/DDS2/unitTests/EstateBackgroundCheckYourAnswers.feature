@@ -1,4 +1,3 @@
-@page @regression
 Feature: An Estate is able to check their answers for background submitting page
 
   Background:

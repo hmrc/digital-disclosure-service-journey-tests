@@ -1,4 +1,3 @@
-@page
 Feature: A UK tax payer is able to enter the details and continue on What is your main occupation?
 
   Scenario: What is your main occupation? - UI validation

@@ -1,4 +1,3 @@
-@page @regression
 Feature: An individual UK tax payer is able to check their answers for About you section before submitting page
 
   Background:
@@ -84,7 +83,6 @@ Feature: An individual UK tax payer is able to check their answers for About you
     Then page navigates to "You have sent your notification"
     And the case reference should be "CFSS-1234567"
 
-  @id002
   Scenario: For Individual - About You  - Change Route validation -With No Change
     Given I am on "Check Your Answers" page
     Then answers page should have h2 header "About you"
@@ -99,7 +97,6 @@ Feature: An individual UK tax payer is able to check their answers for About you
       |Your VAT registration number|What is your VAT registration number?|
       |Your Unique Taxpayer Reference|What is your Unique Tax Reference?|
 
-  @id003
   Scenario: For Individual - About You  - Change Route validation -By Changing Value
     Given I am on "Check Your Answers" page
     Then answers page should have h2 header "About you"
@@ -113,7 +110,6 @@ Feature: An individual UK tax payer is able to check their answers for About you
       |Your VAT registration number|What is your VAT registration number?|123456798|
       |Your Unique Taxpayer Reference|What is your Unique Tax Reference?|1234567809|
 
-  @id004
   Scenario: For Individual - About You  - Change Route validation -By Changing Value of Date of birth
     Given I am on "Check Your Answers" page
     When I click on change button for "Your date of birth"
@@ -125,7 +121,6 @@ Feature: An individual UK tax payer is able to check their answers for About you
     And answers page should have h2 header "About you"
     And line "6" should have a label "Your date of birth" an answer with "2 February 1990" and change URL ends with "your-date-of-birth/change"
 
-  @id005
   Scenario: For Individual - About You  - Change Route validation -Address Validation-No data population
     Given I am on "Check Your Answers" page
     When I click on change button for "Your address"
@@ -134,7 +129,6 @@ Feature: An individual UK tax payer is able to check their answers for About you
     When click on Save and Continue button
     Then error message should be displayed with text "Enter country of the address"
 
-  @id006
   Scenario: For Individual - About You  - Change Route validation -Address Validation- Needs to complete new address Journey
     Given I am on "Check Your Answers" page
     When I click on change button for "Your address"
@@ -148,8 +142,6 @@ Feature: An individual UK tax payer is able to check their answers for About you
     Then page navigates to "Check Your Answers"
     And line "5" should have a label "Your address" an answer with "3 Testing Lane,Royal Madeuptown,ZZ9Z 9TT,United Kingdom" and change URL ends with "your-address/lookup/change"
 
-
-  @id007
   Scenario: For Individual - About You  - Do you have an email address that you are happy to be contacted on by HMRC?- Yes to No
     Given I am on "Check Your Answers" page
     When I click on change button for "Do you have an email address that you are happy to be contacted on by HMRC?"
@@ -159,7 +151,6 @@ Feature: An individual UK tax payer is able to check their answers for About you
     And line "3" should have a label "Do you have an email address that you are happy to be contacted on by HMRC?" an answer with "No" and change URL ends with "contact-by-email/change"
     And label "Your email address" is not displayed on check your answer page
 
-  @id008
   Scenario: For Individual - About You  - Do you have an email address that you are happy to be contacted on by HMRC?- No to Yes
     Given I am on "Check Your Answers" page
     When I click on change button for "Do you have an email address that you are happy to be contacted on by HMRC?"
@@ -177,7 +168,6 @@ Feature: An individual UK tax payer is able to check their answers for About you
     And line "3" should have a label "Do you have an email address that you are happy to be contacted on by HMRC?" an answer with "Yes" and change URL ends with "contact-by-email/change"
     And line "4" should have a label "Your email address" an answer with "abcd@abcd.com" and change URL ends with "your-email-address/change"
 
-  @id009
   Scenario: For Individual - About You  - Do you have an email address that you are happy to be contacted on by HMRC?- No change
     Given I am on "Check Your Answers" page
     When I click on change button for "Do you have an email address that you are happy to be contacted on by HMRC?"
@@ -186,7 +176,6 @@ Feature: An individual UK tax payer is able to check their answers for About you
     And line "3" should have a label "Do you have an email address that you are happy to be contacted on by HMRC?" an answer with "Yes" and change URL ends with "contact-by-email/change"
     And line "4" should have a label "Your email address" an answer with "abc@abc.com" and change URL ends with "your-email-address/change"
 
-  @id010
   Scenario: For Individual - About You  -Do you have a National Insurance number?- Yes-No change
     Given I am on "Check Your Answers" page
     When I click on change button for "Do you have a National Insurance number?"
@@ -195,7 +184,6 @@ Feature: An individual UK tax payer is able to check their answers for About you
     And line "8" should have a label "Do you have a National Insurance number?" an answer with "Yes, and I know my National Insurance number" and change URL ends with "have-national-insurance-number/change"
     And line "9" should have a label "Your National Insurance number" an answer with "AZ123456D" and change URL ends with "your-national-insurance-number/change"
 
-  @id011
   Scenario: For Individual - About You  -Do you have a National Insurance number?- Yes to Yes, but I do not know
     Given I am on "Check Your Answers" page
     When I click on change button for "Do you have a National Insurance number?"
@@ -205,7 +193,6 @@ Feature: An individual UK tax payer is able to check their answers for About you
     And line "8" should have a label "Do you have a National Insurance number?" an answer with "Yes, but I do not know my National Insurance number" and change URL ends with "have-national-insurance-number/change"
     And label "Your National Insurance number" is not displayed on check your answer page
 
-  @id012
   Scenario: For Individual - About You  -Do you have a National Insurance number?- Yes to No
     Given I am on "Check Your Answers" page
     When I click on change button for "Do you have a National Insurance number?"
@@ -215,7 +202,6 @@ Feature: An individual UK tax payer is able to check their answers for About you
     And line "8" should have a label "Do you have a National Insurance number?" an answer with "No" and change URL ends with "have-national-insurance-number/change"
     And label "Your National Insurance number" is not displayed on check your answer page
 
-  @id013
   Scenario: For Individual - About You  -Do you have a National Insurance number?- Yes, but I do not know to Yes, and I know
     Given I am on "Check Your Answers" page
     When I click on change button for "Do you have a National Insurance number?"
@@ -232,8 +218,6 @@ Feature: An individual UK tax payer is able to check their answers for About you
     Then line "8" should have a label "Do you have a National Insurance number?" an answer with "Yes, and I know my National Insurance number" and change URL ends with "have-national-insurance-number/change"
     And line "9" should have a label "Your National Insurance number" an answer with "AA 12 34 56 D" and change URL ends with "your-national-insurance-number/change"
 
-
-  @id014
   Scenario: For Individual - About You  -Do you have a National Insurance number?- Yes, but I do not know to No
     Given I am on "Check Your Answers" page
     When I click on change button for "Do you have a National Insurance number?"
@@ -248,7 +232,6 @@ Feature: An individual UK tax payer is able to check their answers for About you
     And line "8" should have a label "Do you have a National Insurance number?" an answer with "No" and change URL ends with "have-national-insurance-number/change"
     And label "Your National Insurance number" is not displayed on check your answer page
 
-  @id015
   Scenario: For Individual - About You  -Do you have a National Insurance number?- No to Yes, and I know
     Given I am on "Check Your Answers" page
     When I click on change button for "Do you have a National Insurance number?"
@@ -265,7 +248,6 @@ Feature: An individual UK tax payer is able to check their answers for About you
     And line "8" should have a label "Do you have a National Insurance number?" an answer with "Yes, and I know my National Insurance number" and change URL ends with "have-national-insurance-number/change"
     And line "9" should have a label "Your National Insurance number" an answer with "AA 12 34 56 A" and change URL ends with "your-national-insurance-number/change"
 
-  @id016
   Scenario: For Individual - About You  -Do you have a National Insurance number?- No to Yes, but I do not know
     Given I am on "Check Your Answers" page
     When I click on change button for "Do you have a National Insurance number?"
@@ -280,7 +262,6 @@ Feature: An individual UK tax payer is able to check their answers for About you
     And line "8" should have a label "Do you have a National Insurance number?" an answer with "Yes, but I do not know my National Insurance number" and change URL ends with "have-national-insurance-number/change"
     And label "Your National Insurance number" is not displayed on check your answer page
 
-  @id017
   Scenario: For Individual - Are you registered for Self Assessment?- Yes-No change
     Given I am on "Check Your Answers" page
     When I click on change button for "Are you registered for Self Assessment?"
@@ -289,7 +270,6 @@ Feature: An individual UK tax payer is able to check their answers for About you
     And line "12" should have a label "Are you registered for Self Assessment?" an answer with "Yes, and I know my Unique Taxpayer Reference (UTR)" and change URL ends with "registered-for-self-assessment/change"
     And line "13" should have a label "Your Unique Taxpayer Reference" an answer with "1234567890" and change URL ends with "your-utr/change"
 
-  @id018
   Scenario: For Individual - About You  -Are you registered for Self Assessment?- Yes to Yes, but I do not know
     Given I am on "Check Your Answers" page
     When I click on change button for "Are you registered for Self Assessment?"
@@ -299,7 +279,6 @@ Feature: An individual UK tax payer is able to check their answers for About you
     And line "12" should have a label "Are you registered for Self Assessment?" an answer with "Yes, but I do not know my Unique Taxpayer Reference (UTR)" and change URL ends with "registered-for-self-assessment/change"
     And label "Your Unique Taxpayer Reference" is not displayed on check your answer page
 
-  @id019
   Scenario: For Individual - About You  -Are you registered for Self Assessment?- Yes to No
     Given I am on "Check Your Answers" page
     When I click on change button for "Are you registered for Self Assessment?"
@@ -309,7 +288,6 @@ Feature: An individual UK tax payer is able to check their answers for About you
     And line "12" should have a label "Are you registered for Self Assessment?" an answer with "No" and change URL ends with "registered-for-self-assessment/change"
     And label "Your Unique Taxpayer Reference" is not displayed on check your answer page
 
-  @id020
   Scenario: For Individual - About You  -Are you registered for Self Assessment?- Yes, but I do not know to Yes, and I know
     Given I am on "Check Your Answers" page
     When I click on change button for "Are you registered for Self Assessment?"
@@ -326,8 +304,6 @@ Feature: An individual UK tax payer is able to check their answers for About you
     And line "12" should have a label "Are you registered for Self Assessment?" an answer with "Yes, and I know my Unique Taxpayer Reference (UTR)" and change URL ends with "registered-for-self-assessment/change"
     And line "13" should have a label "Your Unique Taxpayer Reference" an answer with "9876543210" and change URL ends with "your-utr/change"
 
-
-  @id021
   Scenario: For Individual - About You  -Are you registered for Self Assessment?- Yes, but I do not know to No
     Given I am on "Check Your Answers" page
     When I click on change button for "Are you registered for Self Assessment?"
@@ -342,7 +318,6 @@ Feature: An individual UK tax payer is able to check their answers for About you
     And line "12" should have a label "Are you registered for Self Assessment?" an answer with "No" and change URL ends with "registered-for-self-assessment/change"
     And label "Your Unique Taxpayer Reference" is not displayed on check your answer page
 
-  @id022
   Scenario: For Individual - About You  -Are you registered for Self Assessment?- No to Yes, and I know
     Given I am on "Check Your Answers" page
     When I click on change button for "Are you registered for Self Assessment?"
@@ -359,7 +334,6 @@ Feature: An individual UK tax payer is able to check their answers for About you
     And line "12" should have a label "Are you registered for Self Assessment?" an answer with "Yes, and I know my Unique Taxpayer Reference (UTR)" and change URL ends with "registered-for-self-assessment/change"
     And line "13" should have a label "Your Unique Taxpayer Reference" an answer with "9876543210" and change URL ends with "your-utr/change"
 
-  @id023
   Scenario: For Individual - About You - Are you registered for Self Assessment?- No to Yes, but I do not know
     Given I am on "Check Your Answers" page
     When I click on change button for "Are you registered for Self Assessment?"

@@ -1,4 +1,3 @@
-@page
 Feature: A UK estate tax payer is able to enter the details and continue on "What is the postcode and property name or number of your address?"
 
   Scenario: What is the country of the company’s address? - Yes, I am the executor - Manual address entry - UK

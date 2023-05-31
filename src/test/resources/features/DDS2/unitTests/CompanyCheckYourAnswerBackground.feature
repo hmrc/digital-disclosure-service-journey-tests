@@ -1,4 +1,3 @@
-@page @regression
 Feature: An Company tax payer is able to check their answers for background section before submitting page
 
   Background:

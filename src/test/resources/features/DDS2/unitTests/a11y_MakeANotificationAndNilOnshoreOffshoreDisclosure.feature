@@ -11,7 +11,6 @@ Feature: An Individual is able to make and send nil offshore and onshore disclos
     And I select Radio Button "Yes, I am the individual" at Position "1"
     And click on Save and Continue button
 
-  @id:001
   Scenario: Individual - offshore flow -for making Nil disclosure
     Given I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
@@ -28,7 +27,6 @@ Feature: An Individual is able to make and send nil offshore and onshore disclos
     When I select Checkbox "I have submitted an inaccurate return because I did not take reasonable care." at Position "4"
     And click on Save and Continue button
     Then page navigates to "Which year does this offshore disclosure relate to?"
-    #And page should display checkboxes for the "10" tax years before the current tax year
     When I select Checkbox "Any tax year before 6 April 2013" at Position "10"
     And click on Save and Continue button
     Then page navigates to "Can you tell us more about any tax owed before 6 April 2013?"
@@ -41,7 +39,6 @@ Feature: An Individual is able to make and send nil offshore and onshore disclos
     Then page navigates to "List of tasks"
     And status is marked as "Completed" for field "Edit offshore liability details"
 
-  @id:002
   Scenario: Individual - Onshore flow -for making Nil disclosure
     Given I select Radio Button "No" at Position "2"
     And click on Save and Continue button
@@ -72,7 +69,6 @@ Feature: An Individual is able to make and send nil offshore and onshore disclos
     Then page navigates to "List of tasks"
     And status is marked as "Completed" for field "Edit onshore liability details"
 
-  @id:003
   Scenario: Individual -Complete flow - No onshore & Offshore liabilities to disclose - Sending nil disclosure
     Given I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button

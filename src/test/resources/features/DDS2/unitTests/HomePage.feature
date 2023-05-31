@@ -1,4 +1,3 @@
-@page
 Feature: A UK tax payer is able to navigate to Home page and continue to the next page
 
   Scenario: Home Page - Validate the static content of the page

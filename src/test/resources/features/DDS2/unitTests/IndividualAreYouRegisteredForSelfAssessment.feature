@@ -1,4 +1,3 @@
-@page
 Feature: An individual UK tax payer is able to enter the details and continue on Is the individual registered for Self Assessment, as far as you’re aware? page
 
   Scenario: Is the individual registered for Self Assessment, as far as you’re aware? - UI Validation
