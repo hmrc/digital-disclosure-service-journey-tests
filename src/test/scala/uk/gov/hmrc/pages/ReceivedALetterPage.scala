@@ -17,11 +17,8 @@
 package uk.gov.hmrc.pages
 
 import org.openqa.selenium.WebElement
-import org.openqa.selenium.support.ui.WebDriverWait
 import org.junit.Assert
 import uk.gov.hmrc.utils.Configuration
-import java.time.Duration
-
 
 trait ReceivedALetterPage extends BasePage {
 

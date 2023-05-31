@@ -17,13 +17,9 @@
 package uk.gov.hmrc.pages
 
 import org.openqa.selenium.By
-import org.openqa.selenium.support.ui.WebDriverWait
 import org.junit.Assert
 import uk.gov.hmrc.utils.Configuration
-
-import java.time.Duration
 import scala.util.control.Breaks
-
 
 trait DiscloseOffshoreLiabilitiesPage extends BasePage{
 

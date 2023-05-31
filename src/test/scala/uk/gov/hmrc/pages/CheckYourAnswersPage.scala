@@ -20,9 +20,7 @@ import io.cucumber.datatable.DataTable
 import io.cucumber.scala.Implicits.ScalaDataTable
 import org.junit.Assert
 import org.openqa.selenium.{By, WebElement}
-import org.openqa.selenium.support.ui.WebDriverWait
 import uk.gov.hmrc.utils.Configuration
-import java.time.Duration
 import scala.util.control.Breaks
 
 trait CheckYourAnswersPage extends BasePage {

@@ -18,8 +18,6 @@ package uk.gov.hmrc.pages
 
 import org.junit.Assert
 import org.openqa.selenium.WebElement
-import org.openqa.selenium.support.ui.WebDriverWait
-import java.time.Duration
 
 trait InternationalAddressPage extends BasePage with WhatIsTheCountryOfAddressPage {
 

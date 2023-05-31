@@ -18,10 +18,7 @@ package uk.gov.hmrc.pages
 
 import org.junit.Assert
 import org.openqa.selenium.{By, WebElement}
-import org.openqa.selenium.support.ui.WebDriverWait
 import uk.gov.hmrc.utils.Configuration
-import java.time.Duration
-
 
 trait HomePage extends BasePage {
 

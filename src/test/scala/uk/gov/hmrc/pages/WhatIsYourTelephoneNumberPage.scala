@@ -18,13 +18,9 @@ package uk.gov.hmrc.pages
 
 import org.junit.Assert
 import org.openqa.selenium.By
-import org.openqa.selenium.support.ui.WebDriverWait
 import uk.gov.hmrc.utils.Configuration
-import java.time.Duration
 
 trait WhatIsYourTelephoneNumberPage extends BasePage {
-
-  private lazy val webdriverWait = new WebDriverWait(driver, Duration.ofSeconds(20))
 
   val currentEnvironment: String = Configuration.environment.toString
 

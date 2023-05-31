@@ -17,11 +17,7 @@
 package uk.gov.hmrc.pages
 import org.junit.Assert
 import org.openqa.selenium.{By, WebElement}
-import org.openqa.selenium.support.ui.WebDriverWait
-
-import java.time.Duration
 import scala.util.control.Breaks
-
 
 trait OffshoreDisclosurePage extends BasePage {
 
