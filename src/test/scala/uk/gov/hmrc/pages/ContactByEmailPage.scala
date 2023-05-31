@@ -15,15 +15,9 @@
  */
 
 package uk.gov.hmrc.pages
-import org.openqa.selenium.{By, WebDriver, WebElement}
-import org.openqa.selenium.support.ui.{ExpectedConditions, WebDriverWait}
-import org.junit.Assert
+
 import uk.gov.hmrc.utils.Configuration
-import java.time.Duration
 
 trait ContactByEmailPage extends BasePage{
-
-  private lazy val webdriverWait = new WebDriverWait(driver, Duration.ofSeconds(20))
-
   val currentEnvironment: String = Configuration.environment.toString
 }

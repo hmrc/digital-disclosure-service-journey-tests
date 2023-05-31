@@ -16,10 +16,8 @@
 
 package uk.gov.hmrc.pages
 
-import org.openqa.selenium.{By, WebDriver, WebElement}
-import org.openqa.selenium.support.ui.{ExpectedConditions, WebDriverWait}
+import org.openqa.selenium.By
 import org.junit.Assert
-import uk.gov.hmrc.utils.Configuration
 
 trait DiscloseOnshoreLiabilitiesPage extends BasePage {
 

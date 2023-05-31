@@ -16,17 +16,14 @@
 
 package uk.gov.hmrc.pages
 
-import org.openqa.selenium.{By, WebDriver, WebElement}
-import org.openqa.selenium.support.ui.{ExpectedConditions, WebDriverWait}
+import org.openqa.selenium.By
+import org.openqa.selenium.support.ui.WebDriverWait
 import org.junit.Assert
-import org.openqa.selenium.By.ByXPath
 import uk.gov.hmrc.utils.Configuration
 import org.apache.commons.lang3.StringUtils
 import java.time.Duration
 
 trait HmrcLetterReferencePage extends BasePage {
-
-  private lazy val webdriverWait = new WebDriverWait(driver, Duration.ofSeconds(20))
 
   val currentEnvironment: String = Configuration.environment.toString
 

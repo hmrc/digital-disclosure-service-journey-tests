@@ -16,21 +16,14 @@
 
 package uk.gov.hmrc.pages
 
-import org.openqa.selenium.{WebDriver, WebElement}
-import org.openqa.selenium.support.ui.{ExpectedConditions, WebDriverWait}
-import org.scalatest.concurrent.Eventually.eventually
-import org.scalatest.matchers._
+import org.openqa.selenium.WebElement
 import org.scalatest.matchers.must.Matchers.be
 import org.scalatest.matchers.should.Matchers.convertToAnyShouldWrapper
-import org.scalatestplus.selenium._
 import uk.gov.hmrc.utils.Configuration
-import java.time.Duration
-
 
 trait LoginPage extends BasePage {
 
   val currentenvironment: String = Configuration.environment.toString
-  private lazy val webdriverWait = new WebDriverWait(driver, Duration.ofSeconds(20))
 
   //stride login locators for local
   def userid: WebElement = findByID("login-form-username")
