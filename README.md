@@ -25,4 +25,20 @@ OR
 
 ```./run_local_accessibility.sh```
 
+## Running tests against a containerised browser - on a developer machine
+
+The script `./run_browser_with_docker.sh` can be used to start a Chrome or Firefox container on a developer machine.
+The script requires `remote-chrome` or `remote-firefox` as an argument.
+
+Read more about the script's functionality [here](run_browser_with_docker.sh).
+
+To run against a containerised Chrome browser:
+
+```bash
+./run_browser_with_docker.sh remote-chrome 
+./run_local_journeytests.sh remote-chrome local
+```
+
+`./run-browser-with-docker.sh` is **NOT** required when running in a CI environment.
+
 Jenkins: TODO

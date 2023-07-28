@@ -47,7 +47,6 @@ object BrowserDriver {
 
     //sys.addShutdownHook(webDriver.quit())
     val options = new ChromeOptions
-    options.addArguments("--remote-allow-origins=*")
     implicit lazy val webDriver: WebDriver = SingletonDriver.getInstance(Some(options))
 
     //val webDriver: WebDriver = SingletonDriver.getInstance()
