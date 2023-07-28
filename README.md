@@ -1,44 +1,77 @@
+# digital-disclosure-service-journey-tests
 
-# # DDS2 acceptance tests
+UI journey tests for digital-disclosure-service using Webdriver and Scalatest
 
-This project provides a number of test suites that are intended to prove TODO
+## Pre-requisites
 
+Prior to executing the tests ensure you have:
+- Docker - to run mongo and browser (Chrome or Firefox) inside a container
+- Appropriate [drivers installed](#installing-local-driver-binaries) - to run tests against locally installed Browser
+- Installed/configured [service manager 2](https://github.com/hmrc/sm2).
+- 
+### Services
 
-## Chromedriver setup
-
-1. Download the latest Chromedriver from (http://chromedriver.chromium.org/downloads).
-2. Extract the zip file and save the driver in the following folder - ```/usr/local/bin/``` (LINUX OR MAC)
-3. Copy the chrome driver in project root directory (windows)
-
-## Running the Tests
-
-1. Navigate to the directory where the project has been cloned.
-2. To run all journeytest tests on your local machine, use:
-
-```./run_local_journeytests.sh```
-
-OR
-
-```sbt -Denvironment=local 'test-only uk.gov.hmrc.runner.RunJourneyTests'```
-
-3. To run all tests that are tagged as "@accessibility", use:
-
-```./run_local_accessibility.sh```
-
-## Running tests against a containerised browser - on a developer machine
-
-The script `./run_browser_with_docker.sh` can be used to start a Chrome or Firefox container on a developer machine.
-The script requires `remote-chrome` or `remote-firefox` as an argument.
-
-Read more about the script's functionality [here](run_browser_with_docker.sh).
-
-To run against a containerised Chrome browser:
+Start Mongo Docker container as follows:
 
 ```bash
+docker run --rm -d -p 27017:27017 --name mongo mongo:4.4
 ./run_browser_with_docker.sh remote-chrome 
 ./run_local_journeytests.sh remote-chrome local
 ```
 
-`./run-browser-with-docker.sh` is **NOT** required when running in a CI environment.
+Start `PLATFORM_EXAMPLE_UI_TESTS` services as follows:
 
-Jenkins: TODO
+```bash
+sm2 --start DDS_ALL -r
+```
+
+### Dockerized browser container(s)
+
+Start a browser Docker container as follows:
+
+* Argument `<browser>` must be `chrome`, `edge` or `firefox`.
+
+```bash
+./run_browser_with_docker.sh <browser>
+```
+
+### Test inspection and debugging
+
+Connect to `127.0.0.1:5900` via a VNC client to inspect and debug test execution.
+
+If prompted for a password the default is `secret`.
+
+## Tests
+
+Run tests as follows:
+
+* Argument `<browser>` must be `chrome`, `edge`, or `firefox`.
+* Argument `<environment>` must be `local`, `dev`, `qa` or `staging`.
+
+```bash
+./run_local_journeytests.sh <browser> <environment>
+```
+
+## Scalafmt
+
+Check all project files are formatted as expected as follows:
+
+```bash
+sbt scalafmtCheckAll scalafmtCheck
+```
+
+Format `*.sbt` and `project/*.scala` files as follows:
+
+```bash
+sbt scalafmtSbt
+```
+
+Format all project files as follows:
+
+```bash
+sbt scalafmtAll
+```
+
+## License
+
+This code is open source software licensed under the [Apache 2.0 License]("http://www.apache.org/licenses/LICENSE-2.0.html").
