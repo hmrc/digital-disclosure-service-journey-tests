@@ -19,7 +19,7 @@ docker run --rm -d -p 27017:27017 --name mongo mongo:4.4
 ./run_local_journeytests.sh remote-chrome local
 ```
 
-Start `PLATFORM_EXAMPLE_UI_TESTS` services as follows:
+Start `digital-disclosure-service-journey-tests` services as follows:
 
 ```bash
 sm2 --start DDS_ALL -r
