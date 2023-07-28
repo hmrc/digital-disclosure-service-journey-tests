@@ -1,28 +1,77 @@
+# digital-disclosure-service-journey-tests
 
-# # DDS2 acceptance tests
+UI journey tests for digital-disclosure-service using Webdriver and Scalatest
 
-This project provides a number of test suites that are intended to prove TODO
+## Pre-requisites
 
+Prior to executing the tests ensure you have:
+- Docker - to run mongo and browser (Chrome or Firefox) inside a container
+- Appropriate [drivers installed](#installing-local-driver-binaries) - to run tests against locally installed Browser
+- Installed/configured [service manager 2](https://github.com/hmrc/sm2).
+- 
+### Services
 
-## Chromedriver setup
+Start Mongo Docker container as follows:
 
-1. Download the latest Chromedriver from (http://chromedriver.chromium.org/downloads).
-2. Extract the zip file and save the driver in the following folder - ```/usr/local/bin/``` (LINUX OR MAC)
-3. Copy the chrome driver in project root directory (windows)
+```bash
+docker run --rm -d -p 27017:27017 --name mongo mongo:4.4
+./run_browser_with_docker.sh remote-chrome 
+./run_local_journeytests.sh remote-chrome local
+```
 
-## Running the Tests
+Start `digital-disclosure-service-journey-tests` services as follows:
 
-1. Navigate to the directory where the project has been cloned.
-2. To run all journeytest tests on your local machine, use:
+```bash
+sm2 --start DDS_ALL -r
+```
 
-```./run_local_journeytests.sh```
+### Dockerized browser container(s)
 
-OR
+Start a browser Docker container as follows:
 
-```sbt -Denvironment=local 'test-only uk.gov.hmrc.runner.RunJourneyTests'```
+* Argument `<browser>` must be `chrome`, `edge` or `firefox`.
 
-3. To run all tests that are tagged as "@accessibility", use:
+```bash
+./run_browser_with_docker.sh <browser>
+```
 
-```./run_local_accessibility.sh```
+### Test inspection and debugging
 
-Jenkins: TODO
+Connect to `127.0.0.1:5900` via a VNC client to inspect and debug test execution.
+
+If prompted for a password the default is `secret`.
+
+## Tests
+
+Run tests as follows:
+
+* Argument `<browser>` must be `chrome`, `edge`, or `firefox`.
+* Argument `<environment>` must be `local`, `dev`, `qa` or `staging`.
+
+```bash
+./run_local_journeytests.sh <browser> <environment>
+```
+
+## Scalafmt
+
+Check all project files are formatted as expected as follows:
+
+```bash
+sbt scalafmtCheckAll scalafmtCheck
+```
+
+Format `*.sbt` and `project/*.scala` files as follows:
+
+```bash
+sbt scalafmtSbt
+```
+
+Format all project files as follows:
+
+```bash
+sbt scalafmtAll
+```
+
+## License
+
+This code is open source software licensed under the [Apache 2.0 License]("http://www.apache.org/licenses/LICENSE-2.0.html").
