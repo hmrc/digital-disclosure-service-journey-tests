@@ -11,7 +11,7 @@ Feature: An agent is able to edit and create case
     And click on Save and Continue button
     And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
-    And I enter "CFSS-1234567" in the TextBox field
+    And I enter "CFSS-12345678" in the TextBox field
     And click on Save and Continue button
     And I select Radio Button "An individual" at Position "1"
     And click on Save and Continue button
@@ -39,7 +39,7 @@ Feature: An agent is able to edit and create case
     And click on Save and Continue button
     And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
-    And I enter "CFSS-1234567" in the TextBox field
+    And I enter "CFSS-12345678" in the TextBox field
     And click on Save and Continue button
     And I select Radio Button "An estate" at Position "2"
     And click on Save and Continue button
