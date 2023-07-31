@@ -41,15 +41,9 @@ object BrowserDriver {
 
   val turnOnProxy: String = Option(System.getProperty("turnOnProxy")).getOrElse("No")
 
-
-
-  
-
-    //sys.addShutdownHook(webDriver.quit())
-    val options = new ChromeOptions
-    implicit lazy val webDriver: WebDriver = SingletonDriver.getInstance(Some(options))
-
-    //val webDriver: WebDriver = SingletonDriver.getInstance()
+  val chromeOptions                   = new ChromeOptions
+  chromeOptions.setBinary("/Applications/Google Chrome.app/Contents/MacOS/Google Chrome")
+  implicit lazy val webDriver: WebDriver = SingletonDriver.getInstance(Some(chromeOptions))
 
   }
 

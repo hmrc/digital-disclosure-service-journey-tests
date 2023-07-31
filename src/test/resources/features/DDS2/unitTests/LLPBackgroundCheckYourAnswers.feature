@@ -4,7 +4,7 @@ Feature: LLP is able to check their answers for About the background section bef
     Given I am navigated to Received A Letter Page
     When I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
-    And I enter "CFSS-1234567" in the TextBox field
+    And I enter "CFSS-12345678" in the TextBox field
     And click on Save and Continue button
     And I select Radio Button "A limited liability partnership" at Position "4"
     And click on Save and Continue button
@@ -85,7 +85,7 @@ Feature: LLP is able to check their answers for About the background section bef
     And Background section has following
       |Line|Label|Answer|URL|
       |1|Will you be making a disclosure because you received a letter from HMRC?|Yes|letter-from-hmrc/change|
-      |2|Case reference|CFSS-1234567|hmrc-letter-reference/change|
+      |2|Case reference|CFSS-12345678|hmrc-letter-reference/change|
       |3|Who this disclosure is for|A limited liability partnership|what-is-this-disclosure-about/change|
       |4|Are you a designated member of the limited liability partnership that the disclosure will be about?|Yes, I am a designated member|are-you-the-entity/change|
       |5|The disclosure will be about|Offshore and onshore liabilities|disclose-offshore-liabilities/change|
@@ -100,7 +100,7 @@ Feature: LLP is able to check their answers for About the background section bef
     And About The LLP section should have a label "Limited liability partnership’s address" at line "2" an answer with "The Farm,Royal Madeuptown,ZZ9Z 9TT,United Kingdom" and change URL ends with "llp-address/lookup/change"
     When I click on send notification button
     Then page navigates to "You have sent your notification"
-    And the case reference should be "CFSS-1234567"
+    And the case reference should be "CFSS-12345678"
 
   Scenario: LLP - Background - Change route - Are you a designated member of the limited liability partnership that the disclosure will be about? - No change
     Given I am on "Check Your Answers" page
