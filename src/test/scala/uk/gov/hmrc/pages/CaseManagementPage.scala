@@ -29,9 +29,23 @@ trait CaseManagementPage extends BasePage {
 
   def radioSecond: WebElement = findByID("value_1")
 
-  def createNewCase: WebElement = findByID("create-case")
-  def caseManagementLink: WebElement = findByID("case-management-link")
+  def selectServiceType(option: String): Unit = option match {
+    case "Make a notification first" | "Continue or edit this notification" => click on id("value_0")
+    case "Make a disclosure" => click on id("value_1")
+  }
 
+
+  def enterCustomerDetails(text: String): Unit = {
+    findByID("value")
+    text match {
+      case "the CRN" => driver.findElement(By.id("value")).sendKeys("CFSS-1234567")
+      case "Estate Person" => driver.findElement(By.id("value")).sendKeys("Estate Person")
+    }
+  }
+
+  def createNewCase: WebElement = findByID("create-case")
+
+  def caseManagementLink: WebElement = findByID("case-management-link")
 
   def table: WebElement = findByID("case-table")
 
@@ -40,9 +54,8 @@ trait CaseManagementPage extends BasePage {
     Assert.assertTrue("Count of cases different to expected. Expected: " + expectedCount + "--- Actual: " + countOfCases, expectedCount.equals(countOfCases))
   }
 
-  def clickEditCaseLink(position: String): Unit = {
-    val element = driver.findElements(By.xpath("//tbody[@class='govuk-table__body']/tr/td[5]/a"))
-    element.get(position.toInt - 1).click()
+  def clickEditCaseLink(): Unit = {
+    driver.findElements(By.partialLinkText("Edit")).get(0).click()
   }
 
   def selectValueFromAffinityGroupDropdown(stringtoSelect: String): Unit = {
@@ -64,21 +77,24 @@ trait CaseManagementPage extends BasePage {
   }
 
   def selectFormOption(option: String): Unit = {
-    var flag=false
+    var flag = false
     if (option.toLowerCase() == "make a notification first") {
       radioFirst.click()
-      flag=true
+      flag = true
     } else if (option.toLowerCase() == "continue or edit this notification") {
       radioFirst.click()
-      flag=true
+      flag = true
     } else if (option.toLowerCase() == "make a disclosure") {
       radioSecond.click()
-      flag=true
+      flag = true
     }
     Assert.assertTrue(flag)
   }
 
-  def validateReference(position: String,expecteValue: String ): Unit = {
+  def validateCaseTitle(): Unit = {
+  }
+
+  def validateReference(position: String, expecteValue: String): Unit = {
     val element = driver.findElements(By.xpath("//tbody[@class='govuk-table__body']/tr/th"))
     val count = element.size()
     Assert.assertTrue("Reference is not matched", element.get(position.toInt - 1).getText.equals(expecteValue))
@@ -102,6 +118,10 @@ trait CaseManagementPage extends BasePage {
   def clickOnHeader(): Unit = {
     val element = driver.findElement(By.xpath("//div[@class='govuk-header__content']/a[@href]"))
     element.click()
+  }
+
+  def checkCaseTableStatus(): Unit = {
+
   }
 
   def clickOnCreateNewCase(): Unit = {

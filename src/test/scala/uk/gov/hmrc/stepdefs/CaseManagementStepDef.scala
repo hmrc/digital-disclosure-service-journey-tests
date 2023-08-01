@@ -16,8 +16,9 @@
 
 package uk.gov.hmrc.stepdefs
 
-import uk.gov.hmrc.pages.BasePage
-import uk.gov.hmrc.pages.CaseManagementPage
+import org.openqa.selenium.By
+import org.scalatest.matchers.should.Matchers.convertToAnyShouldWrapper
+import uk.gov.hmrc.pages.{BasePage, CaseManagementPage}
 
 class CaseManagementStepDef extends BasePage with CaseManagementPage {
 
@@ -33,37 +34,86 @@ class CaseManagementStepDef extends BasePage with CaseManagementPage {
     clickOnSubmitButtonOnWizardPage
   }
 
-  When("""I click on {string} button""") { (string:String) =>
+  Then("""^on the (.*) page I click (.*) and click save and continue""") { (prettyUrl: String, answer: String) =>
+    urlVerify(prettyUrl)
+
+    selectServiceType(answer)
+    clickBy(By.className("govuk-button"))
+  }
+
+  And("""^the (.*) is (.*)""") { (caseField: String, status: String) =>
+    caseField match {
+      case "Reference" => driver.findElements(By.className("govuk-table__header")).get(0).getText shouldBe ("Reference")
+      case "Type" => driver.findElements(By.className("govuk-table__header")).get(1).getText shouldBe ("Type")
+      case "Status" => driver.findElements(By.className("govuk-table__header")).get(3).getText shouldBe ("Status")
+    }
+    status match {
+      case "Not completed"                    => driver.findElements(By.className("govuk-table__header")).get(6).getText shouldBe ("Not completed")
+      case "Offshore liabilities"             => driver.findElements(By.className("govuk-table__cell")).get(0).getText shouldBe ("Offshore liabilities")
+      case "Notification not sent"            => driver.findElements(By.className("govuk-table__cell")).get(2).getText shouldBe ("Notification not sent")
+      case "Estate Person"                    => driver.findElements(By.className("govuk-table__header")).get(6).getText shouldBe ("Estate Person")
+      case "Offshore and onshore liabilities" => driver.findElements(By.className("govuk-table__cell")).get(0).getText shouldBe ("Offshore and onshore liabilities")
+        }
+    }
+
+  Then("""^on the (.*) page I select (.*) and click save and continue""") {
+    (prettyUrl: String, option: String) =>
+      urlVerify(prettyUrl)
+
+      option match {
+        case "Yes" => clickYesNoSelection(option)
+        case "No" => clickYesNoSelection(option)
+        case "An Individual" => driver.findElement(By.id("value_0")).click()
+        case "Yes, I am the individual" => driver.findElement(By.id("value_0")).click()
+        case "An Estate" => driver.findElement(By.id("value_1")).click()
+        case "Yes, I am the executor or administrator" => driver.findElement(By.id("value_0")).click()
+        case "Other capital gains" => driver.findElement(By.id("value_5")).click()
+      }
+      clickBy(By.className("govuk-button"))
+  }
+
+  Then("""^on the (.*) page I click Return to view, edit or create a case""") {
+    (prettyUrl: String) =>
+      urlVerify(prettyUrl)
+
+      clickBy(By.id("case-management-link"))
+  }
+
+  And("""^on the homepage I click continue to navigate to the (.*) page""") { (prettyUrl: String) =>
+    clickBy(By.id("start"))
+    urlVerify(prettyUrl)
+  }
+
+  And("""^verify on the (.*) page""") {
+    (prettyUrl: String) =>
+      urlVerify(prettyUrl)
+  }
+
+
+  Then("""^on the (.*) page I enter (.*) into the textbox and click save and continue""") { (prettyUrl: String, details: String) =>
+    urlVerify(prettyUrl)
+
+    enterCustomerDetails(details)
+    clickBy(By.className("govuk-button"))
+  }
+
+
+  When("""I click on {string} button""") { (string: String) =>
     selectFormOption(string)
   }
 
-  When("""click on Header Hyperlink""") { () =>
-    clickOnHeader()
+  When("""^on the (.*) page I click on the header hyperlink""") { (prettyUrl: String) =>
+    urlVerify(prettyUrl)
+    clickBy(By.xpath("//div[@class='govuk-header__content']/a[@href]"))
   }
 
-  Then("""reference at position {string} is {string}""") { (position: String ,expectedValue:String ) =>
-    validateReference(position,expectedValue)
+  And("""I click the Edit link within the case table""") { () =>
+    clickEditCaseLink()
   }
 
-  Then("""type at position {string} is {string}""") { (position: String, expectedValue: String) =>
-    validateType(position, expectedValue)
-  }
-
-  Then("""status at position {string} is {string}""") { (position: String, expectedValue: String) =>
-    validateStatus(position, expectedValue)
-  }
-
-  When("""click on Edit link at position {string}""") { (position: String) =>
-    clickEditCaseLink(position)
-  }
-
-  When("""I click on create a new case""") { () =>
+  When("""I select create a new case""") { () =>
     clickOnCreateNewCase()
   }
-
-  When("""I click on case management link""") { () =>
-    clickOnCaseManagementLink()
   }
 
-}
 

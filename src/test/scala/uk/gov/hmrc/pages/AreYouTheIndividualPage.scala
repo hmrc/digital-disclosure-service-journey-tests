@@ -42,7 +42,7 @@ trait AreYouTheIndividualPage extends BasePage {
   def selectOption(option: String): Unit = {
     if (option.toLowerCase() == "yes") {
       radioYes.click()
-    } else if (option.toLowerCase() == "no"){
+    } else if (option.toLowerCase() == "no") {
       radioNo.click()
     }
   }

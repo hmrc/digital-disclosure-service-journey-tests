@@ -7,64 +7,41 @@ Feature: An agent is able to edit and create case
     And select "250" from confidenceLevel drop down
     And click on submit on wizard page
     And I click on continue button
-    And I click on "Make a notification first" button
-    And click on Save and Continue button
-    And I select Radio Button "Yes" at Position "1"
-    And click on Save and Continue button
-    And I enter "CFSS-1234567" in the TextBox field
-    And click on Save and Continue button
-    And I select Radio Button "An individual" at Position "1"
-    And click on Save and Continue button
-    And I select Radio Button "Yes, I am the individual" at Position "1"
-    And click on Save and Continue button
-    And I select Radio Button "Yes" at Position "1"
-    And click on Save and Continue button
-    And I select Radio Button "No" at Position "2"
-    And click on Save and Continue button
-    And click on Header Hyperlink
-    And I click on continue button
-    Then page navigates to "View, edit or create a case"
-    And reference at position "1" is "Not completed"
-    And type at position "1" is "Offshore liabilities"
-    And status at position "1" is "Notification not sent"
-    When click on Edit link at position "1"
-    Then page navigates to "You have already started a notification"
-    And I click on "Continue or edit this notification" button
-    And click on Save and Continue button
-    And click on Header Hyperlink
-    And I click on continue button
-    And page navigates to "View, edit or create a case"
-    And I click on create a new case
-    And I click on "Make a notification first" button
-    And click on Save and Continue button
-    And I select Radio Button "Yes" at Position "1"
-    And click on Save and Continue button
-    And I enter "CFSS-1234567" in the TextBox field
-    And click on Save and Continue button
-    And I select Radio Button "An estate" at Position "2"
-    And click on Save and Continue button
-    And I select Radio Button "Yes, I am the executor or administrator" at Position "1"
-    And click on Save and Continue button
-    And I select Radio Button "Yes" at Position "1"
-    And click on Save and Continue button
-    And I select Radio Button "Yes" at Position "1"
-    And click on Save and Continue button
-    And I select Checkbox "Other capital gains" at Position "6"
-    And click on Save and Continue button
-    And I enter "Estate Person" in the TextBox field
-    And click on Save and Continue button
-    And click on Header Hyperlink
-    And I click on continue button
-    And reference at position "1" is "Estate Person"
-    And type at position "1" is "Offshore and onshore liabilities"
-    And status at position "1" is "Notification not sent"
-    When click on Edit link at position "1"
-    Then page navigates to "You have already started a notification"
-    And I click on "Make a disclosure" button
-    And click on Save and Continue button
-    Then page navigates to "List of tasks for Estate Person"
-    And I click on case management link
-    And page navigates to "View, edit or create a case"
+    Then on the UsingThisServiceUrl page I click Make a notification first and click save and continue
+    Then on the WillYouBeMakingADisclosureUrl page I select Yes and click save and continue
+    Then on the CaseReferenceNumberUrl page I enter the CRN into the textbox and click save and continue
+    Then on the DisclosureAboutUrl page I select An Individual and click save and continue
+    Then on the AreYouTheEntityUrl page I select Yes, I am the individual and click save and continue
+    Then on the OffshoreLiabilitiesUrl page I select Yes and click save and continue
+    Then on the OnshoreLiabilitiesUrl page I select No and click save and continue
+    When on the WhereDidTheIncomeComeFromUrl page I click on the header hyperlink
+    And on the homepage I click continue to navigate to the ViewEditCreateCaseUrl page
+    And the Reference is Not completed
+    And the Type is Offshore liabilities
+    And the Status is Notification not sent
+    And I click the Edit link within the case table
+    Then on the YouHaveStartedNotificationUrl page I click Continue or edit this notification and click save and continue
+    And on the WillYouBeMakingADisclosureUrl page I click on the header hyperlink
+    And on the homepage I click continue to navigate to the ViewEditCreateCaseUrl page
+    And I select create a new case
+    Then on the UsingThisServiceUrl page I click Make a notification first and click save and continue
+    Then on the WillYouBeMakingADisclosureUrl page I select Yes and click save and continue
+    Then on the CaseReferenceNumberUrl page I enter the CRN into the textbox and click save and continue
+    Then on the DisclosureAboutUrl page I select An Estate and click save and continue
+    Then on the AreYouTheEntityUrl page I select Yes, I am the executor or administrator and click save and continue
+    Then on the OffshoreLiabilitiesUrl page I select Yes and click save and continue
+    Then on the OnshoreLiabilitiesUrl page I select Yes and click save and continue
+    Then on the WhereDidTheIncomeComeFromUrl page I select Other capital gains and click save and continue
+    Then on the NameOfIndividualUrl page I enter Estate Person into the textbox and click save and continue
+    And on the IndividualDobUrl page I click on the header hyperlink
+    And on the homepage I click continue to navigate to the ViewEditCreateCaseUrl page
+    And the Reference is Estate Person
+    And the Type is Offshore and onshore liabilities
+    And the Status is Notification not sent
+    And I click the Edit link within the case table
+    Then on the YouHaveStartedNotificationUrl page I click Make a disclosure and click save and continue
+    Then on the ListOfTasksUrl page I click Return to view, edit or create a case
+    And verify on the ViewEditCreateCaseUrl page
 
 
 
