@@ -41,16 +41,7 @@ object BrowserDriver {
 
   val turnOnProxy: String = Option(System.getProperty("turnOnProxy")).getOrElse("No")
 
-
-
-  
-
-    //sys.addShutdownHook(webDriver.quit())
-    val options = new ChromeOptions
-    options.addArguments("--remote-allow-origins=*")
-    implicit lazy val webDriver: WebDriver = SingletonDriver.getInstance(Some(options))
-
-    //val webDriver: WebDriver = SingletonDriver.getInstance()
+  implicit lazy val webDriver: WebDriver = SingletonDriver.getInstance()
 
   }
 

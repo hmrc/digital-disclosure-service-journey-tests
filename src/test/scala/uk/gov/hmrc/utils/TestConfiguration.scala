@@ -31,27 +31,22 @@ object TestConfiguration {
 
   def url(url: String): String =
     url match {
-      case "UsingThisServiceUrl"             => baseUrl("dds") + "using-this-service"
-      case "WillYouBeMakingADisclosureUrl"   => baseUrl("dds") + "notification/letter-from-hmrc"
-      case "CaseReferenceNumberUrl"          => baseUrl("dds") + "notification/hmrc-letter-reference"
-      case "DisclosureAboutUrl"              => baseUrl("dds") + "notification/what-is-this-disclosure-about"
-      case "AreYouTheEntityUrl"              => baseUrl("dds") + "notification/are-you-the-entity"
-      case "OffshoreLiabilitiesUrl"          => baseUrl("dds") + "notification/disclose-offshore-liabilities"
-      case "OnshoreLiabilitiesUrl"            => baseUrl("dds") + "notification/disclose-onshore-liabilities"
-      case "ViewEditCreateCaseUrl"           => baseUrl("dds") + "case-management/cases/1"
-      case "YouHaveStartedNotificationUrl"   => baseUrl("dds") + "started-a-notification"
-      case "WhereDidTheIncomeComeFromUrl"    => baseUrl("dds") + "notification/where-the-income-came-from"
-      case "NameOfIndividualUrl"             => baseUrl("dds") + "notification/estates-individual-full-name"
-      case "IndividualDobUrl"                => baseUrl("dds") + "notification/estates-individual-date-of-birth"
-      case "ListOfTasksUrl"                  => baseUrl("dds") + "disclosure-list-of-tasks"
-
-//            test-only routes
-//            case "TestOnlyTaxCheckUrl" => baseUrl(testOnly, environmentHostForTestOnly) + taxCheck
+      case "UsingThisService"             => baseUrl("dds") + "using-this-service"
+      case "WillYouBeMakingADisclosure"   => baseUrl("dds") + "notification/letter-from-hmrc"
+      case "CaseReferenceNumber"          => baseUrl("dds") + "notification/hmrc-letter-reference"
+      case "DisclosureAbout"              => baseUrl("dds") + "notification/what-is-this-disclosure-about"
+      case "AreYouTheEntity"              => baseUrl("dds") + "notification/are-you-the-entity"
+      case "OffshoreLiabilities"          => baseUrl("dds") + "notification/disclose-offshore-liabilities"
+      case "OnshoreLiabilities"           => baseUrl("dds") + "notification/disclose-onshore-liabilities"
+      case "ViewEditCreateCase"           => baseUrl("dds") + "case-management/cases/1"
+      case "YouHaveStartedNotification"   => baseUrl("dds") + "started-a-notification"
+      case "WhereDidTheIncomeComeFrom"    => baseUrl("dds") + "notification/where-the-income-came-from"
+      case "NameOfIndividual"             => baseUrl("dds") + "notification/estates-individual-full-name"
+      case "IndividualDob"                => baseUrl("dds") + "notification/estates-individual-date-of-birth"
+      case "ListOfTasks"                  => baseUrl("dds") + "disclosure-list-of-tasks"
     }
 
   def environmentHost: String            = config.getString("services.host")
-  def environmentHostForTestOnly: String = config.getString("services.test-only.host")
-
   def servicePort(serviceName: String): String  = config.getString(s"services.$serviceName.port")
   def serviceRoute(serviceName: String): String = config.getString(s"services.$serviceName.productionRoute")
 

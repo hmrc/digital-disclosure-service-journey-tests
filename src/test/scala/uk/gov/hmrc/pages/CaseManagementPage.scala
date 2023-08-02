@@ -16,9 +16,14 @@
 
 package uk.gov.hmrc.pages
 
+import io.cucumber.datatable.DataTable
 import org.junit.Assert
 import org.openqa.selenium.{By, WebElement}
+import org.scalatest.matchers.should.Matchers.convertToAnyShouldWrapper
 import uk.gov.hmrc.utils.Configuration
+import uk.gov.hmrc.utils.MessageReader.getElement
+
+import scala.jdk.CollectionConverters.CollectionHasAsScala
 
 trait CaseManagementPage extends BasePage {
 
@@ -91,9 +96,6 @@ trait CaseManagementPage extends BasePage {
     Assert.assertTrue(flag)
   }
 
-  def validateCaseTitle(): Unit = {
-  }
-
   def validateReference(position: String, expecteValue: String): Unit = {
     val element = driver.findElements(By.xpath("//tbody[@class='govuk-table__body']/tr/th"))
     val count = element.size()
@@ -115,13 +117,19 @@ trait CaseManagementPage extends BasePage {
     element.get(count - 1).click()
   }
 
+  def testDataTable(dataTable: DataTable): Unit =
+    dataTable.asMaps(classOf[String], classOf[String]).asScala.foreach { (data: java.util.Map[String, String]) =>
+      val tableHeading = driver.findElements(By.className("govuk-table__row")).get(data.get("Row").toInt)
+      val getReferenceText = tableHeading.findElements(By.className("govuk-table__header")).get(0).getText
+      val getCellText = tableHeading.findElements(By.className("govuk-table__cell"))
+      getReferenceText shouldBe data.get("Reference")
+      getCellText.get(0).getText shouldBe data.get("Type")
+      getCellText.get(2).getText shouldBe data.get("Status")
+    }
+
   def clickOnHeader(): Unit = {
     val element = driver.findElement(By.xpath("//div[@class='govuk-header__content']/a[@href]"))
     element.click()
-  }
-
-  def checkCaseTableStatus(): Unit = {
-
   }
 
   def clickOnCreateNewCase(): Unit = {

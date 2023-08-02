@@ -40,8 +40,8 @@ Feature: UI Validation and Navigation  for Screen "What is the case reference nu
       |    "01256896692" |  "Enter the case reference in the right format"    |
       |    "123" |  "Enter the case reference in the right format"    |
       |    "CFSS--1234567" |  "Enter the case reference in the right format"    |
-      |    "CFSS-12345678" |  "Enter the case reference in the right format"    |
-      |    "CFS-12345678" |  "Enter the case reference in the right format"    |
+      |    "CFSS-123456789" |  "Enter the case reference in the right format"    |
+      |    "CFS-123456789" |  "Enter the case reference in the right format"    |
       |    "ABC-12345678" |  "Enter the case reference in the right format"    |
       |    "CFS-S1234567" |  "Enter the case reference in the right format"    |
 
@@ -57,4 +57,6 @@ Feature: UI Validation and Navigation  for Screen "What is the case reference nu
       |    "CFS1234567" |  "What will the disclosure be about?"    |
       |    "CFSS-1234567" |  "What will the disclosure be about?"    |
       |    "CFSS-1234567" |  "What will the disclosure be about?"    |
+      |    "CFS-12345678" |  "What will the disclosure be about?"    |
+      |    "CFSS-12345678" |  "What will the disclosure be about?"    |
 

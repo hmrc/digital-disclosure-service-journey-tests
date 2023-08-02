@@ -16,8 +16,8 @@
 
 package uk.gov.hmrc.stepdefs
 
+import io.cucumber.datatable.DataTable
 import org.openqa.selenium.By
-import org.scalatest.matchers.should.Matchers.convertToAnyShouldWrapper
 import uk.gov.hmrc.pages.{BasePage, CaseManagementPage}
 
 class CaseManagementStepDef extends BasePage with CaseManagementPage {
@@ -36,25 +36,14 @@ class CaseManagementStepDef extends BasePage with CaseManagementPage {
 
   Then("""^on the (.*) page I click (.*) and click save and continue""") { (prettyUrl: String, answer: String) =>
     urlVerify(prettyUrl)
-
     selectServiceType(answer)
     clickBy(By.className("govuk-button"))
   }
 
-  And("""^the (.*) is (.*)""") { (caseField: String, status: String) =>
-    caseField match {
-      case "Reference" => driver.findElements(By.className("govuk-table__header")).get(0).getText shouldBe ("Reference")
-      case "Type" => driver.findElements(By.className("govuk-table__header")).get(1).getText shouldBe ("Type")
-      case "Status" => driver.findElements(By.className("govuk-table__header")).get(3).getText shouldBe ("Status")
-    }
-    status match {
-      case "Not completed"                    => driver.findElements(By.className("govuk-table__header")).get(6).getText shouldBe ("Not completed")
-      case "Offshore liabilities"             => driver.findElements(By.className("govuk-table__cell")).get(0).getText shouldBe ("Offshore liabilities")
-      case "Notification not sent"            => driver.findElements(By.className("govuk-table__cell")).get(2).getText shouldBe ("Notification not sent")
-      case "Estate Person"                    => driver.findElements(By.className("govuk-table__header")).get(6).getText shouldBe ("Estate Person")
-      case "Offshore and onshore liabilities" => driver.findElements(By.className("govuk-table__cell")).get(0).getText shouldBe ("Offshore and onshore liabilities")
-        }
-    }
+  Given("""^the values within the datatable are verified$""") {
+    dataTable: DataTable =>
+      testDataTable(dataTable)
+  }
 
   Then("""^on the (.*) page I select (.*) and click save and continue""") {
     (prettyUrl: String, option: String) =>
@@ -89,17 +78,11 @@ class CaseManagementStepDef extends BasePage with CaseManagementPage {
       urlVerify(prettyUrl)
   }
 
-
   Then("""^on the (.*) page I enter (.*) into the textbox and click save and continue""") { (prettyUrl: String, details: String) =>
     urlVerify(prettyUrl)
 
     enterCustomerDetails(details)
     clickBy(By.className("govuk-button"))
-  }
-
-
-  When("""I click on {string} button""") { (string: String) =>
-    selectFormOption(string)
   }
 
   When("""^on the (.*) page I click on the header hyperlink""") { (prettyUrl: String) =>
@@ -114,6 +97,6 @@ class CaseManagementStepDef extends BasePage with CaseManagementPage {
   When("""I select create a new case""") { () =>
     clickOnCreateNewCase()
   }
-  }
+}
 
 

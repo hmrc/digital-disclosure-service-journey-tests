@@ -16,9 +16,11 @@
 
 package uk.gov.hmrc.pages
 
+import io.cucumber.datatable.DataTable
 import io.cucumber.scala.{EN, ScalaDsl}
 import org.apache.commons.lang3.StringUtils
 import org.junit.Assert
+import org.openqa.selenium.chrome.ChromeOptions
 import org.openqa.selenium.support.ui.{ExpectedConditions, FluentWait, Select, WebDriverWait}
 import org.openqa.selenium.{By, JavascriptExecutor, WebDriver, WebElement}
 import org.scalatest.concurrent.ScalaFutures
@@ -26,15 +28,18 @@ import org.scalatest.matchers.should.Matchers.convertToAnyShouldWrapper
 import org.scalatest.{Assertion, Assertions}
 import org.scalatestplus.selenium.WebBrowser
 import uk.gov.hmrc.domain.Generator
-import uk.gov.hmrc.driver.StartUpTearDown
 import uk.gov.hmrc.integration.cucumber.utils.{TestConfiguration, UrlHelper}
 import uk.gov.hmrc.utils.Configuration
 import uk.gov.hmrc.utils.MessageReader.getElement
+import uk.gov.hmrc.webdriver.SingletonDriver
 
 import java.time.Duration
+import scala.jdk.CollectionConverters.CollectionHasAsScala
 import scala.util.Random
 
-trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with ScalaFutures with StartUpTearDown {
+trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with ScalaFutures {
+
+  implicit lazy val driver: WebDriver = SingletonDriver.getInstance()
 
   lazy val url: String = ""
   private lazy val webdriverWait = new WebDriverWait(driver, Duration.ofSeconds(20))
@@ -113,11 +118,11 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
   }
 
   def urlVerify(prettyUrl: String): Unit =
-    if (prettyUrl contains "Url") {
-      assertUrl(prettyUrl)
-    } else {
-      assertUrlSuffix(prettyUrl)
-    }
+  if (prettyUrl contains "-") {
+    assertUrlSuffix(prettyUrl)
+  } else {
+    assertUrl(prettyUrl)
+  }
 
   def verifyPageTitle (expectedTitle: String): Unit = {
     val actualTitle = driver.getTitle

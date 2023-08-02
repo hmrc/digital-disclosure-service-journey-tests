@@ -4,7 +4,7 @@ Feature: An Individual is able to make and send nil offshore and onshore disclos
     Given I am navigated to Received A Letter Page
     When I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
-    And I enter "CFSS-1234567" in the TextBox field
+    And I enter "CFSS-12345678" in the TextBox field
     And click on Save and Continue button
     And I select Radio Button "An individual" at Position "1"
     And click on Save and Continue button
@@ -257,6 +257,6 @@ Feature: An Individual is able to make and send nil offshore and onshore disclos
     And I enter "0" in the TextBox field
     And I click on Send offer and disclosure button
     Then page navigates to "You have sent a nil disclosure"
-    And the case reference should be "CFSS-1234567"
+    And the case reference should be "CFSS-12345678"
 
 
