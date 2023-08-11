@@ -123,7 +123,7 @@ Feature: An Individual is able to make and send nil offshore and onshore disclos
     When click on Hyperlink "Add case reference"
     And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
-    And I enter "CFSS-1234567" in the TextBox field
+    And I enter "CFSS-12345678" in the TextBox field
     And click on Save and Continue button
     Then page navigates to "List of tasks"
     And status is marked as "Completed" for field "Edit case reference"
