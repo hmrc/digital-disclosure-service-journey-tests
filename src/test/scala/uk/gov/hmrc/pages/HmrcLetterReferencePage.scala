@@ -16,12 +16,10 @@
 
 package uk.gov.hmrc.pages
 
-import org.openqa.selenium.By
-import org.openqa.selenium.support.ui.WebDriverWait
-import org.junit.Assert
-import uk.gov.hmrc.utils.Configuration
 import org.apache.commons.lang3.StringUtils
-import java.time.Duration
+import org.junit.Assert
+import org.openqa.selenium.By
+import uk.gov.hmrc.utils.Configuration
 
 trait HmrcLetterReferencePage extends BasePage {
 

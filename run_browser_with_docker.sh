@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 #######################################
 # The script starts remote-chrome or remote-firefox docker container for running Browser tests on a developer machine only.

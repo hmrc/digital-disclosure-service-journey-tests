@@ -16,8 +16,9 @@
 
 package uk.gov.hmrc.stepdefs
 
-import uk.gov.hmrc.pages.BasePage
-import uk.gov.hmrc.pages.CaseManagementPage
+import io.cucumber.datatable.DataTable
+import org.openqa.selenium.By
+import uk.gov.hmrc.pages.{BasePage, CaseManagementPage}
 
 class CaseManagementStepDef extends BasePage with CaseManagementPage {
 
@@ -33,37 +34,69 @@ class CaseManagementStepDef extends BasePage with CaseManagementPage {
     clickOnSubmitButtonOnWizardPage
   }
 
-  When("""I click on {string} button""") { (string:String) =>
-    selectFormOption(string)
+  Then("""^on the (.*) page I click (.*) and click save and continue""") { (prettyUrl: String, answer: String) =>
+    urlVerify(prettyUrl)
+    selectServiceType(answer)
+    clickBy(By.className("govuk-button"))
   }
 
-  When("""click on Header Hyperlink""") { () =>
-    clickOnHeader()
+  Given("""^the values within the datatable are verified$""") {
+    dataTable: DataTable =>
+      testDataTable(dataTable)
   }
 
-  Then("""reference at position {string} is {string}""") { (position: String ,expectedValue:String ) =>
-    validateReference(position,expectedValue)
+  Then("""^on the (.*) page I select (.*) and click save and continue""") {
+    (prettyUrl: String, option: String) =>
+      urlVerify(prettyUrl)
+
+      option match {
+        case "Yes" => clickYesNoSelection(option)
+        case "No" => clickYesNoSelection(option)
+        case "An Individual" => driver.findElement(By.id("value_0")).click()
+        case "Yes, I am the individual" => driver.findElement(By.id("value_0")).click()
+        case "An Estate" => driver.findElement(By.id("value_1")).click()
+        case "Yes, I am the executor or administrator" => driver.findElement(By.id("value_0")).click()
+        case "Other capital gains" => driver.findElement(By.id("value_5")).click()
+      }
+      clickBy(By.className("govuk-button"))
   }
 
-  Then("""type at position {string} is {string}""") { (position: String, expectedValue: String) =>
-    validateType(position, expectedValue)
+  Then("""^on the (.*) page I click Return to view, edit or create a case""") {
+    (prettyUrl: String) =>
+      urlVerify(prettyUrl)
+
+      clickBy(By.id("case-management-link"))
   }
 
-  Then("""status at position {string} is {string}""") { (position: String, expectedValue: String) =>
-    validateStatus(position, expectedValue)
+  And("""^on the homepage I click continue to navigate to the (.*) page""") { (prettyUrl: String) =>
+    clickBy(By.id("start"))
+    urlVerify(prettyUrl)
   }
 
-  When("""click on Edit link at position {string}""") { (position: String) =>
-    clickEditCaseLink(position)
+  And("""^verify on the (.*) page""") {
+    (prettyUrl: String) =>
+      urlVerify(prettyUrl)
   }
 
-  When("""I click on create a new case""") { () =>
+  Then("""^on the (.*) page I enter (.*) into the textbox and click save and continue""") { (prettyUrl: String, details: String) =>
+    urlVerify(prettyUrl)
+
+    enterCustomerDetails(details)
+    clickBy(By.className("govuk-button"))
+  }
+
+  When("""^on the (.*) page I click on the header hyperlink""") { (prettyUrl: String) =>
+    urlVerify(prettyUrl)
+    clickBy(By.xpath("//div[@class='govuk-header__content']/a[@href]"))
+  }
+
+  And("""I click the Edit link within the case table""") { () =>
+    clickEditCaseLink()
+  }
+
+  When("""I select create a new case""") { () =>
     clickOnCreateNewCase()
   }
-
-  When("""I click on case management link""") { () =>
-    clickOnCaseManagementLink()
-  }
-
 }
+
 

@@ -16,23 +16,30 @@
 
 package uk.gov.hmrc.pages
 
+import io.cucumber.datatable.DataTable
 import io.cucumber.scala.{EN, ScalaDsl}
 import org.apache.commons.lang3.StringUtils
 import org.junit.Assert
-import org.openqa.selenium.support.ui.{ExpectedConditions, Select, WebDriverWait}
-import org.openqa.selenium.{By, WebElement}
-import org.scalatest.Assertions
+import org.openqa.selenium.chrome.ChromeOptions
+import org.openqa.selenium.support.ui.{ExpectedConditions, FluentWait, Select, WebDriverWait}
+import org.openqa.selenium.{By, JavascriptExecutor, WebDriver, WebElement}
 import org.scalatest.concurrent.ScalaFutures
+import org.scalatest.matchers.should.Matchers.convertToAnyShouldWrapper
+import org.scalatest.{Assertion, Assertions}
 import org.scalatestplus.selenium.WebBrowser
-import uk.gov.hmrc.driver.StartUpTearDown
+import uk.gov.hmrc.domain.Generator
+import uk.gov.hmrc.integration.cucumber.utils.{TestConfiguration, UrlHelper}
 import uk.gov.hmrc.utils.Configuration
 import uk.gov.hmrc.utils.MessageReader.getElement
-import uk.gov.hmrc.domain.Generator
-import scala.util.Random
+import uk.gov.hmrc.webdriver.SingletonDriver
 
 import java.time.Duration
+import scala.jdk.CollectionConverters.CollectionHasAsScala
+import scala.util.Random
 
-trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with ScalaFutures with StartUpTearDown {
+trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with ScalaFutures {
+
+  implicit lazy val driver: WebDriver = SingletonDriver.getInstance()
 
   lazy val url: String = ""
   private lazy val webdriverWait = new WebDriverWait(driver, Duration.ofSeconds(20))
@@ -40,6 +47,38 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
   def goToPage(): Unit = {
     go to url
   }
+
+  def assertUrl(prettyUrl: String): Assertion = {
+    val url = TestConfiguration.url(prettyUrl)
+    val currentUrl = driver.getCurrentUrl.toLowerCase()
+    waitFor.until(_ => url shouldBe currentUrl)
+  }
+
+  def clickBy(by: By): Unit = {
+    val element = driver.findElement(by)
+    scrollToElement(element)
+    element.click()
+  }
+
+  def clickYesNoSelection(answer: String): Unit = {
+    def radioOption(choice: String, getChoice: Int): Unit =
+      driver.findElements(By.cssSelector(s"#value$choice")).get(getChoice).click()
+
+    answer match {
+      case "Yes" => radioOption("", 0)
+      case "No" => radioOption("-no", 0)
+    }
+  }
+
+  def scrollToElement(element: WebElement): AnyRef = {
+    val jse2: JavascriptExecutor = driver.asInstanceOf[JavascriptExecutor]
+    jse2.executeScript("arguments[0].scrollIntoView()", element)
+  }
+
+  implicit val waitFor: FluentWait[WebDriver] =
+    new FluentWait[WebDriver](driver)
+      .withTimeout(Duration.ofSeconds(30))
+      .pollingEvery(Duration.ofMillis(500))
 
   def findByID(id: String): WebElement = driver.findElement(By.id(id))
 
@@ -70,6 +109,19 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
       case "receivedALetter" => checkURL("tell-hmrc-about-underpaid-tax-from-previous-years/notification/letter-from-hmrc")
       case _ => throw new IllegalArgumentException(url + " not found")
     }
+  }
+
+  def assertUrlSuffix(prettyUrl: String): Boolean = {
+    val convertedUrl = UrlHelper.convertUrlSuffix(prettyUrl)
+    val currentUrl = driver.getCurrentUrl.toLowerCase()
+    waitFor.until(_ => currentUrl.endsWith(convertedUrl.toLowerCase))
+  }
+
+  def urlVerify(prettyUrl: String): Unit =
+  if (prettyUrl contains "-") {
+    assertUrlSuffix(prettyUrl)
+  } else {
+    assertUrl(prettyUrl)
   }
 
   def verifyPageTitle (expectedTitle: String): Unit = {
