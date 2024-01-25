@@ -1,0 +1,12 @@
+{
+  "add": [
+    {
+      "reason": "PII Disclosure - ZAP mistakenly thinks a credit card number is being leaked by the app",
+      "contextId": 1,
+      "url": "http://localhost:15003/.*",
+      "ruleId": 10062,
+      "urlIsRegex": "true",
+      "newLevel": -1
+    }
+  ]
+}
