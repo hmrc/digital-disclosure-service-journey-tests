@@ -16,30 +16,24 @@
 
 package uk.gov.hmrc.pages
 
-import io.cucumber.datatable.DataTable
 import io.cucumber.scala.{EN, ScalaDsl}
 import org.apache.commons.lang3.StringUtils
 import org.junit.Assert
-import org.openqa.selenium.chrome.ChromeOptions
-import org.openqa.selenium.support.ui.{ExpectedConditions, FluentWait, Select, WebDriverWait}
-import org.openqa.selenium.{By, JavascriptExecutor, WebDriver, WebElement}
+import org.openqa.selenium.support.ui.{ExpectedConditions, Select, WebDriverWait}
+import org.openqa.selenium.{By, JavascriptExecutor, WebElement}
 import org.scalatest.concurrent.ScalaFutures
 import org.scalatest.matchers.should.Matchers.convertToAnyShouldWrapper
 import org.scalatest.{Assertion, Assertions}
 import org.scalatestplus.selenium.WebBrowser
 import uk.gov.hmrc.domain.Generator
-import uk.gov.hmrc.integration.cucumber.utils.{TestConfiguration, UrlHelper}
-import uk.gov.hmrc.utils.Configuration
+import uk.gov.hmrc.driver.BrowserDriver
 import uk.gov.hmrc.utils.MessageReader.getElement
-import uk.gov.hmrc.webdriver.SingletonDriver
+import uk.gov.hmrc.utils.{Configuration, TestConfiguration, UrlHelper}
 
 import java.time.Duration
-import scala.jdk.CollectionConverters.CollectionHasAsScala
 import scala.util.Random
 
-trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with ScalaFutures {
-
-  implicit lazy val driver: WebDriver = SingletonDriver.getInstance()
+trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with ScalaFutures with BrowserDriver {
 
   lazy val url: String = ""
   private lazy val webdriverWait = new WebDriverWait(driver, Duration.ofSeconds(20))
@@ -51,7 +45,7 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
   def assertUrl(prettyUrl: String): Assertion = {
     val url = TestConfiguration.url(prettyUrl)
     val currentUrl = driver.getCurrentUrl.toLowerCase()
-    waitFor.until(_ => url shouldBe currentUrl)
+    webdriverWait.until(_ => url shouldBe currentUrl)
   }
 
   def clickBy(by: By): Unit = {
@@ -74,11 +68,6 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
     val jse2: JavascriptExecutor = driver.asInstanceOf[JavascriptExecutor]
     jse2.executeScript("arguments[0].scrollIntoView()", element)
   }
-
-  implicit val waitFor: FluentWait[WebDriver] =
-    new FluentWait[WebDriver](driver)
-      .withTimeout(Duration.ofSeconds(30))
-      .pollingEvery(Duration.ofMillis(500))
 
   def findByID(id: String): WebElement = driver.findElement(By.id(id))
 
@@ -114,7 +103,7 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
   def assertUrlSuffix(prettyUrl: String): Boolean = {
     val convertedUrl = UrlHelper.convertUrlSuffix(prettyUrl)
     val currentUrl = driver.getCurrentUrl.toLowerCase()
-    waitFor.until(_ => currentUrl.endsWith(convertedUrl.toLowerCase))
+    webdriverWait.until(_ => currentUrl.endsWith(convertedUrl.toLowerCase))
   }
 
   def urlVerify(prettyUrl: String): Unit =
@@ -217,13 +206,13 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
       driver.findElement(By.xpath("//input[contains(@class,\"govuk-input\")]")).sendKeys(textInput)
     }
     catch {
-      case e =>
+      case e: Throwable =>
         driver.findElement(By.id("countryCode")).clear()
         driver.findElement(By.id("countryCode")).sendKeys(textInput)
-      case e =>
+      case e: Throwable =>
         driver.findElement(By.id("postcode")).clear()
         driver.findElement(By.id("postcode")).sendKeys(textInput)
-      case e =>
+      case e: Throwable =>
         driver.findElement(By.xpath("//div[@class='hmrc-character-count']//textarea")).clear()
         driver.findElement(By.xpath("//div[@class='hmrc-character-count']//textarea")).sendKeys(textInput)
     }
@@ -249,9 +238,9 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
     }
     catch
     {
-      case e=>
+      case e: Throwable =>
         driver.findElement(By.id("countryCode")).equals(driver.switchTo().activeElement())
-      case e=>
+      case e: Throwable =>
         driver.findElement(By.id("postcode")).equals(driver.switchTo().activeElement())
      }
   }
@@ -366,7 +355,7 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
 
     catch
     {
-      case e =>
+      case e: Throwable =>
         val element = driver.findElement(By.xpath("//label[@class=\"govuk-label\"]"))
         actualText = element.getText
     }
@@ -407,7 +396,7 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
     }
     catch
     {
-      case e =>
+      case e: Throwable =>
         val element = driver.findElement(By.xpath("//label[@class=\"govuk-label\"]"))
         actualText = element.getText
     }

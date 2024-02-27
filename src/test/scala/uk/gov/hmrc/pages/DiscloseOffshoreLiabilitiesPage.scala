@@ -59,7 +59,7 @@ trait DiscloseOffshoreLiabilitiesPage extends BasePage{
     }
     catch
     {
-      case e =>
+      case e: Throwable =>
         var actualHeader = ""
         val element = driver.findElements(By.xpath("//span[contains(@class,\"app-task-list__task-name\")]/a[@href]"))
         val outloop = new Breaks;
@@ -73,7 +73,7 @@ trait DiscloseOffshoreLiabilitiesPage extends BasePage{
           )
         }
 
-      case e=>
+      case e: Throwable =>
         val element = driver.findElement(By.xpath("//a[contains(@class,\"govuk-link\") and contains(@id,'differentAddress')]"))
         val actualQHeader = element.getText
         Assert.assertTrue("Body Text is not Verified. --- Expected: " + expectedQHeader + "--- Actual: " + actualQHeader, expectedQHeader == actualQHeader)

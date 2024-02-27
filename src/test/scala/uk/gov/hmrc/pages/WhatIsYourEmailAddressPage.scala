@@ -31,7 +31,7 @@ trait WhatIsYourEmailAddressPage extends BasePage {
       actualQHeader = element.getText
     }
     catch {
-      case e =>
+      case e: Throwable =>
         val element = driver.findElement(By.xpath("//label[@class=\"govuk-label\"]"))
         actualQHeader = element.getText
     }
