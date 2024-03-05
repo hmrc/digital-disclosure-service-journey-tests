@@ -26,5 +26,5 @@ glue = Array("uk.gov.hmrc.stepdefs"),
 plugin = Array("pretty", "html:target/cucumber", "json:target/cucumber.json"),
 tags="@journeytests"
 )
-class RunJourneyTests{
+class Runner{
 }

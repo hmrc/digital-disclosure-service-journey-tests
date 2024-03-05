@@ -68,7 +68,7 @@ trait OffshoreDisclosurePage extends BasePage {
       driver.findElement(By.id("country")).sendKeys(textInput)
     } catch
     {
-      case e =>driver.findElement(By.id("country")).sendKeys(textInput)
+      case e: Throwable => driver.findElement(By.id("country")).sendKeys(textInput)
     }
   }
 
@@ -81,7 +81,7 @@ trait OffshoreDisclosurePage extends BasePage {
       actualtext=element.get(count - 1).getText
       element.get(count - 1).click()
     }catch {
-      case e =>
+      case e: Throwable =>
         val element = driver.findElements(By.xpath("//li[contains(@id,'country__option')]"))
         count = element.size()
         actualtext = element.get(count - 1).getText

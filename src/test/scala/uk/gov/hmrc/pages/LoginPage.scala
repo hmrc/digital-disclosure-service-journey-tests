@@ -27,14 +27,9 @@ trait LoginPage extends BasePage {
 
   //stride login locators for local
   def userid: WebElement = findByID("login-form-username")
-
   def password: WebElement = findByID("login-form-password")
-
   def signinBtn: WebElement = findByID("login-form-submit")
-
   def dashBoard: WebElement = findByID("dashboard-content")
-
-
 
   def pid: WebElement = findByID("pid")
 
@@ -51,12 +46,9 @@ trait LoginPage extends BasePage {
     if (currentenvironment == "Local") {
       userid.sendKeys("niranjan.vankadaru")
       password.sendKeys("InputPassHere")
-
-      //webdriverWait.until(ExpectedConditions.visibilityOf(userid)).sendKeys("niranjan.vankadaru")
-      //webdriverWait.until(ExpectedConditions.visibilityOf(password)).sendKeys("InputPassHerre")
       signinBtn.click()
       pageTitle should be ("System Dashboard - Jira")
-      print("Welcome Page displayed: " + dashBoard.getText())
+      print("Welcome Page displayed: " + dashBoard.getText)
     }
     else if (currentenvironment == "Qa") {
       pid.sendKeys("test")

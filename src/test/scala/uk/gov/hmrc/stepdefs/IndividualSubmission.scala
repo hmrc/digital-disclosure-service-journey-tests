@@ -19,8 +19,6 @@ import io.cucumber.junit.Cucumber
 import org.junit.runner.RunWith
 import uk.gov.hmrc.pages.{BasePage, LoginPage}
 
-
-
 @RunWith(classOf[Cucumber])
 class IndividualSubmission extends BasePage with LoginPage {
   Given("""^User login with his government gateway id""") { () =>

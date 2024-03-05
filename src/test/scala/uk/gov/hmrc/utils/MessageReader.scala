@@ -20,7 +20,7 @@ import java.io.FileInputStream
 import java.util.PropertyResourceBundle
 
 object MessageReader {
-  val messageResource = {
+  val messageResource: PropertyResourceBundle = {
 
     lazy val message = new FileInputStream("./src/test/resources/keys/page_element_identifiers")
 
@@ -30,7 +30,7 @@ object MessageReader {
       message.close()
     }
   }
-  val pageTitleResource = {
+  val pageTitleResource: PropertyResourceBundle = {
 
     lazy val message = new FileInputStream("./src/test/resources/keys/page_titles.properties")
 
@@ -41,12 +41,12 @@ object MessageReader {
     }
   }
 
-  def getElement(key: String) = {
+  def getElement(key: String): String = {
     val modifiedKey = key.toLowerCase.replaceFirst("'", "").replaceAll(" +", "_")
     messageResource.getString(modifiedKey)
   }
 
-  def getPageTitles(key: String) = {
+  def getPageTitles(key: String): String = {
     val modifiedKey = key.toLowerCase.replaceFirst("'", "").replaceAll(" +", "_")
     pageTitleResource.getString(modifiedKey)
   }

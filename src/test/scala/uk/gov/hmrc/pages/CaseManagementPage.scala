@@ -21,7 +21,6 @@ import org.junit.Assert
 import org.openqa.selenium.{By, WebElement}
 import org.scalatest.matchers.should.Matchers.convertToAnyShouldWrapper
 import uk.gov.hmrc.utils.Configuration
-import uk.gov.hmrc.utils.MessageReader.getElement
 
 import scala.jdk.CollectionConverters.CollectionHasAsScala
 

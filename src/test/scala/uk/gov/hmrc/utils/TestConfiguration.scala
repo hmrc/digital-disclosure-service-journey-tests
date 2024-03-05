@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.integration.cucumber.utils
+package uk.gov.hmrc.utils
 
 import com.typesafe.config.ConfigFactory
 
@@ -22,7 +22,6 @@ object TestConfiguration {
 
   val timeout                    = 30
   val env: String                = Option(System.getProperty("environment")).getOrElse("local")
-  val javascriptDisabled: String = Option(System.getProperty("disable.javascript")).getOrElse("false")
   private val config             = ConfigFactory.load("environments.conf").getConfig(s"environments.$env")
 
   def baseUrl(url: String, envHostForEnv: String = environmentHost): String =

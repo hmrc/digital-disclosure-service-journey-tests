@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.integration.cucumber.utils
+package uk.gov.hmrc.utils
 
 object UrlHelper {
 

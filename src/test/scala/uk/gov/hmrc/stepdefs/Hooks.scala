@@ -16,29 +16,33 @@
 
 package uk.gov.hmrc.stepdefs
 
-import io.cucumber.java.{After, Before}
-import org.openqa.selenium.WebDriver
-import uk.gov.hmrc.driver.{BrowserDriver, StartUpTearDown}
-import uk.gov.hmrc.webdriver.SingletonDriver
+import io.cucumber.scala.{EN, ScalaDsl, Scenario}
+import org.apache.commons.io.FileUtils
+import org.openqa.selenium.{OutputType, TakesScreenshot}
+import uk.gov.hmrc.driver.BrowserDriver
+import uk.gov.hmrc.pages.BasePage
+import uk.gov.hmrc.selenium.webdriver.Browser
 
-import scala.util.Try
+import java.io.File
 
-class Hooks extends StartUpTearDown{
+class Hooks extends ScalaDsl with Browser with EN with BasePage with BrowserDriver {
 
-  @Before
-  def initialize(): Unit = {
-    if (driver.getWindowHandles.size() == 0) {
-      implicit val driver: WebDriver = BrowserDriver.webDriver
-    }
+  Before {
+    startBrowser()
     driver.manage().deleteAllCookies()
-    driver.navigate.refresh()
-    driver.manage.window.maximize()
   }
 
-  @After
-  def cleanup(): Unit =
-    sys.addShutdownHook {
-      Try(SingletonDriver.closeInstance)
+  After { scenario: Scenario =>
+    if (scenario.isFailed) {
+      val screenshotName                = scenario.getName.replaceAll(" ", "_")
+      val screenshot                    = driver.asInstanceOf[TakesScreenshot].getScreenshotAs(OutputType.BYTES)
+      val screenshotFile                = driver.asInstanceOf[TakesScreenshot].getScreenshotAs(OutputType.FILE)
+      val screenshotDestination: String = "./target/screenshots/" + screenshotName + ".png"
+
+      FileUtils.copyFile(screenshotFile, new File(screenshotDestination))
+      scenario.attach(screenshot, "image/png", screenshotName)
     }
+    quitBrowser()
+  }
 
 }

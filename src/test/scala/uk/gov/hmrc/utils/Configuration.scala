@@ -28,7 +28,7 @@ object Configuration {
       case "qa" => Environment.Qa
       case "dev" => Environment.Dev
       case "staging" => Environment.Staging
-      case _ => throw new IllegalArgumentException("Environment '$environmentProperty' not known")
+      case _ => throw new IllegalArgumentException(s"Environment '$environmentProperty' not known")
     }
   }
 
@@ -54,7 +54,7 @@ object Configuration {
           baseUrl = "https://www.qa.tax.service.gov.uk/"
         )
 
-      case _ => throw new IllegalArgumentException("Environment '$environment' not known")
+      case _ => throw new IllegalArgumentException(s"Environment '$environment' not known")
     }
   }
 }

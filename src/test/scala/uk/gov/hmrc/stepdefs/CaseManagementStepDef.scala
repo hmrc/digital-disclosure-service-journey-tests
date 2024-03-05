@@ -31,7 +31,7 @@ class CaseManagementStepDef extends BasePage with CaseManagementPage {
   }
 
   When("""click on submit on wizard page""") { () =>
-    clickOnSubmitButtonOnWizardPage
+    clickOnSubmitButtonOnWizardPage()
   }
 
   Then("""^on the (.*) page I click (.*) and click save and continue""") { (prettyUrl: String, answer: String) =>
