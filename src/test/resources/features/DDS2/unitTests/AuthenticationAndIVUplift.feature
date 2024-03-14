@@ -4,7 +4,6 @@ Feature: A UK tax payer is able to submit high confidence level & valid NINO to 
     Given I navigate to authority wizard page
     When I select "250" from drop down "confidenceLevel"
     And I select "Individual" from drop down "affinityGroupSelect"
-    And I select "strong" from drop down "credentialStrength"
     And enter NINO "AB123456A"
     And click on submit button
     Then user is navigated to the page with title "Digital Disclosure Service"
@@ -15,7 +14,6 @@ Feature: A UK tax payer is able to submit high confidence level & valid NINO to 
     Given I navigate to authority wizard page
     When I select "50" from drop down "confidenceLevel"
     And I select "Individual" from drop down "affinityGroupSelect"
-    And I select "strong" from drop down "credentialStrength"
     And click on submit button
     Then user is navigated to the page with title "Identity Verification Stub"
     Then the page title should be "Identity Verification - Stubbed Journey configuration"
@@ -24,7 +22,6 @@ Feature: A UK tax payer is able to submit high confidence level & valid NINO to 
     Given I navigate to authority wizard page
     When I select <Value> from drop down "confidenceLevel"
     And I select "Individual" from drop down "affinityGroupSelect"
-    And I select "strong" from drop down "credentialStrength"
     And enter NINO "AB123456A"
     And click on submit button
     Then user is navigated to the page with title "Identity Verification Stub"
@@ -39,7 +36,6 @@ Feature: A UK tax payer is able to submit high confidence level & valid NINO to 
     Given I navigate to authority wizard page
     When I select <Value> from drop down "confidenceLevel"
     And I select "Agent" from drop down "affinityGroupSelect"
-    And I select "strong" from drop down "credentialStrength"
     And click on submit button
     Then user is navigated to the page with title "Digital Disclosure Service"
     Then the page title should be "Digital Disclosure Service - Digital Disclosure Service - GOV.UK"
@@ -53,7 +49,6 @@ Feature: A UK tax payer is able to submit high confidence level & valid NINO to 
     Given I navigate to authority wizard page
     When I select <Value> from drop down "confidenceLevel"
     And I select "Organisation" from drop down "affinityGroupSelect"
-    And I select "strong" from drop down "credentialStrength"
     And enter NINO "AB123456A"
     And click on submit button
     Then user is navigated to the page with title "Digital Disclosure Service"
@@ -68,7 +63,6 @@ Feature: A UK tax payer is able to submit high confidence level & valid NINO to 
     Given I navigate to authority wizard page
     When I select <Value> from drop down "confidenceLevel"
     And I select "Organisation" from drop down "affinityGroupSelect"
-    And I select "strong" from drop down "credentialStrength"
     And click on submit button
     Then user is navigated to the page with title "Digital Disclosure Service"
     Then the page title should be "Digital Disclosure Service - Digital Disclosure Service - GOV.UK"
