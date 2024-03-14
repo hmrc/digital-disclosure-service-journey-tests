@@ -1,7 +1,7 @@
 lazy val testSuite = (project in file("."))
   .enablePlugins(SbtAutoBuildPlugin)
   .settings(
-      name := "dds2-ui-framework",
+      name := "digital-disclosure-service-journey-tests",
       version := "1.0",
       scalaVersion := "2.13.12",
       scalacOptions ++= Seq("-feature"),
