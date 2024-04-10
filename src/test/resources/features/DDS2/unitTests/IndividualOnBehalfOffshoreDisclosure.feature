@@ -77,46 +77,46 @@ Feature: An Individual - On behalf of - is able to notify and submit offshore di
     And click on Save and Continue button
     Then page navigates to "What is the reasonable excuse for not notifying HMRC about a tax liability?"
     And I enter "Reasonable excuse" in the reason for excuse text area
-    And I enter "tax year ending 2019" in the "Which tax years does this apply to?for not notifying HMRC" text box field
+    And I enter "tax year ending 2020" in the "Which tax years does this apply to?for not notifying HMRC" text box field
     And click on Save and Continue button
     Then page navigates to "What reasonable care was taken when submitting the inaccurate return?"
     And I enter "Reasonable care" in the reasonable care text area
-    And I enter "tax year ending 2019" in the "Which tax years does this apply to?" text box field
+    And I enter "tax year ending 2020" in the "Which tax years does this apply to?" text box field
     And click on Save and Continue button
     Then page navigates to "What is the reasonable excuse for not filing a return?"
     And I enter "Reasonable excuse" in the reasonable excuse text area
-    And I enter "tax year ending 2019" in the "Which tax years does this apply to?" text box field
+    And I enter "tax year ending 2020" in the "Which tax years does this apply to?" text box field
     And click on Save and Continue button
     Then page navigates to "Which year does this offshore disclosure relate to?"
-    And I select Checkbox "6 April 2021 to 5 April 2022" at Position "1"
-    And I select Checkbox "6 April 2020 to 5 April 2021" at Position "2"
+    And I select Checkbox "6 April 2022 to 5 April 2023" at Position "1"
+    And I select Checkbox "6 April 2021 to 5 April 2022" at Position "2"
     And click on Save and Continue button
     When I enter country or territory "United Arab Emirates" and select "United Arab Emirates"
     And click on Save and Continue button
     And I select Radio Button "No" at Position "2"
     And click on Save and Continue button
-    Then page navigates to "Offshore liabilities — Tax year 6 April 2021 to 5 April 2022"
+    Then page navigates to "Offshore liabilities — Tax year 6 April 2022 to 5 April 2023"
     And I enter "10" in the "income" text box field
     And I enter "20" in the "chargeableTransfers" text box field
     And I enter "30" in the "capitalGains" text box field
     And I enter "40" in the "unpaidTax" text box field
     And I enter "50" in the "interest" text box field
     And I enter "50" in the "penaltyRate" text box field
-    And I enter "Penalty Rate Reason for year 2021" in the "penaltyRateReason" text box field
+    And I enter "Penalty Rate Reason for year 2022" in the "penaltyRateReason" text box field
     And I enter "undeclaredIncomeOrGain" in the "undeclaredIncomeOrGain" text box field
     And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
-    Then page navigates to "How much foreign tax credit relief have you deducted from your calculations for the tax year ending 2022, in pounds?"
+    Then page navigates to "How much foreign tax credit relief have you deducted from your calculations for the tax year ending 2023, in pounds?"
     And I enter "10" in the TextBox field
     And click on Save and Continue button
-    Then page navigates to "Offshore liabilities — Tax year 6 April 2020 to 5 April 2021"
+    Then page navigates to "Offshore liabilities — Tax year 6 April 2021 to 5 April 2022"
     And I enter "70" in the "income" text box field
     And I enter "80" in the "chargeableTransfers" text box field
     And I enter "90" in the "capitalGains" text box field
     And I enter "10" in the "unpaidTax" text box field
     And I enter "20" in the "interest" text box field
     And I enter "30" in the "penaltyRate" text box field
-    And I enter "Penalty Rate Reason for year 2020" in the "penaltyRateReason" text box field
+    And I enter "Penalty Rate Reason for year 2021" in the "penaltyRateReason" text box field
     And I enter "undeclaredIncomeOrGain" in the "undeclaredIncomeOrGain" text box field
     And I select Radio Button "No" at Position "2"
     And click on Save and Continue button
@@ -249,20 +249,20 @@ Feature: An Individual - On behalf of - is able to notify and submit offshore di
     And click on Save and Continue button
     Then page navigates to "Which year does this offshore disclosure relate to?"
     And page should display checkboxes for the "20" tax years before the current tax year
-    When I select Checkbox "6 April 2021 to 5 April 2022" at Position "1"
+    When I select Checkbox "6 April 2022 to 5 April 2023" at Position "1"
     And click on Save and Continue button
     When I enter country or territory "United Arab Emirates" and select "United Arab Emirates"
     And click on Save and Continue button
     And I select Radio Button "No" at Position "2"
     And click on Save and Continue button
-    Then page navigates to "Offshore liabilities — Tax year 6 April 2021 to 5 April 2022"
+    Then page navigates to "Offshore liabilities — Tax year 6 April 2022 to 5 April 2023"
     And I enter "10" in the "income" text box field
     And I enter "20" in the "chargeableTransfers" text box field
     And I enter "30" in the "capitalGains" text box field
     And I enter "40" in the "unpaidTax" text box field
     And I enter "50" in the "interest" text box field
     And I enter "50" in the "penaltyRate" text box field
-    And I enter "Penalty Rate Reason for year 2021" in the "penaltyRateReason" text box field
+    And I enter "Penalty Rate Reason for year 2022" in the "penaltyRateReason" text box field
     And I enter "undeclaredIncomeOrGain" in the "undeclaredIncomeOrGain" text box field
     And I select Radio Button "No" at Position "2"
     And click on Save and Continue button
@@ -299,7 +299,7 @@ Feature: An Individual - On behalf of - is able to notify and submit offshore di
     When I select Checkbox "The individual submitted an inaccurate return because they did not take reasonable care." at Position "4"
     And click on Save and Continue button
     Then page navigates to "Which year does this offshore disclosure relate to?"
-    When I select Checkbox "Any tax year before 6 April 2013" at Position "10"
+    When I select Checkbox "Any tax year before 6 April 2013" at Position "11"
     And click on Save and Continue button
     Then page navigates to "Can you tell us more about any tax owed before 6 April 2013?"
     And I enter "Provide the amount, when it was owed, and where the income or gain came from" in the text area
