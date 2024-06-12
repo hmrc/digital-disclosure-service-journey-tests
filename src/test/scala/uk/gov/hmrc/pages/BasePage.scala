@@ -27,7 +27,6 @@ import org.scalatest.{Assertion, Assertions}
 import org.scalatestplus.selenium.WebBrowser
 import uk.gov.hmrc.domain.Generator
 import uk.gov.hmrc.driver.BrowserDriver
-import uk.gov.hmrc.utils.MessageReader.getElement
 import uk.gov.hmrc.utils.{Configuration, TestConfiguration, UrlHelper}
 
 import java.time.Duration
@@ -73,17 +72,9 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
 
   def findByLinkText(linkText: String): WebElement = driver.findElement(By.linkText(linkText))
 
-  def findByElement(elementId: String): WebElement = driver.findElement(By.id(getElement(elementId)))
-
-  def findByXPath(xpath: String): WebElement = driver.findElement(By.xpath(getElement(xpath)))
-
-  def findByclassName(elementclassName: String): WebElement = driver.findElement(By.className(getElement(elementclassName)))
-
   def clickOnElement(id: String): Unit = findByID(id).click()
 
   def checkURL(url: String): Unit = driver.getCurrentUrl.endsWith(url)
-
-  def clickOnElementByClassName(className: String): Unit = findByclassName(className).click()
 
   def waitForPresenceOfElement(element: By): WebElement = webdriverWait.until(ExpectedConditions.elementToBeClickable(element))
 

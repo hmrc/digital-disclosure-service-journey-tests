@@ -1,5 +1,4 @@
 lazy val testSuite = (project in file("."))
-  .enablePlugins(SbtAutoBuildPlugin)
   .settings(
       name := "digital-disclosure-service-journey-tests",
       version := "1.0",
@@ -7,5 +6,5 @@ lazy val testSuite = (project in file("."))
       scalacOptions ++= Seq("-feature"),
       libraryDependencies ++= Dependencies.test,
       //The testOptions from SbtAutoBuildPlugin supports only ScalaTest. Resetting testOptions for Cucumber Tests.
-      testOptions in Test := Seq.empty
+      Test / testOptions := Seq.empty
   )
