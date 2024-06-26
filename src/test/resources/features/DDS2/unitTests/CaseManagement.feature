@@ -42,14 +42,3 @@ Feature: An agent is able to edit and create case
     Then on the YouHaveStartedNotification page I click Make a disclosure and click save and continue
     Then on the ListOfTasks page I click Return to view, edit or create a case
     And verify on the ViewEditCreateCase page
-
-
-
-
-
-
-
-
-
-
-
