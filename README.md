@@ -18,9 +18,9 @@ Start `DDS_ALL` services as follows:
 sm2 --start DDS_ALL
 ```
 
-### Docker Selenium Grid
+### Selenium Manager
 
-Confirm that [docker-selenium-grid](https://github.com/hmrc/docker-selenium-grid) is up-to-date and follow the provided [instructions](https://github.com/hmrc/docker-selenium-grid/blob/main/README.md).
+Selenium Manager now used to manage browser automation. No pre-requisites required.
 
 ## Tests
 
