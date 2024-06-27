@@ -19,7 +19,7 @@ package uk.gov.hmrc.pages
 import io.cucumber.scala.{EN, ScalaDsl}
 import org.apache.commons.lang3.StringUtils
 import org.junit.Assert
-import org.openqa.selenium.support.ui.{ExpectedConditions, Select, WebDriverWait}
+import org.openqa.selenium.support.ui.{ExpectedCondition, ExpectedConditions, Select, WebDriverWait}
 import org.openqa.selenium.{By, JavascriptExecutor, WebElement}
 import org.scalatest.concurrent.ScalaFutures
 import org.scalatest.matchers.should.Matchers.convertToAnyShouldWrapper
@@ -423,6 +423,11 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
 
   def sendOfferAndDisclosure(): Unit = {
     findByID("send-disclosure").click()
+  }
+
+  def waitFor[T](condition: ExpectedCondition[T]): T = {
+    val wait = new WebDriverWait(driver, Duration.ofSeconds(10))
+    wait.until(condition)
   }
 
   def verifyDisplayedCheckbox(expectedCount: String): Unit = {

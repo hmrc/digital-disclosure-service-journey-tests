@@ -15,6 +15,8 @@
  */
 
 package uk.gov.hmrc.stepdefs
+import org.openqa.selenium.By
+import org.openqa.selenium.support.ui.ExpectedConditions
 import uk.gov.hmrc.pages.{BasePage, DiscloseOffshoreLiabilitiesPage}
 
 class DiscloseOffshoreLiabilitiesStepDef extends BasePage with DiscloseOffshoreLiabilitiesPage {
@@ -60,6 +62,7 @@ class DiscloseOffshoreLiabilitiesStepDef extends BasePage with DiscloseOffshoreL
   }
 
   When("""I select Radio Button {string} at Position {string}""") { (string: String, positionNum: String) =>
+    waitFor(ExpectedConditions.elementToBeClickable(By.className("govuk-radios__item")))
     clickOnRadioButton(string,positionNum)
   }
 
