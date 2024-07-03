@@ -1,0 +1,8 @@
+{
+  "exclusions": [
+    {
+      "path": "http://localhost:9028/lookup-address",
+      "reason": "Address Lookup FE service out of scope for DDS a11y issues."
+    }
+  ]
+}
