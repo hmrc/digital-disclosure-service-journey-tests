@@ -259,6 +259,10 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
     Assert.assertTrue("Heading is not Verified. Expected:  "+ expectedQHeader +  "--- Actual:  " + actualQHeader, expectedQHeader.contains(actualQHeader))
   }
 
+  def verifyPageHeadingContains(heading: String): Unit = {
+    driver.getTitle.contains(heading)
+  }
+
   def verifySubPageHeading(expectedQHeader: String): Unit = {
     val element = driver.findElement(By.xpath("//*[@class='govuk-fieldset__legend  govuk-fieldset__legend--m']"))
     val actualQHeader = element.getText

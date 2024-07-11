@@ -86,6 +86,10 @@ class DiscloseOffshoreLiabilitiesStepDef extends BasePage with DiscloseOffshoreL
     verifyPageHeading(string)
   }
 
+  Then("""page heading contains {string}""") { (heading: String) =>
+    verifyPageHeadingContains(heading)
+  }
+
   Then("""I should navigate to Radio button {string} at Position {string}""") { (string: String, positionNum: String) =>
     verifyFocusOnRadioButton(string,positionNum)
   }
