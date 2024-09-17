@@ -67,6 +67,7 @@ class DiscloseOffshoreLiabilitiesStepDef extends BasePage with DiscloseOffshoreL
   }
 
   When("""I select Checkbox {string} at Position {string}""") { (string: String, positionNum: String) =>
+    waitFor(ExpectedConditions.elementToBeClickable(By.className("govuk-checkboxes__item")))
     clickOnCheckBox(string, positionNum)
   }
 
