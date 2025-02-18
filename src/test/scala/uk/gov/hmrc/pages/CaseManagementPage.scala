@@ -72,8 +72,12 @@ trait CaseManagementPage extends BasePage {
   def selectValueFromConfidenceLevelDropdown(stringtoSelect: String): Unit = {
     val element = driver.findElements(By.xpath("//select[contains(@id,'confidenceLevel')]/option"))
     val count = element.size()
-    Assert.assertTrue("Dropdown is displayed", element.get(count - 1).getText.equals(stringtoSelect))
-    element.get(count - 1).click()
+    Assert.assertTrue("Dropdown is not displayed", count > 0)
+    val matchingOption = (0 until count).find(i => element.get(i).getText == stringtoSelect)
+    matchingOption match {
+      case Some(index) => element.get(index).click()
+      case None => Assert.fail(s"Option '$stringtoSelect' not found in dropdown")
+    }
   }
 
   def clickOnSubmitButtonOnWizardPage(): Unit = {
