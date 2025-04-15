@@ -89,7 +89,7 @@ Feature: An Individual - On behalf of - is able to notify and submit offshore di
     And click on Save and Continue button
     Then page navigates to "Which year does this offshore disclosure relate to?"
     And I select Checkbox "6 April 2022 to 5 April 2023" at Position "1"
-    And I select Checkbox "6 April 2021 to 5 April 2022" at Position "2"
+    And I select Checkbox "6 April 2022 to 5 April 2023" at Position "2"
     And click on Save and Continue button
     When I enter country or territory "United Arab Emirates" and select "United Arab Emirates"
     And click on Save and Continue button

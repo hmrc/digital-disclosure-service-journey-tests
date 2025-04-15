@@ -75,7 +75,7 @@ Feature: A Company tax payer is able to notify and submit offshore disclosure
     And I enter "tax year ending 2019" in the "Which tax years does this apply to?" text box field
     And click on Save and Continue button
     Then page navigates to "Which year does this offshore disclosure relate to?"
-    And I select Checkbox "6 April 2022 to 5 April 2023" at Position "1"
+    And I select Checkbox "6 April 2023 to 5 April 2024" at Position "1"
     And I select Checkbox "6 April 2020 to 5 April 2021" at Position "3"
     And click on Save and Continue button
     Then page navigates to "You have not included the tax year ending 2022"
@@ -89,7 +89,7 @@ Feature: A Company tax payer is able to notify and submit offshore disclosure
     And click on Save and Continue button
     And I select Radio Button "No" at Position "2"
     And click on Save and Continue button
-    Then page navigates to "Offshore liabilities — Tax year 6 April 2022 to 5 April 2023"
+    Then page navigates to "Offshore liabilities — Tax year 6 April 2023 to 5 April 2024"
     And I enter "10" in the "income" text box field
     And I enter "20" in the "chargeableTransfers" text box field
     And I enter "30" in the "capitalGains" text box field
@@ -100,7 +100,7 @@ Feature: A Company tax payer is able to notify and submit offshore disclosure
     And I enter "Penalty Rate Reason for year 2021" in the "penaltyRateReason" text box field
     And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
-    Then page navigates to "How much foreign tax credit relief have you deducted from your calculations for the tax year ending 2023, in pounds?"
+    Then page navigates to "How much foreign tax credit relief have you deducted from your calculations for the tax year ending 2024, in pounds?"
     And I enter "10" in the TextBox field
     And click on Save and Continue button
     Then page navigates to "Offshore liabilities — Tax year 6 April 2020 to 5 April 2021"

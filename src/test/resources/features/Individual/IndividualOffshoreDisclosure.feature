@@ -211,7 +211,7 @@ Feature: An Individual is able to notify and submit offshore disclosure
     And status is marked as "Completed" for field "Edit offshore liability details"
 
   Scenario: Individual - Complete offshore disclosure journey - Nil disclosure
-    Given I am on "You have sent your notification" page 
+    Given I am on "You have sent your notification" page
     And I navigate to "make-a-disclosure" specific page
     When I click on Make a disclosure button
     And click on Hyperlink "Make your declaration"

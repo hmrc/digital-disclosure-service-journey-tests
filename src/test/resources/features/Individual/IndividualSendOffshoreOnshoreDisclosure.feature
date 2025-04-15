@@ -92,7 +92,7 @@ Feature: An Individual - On behalf of - is able to notify and submit offshore di
     And click on Save and Continue button
     Then page navigates to "Which year does this offshore disclosure relate to?"
     And page should display checkboxes for the "20" tax years before the current tax year
-    And I select Checkbox "6 April 2022 to 5 April 2023" at Position "1"
+    And I select Checkbox "6 April 2023 to 5 April 2024" at Position "1"
     And I select Checkbox "6 April 2020 to 5 April 2021" at Position "3"
     And click on Save and Continue button
     Then page navigates to "You have not included the tax year ending 2022"

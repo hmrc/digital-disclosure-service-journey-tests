@@ -92,7 +92,7 @@ Feature: An Individual - On behalf of - is able to notify and submit onshore dis
     And click on Save and Continue button
     Then page navigates to "Which year does this onshore disclosure relate to?"
     And page should display checkboxes for the "4" tax years before the current tax year
-    And I select Checkbox "6 April 2022 to 5 April 2023" at Position "1"
+    And I select Checkbox "6 April 2023 to 5 April 2024" at Position "1"
     And I select Checkbox "6 April 2021 to 5 April 2022" at Position "2"
     And click on Save and Continue button
     Then page navigates to "Onshore liabilities — Tax year 6 April 2022 to 5 April 2023"

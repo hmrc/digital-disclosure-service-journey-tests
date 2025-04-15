@@ -71,8 +71,8 @@ Feature: A trust is able to notify and submit onshore disclosure
     And click on Save and Continue button
     Then page navigates to "Which year does this onshore disclosure relate to?"
     And page should display checkboxes for the "20" tax years before the current tax year
-    When I select Checkbox "6 April 2022 to 5 April 2023" at Position "1"
-    And I select Checkbox "6 April 2018 to 5 April 2019" at Position "5"
+    When I select Checkbox "6 April 2023 to 5 April 2024" at Position "1"
+    And I select Checkbox "6 April 2019 to 5 April 2020" at Position "5"
     And click on Save and Continue button
     Then page navigates to "You have not selected certain years"
     When I enter "Do not want to include" in yearNotSelected text box field
@@ -192,28 +192,28 @@ Feature: A trust is able to notify and submit onshore disclosure
     Then page navigates to "How many properties do you currently let out?"
     When I enter "2" in property count text box field
     And click on Save and Continue button
-    Then page navigates to "Onshore liabilities — Tax year 6 April 2022 to 5 April 2023"
+    Then page navigates to "Onshore liabilities — Tax year 6 April 2024 to 5 April 2025"
     And I enter "10" in the "nonBusinessIncome" text box field
     And I enter "10" in the "lettingIncome" text box field
     And I enter "20" in the "unpaidTax" text box field
     And I enter "20" in the "niContributions" text box field
     And I enter "50" in the "interest" text box field
     And I enter "50" in the "penaltyRate" text box field
-    And I enter "Penalty Rate Reason for year 2021" in the "penaltyRateReason" text box field
+    And I enter "Penalty Rate Reason for year 2022" in the "penaltyRateReason" text box field
     And I enter "undeclared Income Or Gain" in the "undeclaredIncomeOrGain" text box field
     And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
-    Then page navigates to "How much residential finance costs were used to calculate the tax reduction for the tax year ending 2023, in pounds?"
+    Then page navigates to "How much residential finance costs were used to calculate the tax reduction for the tax year ending 2025, in pounds?"
     And I enter "5" in the TextBox field
     And click on Save and Continue button
-    Then page navigates to "Onshore liabilities — Tax year 6 April 2018 to 5 April 2019"
+    Then page navigates to "Onshore liabilities — Tax year 6 April 2019 to 5 April 2020"
     And I enter "10" in the "nonBusinessIncome" text box field
     And I enter "10" in the "lettingIncome" text box field
     And I enter "20" in the "unpaidTax" text box field
     And I enter "20" in the "niContributions" text box field
     And I enter "50" in the "interest" text box field
     And I enter "50" in the "penaltyRate" text box field
-    And I enter "Penalty Rate Reason for year 2018" in the "penaltyRateReason" text box field
+    And I enter "Penalty Rate Reason for year 2019" in the "penaltyRateReason" text box field
     And I enter "undeclared Income Or Gain" in the "undeclaredIncomeOrGain" text box field
     And I select Radio Button "No" at Position "2"
     And click on Save and Continue button
@@ -242,9 +242,9 @@ Feature: A trust is able to notify and submit onshore disclosure
     And click on Save and Continue button
     Then page navigates to "Which year does this onshore disclosure relate to?"
     And page should display checkboxes for the "6" tax years before the current tax year
-    When I select Checkbox "Any tax year before 6 April 2018" at Position "6"
+    When I select Checkbox "Any tax year before 6 April 2019" at Position "6"
     And click on Save and Continue button
-    Then page navigates to "Can you tell us more about any tax owed before 6 April 2018?"
+    Then page navigates to "Can you tell us more about any tax owed before 6 April 2020?"
     When I enter "tax owed details" in tax owed reason text box field
     And click on Save and Continue button
     Then page navigates to "There are no onshore liabilities to disclose"
@@ -254,4 +254,3 @@ Feature: A trust is able to notify and submit onshore disclosure
     When click on continue button
     Then page navigates to "List of tasks"
     And status is marked as "Completed" for field "Edit onshore liability details"
-
