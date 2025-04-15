@@ -192,7 +192,7 @@ Feature: A trust is able to notify and submit onshore disclosure
     Then page navigates to "How many properties do you currently let out?"
     When I enter "2" in property count text box field
     And click on Save and Continue button
-    Then page navigates to "Onshore liabilities — Tax year 6 April 2024 to 5 April 2025"
+    Then page navigates to "Onshore liabilities — Tax year 6 April 2023 to 5 April 2024"
     And I enter "10" in the "nonBusinessIncome" text box field
     And I enter "10" in the "lettingIncome" text box field
     And I enter "20" in the "unpaidTax" text box field
@@ -203,7 +203,7 @@ Feature: A trust is able to notify and submit onshore disclosure
     And I enter "undeclared Income Or Gain" in the "undeclaredIncomeOrGain" text box field
     And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
-    Then page navigates to "How much residential finance costs were used to calculate the tax reduction for the tax year ending 2025, in pounds?"
+    Then page navigates to "How much residential finance costs were used to calculate the tax reduction for the tax year ending 2024, in pounds?"
     And I enter "5" in the TextBox field
     And click on Save and Continue button
     Then page navigates to "Onshore liabilities — Tax year 6 April 2019 to 5 April 2020"
@@ -244,7 +244,7 @@ Feature: A trust is able to notify and submit onshore disclosure
     And page should display checkboxes for the "6" tax years before the current tax year
     When I select Checkbox "Any tax year before 6 April 2019" at Position "6"
     And click on Save and Continue button
-    Then page navigates to "Can you tell us more about any tax owed before 6 April 2020?"
+    Then page navigates to "Can you tell us more about any tax owed before 6 April 2019?"
     When I enter "tax owed details" in tax owed reason text box field
     And click on Save and Continue button
     Then page navigates to "There are no onshore liabilities to disclose"
