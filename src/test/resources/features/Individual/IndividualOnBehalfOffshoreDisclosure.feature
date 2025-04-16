@@ -297,7 +297,7 @@ Feature: An Individual - On behalf of - is able to notify and submit offshore di
     When I select Checkbox "The individual submitted an inaccurate return because they did not take reasonable care." at Position "4"
     And click on Save and Continue button
     Then page navigates to "Which year does this offshore disclosure relate to?"
-    When I select Checkbox "Any tax year before 6 April 2013"
+    When I select Checkbox "Any tax year before 6 April 2013" at Position "12"
     And click on Save and Continue button
     Then page navigates to "Can you tell us more about any tax owed before 6 April 2013?"
     And I enter "Provide the amount, when it was owed, and where the income or gain came from" in the text area
