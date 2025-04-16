@@ -78,7 +78,7 @@ Feature: A Company tax payer is able to notify and submit offshore disclosure
     And I select Checkbox "6 April 2023 to 5 April 2024" at Position "1"
     And I select Checkbox "6 April 2021 to 5 April 2022" at Position "3"
     And click on Save and Continue button
-    Then page navigates to "You have not included the tax year ending 2022"
+    Then page navigates to "You have not included the tax year ending 2023"
     And I enter "Reason for including year in the disclosure" in the text area
     And click on Save and Continue button
     When I enter country or territory "United Arab Emirates" and select "United Arab Emirates"

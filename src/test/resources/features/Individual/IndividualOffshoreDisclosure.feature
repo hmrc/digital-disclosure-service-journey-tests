@@ -79,7 +79,7 @@ Feature: An Individual is able to notify and submit offshore disclosure
     And I select Checkbox "6 April 2023 to 5 April 2024" at Position "1"
     And I select Checkbox "6 April 2021 to 5 April 2022" at Position "3"
     And click on Save and Continue button
-    Then page navigates to "You have not included the tax year ending 2022"
+    Then page navigates to "You have not included the tax year ending 2023"
     And I enter "Reason for including year in the disclosure" in the text area
     And click on Save and Continue button
     When I enter country or territory "United Arab Emirates" and select "United Arab Emirates"
@@ -155,7 +155,7 @@ Feature: An Individual is able to notify and submit offshore disclosure
     And click on Save and Continue button
     Then page navigates to "Which year does this offshore disclosure relate to?"
     And I select Checkbox "6 April 2023 to 5 April 2024" at Position "1"
-    And I select Checkbox "6 April 2021 to 5 April 2022" at Position "4"
+    And I select Checkbox "6 April 2020 to 5 April 2021" at Position "4"
     And click on Save and Continue button
     Then page navigates to "You have not selected certain years"
     And I enter "Reason for including year in the disclosure" in the text area
@@ -182,7 +182,7 @@ Feature: An Individual is able to notify and submit offshore disclosure
     Then page navigates to "How much foreign tax credit relief have you deducted from your calculations for the tax year ending 2024, in pounds?"
     And I enter "10" in the TextBox field
     And click on Save and Continue button
-    Then page navigates to "Offshore liabilities — Tax year 6 April 2019 to 5 April 2020"
+    Then page navigates to "Offshore liabilities — Tax year 6 April 2020 to 5 April 2021"
     And I enter "70" in the "income" text box field
     And I enter "80" in the "chargeableTransfers" text box field
     And I enter "90" in the "capitalGains" text box field
@@ -225,7 +225,7 @@ Feature: An Individual is able to notify and submit offshore disclosure
     When I select Checkbox "I have submitted an inaccurate return because I did not take reasonable care." at Position "4"
     And click on Save and Continue button
     Then page navigates to "Which year does this offshore disclosure relate to?"
-    When I select Checkbox "6 April 2013 to 5 April 2014" at Position "11"
+    When I select Checkbox "Any tax year before 6 April 2013" at Position "12"
     And click on Save and Continue button
     Then page navigates to "Can you tell us more about any tax owed before 6 April 2013?"
     And I enter "Provide the amount, when it was owed, and where the income or gain came from" in the text area
@@ -252,7 +252,7 @@ Feature: An Individual is able to notify and submit offshore disclosure
     When I select Checkbox "I have submitted an inaccurate return because I did not take reasonable care." at Position "4"
     And click on Save and Continue button
     Then page navigates to "Which year does this offshore disclosure relate to?"
-    When I select Checkbox "6 April 2013 to 5 April 2014" at Position "12"
+    When I select Checkbox "Any tax year before 6 April 2013" at Position "12"
     And click on Save and Continue button
     Then page navigates to "Can you tell us more about any tax owed before 6 April 2013?"
     And I enter "Provide the amount, when it was owed, and where the income or gain came from" in the text area
