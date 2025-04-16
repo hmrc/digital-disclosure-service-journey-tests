@@ -92,10 +92,10 @@ Feature: An Individual - On behalf of - is able to notify and submit onshore dis
     And click on Save and Continue button
     Then page navigates to "Which year does this onshore disclosure relate to?"
     And page should display checkboxes for the "4" tax years before the current tax year
-    And I select Checkbox "6 April 2022 to 5 April 2023" at Position "1"
-    And I select Checkbox "6 April 2021 to 5 April 2022" at Position "2"
+    And I select Checkbox "6 April 2023 to 5 April 2024" at Position "1"
+    And I select Checkbox "6 April 2022 to 5 April 2023" at Position "2"
     And click on Save and Continue button
-    Then page navigates to "Onshore liabilities — Tax year 6 April 2022 to 5 April 2023"
+    Then page navigates to "Onshore liabilities — Tax year 6 April 2023 to 5 April 2024"
     And I enter "10" in the "gains" text box field
     And I enter "20" in the "unpaidTax" text box field
     And I enter "20" in the "niContributions" text box field
@@ -104,7 +104,7 @@ Feature: An Individual - On behalf of - is able to notify and submit onshore dis
     And I enter "Penalty Rate Reason for year 2022" in the "penaltyRateReason" text box field
     And I enter "undeclared Income Or Gain" in the "undeclaredIncomeOrGain" text box field
     And click on Save and Continue button
-    Then page navigates to "Onshore liabilities — Tax year 6 April 2021 to 5 April 2022"
+    Then page navigates to "Onshore liabilities — Tax year 6 April 2022 to 5 April 2023"
     And I enter "70" in the "gains" text box field
     And I enter "80" in the "unpaidTax" text box field
     And I enter "90" in the "niContributions" text box field
