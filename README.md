@@ -56,3 +56,12 @@ sbt scalafmtAll
 ## License
 
 This code is open source software licensed under the [Apache 2.0 License]("http://www.apache.org/licenses/LICENSE-2.0.html").
+
+## Local Debugging
+
+When local testing you may come across the following error:
+* Service Unavailable in the browser
+* Forbidden error in the terminal: Unexpected response from DDS Store, status: 403, body: {"statusCode":403,"message":"Forbidden"}
+
+The fix for this is to drop the collection 'internal-auth' from your local Mongo Database (usually in Studio3T).
+Then restart all the services using Service Manager 2, and try again.
