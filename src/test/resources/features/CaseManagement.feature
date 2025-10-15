@@ -1,4 +1,4 @@
-@journeytests
+@journeytests1
 Feature: An agent is able to edit and create case
 
   Scenario:Case validation - Edit and create a new case
