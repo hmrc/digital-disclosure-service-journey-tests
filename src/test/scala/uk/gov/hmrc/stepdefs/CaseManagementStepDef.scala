@@ -18,7 +18,11 @@ package uk.gov.hmrc.stepdefs
 
 import io.cucumber.datatable.DataTable
 import org.openqa.selenium.By
+import org.scalatest.concurrent.Eventually.eventually
+import org.scalatest.time.{Seconds, Span}
 import uk.gov.hmrc.pages.{BasePage, CaseManagementPage}
+
+import java.util.concurrent.TimeUnit
 
 class CaseManagementStepDef extends BasePage with CaseManagementPage {
 
@@ -35,9 +39,11 @@ class CaseManagementStepDef extends BasePage with CaseManagementPage {
   }
 
   Then("""^on the (.*) page I click (.*) and click save and continue""") { (prettyUrl: String, answer: String) =>
-    urlVerify(prettyUrl)
-    selectServiceType(answer)
-    clickBy(By.className("govuk-button"))
+    eventually(timeout(Span(25, Seconds)), interval(Span(5, Seconds))) {
+      urlVerify(prettyUrl)
+      selectServiceType(answer)
+      driver.findElement(By.id("continue")).click()
+    }
   }
 
   Given("""^the values within the datatable are verified$""") {
@@ -47,8 +53,8 @@ class CaseManagementStepDef extends BasePage with CaseManagementPage {
 
   Then("""^on the (.*) page I select (.*) and click save and continue""") {
     (prettyUrl: String, option: String) =>
-      urlVerify(prettyUrl)
 
+      urlVerify(prettyUrl)
       option match {
         case "Yes" => clickYesNoSelection(option)
         case "No" => clickYesNoSelection(option)
@@ -58,13 +64,12 @@ class CaseManagementStepDef extends BasePage with CaseManagementPage {
         case "Yes, I am the executor or administrator" => driver.findElement(By.id("value_0")).click()
         case "Other capital gains" => driver.findElement(By.id("value_5")).click()
       }
-      clickBy(By.className("govuk-button"))
+         driver.findElement(By.id("continue")).click()
   }
 
   Then("""^on the (.*) page I click Return to view, edit or create a case""") {
     (prettyUrl: String) =>
       urlVerify(prettyUrl)
-
       clickBy(By.id("case-management-link"))
   }
 
@@ -79,10 +84,11 @@ class CaseManagementStepDef extends BasePage with CaseManagementPage {
   }
 
   Then("""^on the (.*) page I enter (.*) into the textbox and click save and continue""") { (prettyUrl: String, details: String) =>
-    urlVerify(prettyUrl)
-
-    enterCustomerDetails(details)
-    clickBy(By.className("govuk-button"))
+    eventually(timeout(Span(15, Seconds)), interval(Span(5, Seconds))) {
+      urlVerify(prettyUrl)
+      enterCustomerDetails(details)
+      driver.findElement(By.id("continue")).click()
+    }
   }
 
   When("""^on the (.*) page I click on the header hyperlink""") { (prettyUrl: String) =>
