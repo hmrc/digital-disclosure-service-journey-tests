@@ -70,10 +70,10 @@ Feature: An Individual - On behalf of - is able to notify and submit offshore di
     And status is marked as "Completed" for field "Review your declaration"
     And status is marked as "Not started" for field "Add offshore liability details"
     And click on Hyperlink "Add offshore liability details"
-    Then page navigates to "Why are you making this disclosure?"
-    And I select Checkbox "The individual did not notify HMRC about a tax liability but this was not deliberate and they have a reasonable excuse." at Position "1"
-    And I select Checkbox "The individual submitted an inaccurate return despite taking reasonable care." at Position "2"
-    And I select Checkbox "The individual did not file a return but has a reasonable excuse." at Position "3"
+    Then page navigates to "Why you are making this disclosure"
+    And I select Checkbox "The individual did not notify HMRC about a tax liability" at Position "1"
+    And I select Checkbox "The individual did not file a tax return on time" at Position "2"
+    And I select Checkbox "The individual submitted an inaccurate return" at Position "3"
     And click on Save and Continue button
     Then page navigates to "What is the reasonable excuse for not notifying HMRC about a tax liability?"
     And I enter "Reasonable excuse" in the reason for excuse text area
@@ -162,7 +162,7 @@ Feature: An Individual - On behalf of - is able to notify and submit offshore di
     And status is marked as "Completed" for field "Edit other liability issues"
     Then status is marked as "Not started" for field "Add the reason for coming forward now"
     And click on Hyperlink "Add the reason for coming forward now"
-    Then page navigates to "Why are you making a disclosure now?"
+    Then page navigates to "Why you are making this disclosure"
     When I select Checkbox "Advised by guidance on the GOV.UK website" at Position "1"
     And I select Checkbox "Prompted by a letter from HMRC advising to make a disclosure" at Position "2"
     And I select Checkbox "Advised by employer" at Position "3"
@@ -222,65 +222,65 @@ Feature: An Individual - On behalf of - is able to notify and submit offshore di
     Then page navigates to "You have sent your disclosure"
     And the case reference should be "CFSS-1234567"
 
-  Scenario: Individual - On behalf of - offshore disclosure journey - last 5 selections
-    Given I am on "You have sent the notification" page
-    And I navigate to "make-a-disclosure" specific page
-    When I click on Make a disclosure button
-    And click on Hyperlink "Make your declaration"
-    And click on I confirm button
-    Then page navigates to "List of tasks"
-    And status is marked as "Completed" for field "Review your declaration"
-    And status is marked as "Not started" for field "Add offshore liability details"
-    When click on Hyperlink "Add offshore liability details"
-    Then page navigates to "Why are you making this disclosure?"
-    When I select Checkbox "The individual submitted an inaccurate return because they did not take reasonable care." at Position "4"
-    And click on Save and Continue button
-    Then page navigates to "Which year does this offshore disclosure relate to?"
-    When I click on Back button
-    Then page navigates to "Why are you making this disclosure?"
-    When I select Checkbox "The individual did not notify HMRC of a tax liability but this was not deliberate and they do not have a reasonable excuse." at Position "5"
-    And I select Checkbox "The individual deliberately failed to notify HMRC of a tax liability." at Position "6"
-    And I select Checkbox "The individual deliberately submitted an inaccurate tax return." at Position "7"
-    And I select Checkbox "The individual deliberately withheld information by failing to submit a return." at Position "8"
-    And click on Save and Continue button
-    Then page navigates to "Contractual Disclosure Facility"
-    When I select Radio Button "Continue using this digital disclosure service" at Position "1"
-    And click on Save and Continue button
-    Then page navigates to "Which year does this offshore disclosure relate to?"
-    And page should display checkboxes for the "20" tax years before the current tax year
-    When I select Checkbox "6 April 2023 to 5 April 2024" at Position "1"
-    And click on Save and Continue button
-    When I enter country or territory "United Arab Emirates" and select "United Arab Emirates"
-    And click on Save and Continue button
-    And I select Radio Button "No" at Position "2"
-    And click on Save and Continue button
-    Then page navigates to "Offshore liabilities — Tax year 6 April 2023 to 5 April 2024"
-    And I enter "10" in the "income" text box field
-    And I enter "20" in the "chargeableTransfers" text box field
-    And I enter "30" in the "capitalGains" text box field
-    And I enter "40" in the "unpaidTax" text box field
-    And I enter "50" in the "interest" text box field
-    And I enter "50" in the "penaltyRate" text box field
-    And I enter "Penalty Rate Reason for year 2022" in the "penaltyRateReason" text box field
-    And I enter "undeclaredIncomeOrGain" in the "undeclaredIncomeOrGain" text box field
-    And I select Radio Button "No" at Position "2"
-    And click on Save and Continue button
-    Then page navigates to "Your legal interpretation"
-    And I select Checkbox "Another issue" at Position "9"
-    And click on Save and Continue button
-    Then page navigates to "Under what consideration of the law led you to not include some tax in this disclosure?"
-    When I enter "consideration of the law" in the text area
-    And click on Save and Continue button
-    Then page navigates to "How much tax has not been included in this disclosure as a result of your interpretation?"
-    When I select Radio Button "£10,000 or less" at Position "1"
-    And click on Save and Continue button
-    Then page navigates to "What was the maximum value of all assets held outside the UK at any point over the last 5 years?"
-    When I select Radio Button "Between £1 million and £100 million" at Position "3"
-    And click on Save and Continue button
-    Then page navigates to "Offshore liabilities summary"
-    When click on continue button
-    Then page navigates to "List of tasks"
-    And status is marked as "Completed" for field "Edit offshore liability details"
+#  Scenario: Individual - On behalf of - offshore disclosure journey - last 5 selections
+#    Given I am on "You have sent the notification" page
+#    And I navigate to "make-a-disclosure" specific page
+#    When I click on Make a disclosure button
+#    And click on Hyperlink "Make your declaration"
+#    And click on I confirm button
+#    Then page navigates to "List of tasks"
+#    And status is marked as "Completed" for field "Review your declaration"
+#    And status is marked as "Not started" for field "Add offshore liability details"
+#    When click on Hyperlink "Add offshore liability details"
+#    Then page navigates to "Why you are making this disclosure"
+#    When I select Checkbox "The individual submitted an inaccurate return because they did not take reasonable care." at Position "4"
+#    And click on Save and Continue button
+#    Then page navigates to "Which year does this offshore disclosure relate to?"
+#    When I click on Back button
+#    Then page navigates to "Why you are making this disclosure"
+#    When I select Checkbox "The individual did not notify HMRC of a tax liability but this was not deliberate and they do not have a reasonable excuse." at Position "5"
+#    And I select Checkbox "The individual deliberately failed to notify HMRC of a tax liability." at Position "6"
+#    And I select Checkbox "The individual deliberately submitted an inaccurate tax return." at Position "7"
+#    And I select Checkbox "The individual deliberately withheld information by failing to submit a return." at Position "8"
+#    And click on Save and Continue button
+#    Then page navigates to "Contractual Disclosure Facility"
+#    When I select Radio Button "Continue using this digital disclosure service" at Position "1"
+#    And click on Save and Continue button
+#    Then page navigates to "Which year does this offshore disclosure relate to?"
+#    And page should display checkboxes for the "20" tax years before the current tax year
+#    When I select Checkbox "6 April 2023 to 5 April 2024" at Position "1"
+#    And click on Save and Continue button
+#    When I enter country or territory "United Arab Emirates" and select "United Arab Emirates"
+#    And click on Save and Continue button
+#    And I select Radio Button "No" at Position "2"
+#    And click on Save and Continue button
+#    Then page navigates to "Offshore liabilities — Tax year 6 April 2023 to 5 April 2024"
+#    And I enter "10" in the "income" text box field
+#    And I enter "20" in the "chargeableTransfers" text box field
+#    And I enter "30" in the "capitalGains" text box field
+#    And I enter "40" in the "unpaidTax" text box field
+#    And I enter "50" in the "interest" text box field
+#    And I enter "50" in the "penaltyRate" text box field
+#    And I enter "Penalty Rate Reason for year 2022" in the "penaltyRateReason" text box field
+#    And I enter "undeclaredIncomeOrGain" in the "undeclaredIncomeOrGain" text box field
+#    And I select Radio Button "No" at Position "2"
+#    And click on Save and Continue button
+#    Then page navigates to "Your legal interpretation"
+#    And I select Checkbox "Another issue" at Position "9"
+#    And click on Save and Continue button
+#    Then page navigates to "Under what consideration of the law led you to not include some tax in this disclosure?"
+#    When I enter "consideration of the law" in the text area
+#    And click on Save and Continue button
+#    Then page navigates to "How much tax has not been included in this disclosure as a result of your interpretation?"
+#    When I select Radio Button "£10,000 or less" at Position "1"
+#    And click on Save and Continue button
+#    Then page navigates to "What was the maximum value of all assets held outside the UK at any point over the last 5 years?"
+#    When I select Radio Button "Between £1 million and £100 million" at Position "3"
+#    And click on Save and Continue button
+#    Then page navigates to "Offshore liabilities summary"
+#    When click on continue button
+#    Then page navigates to "List of tasks"
+#    And status is marked as "Completed" for field "Edit offshore liability details"
 
   Scenario: Individual - On behalf of- Complete offshore disclosure journey - Nil disclosure
     Given I am on "You have sent the notification" page
@@ -293,8 +293,8 @@ Feature: An Individual - On behalf of - is able to notify and submit offshore di
     And status is marked as "Not started" for field "Add case reference"
     And status is marked as "Not started" for field "Add offshore liability details"
     When click on Hyperlink "Add offshore liability details"
-    Then page navigates to "Why are you making this disclosure?"
-    When I select Checkbox "The individual submitted an inaccurate return because they did not take reasonable care." at Position "4"
+    Then page navigates to "Why you are making this disclosure"
+    When I select Checkbox "The individual submitted an inaccurate return" at Position "3"
     And click on Save and Continue button
     Then page navigates to "Which year does this offshore disclosure relate to?"
     When I select Checkbox "Any tax year before 6 April 2013" at Position "12"

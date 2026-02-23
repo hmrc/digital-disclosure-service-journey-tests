@@ -62,7 +62,7 @@ Feature: A Company - On behalf of - is able to notify and submit onshore disclos
     And status is marked as "Completed" for field "Review your declaration"
     And status is marked as "Not started" for field "Add onshore liability details"
     And click on Hyperlink "Add onshore liability details"
-    Then page navigates to "Why are you making this disclosure?"
+    Then page navigates to "Why you are making this disclosure"
     And I select Checkbox "The company did not notify HMRC about a tax liability but this was not deliberate and it has a reasonable excuse." at Position "1"
     And click on Save and Continue button
     Then page navigates to "What is the reasonable excuse for not notifying HMRC about a tax liability?"
@@ -116,7 +116,7 @@ Feature: A Company - On behalf of - is able to notify and submit onshore disclos
     And status is marked as "Completed" for field "Review your declaration"
     And status is marked as "Not started" for field "Add onshore liability details"
     And click on Hyperlink "Add onshore liability details"
-    Then page navigates to "Why are you making this disclosure?"
+    Then page navigates to "Why you are making this disclosure"
     And I select Checkbox "The company did not notify HMRC about a tax liability but this was not deliberate and it has a reasonable excuse." at Position "1"
     And click on Save and Continue button
     Then page navigates to "What is the reasonable excuse for not notifying HMRC about a tax liability?"

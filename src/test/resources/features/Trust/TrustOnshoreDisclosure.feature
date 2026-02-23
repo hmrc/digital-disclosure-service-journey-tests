@@ -60,7 +60,7 @@ Feature: A trust is able to notify and submit onshore disclosure
     And status is marked as "Completed" for field "Review your declaration"
     And status is marked as "Not started" for field "Add onshore liability details"
     And click on Hyperlink "Add onshore liability details"
-    Then page navigates to "Why are you making this disclosure?"
+    Then page navigates to "Why you are making this disclosure"
     And I select Checkbox "The trust deliberately failed to notify HMRC of a tax liability." at Position "6"
     And click on Save and Continue button
     And I select Radio Button "Continue using this digital disclosure service" at Position "1"
@@ -232,7 +232,7 @@ Feature: A trust is able to notify and submit onshore disclosure
     And status is marked as "Completed" for field "Review your declaration"
     And status is marked as "Not started" for field "Add onshore liability details"
     And click on Hyperlink "Add onshore liability details"
-    Then page navigates to "Why are you making this disclosure?"
+    Then page navigates to "Why you are making this disclosure"
     And I select Checkbox "The trust submitted an inaccurate return because it did not take reasonable care." at Position "4"
     And click on Save and Continue button
     Then page navigates to "What onshore liabilities do you need to disclose?"

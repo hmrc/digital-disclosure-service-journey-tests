@@ -70,7 +70,7 @@ Feature: An Individual - On behalf of - is able to notify and submit onshore dis
     And status is marked as "Completed" for field "Review your declaration"
     And status is marked as "Not started" for field "Add onshore liability details"
     And click on Hyperlink "Add onshore liability details"
-    Then page navigates to "Why are you making this disclosure?"
+    Then page navigates to "Why you are making this disclosure"
     And I select Checkbox "The individual did not notify HMRC about a tax liability but this was not deliberate and they have a reasonable excuse." at Position "1"
     And I select Checkbox "The individual submitted an inaccurate return despite taking reasonable care." at Position "2"
     And I select Checkbox "The individual did not file a return but has a reasonable excuse." at Position "3"

@@ -58,11 +58,12 @@ Feature: An Individual is able to notify and submit offshore disclosure
     And status is marked as "Completed" for field "Review your declaration"
     And status is marked as "Not started" for field "Add offshore liability details"
     And click on Hyperlink "Add offshore liability details"
-    Then page navigates to "Why are you making this disclosure?"
-    And I select Checkbox "I did not notify HMRC about a tax liability but this was not deliberate and I have a reasonable excuse." at Position "1"
-    And I select Checkbox "I have submitted an inaccurate return despite taking reasonable care." at Position "2"
-    And I select Checkbox "I have not filed a return but have a reasonable excuse." at Position "3"
+    Then page navigates to "Why you are making this disclosure"
+    And I select Checkbox "I did not notify HMRC about a tax liability" at Position "1"
+    And I select Checkbox "I did not file a tax return on time" at Position "2"
+    And I select Checkbox "I submitted an inaccurate return" at Position "3"
     And click on Save and Continue button
+    Then page navigates to "What is your reasonable excuse for not notifying HMRC about a tax liability?"
     Then page navigates to "What is your reasonable excuse for not notifying HMRC about a tax liability?"
     And I enter "Reasonable excuse" in the reason for excuse text area
     And I enter "tax year ending 2020" in the "Which tax years does this apply to?for not notifying HMRC" text box field
@@ -139,12 +140,12 @@ Feature: An Individual is able to notify and submit offshore disclosure
     And status is marked as "Completed" for field "Review your declaration"
     And status is marked as "Not started" for field "Add offshore liability details"
     When click on Hyperlink "Add offshore liability details"
-    Then page navigates to "Why are you making this disclosure?"
+    Then page navigates to "Why you are making this disclosure"
     When I select Checkbox "I have submitted an inaccurate return because I did not take reasonable care." at Position "4"
     And click on Save and Continue button
     Then page navigates to "Which year does this offshore disclosure relate to?"
     When I click on Back button
-    Then page navigates to "Why are you making this disclosure?"
+    Then page navigates to "Why you are making this disclosure"
     When I select Checkbox "I did not notify HMRC of a tax liability but this was not deliberate and I do not have a reasonable excuse." at Position "5"
     And I select Checkbox "I have deliberately failed to notify HMRC of a tax liability." at Position "6"
     And I select Checkbox "I have deliberately submitted an inaccurate tax return." at Position "7"
@@ -221,7 +222,7 @@ Feature: An Individual is able to notify and submit offshore disclosure
     And status is marked as "Completed" for field "Edit case reference"
     And status is marked as "Not started" for field "Add offshore liability details"
     When click on Hyperlink "Add offshore liability details"
-    Then page navigates to "Why are you making this disclosure?"
+    Then page navigates to "Why you are making this disclosure"
     When I select Checkbox "I have submitted an inaccurate return because I did not take reasonable care." at Position "4"
     And click on Save and Continue button
     Then page navigates to "Which year does this offshore disclosure relate to?"
@@ -248,7 +249,7 @@ Feature: An Individual is able to notify and submit offshore disclosure
     And status is marked as "Completed" for field "Edit case reference"
     And status is marked as "Not started" for field "Add offshore liability details"
     When click on Hyperlink "Add offshore liability details"
-    Then page navigates to "Why are you making this disclosure?"
+    Then page navigates to "Why you are making this disclosure"
     When I select Checkbox "I have submitted an inaccurate return because I did not take reasonable care." at Position "4"
     And click on Save and Continue button
     Then page navigates to "Which year does this offshore disclosure relate to?"
@@ -277,7 +278,7 @@ Feature: An Individual is able to notify and submit offshore disclosure
     And status is marked as "Completed" for field "Edit other liability issues"
     Then status is marked as "Not started" for field "Add the reason for coming forward now"
     And click on Hyperlink "Add the reason for coming forward now"
-    Then page navigates to "Why are you making a disclosure now?"
+    Then page navigates to "Why you are making this disclosure"
     When I select Checkbox "Other" at Position "8"
     And click on Save and Continue button
     Then page navigates to "What is the reason for making a disclosure now?"
@@ -310,7 +311,7 @@ Feature: An Individual is able to notify and submit offshore disclosure
     And status is marked as "Completed" for field "Review your declaration"
     And status is marked as "Not started" for field "Add offshore liability details"
     When click on Hyperlink "Add offshore liability details"
-    Then page navigates to "Why are you making this disclosure?"
+    Then page navigates to "Why you are making this disclosure"
     When I select Checkbox "I did not notify HMRC of a tax liability but this was not deliberate and I do not have a reasonable excuse." at Position "5"
     And I select Checkbox "I have deliberately failed to notify HMRC of a tax liability." at Position "6"
     And I select Checkbox "I have deliberately submitted an inaccurate tax return." at Position "7"
@@ -399,7 +400,7 @@ Feature: An Individual is able to notify and submit offshore disclosure
     And status is marked as "Completed" for field "Edit other liability issues"
     Then status is marked as "Not started" for field "Add the reason for coming forward now"
     And click on Hyperlink "Add the reason for coming forward now"
-    Then page navigates to "Why are you making a disclosure now?"
+    Then page navigates to "Why you are making this disclosure"
     When I select Checkbox "Advised by guidance on the GOV.UK website" at Position "1"
     And I select Checkbox "Prompted by a letter from HMRC advising to make a disclosure" at Position "2"
     And I select Checkbox "Advised by employer" at Position "3"
