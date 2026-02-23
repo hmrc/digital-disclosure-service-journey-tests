@@ -59,6 +59,11 @@ class OffshoreDisclosureStepDef extends BasePage with OffshoreDisclosurePage {
     enterTextInExcuse(string)
   }
 
+  When("""I enter {string} in the reason for reasonable excuse text area""") { (string: String) =>
+    // Write code here that turns the phrase above into concrete actions
+    enterTextInReasonableExcuse(string)
+  }
+
   When("""I enter {string} in the can you describe the gift text area""") { (string: String) =>
     enterTextInDescription(string)
   }
