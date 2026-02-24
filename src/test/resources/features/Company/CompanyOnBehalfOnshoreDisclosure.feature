@@ -52,7 +52,7 @@ Feature: A Company - On behalf of - is able to notify and submit onshore disclos
     And click on confirm button
     And I click on send notification button
 
-  Scenario: Company On behalf of - Complete onshore disclosure journey with 2 director loan accounting periods.
+  Scenario: Company On behalf of - Complete onshore disclosure with reasonable excuse journey with 2 director loan accounting periods.
     Given I am on "You have sent the notification" page
     And I navigate to "make-a-disclosure" specific page
     When I click on Make a disclosure button
@@ -63,11 +63,14 @@ Feature: A Company - On behalf of - is able to notify and submit onshore disclos
     And status is marked as "Not started" for field "Add onshore liability details"
     And click on Hyperlink "Add onshore liability details"
     Then page navigates to "Why you are making this disclosure"
-    And I select Checkbox "The company did not notify HMRC about a tax liability but this was not deliberate and it has a reasonable excuse." at Position "1"
+    And I select Checkbox "The company did not notify HMRC about a tax liability" at Position "1"
     And click on Save and Continue button
-    Then page navigates to "What is the reasonable excuse for not notifying HMRC about a tax liability?"
+    Then page navigates to "Why the company did not notify HMRC about a tax liability"
+    And I select Checkbox "They have a reasonable excuse" at Position "2"
+    And click on Save and Continue button
+    Then page navigates to "Reasonable excuse for not notifying HMRC about a tax liability"
     And I enter "Reasonable excuse" in the reason for excuse text area
-    And I enter "tax year ending 2019" in the "Which tax years does this apply to?for not notifying HMRC" text box field
+    And I enter "tax year ending 2020" in the "Which tax years does this apply to?for not notifying HMRC" text box field
     And click on Save and Continue button
     Then page navigates to "What onshore liabilities do you need to disclose?"
     And I select Checkbox "Director’s loan account liabilities" at Position "5"
@@ -80,8 +83,6 @@ Feature: A Company - On behalf of - is able to notify and submit onshore disclos
     And I enter "0" into the "overdrawn" text field
     And I enter "1000" into the "unpaidTax" text field
     And I enter "0" into the "interest" text field
-    And I enter "10" into the "penaltyRate" text field
-    And I enter "Reason" into the "penaltyRateReason" text field
     And click on Save and Continue button
     Then page navigates to "Review onshore director loans account liabilities"
     And click on Save and Continue button
@@ -96,8 +97,6 @@ Feature: A Company - On behalf of - is able to notify and submit onshore disclos
     And I enter "0" into the "overdrawn" text field
     And I enter "1000" into the "unpaidTax" text field
     And I enter "0" into the "interest" text field
-    And I enter "10" into the "penaltyRate" text field
-    And I enter "Reason" into the "penaltyRateReason" text field
     And click on Save and Continue button
     Then page navigates to "Review onshore director loans account liabilities"
     And click on Save and Continue button
@@ -106,7 +105,7 @@ Feature: A Company - On behalf of - is able to notify and submit onshore disclos
     And click on Save and Continue button
     Then page navigates to "Onshore liabilities summary"
 
-  Scenario: Company On behalf of - Complete onshore disclosure journey with 2 corporation tax accounting periods.
+  Scenario: Company On behalf of - Complete onshore disclosure with no reasonable excuse journey with 2 corporation tax accounting periods.
     Given I am on "You have sent the notification" page
     And I navigate to "make-a-disclosure" specific page
     When I click on Make a disclosure button
@@ -117,11 +116,10 @@ Feature: A Company - On behalf of - is able to notify and submit onshore disclos
     And status is marked as "Not started" for field "Add onshore liability details"
     And click on Hyperlink "Add onshore liability details"
     Then page navigates to "Why you are making this disclosure"
-    And I select Checkbox "The company did not notify HMRC about a tax liability but this was not deliberate and it has a reasonable excuse." at Position "1"
+    And I select Checkbox "The company did not notify HMRC about a tax liability" at Position "1"
     And click on Save and Continue button
-    Then page navigates to "What is the reasonable excuse for not notifying HMRC about a tax liability?"
-    And I enter "Reasonable excuse" in the reason for excuse text area
-    And I enter "tax year ending 2019" in the "Which tax years does this apply to?for not notifying HMRC" text box field
+    Then page navigates to "Why the company did not notify HMRC about a tax liability"
+    And I select Checkbox "This was not deliberate, but they do not have a reasonable excuse" at Position "3"
     And click on Save and Continue button
     Then page navigates to "What onshore liabilities do you need to disclose?"
     And I select Checkbox "Corporation Tax liabilities" at Position "4"

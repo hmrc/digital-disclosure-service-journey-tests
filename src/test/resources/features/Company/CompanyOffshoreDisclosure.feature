@@ -61,19 +61,20 @@ Feature: A Company tax payer is able to notify and submit offshore disclosure
     And click on Hyperlink "Make your declaration"
     And click on I confirm button
     When I click on the hyperlink with text "Add offshore liability details"
-    And I select Checkbox "The company did not notify HMRC about a tax liability but this was not deliberate and it has a reasonable excuse." at Position "1"
-    And I select Checkbox "The company submitted an inaccurate return despite taking reasonable care." at Position "2"
-    And I select Checkbox "The company did not file a return but has a reasonable excuse." at Position "3"
+    And I select Checkbox "The company did not notify HMRC about a tax liability" at Position "1"
+    And I select Checkbox "The company did not file a tax return on time" at Position "2"
+    And I select Checkbox "The company submitted an inaccurate return" at Position "3"
     And click on Save and Continue button
-    And I enter "Reasonable excuse" in the reason for excuse text area
-    And I enter "tax year ending 2019" in the "Which tax years does this apply to?for not notifying HMRC" text box field
+    Then page navigates to "Why the company did not notify HMRC about a tax liability"
+    And I select Checkbox "This was not deliberate, but they do not have a reasonable excuse" at Position "1"
     And click on Save and Continue button
-    And I enter "Reasonable care" in the reasonable care text area
-    And I enter "tax year ending 2019" in the "Which tax years does this apply to?" text box field
+    Then page navigates to "Why the company did not file a return on time"
+    And I select Checkbox "They did not file a return but did not withhold any information on purpose" at Position "1"
     And click on Save and Continue button
-    And I enter "Reasonable excuse" in the reasonable excuse text area
-    And I enter "tax year ending 2019" in the "Which tax years does this apply to?" text box field
+    Then page navigates to "Why the company submitted an inaccurate return"
+    And I select Checkbox "They did not take reasonable care" at Position "1"
     And click on Save and Continue button
+
     Then page navigates to "Which year does this offshore disclosure relate to?"
     And I select Checkbox "6 April 2023 to 5 April 2024" at Position "1"
     And I select Checkbox "6 April 2021 to 5 April 2022" at Position "3"

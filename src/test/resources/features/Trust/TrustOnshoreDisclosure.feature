@@ -61,7 +61,10 @@ Feature: A trust is able to notify and submit onshore disclosure
     And status is marked as "Not started" for field "Add onshore liability details"
     And click on Hyperlink "Add onshore liability details"
     Then page navigates to "Why you are making this disclosure"
-    And I select Checkbox "The trust deliberately failed to notify HMRC of a tax liability." at Position "6"
+    And I select Checkbox "The trust did not notify HMRC about a tax liability" at Position "1"
+    And click on Save and Continue button
+    Then page navigates to "Why the person who died did not notify HMRC about a tax liability"
+    And I select Checkbox "They deliberately failed to notify HMRC of a tax liability" at Position "1"
     And click on Save and Continue button
     And I select Radio Button "Continue using this digital disclosure service" at Position "1"
     And click on Save and Continue button
@@ -70,11 +73,11 @@ Feature: A trust is able to notify and submit onshore disclosure
     And I select Checkbox "Non-business income liabilities" at Position "4"
     And click on Save and Continue button
     Then page navigates to "Which year does this onshore disclosure relate to?"
-    And page should display checkboxes for the "20" tax years before the current tax year
+    And page should display checkboxes for the "4" tax years before the current tax year
     When I select Checkbox "6 April 2023 to 5 April 2024" at Position "1"
-    And I select Checkbox "6 April 2019 to 5 April 2020" at Position "5"
+    And I select Checkbox "6 April 2021 to 5 April 2022" at Position "3"
     And click on Save and Continue button
-    Then page navigates to "You have not selected certain years"
+    Then page navigates to "You have not included the tax year ending 2023"
     When I enter "Do not want to include" in yearNotSelected text box field
     And click on Save and Continue button
     Then page navigates to "What is the postcode and property name or number of property 1?"
@@ -206,14 +209,14 @@ Feature: A trust is able to notify and submit onshore disclosure
     Then page navigates to "How much residential finance costs were used to calculate the tax reduction for the tax year ending 2024, in pounds?"
     And I enter "5" in the TextBox field
     And click on Save and Continue button
-    Then page navigates to "Onshore liabilities — Tax year 6 April 2019 to 5 April 2020"
+    Then page navigates to "Onshore liabilities — Tax year 6 April 2021 to 5 April 2022"
     And I enter "10" in the "nonBusinessIncome" text box field
     And I enter "10" in the "lettingIncome" text box field
     And I enter "20" in the "unpaidTax" text box field
     And I enter "20" in the "niContributions" text box field
     And I enter "50" in the "interest" text box field
     And I enter "50" in the "penaltyRate" text box field
-    And I enter "Penalty Rate Reason for year 2019" in the "penaltyRateReason" text box field
+    And I enter "Penalty Rate Reason for year 2021" in the "penaltyRateReason" text box field
     And I enter "undeclared Income Or Gain" in the "undeclaredIncomeOrGain" text box field
     And I select Radio Button "No" at Position "2"
     And click on Save and Continue button
@@ -233,7 +236,10 @@ Feature: A trust is able to notify and submit onshore disclosure
     And status is marked as "Not started" for field "Add onshore liability details"
     And click on Hyperlink "Add onshore liability details"
     Then page navigates to "Why you are making this disclosure"
-    And I select Checkbox "The trust submitted an inaccurate return because it did not take reasonable care." at Position "4"
+    And I select Checkbox "The trust submitted an inaccurate return" at Position "3"
+    And click on Save and Continue button
+    Then page navigates to "Why the trust did submitted an inaccurate return"
+    And I select Checkbox "They did not take reasonable care" at Position "1"
     And click on Save and Continue button
     Then page navigates to "What onshore liabilities do you need to disclose?"
     And I select Checkbox "Business income liabilities" at Position "2"
@@ -241,14 +247,14 @@ Feature: A trust is able to notify and submit onshore disclosure
     And I select Checkbox "Non-business income liabilities" at Position "4"
     And click on Save and Continue button
     Then page navigates to "Which year does this onshore disclosure relate to?"
-    And page should display checkboxes for the "6" tax years before the current tax year
-    When I select Checkbox "Any tax year before 6 April 2019" at Position "6"
+    And page should display checkboxes for the "4" tax years before the current tax year
+    When I select Checkbox "Any tax year before 6 April 2021" at Position "4"
     And click on Save and Continue button
-    Then page navigates to "Can you tell us more about any tax owed before 6 April 2019?"
+    Then page navigates to "Can you tell us more about any tax owed before 6 April 2021?"
     When I enter "tax owed details" in tax owed reason text box field
     And click on Save and Continue button
     Then page navigates to "There are no onshore liabilities to disclose"
-    And body should be "The trust only needs to pay HMRC what it owes for up to 6 years for onshore liabilities. Based on the information you have given, you do not need to provide any figures or calculations for onshore liabilities."
+    And body should be "The trust only needs to pay HMRC what it owes for up to 4 years for onshore liabilities. Based on the information you have given, you do not need to provide any figures or calculations for onshore liabilities."
     And click on Save and Continue button
     Then page navigates to "Onshore liabilities summary"
     When click on continue button
