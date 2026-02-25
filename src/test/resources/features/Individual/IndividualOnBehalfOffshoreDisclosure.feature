@@ -78,19 +78,19 @@ Feature: An Individual - On behalf of - is able to notify and submit offshore di
     Then page navigates to "Why the individual did not notify HMRC about a tax liability"
     And I select Checkbox "They have a reasonable excuse" at Position "2"
     And click on Save and Continue button
+    Then page navigates to "Why the individual did not file a return on time"
+    And I select Checkbox "They have a reasonable excuse" at Position "2"
+    And click on Save and Continue button
+    Then page navigates to "Why the individual submitted an inaccurate return"
+    And I select Checkbox "They took reasonable care but made a mistake" at Position "2"
+    And click on Save and Continue button
     Then page navigates to "Reasonable excuse for not notifying HMRC about a tax liability"
     And I enter "Reasonable excuse" in the reason for excuse text area
     And I enter "tax year ending 2020" in the "Which tax years does this apply to?for not notifying HMRC" text box field
     And click on Save and Continue button
-    Then page navigates to "Why the individual did not file a return on time"
-    And I select Checkbox "They have a reasonable excuse" at Position "2"
-    And click on Save and Continue button
     Then page navigates to "Reasonable excuse for not filing a return"
     And I enter "Reasonable excuse" in the reason for reasonable excuse text area
     And I enter "tax year ending 2020" in the "Which tax years does this apply to?" text box field
-    And click on Save and Continue button
-    Then page navigates to "Why the individual submitted an inaccurate return"
-    And I select Checkbox "They took reasonable care but made a mistake" at Position "2"
     And click on Save and Continue button
     Then page navigates to "What reasonable care was taken when submitting the inaccurate return?"
     And I enter "Reasonable care" in the reasonable care text area
@@ -252,7 +252,7 @@ Feature: An Individual - On behalf of - is able to notify and submit offshore di
     And I select Checkbox "They did not take reasonable care" at Position "1"
     And click on Save and Continue button
     Then page navigates to "Which year does this offshore disclosure relate to?"
-    And page should display checkboxes for the "10" tax years before the current tax year
+    And page should display checkboxes for the "12" tax years before the current tax year
     When I select Checkbox "6 April 2023 to 5 April 2024" at Position "1"
     And click on Save and Continue button
     When I enter country or territory "United Arab Emirates" and select "United Arab Emirates"

@@ -67,19 +67,19 @@ Feature: An Individual is able to notify and submit offshore disclosure
     Then page navigates to "Why did you not notify HMRC about a tax liability"
     And I select Checkbox "I have a reasonable excuse" at Position "2"
     And click on Save and Continue button
+    Then page navigates to "Why you did not file a return on time"
+    And I select Checkbox "I have a reasonable excuse" at Position "2"
+    And click on Save and Continue button
+    Then page navigates to "Why you submitted an inaccurate return"
+    And I select Checkbox "I took reasonable care but made a mistake" at Position "2"
+    And click on Save and Continue button
     Then page navigates to "Your reasonable excuse for not notifying HMRC about a tax liability"
     And I enter "Reasonable excuse" in the reason for excuse text area
     And I enter "tax year ending 2020" in the "Which tax years does this apply to?for not notifying HMRC" text box field
     And click on Save and Continue button
-    Then page navigates to "Why you did not file a return on time"
-    And I select Checkbox "I have a reasonable excuse" at Position "2"
-    And click on Save and Continue button
     Then page navigates to "Your reasonable excuse for not filing a return"
     And I enter "Reasonable excuse" in the reason for reasonable excuse text area
     And I enter "tax year ending 2020" in the "Which tax years does this apply to?" text box field
-    And click on Save and Continue button
-    Then page navigates to "Why you submitted an inaccurate return"
-    And I select Checkbox "I took reasonable care but made a mistake" at Position "2"
     And click on Save and Continue button
     Then page navigates to "What reasonable care did you take when submitting the inaccurate return?"
     And I enter "Reasonable care" in the reasonable care text area
@@ -238,9 +238,9 @@ Feature: An Individual is able to notify and submit offshore disclosure
     When I select Radio Button "Continue using this digital disclosure service" at Position "1"
     And click on Save and Continue button
     Then page navigates to "Which year does this offshore disclosure relate to?"
-    When I select Checkbox "Any tax year before 6 April 2015" at Position "10"
+    When I select Checkbox "Any tax year before 6 April 2005" at Position "20"
     And click on Save and Continue button
-    Then page navigates to "Can you tell us more about any tax owed before 6 April 2015?"
+    Then page navigates to "Can you tell us more about any tax owed before 6 April 2005?"
     And I enter "Provide the amount, when it was owed, and where the income or gain came from" in the text area
     And click on Save and Continue button
     Then page navigates to "You are making a nil disclosure"
@@ -269,19 +269,19 @@ Feature: An Individual is able to notify and submit offshore disclosure
     Then page navigates to "Why did you not notify HMRC about a tax liability"
     And I select Checkbox "I have a reasonable excuse" at Position "2"
     And click on Save and Continue button
+    Then page navigates to "Why you did not file a return on time"
+    And I select Checkbox "I have a reasonable excuse" at Position "2"
+    And click on Save and Continue button
+    Then page navigates to "Why you submitted an inaccurate return"
+    And I select Checkbox "I took reasonable care but made a mistake" at Position "2"
+    And click on Save and Continue button
     Then page navigates to "Your reasonable excuse for not notifying HMRC about a tax liability"
     And I enter "Reasonable excuse" in the reason for excuse text area
     And I enter "tax year ending 2020" in the "Which tax years does this apply to?for not notifying HMRC" text box field
     And click on Save and Continue button
-    Then page navigates to "Why you did not file a return on time"
-    And I select Checkbox "I have a reasonable excuse" at Position "2"
-    And click on Save and Continue button
     Then page navigates to "Your reasonable excuse for not filing a return"
     And I enter "Reasonable excuse" in the reason for reasonable excuse text area
     And I enter "tax year ending 2020" in the "Which tax years does this apply to?" text box field
-    And click on Save and Continue button
-    Then page navigates to "Why you submitted an inaccurate return"
-    And I select Checkbox "I took reasonable care but made a mistake" at Position "2"
     And click on Save and Continue button
     Then page navigates to "What reasonable care did you take when submitting the inaccurate return?"
     And I enter "Reasonable care" in the reasonable care text area

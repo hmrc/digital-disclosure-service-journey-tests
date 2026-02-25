@@ -76,29 +76,20 @@ Feature: An Individual - On behalf of - is able to notify and submit offshore di
     And I select Checkbox "The individual submitted an inaccurate return" at Position "3"
     And click on Save and Continue button
     Then page navigates to "Why the individual did not notify HMRC about a tax liability"
-    And I select Checkbox "They have a reasonable excuse" at Position "2"
+    And I select Checkbox "This was not deliberate, but they do not have a reasonable excuse" at Position "1"
     And I select Checkbox "They deliberately failed to notify HMRC of a tax liability" at Position "3"
     And click on Save and Continue button
-    Then page navigates to "Reasonable excuse for not notifying HMRC about a tax liability"
-    And I enter "Reasonable excuse" in the reason for excuse text area
-    And I enter "tax year ending 2020" in the "Which tax years does this apply to?for not notifying HMRC" text box field
-    And click on Save and Continue button
     Then page navigates to "Why the individual did not file a return on time"
-    And I select Checkbox "They have a reasonable excuse" at Position "2"
-    And click on Save and Continue button
-    Then page navigates to "Reasonable excuse for not filing a return"
-    And I enter "Reasonable excuse" in the reason for reasonable excuse text area
-    And I enter "tax year ending 2020" in the "Which tax years does this apply to?" text box field
+    And I select Checkbox "They deliberately withheld information by failing to submit a return" at Position "3"
     And click on Save and Continue button
     Then page navigates to "Why the individual submitted an inaccurate return"
-    And I select Checkbox "They took reasonable care but made a mistake" at Position "2"
+    And I select Checkbox "They deliberately submitted an inaccurate return" at Position "3"
     And click on Save and Continue button
-    Then page navigates to "What reasonable care was taken when submitting the inaccurate return?"
-    And I enter "Reasonable care" in the reasonable care text area
-    And I enter "tax year ending 2020" in the "Which tax years does this apply to?" text box field
+    Then page navigates to "Contractual Disclosure Facility"
+    When I select Radio Button "Continue using this digital disclosure service" at Position "1"
     And click on Save and Continue button
     Then page navigates to "Which year does this offshore disclosure relate to?"
-    And page should display checkboxes for the "10" tax years before the current tax year
+    And page should display checkboxes for the "20" tax years before the current tax year
     And I select Checkbox "6 April 2023 to 5 April 2024" at Position "1"
     And I select Checkbox "6 April 2021 to 5 April 2022" at Position "3"
     And click on Save and Continue button
@@ -157,25 +148,25 @@ Feature: An Individual - On behalf of - is able to notify and submit offshore di
     And I select Checkbox "The individual did not file a tax return on time" at Position "2"
     And I select Checkbox "The individual submitted an inaccurate return" at Position "3"
     And click on Save and Continue button
-#    And I select Radio Button "Continue using this digital disclosure service" at Position "1"
-#    And click on Save and Continue button
     Then page navigates to "Why the individual did not notify HMRC about a tax liability"
     And I select Checkbox "They have a reasonable excuse" at Position "2"
     And I select Checkbox "They deliberately failed to notify HMRC of a tax liability" at Position "1"
+    And click on Save and Continue button
+    Then page navigates to "Why the individual did not file a return on time"
+    And I select Checkbox "They have a reasonable excuse" at Position "2"
+    And click on Save and Continue button
+    Then page navigates to "Why the individual submitted an inaccurate return"
+    And I select Checkbox "They took reasonable care but made a mistake" at Position "2"
+    And click on Save and Continue button
+    And I select Radio Button "Continue using this digital disclosure service" at Position "1"
     And click on Save and Continue button
     Then page navigates to "Reasonable excuse for not notifying HMRC about a tax liability"
     And I enter "Reasonable excuse" in the reason for excuse text area
     And I enter "tax year ending 2020" in the "Which tax years does this apply to?for not notifying HMRC" text box field
     And click on Save and Continue button
-    Then page navigates to "Why the individual did not file a return on time"
-    And I select Checkbox "They have a reasonable excuse" at Position "2"
-    And click on Save and Continue button
     Then page navigates to "Reasonable excuse for not filing a return"
     And I enter "Reasonable excuse" in the reason for reasonable excuse text area
     And I enter "tax year ending 2020" in the "Which tax years does this apply to?" text box field
-    And click on Save and Continue button
-    Then page navigates to "Why the individual submitted an inaccurate return"
-    And I select Checkbox "They took reasonable care but made a mistake" at Position "2"
     And click on Save and Continue button
     Then page navigates to "What reasonable care was taken when submitting the inaccurate return?"
     And I enter "Reasonable care" in the reasonable care text area
@@ -185,10 +176,13 @@ Feature: An Individual - On behalf of - is able to notify and submit offshore di
     And I select Checkbox "Letting income from residential property or land" at Position "1"
     And click on Save and Continue button
     Then page navigates to "Which year does this onshore disclosure relate to?"
-    And page should display checkboxes for the "4" tax years before the current tax year
+    And page should display checkboxes for the "20" tax years before the current tax year
     And I select Checkbox "6 April 2023 to 5 April 2024" at Position "1"
-    And I select Checkbox "6 April 2022 to 5 April 2023" at Position "2"
     And I select Checkbox "6 April 2021 to 5 April 2022" at Position "3"
+    And I select Checkbox "6 April 2019 to 5 April 2020" at Position "5"
+    And click on Save and Continue button
+    Then page navigates to "You have not selected certain years"
+    When I enter "Do not want to include" in yearNotSelected text box field
     And click on Save and Continue button
 #    Then page navigates to "You have not included the tax year ending 2023"
 #    When I enter "Do not want to include" in yearNotSelected text box field
@@ -268,7 +262,7 @@ Feature: An Individual - On behalf of - is able to notify and submit offshore di
     Then page navigates to "How much residential finance costs were used to calculate the tax reduction for the tax year ending 2024, in pounds?"
     And I enter "5" in the TextBox field
     And click on Save and Continue button
-    Then page navigates to "Onshore liabilities — Tax year 6 April 2022 to 5 April 2023"
+    Then page navigates to "Onshore liabilities — Tax year 6 April 2021 to 5 April 2022"
     And I enter "10" in the "lettingIncome" text box field
     And I enter "20" in the "unpaidTax" text box field
     And I enter "20" in the "niContributions" text box field
@@ -278,7 +272,7 @@ Feature: An Individual - On behalf of - is able to notify and submit offshore di
     And I enter "undeclared Income Or Gain" in the "undeclaredIncomeOrGain" text box field
     And I select Radio Button "No" at Position "2"
     And click on Save and Continue button
-    Then page navigates to "Onshore liabilities — Tax year 6 April 2021 to 5 April 2022"
+    Then page navigates to "Onshore liabilities — Tax year 6 April 2019 to 5 April 2020"
     And I enter "10" in the "lettingIncome" text box field
     And I enter "20" in the "unpaidTax" text box field
     And I enter "20" in the "niContributions" text box field
