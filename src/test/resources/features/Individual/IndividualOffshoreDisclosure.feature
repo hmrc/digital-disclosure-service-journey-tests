@@ -216,7 +216,7 @@ Feature: An Individual is able to notify and submit offshore disclosure
     When click on continue button
     Then page navigates to "List of tasks"
     And status is marked as "Completed" for field "Edit offshore liability details"
-  @journeytests1
+
   Scenario: Individual - Complete offshore disclosure journey - Nil disclosure
     Given I am on "You have sent your notification" page
     And I navigate to "make-a-disclosure" specific page

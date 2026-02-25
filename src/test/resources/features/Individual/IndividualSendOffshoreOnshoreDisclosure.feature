@@ -1,6 +1,6 @@
 @journeytests
 Feature: An Individual - On behalf of - is able to notify and submit offshore disclosure
-  @journeytests1
+  @journeytests
   Scenario: Individual -Complete flow - Onshore & offshore - Letting income
     Given I am navigated to Received A Letter Page
     When I select Radio Button "Yes" at Position "1"
@@ -152,38 +152,47 @@ Feature: An Individual - On behalf of - is able to notify and submit offshore di
     And status is marked as "Completed" for field "Edit offshore liability details"
     And status is marked as "Not started" for field "Add onshore liability details"
     And click on Hyperlink "Add onshore liability details"
-    Then page navigates to "Why are you making this disclosure?"
-    And I select Checkbox "The individual did not notify HMRC about a tax liability but this was not deliberate and they have a reasonable excuse." at Position "1"
-    And I select Checkbox "The individual submitted an inaccurate return despite taking reasonable care." at Position "2"
-    And I select Checkbox "The individual did not file a return but has a reasonable excuse." at Position "3"
-    And I select Checkbox "The individual deliberately failed to notify HMRC of a tax liability." at Position "6"
+    Then page navigates to "Why you are making this disclosure"
+    And I select Checkbox "The individual did not notify HMRC about a tax liability" at Position "1"
+    And I select Checkbox "The individual did not file a tax return on time" at Position "2"
+    And I select Checkbox "The individual submitted an inaccurate return" at Position "3"
     And click on Save and Continue button
-    And I select Radio Button "Continue using this digital disclosure service" at Position "1"
+#    And I select Radio Button "Continue using this digital disclosure service" at Position "1"
+#    And click on Save and Continue button
+    Then page navigates to "Why the individual did not notify HMRC about a tax liability"
+    And I select Checkbox "They have a reasonable excuse" at Position "2"
+    And I select Checkbox "They deliberately failed to notify HMRC of a tax liability" at Position "1"
     And click on Save and Continue button
-    Then page navigates to "What is the reasonable excuse for not notifying HMRC about a tax liability?"
+    Then page navigates to "Reasonable excuse for not notifying HMRC about a tax liability"
     And I enter "Reasonable excuse" in the reason for excuse text area
     And I enter "tax year ending 2020" in the "Which tax years does this apply to?for not notifying HMRC" text box field
     And click on Save and Continue button
-    Then page navigates to "What reasonable care was taken when submitting the inaccurate return?"
-    And I enter "Reasonable care" in the reasonable care text area
+    Then page navigates to "Why the individual did not file a return on time"
+    And I select Checkbox "They have a reasonable excuse" at Position "2"
+    And click on Save and Continue button
+    Then page navigates to "Reasonable excuse for not filing a return"
+    And I enter "Reasonable excuse" in the reason for reasonable excuse text area
     And I enter "tax year ending 2020" in the "Which tax years does this apply to?" text box field
     And click on Save and Continue button
-    Then page navigates to "What is the reasonable excuse for not filing a return?"
-    And I enter "Reasonable excuse" in the reasonable excuse text area
+    Then page navigates to "Why the individual submitted an inaccurate return"
+    And I select Checkbox "They took reasonable care but made a mistake" at Position "2"
+    And click on Save and Continue button
+    Then page navigates to "What reasonable care was taken when submitting the inaccurate return?"
+    And I enter "Reasonable care" in the reasonable care text area
     And I enter "tax year ending 2020" in the "Which tax years does this apply to?" text box field
     And click on Save and Continue button
     Then page navigates to "What onshore liabilities do you need to disclose?"
     And I select Checkbox "Letting income from residential property or land" at Position "1"
     And click on Save and Continue button
     Then page navigates to "Which year does this onshore disclosure relate to?"
-    And page should display checkboxes for the "20" tax years before the current tax year
+    And page should display checkboxes for the "4" tax years before the current tax year
     And I select Checkbox "6 April 2023 to 5 April 2024" at Position "1"
+    And I select Checkbox "6 April 2022 to 5 April 2023" at Position "2"
     And I select Checkbox "6 April 2021 to 5 April 2022" at Position "3"
-    And I select Checkbox "6 April 2019 to 5 April 2020" at Position "5"
     And click on Save and Continue button
-    Then page navigates to "You have not selected certain years"
-    When I enter "Do not want to include" in yearNotSelected text box field
-    And click on Save and Continue button
+#    Then page navigates to "You have not included the tax year ending 2023"
+#    When I enter "Do not want to include" in yearNotSelected text box field
+#    And click on Save and Continue button
     Then page navigates to "What is the postcode and property name or number of property 1?"
     And I click on the hyperlink with text "Enter the address manually"
     And I enter "The Farm" in the "Address line 1" field
@@ -259,7 +268,7 @@ Feature: An Individual - On behalf of - is able to notify and submit offshore di
     Then page navigates to "How much residential finance costs were used to calculate the tax reduction for the tax year ending 2024, in pounds?"
     And I enter "5" in the TextBox field
     And click on Save and Continue button
-    Then page navigates to "Onshore liabilities — Tax year 6 April 2021 to 5 April 2022"
+    Then page navigates to "Onshore liabilities — Tax year 6 April 2022 to 5 April 2023"
     And I enter "10" in the "lettingIncome" text box field
     And I enter "20" in the "unpaidTax" text box field
     And I enter "20" in the "niContributions" text box field
@@ -269,7 +278,7 @@ Feature: An Individual - On behalf of - is able to notify and submit offshore di
     And I enter "undeclared Income Or Gain" in the "undeclaredIncomeOrGain" text box field
     And I select Radio Button "No" at Position "2"
     And click on Save and Continue button
-    Then page navigates to "Onshore liabilities — Tax year 6 April 2019 to 5 April 2020"
+    Then page navigates to "Onshore liabilities — Tax year 6 April 2021 to 5 April 2022"
     And I enter "10" in the "lettingIncome" text box field
     And I enter "20" in the "unpaidTax" text box field
     And I enter "20" in the "niContributions" text box field
