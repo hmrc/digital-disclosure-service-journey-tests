@@ -287,37 +287,37 @@ Feature: An Individual - On behalf of - is able to notify and submit offshore di
     Then page navigates to "List of tasks"
     And status is marked as "Completed" for field "Edit offshore liability details"
 
-#  Scenario: Individual - On behalf of- Complete offshore disclosure journey - Nil disclosure
-#    Given I am on "You have sent the notification" page
-#    And I navigate to "make-a-disclosure" specific page
-#    When I click on Make a disclosure button
-#    And click on Hyperlink "Make your declaration"
-#    And click on I confirm button
-#    Then page navigates to "List of tasks"
-#    And status is marked as "Completed" for field "Review your declaration"
-#    And status is marked as "Not started" for field "Add case reference"
-#    And status is marked as "Not started" for field "Add offshore liability details"
-#    When click on Hyperlink "Add offshore liability details"
-#    Then page navigates to "Why you are making this disclosure"
-#    When I select Checkbox "The individual submitted an inaccurate return" at Position "3"
-#    And click on Save and Continue button
-#    Then page navigates to "Why the individual submitted an inaccurate return"
-#    When I select Checkbox "They took reasonable care but made a mistake" at Position "2"
-#    And click on Save and Continue button
-#    Then page navigates to "What reasonable care was taken when submitting the inaccurate return?"
-#    And I enter "Reasonable care" in the reasonable care text area
-#    And I enter "tax year ending 2020" in the "Which tax years does this apply to?" text box field
-#    And click on Save and Continue button
-#    And click on Save and Continue button
-#    Then page navigates to "Which year does this offshore disclosure relate to?"
-#    When I select Checkbox " 6 April 2021 to 5 April 2022" at Position "3"
-#    And click on Save and Continue button
-#    Then page navigates to "Can you tell us more about any tax owed before 6 April 2022?"
-#    And I enter "Provide the amount, when it was owed, and where the income or gain came from" in the text area
-#    And click on Save and Continue button
-#    Then page navigates to "You are making a nil disclosure"
-#    And click on Save and Continue button
-#    Then page navigates to "Offshore liabilities summary"
-#    When click on continue button
-#    Then page navigates to "List of tasks"
-#    And status is marked as "Completed" for field "Edit offshore liability details"
+  Scenario: Individual - On behalf of- Complete offshore disclosure journey - Nil disclosure
+    Given I am on "You have sent the notification" page
+    And I navigate to "make-a-disclosure" specific page
+    When I click on Make a disclosure button
+    And click on Hyperlink "Make your declaration"
+    And click on I confirm button
+    Then page navigates to "List of tasks"
+    And status is marked as "Completed" for field "Review your declaration"
+    And status is marked as "Not started" for field "Add case reference"
+    And status is marked as "Not started" for field "Add offshore liability details"
+    When click on Hyperlink "Add offshore liability details"
+    Then page navigates to "Why you are making this disclosure"
+    When I select Checkbox "The individual submitted an inaccurate return" at Position "3"
+    And click on Save and Continue button
+    Then page navigates to "Why the individual submitted an inaccurate return"
+    When I select Checkbox "They took reasonable care but made a mistake" at Position "2"
+    And click on Save and Continue button
+    Then page navigates to "What reasonable care was taken when submitting the inaccurate return?"
+    And I enter "Reasonable care" in the reasonable care text area
+    And I enter "tax year ending 2020" in the "Which tax years does this apply to?" text box field
+    And click on Save and Continue button
+    And click on Save and Continue button
+    Then page navigates to "Which year does this offshore disclosure relate to?"
+    When I select Checkbox "Any tax year before 6 April 2015" at Position "10"
+    And click on Save and Continue button
+    Then page navigates to "Can you tell us more about any tax owed before 6 April 2015?"
+    And I enter "Provide the amount, when it was owed, and where the income or gain came from" in the text area
+    And click on Save and Continue button
+    Then page navigates to "You are making a nil disclosure"
+    And click on Save and Continue button
+    Then page navigates to "Offshore liabilities summary"
+    When click on continue button
+    Then page navigates to "List of tasks"
+    And status is marked as "Completed" for field "Edit offshore liability details"
