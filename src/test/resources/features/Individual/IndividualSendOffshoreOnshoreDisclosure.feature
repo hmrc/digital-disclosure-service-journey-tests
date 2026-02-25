@@ -76,17 +76,29 @@ Feature: An Individual - On behalf of - is able to notify and submit offshore di
     And I select Checkbox "The individual submitted an inaccurate return" at Position "3"
     And click on Save and Continue button
     Then page navigates to "Why the individual did not notify HMRC about a tax liability"
-    And I select Checkbox "This was not deliberate, but they do not have a reasonable excuse" at Position "1"
     And I select Checkbox "They deliberately failed to notify HMRC of a tax liability" at Position "3"
+    And I select Checkbox "They have a reasonable excuse" at Position "2"
     And click on Save and Continue button
     Then page navigates to "Why the individual did not file a return on time"
-    And I select Checkbox "They deliberately withheld information by failing to submit a return" at Position "3"
+    And I select Checkbox "They have a reasonable excuse" at Position "2"
     And click on Save and Continue button
     Then page navigates to "Why the individual submitted an inaccurate return"
-    And I select Checkbox "They deliberately submitted an inaccurate return" at Position "3"
+    And I select Checkbox "They took reasonable care but made a mistake" at Position "2"
     And click on Save and Continue button
     Then page navigates to "Contractual Disclosure Facility"
     When I select Radio Button "Continue using this digital disclosure service" at Position "1"
+    And click on Save and Continue button
+    Then page navigates to "Reasonable excuse for not notifying HMRC about a tax liability"
+    And I enter "Reasonable excuse" in the reason for excuse text area
+    And I enter "tax year ending 2020" in the "Which tax years does this apply to?for not notifying HMRC" text box field
+    And click on Save and Continue button
+    Then page navigates to "Reasonable excuse for not filing a return"
+    And I enter "Reasonable excuse" in the reason for reasonable excuse text area
+    And I enter "tax year ending 2020" in the "Which tax years does this apply to?" text box field
+    And click on Save and Continue button
+    Then page navigates to "What reasonable care was taken when submitting the inaccurate return?"
+    And I enter "Reasonable care" in the reasonable care text area
+    And I enter "tax year ending 2020" in the "Which tax years does this apply to?" text box field
     And click on Save and Continue button
     Then page navigates to "Which year does this offshore disclosure relate to?"
     And page should display checkboxes for the "20" tax years before the current tax year
