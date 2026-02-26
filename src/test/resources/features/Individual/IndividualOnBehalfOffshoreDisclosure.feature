@@ -60,7 +60,7 @@ Feature: An Individual - On behalf of - is able to notify and submit offshore di
     And click on confirm button
     And I click on send notification button
 
-  Scenario: Individual On behalf of - Complete offshore disclosure journey - First 3 selections - Complete flow
+  Scenario: Individual On behalf of - Complete offshore disclosure with reasonable excuse journey - First 3 selections - Complete flow
     Given I am on "You have sent the notification" page
     And I navigate to "make-a-disclosure" specific page
     When I click on Make a disclosure button
@@ -70,21 +70,30 @@ Feature: An Individual - On behalf of - is able to notify and submit offshore di
     And status is marked as "Completed" for field "Review your declaration"
     And status is marked as "Not started" for field "Add offshore liability details"
     And click on Hyperlink "Add offshore liability details"
-    Then page navigates to "Why are you making this disclosure?"
-    And I select Checkbox "The individual did not notify HMRC about a tax liability but this was not deliberate and they have a reasonable excuse." at Position "1"
-    And I select Checkbox "The individual submitted an inaccurate return despite taking reasonable care." at Position "2"
-    And I select Checkbox "The individual did not file a return but has a reasonable excuse." at Position "3"
+    Then page navigates to "Why you are making this disclosure"
+    And I select Checkbox "The individual did not notify HMRC about a tax liability" at Position "1"
+    And I select Checkbox "The individual did not file a tax return on time" at Position "2"
+    And I select Checkbox "The individual submitted an inaccurate return" at Position "3"
     And click on Save and Continue button
-    Then page navigates to "What is the reasonable excuse for not notifying HMRC about a tax liability?"
+    Then page navigates to "Why the individual did not notify HMRC about a tax liability"
+    And I select Checkbox "They have a reasonable excuse" at Position "2"
+    And click on Save and Continue button
+    Then page navigates to "Why the individual did not file a return on time"
+    And I select Checkbox "They have a reasonable excuse" at Position "2"
+    And click on Save and Continue button
+    Then page navigates to "Why the individual submitted an inaccurate return"
+    And I select Checkbox "They took reasonable care but made a mistake" at Position "2"
+    And click on Save and Continue button
+    Then page navigates to "Reasonable excuse for not notifying HMRC about a tax liability"
     And I enter "Reasonable excuse" in the reason for excuse text area
     And I enter "tax year ending 2020" in the "Which tax years does this apply to?for not notifying HMRC" text box field
     And click on Save and Continue button
-    Then page navigates to "What reasonable care was taken when submitting the inaccurate return?"
-    And I enter "Reasonable care" in the reasonable care text area
+    Then page navigates to "Reasonable excuse for not filing a return"
+    And I enter "Reasonable excuse" in the reason for reasonable excuse text area
     And I enter "tax year ending 2020" in the "Which tax years does this apply to?" text box field
     And click on Save and Continue button
-    Then page navigates to "What is the reasonable excuse for not filing a return?"
-    And I enter "Reasonable excuse" in the reasonable excuse text area
+    Then page navigates to "What reasonable care was taken when submitting the inaccurate return?"
+    And I enter "Reasonable care" in the reasonable care text area
     And I enter "tax year ending 2020" in the "Which tax years does this apply to?" text box field
     And click on Save and Continue button
     Then page navigates to "Which year does this offshore disclosure relate to?"
@@ -101,8 +110,6 @@ Feature: An Individual - On behalf of - is able to notify and submit offshore di
     And I enter "30" in the "capitalGains" text box field
     And I enter "40" in the "unpaidTax" text box field
     And I enter "50" in the "interest" text box field
-    And I enter "50" in the "penaltyRate" text box field
-    And I enter "Penalty Rate Reason for year 2022" in the "penaltyRateReason" text box field
     And I enter "undeclaredIncomeOrGain" in the "undeclaredIncomeOrGain" text box field
     And I select Radio Button "Yes" at Position "1"
     And click on Save and Continue button
@@ -115,8 +122,6 @@ Feature: An Individual - On behalf of - is able to notify and submit offshore di
     And I enter "90" in the "capitalGains" text box field
     And I enter "10" in the "unpaidTax" text box field
     And I enter "20" in the "interest" text box field
-    And I enter "30" in the "penaltyRate" text box field
-    And I enter "Penalty Rate Reason for year 2021" in the "penaltyRateReason" text box field
     And I enter "undeclaredIncomeOrGain" in the "undeclaredIncomeOrGain" text box field
     And I select Radio Button "No" at Position "2"
     And click on Save and Continue button
@@ -222,7 +227,7 @@ Feature: An Individual - On behalf of - is able to notify and submit offshore di
     Then page navigates to "You have sent your disclosure"
     And the case reference should be "CFSS-1234567"
 
-  Scenario: Individual - On behalf of - offshore disclosure journey - last 5 selections
+  Scenario: Individual - On behalf of - offshore disclosure with no reasonable excuse journey
     Given I am on "You have sent the notification" page
     And I navigate to "make-a-disclosure" specific page
     When I click on Make a disclosure button
@@ -232,22 +237,22 @@ Feature: An Individual - On behalf of - is able to notify and submit offshore di
     And status is marked as "Completed" for field "Review your declaration"
     And status is marked as "Not started" for field "Add offshore liability details"
     When click on Hyperlink "Add offshore liability details"
-    Then page navigates to "Why are you making this disclosure?"
-    When I select Checkbox "The individual submitted an inaccurate return because they did not take reasonable care." at Position "4"
+    Then page navigates to "Why you are making this disclosure"
+    And I select Checkbox "The individual did not notify HMRC about a tax liability" at Position "1"
+    And I select Checkbox "The individual did not file a tax return on time" at Position "2"
+    And I select Checkbox "The individual submitted an inaccurate return" at Position "3"
+    And click on Save and Continue button
+    Then page navigates to "Why the individual did not notify HMRC about a tax liability"
+    And I select Checkbox "This was not deliberate, but they do not have a reasonable excuse" at Position "1"
+    And click on Save and Continue button
+    Then page navigates to "Why the individual did not file a return on time"
+    And I select Checkbox "They did not file a return but did not withhold any information on purpose" at Position "1"
+    And click on Save and Continue button
+    Then page navigates to "Why the individual submitted an inaccurate return"
+    And I select Checkbox "They did not take reasonable care" at Position "1"
     And click on Save and Continue button
     Then page navigates to "Which year does this offshore disclosure relate to?"
-    When I click on Back button
-    Then page navigates to "Why are you making this disclosure?"
-    When I select Checkbox "The individual did not notify HMRC of a tax liability but this was not deliberate and they do not have a reasonable excuse." at Position "5"
-    And I select Checkbox "The individual deliberately failed to notify HMRC of a tax liability." at Position "6"
-    And I select Checkbox "The individual deliberately submitted an inaccurate tax return." at Position "7"
-    And I select Checkbox "The individual deliberately withheld information by failing to submit a return." at Position "8"
-    And click on Save and Continue button
-    Then page navigates to "Contractual Disclosure Facility"
-    When I select Radio Button "Continue using this digital disclosure service" at Position "1"
-    And click on Save and Continue button
-    Then page navigates to "Which year does this offshore disclosure relate to?"
-    And page should display checkboxes for the "20" tax years before the current tax year
+    And page should display checkboxes for the "12" tax years before the current tax year
     When I select Checkbox "6 April 2023 to 5 April 2024" at Position "1"
     And click on Save and Continue button
     When I enter country or territory "United Arab Emirates" and select "United Arab Emirates"
@@ -293,13 +298,21 @@ Feature: An Individual - On behalf of - is able to notify and submit offshore di
     And status is marked as "Not started" for field "Add case reference"
     And status is marked as "Not started" for field "Add offshore liability details"
     When click on Hyperlink "Add offshore liability details"
-    Then page navigates to "Why are you making this disclosure?"
-    When I select Checkbox "The individual submitted an inaccurate return because they did not take reasonable care." at Position "4"
+    Then page navigates to "Why you are making this disclosure"
+    When I select Checkbox "The individual submitted an inaccurate return" at Position "3"
+    And click on Save and Continue button
+    Then page navigates to "Why the individual submitted an inaccurate return"
+    When I select Checkbox "They took reasonable care but made a mistake" at Position "2"
+    And click on Save and Continue button
+    Then page navigates to "What reasonable care was taken when submitting the inaccurate return?"
+    And I enter "Reasonable care" in the reasonable care text area
+    And I enter "tax year ending 2020" in the "Which tax years does this apply to?" text box field
+    And click on Save and Continue button
     And click on Save and Continue button
     Then page navigates to "Which year does this offshore disclosure relate to?"
-    When I select Checkbox "Any tax year before 6 April 2013" at Position "12"
+    When I select Checkbox "Any tax year before 6 April 2015" at Position "10"
     And click on Save and Continue button
-    Then page navigates to "Can you tell us more about any tax owed before 6 April 2013?"
+    Then page navigates to "Can you tell us more about any tax owed before 6 April 2015?"
     And I enter "Provide the amount, when it was owed, and where the income or gain came from" in the text area
     And click on Save and Continue button
     Then page navigates to "You are making a nil disclosure"

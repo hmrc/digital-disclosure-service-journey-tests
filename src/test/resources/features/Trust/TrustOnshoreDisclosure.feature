@@ -60,8 +60,11 @@ Feature: A trust is able to notify and submit onshore disclosure
     And status is marked as "Completed" for field "Review your declaration"
     And status is marked as "Not started" for field "Add onshore liability details"
     And click on Hyperlink "Add onshore liability details"
-    Then page navigates to "Why are you making this disclosure?"
-    And I select Checkbox "The trust deliberately failed to notify HMRC of a tax liability." at Position "6"
+    Then page navigates to "Why you are making this disclosure"
+    And I select Checkbox "The trust did not notify HMRC about a tax liability" at Position "1"
+    And click on Save and Continue button
+    Then page navigates to "Why the person who died did not notify HMRC about a tax liability"
+    And I select Checkbox "They deliberately failed to notify HMRC of a tax liability" at Position "1"
     And click on Save and Continue button
     And I select Radio Button "Continue using this digital disclosure service" at Position "1"
     And click on Save and Continue button
@@ -232,8 +235,11 @@ Feature: A trust is able to notify and submit onshore disclosure
     And status is marked as "Completed" for field "Review your declaration"
     And status is marked as "Not started" for field "Add onshore liability details"
     And click on Hyperlink "Add onshore liability details"
-    Then page navigates to "Why are you making this disclosure?"
-    And I select Checkbox "The trust submitted an inaccurate return because it did not take reasonable care." at Position "4"
+    Then page navigates to "Why you are making this disclosure"
+    And I select Checkbox "The trust submitted an inaccurate return" at Position "3"
+    And click on Save and Continue button
+    Then page navigates to "Why the trust did submitted an inaccurate return"
+    And I select Checkbox "They did not take reasonable care" at Position "1"
     And click on Save and Continue button
     Then page navigates to "What onshore liabilities do you need to disclose?"
     And I select Checkbox "Business income liabilities" at Position "2"
@@ -248,7 +254,7 @@ Feature: A trust is able to notify and submit onshore disclosure
     When I enter "tax owed details" in tax owed reason text box field
     And click on Save and Continue button
     Then page navigates to "There are no onshore liabilities to disclose"
-    And body should be "The trust only needs to pay HMRC what it owes for up to 6 years for onshore liabilities. Based on the information you have given, you do not need to provide any figures or calculations for onshore liabilities."
+    And body should be "The trust only needs to pay HMRC what it owes for up to 20 years for onshore liabilities. Based on the information you have given, you do not need to provide any figures or calculations for onshore liabilities."
     And click on Save and Continue button
     Then page navigates to "Onshore liabilities summary"
     When click on continue button
