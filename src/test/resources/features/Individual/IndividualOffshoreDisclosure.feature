@@ -48,7 +48,6 @@ Feature: An Individual is able to notify and submit offshore disclosure
     And click on confirm button
     And I click on send notification button
 
-  @journeytests
   Scenario: Individual - Complete offshore disclosure with reasonable excuse journey
     Given I am on "You have sent your notification" page
     And I navigate to "make-a-disclosure" specific page

@@ -1,5 +1,6 @@
 @journeytests
 Feature: An Individual - On behalf of - is able to notify and submit offshore disclosure
+
   Scenario: Individual -Complete flow - Onshore & offshore - Letting income
     Given I am navigated to Received A Letter Page
     When I select Radio Button "Yes" at Position "1"
@@ -195,9 +196,6 @@ Feature: An Individual - On behalf of - is able to notify and submit offshore di
     Then page navigates to "You have not selected certain years"
     When I enter "Do not want to include" in yearNotSelected text box field
     And click on Save and Continue button
-#    Then page navigates to "You have not included the tax year ending 2023"
-#    When I enter "Do not want to include" in yearNotSelected text box field
-#    And click on Save and Continue button
     Then page navigates to "What is the postcode and property name or number of property 1?"
     And I click on the hyperlink with text "Enter the address manually"
     And I enter "The Farm" in the "Address line 1" field
