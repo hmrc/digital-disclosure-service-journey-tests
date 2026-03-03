@@ -119,7 +119,7 @@ Feature: A Company - On behalf of - is able to notify and submit onshore disclos
     And I select Checkbox "The company did not notify HMRC about a tax liability" at Position "1"
     And click on Save and Continue button
     Then page navigates to "Why the company did not notify HMRC about a tax liability"
-    And I select Checkbox "This was not deliberate, but they do not have a reasonable excuse" at Position "3"
+    And I select Checkbox "This was not deliberate, but they do not have a reasonable excuse" at Position "1"
     And click on Save and Continue button
     Then page navigates to "What onshore liabilities do you need to disclose?"
     And I select Checkbox "Corporation Tax liabilities" at Position "4"
