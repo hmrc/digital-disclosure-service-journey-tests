@@ -63,7 +63,7 @@ Feature: An Individual is able to notify and submit offshore disclosure
     And I select Checkbox "I did not file a tax return on time" at Position "2"
     And I select Checkbox "I submitted an inaccurate return" at Position "3"
     And click on Save and Continue button
-    Then page navigates to "Why did you not notify HMRC about a tax liability"
+    Then page navigates to "Why you did not notify HMRC about a tax liability"
     And I select Checkbox "I have a reasonable excuse" at Position "2"
     And click on Save and Continue button
     Then page navigates to "Why you did not file a return on time"
@@ -150,7 +150,7 @@ Feature: An Individual is able to notify and submit offshore disclosure
     And I select Checkbox "I did not file a tax return on time" at Position "2"
     And I select Checkbox "I submitted an inaccurate return" at Position "3"
     And click on Save and Continue button
-    Then page navigates to "Why did you not notify HMRC about a tax liability"
+    Then page navigates to "Why you did not notify HMRC about a tax liability"
     And I select Checkbox "This was not deliberate, but I do not have a reasonable excuse" at Position "1"
     And click on Save and Continue button
     Then page navigates to "Why you did not file a return on time"
@@ -265,7 +265,7 @@ Feature: An Individual is able to notify and submit offshore disclosure
     And I select Checkbox "I did not file a tax return on time" at Position "2"
     And I select Checkbox "I submitted an inaccurate return" at Position "3"
     And click on Save and Continue button
-    Then page navigates to "Why did you not notify HMRC about a tax liability"
+    Then page navigates to "Why you did not notify HMRC about a tax liability"
     And I select Checkbox "I have a reasonable excuse" at Position "2"
     And click on Save and Continue button
     Then page navigates to "Why you did not file a return on time"
@@ -350,7 +350,7 @@ Feature: An Individual is able to notify and submit offshore disclosure
     And I select Checkbox "I did not file a tax return on time" at Position "2"
     And I select Checkbox "I submitted an inaccurate return" at Position "3"
     And click on Save and Continue button
-    Then page navigates to "Why did you not notify HMRC about a tax liability"
+    Then page navigates to "Why you did not notify HMRC about a tax liability"
     And I select Checkbox "I deliberately failed to notify HMRC of a tax liability" at Position "3"
     And click on Save and Continue button
     Then page navigates to "Why you did not file a return on time"

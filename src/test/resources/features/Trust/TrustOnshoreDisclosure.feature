@@ -63,8 +63,8 @@ Feature: A trust is able to notify and submit onshore disclosure
     Then page navigates to "Why you are making this disclosure"
     And I select Checkbox "The trust did not notify HMRC about a tax liability" at Position "1"
     And click on Save and Continue button
-    Then page navigates to "Why the person who died did not notify HMRC about a tax liability"
-    And I select Checkbox "They deliberately failed to notify HMRC of a tax liability" at Position "1"
+    Then page navigates to "Why the trust did not notify HMRC about a tax liability"
+    And I select Checkbox "They deliberately failed to notify HMRC of a tax liability" at Position "3"
     And click on Save and Continue button
     And I select Radio Button "Continue using this digital disclosure service" at Position "1"
     And click on Save and Continue button
@@ -238,7 +238,7 @@ Feature: A trust is able to notify and submit onshore disclosure
     Then page navigates to "Why you are making this disclosure"
     And I select Checkbox "The trust submitted an inaccurate return" at Position "3"
     And click on Save and Continue button
-    Then page navigates to "Why the trust did submitted an inaccurate return"
+    Then page navigates to "Why the trust submitted an inaccurate return"
     And I select Checkbox "They did not take reasonable care" at Position "1"
     And click on Save and Continue button
     Then page navigates to "What onshore liabilities do you need to disclose?"

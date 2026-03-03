@@ -162,7 +162,7 @@ Feature: An Individual - On behalf of - is able to notify and submit offshore di
     And click on Save and Continue button
     Then page navigates to "Why the individual did not notify HMRC about a tax liability"
     And I select Checkbox "They have a reasonable excuse" at Position "2"
-    And I select Checkbox "They deliberately failed to notify HMRC of a tax liability" at Position "1"
+    And I select Checkbox "They deliberately failed to notify HMRC of a tax liability" at Position "3"
     And click on Save and Continue button
     Then page navigates to "Why the individual did not file a return on time"
     And I select Checkbox "They have a reasonable excuse" at Position "2"
