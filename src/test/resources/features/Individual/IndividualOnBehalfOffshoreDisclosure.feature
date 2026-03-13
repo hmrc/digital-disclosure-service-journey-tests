@@ -252,7 +252,7 @@ Feature: An Individual - On behalf of - is able to notify and submit offshore di
     And I select Checkbox "They did not take reasonable care" at Position "1"
     And click on Save and Continue button
     Then page navigates to "Which year does this offshore disclosure relate to?"
-    And page should display checkboxes for the "12" tax years before the current tax year
+    And page should display checkboxes for the "20" tax years before the current tax year
     When I select Checkbox "6 April 2023 to 5 April 2024" at Position "1"
     And click on Save and Continue button
     When I enter country or territory "United Arab Emirates" and select "United Arab Emirates"
