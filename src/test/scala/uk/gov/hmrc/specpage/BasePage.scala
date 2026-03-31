@@ -1,0 +1,443 @@
+/*
+ * Copyright 2023 HM Revenue & Customs
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package uk.gov.hmrc.specpage
+
+import io.cucumber.scala.{EN, ScalaDsl}
+import org.apache.commons.lang3.StringUtils
+import org.junit.Assert
+import org.openqa.selenium.support.ui.{ExpectedCondition, ExpectedConditions, Select, WebDriverWait}
+import org.openqa.selenium.{By, JavascriptExecutor, WebElement}
+import org.scalatest.concurrent.ScalaFutures
+import org.scalatest.matchers.should.Matchers.convertToAnyShouldWrapper
+import org.scalatest.{Assertion, Assertions}
+import org.scalatestplus.selenium.WebBrowser
+import uk.gov.hmrc.domain.Generator
+import uk.gov.hmrc.driver.BrowserDriver
+import uk.gov.hmrc.selenium.webdriver.Driver
+import uk.gov.hmrc.utils.{Configuration, TestConfiguration, UrlHelper}
+
+import java.time.Duration
+import scala.util.Random
+
+trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with ScalaFutures with BrowserDriver {
+
+  lazy val url: String = ""
+  private lazy val webdriverWait = new WebDriverWait(Driver.instance, Duration.ofSeconds(20))
+
+  def goToPage(): Unit = {
+    go to url
+  }
+
+  def assertUrl(prettyUrl: String): Assertion = {
+    val url = TestConfiguration.url(prettyUrl)
+    val currentUrl = Driver.instance.getCurrentUrl.toLowerCase()
+    webdriverWait.until(_ => url shouldBe currentUrl)
+  }
+
+  def clickBy(by: By): Unit = {
+    val element = Driver.instance.findElement(by)
+    scrollToElement(element)
+    element.click()
+  }
+
+  def clickYesNoSelection(answer: String): Unit = {
+    def radioOption(choice: String, getChoice: Int): Unit =
+      Driver.instance.findElements(By.cssSelector(s"#value$choice")).get(getChoice).click()
+
+    answer match {
+      case "Yes" => radioOption("", 0)
+      case "No" => radioOption("-no", 0)
+    }
+  }
+
+  def scrollToElement(element: WebElement): AnyRef = {
+    val jse2: JavascriptExecutor = Driver.instance.asInstanceOf[JavascriptExecutor]
+    jse2.executeScript("arguments[0].scrollIntoView()", element)
+  }
+
+  def findByID(id: String): WebElement = Driver.instance.findElement(By.id(id))
+
+  def findByLinkText(linkText: String): WebElement = Driver.instance.findElement(By.linkText(linkText))
+
+  def clickOnElement(id: String): Unit = findByID(id).click()
+
+  def checkURL(url: String): Unit = Driver.instance.getCurrentUrl.endsWith(url)
+
+  def waitForPresenceOfElement(element: By): WebElement = webdriverWait.until(ExpectedConditions.elementToBeClickable(element))
+
+
+  def contentNotPresent(text: String): Unit = {
+    val list = Driver.instance.findElements(By.xpath("//*[contains(text(),'" + text + "')]"))
+    Assert.assertFalse("Text found!", list.size > 0)
+  }
+
+  def pageUrl(url: String): Unit = {
+    url match {
+      case "receivedALetter" => checkURL("tell-hmrc-about-underpaid-tax-from-previous-years/notification/letter-from-hmrc")
+      case _ => throw new IllegalArgumentException(url + " not found")
+    }
+  }
+
+  def assertUrlSuffix(prettyUrl: String): Boolean = {
+    val convertedUrl = UrlHelper.convertUrlSuffix(prettyUrl)
+    val currentUrl = Driver.instance.getCurrentUrl.toLowerCase()
+    webdriverWait.until(_ => currentUrl.endsWith(convertedUrl.toLowerCase))
+  }
+
+  def urlVerify(prettyUrl: String): Unit =
+  if (prettyUrl contains "-") {
+    assertUrlSuffix(prettyUrl)
+  } else {
+    assertUrl(prettyUrl)
+  }
+
+  def verifyPageTitle (expectedTitle: String): Unit = {
+    val actualTitle = Driver.instance.getTitle
+    Assert.assertTrue("Page Title not Verified. Expected: " + expectedTitle + "--- Actual: " + actualTitle, expectedTitle == actualTitle)
+  }
+
+  def verifyPageQuestion(expectedQHeader: String): Unit = {
+    val question = Driver.instance.findElement(By.xpath("//h1"))
+    val actualQHeader = question.getText
+    Assert.assertTrue("Page Question not Verified. Expected:  " + expectedQHeader +  "--- Actual:  " + actualQHeader, expectedQHeader == actualQHeader)
+  }
+
+  def saveAndContinue(): Unit = {
+    findByID("continue").click()
+  }
+
+  def iConfirmButton(): Unit = {
+    findByID("confirm").click()
+  }
+
+  def submit(): Unit = {
+    findByID("submit").click()
+  }
+
+  def clickOnBack(): Unit = {
+    Driver.instance.findElement(By.className("govuk-back-link")).click()
+  }
+
+  def authenticationByPass(): Unit = {
+    val reDirectUrl = findByID("redirectionUrl")
+    reDirectUrl.clear()
+    reDirectUrl.sendKeys(Configuration.settings.baseUrl)
+    val elements = findByID("confidenceLevel").findElements(By.tagName("option"))
+    elements.get(2).click()
+    val ninoGenerator = new Generator(new Random())
+    def generateNino: String = ninoGenerator.nextNino.nino
+    findByID("nino").sendKeys(generateNino)
+    findByID("submit").click()
+    if (Driver.instance.findElements( By.xpath("//*[@class='cbanner-govuk-cookie-banner']") ).size() != 0){
+      Driver.instance.findElement( By.xpath("//button[contains(text(), 'Accept additional cookies')]")).click()
+      Driver.instance.findElement( By.xpath("//button[contains(text(), 'Hide cookies message')]")).click()
+
+    }
+  }
+
+  def navigateToBaseUrl(): Unit = {
+    goTo(Configuration.settings.baseUrl)
+  }
+
+  def navigateToHomePage(): Unit = {
+    goTo(Configuration.settings.baseUrl)
+    authenticationByPass()
+  }
+
+  def navigateToSpecificURL(specificPage: String): Unit = {
+    goTo(Configuration.settings.baseUrl + specificPage)
+  }
+
+  def navigateToSpecificPage(specificPage: String): Unit = {
+    navigateToHomePage()
+    findByID("start").click()
+    if (Driver.instance.getTitle.contains("Using this service - ")) {
+      clickOnRadioButton("Make a notification first","1")
+      saveAndContinue()
+    }
+    if (specificPage != "") {
+      goTo(Configuration.settings.baseUrl+specificPage)
+    }
+  }
+
+  def verifyNewTabTitleAndCloseTab(title: String): Unit = {
+    val tabs2 = Driver.instance.getWindowHandles
+    val openedTabs=tabs2.iterator()
+    val newTab=openedTabs.next()
+    Driver.instance.switchTo.window(newTab)
+    Assert.assertTrue("link is not opened in new tab", Driver.instance.getTitle.toLowerCase().contains(title.toLowerCase()))
+    Driver.instance.switchTo.window(newTab).close()
+    Driver.instance.switchTo().window(tabs2.iterator().next())
+  }
+
+  def verifyBulletText(expectedText: String, bulletNum: String): Unit = {
+    val element = Driver.instance.findElements(By.xpath("//*[@class='dashed-list-item']"))
+    val value=bulletNum.toInt
+    val actualText = element.get(value-1).getText;
+    Assert.assertTrue("bullet Text is not Verified. Expected:  " + expectedText +  "--- Actual:  " + actualText, expectedText == actualText)
+  }
+
+  def enterInputInTextBox(textInput: String): Unit = {
+
+    try {
+      Driver.instance.findElement(By.xpath("//input[contains(@class,\"govuk-input\")]")).clear()
+      Driver.instance.findElement(By.xpath("//input[contains(@class,\"govuk-input\")]")).sendKeys(textInput)
+    }
+    catch {
+      case e: Throwable =>
+        Driver.instance.findElement(By.id("countryCode")).clear()
+        Driver.instance.findElement(By.id("countryCode")).sendKeys(textInput)
+      case e: Throwable =>
+        Driver.instance.findElement(By.id("postcode")).clear()
+        Driver.instance.findElement(By.id("postcode")).sendKeys(textInput)
+      case e: Throwable =>
+        Driver.instance.findElement(By.xpath("//div[@class='hmrc-character-count']//textarea")).clear()
+        Driver.instance.findElement(By.xpath("//div[@class='hmrc-character-count']//textarea")).sendKeys(textInput)
+    }
+  }
+
+  def enterInputInTextBox(textInput: String, element: String): Unit = {
+        Driver.instance.findElement(By.id(element)).clear()
+        Driver.instance.findElement(By.id(element)).sendKeys(textInput)
+  }
+
+  def enterPropertyInput(textInput: String): Unit = {
+      Driver.instance.findElement(By.id("filter")).sendKeys(textInput)
+  }
+
+  def enterInputInTextBoxWithMaxLength(length: String): Unit = {
+    val textInput = StringUtils.repeat("a", length.toInt + 1)
+    Driver.instance.findElement(By.xpath("//input[contains(@class,\"govuk-input\")]")).sendKeys(textInput)
+  }
+
+  def verifyFocusOnTextbox(): Unit = {
+    try{
+      Driver.instance.findElement(By.xpath("//input[contains(@class,\"govuk-input\")]")).equals(Driver.instance.switchTo().activeElement())
+    }
+    catch
+    {
+      case e: Throwable =>
+        Driver.instance.findElement(By.id("countryCode")).equals(Driver.instance.switchTo().activeElement())
+      case e: Throwable =>
+        Driver.instance.findElement(By.id("postcode")).equals(Driver.instance.switchTo().activeElement())
+     }
+  }
+
+  def verifyRadioButtonAndText(expectedText: String, bulletNum: String): Unit = {
+    val elementInput = Driver.instance.findElements(By.xpath("//*[@class='govuk-radios__item']/input[@class='govuk-radios__input']"))
+    val value = bulletNum.toInt
+    val buttontype = elementInput.get(value - 1).getAttribute("type");
+    Assert.assertTrue("Button type is not radio", buttontype.toString() == "radio")
+
+    val elementLabel = Driver.instance.findElements(By.xpath("//*[@class='govuk-radios__item']/label[contains(@class,'govuk-radios__label')]"))
+    val actualText = elementLabel.get(value - 1).getText
+    Assert.assertTrue("Radio Text is not Verified. Expected: " + expectedText +  "--- Actual:  " + actualText, expectedText == actualText)
+  }
+
+  def verifyRadioButtonAndTextNotSelected(): Unit = {
+    val elementInput = Driver.instance.findElements(By.xpath("//*[@class='govuk-radios__item']/input[@class='govuk-radios__input']"))
+    val value = elementInput.size()
+    Assert.assertTrue("Radio Button is selected", !elementInput.get(value - 1).isSelected)
+  }
+
+  def verifyPageHeading(expectedQHeader: String): Unit = {
+    val element = Driver.instance.findElement(By.xpath("//h1"))
+    val actualQHeader = element.getText
+    Assert.assertTrue("Heading is not Verified. Expected:  "+ expectedQHeader +  "--- Actual:  " + actualQHeader, expectedQHeader.contains(actualQHeader))
+  }
+
+  def verifyPageHeadingContains(heading: String): Unit = {
+    Driver.instance.getTitle.contains(heading)
+  }
+
+  def verifySubPageHeading(expectedQHeader: String): Unit = {
+    val element = Driver.instance.findElement(By.xpath("//*[@class='govuk-fieldset__legend  govuk-fieldset__legend--m']"))
+    val actualQHeader = element.getText
+    Assert.assertTrue("Heading is not Verified. Expected:  "+ expectedQHeader +  "--- Actual:  " + actualQHeader, expectedQHeader == actualQHeader)
+  }
+
+  def verifyH2Header(expectedHeader: String): Unit = {
+    var actualHeader = ""
+    val elements = Driver.instance.findElements(By.xpath("//h2"))
+    elements.forEach(e =>
+      if (e.getText == expectedHeader) {
+        actualHeader = e.getText
+      })
+    Assert.assertTrue("H2 Header is not Verified. Expected:  "+ expectedHeader +  "--- Actual:  " + actualHeader, expectedHeader == actualHeader)
+  }
+
+  def verifyH2HeaderNotDisplayed(expectedHeader: String): Unit = {
+    var actualHeader = ""
+    val elements = Driver.instance.findElements(By.xpath("//h2"))
+    elements.forEach(e =>
+      if (e.getText == expectedHeader) {
+        actualHeader = e.getText
+      })
+    Assert.assertTrue("H2 Header is displayed. Expected:  "+ expectedHeader +  " should not be displayed --- Actual:  Header displayed", actualHeader.equals(""))
+  }
+
+  def clickOnRadioButton(expectedText: String, bulletNum: String): Unit = {
+    val elementLabel = Driver.instance.findElements(By.xpath("//*[@class='govuk-radios__item']/label[contains(@class,'govuk-radios__label')]"))
+    val value = bulletNum.toInt
+    val actualText = elementLabel.get(value - 1).getText
+    Assert.assertTrue("Radio Text is not Verified. Expected: " + expectedText +  "--- Actual:  " + actualText, expectedText.trim == actualText.trim)
+
+    val elementInput = Driver.instance.findElements(By.xpath("//*[@class='govuk-radios__item']/input[@class='govuk-radios__input']"))
+    elementInput.get(value - 1).click()
+  }
+
+  def clickOnCheckBox(expectedText: String, bulletNum: String): Unit = {
+    val elementLabel = Driver.instance.findElements(By.xpath("//*[@class='govuk-checkboxes__item']/label[contains(@class,'govuk-checkboxes__label')]"))
+    val value = bulletNum.toInt
+    val actualText = elementLabel.get(value - 1).getText
+    Assert.assertTrue("Checkbox Text is not Verified. Expected: " + expectedText + "--- Actual:  " + actualText, expectedText.trim == actualText.trim)
+
+    val elementInput = Driver.instance.findElements(By.xpath("//*[@class='govuk-checkboxes__item']/input[@class='govuk-checkboxes__input']"))
+    elementInput.get(value - 1).click()
+  }
+
+  def verifyFocusOnRadioButton(expectedText: String, bulletNum: String): Unit = {
+    val elementLabel = Driver.instance.findElements(By.xpath("//*[@class='govuk-radios__item']/label[contains(@class,'govuk-radios__label')]"))
+    val value = bulletNum.toInt
+    val actualText = elementLabel.get(value - 1).getText
+    Assert.assertTrue("Radio Text is not Verified. Expected: " + expectedText +  "--- Actual:  " + actualText, expectedText.trim == actualText.trim)
+
+    val elementInput = Driver.instance.findElements(By.xpath("//*[@class='govuk-radios__item']/input[@class='govuk-radios__input']"))
+    Assert.assertTrue("Focus is not on Radio Button",elementInput.get(value - 1).equals(Driver.instance.switchTo().activeElement()))
+  }
+
+  def verifyNewTabUrl(expectedQHeader: String): Unit = {
+    val tabs2 = Driver.instance.getWindowHandles
+    val openedTabs=tabs2.iterator()
+    val currentTab=openedTabs.next()
+    val newTab=openedTabs.next()
+    Driver.instance.switchTo.window(newTab)
+    Assert.assertTrue("link is not opened in new tab", Driver.instance.getCurrentUrl.toLowerCase().contains(expectedQHeader.toLowerCase()))
+    Driver.instance.close()
+    Driver.instance.switchTo.window(currentTab)
+  }
+
+  def verifyErrorSummary(expectedError: String): Unit = {
+    val question = Driver.instance.findElement(By.xpath("//*[@class=\"govuk-error-summary__title\"]"))
+    val actualError = question.getText
+    Assert.assertTrue("Error Summary is not Verified.  Expected: " + expectedError + "--- Actual: " + actualError, expectedError == actualError)
+  }
+  def verifyPageHeader(expectedQHeader:String): Unit = {
+    val question = Driver.instance.findElement(By.xpath("//h1"))
+    val actualQHeader = question.getText
+    Assert.assertTrue("Heading is not Verified. Expected:  "+ expectedQHeader +  "--- Actual:  " + actualQHeader, expectedQHeader == actualQHeader)
+  }
+
+  def verifyBody(expectedText: String): Unit = {
+    var actualText = ""
+    try {
+      val element = Driver.instance.findElement(By.xpath("//*[@class='govuk-body']"))
+      actualText = element.getText
+    }
+
+    catch
+    {
+      case e: Throwable =>
+        val element = Driver.instance.findElement(By.xpath("//label[@class=\"govuk-label\"]"))
+        actualText = element.getText
+    }
+    Assert.assertTrue("Body Text is not Verified. Expected: " + expectedText + "--- Actual: " + actualText, expectedText == actualText)
+  }
+  def verifyErrorMessage(expectedError: String): Unit = {
+    val question = Driver.instance.findElement(By.xpath("//*[@class=\"govuk-error-summary__body\"]//a[@href]"))
+    val actualError = question.getText
+    Assert.assertTrue("Error Message is not Verified. Expected: " + expectedError + "--- Actual: " + actualError, expectedError == actualError)
+  }
+
+  def clickErrorMessage(expectedError: String): Unit = {
+    val question = Driver.instance.findElement(By.xpath("//*[@class=\"govuk-error-summary__body\"]"))
+    val actualError = question.getText
+    Assert.assertTrue("Error Message is not Verified. Expected: " + expectedError + "--- Actual: " + actualError, expectedError == actualError)
+    Driver.instance.findElement(By.xpath("//*[@class=\"govuk-error-summary__body\"]//a[@href]")).click()
+  }
+
+  def verifyAddress(position: String, expectedText: String): Unit = {
+    val element = Driver.instance.findElements(By.xpath("//div[@id='address']/span[@class=\"govuk-body-l\"]"))
+    val actualText = element.get(position.toInt-1).getText
+    Assert.assertTrue("Address is not Verified " + expectedText + " --- Actual:  " + actualText, expectedText==actualText)
+  }
+
+  def isSaveAndContinueButtonDisplayed(): Unit = {
+    Assert.assertTrue("Save and Continue Button is not displayed", findByID("continue").isDisplayed.==(true))
+  }
+
+  def verifyMessage(message:String): Unit = {
+    Assert.assertTrue("Message is not displayed", findByID("no-results").getText== message)
+  }
+
+  def verifyHintText(expectedText: String): Unit = {
+    var actualText=""
+    try{
+      val element = Driver.instance.findElement(By.xpath("//*[@class='govuk-hint' or @class='govuk-hint govuk-radios__hint']"))
+      actualText = element.getText
+    }
+    catch
+    {
+      case e: Throwable =>
+        val element = Driver.instance.findElement(By.xpath("//label[@class=\"govuk-label\"]"))
+        actualText = element.getText
+    }
+    Assert.assertTrue("Hint text is not Verified" + expectedText + " --- Actual:  " + actualText, expectedText==actualText)
+  }
+
+  def SendNotification(): Unit = {
+    findByID("send-button").click()
+  }
+
+  def clickOnContinue(): Unit = {
+    findByID("start").click()
+  }
+
+  def verifySubmittedCaseRef(caseRef: String): Unit = {
+    val element = Driver.instance.findElement(By.xpath("//*[@class=\"govuk-panel__body\"]"))
+    val actualCaseRef = element.getText
+    Assert.assertTrue("CaseRef is not displayed, --- Expected: "+caseRef + " --- Actual: " + actualCaseRef, actualCaseRef.contains(caseRef))
+  }
+
+  def selectValueFromDropdown(valueToSelect: String, dropDownID: String): Unit = {
+    val element = new Select(Driver.instance.findElement(By.xpath("//*[@class='govuk-select' and @id=\"" + dropDownID + "\"]")))
+    element.selectByVisibleText(valueToSelect)
+  }
+
+  def enterNINOInput(textInput: String): Unit = {
+    Driver.instance.findElement(By.id("nino")).sendKeys(textInput)
+  }
+
+  def makeADisclosure(): Unit = {
+    findByID("disclosure").click()
+  }
+
+  def sendOfferAndDisclosure(): Unit = {
+    findByID("send-disclosure").click()
+  }
+
+  def waitFor[T](condition: ExpectedCondition[T]): T = {
+    val wait = new WebDriverWait(Driver.instance, Duration.ofSeconds(10))
+    wait.until(condition)
+  }
+
+  def verifyDisplayedCheckbox(expectedCount: String): Unit = {
+    val element = Driver.instance.findElements(By.xpath("//input[contains(@class,\"govuk-checkboxes__input\")]"))
+    val actualCount = element.size()
+    Assert.assertTrue("CaseRef is not displayed, --- Expected: " + expectedCount + " --- Actual: " + actualCount, actualCount.toString.contains(expectedCount))
+  }
+}
