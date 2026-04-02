@@ -3,4 +3,4 @@
 BROWSER=$1
 ENVIRONMENT=$2
 
-sbt clean -Dbrowser="${BROWSER:=chrome}" -Dbrowser.usePreviousVersion=true -Denvironment="${ENVIRONMENT:=local}" "testOnly uk.gov.hmrc.specs.EstateCheckYourAnswersSpec" testReport -Dbrowser.option.headless=false
+sbt clean -Dbrowser="${BROWSER:=chrome}" -Dbrowser.usePreviousVersion=true -Denvironment="${ENVIRONMENT:=local}" "testOnly uk.gov.hmrc.specs.IndividualOnBehalfOnshoreDisclosureSpec" testReport -Dbrowser.option.headless=false

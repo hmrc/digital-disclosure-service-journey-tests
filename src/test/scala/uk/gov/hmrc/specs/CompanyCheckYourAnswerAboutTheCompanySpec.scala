@@ -29,7 +29,6 @@ class CompanyCheckYourAnswerAboutTheCompanySpec extends BaseSpec {
   Feature("A company tax payer is able to check their answers for About the Company section before submitting page") {
 
     Scenario("About the company - CYA - Send notification") {
-
       Given("I am navigated to Received A Letter Page")
         givenIAmNavigatedToReceivedALetterPage()
 
