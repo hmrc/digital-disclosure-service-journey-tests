@@ -35,7 +35,7 @@ class IndividualOnBehalfOffshoreDisclosureSpec extends BaseSpec {
     Scenario("Individual On behalf of - Complete offshore disclosure with reasonable excuse journey - First 3 selections - Complete flow") {
       Given("I am on You have sent the notification page")
         // Possible match (best=0.58)
-        givenIAmOnTheHomePage()
+      ThenIAmOnTheHomePage()
         // --- Other possible matches ---
         // andVerifyOnTheXPage() [0.57] (CaseManagementStepDefSteps.scala) pattern: verify on the (.*) page
         // givenIAmOnStringPage() [0.56] (CheckYourAnswersStepDefSteps.scala) pattern: I am on {string} page
@@ -2198,7 +2198,7 @@ class IndividualOnBehalfOffshoreDisclosureSpec extends BaseSpec {
     Scenario("Individual - On behalf of - offshore disclosure with no reasonable excuse journey") {
       Given("I am on You have sent the notification page")
         // Possible match (best=0.58)
-        givenIAmOnTheHomePage()
+      ThenIAmOnTheHomePage()
         // --- Other possible matches ---
         // andVerifyOnTheXPage() [0.57] (CaseManagementStepDefSteps.scala) pattern: verify on the (.*) page
         // givenIAmOnStringPage() [0.56] (CheckYourAnswersStepDefSteps.scala) pattern: I am on {string} page
@@ -2900,7 +2900,7 @@ class IndividualOnBehalfOffshoreDisclosureSpec extends BaseSpec {
     Scenario("Individual - On behalf of- Complete offshore disclosure journey - Nil disclosure") {
       Given("I am on You have sent the notification page")
         // Possible match (best=0.58)
-        givenIAmOnTheHomePage()
+      ThenIAmOnTheHomePage()
         // --- Other possible matches ---
         // andVerifyOnTheXPage() [0.57] (CaseManagementStepDefSteps.scala) pattern: verify on the (.*) page
         // givenIAmOnStringPage() [0.56] (CheckYourAnswersStepDefSteps.scala) pattern: I am on {string} page

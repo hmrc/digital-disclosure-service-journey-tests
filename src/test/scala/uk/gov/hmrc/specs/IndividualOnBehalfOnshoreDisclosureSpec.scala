@@ -32,7 +32,7 @@ class IndividualOnBehalfOnshoreDisclosureSpec extends BaseSpec {
     Scenario("Individual On behalf of - Complete onshore with reasonable excuse disclosure journey - Complete flow") {
       Given("I am on You have sent the notification page")
         // Possible match (best=0.58)
-        givenIAmOnTheHomePage()
+      ThenIAmOnTheHomePage()
         // --- Other possible matches ---
         // andVerifyOnTheXPage() [0.57] (CaseManagementStepDefSteps.scala) pattern: verify on the (.*) page
         // givenIAmOnStringPage() [0.56] (CheckYourAnswersStepDefSteps.scala) pattern: I am on {string} page

@@ -24,8 +24,7 @@ object AreYouRepresentingOrganisationStepDefSteps  extends BasePage {
 
   // I navigate to {string} page
   def givenINavigateToStringPage(string: String): Unit = {
-    // Write code here that turns the phrase above into concrete actions
-        navigateToSpecificPage("notification/"+string)
+    verifyPageHeading(string)
   }
 
   // I should navigate to Organisation Name TextBox field

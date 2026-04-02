@@ -21,7 +21,7 @@ import uk.gov.hmrc.pages.{BasePage, HomePage}
 object HomePageStepDefSteps extends BasePage with HomePage {
 
   // I am on the Home page
-  def givenIAmOnTheHomePage(): Unit = {
+  def ThenIAmOnTheHomePage(): Unit = {
     // Write code here that turns the phrase above into concrete actions
         navigateToHomePage()
   }
@@ -121,7 +121,7 @@ object HomePageStepDefSteps extends BasePage with HomePage {
 
   // I navigate to authority wizard page
   def givenINavigateToAuthorityWizardPage(): Unit = {
-    navigateToHomePage()
+    navigateToBaseUrl()
   }
 
   // enter NINO {string}

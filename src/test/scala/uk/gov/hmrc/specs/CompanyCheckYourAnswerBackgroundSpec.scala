@@ -16,66 +16,229 @@
 
 package uk.gov.hmrc.specs
 
-import uk.gov.hmrc.specsteps.CaseManagementStepDefSteps.andOnTheHomepageIClickContinueToNavigateToTheXPage
-import uk.gov.hmrc.specsteps.CheckYourAnswersStepDefSteps.{givenIAmOnStringPage, thenAboutTheCompanySectionShouldHaveALabelStringAtLineStringAnAnswerWithStringAndChangeURLEndsWithString, thenAnswersPageShouldHaveH2HeaderString, thenBackgroundSectionHasFollowing, thenLineStringShouldHaveALabelStringAnAnswerWithStringAndChangeURLEndsWithString}
+import uk.gov.hmrc.specsteps.AreYouRepresentingOrganisationStepDefSteps.givenINavigateToStringPage
+import uk.gov.hmrc.specsteps.CheckYourAnswersStepDefSteps.{clickOnChangeButton, thenAboutTheCompanySectionShouldHaveALabelStringAtLineStringAnAnswerWithStringAndChangeURLEndsWithString, thenAnswersPageShouldHaveH2HeaderString, thenBackgroundSectionHasFollowing, thenLineStringShouldHaveALabelStringAnAnswerWithStringAndChangeURLEndsWithString}
+import uk.gov.hmrc.specsteps.DiscloseOffshoreLiabilitiesStepDefSteps.whenISelectRadioButtonStringAtPositionString
+import uk.gov.hmrc.specsteps.HomePageStepDefSteps.{clickOnCheckBox, clickOnLink, clickOnRadioButton, enterInputInTextBox, saveAndContinue, verifyPageHeading}
+import uk.gov.hmrc.specsteps.InternationalAddressStepDefSteps.{enterInputInManualAddressPage, selectfromDropdown}
 import uk.gov.hmrc.specsteps.NotificationSubmittedStepDefSteps.{thenTheCaseReferenceShouldBeString, whenIClickOnSendNotificationButton}
+import uk.gov.hmrc.specsteps.ReceivedALetterStepDefSteps.givenIAmNavigatedToReceivedALetterPage
 
-class CompanyCheckYourAnswerAboutTheCompanySpec extends BaseSpec {
+class CompanyCheckYourAnswerBackgroundSpec extends BaseSpec {
 
-  Feature("A company tax payer is able to check their answers for About the Company section before submitting page") {
+  Feature("An Company tax payer is able to check their answers for background section before submitting page") {
 
-    Scenario("About the company - CYA - Send notification") {
-      Given("I am on Check Your Answers page")
-        // Possible match (best=0.56)
-        givenIAmOnStringPage("")
-        // --- Other possible matches ---
-        // givenIAmOnTheHomePage() [0.47] (HomePageStepDefSteps.scala) pattern: I am on the Home page
+    Scenario("Company - Background - Change route to - Are you an officer of the company? from No to Yes") {
 
-      And("answers page should have h2 header Background")
-        // Possible match (best=0.60)
-        thenAnswersPageShouldHaveH2HeaderString("")
-        // --- Other possible matches ---
-        // thenAnswersPageShouldNotHaveH2HeaderString() [0.52] (CheckYourAnswersStepDefSteps.scala) pattern: answers page should not have h2 header {string}
+      Given("I am navigated to Received A Letter Page")
+      givenIAmNavigatedToReceivedALetterPage()
+
+      Then("I select Radio Button Yes at Position 1")
+      whenISelectRadioButtonStringAtPositionString("Yes","1")
+
+      And("""click on Save and Continue button""")
+      saveAndContinue()
+
+      Then("""I enter CFSS-1234567" in the TextBox field""")
+      enterInputInTextBox("CFSS-1234567")
+
+      And("""click on Save and Continue button""")
+      saveAndContinue()
+
+      Then("""I select Radio Button A company at Position 3""")
+      clickOnRadioButton("A company","3")
+
+      And("""click on Save and Continue button""")
+      saveAndContinue()
+
+      Then("""I select Radio Button I am an accountant or tax agent at Position 2""")
+      clickOnRadioButton("I am an accountant or tax agent","2")
+
+      And("""click on Save and Continue button""")
+      saveAndContinue()
+
+      Then("""I select Radio Button Yes at Position 1""")
+      clickOnRadioButton("Yes","1")
+
+      And("""click on Save and Continue button""")
+      saveAndContinue()
+
+      Then("""And I enter Organization name in the TextBox field""")
+      enterInputInTextBox("Organization name")
+
+      And("""click on Save and Continue button""")
+      saveAndContinue()
+
+      Then("""I select Radio Button Yes at Position 1""")
+      clickOnRadioButton("Yes","1")
+
+      And("""click on Save and Continue button""")
+      saveAndContinue()
+
+      Then("""I select Radio Button Yes at Position 1""")
+      clickOnRadioButton("Yes","1")
+
+      And("""click on Save and Continue button""")
+      saveAndContinue()
+
+      Then("""And I select Checkbox Self-employment income" at Position 5""")
+      clickOnCheckBox("Self-employment income", "5")
+
+      And("""click on Save and Continue button""")
+      saveAndContinue()
+
+      Then("""I enter Company name in the TextBox field""")
+      enterInputInTextBox("Company name")
+
+      And("""click on Save and Continue button""")
+      saveAndContinue()
+
+      Then("""I enter 12345678 in the TextBox field""")
+      enterInputInTextBox("12345678")
+
+      And("""click on Save and Continue button""")
+      saveAndContinue()
+
+      When("""And enter country name United Kingdom, then select country United Kingdom""")
+      enterInputInTextBox("United Kingdom")
+      selectfromDropdown("United Kingdom")
+
+      And("""click on Save and Continue button""")
+      saveAndContinue()
+
+      Then("""And I click on the hyperlink with text Enter the address manually""")
+      clickOnLink("Enter the address manually")
+
+      And("""I enter The Farm in the Address line 1 field""")
+      enterInputInManualAddressPage("The Farm", "Address line 1")
+
+      And("""I enter Royal Madeuptown in the Town or city field""")
+      enterInputInManualAddressPage("Royal Madeuptown", "Town or city")
+
+      And("""I enter ZZ9Z 9TT in the Postcode field""")
+      enterInputInManualAddressPage("ZZ9Z 9TT", "Postcode")
+
+      And("""click on Save and Continue button""")
+      saveAndContinue()
+
+      Then("""click on confirm button""")
+      saveAndContinue()
+
+      Then("""I enter Agent full name in the TextBox field""")
+      enterInputInTextBox("Agent full name")
+
+      And("""click on Save and Continue button""")
+      saveAndContinue()
+
+      When("""I select Checkbox Email at Position 1""")
+      clickOnCheckBox("Email", "1")
+
+      Then("""I select Checkbox Telephone at Position 2""")
+      clickOnCheckBox("Telephone", "2")
+
+      And("""click on Save and Continue button""")
+      saveAndContinue()
+
+      Then("""I enter abc@abc.com in the TextBox field""")
+      enterInputInTextBox("abc@abc.com")
+
+      And("""click on Save and Continue button""")
+      saveAndContinue()
+
+      Then("""I enter 07777 777777 in the TextBox field""")
+      enterInputInTextBox("07777 777777")
+
+      And("""click on Save and Continue button""")
+      saveAndContinue()
+
+      When("""enter country name United Kingdom, then select country United Kingdom""")
+      enterInputInTextBox("United Kingdom")
+      selectfromDropdown("United Kingdom")
+
+      And("""click on Save and Continue button""")
+      saveAndContinue()
+
+      When("""I click on the hyperlink with text Enter the address manually """)
+      clickOnLink("Enter the address manually")
+
+      Then("""I enter 1 Testing Lane in the Address line 1 field""")
+      enterInputInManualAddressPage("1 Testing Lane", "Address line 1")
+
+      And("""I enter Royal Madeuptown in the Town or city field""")
+      enterInputInManualAddressPage("Royal Madeuptown", "Town or city")
+
+      And("""I enter ZZ9Z 9TT in the Postcode field""")
+      enterInputInManualAddressPage("ZZ9Z 9TT", "Postcode")
+
+      And("""click on Save and Continue button""")
+      saveAndContinue()
+
+      Then("""click on confirm button""")
+      saveAndContinue()
+
+      When("I am on Check Your Answers page")
+      verifyPageHeading("Check Your Answers")
+
+      When("I click on change button for Are you an officer of the company that the disclosure will be about?")
+      clickOnChangeButton("Are you an officer of the company that the disclosure will be about?")
+
+      And("I select Radio Button I am an accountant or tax agent at Position 2")
+      clickOnRadioButton("I am an accountant or tax agent","2")
+
+      And("click on Save and Continue button")
+      saveAndContinue()
+
+      When("I click on change button for Are you an officer of the company that the disclosure will be about?")
+      clickOnChangeButton("Are you an officer of the company that the disclosure will be about?")
+
+      And("I select Radio Button Yes, I am an officer at Position 1")
+      clickOnRadioButton("Yes, I am an officer","1")
+
+      And("click on Save and Continue button")
+      saveAndContinue()
+
+      Then("page navigates to Check Your Answers")
+      verifyPageHeading("Check Your Answers")
 
       And("Background section has following")
         // Possible match (best=1.00)
-        thenBackgroundSectionHasFollowing(null)
+      thenBackgroundSectionHasFollowing(null)
 
       And("answers page should have h2 header About you")
         // Possible match (best=0.60)
-        thenAnswersPageShouldHaveH2HeaderString("")
+      thenAnswersPageShouldHaveH2HeaderString("")
         // --- Other possible matches ---
         // thenAnswersPageShouldNotHaveH2HeaderString() [0.52] (CheckYourAnswersStepDefSteps.scala) pattern: answers page should not have h2 header {string}
 
       And("line 1 should have a label Your full name an answer with Agent full name and change URL ends with your-full-name/change")
         // Possible match (best=0.54)
-        thenLineStringShouldHaveALabelStringAnAnswerWithStringAndChangeURLEndsWithString("", "", "", "")
+      thenLineStringShouldHaveALabelStringAnAnswerWithStringAndChangeURLEndsWithString("", "", "", "")
 
       And("line 2 should have a label Your contact preference an answer with Email,Telephone and change URL ends with contact-preference/change")
         // Possible match (best=0.54)
-        thenLineStringShouldHaveALabelStringAnAnswerWithStringAndChangeURLEndsWithString("", "", "", "")
+      thenLineStringShouldHaveALabelStringAnAnswerWithStringAndChangeURLEndsWithString("", "", "", "")
 
       And("line 3 should have a label Your email address an answer with abc@abc.com and change URL ends with your-email-address/change")
         // Possible match (best=0.54)
-        thenLineStringShouldHaveALabelStringAnAnswerWithStringAndChangeURLEndsWithString("", "", "", "")
+      thenLineStringShouldHaveALabelStringAnAnswerWithStringAndChangeURLEndsWithString("", "", "", "")
 
       And("line 4 should have a label Your telephone number an answer with 07777 777777 and change URL ends with your-telephone-number/change")
         // Possible match (best=0.54)
-        thenLineStringShouldHaveALabelStringAnAnswerWithStringAndChangeURLEndsWithString("", "", "", "")
+      thenLineStringShouldHaveALabelStringAnAnswerWithStringAndChangeURLEndsWithString("", "", "", "")
 
       And("line 5 should have a label Your address an answer with 1 Testing Lane,Royal Madeuptown,ZZ9Z 9TT,United Kingdom and change URL ends with your-address/lookup/change")
         // Possible match (best=0.54)
-        thenLineStringShouldHaveALabelStringAnAnswerWithStringAndChangeURLEndsWithString("", "", "", "")
+      thenLineStringShouldHaveALabelStringAnAnswerWithStringAndChangeURLEndsWithString("", "", "", "")
 
       Then("answers page should have h2 header About the company")
         // Possible match (best=0.60)
-        thenAnswersPageShouldHaveH2HeaderString("")
+      thenAnswersPageShouldHaveH2HeaderString("")
         // --- Other possible matches ---
         // thenAnswersPageShouldNotHaveH2HeaderString() [0.52] (CheckYourAnswersStepDefSteps.scala) pattern: answers page should not have h2 header {string}
 
       And("About The Company section should have a label Company’s name at line 1 an answer with Company name and change URL ends with company-name/change")
         // Possible match (best=0.57)
-        thenAboutTheCompanySectionShouldHaveALabelStringAtLineStringAnAnswerWithStringAndChangeURLEndsWithString("", "", "", "")
+      thenAboutTheCompanySectionShouldHaveALabelStringAtLineStringAnAnswerWithStringAndChangeURLEndsWithString("", "", "", "")
         // --- Other possible matches ---
         // thenAboutTheIndividualSectionShouldHaveALabelStringAtLineStringAnAnswerWithStringAndChangeURLEndsWithString() [0.54] (CheckYourAnswersStepDefSteps.scala) pattern: About The Individual section should have a label {string} at line {string} an answer with {string} and change URL ends with {string}
         // thenAboutTheLLPSectionShouldHaveALabelStringAtLineStringAnAnswerWithStringAndChangeURLEndsWithString() [0.54] (CheckYourAnswersStepDefSteps.scala) pattern: About The LLP section should have a label {string} at line {string} an answer with {string} and change URL ends with {string}
@@ -86,7 +249,7 @@ class CompanyCheckYourAnswerAboutTheCompanySpec extends BaseSpec {
 
       And("About The Company section should have a label Company registration number at line 2 an answer with 12345678 and change URL ends with company-registration/change")
         // Possible match (best=0.57)
-        thenAboutTheCompanySectionShouldHaveALabelStringAtLineStringAnAnswerWithStringAndChangeURLEndsWithString("", "", "", "")
+      thenAboutTheCompanySectionShouldHaveALabelStringAtLineStringAnAnswerWithStringAndChangeURLEndsWithString("", "", "", "")
         // --- Other possible matches ---
         // thenAboutTheIndividualSectionShouldHaveALabelStringAtLineStringAnAnswerWithStringAndChangeURLEndsWithString() [0.54] (CheckYourAnswersStepDefSteps.scala) pattern: About The Individual section should have a label {string} at line {string} an answer with {string} and change URL ends with {string}
         // thenAboutTheLLPSectionShouldHaveALabelStringAtLineStringAnAnswerWithStringAndChangeURLEndsWithString() [0.54] (CheckYourAnswersStepDefSteps.scala) pattern: About The LLP section should have a label {string} at line {string} an answer with {string} and change URL ends with {string}
@@ -96,7 +259,7 @@ class CompanyCheckYourAnswerAboutTheCompanySpec extends BaseSpec {
 
       And("About The Company section should have a label Company’s address at line 3 an answer with The Farm,Royal Madeuptown,ZZ9Z 9TT,United Kingdom and change URL ends with company-address/lookup/change")
         // Possible match (best=0.57)
-        thenAboutTheCompanySectionShouldHaveALabelStringAtLineStringAnAnswerWithStringAndChangeURLEndsWithString("", "", "", "")
+      thenAboutTheCompanySectionShouldHaveALabelStringAtLineStringAnAnswerWithStringAndChangeURLEndsWithString("", "", "", "")
         // --- Other possible matches ---
         // thenAboutTheIndividualSectionShouldHaveALabelStringAtLineStringAnAnswerWithStringAndChangeURLEndsWithString() [0.54] (CheckYourAnswersStepDefSteps.scala) pattern: About The Individual section should have a label {string} at line {string} an answer with {string} and change URL ends with {string}
         // thenAboutTheLLPSectionShouldHaveALabelStringAtLineStringAnAnswerWithStringAndChangeURLEndsWithString() [0.54] (CheckYourAnswersStepDefSteps.scala) pattern: About The LLP section should have a label {string} at line {string} an answer with {string} and change URL ends with {string}
@@ -106,7 +269,7 @@ class CompanyCheckYourAnswerAboutTheCompanySpec extends BaseSpec {
 
       When("I click on send notification button")
         // Possible match (best=1.00)
-        whenIClickOnSendNotificationButton()
+      whenIClickOnSendNotificationButton()
         // --- Other possible matches ---
         // whenIClickOnContinueButton() [0.56] (HomePageStepDefSteps.scala) pattern: I click on continue button
         // whenClickOnIConfirmButton() [0.56] (DiscloseOffshoreLiabilitiesStepDefSteps.scala) pattern: click on I confirm button
@@ -116,14 +279,12 @@ class CompanyCheckYourAnswerAboutTheCompanySpec extends BaseSpec {
         // whenClickOnConfirmButton() [0.52] (WhatIsTheCountryOfYourAddressStepDefSteps.scala) pattern: click on confirm button
         // whenIClickOnMakeADisclosureButton() [0.50] (OffshoreDisclosureStepDefSteps.scala) pattern: I click on Make a disclosure button
 
-      Then("page navigates to You have sent the notification")
-        // Possible match (best=0.62)
-        andOnTheHomepageIClickContinueToNavigateToTheXPage("")
+      Then("page navigates to You have sent your notification")
+        // Possible match (best=0.56)
+      givenINavigateToStringPage("")
         // --- Other possible matches ---
-        // andVerifyOnTheXPage() [0.57] (CaseManagementStepDefSteps.scala) pattern: verify on the (.*) page
-        // givenINavigateToStringPage() [0.56] (AreYouRepresentingOrganisationStepDefSteps.scala) pattern: I navigate to {string} page
         // thenPageNavigatesToString() [0.52] (DiscloseOffshoreLiabilitiesStepDefSteps.scala) pattern: page navigates to {string}
-        // givenIAmOnTheHomePage() [0.47] (HomePageStepDefSteps.scala) pattern: I am on the Home page
+        // andOnTheHomepageIClickContinueToNavigateToTheXPage() [0.50] (CaseManagementStepDefSteps.scala) pattern: on the homepage I click continue to navigate to the (.*) page
         // givenINavigateToAuthorityWizardPage() [0.47] (HomePageStepDefSteps.scala) pattern: I navigate to authority wizard page
         // whenINavigateToStringSpecificPage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} specific page
         // whenINavigateToStringOffshorePage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} offshore page
@@ -132,7 +293,7 @@ class CompanyCheckYourAnswerAboutTheCompanySpec extends BaseSpec {
 
       And("the case reference should be CFSS-1234567")
         // Possible match (best=0.58)
-        thenTheCaseReferenceShouldBeString("")
+      thenTheCaseReferenceShouldBeString("")
 
     }
   }
