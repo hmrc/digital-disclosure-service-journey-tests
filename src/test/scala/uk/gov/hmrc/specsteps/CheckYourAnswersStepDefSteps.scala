@@ -19,6 +19,7 @@ package uk.gov.hmrc.specsteps
 import io.cucumber.datatable.DataTable
 import org.openqa.selenium.By
 import org.openqa.selenium.support.ui.{ExpectedConditions, WebDriverWait}
+import org.scalatest.prop.TableFor4
 import uk.gov.hmrc.pages.{BasePage, CheckYourAnswersPage}
 
 import java.time.Duration
@@ -67,8 +68,10 @@ object CheckYourAnswersStepDefSteps extends BasePage with CheckYourAnswersPage {
   }
 
   // Background section has following
-  def thenBackgroundSectionHasFollowing(dataTable: DataTable): Unit = {
-    verifyBackgroundAnswers(dataTable)
+  def thenBackgroundSectionHasFollowing(
+                                         backgroundRows: TableFor4[String, String, String, String]
+                                       ): Unit = {
+    verifyBackgroundAnswers(backgroundRows)
   }
 
   // clicking on change button navigates as following:

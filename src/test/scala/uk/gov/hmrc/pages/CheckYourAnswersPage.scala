@@ -20,7 +20,10 @@ import io.cucumber.datatable.DataTable
 import io.cucumber.scala.Implicits.ScalaDataTable
 import org.junit.Assert
 import org.openqa.selenium.{By, WebElement}
+import org.scalatest.prop.TableDrivenPropertyChecks.forAll
+import org.scalatest.prop.TableFor4
 import uk.gov.hmrc.utils.Configuration
+
 import scala.util.control.Breaks
 
 trait CheckYourAnswersPage extends BasePage {
@@ -123,25 +126,39 @@ trait CheckYourAnswersPage extends BasePage {
   }
 
 
-  def verifyBackgroundAnswers(dataTable: DataTable): Unit = {
+  def verifyBackgroundAnswers(
+                               backgroundRows: TableFor4[String, String, String, String]
+                             ): Unit = {
 
-    dataTable.asScalaMaps[String, String] // Seq[Map[String, Option[String]]]
-      .map { row =>
-        val lineNo = row("Line").getOrElse("")
-        val label = row("Label").getOrElse("")
-        val answer = row("Answer").getOrElse("")
-        val url = row("URL").getOrElse("")
+    forAll(backgroundRows) { (lineNo: String, label: String, answer: String, url: String) =>
 
-        val actualLabel = driver.findElement(By.xpath("//dl[@id='background-list']/div[@class='govuk-summary-list__row'][" + lineNo + "]/dt[@class='govuk-summary-list__key']")).getText
-        Assert.assertTrue("Check your answers - Background - Label not verified. Expected: " + label+ "--- Actual: " + actualLabel, label == actualLabel)
+      val actualLabel = driver.findElement(
+        By.xpath(s"//dl[@id='background-list']/div[@class='govuk-summary-list__row'][$lineNo]/dt[@class='govuk-summary-list__key']")
+      ).getText
 
-        val actualAnswer = driver.findElement(By.xpath("//dl[@id='background-list']/div[@class='govuk-summary-list__row'][" + lineNo + "]/dd[@class='govuk-summary-list__value']")).getText
-        Assert.assertTrue("Check your answers - Background - Answer not verified. Expected: " + answer + "--- Actual: " + actualAnswer, answer == actualAnswer)
+      Assert.assertTrue(
+        "Check your answers - Background - Label not verified. Expected: " + label + "--- Actual: " + actualLabel,
+        label == actualLabel
+      )
 
-        val getChangeURL = driver.findElement(By.xpath("//dl[@id='background-list']/div[@class='govuk-summary-list__row'][" + lineNo + "]/dd[@class='govuk-summary-list__actions']/a[@class='govuk-link']")).getAttribute("href")
-        Assert.assertTrue("Check your answers - Background - Change URL not verified. Expected: " + url + "--- Actual: " + getChangeURL, getChangeURL.contains(url))
+      val actualAnswer = driver.findElement(
+        By.xpath(s"//dl[@id='background-list']/div[@class='govuk-summary-list__row'][$lineNo]/dd[@class='govuk-summary-list__value']")
+      ).getText
 
-      }
+      Assert.assertTrue(
+        "Check your answers - Background - Answer not verified. Expected: " + answer + "--- Actual: " + actualAnswer,
+        answer == actualAnswer
+      )
+
+      val getChangeURL = driver.findElement(
+        By.xpath(s"//dl[@id='background-list']/div[@class='govuk-summary-list__row'][$lineNo]/dd[@class='govuk-summary-list__actions']/a[@class='govuk-link']")
+      ).getAttribute("href")
+
+      Assert.assertTrue(
+        "Check your answers - Background - Change URL not verified. Expected: " + url + "--- Actual: " + getChangeURL,
+        getChangeURL.contains(url)
+      )
+    }
   }
 
   def clickOnChangeButton(expectedText: String): Unit = {

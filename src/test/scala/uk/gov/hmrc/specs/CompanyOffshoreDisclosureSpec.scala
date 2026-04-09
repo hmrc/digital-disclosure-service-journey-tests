@@ -188,7 +188,6 @@ class CompanyOffshoreDisclosureSpec extends BaseSpec {
         whenINavigateToStringSpecificPage("make-a-disclosure")
 
       Then("page heading contains You sent a notification on")
-        // Possible match (best=0.52)
         thenPageHeadingContainsString("You sent a notification on")
 
       When("I click on Make a disclosure button")
@@ -249,16 +248,16 @@ class CompanyOffshoreDisclosureSpec extends BaseSpec {
         verifyPageHeading("Which year does this offshore disclosure relate to?")
 
       And("I select Checkbox 6 April 2023 to 5 April 2024 at Position 1")
-        whenISelectCheckboxStringAtPositionString("6 April 2023 to 5 April 2024", "1")
+        whenISelectCheckboxStringAtPositionString("6 April 2024 to 5 April 2025", "1")
 
       And("I select Checkbox 6 April 2021 to 5 April 2022 at Position 3")
-        whenISelectCheckboxStringAtPositionString("6 April 2021 to 5 April 2022", "3")
+        whenISelectCheckboxStringAtPositionString("6 April 2022 to 5 April 2023", "3")
 
       And("click on Save and Continue button")
         whenClickOnSaveAndContinueButton()
 
-      Then("page navigates to You have not included the tax year ending 2023")
-        verifyPageHeading("You have not included the tax year ending 2023")
+      Then("page navigates to You have not included the tax year ending 2024")
+        verifyPageHeading("You have not included the tax year ending 2024")
 
       And("I enter Reason for including year in the disclosure in the text area")
         enterTextInTextArea("Reason for including year in the disclosure")
@@ -290,8 +289,8 @@ class CompanyOffshoreDisclosureSpec extends BaseSpec {
       And("click on Save and Continue button")
         whenClickOnSaveAndContinueButton()
 
-      Then("page navigates to Offshore liabilities — Tax year 6 April 2023 to 5 April 2024")
-        verifyPageHeading("Offshore liabilities — Tax year 6 April 2023 to 5 April 2024")
+      Then("page navigates to Offshore liabilities — Tax year 6 April 2024 to 5 April 2025")
+        verifyPageHeading("Offshore liabilities — Tax year 6 April 2024 to 5 April 2025")
 
       And("I enter 10 in the income text box field")
         whenIEnterStringInTheStringTextBoxField("10", "income")
@@ -323,8 +322,8 @@ class CompanyOffshoreDisclosureSpec extends BaseSpec {
       And("click on Save and Continue button")
         whenClickOnSaveAndContinueButton()
 
-      Then("page navigates to How much foreign tax credit relief have you deducted from your calculations for the tax year ending 2024, in pounds?")
-        verifyPageHeading("How much foreign tax credit relief have you deducted from your calculations for the tax year ending 2024, in pounds?")
+      Then("page navigates to How much foreign tax credit relief have you deducted from your calculations for the tax year ending 2025, in pounds?")
+        verifyPageHeading("How much foreign tax credit relief have you deducted from your calculations for the tax year ending 2025, in pounds?")
 
       And("I enter 10 in the TextBox field")
         thenIEnterStringInTheTextBoxField("10")
@@ -332,8 +331,8 @@ class CompanyOffshoreDisclosureSpec extends BaseSpec {
       And("click on Save and Continue button")
         whenClickOnSaveAndContinueButton()
 
-      Then("page navigates to Offshore liabilities — Tax year 6 April 2021 to 5 April 2022")
-        verifyPageHeading("Offshore liabilities — Tax year 6 April 2021 to 5 April 2022")
+      Then("page navigates to Offshore liabilities — Tax year 6 April 2022 to 5 April 2023")
+        verifyPageHeading("Offshore liabilities — Tax year 6 April 2022 to 5 April 2023")
 
       And("I enter 70 in the income text box field")
         whenIEnterStringInTheStringTextBoxField("70", "income")

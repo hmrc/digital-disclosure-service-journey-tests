@@ -16,11 +16,12 @@
 
 package uk.gov.hmrc.specs
 
+import org.scalatest.prop.Tables.Table
 import uk.gov.hmrc.specsteps.AreYouRepresentingOrganisationStepDefSteps.givenINavigateToStringPage
 import uk.gov.hmrc.specsteps.CaseManagementStepDefSteps.andOnTheHomepageIClickContinueToNavigateToTheXPage
 import uk.gov.hmrc.specsteps.CheckYourAnswersStepDefSteps.{givenIAmOnStringPage, thenAboutThePersonWhoDiedSectionShouldHaveALabelStringAtLineStringAnAnswerWithStringAndChangeURLEndsWithString, thenAnswersPageShouldHaveH2HeaderString, thenBackgroundSectionHasFollowing, thenLineStringShouldHaveALabelStringAnAnswerWithStringAndChangeURLEndsWithString}
 import uk.gov.hmrc.specsteps.DiscloseOffshoreLiabilitiesStepDefSteps.whenISelectRadioButtonStringAtPositionString
-import uk.gov.hmrc.specsteps.HomePageStepDefSteps.{clickOnCheckBox, clickOnLink, clickOnRadioButton, enterInputInTextBox, saveAndContinue}
+import uk.gov.hmrc.specsteps.HomePageStepDefSteps.{clickOnCheckBox, clickOnLink, clickOnRadioButton, enterInputInTextBox, saveAndContinue, verifyH2Header, verifyPageHeading}
 import uk.gov.hmrc.specsteps.IndividualAreYouRegisteredForSelfAssessmentStepDefSteps.givenIAmOnIsTheIndividualRegisteredForSelfAssessmentAsFarAsYouReAwarePageAsStringTaxPayer
 import uk.gov.hmrc.specsteps.InternationalAddressStepDefSteps.{enterInputInManualAddressPage, selectfromDropdown}
 import uk.gov.hmrc.specsteps.NotificationSubmittedStepDefSteps.{thenTheCaseReferenceShouldBeString, whenIClickOnSendNotificationButton}
@@ -30,7 +31,7 @@ import uk.gov.hmrc.specsteps.ReceivedALetterStepDefSteps.{givenIAmNavigatedToRec
 class EstateCheckYourAnswersSpec extends BaseSpec {
 
   Feature("An Estate is able to check their answers for About the person who died section before submitting page") {
-
+// this needs to match the original background. 
     Scenario("An Estate - CYA and send notification") {
       Given("I am navigated to Received A Letter Page")
       givenIAmNavigatedToReceivedALetterPage()
@@ -47,8 +48,8 @@ class EstateCheckYourAnswersSpec extends BaseSpec {
       And("""click on Save and Continue button""")
       saveAndContinue()
 
-      Then("""I select Radio Button A company at Position 3""")
-      clickOnRadioButton("A company","3")
+      Then("""I select Radio Button An estate at Position 2""")
+      clickOnRadioButton("An estate","2")
 
       And("""click on Save and Continue button""")
       saveAndContinue()
@@ -179,15 +180,25 @@ class EstateCheckYourAnswersSpec extends BaseSpec {
       saveAndContinue()
 
       Given("I am on Check Your Answers page")
-        givenIAmOnStringPage("")
+      verifyPageHeading("Check Your Answers")
 
       Then("answers page should have h2 header Background")
-        // Possible match (best=0.60)
-        thenAnswersPageShouldHaveH2HeaderString("")
+      verifyH2Header("Background")
 
       And("Background section has following")
-        // Possible match (best=1.00)
-        thenBackgroundSectionHasFollowing(null)
+      val backgroundRows =
+        Table(
+          ("lineNo", "label", "answer", "url"),
+          ("1", "Will you be making a disclosure because you received a letter from HMRC?", "Yes", "letter-from-hmrc/change"),
+          ("2", "Case reference", "CFSS-1234567", "hmrc-letter-reference/change"),
+          ("3", "Who this disclosure is for", "An estate", "what-is-this-disclosure-about/change"),
+          ("4", "Are you the executor or administrator of the estate that the disclosure will be about?", "I am an accountant or tax agent", "are-you-the-entity/change"),
+          ("5", "Are you representing an organisation?", "Yes", "representing-organisation/change"),
+          ("6", "Name of the organisation you represent", "Organization name", "representing-organisation-name/change"),
+          ("7", "The disclosure will be about", "Offshore and onshore liabilities", "disclose-offshore-liabilities/change")
+        )
+      thenBackgroundSectionHasFollowing(backgroundRows)
+
 
       And("answers page should have h2 header About you")
         // Possible match (best=0.60)

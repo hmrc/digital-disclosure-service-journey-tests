@@ -16,212 +16,243 @@
 
 package uk.gov.hmrc.specs
 
-import uk.gov.hmrc.specsteps.AreYouRepresentingOrganisationStepDefSteps._
-import uk.gov.hmrc.specsteps.CheckYourAnswersStepDefSteps._
-import uk.gov.hmrc.specsteps.NotificationSubmittedStepDefSteps._
-import uk.gov.hmrc.specsteps.OffshoreDisclosureStepDefSteps._
-import uk.gov.hmrc.specsteps.ReceivedALetterStepDefSteps._
+import org.scalatest.prop.Tables.Table
+import uk.gov.hmrc.specsteps.AreYouRepresentingOrganisationStepDefSteps.givenINavigateToStringPage
+import uk.gov.hmrc.specsteps.CheckYourAnswersStepDefSteps.{clickOnChangeButton, givenIAmOnStringPage, thenAboutTheTrustSectionShouldHaveALabelStringAtLineStringAnAnswerWithStringAndChangeURLEndsWithString, thenAnswersPageShouldHaveH2HeaderString, thenBackgroundSectionHasFollowing, thenLineStringShouldHaveALabelStringAnAnswerWithStringAndChangeURLEndsWithString, verifyAboutTheTrustAnswers, verifyAboutYouAnswers}
+import uk.gov.hmrc.specsteps.DiscloseOffshoreLiabilitiesStepDefSteps.whenISelectRadioButtonStringAtPositionString
+import uk.gov.hmrc.specsteps.HomePageStepDefSteps.{SendNotification, clickOnCheckBox, clickOnLink, clickOnRadioButton, enterInputInTextBox, saveAndContinue, verifyH2Header, verifyPageHeading, verifySubmittedCaseRef}
+import uk.gov.hmrc.specsteps.InternationalAddressStepDefSteps.{enterInputInManualAddressPage, selectfromDropdown}
+import uk.gov.hmrc.specsteps.NotificationSubmittedStepDefSteps.{thenTheCaseReferenceShouldBeString, whenIClickOnSendNotificationButton}
+import uk.gov.hmrc.specsteps.OffshoreDisclosureStepDefSteps.whenIClickOnMakeADisclosureButton
+import uk.gov.hmrc.specsteps.ReceivedALetterStepDefSteps.{givenIAmNavigatedToReceivedALetterPage, whenClickOnSaveAndContinueButton, whenISelectYesRadioButton}
 
 class TrustBackgroundCheckYourAnswersSpec extends BaseSpec {
 
   Feature("A trust is able to check their answers for background section before submitting page") {
 
     Scenario("Trust - Background - Change route verification") {
+      Given("I am navigated to Received A Letter Page")
+      givenIAmNavigatedToReceivedALetterPage()
+
+      Then("I select Radio Button Yes at Position 1")
+      whenISelectRadioButtonStringAtPositionString("Yes","1")
+
+      And("""click on Save and Continue button""")
+      saveAndContinue()
+
+      Then("""I enter CFSS-1234567" in the TextBox field""")
+      enterInputInTextBox("CFSS-1234567")
+
+      And("""click on Save and Continue button""")
+      saveAndContinue()
+
+      Then("""I select Radio Button A trust at Position 5""")
+      clickOnRadioButton("A trust","5")
+
+      And("""click on Save and Continue button""")
+      saveAndContinue()
+
+      Then("""I select Radio Button I am an accountant or tax agent at Position 2""")
+      clickOnRadioButton("I am an accountant or tax agent","2")
+
+      And("""click on Save and Continue button""")
+      saveAndContinue()
+
+      Then("""I select Radio Button Yes at Position 1""")
+      clickOnRadioButton("Yes","1")
+
+      And("""click on Save and Continue button""")
+      saveAndContinue()
+
+      Then("""And I enter Organization name in the TextBox field""")
+      enterInputInTextBox("Organization name")
+
+      And("""click on Save and Continue button""")
+      saveAndContinue()
+
+      Then("""I select Radio Button Yes at Position 1""")
+      clickOnRadioButton("Yes","1")
+
+      And("""click on Save and Continue button""")
+      saveAndContinue()
+
+      Then("""I select Radio Button Yes at Position 1""")
+      clickOnRadioButton("Yes","1")
+
+      And("""click on Save and Continue button""")
+      saveAndContinue()
+
+      Then("""And I select Checkbox Other capital gains at Position 6""")
+      clickOnCheckBox("Other capital gains", "6")
+
+      And("""click on Save and Continue button""")
+      saveAndContinue()
+
+      Then("""I enter Trust name in the TextBox field""")
+      enterInputInTextBox("Trust name")
+
+      And("""click on Save and Continue button""")
+      saveAndContinue()
+
+      When("""And enter country name United Kingdom, then select country United Kingdom""")
+      enterInputInTextBox("United Kingdom")
+      selectfromDropdown("United Kingdom")
+
+      And("""click on Save and Continue button""")
+      saveAndContinue()
+
+      Then("""And I click on the hyperlink with text Enter the address manually""")
+      clickOnLink("Enter the address manually")
+
+      And("""I enter The Farm in the Address line 1 field""")
+      enterInputInManualAddressPage("The Farm", "Address line 1")
+
+      And("""I enter Royal Madeuptown in the Town or city field""")
+      enterInputInManualAddressPage("Royal Madeuptown", "Town or city")
+
+      And("""I enter ZZ9Z 9TT in the Postcode field""")
+      enterInputInManualAddressPage("ZZ9Z 9TT", "Postcode")
+
+      And("""click on Save and Continue button""")
+      saveAndContinue()
+
+      Then("""click on confirm button""")
+      saveAndContinue()
+
+      Then("""I enter Your full name in the TextBox field""")
+      enterInputInTextBox("Your full name")
+
+      And("""click on Save and Continue button""")
+      saveAndContinue()
+
+      When("""I select Checkbox Email at Position 1""")
+      clickOnCheckBox("Email", "1")
+
+      Then("""I select Checkbox Telephone at Position 2""")
+      clickOnCheckBox("Telephone", "2")
+
+      And("""click on Save and Continue button""")
+      saveAndContinue()
+
+      Then("""I enter abc@abc.com in the TextBox field""")
+      enterInputInTextBox("abc@abc.com")
+
+      And("""click on Save and Continue button""")
+      saveAndContinue()
+
+      Then("""I enter 07777 777777 in the TextBox field""")
+      enterInputInTextBox("07777 777777")
+
+      And("""click on Save and Continue button""")
+      saveAndContinue()
+
+      When("""enter country name United Kingdom, then select country United Kingdom""")
+      enterInputInTextBox("United Kingdom")
+      selectfromDropdown("United Kingdom")
+
+      And("""click on Save and Continue button""")
+      saveAndContinue()
+
+      When("""I click on the hyperlink with text Enter the address manually """)
+      clickOnLink("Enter the address manually")
+
+      Then("""I enter 2 Testing Lane in the Address line 1 field""")
+      enterInputInManualAddressPage("2 Testing Lane", "Address line 1")
+
+      And("""I enter Royal Madeuptown in the Town or city field""")
+      enterInputInManualAddressPage("Royal Madeuptown", "Town or city")
+
+      And("""I enter ZZ9Z 9TT in the Postcode field""")
+      enterInputInManualAddressPage("ZZ9Z 9TT", "Postcode")
+
+      And("""click on Save and Continue button""")
+      saveAndContinue()
+
+      Then("""click on confirm button""")
+      saveAndContinue()
+
       Given("I am on Check Your Answers page")
-        // Possible match (best=0.56)
-        givenIAmOnStringPage("")
-        // --- Other possible matches ---
-        // givenIAmOnTheHomePage() [0.47] (HomePageStepDefSteps.scala) pattern: I am on the Home page
+      verifyPageHeading("Check Your Answers")
 
       When("I click on change button for Are you a trustee of the trust that the disclosure will be about?")
-        // Possible match (best=0.60)
-        whenIClickOnMakeADisclosureButton()
-        // --- Other possible matches ---
-        // whenIClickOnChangeButtonForString() [0.60] (CheckYourAnswersStepDefSteps.scala) pattern: I click on change button for {string}
-        // whenIClickOnContinueButton() [0.56] (HomePageStepDefSteps.scala) pattern: I click on continue button
-        // whenClickOnIConfirmButton() [0.56] (DiscloseOffshoreLiabilitiesStepDefSteps.scala) pattern: click on I confirm button
-        // whenIClickOnBackButton() [0.56] (ReceivedALetterStepDefSteps.scala) pattern: I click on Back button
-        // givenIAmOnAreYouTheIndividualThatTheDisclosureWillBeAboutPage() [0.55] (DiscloseOffshoreLiabilitiesStepDefSteps.scala) pattern: I am on Are you the individual that the disclosure will be about? Page
-        // whenClickOnSubmitButton() [0.52] (HomePageStepDefSteps.scala) pattern: click on submit button
-        // whenClickOnContinueButton() [0.52] (WhatIsTheCountryOfYourAddressStepDefSteps.scala) pattern: click on continue button
-        // whenClickOnConfirmButton() [0.52] (WhatIsTheCountryOfYourAddressStepDefSteps.scala) pattern: click on confirm button
-        // givenIAmNavigatedToAreYouTheIndividualThatTheDisclosureWillBeAboutPage() [0.51] (AreYouTheIndividualStepDefSteps.scala) pattern: I am navigated to Are you the individual that the disclosure will be about? Page
-        // whenIClickOnSendNotificationButton() [0.47] (NotificationSubmittedStepDefSteps.scala) pattern: I click on send notification button
+      clickOnChangeButton("Are you a trustee of the trust that the disclosure will be about?")
 
       And("I select Radio Button Yes, I am a trustee at Position 1")
-        // Possible match (best=0.70)
-        whenISelectYesRadioButton()
-        // --- Other possible matches ---
-        // thenISelectNoRadioButton() [0.56] (ReceivedALetterStepDefSteps.scala) pattern: I select No radio button
-        // whenISelectRadioButtonStringAtPositionString() [0.52] (DiscloseOffshoreLiabilitiesStepDefSteps.scala) pattern: I select Radio Button {string} at Position {string}
-        // whenISelectString() [0.47] (AreYouTheIndividualStepDefSteps.scala) pattern: I select {string}
+      clickOnRadioButton("Yes, I am a trustee","1")
 
       And("click on Save and Continue button")
-        // Possible match (best=1.00)
-        whenClickOnSaveAndContinueButton()
-        // --- Other possible matches ---
-        // whenIClickOnContinueButton() [0.70] (HomePageStepDefSteps.scala) pattern: I click on continue button
-        // whenClickOnContinueButton() [0.70] (WhatIsTheCountryOfYourAddressStepDefSteps.scala) pattern: click on continue button
-        // whenClickOnIConfirmButton() [0.56] (DiscloseOffshoreLiabilitiesStepDefSteps.scala) pattern: click on I confirm button
-        // whenIClickOnBackButton() [0.56] (ReceivedALetterStepDefSteps.scala) pattern: I click on Back button
-        // whenClickOnSubmitButton() [0.52] (HomePageStepDefSteps.scala) pattern: click on submit button
-        // whenClickOnConfirmButton() [0.52] (WhatIsTheCountryOfYourAddressStepDefSteps.scala) pattern: click on confirm button
-        // whenIClickOnMakeADisclosureButton() [0.50] (OffshoreDisclosureStepDefSteps.scala) pattern: I click on Make a disclosure button
-        // whenClickOnContinueButtonOnSummaryPage() [0.50] (OffshoreDisclosureStepDefSteps.scala) pattern: click on continue button on summary page
-        // whenIClickOnSendNotificationButton() [0.47] (NotificationSubmittedStepDefSteps.scala) pattern: I click on send notification button
-        // thenSaveAndContinueButtonIsDisplayed() [0.47] (HmrcLetterReferencePageStepDefSteps.scala) pattern: save and Continue Button is displayed
-        // thenContinueButtonDisplayed() [0.47] (WhatIsTheCountryOfYourAddressStepDefSteps.scala) pattern: Continue Button displayed
-        // thenOnTheXPageIClickXAndClickSaveAndContinue() [0.47] (CaseManagementStepDefSteps.scala) pattern: on the (.*) page I click (.*) and click save and continue
+      saveAndContinue()
 
       Then("page navigates to Check Your Answers")
-        // Possible match (best=0.56)
-        givenINavigateToStringPage("")
-        // --- Other possible matches ---
-        // thenPageNavigatesToString() [0.52] (DiscloseOffshoreLiabilitiesStepDefSteps.scala) pattern: page navigates to {string}
-        // givenINavigateToAuthorityWizardPage() [0.47] (HomePageStepDefSteps.scala) pattern: I navigate to authority wizard page
-        // whenINavigateToStringSpecificPage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} specific page
-        // whenINavigateToStringOffshorePage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} offshore page
-        // whenINavigateToStringReasonPage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} reason page
-        // whenINavigateToStringReferencePage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} reference page
+      verifyPageHeading("Check Your Answers")
 
       And("answers page should have h2 header Background")
-        // Possible match (best=0.60)
-        thenAnswersPageShouldHaveH2HeaderString("")
-        // --- Other possible matches ---
-        // thenAnswersPageShouldNotHaveH2HeaderString() [0.52] (CheckYourAnswersStepDefSteps.scala) pattern: answers page should not have h2 header {string}
+      verifyH2Header("Background")
 
       And("Background section has following")
-        // Possible match (best=1.00)
-        thenBackgroundSectionHasFollowing(null)
+      val backgroundRows =
+        Table(
+          ("lineNo", "label", "answer", "url"),
+          ("1", "Will you be making a disclosure because you received a letter from HMRC?", "Yes", "letter-from-hmrc/change"),
+          ("2", "Case reference", "CFSS-1234567", "hmrc-letter-reference/change"),
+          ("3", "Who this disclosure is for", "A trust", "what-is-this-disclosure-about/change"),
+          ("4", "Are you a trustee of the trust that the disclosure will be about?", "Yes, I am a trustee", "are-you-the-entity/change"),
+          ("5", "The disclosure will be about", "Offshore and onshore liabilities", "disclose-offshore-liabilities/change")
+        )
+      thenBackgroundSectionHasFollowing(backgroundRows)
 
       And("answers page should have h2 header About you")
-        // Possible match (best=0.60)
-        thenAnswersPageShouldHaveH2HeaderString("")
-        // --- Other possible matches ---
-        // thenAnswersPageShouldNotHaveH2HeaderString() [0.52] (CheckYourAnswersStepDefSteps.scala) pattern: answers page should not have h2 header {string}
+      verifyH2Header("About you")
 
       And("line 1 should have a label Your full name an answer with Your full name and change URL ends with your-full-name/change")
-        // Possible match (best=0.54)
-        thenLineStringShouldHaveALabelStringAnAnswerWithStringAndChangeURLEndsWithString("", "", "", "")
+      verifyAboutYouAnswers("1", "Your full name", "Your full name", "your-full-name/change")
 
       And("line 2 should have a label Your contact preference an answer with Email,Telephone and change URL ends with contact-preference/change")
-        // Possible match (best=0.54)
-        thenLineStringShouldHaveALabelStringAnAnswerWithStringAndChangeURLEndsWithString("", "", "", "")
+      verifyAboutYouAnswers("2", "Your contact preference", "Email,Telephone", "contact-preference/change")
 
       And("line 3 should have a label Your email address an answer with abc@abc.com and change URL ends with your-email-address/change")
-        // Possible match (best=0.54)
-        thenLineStringShouldHaveALabelStringAnAnswerWithStringAndChangeURLEndsWithString("", "", "", "")
+      verifyAboutYouAnswers("3", "Your email address", "abc@abc.com", "your-email-address/change")
 
       And("line 4 should have a label Your telephone number an answer with 07777 777777 and change URL ends with your-telephone-number/change")
-        // Possible match (best=0.54)
-        thenLineStringShouldHaveALabelStringAnAnswerWithStringAndChangeURLEndsWithString("", "", "", "")
+      verifyAboutYouAnswers("4", "Your telephone number", "07777 777777", "your-telephone-number/change")
 
       And("line 5 should have a label Your address an answer with 2 Testing Lane,Royal Madeuptown,ZZ9Z 9TT,United Kingdom and change URL ends with your-address/lookup/change")
-        // Possible match (best=0.54)
-        thenLineStringShouldHaveALabelStringAnAnswerWithStringAndChangeURLEndsWithString("", "", "", "")
+      verifyAboutYouAnswers("5", "Your address", "2 Testing Lane,Royal Madeuptown,ZZ9Z 9TT,United Kingdom", "your-address/lookup/change")
 
       And("answers page should have h2 header About the trust")
-        // Possible match (best=0.60)
-        thenAnswersPageShouldHaveH2HeaderString("")
-        // --- Other possible matches ---
-        // thenAnswersPageShouldNotHaveH2HeaderString() [0.52] (CheckYourAnswersStepDefSteps.scala) pattern: answers page should not have h2 header {string}
+      verifyH2Header("About the trust")
 
       And("About The Trust section should have a label Trust’s Name at line 1 an answer with Trust name and change URL ends with trust-name/change")
-        // Possible match (best=0.57)
-        thenAboutTheTrustSectionShouldHaveALabelStringAtLineStringAnAnswerWithStringAndChangeURLEndsWithString("", "", "", "")
-        // --- Other possible matches ---
-        // thenAboutTheIndividualSectionShouldHaveALabelStringAtLineStringAnAnswerWithStringAndChangeURLEndsWithString() [0.54] (CheckYourAnswersStepDefSteps.scala) pattern: About The Individual section should have a label {string} at line {string} an answer with {string} and change URL ends with {string}
-        // thenAboutTheCompanySectionShouldHaveALabelStringAtLineStringAnAnswerWithStringAndChangeURLEndsWithString() [0.54] (CheckYourAnswersStepDefSteps.scala) pattern: About The Company section should have a label {string} at line {string} an answer with {string} and change URL ends with {string}
-        // thenAboutTheLLPSectionShouldHaveALabelStringAtLineStringAnAnswerWithStringAndChangeURLEndsWithString() [0.54] (CheckYourAnswersStepDefSteps.scala) pattern: About The LLP section should have a label {string} at line {string} an answer with {string} and change URL ends with {string}
-        // thenLineStringShouldHaveALabelStringAnAnswerWithStringAndChangeURLEndsWithString() [0.54] (CheckYourAnswersStepDefSteps.scala) pattern: line {string} should have a label {string} an answer with {string} and change URL ends with {string}
-        // thenAboutThePersonWhoDiedSectionShouldHaveALabelStringAtLineStringAnAnswerWithStringAndChangeURLEndsWithString() [0.50] (CheckYourAnswersStepDefSteps.scala) pattern: About the person who died section should have a label {string} at line {string} an answer with {string} and change URL ends with {string}
-        // givenIAmOnTheHomePage() [0.47] (HomePageStepDefSteps.scala) pattern: I am on the Home page
+      verifyAboutTheTrustAnswers("Trust’s Name", "1", "Trust name", "trust-name/change")
 
       And("About The Trust section should have a label Trust address at line 2 an answer with The Farm,Royal Madeuptown,ZZ9Z 9TT,United Kingdom and change URL ends with trust-address/lookup/change")
-        // Possible match (best=0.57)
-        thenAboutTheTrustSectionShouldHaveALabelStringAtLineStringAnAnswerWithStringAndChangeURLEndsWithString("", "", "", "")
-        // --- Other possible matches ---
-        // thenAboutTheIndividualSectionShouldHaveALabelStringAtLineStringAnAnswerWithStringAndChangeURLEndsWithString() [0.54] (CheckYourAnswersStepDefSteps.scala) pattern: About The Individual section should have a label {string} at line {string} an answer with {string} and change URL ends with {string}
-        // thenAboutTheCompanySectionShouldHaveALabelStringAtLineStringAnAnswerWithStringAndChangeURLEndsWithString() [0.54] (CheckYourAnswersStepDefSteps.scala) pattern: About The Company section should have a label {string} at line {string} an answer with {string} and change URL ends with {string}
-        // thenAboutTheLLPSectionShouldHaveALabelStringAtLineStringAnAnswerWithStringAndChangeURLEndsWithString() [0.54] (CheckYourAnswersStepDefSteps.scala) pattern: About The LLP section should have a label {string} at line {string} an answer with {string} and change URL ends with {string}
-        // thenLineStringShouldHaveALabelStringAnAnswerWithStringAndChangeURLEndsWithString() [0.54] (CheckYourAnswersStepDefSteps.scala) pattern: line {string} should have a label {string} an answer with {string} and change URL ends with {string}
-        // thenAboutThePersonWhoDiedSectionShouldHaveALabelStringAtLineStringAnAnswerWithStringAndChangeURLEndsWithString() [0.50] (CheckYourAnswersStepDefSteps.scala) pattern: About the person who died section should have a label {string} at line {string} an answer with {string} and change URL ends with {string}
+      verifyAboutTheTrustAnswers("Trust address", "2", "The Farm,Royal Madeuptown,ZZ9Z 9TT,United Kingdom", "trust-address/lookup/change")
 
       When("I click on change button for Are you a trustee of the trust that the disclosure will be about?")
-        // Possible match (best=0.60)
-        whenIClickOnMakeADisclosureButton()
-        // --- Other possible matches ---
-        // whenIClickOnChangeButtonForString() [0.60] (CheckYourAnswersStepDefSteps.scala) pattern: I click on change button for {string}
-        // whenIClickOnContinueButton() [0.56] (HomePageStepDefSteps.scala) pattern: I click on continue button
-        // whenClickOnIConfirmButton() [0.56] (DiscloseOffshoreLiabilitiesStepDefSteps.scala) pattern: click on I confirm button
-        // whenIClickOnBackButton() [0.56] (ReceivedALetterStepDefSteps.scala) pattern: I click on Back button
-        // givenIAmOnAreYouTheIndividualThatTheDisclosureWillBeAboutPage() [0.55] (DiscloseOffshoreLiabilitiesStepDefSteps.scala) pattern: I am on Are you the individual that the disclosure will be about? Page
-        // whenClickOnSubmitButton() [0.52] (HomePageStepDefSteps.scala) pattern: click on submit button
-        // whenClickOnContinueButton() [0.52] (WhatIsTheCountryOfYourAddressStepDefSteps.scala) pattern: click on continue button
-        // whenClickOnConfirmButton() [0.52] (WhatIsTheCountryOfYourAddressStepDefSteps.scala) pattern: click on confirm button
-        // givenIAmNavigatedToAreYouTheIndividualThatTheDisclosureWillBeAboutPage() [0.51] (AreYouTheIndividualStepDefSteps.scala) pattern: I am navigated to Are you the individual that the disclosure will be about? Page
-        // whenIClickOnSendNotificationButton() [0.47] (NotificationSubmittedStepDefSteps.scala) pattern: I click on send notification button
+      clickOnChangeButton("Are you a trustee of the trust that the disclosure will be about?")
 
       And("click on Save and Continue button")
-        // Possible match (best=1.00)
-        whenClickOnSaveAndContinueButton()
-        // --- Other possible matches ---
-        // whenIClickOnContinueButton() [0.70] (HomePageStepDefSteps.scala) pattern: I click on continue button
-        // whenClickOnContinueButton() [0.70] (WhatIsTheCountryOfYourAddressStepDefSteps.scala) pattern: click on continue button
-        // whenClickOnIConfirmButton() [0.56] (DiscloseOffshoreLiabilitiesStepDefSteps.scala) pattern: click on I confirm button
-        // whenIClickOnBackButton() [0.56] (ReceivedALetterStepDefSteps.scala) pattern: I click on Back button
-        // whenClickOnSubmitButton() [0.52] (HomePageStepDefSteps.scala) pattern: click on submit button
-        // whenClickOnConfirmButton() [0.52] (WhatIsTheCountryOfYourAddressStepDefSteps.scala) pattern: click on confirm button
-        // whenIClickOnMakeADisclosureButton() [0.50] (OffshoreDisclosureStepDefSteps.scala) pattern: I click on Make a disclosure button
-        // whenClickOnContinueButtonOnSummaryPage() [0.50] (OffshoreDisclosureStepDefSteps.scala) pattern: click on continue button on summary page
-        // whenIClickOnSendNotificationButton() [0.47] (NotificationSubmittedStepDefSteps.scala) pattern: I click on send notification button
-        // thenSaveAndContinueButtonIsDisplayed() [0.47] (HmrcLetterReferencePageStepDefSteps.scala) pattern: save and Continue Button is displayed
-        // thenContinueButtonDisplayed() [0.47] (WhatIsTheCountryOfYourAddressStepDefSteps.scala) pattern: Continue Button displayed
-        // thenOnTheXPageIClickXAndClickSaveAndContinue() [0.47] (CaseManagementStepDefSteps.scala) pattern: on the (.*) page I click (.*) and click save and continue
+      saveAndContinue()
 
       Then("page navigates to Check Your Answers")
-        // Possible match (best=0.56)
-        givenINavigateToStringPage("")
-        // --- Other possible matches ---
-        // thenPageNavigatesToString() [0.52] (DiscloseOffshoreLiabilitiesStepDefSteps.scala) pattern: page navigates to {string}
-        // givenINavigateToAuthorityWizardPage() [0.47] (HomePageStepDefSteps.scala) pattern: I navigate to authority wizard page
-        // whenINavigateToStringSpecificPage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} specific page
-        // whenINavigateToStringOffshorePage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} offshore page
-        // whenINavigateToStringReasonPage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} reason page
-        // whenINavigateToStringReferencePage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} reference page
+      verifyPageHeading("Check Your Answers")
 
       And("Background section has following")
-        // Possible match (best=1.00)
-        thenBackgroundSectionHasFollowing(null)
+      val backgroundRow =
+        Table(
+          ("lineNo", "label", "answer", "url"),
+          ("4", "Are you a trustee of the trust that the disclosure will be about?", "Yes, I am a trustee", "are-you-the-entity/change"),
+        )
+      thenBackgroundSectionHasFollowing(backgroundRow)
 
       When("I click on send notification button")
-        // Possible match (best=1.00)
-        whenIClickOnSendNotificationButton()
-        // --- Other possible matches ---
-        // whenIClickOnContinueButton() [0.56] (HomePageStepDefSteps.scala) pattern: I click on continue button
-        // whenClickOnIConfirmButton() [0.56] (DiscloseOffshoreLiabilitiesStepDefSteps.scala) pattern: click on I confirm button
-        // whenIClickOnBackButton() [0.56] (ReceivedALetterStepDefSteps.scala) pattern: I click on Back button
-        // whenClickOnSubmitButton() [0.52] (HomePageStepDefSteps.scala) pattern: click on submit button
-        // whenClickOnContinueButton() [0.52] (WhatIsTheCountryOfYourAddressStepDefSteps.scala) pattern: click on continue button
-        // whenClickOnConfirmButton() [0.52] (WhatIsTheCountryOfYourAddressStepDefSteps.scala) pattern: click on confirm button
-        // whenIClickOnMakeADisclosureButton() [0.50] (OffshoreDisclosureStepDefSteps.scala) pattern: I click on Make a disclosure button
+      SendNotification()
 
       Then("page navigates to You have sent your notification")
-        // Possible match (best=0.56)
-        givenINavigateToStringPage("")
-        // --- Other possible matches ---
-        // thenPageNavigatesToString() [0.52] (DiscloseOffshoreLiabilitiesStepDefSteps.scala) pattern: page navigates to {string}
-        // andOnTheHomepageIClickContinueToNavigateToTheXPage() [0.50] (CaseManagementStepDefSteps.scala) pattern: on the homepage I click continue to navigate to the (.*) page
-        // givenINavigateToAuthorityWizardPage() [0.47] (HomePageStepDefSteps.scala) pattern: I navigate to authority wizard page
-        // whenINavigateToStringSpecificPage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} specific page
-        // whenINavigateToStringOffshorePage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} offshore page
-        // whenINavigateToStringReasonPage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} reason page
-        // whenINavigateToStringReferencePage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} reference page
+      verifyPageHeading("You have sent your notification")
 
       And("the case reference should be CFSS-1234567")
-        // Possible match (best=0.58)
-        thenTheCaseReferenceShouldBeString("")
-
+      verifySubmittedCaseRef("CFSS-1234567")
     }
   }
 }

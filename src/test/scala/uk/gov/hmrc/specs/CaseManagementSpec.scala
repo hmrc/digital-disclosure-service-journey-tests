@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
+// DONE
 package uk.gov.hmrc.specs
 
-import uk.gov.hmrc.selenium.webdriver.Driver
-import uk.gov.hmrc.specsteps.CaseManagementStepDefSteps._
-import uk.gov.hmrc.specsteps.HomePageStepDefSteps._
+import uk.gov.hmrc.specsteps.CaseManagementStepDefSteps.{andIClickTheEditLinkWithinTheCaseTable, andOnTheHomepageIClickContinueToNavigateToTheXPage, andVerifyOnTheXPage, givenTheValuesWithinTheDatatableAreVerified, thenOnTheXPageIClickReturnToViewEditOrCreateACase, thenOnTheXPageIClickXAndClickSaveAndContinue, thenOnTheXPageIEnterXIntoTheTextboxAndClickSaveAndContinue, thenOnTheXPageISelectXAndClickSaveAndContinue, whenClickOnSubmitOnWizardPage, whenISelectCreateANewCase, whenOnTheXPageIClickOnTheHeaderHyperlink, whenSelectStringFromAffinityGroupDropDown, whenSelectStringFromConfidenceLevelDropDown}
+import uk.gov.hmrc.specsteps.HomePageStepDefSteps.{clickOnContinue, givenINavigateToAuthorityWizardPage}
 
 
 class CaseManagementSpec extends BaseSpec {
@@ -39,13 +39,7 @@ class CaseManagementSpec extends BaseSpec {
         whenClickOnSubmitOnWizardPage()
 
       And("I click on continue button")
-        // Possible match (best=1.00)
-      Thread.sleep(2000)
-        whenIClickOnContinueButton()
-      println("URL NOW = " + Driver.instance.getCurrentUrl)
-      println("TITLE NOW = " + Driver.instance.getTitle)
-      println("BODY NOW = " + Driver.instance.getPageSource.take(500))
-      Thread.sleep(2000)
+        clickOnContinue()
 
       Then("on the UsingThisService page I click Make a notification first and click save and continue")
         thenOnTheXPageIClickXAndClickSaveAndContinue("UsingThisService", "Make a notification first")

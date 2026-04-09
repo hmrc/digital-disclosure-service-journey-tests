@@ -17,6 +17,7 @@
 package uk.gov.hmrc.stepdefs
 
 import io.cucumber.datatable.DataTable
+import org.scalatest.prop.Tables.Table
 import uk.gov.hmrc.pages.{BasePage, CheckYourAnswersPage}
 
 class CheckYourAnswersStepDef extends BasePage with CheckYourAnswersPage {
@@ -52,8 +53,21 @@ class CheckYourAnswersStepDef extends BasePage with CheckYourAnswersPage {
     verifyAboutTheTrustAnswers(string, string2, string3, string4)
   }
 
-  Then("""Background section has following""") { (dataTable: DataTable) =>
-    verifyBackgroundAnswers(dataTable)
+  Then("""Background section has following""") {
+
+    val backgroundRows =
+      Table(
+        ("lineNo", "label", "answer", "url"),
+        ("1", "Will you be making a disclosure because you received a letter from HMRC?", "Yes", "letter-from-hmrc/change"),
+        ("2", "Case reference", "CFSS-1234567", "hmrc-letter-reference/change"),
+        ("3", "Who this disclosure is for", "A company", "what-is-this-disclosure-about/change"),
+        ("4", "Are you an officer of the company that the disclosure will be about?", "I am an accountant or tax agent", "are-you-the-entity/change"),
+        ("5", "Are you representing an organisation?", "Yes", "representing-organisation/change"),
+        ("6", "Name of the organisation you represent", "Organization name", "representing-organisation-name/change"),
+        ("7", "The disclosure will be about", "Offshore and onshore liabilities", "disclose-offshore-liabilities/change")
+      )
+
+    verifyBackgroundAnswers(backgroundRows)
   }
 
   Then("""clicking on change button navigates as following:""") { (dataTable: DataTable) =>
