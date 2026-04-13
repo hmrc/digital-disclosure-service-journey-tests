@@ -2445,473 +2445,138 @@ class IndividualOffshoreDisclosureSpec extends BaseSpec {
       And("I select Checkbox I submitted an inaccurate return at Position 3")
         // Possible match (best=0.65)
         whenISelectCheckboxStringAtPositionString("", "")
-        // --- Other possible matches ---
-        // whenISelectString() [0.47] (AreYouTheIndividualStepDefSteps.scala) pattern: I select {string}
 
       And("click on Save and Continue button")
         // Possible match (best=1.00)
         whenClickOnSaveAndContinueButton()
-        // --- Other possible matches ---
-        // whenIClickOnContinueButton() [0.70] (HomePageStepDefSteps.scala) pattern: I click on continue button
-        // whenClickOnContinueButton() [0.70] (WhatIsTheCountryOfYourAddressStepDefSteps.scala) pattern: click on continue button
-        // whenClickOnIConfirmButton() [0.56] (DiscloseOffshoreLiabilitiesStepDefSteps.scala) pattern: click on I confirm button
-        // whenIClickOnBackButton() [0.56] (ReceivedALetterStepDefSteps.scala) pattern: I click on Back button
-        // whenClickOnSubmitButton() [0.52] (HomePageStepDefSteps.scala) pattern: click on submit button
-        // whenClickOnConfirmButton() [0.52] (WhatIsTheCountryOfYourAddressStepDefSteps.scala) pattern: click on confirm button
-        // whenIClickOnMakeADisclosureButton() [0.50] (OffshoreDisclosureStepDefSteps.scala) pattern: I click on Make a disclosure button
-        // whenClickOnContinueButtonOnSummaryPage() [0.50] (OffshoreDisclosureStepDefSteps.scala) pattern: click on continue button on summary page
-        // whenIClickOnSendNotificationButton() [0.47] (NotificationSubmittedStepDefSteps.scala) pattern: I click on send notification button
-        // thenSaveAndContinueButtonIsDisplayed() [0.47] (HmrcLetterReferencePageStepDefSteps.scala) pattern: save and Continue Button is displayed
-        // thenContinueButtonDisplayed() [0.47] (WhatIsTheCountryOfYourAddressStepDefSteps.scala) pattern: Continue Button displayed
-        // thenOnTheXPageIClickXAndClickSaveAndContinue() [0.47] (CaseManagementStepDefSteps.scala) pattern: on the (.*) page I click (.*) and click save and continue
 
       Then("page navigates to Why you did not notify HMRC about a tax liability")
         // Possible match (best=0.56)
         givenINavigateToStringPage("")
-        // --- Other possible matches ---
-        // thenPageNavigatesToString() [0.52] (DiscloseOffshoreLiabilitiesStepDefSteps.scala) pattern: page navigates to {string}
-        // andOnTheHomepageIClickContinueToNavigateToTheXPage() [0.50] (CaseManagementStepDefSteps.scala) pattern: on the homepage I click continue to navigate to the (.*) page
-        // givenINavigateToAuthorityWizardPage() [0.47] (HomePageStepDefSteps.scala) pattern: I navigate to authority wizard page
-        // whenINavigateToStringSpecificPage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} specific page
-        // whenINavigateToStringOffshorePage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} offshore page
-        // whenINavigateToStringReasonPage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} reason page
-        // whenINavigateToStringReferencePage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} reference page
 
       And("I select Checkbox I have a reasonable excuse at Position 2")
         // Possible match (best=0.65)
         whenISelectCheckboxStringAtPositionString("", "")
-        // --- Other possible matches ---
-        // whenISelectString() [0.47] (AreYouTheIndividualStepDefSteps.scala) pattern: I select {string}
 
       And("click on Save and Continue button")
         // Possible match (best=1.00)
         whenClickOnSaveAndContinueButton()
-        // --- Other possible matches ---
-        // whenIClickOnContinueButton() [0.70] (HomePageStepDefSteps.scala) pattern: I click on continue button
-        // whenClickOnContinueButton() [0.70] (WhatIsTheCountryOfYourAddressStepDefSteps.scala) pattern: click on continue button
-        // whenClickOnIConfirmButton() [0.56] (DiscloseOffshoreLiabilitiesStepDefSteps.scala) pattern: click on I confirm button
-        // whenIClickOnBackButton() [0.56] (ReceivedALetterStepDefSteps.scala) pattern: I click on Back button
-        // whenClickOnSubmitButton() [0.52] (HomePageStepDefSteps.scala) pattern: click on submit button
-        // whenClickOnConfirmButton() [0.52] (WhatIsTheCountryOfYourAddressStepDefSteps.scala) pattern: click on confirm button
-        // whenIClickOnMakeADisclosureButton() [0.50] (OffshoreDisclosureStepDefSteps.scala) pattern: I click on Make a disclosure button
-        // whenClickOnContinueButtonOnSummaryPage() [0.50] (OffshoreDisclosureStepDefSteps.scala) pattern: click on continue button on summary page
-        // whenIClickOnSendNotificationButton() [0.47] (NotificationSubmittedStepDefSteps.scala) pattern: I click on send notification button
-        // thenSaveAndContinueButtonIsDisplayed() [0.47] (HmrcLetterReferencePageStepDefSteps.scala) pattern: save and Continue Button is displayed
-        // thenContinueButtonDisplayed() [0.47] (WhatIsTheCountryOfYourAddressStepDefSteps.scala) pattern: Continue Button displayed
-        // thenOnTheXPageIClickXAndClickSaveAndContinue() [0.47] (CaseManagementStepDefSteps.scala) pattern: on the (.*) page I click (.*) and click save and continue
 
       Then("page navigates to Why you did not file a return on time")
         // Possible match (best=0.56)
         givenINavigateToStringPage("")
-        // --- Other possible matches ---
-        // thenPageNavigatesToString() [0.52] (DiscloseOffshoreLiabilitiesStepDefSteps.scala) pattern: page navigates to {string}
-        // andOnTheHomepageIClickContinueToNavigateToTheXPage() [0.50] (CaseManagementStepDefSteps.scala) pattern: on the homepage I click continue to navigate to the (.*) page
-        // givenINavigateToAuthorityWizardPage() [0.47] (HomePageStepDefSteps.scala) pattern: I navigate to authority wizard page
-        // whenINavigateToStringSpecificPage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} specific page
-        // whenINavigateToStringOffshorePage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} offshore page
-        // whenINavigateToStringReasonPage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} reason page
-        // whenINavigateToStringReferencePage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} reference page
 
       And("I select Checkbox I have a reasonable excuse at Position 2")
         // Possible match (best=0.65)
         whenISelectCheckboxStringAtPositionString("", "")
-        // --- Other possible matches ---
-        // whenISelectString() [0.47] (AreYouTheIndividualStepDefSteps.scala) pattern: I select {string}
 
       And("click on Save and Continue button")
         // Possible match (best=1.00)
         whenClickOnSaveAndContinueButton()
-        // --- Other possible matches ---
-        // whenIClickOnContinueButton() [0.70] (HomePageStepDefSteps.scala) pattern: I click on continue button
-        // whenClickOnContinueButton() [0.70] (WhatIsTheCountryOfYourAddressStepDefSteps.scala) pattern: click on continue button
-        // whenClickOnIConfirmButton() [0.56] (DiscloseOffshoreLiabilitiesStepDefSteps.scala) pattern: click on I confirm button
-        // whenIClickOnBackButton() [0.56] (ReceivedALetterStepDefSteps.scala) pattern: I click on Back button
-        // whenClickOnSubmitButton() [0.52] (HomePageStepDefSteps.scala) pattern: click on submit button
-        // whenClickOnConfirmButton() [0.52] (WhatIsTheCountryOfYourAddressStepDefSteps.scala) pattern: click on confirm button
-        // whenIClickOnMakeADisclosureButton() [0.50] (OffshoreDisclosureStepDefSteps.scala) pattern: I click on Make a disclosure button
-        // whenClickOnContinueButtonOnSummaryPage() [0.50] (OffshoreDisclosureStepDefSteps.scala) pattern: click on continue button on summary page
-        // whenIClickOnSendNotificationButton() [0.47] (NotificationSubmittedStepDefSteps.scala) pattern: I click on send notification button
-        // thenSaveAndContinueButtonIsDisplayed() [0.47] (HmrcLetterReferencePageStepDefSteps.scala) pattern: save and Continue Button is displayed
-        // thenContinueButtonDisplayed() [0.47] (WhatIsTheCountryOfYourAddressStepDefSteps.scala) pattern: Continue Button displayed
-        // thenOnTheXPageIClickXAndClickSaveAndContinue() [0.47] (CaseManagementStepDefSteps.scala) pattern: on the (.*) page I click (.*) and click save and continue
 
       Then("page navigates to Why you submitted an inaccurate return")
         // Possible match (best=0.56)
         givenINavigateToStringPage("")
-        // --- Other possible matches ---
-        // thenPageNavigatesToString() [0.52] (DiscloseOffshoreLiabilitiesStepDefSteps.scala) pattern: page navigates to {string}
-        // givenINavigateToAuthorityWizardPage() [0.47] (HomePageStepDefSteps.scala) pattern: I navigate to authority wizard page
-        // whenINavigateToStringSpecificPage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} specific page
-        // whenINavigateToStringOffshorePage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} offshore page
-        // whenINavigateToStringReasonPage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} reason page
-        // whenINavigateToStringReferencePage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} reference page
 
       And("I select Checkbox I took reasonable care but made a mistake at Position 2")
         // Possible match (best=0.65)
         whenISelectCheckboxStringAtPositionString("", "")
-        // --- Other possible matches ---
-        // whenISelectString() [0.47] (AreYouTheIndividualStepDefSteps.scala) pattern: I select {string}
 
       And("click on Save and Continue button")
         // Possible match (best=1.00)
         whenClickOnSaveAndContinueButton()
-        // --- Other possible matches ---
-        // whenIClickOnContinueButton() [0.70] (HomePageStepDefSteps.scala) pattern: I click on continue button
-        // whenClickOnContinueButton() [0.70] (WhatIsTheCountryOfYourAddressStepDefSteps.scala) pattern: click on continue button
-        // whenClickOnIConfirmButton() [0.56] (DiscloseOffshoreLiabilitiesStepDefSteps.scala) pattern: click on I confirm button
-        // whenIClickOnBackButton() [0.56] (ReceivedALetterStepDefSteps.scala) pattern: I click on Back button
-        // whenClickOnSubmitButton() [0.52] (HomePageStepDefSteps.scala) pattern: click on submit button
-        // whenClickOnConfirmButton() [0.52] (WhatIsTheCountryOfYourAddressStepDefSteps.scala) pattern: click on confirm button
-        // whenIClickOnMakeADisclosureButton() [0.50] (OffshoreDisclosureStepDefSteps.scala) pattern: I click on Make a disclosure button
-        // whenClickOnContinueButtonOnSummaryPage() [0.50] (OffshoreDisclosureStepDefSteps.scala) pattern: click on continue button on summary page
-        // whenIClickOnSendNotificationButton() [0.47] (NotificationSubmittedStepDefSteps.scala) pattern: I click on send notification button
-        // thenSaveAndContinueButtonIsDisplayed() [0.47] (HmrcLetterReferencePageStepDefSteps.scala) pattern: save and Continue Button is displayed
-        // thenContinueButtonDisplayed() [0.47] (WhatIsTheCountryOfYourAddressStepDefSteps.scala) pattern: Continue Button displayed
-        // thenOnTheXPageIClickXAndClickSaveAndContinue() [0.47] (CaseManagementStepDefSteps.scala) pattern: on the (.*) page I click (.*) and click save and continue
 
       Then("page navigates to Your reasonable excuse for not notifying HMRC about a tax liability")
         // Possible match (best=0.58)
         whenINavigateToStringReasonPage("")
-        // --- Other possible matches ---
-        // andVerifyOnTheXPage() [0.57] (CaseManagementStepDefSteps.scala) pattern: verify on the (.*) page
-        // givenINavigateToStringPage() [0.56] (AreYouRepresentingOrganisationStepDefSteps.scala) pattern: I navigate to {string} page
-        // andOnTheHomepageIClickContinueToNavigateToTheXPage() [0.56] (CaseManagementStepDefSteps.scala) pattern: on the homepage I click continue to navigate to the (.*) page
-        // thenPageNavigatesToString() [0.52] (DiscloseOffshoreLiabilitiesStepDefSteps.scala) pattern: page navigates to {string}
-        // givenINavigateToAuthorityWizardPage() [0.47] (HomePageStepDefSteps.scala) pattern: I navigate to authority wizard page
-        // whenINavigateToStringSpecificPage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} specific page
-        // whenINavigateToStringOffshorePage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} offshore page
-        // whenINavigateToStringReferencePage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} reference page
 
       And("I enter Reasonable excuse in the reason for excuse text area")
         // Possible match (best=0.84)
         whenIEnterStringInTheReasonForReasonableExcuseTextArea("")
-        // --- Other possible matches ---
-        // whenIEnterStringInTheReasonForExcuseTextArea() [0.83] (OffshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in the reason for excuse text area
-        // whenIEnterStringInTheReasonableExcuseTextArea() [0.82] (OffshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in the reasonable excuse text area
-        // whenIEnterStringInTheTextArea() [0.75] (OffshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in the text area
-        // whenIEnterStringInTheReasonableCareTextArea() [0.69] (OffshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in the reasonable care text area
-        // whenIEnterStringInTheAdviceTextArea() [0.67] (OffshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in the advice text area
-        // whenIEnterStringInTheMonthTextArea() [0.67] (OffshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in the month text area
-        // whenIEnterStringInTheYearTextArea() [0.67] (OffshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in the year text area
-        // whenIEnterStringInTheReasonForMakingADisclosureNowTextArea() [0.63] (OffshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in the reason for making a disclosure now text area
-        // whenIEnterStringInTheCanYouDescribeTheGiftTextArea() [0.56] (OffshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in the can you describe the gift text area
-        // whenIEnterStringInTheWhyWasTheDisclosureNotMadeBeforeNowTextArea() [0.48] (OffshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in the why was the disclosure not made before now text area
 
       And("I enter tax year ending 2020 in the Which tax years does this apply to?for not notifying HMRC text box field")
         // Possible match (best=0.74)
         whenIEnterStringInStopYearTextBoxField("")
-        // --- Other possible matches ---
-        // whenIEnterStringInTheStringTextBoxField() [0.74] (WhatIsYouDOBStepDefSteps.scala) pattern: I enter {string} in the {string} text box field
-        // whenIEnterStringInWhatHasHappenedToPropertyTextBoxField() [0.72] (OnshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in whatHasHappenedToProperty text box field
-        // whenIEnterStringInYearNotSelectedTextBoxField() [0.72] (OnshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in yearNotSelected text box field
-        // whenIEnterStringInPercentageTextBoxField() [0.72] (OnshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in percentage text box field
-        // whenIEnterStringInTypeOfMortageTextBoxField() [0.72] (OnshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in typeOfMortage text box field
-        // whenIEnterStringInStopDayTextBoxField() [0.67] (OnshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in stop day text box field
-        // whenIEnterStringInStopMonthTextBoxField() [0.67] (OnshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in stop month text box field
-        // whenIEnterStringInLandloardAssociationTextBoxField() [0.67] (OnshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in landloard association text box field
-        // whenIEnterStringInPropertyCountTextBoxField() [0.67] (OnshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in property count text box field
-        // whenIEnterStringInTaxOwedReasonTextBoxField() [0.64] (OnshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in tax owed reason text box field
-        // thenIEnterStringInTheTextBoxField() [0.60] (WhatIsYourMainOccupationStepDefSteps.scala) pattern: I enter {string} in the TextBox field
-        // whenIEnterNoDataInEmailTextBoxField() [0.54] (WhatIsYourEmailAddressStepDefSteps.scala) pattern: I enter no data in email TextBox field
-        // whenIEnterStringInTheYearTextArea() [0.52] (OffshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in the year text area
-        // thenTextStringIsDisplayed() [0.50] (DiscloseOffshoreLiabilitiesStepDefSteps.scala) pattern: text {string} is displayed
-        // whenIEnterStringInTheTextArea() [0.50] (OffshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in the text area
-        // whenIEnterStringInTheStringField() [0.50] (InternationalAddressStepDefSteps.scala) pattern: I enter {string} in the {string} field
-        // whenIEnterNoDataInReferenceNumberTextBoxField() [0.49] (HmrcLetterReferencePageStepDefSteps.scala) pattern: I enter no data in reference number TextBox field
-        // whenIEnterNoDataInFullNameTextBoxField() [0.49] (WhatIsYourFullNameStepDefSteps.scala) pattern: I enter no data in Full Name TextBox field
-        // whenIEnterNoDataInNINumberTextBoxField() [0.49] (WhatIsYourNationalInsuranceNumStepDefSteps.scala) pattern: I enter no data in NI Number TextBox field
 
       And("click on Save and Continue button")
         // Possible match (best=1.00)
         whenClickOnSaveAndContinueButton()
-        // --- Other possible matches ---
-        // whenIClickOnContinueButton() [0.70] (HomePageStepDefSteps.scala) pattern: I click on continue button
-        // whenClickOnContinueButton() [0.70] (WhatIsTheCountryOfYourAddressStepDefSteps.scala) pattern: click on continue button
-        // whenClickOnIConfirmButton() [0.56] (DiscloseOffshoreLiabilitiesStepDefSteps.scala) pattern: click on I confirm button
-        // whenIClickOnBackButton() [0.56] (ReceivedALetterStepDefSteps.scala) pattern: I click on Back button
-        // whenClickOnSubmitButton() [0.52] (HomePageStepDefSteps.scala) pattern: click on submit button
-        // whenClickOnConfirmButton() [0.52] (WhatIsTheCountryOfYourAddressStepDefSteps.scala) pattern: click on confirm button
-        // whenIClickOnMakeADisclosureButton() [0.50] (OffshoreDisclosureStepDefSteps.scala) pattern: I click on Make a disclosure button
-        // whenClickOnContinueButtonOnSummaryPage() [0.50] (OffshoreDisclosureStepDefSteps.scala) pattern: click on continue button on summary page
-        // whenIClickOnSendNotificationButton() [0.47] (NotificationSubmittedStepDefSteps.scala) pattern: I click on send notification button
-        // thenSaveAndContinueButtonIsDisplayed() [0.47] (HmrcLetterReferencePageStepDefSteps.scala) pattern: save and Continue Button is displayed
-        // thenContinueButtonDisplayed() [0.47] (WhatIsTheCountryOfYourAddressStepDefSteps.scala) pattern: Continue Button displayed
-        // thenOnTheXPageIClickXAndClickSaveAndContinue() [0.47] (CaseManagementStepDefSteps.scala) pattern: on the (.*) page I click (.*) and click save and continue
 
       Then("page navigates to Your reasonable excuse for not filing a return")
         // Possible match (best=0.58)
         whenINavigateToStringReasonPage("")
-        // --- Other possible matches ---
-        // andVerifyOnTheXPage() [0.57] (CaseManagementStepDefSteps.scala) pattern: verify on the (.*) page
-        // givenINavigateToStringPage() [0.56] (AreYouRepresentingOrganisationStepDefSteps.scala) pattern: I navigate to {string} page
-        // andOnTheHomepageIClickContinueToNavigateToTheXPage() [0.56] (CaseManagementStepDefSteps.scala) pattern: on the homepage I click continue to navigate to the (.*) page
-        // thenPageNavigatesToString() [0.52] (DiscloseOffshoreLiabilitiesStepDefSteps.scala) pattern: page navigates to {string}
-        // givenINavigateToAuthorityWizardPage() [0.47] (HomePageStepDefSteps.scala) pattern: I navigate to authority wizard page
-        // whenINavigateToStringSpecificPage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} specific page
-        // whenINavigateToStringOffshorePage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} offshore page
-        // whenINavigateToStringReferencePage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} reference page
 
       And("I enter Reasonable excuse in the reason for reasonable excuse text area")
         // Possible match (best=0.84)
         whenIEnterStringInTheReasonForReasonableExcuseTextArea("")
-        // --- Other possible matches ---
-        // whenIEnterStringInTheReasonForExcuseTextArea() [0.83] (OffshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in the reason for excuse text area
-        // whenIEnterStringInTheReasonableExcuseTextArea() [0.82] (OffshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in the reasonable excuse text area
-        // whenIEnterStringInTheTextArea() [0.75] (OffshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in the text area
-        // whenIEnterStringInTheReasonableCareTextArea() [0.69] (OffshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in the reasonable care text area
-        // whenIEnterStringInTheAdviceTextArea() [0.67] (OffshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in the advice text area
-        // whenIEnterStringInTheMonthTextArea() [0.67] (OffshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in the month text area
-        // whenIEnterStringInTheYearTextArea() [0.67] (OffshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in the year text area
-        // whenIEnterStringInTheReasonForMakingADisclosureNowTextArea() [0.63] (OffshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in the reason for making a disclosure now text area
-        // whenIEnterStringInTheCanYouDescribeTheGiftTextArea() [0.56] (OffshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in the can you describe the gift text area
-        // whenIEnterStringInTheWhyWasTheDisclosureNotMadeBeforeNowTextArea() [0.48] (OffshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in the why was the disclosure not made before now text area
 
       And("I enter tax year ending 2020 in the Which tax years does this apply to? text box field")
         // Possible match (best=0.74)
         whenIEnterStringInStopYearTextBoxField("")
-        // --- Other possible matches ---
-        // whenIEnterStringInTheStringTextBoxField() [0.74] (WhatIsYouDOBStepDefSteps.scala) pattern: I enter {string} in the {string} text box field
-        // whenIEnterStringInWhatHasHappenedToPropertyTextBoxField() [0.72] (OnshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in whatHasHappenedToProperty text box field
-        // whenIEnterStringInYearNotSelectedTextBoxField() [0.72] (OnshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in yearNotSelected text box field
-        // whenIEnterStringInPercentageTextBoxField() [0.72] (OnshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in percentage text box field
-        // whenIEnterStringInTypeOfMortageTextBoxField() [0.72] (OnshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in typeOfMortage text box field
-        // whenIEnterStringInStopDayTextBoxField() [0.67] (OnshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in stop day text box field
-        // whenIEnterStringInStopMonthTextBoxField() [0.67] (OnshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in stop month text box field
-        // whenIEnterStringInLandloardAssociationTextBoxField() [0.67] (OnshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in landloard association text box field
-        // whenIEnterStringInPropertyCountTextBoxField() [0.67] (OnshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in property count text box field
-        // whenIEnterStringInTaxOwedReasonTextBoxField() [0.64] (OnshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in tax owed reason text box field
-        // thenIEnterStringInTheTextBoxField() [0.60] (WhatIsYourMainOccupationStepDefSteps.scala) pattern: I enter {string} in the TextBox field
-        // whenIEnterStringInTheYearTextArea() [0.52] (OffshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in the year text area
-        // thenTextStringIsDisplayed() [0.50] (DiscloseOffshoreLiabilitiesStepDefSteps.scala) pattern: text {string} is displayed
-        // whenIEnterStringInTheTextArea() [0.50] (OffshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in the text area
-        // whenIEnterStringInTheStringField() [0.50] (InternationalAddressStepDefSteps.scala) pattern: I enter {string} in the {string} field
 
       And("click on Save and Continue button")
         // Possible match (best=1.00)
         whenClickOnSaveAndContinueButton()
-        // --- Other possible matches ---
-        // whenIClickOnContinueButton() [0.70] (HomePageStepDefSteps.scala) pattern: I click on continue button
-        // whenClickOnContinueButton() [0.70] (WhatIsTheCountryOfYourAddressStepDefSteps.scala) pattern: click on continue button
-        // whenClickOnIConfirmButton() [0.56] (DiscloseOffshoreLiabilitiesStepDefSteps.scala) pattern: click on I confirm button
-        // whenIClickOnBackButton() [0.56] (ReceivedALetterStepDefSteps.scala) pattern: I click on Back button
-        // whenClickOnSubmitButton() [0.52] (HomePageStepDefSteps.scala) pattern: click on submit button
-        // whenClickOnConfirmButton() [0.52] (WhatIsTheCountryOfYourAddressStepDefSteps.scala) pattern: click on confirm button
-        // whenIClickOnMakeADisclosureButton() [0.50] (OffshoreDisclosureStepDefSteps.scala) pattern: I click on Make a disclosure button
-        // whenClickOnContinueButtonOnSummaryPage() [0.50] (OffshoreDisclosureStepDefSteps.scala) pattern: click on continue button on summary page
-        // whenIClickOnSendNotificationButton() [0.47] (NotificationSubmittedStepDefSteps.scala) pattern: I click on send notification button
-        // thenSaveAndContinueButtonIsDisplayed() [0.47] (HmrcLetterReferencePageStepDefSteps.scala) pattern: save and Continue Button is displayed
-        // thenContinueButtonDisplayed() [0.47] (WhatIsTheCountryOfYourAddressStepDefSteps.scala) pattern: Continue Button displayed
-        // thenOnTheXPageIClickXAndClickSaveAndContinue() [0.47] (CaseManagementStepDefSteps.scala) pattern: on the (.*) page I click (.*) and click save and continue
 
       Then("page navigates to What reasonable care did you take when submitting the inaccurate return?")
         // Possible match (best=0.62)
         andOnTheHomepageIClickContinueToNavigateToTheXPage("")
-        // --- Other possible matches ---
-        // whenINavigateToStringReasonPage() [0.58] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} reason page
-        // andVerifyOnTheXPage() [0.57] (CaseManagementStepDefSteps.scala) pattern: verify on the (.*) page
-        // givenINavigateToStringPage() [0.56] (AreYouRepresentingOrganisationStepDefSteps.scala) pattern: I navigate to {string} page
-        // thenPageNavigatesToString() [0.52] (DiscloseOffshoreLiabilitiesStepDefSteps.scala) pattern: page navigates to {string}
-        // givenIAmOnTheHomePage() [0.47] (HomePageStepDefSteps.scala) pattern: I am on the Home page
-        // givenINavigateToAuthorityWizardPage() [0.47] (HomePageStepDefSteps.scala) pattern: I navigate to authority wizard page
-        // whenINavigateToStringSpecificPage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} specific page
-        // whenINavigateToStringOffshorePage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} offshore page
-        // whenINavigateToStringReferencePage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} reference page
-        // whenClickOnSubmitOnWizardPage() [0.47] (CaseManagementStepDefSteps.scala) pattern: click on submit on wizard page
 
       And("I enter Reasonable care in the reasonable care text area")
         // Possible match (best=0.77)
         whenIEnterStringInTheReasonableCareTextArea("")
-        // --- Other possible matches ---
-        // whenIEnterStringInTheTextArea() [0.75] (OffshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in the text area
-        // whenIEnterStringInTheAdviceTextArea() [0.67] (OffshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in the advice text area
-        // whenIEnterStringInTheMonthTextArea() [0.67] (OffshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in the month text area
-        // whenIEnterStringInTheYearTextArea() [0.67] (OffshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in the year text area
-        // whenIEnterStringInTheReasonableExcuseTextArea() [0.64] (OffshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in the reasonable excuse text area
-        // whenIEnterStringInTheReasonForReasonableExcuseTextArea() [0.61] (OffshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in the reason for reasonable excuse text area
-        // whenIEnterStringInTheReasonForExcuseTextArea() [0.59] (OffshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in the reason for excuse text area
-        // whenIEnterStringInTheReasonForMakingADisclosureNowTextArea() [0.58] (OffshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in the reason for making a disclosure now text area
-        // whenIEnterStringInTheCanYouDescribeTheGiftTextArea() [0.56] (OffshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in the can you describe the gift text area
-        // whenIEnterStringInTheWhyWasTheDisclosureNotMadeBeforeNowTextArea() [0.48] (OffshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in the why was the disclosure not made before now text area
 
       And("I enter tax year ending 2020 in the Which tax years does this apply to? text box field")
         // Possible match (best=0.74)
         whenIEnterStringInStopYearTextBoxField("")
-        // --- Other possible matches ---
-        // whenIEnterStringInTheStringTextBoxField() [0.74] (WhatIsYouDOBStepDefSteps.scala) pattern: I enter {string} in the {string} text box field
-        // whenIEnterStringInWhatHasHappenedToPropertyTextBoxField() [0.72] (OnshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in whatHasHappenedToProperty text box field
-        // whenIEnterStringInYearNotSelectedTextBoxField() [0.72] (OnshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in yearNotSelected text box field
-        // whenIEnterStringInPercentageTextBoxField() [0.72] (OnshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in percentage text box field
-        // whenIEnterStringInTypeOfMortageTextBoxField() [0.72] (OnshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in typeOfMortage text box field
-        // whenIEnterStringInStopDayTextBoxField() [0.67] (OnshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in stop day text box field
-        // whenIEnterStringInStopMonthTextBoxField() [0.67] (OnshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in stop month text box field
-        // whenIEnterStringInLandloardAssociationTextBoxField() [0.67] (OnshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in landloard association text box field
-        // whenIEnterStringInPropertyCountTextBoxField() [0.67] (OnshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in property count text box field
-        // whenIEnterStringInTaxOwedReasonTextBoxField() [0.64] (OnshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in tax owed reason text box field
-        // thenIEnterStringInTheTextBoxField() [0.60] (WhatIsYourMainOccupationStepDefSteps.scala) pattern: I enter {string} in the TextBox field
-        // whenIEnterStringInTheYearTextArea() [0.52] (OffshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in the year text area
-        // thenTextStringIsDisplayed() [0.50] (DiscloseOffshoreLiabilitiesStepDefSteps.scala) pattern: text {string} is displayed
-        // whenIEnterStringInTheTextArea() [0.50] (OffshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in the text area
-        // whenIEnterStringInTheStringField() [0.50] (InternationalAddressStepDefSteps.scala) pattern: I enter {string} in the {string} field
 
       And("click on Save and Continue button")
         // Possible match (best=1.00)
         whenClickOnSaveAndContinueButton()
-        // --- Other possible matches ---
-        // whenIClickOnContinueButton() [0.70] (HomePageStepDefSteps.scala) pattern: I click on continue button
-        // whenClickOnContinueButton() [0.70] (WhatIsTheCountryOfYourAddressStepDefSteps.scala) pattern: click on continue button
-        // whenClickOnIConfirmButton() [0.56] (DiscloseOffshoreLiabilitiesStepDefSteps.scala) pattern: click on I confirm button
-        // whenIClickOnBackButton() [0.56] (ReceivedALetterStepDefSteps.scala) pattern: I click on Back button
-        // whenClickOnSubmitButton() [0.52] (HomePageStepDefSteps.scala) pattern: click on submit button
-        // whenClickOnConfirmButton() [0.52] (WhatIsTheCountryOfYourAddressStepDefSteps.scala) pattern: click on confirm button
-        // whenIClickOnMakeADisclosureButton() [0.50] (OffshoreDisclosureStepDefSteps.scala) pattern: I click on Make a disclosure button
-        // whenClickOnContinueButtonOnSummaryPage() [0.50] (OffshoreDisclosureStepDefSteps.scala) pattern: click on continue button on summary page
-        // whenIClickOnSendNotificationButton() [0.47] (NotificationSubmittedStepDefSteps.scala) pattern: I click on send notification button
-        // thenSaveAndContinueButtonIsDisplayed() [0.47] (HmrcLetterReferencePageStepDefSteps.scala) pattern: save and Continue Button is displayed
-        // thenContinueButtonDisplayed() [0.47] (WhatIsTheCountryOfYourAddressStepDefSteps.scala) pattern: Continue Button displayed
-        // thenOnTheXPageIClickXAndClickSaveAndContinue() [0.47] (CaseManagementStepDefSteps.scala) pattern: on the (.*) page I click (.*) and click save and continue
 
       Then("page navigates to Which year does this offshore disclosure relate to?")
         // Possible match (best=0.58)
         whenINavigateToStringOffshorePage("")
-        // --- Other possible matches ---
-        // givenINavigateToStringPage() [0.56] (AreYouRepresentingOrganisationStepDefSteps.scala) pattern: I navigate to {string} page
-        // thenPageNavigatesToString() [0.52] (DiscloseOffshoreLiabilitiesStepDefSteps.scala) pattern: page navigates to {string}
-        // givenINavigateToAuthorityWizardPage() [0.47] (HomePageStepDefSteps.scala) pattern: I navigate to authority wizard page
-        // whenINavigateToStringSpecificPage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} specific page
-        // whenINavigateToStringReasonPage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} reason page
-        // whenINavigateToStringReferencePage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} reference page
 
       When("I select Checkbox Any tax year before 6 April 2015 at Position 10")
         // Possible match (best=0.65)
         whenISelectCheckboxStringAtPositionString("", "")
-        // --- Other possible matches ---
-        // whenISelectString() [0.47] (AreYouTheIndividualStepDefSteps.scala) pattern: I select {string}
 
       And("click on Save and Continue button")
         // Possible match (best=1.00)
         whenClickOnSaveAndContinueButton()
-        // --- Other possible matches ---
-        // whenIClickOnContinueButton() [0.70] (HomePageStepDefSteps.scala) pattern: I click on continue button
-        // whenClickOnContinueButton() [0.70] (WhatIsTheCountryOfYourAddressStepDefSteps.scala) pattern: click on continue button
-        // whenClickOnIConfirmButton() [0.56] (DiscloseOffshoreLiabilitiesStepDefSteps.scala) pattern: click on I confirm button
-        // whenIClickOnBackButton() [0.56] (ReceivedALetterStepDefSteps.scala) pattern: I click on Back button
-        // whenClickOnSubmitButton() [0.52] (HomePageStepDefSteps.scala) pattern: click on submit button
-        // whenClickOnConfirmButton() [0.52] (WhatIsTheCountryOfYourAddressStepDefSteps.scala) pattern: click on confirm button
-        // whenIClickOnMakeADisclosureButton() [0.50] (OffshoreDisclosureStepDefSteps.scala) pattern: I click on Make a disclosure button
-        // whenClickOnContinueButtonOnSummaryPage() [0.50] (OffshoreDisclosureStepDefSteps.scala) pattern: click on continue button on summary page
-        // whenIClickOnSendNotificationButton() [0.47] (NotificationSubmittedStepDefSteps.scala) pattern: I click on send notification button
-        // thenSaveAndContinueButtonIsDisplayed() [0.47] (HmrcLetterReferencePageStepDefSteps.scala) pattern: save and Continue Button is displayed
-        // thenContinueButtonDisplayed() [0.47] (WhatIsTheCountryOfYourAddressStepDefSteps.scala) pattern: Continue Button displayed
-        // thenOnTheXPageIClickXAndClickSaveAndContinue() [0.47] (CaseManagementStepDefSteps.scala) pattern: on the (.*) page I click (.*) and click save and continue
 
       Then("page navigates to Can you tell us more about any tax owed before 6 April 2015?")
         // Possible match (best=0.56)
         givenINavigateToStringPage("")
-        // --- Other possible matches ---
-        // thenPageNavigatesToString() [0.52] (DiscloseOffshoreLiabilitiesStepDefSteps.scala) pattern: page navigates to {string}
-        // andOnTheHomepageIClickContinueToNavigateToTheXPage() [0.50] (CaseManagementStepDefSteps.scala) pattern: on the homepage I click continue to navigate to the (.*) page
-        // givenINavigateToAuthorityWizardPage() [0.47] (HomePageStepDefSteps.scala) pattern: I navigate to authority wizard page
-        // whenINavigateToStringSpecificPage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} specific page
-        // whenINavigateToStringOffshorePage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} offshore page
-        // whenINavigateToStringReasonPage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} reason page
-        // whenINavigateToStringReferencePage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} reference page
 
       And("I enter Provide the amount, when it was owed, and where the income or gain came from in the text area")
         // Possible match (best=0.75)
         whenIEnterStringInTheTextArea("")
-        // --- Other possible matches ---
-        // whenIEnterStringInTheAdviceTextArea() [0.67] (OffshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in the advice text area
-        // whenIEnterStringInTheMonthTextArea() [0.67] (OffshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in the month text area
-        // whenIEnterStringInTheYearTextArea() [0.67] (OffshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in the year text area
-        // whenIEnterStringInTheReasonableCareTextArea() [0.62] (OffshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in the reasonable care text area
-        // whenIEnterStringInTheReasonableExcuseTextArea() [0.57] (OffshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in the reasonable excuse text area
-        // whenIEnterStringInTheCanYouDescribeTheGiftTextArea() [0.56] (OffshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in the can you describe the gift text area
-        // whenIEnterStringInTheReasonForMakingADisclosureNowTextArea() [0.53] (OffshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in the reason for making a disclosure now text area
-        // whenIEnterStringInTheWhyWasTheDisclosureNotMadeBeforeNowTextArea() [0.52] (OffshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in the why was the disclosure not made before now text area
-        // whenIEnterStringInTheReasonForExcuseTextArea() [0.52] (OffshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in the reason for excuse text area
-        // whenIEnterStringInTheReasonForReasonableExcuseTextArea() [0.48] (OffshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in the reason for reasonable excuse text area
 
       And("click on Save and Continue button")
         // Possible match (best=1.00)
         whenClickOnSaveAndContinueButton()
-        // --- Other possible matches ---
-        // whenIClickOnContinueButton() [0.70] (HomePageStepDefSteps.scala) pattern: I click on continue button
-        // whenClickOnContinueButton() [0.70] (WhatIsTheCountryOfYourAddressStepDefSteps.scala) pattern: click on continue button
-        // whenClickOnIConfirmButton() [0.56] (DiscloseOffshoreLiabilitiesStepDefSteps.scala) pattern: click on I confirm button
-        // whenIClickOnBackButton() [0.56] (ReceivedALetterStepDefSteps.scala) pattern: I click on Back button
-        // whenClickOnSubmitButton() [0.52] (HomePageStepDefSteps.scala) pattern: click on submit button
-        // whenClickOnConfirmButton() [0.52] (WhatIsTheCountryOfYourAddressStepDefSteps.scala) pattern: click on confirm button
-        // whenIClickOnMakeADisclosureButton() [0.50] (OffshoreDisclosureStepDefSteps.scala) pattern: I click on Make a disclosure button
-        // whenClickOnContinueButtonOnSummaryPage() [0.50] (OffshoreDisclosureStepDefSteps.scala) pattern: click on continue button on summary page
-        // whenIClickOnSendNotificationButton() [0.47] (NotificationSubmittedStepDefSteps.scala) pattern: I click on send notification button
-        // thenSaveAndContinueButtonIsDisplayed() [0.47] (HmrcLetterReferencePageStepDefSteps.scala) pattern: save and Continue Button is displayed
-        // thenContinueButtonDisplayed() [0.47] (WhatIsTheCountryOfYourAddressStepDefSteps.scala) pattern: Continue Button displayed
-        // thenOnTheXPageIClickXAndClickSaveAndContinue() [0.47] (CaseManagementStepDefSteps.scala) pattern: on the (.*) page I click (.*) and click save and continue
 
       Then("page navigates to You are making a nil disclosure")
         // Possible match (best=0.56)
         givenINavigateToStringPage("")
-        // --- Other possible matches ---
-        // thenPageNavigatesToString() [0.52] (DiscloseOffshoreLiabilitiesStepDefSteps.scala) pattern: page navigates to {string}
-        // givenINavigateToAuthorityWizardPage() [0.47] (HomePageStepDefSteps.scala) pattern: I navigate to authority wizard page
-        // whenINavigateToStringSpecificPage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} specific page
-        // whenINavigateToStringOffshorePage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} offshore page
-        // whenINavigateToStringReasonPage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} reason page
-        // whenINavigateToStringReferencePage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} reference page
 
       And("click on Save and Continue button")
         // Possible match (best=1.00)
         whenClickOnSaveAndContinueButton()
-        // --- Other possible matches ---
-        // whenIClickOnContinueButton() [0.70] (HomePageStepDefSteps.scala) pattern: I click on continue button
-        // whenClickOnContinueButton() [0.70] (WhatIsTheCountryOfYourAddressStepDefSteps.scala) pattern: click on continue button
-        // whenClickOnIConfirmButton() [0.56] (DiscloseOffshoreLiabilitiesStepDefSteps.scala) pattern: click on I confirm button
-        // whenIClickOnBackButton() [0.56] (ReceivedALetterStepDefSteps.scala) pattern: I click on Back button
-        // whenClickOnSubmitButton() [0.52] (HomePageStepDefSteps.scala) pattern: click on submit button
-        // whenClickOnConfirmButton() [0.52] (WhatIsTheCountryOfYourAddressStepDefSteps.scala) pattern: click on confirm button
-        // whenIClickOnMakeADisclosureButton() [0.50] (OffshoreDisclosureStepDefSteps.scala) pattern: I click on Make a disclosure button
-        // whenClickOnContinueButtonOnSummaryPage() [0.50] (OffshoreDisclosureStepDefSteps.scala) pattern: click on continue button on summary page
-        // whenIClickOnSendNotificationButton() [0.47] (NotificationSubmittedStepDefSteps.scala) pattern: I click on send notification button
-        // thenSaveAndContinueButtonIsDisplayed() [0.47] (HmrcLetterReferencePageStepDefSteps.scala) pattern: save and Continue Button is displayed
-        // thenContinueButtonDisplayed() [0.47] (WhatIsTheCountryOfYourAddressStepDefSteps.scala) pattern: Continue Button displayed
-        // thenOnTheXPageIClickXAndClickSaveAndContinue() [0.47] (CaseManagementStepDefSteps.scala) pattern: on the (.*) page I click (.*) and click save and continue
 
       Then("page navigates to Offshore liabilities summary")
         // Possible match (best=0.58)
         whenINavigateToStringOffshorePage("")
-        // --- Other possible matches ---
-        // givenINavigateToStringPage() [0.56] (AreYouRepresentingOrganisationStepDefSteps.scala) pattern: I navigate to {string} page
-        // thenPageNavigatesToString() [0.52] (DiscloseOffshoreLiabilitiesStepDefSteps.scala) pattern: page navigates to {string}
-        // whenINavigateToStringOtherLiabilitiesPage() [0.50] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} other liabilities page
-        // givenINavigateToAuthorityWizardPage() [0.47] (HomePageStepDefSteps.scala) pattern: I navigate to authority wizard page
-        // whenINavigateToStringSpecificPage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} specific page
-        // whenINavigateToStringReasonPage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} reason page
-        // whenINavigateToStringReferencePage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} reference page
 
       When("click on continue button")
         // Possible match (best=1.00)
         whenClickOnContinueButton()
-        // --- Other possible matches ---
-        // whenIClickOnContinueButton() [0.70] (HomePageStepDefSteps.scala) pattern: I click on continue button
-        // whenClickOnIConfirmButton() [0.56] (DiscloseOffshoreLiabilitiesStepDefSteps.scala) pattern: click on I confirm button
-        // whenIClickOnBackButton() [0.56] (ReceivedALetterStepDefSteps.scala) pattern: I click on Back button
-        // whenClickOnSubmitButton() [0.52] (HomePageStepDefSteps.scala) pattern: click on submit button
-        // whenClickOnConfirmButton() [0.52] (WhatIsTheCountryOfYourAddressStepDefSteps.scala) pattern: click on confirm button
-        // whenClickOnContinueButtonOnSummaryPage() [0.50] (OffshoreDisclosureStepDefSteps.scala) pattern: click on continue button on summary page
-        // whenIClickOnSendNotificationButton() [0.47] (NotificationSubmittedStepDefSteps.scala) pattern: I click on send notification button
-        // thenContinueButtonDisplayed() [0.47] (WhatIsTheCountryOfYourAddressStepDefSteps.scala) pattern: Continue Button displayed
-        // whenClickOnSaveAndContinueButton() [0.47] (ReceivedALetterStepDefSteps.scala) pattern: click on Save and Continue button
 
       Then("page navigates to List of tasks")
         // Possible match (best=0.56)
         givenINavigateToStringPage("")
-        // --- Other possible matches ---
-        // thenPageNavigatesToString() [0.52] (DiscloseOffshoreLiabilitiesStepDefSteps.scala) pattern: page navigates to {string}
-        // givenINavigateToAuthorityWizardPage() [0.47] (HomePageStepDefSteps.scala) pattern: I navigate to authority wizard page
-        // whenINavigateToStringSpecificPage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} specific page
-        // whenINavigateToStringOffshorePage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} offshore page
-        // whenINavigateToStringReasonPage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} reason page
-        // whenINavigateToStringReferencePage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} reference page
 
       And("status is marked as Completed for field Edit offshore liability details")
         // Possible match (best=0.52)
@@ -2924,127 +2589,42 @@ class IndividualOffshoreDisclosureSpec extends BaseSpec {
       And("click on Hyperlink Confirm if you have other liability issues or not")
         // Possible match (best=0.56)
         whenClickOnIConfirmButton()
-        // --- Other possible matches ---
-        // whenClickOnHyperlinkString() [0.52] (DiscloseOffshoreLiabilitiesStepDefSteps.scala) pattern: click on Hyperlink {string}
-        // whenClickOnConfirmButton() [0.52] (WhatIsTheCountryOfYourAddressStepDefSteps.scala) pattern: click on confirm button
-        // whenOnTheXPageIClickOnTheHeaderHyperlink() [0.49] (CaseManagementStepDefSteps.scala) pattern: on the (.*) page I click on the header hyperlink
 
       Then("page navigates to Do you have any other liability issues?")
         // Possible match (best=0.56)
         givenINavigateToStringPage("")
-        // --- Other possible matches ---
-        // andOnTheHomepageIClickContinueToNavigateToTheXPage() [0.56] (CaseManagementStepDefSteps.scala) pattern: on the homepage I click continue to navigate to the (.*) page
-        // thenPageNavigatesToString() [0.52] (DiscloseOffshoreLiabilitiesStepDefSteps.scala) pattern: page navigates to {string}
-        // whenINavigateToStringOtherLiabilitiesPage() [0.50] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} other liabilities page
-        // givenINavigateToAuthorityWizardPage() [0.47] (HomePageStepDefSteps.scala) pattern: I navigate to authority wizard page
-        // whenINavigateToStringSpecificPage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} specific page
-        // whenINavigateToStringOffshorePage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} offshore page
-        // whenINavigateToStringReasonPage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} reason page
-        // whenINavigateToStringReferencePage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} reference page
 
       When("I select Checkbox No, I do not have any other liability issues at Position 6")
         // Possible match (best=0.65)
         whenISelectCheckboxStringAtPositionString("", "")
-        // --- Other possible matches ---
-        // whenISelectString() [0.47] (AreYouTheIndividualStepDefSteps.scala) pattern: I select {string}
 
       And("click on Save and Continue button")
         // Possible match (best=1.00)
         whenClickOnSaveAndContinueButton()
-        // --- Other possible matches ---
-        // whenIClickOnContinueButton() [0.70] (HomePageStepDefSteps.scala) pattern: I click on continue button
-        // whenClickOnContinueButton() [0.70] (WhatIsTheCountryOfYourAddressStepDefSteps.scala) pattern: click on continue button
-        // whenClickOnIConfirmButton() [0.56] (DiscloseOffshoreLiabilitiesStepDefSteps.scala) pattern: click on I confirm button
-        // whenIClickOnBackButton() [0.56] (ReceivedALetterStepDefSteps.scala) pattern: I click on Back button
-        // whenClickOnSubmitButton() [0.52] (HomePageStepDefSteps.scala) pattern: click on submit button
-        // whenClickOnConfirmButton() [0.52] (WhatIsTheCountryOfYourAddressStepDefSteps.scala) pattern: click on confirm button
-        // whenIClickOnMakeADisclosureButton() [0.50] (OffshoreDisclosureStepDefSteps.scala) pattern: I click on Make a disclosure button
-        // whenClickOnContinueButtonOnSummaryPage() [0.50] (OffshoreDisclosureStepDefSteps.scala) pattern: click on continue button on summary page
-        // whenIClickOnSendNotificationButton() [0.47] (NotificationSubmittedStepDefSteps.scala) pattern: I click on send notification button
-        // thenSaveAndContinueButtonIsDisplayed() [0.47] (HmrcLetterReferencePageStepDefSteps.scala) pattern: save and Continue Button is displayed
-        // thenContinueButtonDisplayed() [0.47] (WhatIsTheCountryOfYourAddressStepDefSteps.scala) pattern: Continue Button displayed
-        // thenOnTheXPageIClickXAndClickSaveAndContinue() [0.47] (CaseManagementStepDefSteps.scala) pattern: on the (.*) page I click (.*) and click save and continue
 
       Then("page navigates to Did you receive tax credits for any of the years covered by your disclosure?")
         // Possible match (best=0.62)
         andOnTheHomepageIClickContinueToNavigateToTheXPage("")
-        // --- Other possible matches ---
-        // andVerifyOnTheXPage() [0.57] (CaseManagementStepDefSteps.scala) pattern: verify on the (.*) page
-        // givenINavigateToStringPage() [0.56] (AreYouRepresentingOrganisationStepDefSteps.scala) pattern: I navigate to {string} page
-        // thenPageNavigatesToString() [0.52] (DiscloseOffshoreLiabilitiesStepDefSteps.scala) pattern: page navigates to {string}
-        // whenPageShouldDisplayCheckboxesForTheStringTaxYearsBeforeTheCurrentTaxYear() [0.48] (OffshoreDisclosureStepDefSteps.scala) pattern: page should display checkboxes for the {string} tax years before the current tax year
-        // givenINavigateToAuthorityWizardPage() [0.47] (HomePageStepDefSteps.scala) pattern: I navigate to authority wizard page
-        // whenINavigateToStringSpecificPage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} specific page
-        // whenINavigateToStringOffshorePage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} offshore page
-        // whenINavigateToStringReasonPage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} reason page
-        // whenINavigateToStringReferencePage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} reference page
-        // givenIAmNavigatedToWhatIsTheDisclosurePage() [0.47] (WhatIsDisclosureStepDefSteps.scala) pattern: I am navigated to What is the disclosure Page
 
       When("I select Radio Button No at Position 2")
         // Possible match (best=0.70)
         thenISelectNoRadioButton()
-        // --- Other possible matches ---
-        // whenISelectYesRadioButton() [0.56] (ReceivedALetterStepDefSteps.scala) pattern: I select Yes radio button
-        // whenISelectRadioButtonStringAtPositionString() [0.52] (DiscloseOffshoreLiabilitiesStepDefSteps.scala) pattern: I select Radio Button {string} at Position {string}
-        // whenISelectString() [0.47] (AreYouTheIndividualStepDefSteps.scala) pattern: I select {string}
 
       And("click on Save and Continue button")
         // Possible match (best=1.00)
         whenClickOnSaveAndContinueButton()
-        // --- Other possible matches ---
-        // whenIClickOnContinueButton() [0.70] (HomePageStepDefSteps.scala) pattern: I click on continue button
-        // whenClickOnContinueButton() [0.70] (WhatIsTheCountryOfYourAddressStepDefSteps.scala) pattern: click on continue button
-        // whenClickOnIConfirmButton() [0.56] (DiscloseOffshoreLiabilitiesStepDefSteps.scala) pattern: click on I confirm button
-        // whenIClickOnBackButton() [0.56] (ReceivedALetterStepDefSteps.scala) pattern: I click on Back button
-        // whenClickOnSubmitButton() [0.52] (HomePageStepDefSteps.scala) pattern: click on submit button
-        // whenClickOnConfirmButton() [0.52] (WhatIsTheCountryOfYourAddressStepDefSteps.scala) pattern: click on confirm button
-        // whenIClickOnMakeADisclosureButton() [0.50] (OffshoreDisclosureStepDefSteps.scala) pattern: I click on Make a disclosure button
-        // whenClickOnContinueButtonOnSummaryPage() [0.50] (OffshoreDisclosureStepDefSteps.scala) pattern: click on continue button on summary page
-        // whenIClickOnSendNotificationButton() [0.47] (NotificationSubmittedStepDefSteps.scala) pattern: I click on send notification button
-        // thenSaveAndContinueButtonIsDisplayed() [0.47] (HmrcLetterReferencePageStepDefSteps.scala) pattern: save and Continue Button is displayed
-        // thenContinueButtonDisplayed() [0.47] (WhatIsTheCountryOfYourAddressStepDefSteps.scala) pattern: Continue Button displayed
-        // thenOnTheXPageIClickXAndClickSaveAndContinue() [0.47] (CaseManagementStepDefSteps.scala) pattern: on the (.*) page I click (.*) and click save and continue
 
       Then("page navigates to Review other liability issues")
         // Possible match (best=0.56)
         givenINavigateToStringPage("")
-        // --- Other possible matches ---
-        // andOnTheHomepageIClickContinueToNavigateToTheXPage() [0.56] (CaseManagementStepDefSteps.scala) pattern: on the homepage I click continue to navigate to the (.*) page
-        // thenPageNavigatesToString() [0.52] (DiscloseOffshoreLiabilitiesStepDefSteps.scala) pattern: page navigates to {string}
-        // whenINavigateToStringOtherLiabilitiesPage() [0.50] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} other liabilities page
-        // givenINavigateToAuthorityWizardPage() [0.47] (HomePageStepDefSteps.scala) pattern: I navigate to authority wizard page
-        // whenINavigateToStringSpecificPage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} specific page
-        // whenINavigateToStringOffshorePage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} offshore page
-        // whenINavigateToStringReasonPage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} reason page
-        // whenINavigateToStringReferencePage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} reference page
 
       When("click on continue button on summary page")
         // Possible match (best=1.00)
         whenClickOnContinueButtonOnSummaryPage()
-        // --- Other possible matches ---
-        // whenClickOnContinueButton() [1.00] (WhatIsTheCountryOfYourAddressStepDefSteps.scala) pattern: click on continue button
-        // whenIClickOnContinueButton() [0.70] (HomePageStepDefSteps.scala) pattern: I click on continue button
-        // whenClickOnIConfirmButton() [0.56] (DiscloseOffshoreLiabilitiesStepDefSteps.scala) pattern: click on I confirm button
-        // whenIClickOnBackButton() [0.56] (ReceivedALetterStepDefSteps.scala) pattern: I click on Back button
-        // andOnTheHomepageIClickContinueToNavigateToTheXPage() [0.56] (CaseManagementStepDefSteps.scala) pattern: on the homepage I click continue to navigate to the (.*) page
-        // whenClickOnSubmitButton() [0.52] (HomePageStepDefSteps.scala) pattern: click on submit button
-        // whenClickOnConfirmButton() [0.52] (WhatIsTheCountryOfYourAddressStepDefSteps.scala) pattern: click on confirm button
-        // whenIClickOnMakeADisclosureButton() [0.50] (OffshoreDisclosureStepDefSteps.scala) pattern: I click on Make a disclosure button
-        // whenIClickOnSendNotificationButton() [0.47] (NotificationSubmittedStepDefSteps.scala) pattern: I click on send notification button
-        // thenContinueButtonDisplayed() [0.47] (WhatIsTheCountryOfYourAddressStepDefSteps.scala) pattern: Continue Button displayed
-        // whenClickOnSubmitOnWizardPage() [0.47] (CaseManagementStepDefSteps.scala) pattern: click on submit on wizard page
-        // whenClickOnSaveAndContinueButton() [0.47] (ReceivedALetterStepDefSteps.scala) pattern: click on Save and Continue button
 
       Then("page navigates to List of tasks")
         // Possible match (best=0.56)
         givenINavigateToStringPage("")
-        // --- Other possible matches ---
-        // thenPageNavigatesToString() [0.52] (DiscloseOffshoreLiabilitiesStepDefSteps.scala) pattern: page navigates to {string}
-        // givenINavigateToAuthorityWizardPage() [0.47] (HomePageStepDefSteps.scala) pattern: I navigate to authority wizard page
-        // whenINavigateToStringSpecificPage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} specific page
-        // whenINavigateToStringOffshorePage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} offshore page
-        // whenINavigateToStringReasonPage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} reason page
-        // whenINavigateToStringReferencePage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} reference page
 
       And("status is marked as Completed for field Edit other liability issues")
         // Possible match (best=0.52)
@@ -3053,195 +2633,62 @@ class IndividualOffshoreDisclosureSpec extends BaseSpec {
       Then("status is marked as Not started for field Add the reason for coming forward now")
         // Possible match (best=0.52)
         thenStatusIsMarkedAsStringForFieldString("", "")
-        // --- Other possible matches ---
-        // thenIEnterStringInTheTextBoxField() [0.50] (WhatIsYourMainOccupationStepDefSteps.scala) pattern: I enter {string} in the TextBox field
 
       And("click on Hyperlink Add the reason for coming forward now")
         // Possible match (best=0.52)
         whenClickOnHyperlinkString("")
-        // --- Other possible matches ---
-        // whenOnTheXPageIClickOnTheHeaderHyperlink() [0.49] (CaseManagementStepDefSteps.scala) pattern: on the (.*) page I click on the header hyperlink
 
       Then("page navigates to Why are you making a disclosure now?")
         // Possible match (best=0.56)
         givenINavigateToStringPage("")
-        // --- Other possible matches ---
-        // thenPageNavigatesToString() [0.52] (DiscloseOffshoreLiabilitiesStepDefSteps.scala) pattern: page navigates to {string}
-        // givenINavigateToAuthorityWizardPage() [0.47] (HomePageStepDefSteps.scala) pattern: I navigate to authority wizard page
-        // whenINavigateToStringSpecificPage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} specific page
-        // whenINavigateToStringOffshorePage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} offshore page
-        // whenINavigateToStringReasonPage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} reason page
-        // whenINavigateToStringReferencePage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} reference page
 
       When("I select Checkbox Other at Position 8")
         // Possible match (best=0.65)
         whenISelectCheckboxStringAtPositionString("", "")
-        // --- Other possible matches ---
-        // whenISelectString() [0.47] (AreYouTheIndividualStepDefSteps.scala) pattern: I select {string}
 
       And("click on Save and Continue button")
         // Possible match (best=1.00)
         whenClickOnSaveAndContinueButton()
-        // --- Other possible matches ---
-        // whenIClickOnContinueButton() [0.70] (HomePageStepDefSteps.scala) pattern: I click on continue button
-        // whenClickOnContinueButton() [0.70] (WhatIsTheCountryOfYourAddressStepDefSteps.scala) pattern: click on continue button
-        // whenClickOnIConfirmButton() [0.56] (DiscloseOffshoreLiabilitiesStepDefSteps.scala) pattern: click on I confirm button
-        // whenIClickOnBackButton() [0.56] (ReceivedALetterStepDefSteps.scala) pattern: I click on Back button
-        // whenClickOnSubmitButton() [0.52] (HomePageStepDefSteps.scala) pattern: click on submit button
-        // whenClickOnConfirmButton() [0.52] (WhatIsTheCountryOfYourAddressStepDefSteps.scala) pattern: click on confirm button
-        // whenIClickOnMakeADisclosureButton() [0.50] (OffshoreDisclosureStepDefSteps.scala) pattern: I click on Make a disclosure button
-        // whenClickOnContinueButtonOnSummaryPage() [0.50] (OffshoreDisclosureStepDefSteps.scala) pattern: click on continue button on summary page
-        // whenIClickOnSendNotificationButton() [0.47] (NotificationSubmittedStepDefSteps.scala) pattern: I click on send notification button
-        // thenSaveAndContinueButtonIsDisplayed() [0.47] (HmrcLetterReferencePageStepDefSteps.scala) pattern: save and Continue Button is displayed
-        // thenContinueButtonDisplayed() [0.47] (WhatIsTheCountryOfYourAddressStepDefSteps.scala) pattern: Continue Button displayed
-        // thenOnTheXPageIClickXAndClickSaveAndContinue() [0.47] (CaseManagementStepDefSteps.scala) pattern: on the (.*) page I click (.*) and click save and continue
 
       Then("page navigates to What is the reason for making a disclosure now?")
         // Possible match (best=0.62)
         andOnTheHomepageIClickContinueToNavigateToTheXPage("")
-        // --- Other possible matches ---
-        // whenINavigateToStringReasonPage() [0.58] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} reason page
-        // andVerifyOnTheXPage() [0.57] (CaseManagementStepDefSteps.scala) pattern: verify on the (.*) page
-        // givenINavigateToStringPage() [0.56] (AreYouRepresentingOrganisationStepDefSteps.scala) pattern: I navigate to {string} page
-        // givenIAmNavigatedToWhatIsTheDisclosurePage() [0.54] (WhatIsDisclosureStepDefSteps.scala) pattern: I am navigated to What is the disclosure Page
-        // thenPageNavigatesToString() [0.52] (DiscloseOffshoreLiabilitiesStepDefSteps.scala) pattern: page navigates to {string}
-        // whenIEnterStringInTheReasonForMakingADisclosureNowTextArea() [0.48] (OffshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in the reason for making a disclosure now text area
-        // givenIAmOnTheHomePage() [0.47] (HomePageStepDefSteps.scala) pattern: I am on the Home page
-        // givenINavigateToAuthorityWizardPage() [0.47] (HomePageStepDefSteps.scala) pattern: I navigate to authority wizard page
-        // whenINavigateToStringSpecificPage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} specific page
-        // whenINavigateToStringOffshorePage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} offshore page
-        // whenINavigateToStringReferencePage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} reference page
 
       When("I enter reason for making a disclosure now in the reason for making a disclosure now text area")
         // Possible match (best=0.80)
         whenIEnterStringInTheReasonForMakingADisclosureNowTextArea("")
-        // --- Other possible matches ---
-        // whenIEnterStringInTheTextArea() [0.75] (OffshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in the text area
-        // whenIEnterStringInTheAdviceTextArea() [0.67] (OffshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in the advice text area
-        // whenIEnterStringInTheMonthTextArea() [0.67] (OffshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in the month text area
-        // whenIEnterStringInTheYearTextArea() [0.67] (OffshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in the year text area
-        // whenIEnterStringInTheReasonForExcuseTextArea() [0.66] (OffshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in the reason for excuse text area
-        // whenIEnterStringInTheReasonableCareTextArea() [0.62] (OffshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in the reasonable care text area
-        // whenIEnterStringInTheReasonForReasonableExcuseTextArea() [0.61] (OffshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in the reason for reasonable excuse text area
-        // whenIEnterStringInTheWhyWasTheDisclosureNotMadeBeforeNowTextArea() [0.57] (OffshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in the why was the disclosure not made before now text area
-        // whenIEnterStringInTheReasonableExcuseTextArea() [0.57] (OffshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in the reasonable excuse text area
-        // whenIEnterStringInTheCanYouDescribeTheGiftTextArea() [0.56] (OffshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in the can you describe the gift text area
-        // thenTextStringIsDisplayed() [0.50] (DiscloseOffshoreLiabilitiesStepDefSteps.scala) pattern: text {string} is displayed
 
       And("click on Save and Continue button")
         // Possible match (best=1.00)
         whenClickOnSaveAndContinueButton()
-        // --- Other possible matches ---
-        // whenIClickOnContinueButton() [0.70] (HomePageStepDefSteps.scala) pattern: I click on continue button
-        // whenClickOnContinueButton() [0.70] (WhatIsTheCountryOfYourAddressStepDefSteps.scala) pattern: click on continue button
-        // whenClickOnIConfirmButton() [0.56] (DiscloseOffshoreLiabilitiesStepDefSteps.scala) pattern: click on I confirm button
-        // whenIClickOnBackButton() [0.56] (ReceivedALetterStepDefSteps.scala) pattern: I click on Back button
-        // whenClickOnSubmitButton() [0.52] (HomePageStepDefSteps.scala) pattern: click on submit button
-        // whenClickOnConfirmButton() [0.52] (WhatIsTheCountryOfYourAddressStepDefSteps.scala) pattern: click on confirm button
-        // whenIClickOnMakeADisclosureButton() [0.50] (OffshoreDisclosureStepDefSteps.scala) pattern: I click on Make a disclosure button
-        // whenClickOnContinueButtonOnSummaryPage() [0.50] (OffshoreDisclosureStepDefSteps.scala) pattern: click on continue button on summary page
-        // whenIClickOnSendNotificationButton() [0.47] (NotificationSubmittedStepDefSteps.scala) pattern: I click on send notification button
-        // thenSaveAndContinueButtonIsDisplayed() [0.47] (HmrcLetterReferencePageStepDefSteps.scala) pattern: save and Continue Button is displayed
-        // thenContinueButtonDisplayed() [0.47] (WhatIsTheCountryOfYourAddressStepDefSteps.scala) pattern: Continue Button displayed
-        // thenOnTheXPageIClickXAndClickSaveAndContinue() [0.47] (CaseManagementStepDefSteps.scala) pattern: on the (.*) page I click (.*) and click save and continue
 
       Then("page navigates to Why was the disclosure not made before now?")
         // Possible match (best=0.56)
         givenINavigateToStringPage("")
-        // --- Other possible matches ---
-        // andOnTheHomepageIClickContinueToNavigateToTheXPage() [0.56] (CaseManagementStepDefSteps.scala) pattern: on the homepage I click continue to navigate to the (.*) page
-        // thenPageNavigatesToString() [0.52] (DiscloseOffshoreLiabilitiesStepDefSteps.scala) pattern: page navigates to {string}
-        // givenINavigateToAuthorityWizardPage() [0.47] (HomePageStepDefSteps.scala) pattern: I navigate to authority wizard page
-        // whenINavigateToStringSpecificPage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} specific page
-        // whenINavigateToStringOffshorePage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} offshore page
-        // whenINavigateToStringReasonPage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} reason page
-        // whenINavigateToStringReferencePage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} reference page
-        // whenIEnterStringInTheWhyWasTheDisclosureNotMadeBeforeNowTextArea() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in the why was the disclosure not made before now text area
-        // givenIAmNavigatedToWhatIsTheDisclosurePage() [0.47] (WhatIsDisclosureStepDefSteps.scala) pattern: I am navigated to What is the disclosure Page
 
       When("I enter reason for why was the disclosure not made before now in the why was the disclosure not made before now text area")
         // Possible match (best=0.80)
         whenIEnterStringInTheWhyWasTheDisclosureNotMadeBeforeNowTextArea("")
-        // --- Other possible matches ---
-        // whenIEnterStringInTheTextArea() [0.75] (OffshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in the text area
-        // whenIEnterStringInTheReasonForMakingADisclosureNowTextArea() [0.74] (OffshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in the reason for making a disclosure now text area
-        // whenIEnterStringInTheAdviceTextArea() [0.67] (OffshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in the advice text area
-        // whenIEnterStringInTheMonthTextArea() [0.67] (OffshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in the month text area
-        // whenIEnterStringInTheYearTextArea() [0.67] (OffshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in the year text area
-        // whenIEnterStringInTheReasonForExcuseTextArea() [0.66] (OffshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in the reason for excuse text area
-        // whenIEnterStringInTheReasonableCareTextArea() [0.62] (OffshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in the reasonable care text area
-        // whenIEnterStringInTheReasonForReasonableExcuseTextArea() [0.61] (OffshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in the reason for reasonable excuse text area
-        // whenIEnterStringInTheReasonableExcuseTextArea() [0.57] (OffshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in the reasonable excuse text area
-        // whenIEnterStringInTheCanYouDescribeTheGiftTextArea() [0.56] (OffshoreDisclosureStepDefSteps.scala) pattern: I enter {string} in the can you describe the gift text area
-        // thenTextStringIsDisplayed() [0.50] (DiscloseOffshoreLiabilitiesStepDefSteps.scala) pattern: text {string} is displayed
 
       And("click on Save and Continue button")
         // Possible match (best=1.00)
         whenClickOnSaveAndContinueButton()
-        // --- Other possible matches ---
-        // whenIClickOnContinueButton() [0.70] (HomePageStepDefSteps.scala) pattern: I click on continue button
-        // whenClickOnContinueButton() [0.70] (WhatIsTheCountryOfYourAddressStepDefSteps.scala) pattern: click on continue button
-        // whenClickOnIConfirmButton() [0.56] (DiscloseOffshoreLiabilitiesStepDefSteps.scala) pattern: click on I confirm button
-        // whenIClickOnBackButton() [0.56] (ReceivedALetterStepDefSteps.scala) pattern: I click on Back button
-        // whenClickOnSubmitButton() [0.52] (HomePageStepDefSteps.scala) pattern: click on submit button
-        // whenClickOnConfirmButton() [0.52] (WhatIsTheCountryOfYourAddressStepDefSteps.scala) pattern: click on confirm button
-        // whenIClickOnMakeADisclosureButton() [0.50] (OffshoreDisclosureStepDefSteps.scala) pattern: I click on Make a disclosure button
-        // whenClickOnContinueButtonOnSummaryPage() [0.50] (OffshoreDisclosureStepDefSteps.scala) pattern: click on continue button on summary page
-        // whenIClickOnSendNotificationButton() [0.47] (NotificationSubmittedStepDefSteps.scala) pattern: I click on send notification button
-        // thenSaveAndContinueButtonIsDisplayed() [0.47] (HmrcLetterReferencePageStepDefSteps.scala) pattern: save and Continue Button is displayed
-        // thenContinueButtonDisplayed() [0.47] (WhatIsTheCountryOfYourAddressStepDefSteps.scala) pattern: Continue Button displayed
-        // thenOnTheXPageIClickXAndClickSaveAndContinue() [0.47] (CaseManagementStepDefSteps.scala) pattern: on the (.*) page I click (.*) and click save and continue
 
       Then("page navigates to Did someone give you advice that led you to not declare these tax issues previously?")
         // Possible match (best=0.71)
         andVerifyOnTheXPage("")
-        // --- Other possible matches ---
-        // andOnTheHomepageIClickContinueToNavigateToTheXPage() [0.67] (CaseManagementStepDefSteps.scala) pattern: on the homepage I click continue to navigate to the (.*) page
-        // givenINavigateToStringPage() [0.56] (AreYouRepresentingOrganisationStepDefSteps.scala) pattern: I navigate to {string} page
-        // thenPageNavigatesToString() [0.52] (DiscloseOffshoreLiabilitiesStepDefSteps.scala) pattern: page navigates to {string}
-        // whenOnTheXPageIClickOnTheHeaderHyperlink() [0.49] (CaseManagementStepDefSteps.scala) pattern: on the (.*) page I click on the header hyperlink
-        // givenIAmOnTheHomePage() [0.47] (HomePageStepDefSteps.scala) pattern: I am on the Home page
-        // givenINavigateToAuthorityWizardPage() [0.47] (HomePageStepDefSteps.scala) pattern: I navigate to authority wizard page
-        // whenINavigateToStringSpecificPage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} specific page
-        // whenINavigateToStringOffshorePage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} offshore page
-        // whenINavigateToStringReasonPage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} reason page
-        // whenINavigateToStringReferencePage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} reference page
 
       When("I select Radio Button No at Position 2")
         // Possible match (best=0.70)
         thenISelectNoRadioButton()
-        // --- Other possible matches ---
-        // whenISelectYesRadioButton() [0.56] (ReceivedALetterStepDefSteps.scala) pattern: I select Yes radio button
-        // whenISelectRadioButtonStringAtPositionString() [0.52] (DiscloseOffshoreLiabilitiesStepDefSteps.scala) pattern: I select Radio Button {string} at Position {string}
-        // whenISelectString() [0.47] (AreYouTheIndividualStepDefSteps.scala) pattern: I select {string}
 
       And("click on Save and Continue button")
         // Possible match (best=1.00)
         whenClickOnSaveAndContinueButton()
-        // --- Other possible matches ---
-        // whenIClickOnContinueButton() [0.70] (HomePageStepDefSteps.scala) pattern: I click on continue button
-        // whenClickOnContinueButton() [0.70] (WhatIsTheCountryOfYourAddressStepDefSteps.scala) pattern: click on continue button
-        // whenClickOnIConfirmButton() [0.56] (DiscloseOffshoreLiabilitiesStepDefSteps.scala) pattern: click on I confirm button
-        // whenIClickOnBackButton() [0.56] (ReceivedALetterStepDefSteps.scala) pattern: I click on Back button
-        // whenClickOnSubmitButton() [0.52] (HomePageStepDefSteps.scala) pattern: click on submit button
-        // whenClickOnConfirmButton() [0.52] (WhatIsTheCountryOfYourAddressStepDefSteps.scala) pattern: click on confirm button
-        // whenIClickOnMakeADisclosureButton() [0.50] (OffshoreDisclosureStepDefSteps.scala) pattern: I click on Make a disclosure button
-        // whenClickOnContinueButtonOnSummaryPage() [0.50] (OffshoreDisclosureStepDefSteps.scala) pattern: click on continue button on summary page
-        // whenIClickOnSendNotificationButton() [0.47] (NotificationSubmittedStepDefSteps.scala) pattern: I click on send notification button
-        // thenSaveAndContinueButtonIsDisplayed() [0.47] (HmrcLetterReferencePageStepDefSteps.scala) pattern: save and Continue Button is displayed
-        // thenContinueButtonDisplayed() [0.47] (WhatIsTheCountryOfYourAddressStepDefSteps.scala) pattern: Continue Button displayed
-        // thenOnTheXPageIClickXAndClickSaveAndContinue() [0.47] (CaseManagementStepDefSteps.scala) pattern: on the (.*) page I click (.*) and click save and continue
 
       Then("page navigates to Summary")
         // Possible match (best=0.56)
         givenINavigateToStringPage("")
-        // --- Other possible matches ---
-        // thenPageNavigatesToString() [0.52] (DiscloseOffshoreLiabilitiesStepDefSteps.scala) pattern: page navigates to {string}
-        // givenINavigateToAuthorityWizardPage() [0.47] (HomePageStepDefSteps.scala) pattern: I navigate to authority wizard page
-        // whenINavigateToStringSpecificPage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} specific page
-        // whenINavigateToStringOffshorePage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} offshore page
-        // whenINavigateToStringReasonPage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} reason page
-        // whenINavigateToStringReferencePage() [0.47] (OffshoreDisclosureStepDefSteps.scala) pattern: I navigate to {string} reference page
 
       When("click on continue button")
         // Possible match (best=1.00)
@@ -3293,8 +2740,6 @@ class IndividualOffshoreDisclosureSpec extends BaseSpec {
       And("click on Hyperlink Make your declaration")
         // Possible match (best=0.52)
         whenClickOnHyperlinkString("")
-        // --- Other possible matches ---
-        // whenIClickOnMakeADisclosureButton() [0.50] (OffshoreDisclosureStepDefSteps.scala) pattern: I click on Make a disclosure button
 
       And("click on I confirm button")
         // Possible match (best=1.00)
@@ -3323,19 +2768,15 @@ class IndividualOffshoreDisclosureSpec extends BaseSpec {
       And("I select Checkbox I did not notify HMRC about a tax liability at Position 1")
         // Possible match (best=0.65)
         whenISelectCheckboxStringAtPositionString("", "")
-        // --- Other possible matches ---
-        // whenISelectString() [0.47] (AreYouTheIndividualStepDefSteps.scala) pattern: I select {string}
 
       And("I select Checkbox I did not file a tax return on time at Position 2")
         // Possible match (best=0.65)
         whenISelectCheckboxStringAtPositionString("", "")
-        // --- Other possible matches ---
-        // whenISelectString() [0.47] (AreYouTheIndividualStepDefSteps.scala) pattern: I select {string}
 
       And("I select Checkbox I submitted an inaccurate return at Position 3")
         // Possible match (best=0.65)
         whenISelectCheckboxStringAtPositionString("", "")
-  =
+
       And("click on Save and Continue button")
         // Possible match (best=1.00)
         whenClickOnSaveAndContinueButton()
@@ -3960,8 +3401,6 @@ class IndividualOffshoreDisclosureSpec extends BaseSpec {
       And("status is marked as Completed for field Edit the reason for coming forward now")
         // Possible match (best=0.52)
         thenStatusIsMarkedAsStringForFieldString("", "")
-        // --- Other possible matches ---
-        // thenIEnterStringInTheTextBoxField() [0.50] (WhatIsYourMainOccupationStepDefSteps.scala) pattern: I enter {string} in the TextBox field
 
       When("click on Save and Continue button")
         // Possible match (best=1.00)

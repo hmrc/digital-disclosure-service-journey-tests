@@ -14,17 +14,15 @@
  * limitations under the License.
  */
 
+// DONE
 package uk.gov.hmrc.specs
 
-import uk.gov.hmrc.specsteps.AreYouRepresentingOrganisationStepDefSteps.givenINavigateToStringPage
-import uk.gov.hmrc.specsteps.CaseManagementStepDefSteps.{andOnTheHomepageIClickContinueToNavigateToTheXPage, andVerifyOnTheXPage}
-import uk.gov.hmrc.specsteps.DiscloseOffshoreLiabilitiesStepDefSteps.{clickOnHyperlinkText, whenClickOnHyperlinkString, whenClickOnIConfirmButton, whenISelectCheckboxStringAtPositionString, whenISelectRadioButtonStringAtPositionString}
-import uk.gov.hmrc.specsteps.DiscloseOnshoreLiabilitiesStepDefSteps.whenIEnterStringIntoTheStringTextField
-import uk.gov.hmrc.specsteps.HomePageStepDefSteps.{SendNotification, ThenIAmOnTheHomePage, clickOnCheckBox, clickOnLink, clickOnRadioButton, enterInputInTextBox, iConfirmButton, makeADisclosure, navigateToSpecificURL, saveAndContinue, verifyPageHeading}
+import uk.gov.hmrc.specsteps.DiscloseOffshoreLiabilitiesStepDefSteps.{clickOnHyperlinkText, whenISelectCheckboxStringAtPositionString, whenISelectRadioButtonStringAtPositionString}
+import uk.gov.hmrc.specsteps.HomePageStepDefSteps.{SendNotification, clickOnCheckBox, clickOnLink, clickOnRadioButton, enterInputInTextBox, iConfirmButton, makeADisclosure, navigateToSpecificURL, saveAndContinue, verifyPageHeading}
 import uk.gov.hmrc.specsteps.InternationalAddressStepDefSteps.{enterInputInManualAddressPage, selectfromDropdown}
-import uk.gov.hmrc.specsteps.OffshoreDisclosureStepDefSteps.{thenStatusIsMarkedAsStringForFieldString, whenIClickOnMakeADisclosureButton, whenINavigateToStringSpecificPage}
+import uk.gov.hmrc.specsteps.OffshoreDisclosureStepDefSteps.whenIClickOnMakeADisclosureButton
 import uk.gov.hmrc.specsteps.OnshoreDisclosureStepDefSteps.{checkTaskStatus, enterTextInExcuse}
-import uk.gov.hmrc.specsteps.ReceivedALetterStepDefSteps.{givenIAmNavigatedToReceivedALetterPage, thenISelectNoRadioButton, whenClickOnSaveAndContinueButton, whenISelectYesRadioButton}
+import uk.gov.hmrc.specsteps.ReceivedALetterStepDefSteps.givenIAmNavigatedToReceivedALetterPage
 import uk.gov.hmrc.specsteps.WhatIsYouDOBStepDefSteps.enterInputInDOBPage
 
 class CompanyOnBehalfOnshoreDisclosureSpec extends BaseSpec {

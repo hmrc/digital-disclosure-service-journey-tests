@@ -15,14 +15,13 @@
  */
 
 package uk.gov.hmrc.specs
-
-import uk.gov.hmrc.specsteps.DiscloseOffshoreLiabilitiesStepDefSteps.{clickOnHyperlinkText, whenClickOnHyperlinkString, whenClickOnIConfirmButton, whenISelectCheckboxStringAtPositionString, whenISelectRadioButtonStringAtPositionString}
-import uk.gov.hmrc.specsteps.HomePageStepDefSteps.{SendNotification, ThenIAmOnTheHomePage, clickOnCheckBox, clickOnLink, clickOnRadioButton, enterInputInTextBox, iConfirmButton, makeADisclosure, navigateToSpecificURL, saveAndContinue, verifyDisplayedCheckbox, verifyPageHeading}
+//DONE
+import uk.gov.hmrc.specsteps.DiscloseOffshoreLiabilitiesStepDefSteps.{clickOnHyperlinkText, whenISelectRadioButtonStringAtPositionString}
+import uk.gov.hmrc.specsteps.HomePageStepDefSteps.{SendNotification, clickOnCheckBox, clickOnLink, clickOnRadioButton, enterInputInTextBox, iConfirmButton, makeADisclosure, navigateToSpecificURL, saveAndContinue, verifyDisplayedCheckbox, verifyPageHeading}
 import uk.gov.hmrc.specsteps.InternationalAddressStepDefSteps.{enterInputInManualAddressPage, selectfromDropdown}
-import uk.gov.hmrc.specsteps.OffshoreDisclosureStepDefSteps.{thenStatusIsMarkedAsStringForFieldString, whenIClickOnMakeADisclosureButton, whenIEnterStringInTheReasonForReasonableExcuseTextArea, whenIEnterStringInTheReasonableCareTextArea, whenINavigateToStringReasonPage, whenINavigateToStringSpecificPage, whenPageShouldDisplayCheckboxesForTheStringTaxYearsBeforeTheCurrentTaxYear}
 import uk.gov.hmrc.specsteps.OnshoreDisclosureStepDefSteps.{checkTaskStatus, enterTextInExcuse, enterTextInReasonableCare, enterTextInReasonableExcuse, whenIEnterStringInStopYearTextBoxField}
-import uk.gov.hmrc.specsteps.ReceivedALetterStepDefSteps.{givenIAmNavigatedToReceivedALetterPage, whenClickOnSaveAndContinueButton}
-import uk.gov.hmrc.specsteps.WhatIsYouDOBStepDefSteps.{enterInputInDOBPage, whenIEnterStringInTheStringTextBoxField}
+import uk.gov.hmrc.specsteps.ReceivedALetterStepDefSteps.givenIAmNavigatedToReceivedALetterPage
+import uk.gov.hmrc.specsteps.WhatIsYouDOBStepDefSteps.enterInputInDOBPage
 
 
 class IndividualOnBehalfOnshoreDisclosureSpec extends BaseSpec {
@@ -46,8 +45,8 @@ class IndividualOnBehalfOnshoreDisclosureSpec extends BaseSpec {
       And("""click on Save and Continue button""")
        saveAndContinue()
 
-      Then("""I select Radio Button A company at Position 3""")
-        clickOnRadioButton("A company","3")
+      Then("""I select Radio Button An individual at Position 1""")
+        clickOnRadioButton("An individual","1")
 
       And("""click on Save and Continue button""")
        saveAndContinue()
@@ -64,20 +63,20 @@ class IndividualOnBehalfOnshoreDisclosureSpec extends BaseSpec {
       And("""click on Save and Continue button""")
        saveAndContinue()
 
-      Then("""And I enter Organization name in the TextBox field""")
-       enterInputInTextBox("Organization name")
+      Then("""And I enter represent org in the TextBox field""")
+       enterInputInTextBox("represent org")
 
       And("""click on Save and Continue button""")
        saveAndContinue()
 
-      Then("""I select Radio Button Yes at Position 1""")
-       clickOnRadioButton("Yes","1")
+      Then("""I select Radio Button No at Position 2""")
+       clickOnRadioButton("No","2")
 
       And("""click on Save and Continue button""")
        saveAndContinue()
 
-      Then("""I select Radio Button Yes at Position 1""")
-        clickOnRadioButton("Yes","1")
+      Then("""page navigates to The disclosure will only be about onshore liabilities""")
+      verifyPageHeading("The disclosure will only be about onshore liabilities")
 
       And("""click on Save and Continue button""")
        saveAndContinue()
@@ -88,17 +87,47 @@ class IndividualOnBehalfOnshoreDisclosureSpec extends BaseSpec {
       And("""click on Save and Continue button""")
        saveAndContinue()
 
-      Then("""I enter Company name in the TextBox field""")
-       enterInputInTextBox("Company name")
+      Then("""I enter Individual full name in the TextBox field""")
+       enterInputInTextBox("Individual full name")
 
       And("""click on Save and Continue button""")
        saveAndContinue()
 
-      Then("""I enter 12345678 in the TextBox field""")
-       enterInputInTextBox("12345678")
+      And("I enter 01 in the Day text box field")
+      enterInputInDOBPage("01","Day")
+
+      And("I enter 01 in the Month text box field")
+      enterInputInDOBPage("01","Month")
+
+      And("I enter 1980 in the Year text box field")
+      enterInputInDOBPage("1980","Year")
 
       And("""click on Save and Continue button""")
        saveAndContinue()
+
+      And("""I enter Dentist in the TextBox field""")
+      enterInputInTextBox("Dentist")
+
+      And("""click on Save and Continue button""")
+      saveAndContinue()
+
+      And("""I select Radio Button No at Position 3""")
+      clickOnRadioButton("No","3")
+
+      And("""click on Save and Continue button""")
+      saveAndContinue()
+
+      And("""I select Radio Button No at Position 3""")
+      clickOnRadioButton("No","3")
+
+      And("""click on Save and Continue button""")
+      saveAndContinue()
+
+      And("""I select Radio Button No at Position 3""")
+      clickOnRadioButton("No","3")
+
+      And("""click on Save and Continue button""")
+      saveAndContinue()
 
       When("""And enter country name United Kingdom, then select country United Kingdom""")
        enterInputInTextBox("United Kingdom")
@@ -210,7 +239,6 @@ class IndividualOnBehalfOnshoreDisclosureSpec extends BaseSpec {
       Then("page navigates to Why you are making this disclosure")
        verifyPageHeading("Why you are making this disclosure")
 
-      // need to see this page locally... is the radio button text dynamic based on an earlier choice or something.
       And("I select Checkbox The individual did not notify HMRC about a tax liability at Position 1")
         clickOnCheckBox("The individual did not notify HMRC about a tax liability", "1")
 
@@ -278,13 +306,13 @@ class IndividualOnBehalfOnshoreDisclosureSpec extends BaseSpec {
        verifyPageHeading("What reasonable care was taken when submitting the inaccurate return?")
 
       And("I enter Reasonable care in the reasonable care text area")
-       enterTextInReasonableCare("")
+       enterTextInReasonableCare("Reasonable care")
 
       And("I enter tax year ending 2020 in the Which tax years does this apply to? text box field")
-        whenIEnterStringInStopYearTextBoxField("Reasonable care")
+        enterInputInDOBPage("tax year ending 2020","Which tax years does this apply to?")
 
       And("click on Save and Continue button")
-      saveAndContinue()
+       saveAndContinue()
 
       Then("page navigates to What onshore liabilities do you need to disclose?")
        verifyPageHeading("What onshore liabilities do you need to disclose?")
@@ -301,17 +329,17 @@ class IndividualOnBehalfOnshoreDisclosureSpec extends BaseSpec {
       And("page should display checkboxes for the 4 tax years before the current tax year")
        verifyDisplayedCheckbox("4")
 
-      And("I select Checkbox 6 April 2023 to 5 April 2024 at Position 1")
-       clickOnCheckBox("6 April 2023 to 5 April 2024", "1")
+      And("I select Checkbox 6 April 2024 to 5 April 2025 at Position 1")
+       clickOnCheckBox("6 April 2024 to 5 April 2025", "1")
 
-      And("I select Checkbox 6 April 2022 to 5 April 2023 at Position 2")
-        clickOnCheckBox("6 April 2022 to 5 April 2023", "2")
+      And("I select Checkbox 6 April 2023 to 5 April 2024 at Position 2")
+        clickOnCheckBox("6 April 2023 to 5 April 2024", "2")
 
       And("click on Save and Continue button")
         saveAndContinue()
 
-      Then("page navigates to Onshore liabilities — Tax year 6 April 2023 to 5 April 2024")
-       verifyPageHeading("nshore liabilities — Tax year 6 April 2023 to 5 April 2024")
+      Then("page navigates to Onshore liabilities — Tax year 6 April 2024 to 5 April 2025")
+       verifyPageHeading("Onshore liabilities — Tax year 6 April 2024 to 5 April 2025")
 
       And("I enter 10 in the gains text box field")
        enterInputInDOBPage("10", "gains")
@@ -323,7 +351,7 @@ class IndividualOnBehalfOnshoreDisclosureSpec extends BaseSpec {
        enterInputInDOBPage("20", "niContributions")
 
       And("I enter 50 in the interest text box field")
-       enterInputInDOBPage("50", "undeclaredIncomeOrGain")
+      enterInputInDOBPage("50", "interest")
 
       And("I enter undeclared Income Or Gain in the undeclaredIncomeOrGain text box field")
        enterInputInDOBPage("undeclared Income Or Gain", "undeclaredIncomeOrGain")
@@ -331,8 +359,8 @@ class IndividualOnBehalfOnshoreDisclosureSpec extends BaseSpec {
       And("click on Save and Continue button")
        saveAndContinue()
 
-      Then("page navigates to Onshore liabilities — Tax year 6 April 2022 to 5 April 2023")
-       verifyPageHeading("Onshore liabilities — Tax year 6 April 2022 to 5 April 2023")
+      Then("page navigates to Onshore liabilities — Tax year 6 April 2023 to 5 April 2024")
+       verifyPageHeading("Onshore liabilities — Tax year 6 April 2023 to 5 April 2024")
 
       And("I enter 70 in the gains text box field")
        enterInputInDOBPage("70", "gains")

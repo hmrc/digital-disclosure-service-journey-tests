@@ -14,14 +14,13 @@
  * limitations under the License.
  */
 
+// DONE
 package uk.gov.hmrc.specs
 
-import uk.gov.hmrc.specsteps.CaseManagementStepDefSteps.andOnTheHomepageIClickContinueToNavigateToTheXPage
-import uk.gov.hmrc.specsteps.CheckYourAnswersStepDefSteps.{thenAboutTheCompanySectionShouldHaveALabelStringAtLineStringAnAnswerWithStringAndChangeURLEndsWithString, thenAnswersPageShouldHaveH2HeaderString, thenBackgroundSectionHasFollowing, thenLineStringShouldHaveALabelStringAnAnswerWithStringAndChangeURLEndsWithString, verifyAboutTheCompanyAnswers, verifyAboutYouAnswers}
+import uk.gov.hmrc.specsteps.CheckYourAnswersStepDefSteps.{thenAnswersPageShouldHaveH2HeaderString, thenBackgroundSectionHasFollowing, verifyAboutTheCompanyAnswers, verifyAboutYouAnswers}
 import uk.gov.hmrc.specsteps.DiscloseOffshoreLiabilitiesStepDefSteps.whenISelectRadioButtonStringAtPositionString
 import uk.gov.hmrc.specsteps.HomePageStepDefSteps.{SendNotification, clickOnCheckBox, clickOnLink, clickOnRadioButton, enterInputInTextBox, saveAndContinue, verifyH2Header, verifyPageHeading, verifySubmittedCaseRef}
 import uk.gov.hmrc.specsteps.InternationalAddressStepDefSteps.{enterInputInManualAddressPage, selectfromDropdown}
-import uk.gov.hmrc.specsteps.NotificationSubmittedStepDefSteps.{thenTheCaseReferenceShouldBeString, whenIClickOnSendNotificationButton}
 import uk.gov.hmrc.specsteps.ReceivedALetterStepDefSteps.givenIAmNavigatedToReceivedALetterPage
 import org.scalatest.prop.TableDrivenPropertyChecks._
 
@@ -201,40 +200,40 @@ class CompanyCheckYourAnswerAboutTheCompanySpec extends BaseSpec {
         thenAnswersPageShouldHaveH2HeaderString("")
 
       And("line 1 should have a label Your full name an answer with Agent full name and change URL ends with your-full-name/change")
-      verifyAboutYouAnswers("1", "Your full name", "Agent full name", "your-full-name/change")
+        verifyAboutYouAnswers("1", "Your full name", "Agent full name", "your-full-name/change")
 
       And("line 2 should have a label Your contact preference an answer with Email,Telephone and change URL ends with contact-preference/change")
-      verifyAboutYouAnswers("2", "Your contact preference", "Email,Telephone", "contact-preference/change")
+       verifyAboutYouAnswers("2", "Your contact preference", "Email,Telephone", "contact-preference/change")
 
       And("line 3 should have a label Your email address an answer with abc@abc.com and change URL ends with your-email-address/change")
-      verifyAboutYouAnswers("3", "Your email address", "abc@abc.com", "your-email-address/change")
+        verifyAboutYouAnswers("3", "Your email address", "abc@abc.com", "your-email-address/change")
 
       And("line 4 should have a label Your telephone number an answer with 07777 777777 and change URL ends with your-telephone-number/change")
-      verifyAboutYouAnswers("4", "Your telephone number", "07777 777777", "your-telephone-number/change")
+       verifyAboutYouAnswers("4", "Your telephone number", "07777 777777", "your-telephone-number/change")
 
       And("line 5 should have a label Your address an answer with 1 Testing Lane,Royal Madeuptown,ZZ9Z 9TT,United Kingdom and change URL ends with your-address/lookup/change")
-      verifyAboutYouAnswers("5", "Your address", "1 Testing Lane,Royal Madeuptown,ZZ9Z 9TT,United Kingdom", "your-address/lookup/change")
+        verifyAboutYouAnswers("5", "Your address", "1 Testing Lane,Royal Madeuptown,ZZ9Z 9TT,United Kingdom", "your-address/lookup/change")
 
       Then("answers page should have h2 header About the company")
-      verifyH2Header("About the company")
+       verifyH2Header("About the company")
 
       And("About The Company section should have a label Company’s name at line 1 an answer with Company name and change URL ends with company-name/change")
-      verifyAboutTheCompanyAnswers("Company’s name", "1", "Company name", "company-name/change")
+        verifyAboutTheCompanyAnswers("Company’s name", "1", "Company name", "company-name/change")
 
       And("About The Company section should have a label Company registration number at line 2 an answer with 12345678 and change URL ends with company-registration/change")
-      verifyAboutTheCompanyAnswers("Company registration number", "2", "12345678", "company-registration/change")
+       verifyAboutTheCompanyAnswers("Company registration number", "2", "12345678", "company-registration/change")
 
       And("About The Company section should have a label Company’s address at line 3 an answer with The Farm,Royal Madeuptown,ZZ9Z 9TT,United Kingdom and change URL ends with company-address/lookup/change")
-      verifyAboutTheCompanyAnswers("Company’s address", "3", "The Farm,Royal Madeuptown,ZZ9Z 9TT,United Kingdom", "company-address/lookup/change")
+       verifyAboutTheCompanyAnswers("Company’s address", "3", "The Farm,Royal Madeuptown,ZZ9Z 9TT,United Kingdom", "company-address/lookup/change")
 
       When("I click on send notification button")
-      SendNotification()
+       SendNotification()
 
       Then("page navigates to You have sent the notification")
-      verifyPageHeading("You have sent the notification")
+        verifyPageHeading("You have sent the notification")
 
       And("the case reference should be CFSS-1234567")
-      verifySubmittedCaseRef("CFSS-1234567")
+       verifySubmittedCaseRef("CFSS-1234567")
     }
   }
 }
