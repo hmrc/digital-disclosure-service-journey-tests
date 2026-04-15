@@ -52,6 +52,10 @@ Feature: An individual UK tax payer is able to check their answers for backgroun
       And I enter "ZZ9Z 9TT" in the "Postcode" field
       And click on Save and Continue button
     And click on confirm button
+
+
+
+
     Then page navigates to "Check Your Answers"
     And answers page should have h2 header "Background"
     And answers page should have h2 header "About you"

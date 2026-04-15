@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-// DONE
 package uk.gov.hmrc.specs
 
 import uk.gov.hmrc.specsteps.DiscloseOffshoreLiabilitiesStepDefSteps.{clickOnHyperlinkText, whenISelectCheckboxStringAtPositionString, whenISelectRadioButtonStringAtPositionString}

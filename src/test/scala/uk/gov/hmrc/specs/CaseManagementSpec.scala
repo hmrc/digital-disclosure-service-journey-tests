@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-// DONE
 package uk.gov.hmrc.specs
 
 import uk.gov.hmrc.specsteps.CaseManagementStepDefSteps.{andIClickTheEditLinkWithinTheCaseTable, andOnTheHomepageIClickContinueToNavigateToTheXPage, andVerifyOnTheXPage, givenTheValuesWithinTheDatatableAreVerified, thenOnTheXPageIClickReturnToViewEditOrCreateACase, thenOnTheXPageIClickXAndClickSaveAndContinue, thenOnTheXPageIEnterXIntoTheTextboxAndClickSaveAndContinue, thenOnTheXPageISelectXAndClickSaveAndContinue, whenClickOnSubmitOnWizardPage, whenISelectCreateANewCase, whenOnTheXPageIClickOnTheHeaderHyperlink, whenSelectStringFromAffinityGroupDropDown, whenSelectStringFromConfidenceLevelDropDown}

@@ -15,14 +15,13 @@
  */
 
 package uk.gov.hmrc.specs
-//DONE
+
 import uk.gov.hmrc.specsteps.DiscloseOffshoreLiabilitiesStepDefSteps.{clickOnHyperlinkText, whenISelectRadioButtonStringAtPositionString}
 import uk.gov.hmrc.specsteps.HomePageStepDefSteps.{SendNotification, clickOnCheckBox, clickOnLink, clickOnRadioButton, enterInputInTextBox, iConfirmButton, makeADisclosure, navigateToSpecificURL, saveAndContinue, verifyDisplayedCheckbox, verifyPageHeading}
 import uk.gov.hmrc.specsteps.InternationalAddressStepDefSteps.{enterInputInManualAddressPage, selectfromDropdown}
 import uk.gov.hmrc.specsteps.OnshoreDisclosureStepDefSteps.{checkTaskStatus, enterTextInExcuse, enterTextInReasonableCare, enterTextInReasonableExcuse, whenIEnterStringInStopYearTextBoxField}
 import uk.gov.hmrc.specsteps.ReceivedALetterStepDefSteps.givenIAmNavigatedToReceivedALetterPage
 import uk.gov.hmrc.specsteps.WhatIsYouDOBStepDefSteps.enterInputInDOBPage
-
 
 class IndividualOnBehalfOnshoreDisclosureSpec extends BaseSpec {
 

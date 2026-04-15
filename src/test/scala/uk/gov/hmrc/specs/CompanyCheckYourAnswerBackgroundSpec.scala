@@ -15,7 +15,7 @@
  */
 
 package uk.gov.hmrc.specs
-// DONE
+
 import org.scalatest.prop.Tables.Table
 import uk.gov.hmrc.specsteps.CheckYourAnswersStepDefSteps.{clickOnChangeButton, thenBackgroundSectionHasFollowing, verifyAboutTheCompanyAnswers, verifyAboutYouAnswers}
 import uk.gov.hmrc.specsteps.DiscloseOffshoreLiabilitiesStepDefSteps.whenISelectRadioButtonStringAtPositionString
@@ -99,7 +99,7 @@ class CompanyCheckYourAnswerBackgroundSpec extends BaseSpec {
        saveAndContinue()
 
       When("""And enter country name United Kingdom, then select country United Kingdom""")
-        enterInputInTextBox("United Kingdom")
+       enterInputInTextBox("United Kingdom")
        selectfromDropdown("United Kingdom")
 
       And("""click on Save and Continue button""")

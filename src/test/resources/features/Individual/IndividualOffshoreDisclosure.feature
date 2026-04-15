@@ -48,7 +48,7 @@ Feature: An Individual is able to notify and submit offshore disclosure
     And click on confirm button
     And I click on send notification button
 
-  Scenario: Individual - Complete offshore disclosure with reasonable excuse journey
+  Scenario: Individual - Complete offshore disclosure with reasonable excuse journey - 1
     Given I am on "You have sent your notification" page
     And I navigate to "make-a-disclosure" specific page
     When I click on Make a disclosure button
@@ -135,7 +135,7 @@ Feature: An Individual is able to notify and submit offshore disclosure
     Then page navigates to "Offshore liabilities summary"
 
   @journeytests
-  Scenario: Individual - Complete offshore disclosure with no reasonable excuse journey
+  Scenario: Individual - Complete offshore disclosure with no reasonable excuse journey - 2
     Given I am on "You have sent your notification" page
     And I navigate to "make-a-disclosure" specific page
     When I click on Make a disclosure button
@@ -216,7 +216,7 @@ Feature: An Individual is able to notify and submit offshore disclosure
     Then page navigates to "List of tasks"
     And status is marked as "Completed" for field "Edit offshore liability details"
 
-  Scenario: Individual - Complete offshore disclosure journey - Nil disclosure
+  Scenario: Individual - Complete offshore disclosure journey - Nil disclosure - 3
     Given I am on "You have sent your notification" page
     And I navigate to "make-a-disclosure" specific page
     When I click on Make a disclosure button
@@ -249,7 +249,7 @@ Feature: An Individual is able to notify and submit offshore disclosure
     Then page navigates to "List of tasks"
     And status is marked as "Completed" for field "Edit offshore liability details"
   @journeytests
-  Scenario: Individual - Complete offshore disclosure with reasonable excuse journey - Complete flow for Nil disclosure
+  Scenario: Individual - Complete offshore disclosure with reasonable excuse journey - Complete flow for Nil disclosure - 4
     Given I am on "You have sent your notification" page
     And I navigate to "make-a-disclosure" specific page
     When I click on Make a disclosure button
@@ -335,7 +335,7 @@ Feature: An Individual is able to notify and submit offshore disclosure
     And the case reference should be "CFSS-1234567"
 
   @journeytests
-  Scenario: Individual - Complete offshore disclosure with no reasonable excuse journey - Complete flow
+  Scenario: Individual - Complete offshore disclosure with no reasonable excuse journey - Complete flow - 5
     Given I am on "You have sent your notification" page
     And I navigate to "make-a-disclosure" specific page
     When I click on Make a disclosure button
