@@ -17,13 +17,9 @@
 package uk.gov.hmrc.specsteps
 
 import io.cucumber.datatable.DataTable
-import org.openqa.selenium.By
-import org.openqa.selenium.support.ui.{ExpectedConditions, WebDriverWait}
 import org.scalatest.prop.TableFor4
-import uk.gov.hmrc.pages.{BasePage, CheckYourAnswersPage}
 
-import java.time.Duration
-import uk.gov.hmrc.selenium.webdriver.Driver
+import uk.gov.hmrc.specpage.{BasePage, CheckYourAnswersPage}
 
 object CheckYourAnswersStepDefSteps extends BasePage with CheckYourAnswersPage {
 

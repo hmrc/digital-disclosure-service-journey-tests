@@ -16,7 +16,7 @@
 
 package uk.gov.hmrc.specsteps
 
-import uk.gov.hmrc.pages.{BasePage, HmrcLetterReferencePage}
+import uk.gov.hmrc.specpage.{BasePage, HmrcLetterReferencePage}
 
 object HmrcLetterReferencePageStepDefSteps extends BasePage with HmrcLetterReferencePage {
 

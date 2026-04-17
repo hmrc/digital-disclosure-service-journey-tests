@@ -18,7 +18,7 @@ package uk.gov.hmrc.specsteps
 
 import org.openqa.selenium.By
 import org.openqa.selenium.support.ui.ExpectedConditions
-import uk.gov.hmrc.pages.{BasePage, DiscloseOffshoreLiabilitiesPage}
+import uk.gov.hmrc.specpage.{BasePage, DiscloseOffshoreLiabilitiesPage}
 
 object DiscloseOffshoreLiabilitiesStepDefSteps extends BasePage with DiscloseOffshoreLiabilitiesPage {
 

@@ -16,7 +16,7 @@
 
 package uk.gov.hmrc.specsteps
 
-import uk.gov.hmrc.pages.{BasePage,WhatIsYourFullNamePage}
+import uk.gov.hmrc.specpage.{BasePage, WhatIsYourFullNamePage}
 
 object WhatIsYourFullNameStepDefSteps extends BasePage with WhatIsYourFullNamePage {
 

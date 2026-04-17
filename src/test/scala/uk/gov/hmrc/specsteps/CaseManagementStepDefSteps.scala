@@ -20,8 +20,8 @@ import io.cucumber.datatable.DataTable
 import org.openqa.selenium.By
 import org.scalatest.concurrent.Eventually.eventually
 import org.scalatest.time.{Seconds, Span}
-import uk.gov.hmrc.pages.{BasePage, CaseManagementPage}
 import uk.gov.hmrc.selenium.webdriver.Driver
+import uk.gov.hmrc.specpage.{BasePage, CaseManagementPage}
 
 object CaseManagementStepDefSteps extends BasePage with CaseManagementPage {
 

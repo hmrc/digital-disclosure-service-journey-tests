@@ -16,9 +16,7 @@
 
 package uk.gov.hmrc.specsteps
 
-import io.cucumber.junit.Cucumber
-import org.junit.runner.RunWith
-import uk.gov.hmrc.pages.{AreYouTheIndividualPage, BasePage}
+import uk.gov.hmrc.specpage.{AreYouTheIndividualPage, BasePage}
 
 object AreYouTheIndividualStepDefSteps extends BasePage with AreYouTheIndividualPage {
 

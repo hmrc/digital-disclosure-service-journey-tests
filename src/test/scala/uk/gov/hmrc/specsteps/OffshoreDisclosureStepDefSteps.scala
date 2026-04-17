@@ -16,7 +16,7 @@
 
 package uk.gov.hmrc.specsteps
 
-import uk.gov.hmrc.pages.{BasePage, OffshoreDisclosurePage}
+import uk.gov.hmrc.specpage.{BasePage, OffshoreDisclosurePage}
 
 object OffshoreDisclosureStepDefSteps extends BasePage with OffshoreDisclosurePage {
 

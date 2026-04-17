@@ -16,7 +16,7 @@
 
 package uk.gov.hmrc.specsteps
 
-import uk.gov.hmrc.pages.{BasePage,WhatIsYourEmailAddressPage}
+import uk.gov.hmrc.specpage.{BasePage, WhatIsYourEmailAddressPage}
 
 object WhatIsYourEmailAddressStepDefSteps extends BasePage with WhatIsYourEmailAddressPage {
 

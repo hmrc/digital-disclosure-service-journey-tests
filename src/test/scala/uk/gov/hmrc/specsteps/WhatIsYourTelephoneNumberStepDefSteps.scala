@@ -16,7 +16,7 @@
 
 package uk.gov.hmrc.specsteps
 
-import uk.gov.hmrc.pages.{BasePage, WhatIsYourTelephoneNumberPage}
+import uk.gov.hmrc.specpage.{BasePage, WhatIsYourTelephoneNumberPage}
 
 object WhatIsYourTelephoneNumberStepDefSteps extends BasePage with WhatIsYourTelephoneNumberPage {
 

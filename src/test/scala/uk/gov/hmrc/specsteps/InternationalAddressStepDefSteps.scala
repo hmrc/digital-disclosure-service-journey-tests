@@ -16,7 +16,7 @@
 
 package uk.gov.hmrc.specsteps
 
-import uk.gov.hmrc.pages.{BasePage, WhatIsTheCountryOfAddressPage, InternationalAddressPage}
+import uk.gov.hmrc.specpage.{BasePage, InternationalAddressPage, WhatIsTheCountryOfAddressPage}
 
 object InternationalAddressStepDefSteps extends BasePage with WhatIsTheCountryOfAddressPage with InternationalAddressPage {
 

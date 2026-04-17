@@ -16,7 +16,7 @@
 
 package uk.gov.hmrc.specsteps
 
-import uk.gov.hmrc.pages.{BasePage}
+import uk.gov.hmrc.specpage.BasePage
 
 object DoYouHaveNationalInsuranceNumStepDefSteps extends BasePage {
 

@@ -16,9 +16,7 @@
 
 package uk.gov.hmrc.specsteps
 
-import io.cucumber.junit.Cucumber
-import org.junit.runner.RunWith
-import uk.gov.hmrc.pages.{BasePage, ReceivedALetterPage}
+import uk.gov.hmrc.specpage.{BasePage, ReceivedALetterPage}
 
 object ReceivedALetterStepDefSteps extends BasePage  with ReceivedALetterPage {
 

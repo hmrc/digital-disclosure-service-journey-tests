@@ -16,7 +16,7 @@
 
 package uk.gov.hmrc.specsteps
 
-import uk.gov.hmrc.pages.{BasePage, HomePage}
+import uk.gov.hmrc.specpage.{BasePage, HomePage}
 
 object HomePageStepDefSteps extends BasePage with HomePage {
 

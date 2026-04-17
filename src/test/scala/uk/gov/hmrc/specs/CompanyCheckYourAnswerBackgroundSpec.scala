@@ -200,16 +200,15 @@ class CompanyCheckYourAnswerBackgroundSpec extends BaseSpec {
        verifyPageHeading("Check Your Answers")
 
       And("Background section has following")
-
-      val backgroundRows =
-        Table(
-          ("lineNo", "label", "answer", "url"),
-          ("1", "Will you be making a disclosure because you received a letter from HMRC?", "Yes", "letter-from-hmrc/change"),
-          ("2", "Case reference", "CFSS-1234567", "hmrc-letter-reference/change"),
-          ("3", "Who this disclosure is for", "A company", "what-is-this-disclosure-about/change"),
-          ("4", "Are you an officer of the company that the disclosure will be about?", "Yes, I am an officer", "are-you-the-entity/change")
-        )
-      thenBackgroundSectionHasFollowing(backgroundRows)
+        val backgroundRows =
+          Table(
+            ("lineNo", "label", "answer", "url"),
+            ("1", "Will you be making a disclosure because you received a letter from HMRC?", "Yes", "letter-from-hmrc/change"),
+            ("2", "Case reference", "CFSS-1234567", "hmrc-letter-reference/change"),
+            ("3", "Who this disclosure is for", "A company", "what-is-this-disclosure-about/change"),
+            ("4", "Are you an officer of the company that the disclosure will be about?", "Yes, I am an officer", "are-you-the-entity/change")
+          )
+        thenBackgroundSectionHasFollowing(backgroundRows)
 
       And("answers page should have h2 header About you")
         verifyH2Header("About you")

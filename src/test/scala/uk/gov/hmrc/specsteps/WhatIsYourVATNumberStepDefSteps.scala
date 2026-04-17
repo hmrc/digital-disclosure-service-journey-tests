@@ -16,7 +16,7 @@
 
 package uk.gov.hmrc.specsteps
 
-import uk.gov.hmrc.pages.{BasePage, WhatIsYourVATNumberPage}
+import uk.gov.hmrc.specpage.{BasePage, WhatIsYourVATNumberPage}
 
 object WhatIsYourVATNumberStepDefSteps extends BasePage with WhatIsYourVATNumberPage {
 

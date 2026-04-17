@@ -235,12 +235,12 @@ class TrustBackgroundCheckYourAnswersSpec extends BaseSpec {
       verifyPageHeading("Check Your Answers")
 
       And("Background section has following")
-      val backgroundRow =
-        Table(
-          ("lineNo", "label", "answer", "url"),
-          ("4", "Are you a trustee of the trust that the disclosure will be about?", "Yes, I am a trustee", "are-you-the-entity/change"),
-        )
-      thenBackgroundSectionHasFollowing(backgroundRow)
+        val backgroundRow =
+          Table(
+            ("lineNo", "label", "answer", "url"),
+            ("4", "Are you a trustee of the trust that the disclosure will be about?", "Yes, I am a trustee", "are-you-the-entity/change"),
+          )
+        thenBackgroundSectionHasFollowing(backgroundRow)
 
       When("I click on send notification button")
       SendNotification()
