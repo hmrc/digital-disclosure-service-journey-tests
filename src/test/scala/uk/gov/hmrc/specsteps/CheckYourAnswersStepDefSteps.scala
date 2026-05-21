@@ -16,7 +16,6 @@
 
 package uk.gov.hmrc.specsteps
 
-import io.cucumber.datatable.DataTable
 import org.scalatest.prop.TableFor4
 
 import uk.gov.hmrc.specpage.{BasePage, CheckYourAnswersPage}
@@ -68,16 +67,6 @@ object CheckYourAnswersStepDefSteps extends BasePage with CheckYourAnswersPage {
                                          backgroundRows: TableFor4[String, String, String, String]
                                        ): Unit = {
     verifyBackgroundAnswers(backgroundRows)
-  }
-
-  // clicking on change button navigates as following:
-  def thenClickingOnChangeButtonNavigatesAsFollowing(dataTable: DataTable): Unit = {
-    verifyChangeButtonNavigation(dataTable)
-  }
-
-  // clicking on change button to validate changed value as following:
-  def thenClickingOnChangeButtonToValidateChangedValueAsFollowing(dataTable: DataTable): Unit = {
-    validateChangedValue(dataTable)
   }
 
   // I am on {string} page

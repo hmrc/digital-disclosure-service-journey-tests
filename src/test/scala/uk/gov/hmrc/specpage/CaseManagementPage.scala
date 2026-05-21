@@ -16,14 +16,10 @@
 
 package uk.gov.hmrc.specpage
 
-import io.cucumber.datatable.DataTable
 import org.junit.Assert
 import org.openqa.selenium.{By, WebElement}
-import org.scalatest.matchers.should.Matchers.convertToAnyShouldWrapper
 import uk.gov.hmrc.selenium.webdriver.Driver
 import uk.gov.hmrc.utils.Configuration
-
-import scala.jdk.CollectionConverters.CollectionHasAsScala
 
 trait CaseManagementPage extends BasePage {
 
@@ -120,16 +116,6 @@ trait CaseManagementPage extends BasePage {
     Assert.assertTrue("Status is not matched", element.get(position.toInt - 1).getText.equals(expecteValue))
     element.get(count - 1).click()
   }
-
-  def testDataTable(dataTable: DataTable): Unit =
-    dataTable.asMaps(classOf[String], classOf[String]).asScala.foreach { (data: java.util.Map[String, String]) =>
-      val tableHeading = Driver.instance.findElements(By.className("govuk-table__row")).get(data.get("Row").toInt)
-      val getReferenceText = tableHeading.findElements(By.className("govuk-table__header")).get(0).getText
-      val getCellText = tableHeading.findElements(By.className("govuk-table__cell"))
-      getReferenceText shouldBe data.get("Reference")
-      getCellText.get(0).getText shouldBe data.get("Type")
-      getCellText.get(2).getText shouldBe data.get("Status")
-    }
 
   def clickOnHeader(): Unit = {
     val element = Driver.instance.findElement(By.xpath("//div[@class='govuk-header__content']/a[@href]"))

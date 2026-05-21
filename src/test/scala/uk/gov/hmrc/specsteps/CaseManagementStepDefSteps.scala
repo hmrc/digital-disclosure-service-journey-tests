@@ -16,7 +16,7 @@
 
 package uk.gov.hmrc.specsteps
 
-import io.cucumber.datatable.DataTable
+import org.scalatest.matchers.should.Matchers._
 import org.openqa.selenium.By
 import org.scalatest.concurrent.Eventually.eventually
 import org.scalatest.time.{Seconds, Span}
@@ -50,9 +50,24 @@ object CaseManagementStepDefSteps extends BasePage with CaseManagementPage {
   }
 
   // ^the values within the datatable are verified$
-  def givenTheValuesWithinTheDatatableAreVerified(): Unit = {
-    dataTable: DataTable =>
-          testDataTable(dataTable)
+  def givenTheValuesWithinTheDatatableAreVerified(
+                                                   expectedReference: String,
+                                                   expectedType: String,
+                                                   expectedStatus: String
+                                                 ): Unit = {
+
+    val tableHeading =
+      Driver.instance.findElements(By.className("govuk-table__row")).get(1)
+
+    val getReferenceText =
+      tableHeading.findElements(By.className("govuk-table__header")).get(0).getText
+
+    val getCellText =
+      tableHeading.findElements(By.className("govuk-table__cell"))
+
+    getReferenceText shouldBe expectedReference
+    getCellText.get(0).getText shouldBe expectedType
+    getCellText.get(2).getText shouldBe expectedStatus
   }
 
   // ^on the (.*) page I select (.*) and click save and continue
@@ -98,8 +113,9 @@ object CaseManagementStepDefSteps extends BasePage with CaseManagementPage {
 
   // ^on the (.*) page I click on the header hyperlink
   def whenOnTheXPageIClickOnTheHeaderHyperlink(prettyUrl: String): Unit = {
-    urlVerify(prettyUrl)
-        clickBy(By.xpath("//div[@class='govuk-header__content']/a[@href]"))
+    Driver.instance
+      .findElement(By.linkText("Tell HMRC about underpaid tax from previous years"))
+      .click()
   }
 
   // I click the Edit link within the case table

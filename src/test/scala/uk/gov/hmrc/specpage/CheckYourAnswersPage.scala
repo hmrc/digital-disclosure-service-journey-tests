@@ -16,8 +16,6 @@
 
 package uk.gov.hmrc.specpage
 
-import io.cucumber.datatable.DataTable
-import io.cucumber.scala.Implicits.ScalaDataTable
 import org.junit.Assert
 import org.openqa.selenium.{By, WebElement}
 import org.scalatest.prop.TableDrivenPropertyChecks.forAll
@@ -175,52 +173,6 @@ trait CheckYourAnswersPage extends BasePage {
         else {
           line=line+1
         })}
-  }
-
-  def verifyChangeButtonNavigation(dataTable: DataTable): Unit = {
-
-    dataTable.asScalaMaps[String, String] // Seq[Map[String, Option[String]]]
-      .map { row =>
-        val label = row("Label").getOrElse("")
-        val expectedPage = row("ExpectedPage").getOrElse("")
-        clickOnChangeButton(label)
-        verifyPageHeading(expectedPage)
-        saveAndContinue()
-      }
-  }
-
-  def validateChangedValue(dataTable: DataTable): Unit = {
-    val outloop = new Breaks;
-    val inloop = new Breaks;
-    outloop.breakable {
-      dataTable.asScalaMaps[String, String]
-        .map { row =>
-          val label = row("Label").getOrElse("")
-          val expectedPage = row("ExpectedPage").getOrElse("")
-          val changedValue = row("ChangedValue").getOrElse("")
-          clickOnChangeButton(label)
-          verifyPageHeading(expectedPage)
-          enterInputInTextBox(changedValue)
-          saveAndContinue()
-
-          val elementLabel = Driver.instance.findElements(By.xpath("//div[@class='govuk-summary-list__row']/dt[@class='govuk-summary-list__key']"))
-          var line = 1
-          inloop.breakable {
-            elementLabel.forEach(e =>
-              if (e.getText.trim == label.trim) {
-                Console.println(e.getText + "testing")
-                line = line
-                outloop.break()
-              }
-              else {
-                line = line + 1
-              })
-          }
-
-          val actualAnswer = Driver.instance.findElement(By.xpath("//div[@class='govuk-summary-list__row'][" + line + "]/dd[@class='govuk-summary-list__value']")).getText
-          Assert.assertTrue("Check your answers - Answer not verified. Expected: " + changedValue + "--- Actual: " + actualAnswer, changedValue == actualAnswer)
-        }
-    }
   }
 
   def verifyDropdownTextBoxIsEmpty(): Unit = {

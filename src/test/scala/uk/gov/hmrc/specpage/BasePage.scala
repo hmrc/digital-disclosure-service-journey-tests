@@ -16,7 +16,6 @@
 
 package uk.gov.hmrc.specpage
 
-import io.cucumber.scala.{EN, ScalaDsl}
 import org.apache.commons.lang3.StringUtils
 import org.junit.Assert
 import org.openqa.selenium.support.ui.{ExpectedCondition, ExpectedConditions, Select, WebDriverWait}
@@ -33,7 +32,7 @@ import uk.gov.hmrc.utils.{Configuration, TestConfiguration, UrlHelper}
 import java.time.Duration
 import scala.util.Random
 
-trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with ScalaFutures with BrowserDriver {
+trait BasePage extends WebBrowser with Assertions with ScalaFutures with BrowserDriver {
 
   lazy val url: String = ""
   private lazy val webdriverWait = new WebDriverWait(Driver.instance, Duration.ofSeconds(20))

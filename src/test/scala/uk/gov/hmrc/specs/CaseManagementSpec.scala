@@ -67,8 +67,11 @@ class CaseManagementSpec extends BaseSpec {
       And("on the homepage I click continue to navigate to the ViewEditCreateCase page")
         andOnTheHomepageIClickContinueToNavigateToTheXPage("ViewEditCreateCase")
 
-      Then("the values within the datatable are verified")
-        givenTheValuesWithinTheDatatableAreVerified()
+      givenTheValuesWithinTheDatatableAreVerified(
+        "Not completed",
+        "Offshore liabilities",
+        "Notification not sent"
+      )
 
       And("I click the Edit link within the case table")
         andIClickTheEditLinkWithinTheCaseTable()
@@ -118,8 +121,11 @@ class CaseManagementSpec extends BaseSpec {
       And("on the homepage I click continue to navigate to the ViewEditCreateCase page")
         andOnTheHomepageIClickContinueToNavigateToTheXPage("ViewEditCreateCase")
 
-      Then("the values within the datatable are verified")
-        givenTheValuesWithinTheDatatableAreVerified()
+      givenTheValuesWithinTheDatatableAreVerified(
+        "Estate Person",
+        "Offshore and onshore liabilities",
+        "Notification not sent"
+      )
 
       And("I click the Edit link within the case table")
         andIClickTheEditLinkWithinTheCaseTable()
