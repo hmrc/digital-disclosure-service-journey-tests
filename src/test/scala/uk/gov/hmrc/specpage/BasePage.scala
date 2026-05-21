@@ -19,8 +19,8 @@ package uk.gov.hmrc.specpage
 import io.cucumber.scala.{EN, ScalaDsl}
 import org.apache.commons.lang3.StringUtils
 import org.junit.Assert
-import org.openqa.selenium.support.ui.{ExpectedCondition, ExpectedConditions, Select, WebDriverWait}
-import org.openqa.selenium.{By, JavascriptExecutor, WebElement}
+import org.openqa.selenium.support.ui.{ExpectedCondition, ExpectedConditions, FluentWait, Select, Wait, WebDriverWait}
+import org.openqa.selenium.{By, JavascriptExecutor, WebDriver, WebElement}
 import org.scalatest.concurrent.ScalaFutures
 import org.scalatest.matchers.should.Matchers.convertToAnyShouldWrapper
 import org.scalatest.{Assertion, Assertions}
@@ -47,6 +47,9 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
     val currentUrl = Driver.instance.getCurrentUrl.toLowerCase()
     webdriverWait.until(_ => url shouldBe currentUrl)
   }
+  def fluentWait: Wait[WebDriver] = new FluentWait[WebDriver](Driver.instance)
+  .withTimeout(Duration.ofSeconds(15))
+  .pollingEvery(Duration.ofMillis(500))
 
   def clickBy(by: By): Unit = {
     val element = Driver.instance.findElement(by)
@@ -117,6 +120,7 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
   }
 
   def saveAndContinue(): Unit = {
+    fluentWait.until(ExpectedConditions.elementToBeClickable(By.id("continue")));
     findByID("continue").click()
   }
 
@@ -255,6 +259,7 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
   }
 
   def verifyPageHeading(expectedQHeader: String): Unit = {
+    fluentWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//h1")))
     val element = Driver.instance.findElement(By.xpath("//h1"))
     val actualQHeader = element.getText
     Assert.assertTrue("Heading is not Verified. Expected:  "+ expectedQHeader +  "--- Actual:  " + actualQHeader, expectedQHeader.contains(actualQHeader))
@@ -291,6 +296,8 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
   }
 
   def clickOnRadioButton(expectedText: String, bulletNum: String): Unit = {
+
+    fluentWait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//*[@class='govuk-radios__item']/label[contains(@class,'govuk-radios__label')]")))
     val elementLabel = Driver.instance.findElements(By.xpath("//*[@class='govuk-radios__item']/label[contains(@class,'govuk-radios__label')]"))
     val value = bulletNum.toInt
     val actualText = elementLabel.get(value - 1).getText
@@ -301,6 +308,8 @@ trait BasePage extends WebBrowser with Assertions with ScalaDsl with EN with Sca
   }
 
   def clickOnCheckBox(expectedText: String, bulletNum: String): Unit = {
+
+    fluentWait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//*[@class='govuk-checkboxes__item']/label[contains(@class,'govuk-checkboxes__label')]")));
     val elementLabel = Driver.instance.findElements(By.xpath("//*[@class='govuk-checkboxes__item']/label[contains(@class,'govuk-checkboxes__label')]"))
     val value = bulletNum.toInt
     val actualText = elementLabel.get(value - 1).getText
