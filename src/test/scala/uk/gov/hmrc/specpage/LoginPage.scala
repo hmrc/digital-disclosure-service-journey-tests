@@ -18,7 +18,7 @@ package uk.gov.hmrc.specpage
 
 import org.openqa.selenium.WebElement
 import org.scalatest.matchers.must.Matchers.be
-import org.scalatest.matchers.should.Matchers.convertToAnyShouldWrapper
+import org.scalatest.matchers.should.Matchers.should
 import uk.gov.hmrc.utils.Configuration
 
 trait LoginPage extends BasePage {

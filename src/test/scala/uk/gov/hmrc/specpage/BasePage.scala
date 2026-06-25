@@ -21,10 +21,10 @@ import org.junit.Assert
 import org.openqa.selenium.support.ui.{ExpectedCondition, ExpectedConditions, FluentWait, Select, Wait, WebDriverWait}
 import org.openqa.selenium.{By, JavascriptExecutor, WebDriver, WebElement}
 import org.scalatest.concurrent.ScalaFutures
-import org.scalatest.matchers.should.Matchers.convertToAnyShouldWrapper
+import org.scalatest.matchers.should.Matchers.shouldBe
 import org.scalatest.{Assertion, Assertions}
 import org.scalatestplus.selenium.WebBrowser
-import uk.gov.hmrc.domain.Generator
+import uk.gov.hmrc.domain.NinoGenerator
 import uk.gov.hmrc.driver.BrowserDriver
 import uk.gov.hmrc.selenium.webdriver.Driver
 import uk.gov.hmrc.utils.{Configuration, TestConfiguration, UrlHelper}
@@ -141,7 +141,7 @@ trait BasePage extends WebBrowser with Assertions with ScalaFutures with Browser
     reDirectUrl.sendKeys(Configuration.settings.baseUrl)
     val elements = findByID("confidenceLevel").findElements(By.tagName("option"))
     elements.get(2).click()
-    val ninoGenerator = new Generator(new Random())
+    val ninoGenerator = new NinoGenerator(new Random())
     def generateNino: String = ninoGenerator.nextNino.nino
     findByID("nino").sendKeys(generateNino)
     findByID("submit").click()
