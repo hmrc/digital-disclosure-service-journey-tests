@@ -15,7 +15,7 @@ docker run --rm -d -p 27017:27017 --name mongo percona/percona-server-mongodb:5.
 Start `DDS_ALL` services as follows:
 
 ```bash
-sm2 --start DDS_ALL
+sm2 --start DDS_UI_TESTS
 ```
 
 ### Selenium Manager
